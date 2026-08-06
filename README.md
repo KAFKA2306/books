@@ -2,22 +2,22 @@
 
 個人の読書記録を、**作品（Work）** と **版（Edition）** を分離して管理する静的本棚データベースです。
 
-- 公開UI: `https://kafka2306.github.io/books/`
-- リポジトリ: `https://github.com/KAFKA2306/books`
+- 公開UI: https://kafka2306.github.io/books/
+- リポジトリ: https://github.com/KAFKA2306/books
 
 ## 現在のデータ
 
 | 指標 | 件数 |
 |---|---:|
 | 入力レコード | 455 |
-| 統合後の作品 | 412 |
-| 巻・版・重複として統合 | 43 |
+| 統合後の作品 | 414 |
+| 巻・版・重複として統合 | 41 |
 | ISBN確認済み | 0 |
 | 価格登録分の合計 | 166,395円 |
 
 ISBNは推測で補完していません。書誌情報を一次情報で確認できた版だけを `isbn13` に登録する方針です。
 
-## 何ができるか
+## 機能
 
 - 書名・カテゴリの全文検索
 - 読了・読書中・未読・未登録の絞り込み
@@ -28,8 +28,6 @@ ISBNは推測で補完していません。書誌情報を一次情報で確認�
 - 表示中データのCSV出力
 - 追加前のISBN・正規化書名重複チェック
 - GitHub Pagesへの自動配信
-
-UIは、Hardcoverの読書状態管理とリスト整理、Open Libraryの検索・ファセット型探索を参考にしつつ、`KAFKA SIGNAL` の Quiet UI / Editorial Paper 方針へ合わせています。
 
 ## データモデル
 
@@ -114,25 +112,6 @@ npm run check
 - 集計値整合
 - 正規化とPrecheckのユニットテスト
 
-## ファイル構成
-
-```text
-.
-├── index.html
-├── app.js
-├── styles.css
-├── src/catalog.mjs
-├── data/
-│   ├── catalog.parts.json
-│   ├── catalog.part*.b64
-│   ├── catalog.schema.json
-│   └── import.template.json
-├── scripts/
-│   ├── precheck.mjs
-│   └── validate.mjs
-└── tests/catalog.test.mjs
-```
-
 ## 書誌情報の追加方針
 
 ISBN検索は、ISBNそのものが判明している場合に最も確実です。国立国会図書館サーチとOpen LibraryはいずれもISBN検索を提供しています。
@@ -146,8 +125,6 @@ ISBN検索は、ISBNそのものが判明している場合に最も確実です
 ## GitHub Pages
 
 `main` へのpushでCI検証後にPagesへ配信します。GitHub PagesのSourceは **GitHub Actions** に設定してください。
-
-GitHub公式のカスタムPages workflowは、静的成果物をartifactへアップロードし、`actions/deploy-pages` で配信する構成です。
 
 - https://docs.github.com/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
 - https://github.com/actions/deploy-pages

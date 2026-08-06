@@ -1,0 +1,11 @@
+{
+  "encoding": "base64+gzip+compact-v1",
+  "parts": [
+    "catalog.part01.b64",
+    "catalog.part02.b64",
+    "catalog.part03.b64",
+    "catalog.part04.b64",
+    "catalog.part05.b64",
+    "catalog.part06.b64"
+  ]
+}

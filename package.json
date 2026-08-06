@@ -1,0 +1,15 @@
+{
+  "name": "kafka-books",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "validate": "node scripts/validate.mjs",
+    "check": "npm run validate && npm test",
+    "catalog:precheck": "node scripts/precheck.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

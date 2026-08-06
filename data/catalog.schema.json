@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kafka2306.github.io/books/data/catalog.schema.json",
+  "title": "KAFKA Books Catalog",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "key_policy",
+    "stats",
+    "works",
+    "editions",
+    "holdings"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "key_policy": {
+      "type": "object"
+    },
+    "stats": {
+      "type": "object"
+    },
+    "works": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/work"
+      }
+    },
+    "editions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/edition"
+      }
+    },
+    "holdings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/holding"
+      }
+    }
+  },
+  "$defs": {
+    "work": {
+      "type": "object",
+      "required": [
+        "work_id",
+        "title",
+        "title_key",
+        "category",
+        "status",
+        "item_count",
+        "isbn_status"
+      ],
+      "properties": {
+        "work_id": {
+          "type": "string",
+          "pattern": "^wrk_[0-9a-f]{12}$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "author": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "category": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "read",
+            "reading",
+            "unread",
+            "untracked"
+          ]
+        },
+        "progress": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "rating": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 1,
+          "maximum": 5
+        },
+        "price_yen": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "item_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "isbn_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "isbn_status": {
+          "enum": [
+            "verified",
+            "partial",
+            "missing"
+          ]
+        }
+      }
+    },
+    "edition": {
+      "type": "object",
+      "required": [
+        "edition_id",
+        "id_kind",
+        "work_id",
+        "isbn13",
+        "verification"
+      ],
+      "properties": {
+        "edition_id": {
+          "type": "string"
+        },
+        "id_kind": {
+          "enum": [
+            "isbn13",
+            "pending_title_key"
+          ]
+        },
+        "work_id": {
+          "type": "string"
+        },
+        "isbn13": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9]{13}$"
+        },
+        "verification": {
+          "enum": [
+            "verified",
+            "unverified",
+            "rejected"
+          ]
+        }
+      }
+    },
+    "holding": {
+      "type": "object",
+      "required": [
+        "holding_id",
+        "work_id",
+        "source",
+        "format",
+        "quantity"
+      ],
+      "properties": {
+        "holding_id": {
+          "type": "string"
+        },
+        "work_id": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "format": {
+          "type": "string"
+        },
+        "quantity": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    }
+  }
+}

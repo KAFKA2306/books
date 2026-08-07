@@ -1,7 +1,7 @@
 ')}</td></tr>
         <tr><th>登録元</th><td>${holdings.map((holding) => `${escapeHtml(holding.source)} × ${holding.quantity}`).join('<br>')}</td></tr>
       </tbody></table>
-      <div class="isbn-callout"><strong>${work.isbn_count ? `${work.isbn_count} ISBN` : 'ISBN 未確認'}</strong><span>${editions.filter((edition) => edition.isbn13).map((edition) => edition.isbn13).join(' / ') || editions[0]?.edition_id || 'g��レコードなし'} · 書名からISBNを推測しません。</span></div>
+      <div class="isbn-callout"><strong>${work.isbn_count ? `${work.isbn_count} ISBN` : 'ISBN 未確認'}</strong><span>${editions.filter((edition) => edition.isbn13).map((edition) => edition.isbn13).join(' / ') || editions[0]?.edition_id || '版レコードなし'} · 書名からISBNを推測しません。</span></div>
     </div></div>`;
   $('#detailDialog').showModal();
 }

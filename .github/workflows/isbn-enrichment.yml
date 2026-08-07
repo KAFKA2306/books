@@ -7,6 +7,7 @@ on:
       - '.github/workflows/isbn-enrichment.yml'
       - 'scripts/enrich-isbn.mjs'
       - 'src/isbn-enrichment.mjs'
+      - 'tests/catalog.test.mjs'
   schedule:
     - cron: '17 2 * * *'
     - cron: '47 14 * * *'

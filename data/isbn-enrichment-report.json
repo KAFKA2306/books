@@ -1,0 +1,19 @@
+{
+  "schema": "kafka.books.isbn-enrichment-report.v1",
+  "generated_at": null,
+  "policy": {
+    "batch_limit": 25,
+    "minimum_distinct_providers": 2,
+    "title_similarity_threshold": 0.95,
+    "ambiguous_candidates_are_rejected": true
+  },
+  "summary": {
+    "attempted": 0,
+    "enriched": 0,
+    "ambiguous": 0,
+    "no_consensus": 0,
+    "no_candidate": 0,
+    "provider_error": 0
+  },
+  "results": []
+}

@@ -9,13 +9,32 @@
 
 | 指標 | 件数 |
 |---|---:|
-| 入力レコード | 455 |
-| 統合後の作品 | 414 |
-| 巻・版・重複として統合 | 41 |
-| ISBN確認済み | 0 |
+| 有効な所蔵入力 | 491 |
+| 統合後の作品 | 449 |
+| 巻・版として統合 | 42 |
+| ISBN確認済み | 61 |
 | 価格登録分の合計 | 166,395円 |
 
-ISBNは推測で補完していません。書誌情報を一次情報で確認できた版だけを `isbn13` に登録する方針です。
+Issue取込データは `data/issue-1-books.b64`（gzip+Base64）として配信し、ブラウザと検証CLIで同じ構造へ復元します。ISBNは推測で補完していません。書誌情報を一次情報で確認できた版だけを `isbn13` に登録する方針です。
+
+## Issue #1 取込結果
+
+Kindle蔵書スクリーンショット由来の60件をprecheckへ通し、既存所蔵との二重登録を回避しました。
+
+| 判定 | 件数 |
+|---|---:|
+| 処理した構造化レコード | 60 |
+| 既存所蔵として追加停止 | 24 |
+| 新規に追加した所蔵入力 | 36 |
+| 新規Work | 35 |
+| 検証済みISBN | 61 |
+
+- 同一作品の上下巻は1枚のWorkカードへ統合
+- 版・巻はEditionへ保持
+- Kindle所蔵を紙版ISBNへ直接結び付けない
+- OCR由来の誤記は出版社・国立国会図書館等の書誌と照合して正式名称へ修正
+- 一意に確認できない電子版はISBNを空欄のまま保持
+- 入力原文は保存しない
 
 ## 機能
 
@@ -33,7 +52,7 @@ ISBNは推測で補完していません。書誌情報を一次情報で確認�
 
 ### `works`
 
-UIで1枚のカードとして表示する作品です。
+UIで1枚のカヌドとして表示する作品です。
 
 - `work_id`: `wrk_` + 正規化書名キーのSHA-256先頭12桁
 - `title`: 巻・版・上下・雑誌号を除いた表示名
@@ -47,7 +66,7 @@ UIで1枚のカードとして表示する作品です。
 
 - `isbn13`: **確認済みの場合の優先キー**
 - `edition_id`: ISBN未登録時は `pending:<hash>`
-- `verification`: `verified | unverified | rejected`
+- `verification`: `verified | verified_without_isbn | unverified | rejected`
 
 国際ISBN機関は、ISBNを特定のタイトル・版・形式を識別するプロダクト識別子と定義しています。作品内容そのものと、版・形式を同じIDで扱わないため、WorkとEditionを分離しています。
 
@@ -106,6 +125,8 @@ npm run check
 検証内容:
 
 - Work ID / title keyの一意性
+- Issue #1の60件・重複停止数・新規Work数
+- 原文フィールドの不在
 - ISBN-13チェックディジット
 - ISBN重複
 - Edition / Holdingの孤児参照
@@ -124,7 +145,7 @@ ISBN検索は、ISBNそのものが判明している場合に最も確実です
 
 ## GitHub Pages
 
-`main` へのpushでCI検証後にPagesへ配信します。GitHub PagesのSourceは **GitHub Actions** に設定してください。
+`main` へのpushでCI検証後にPagesへ配信します。GitHub PagesのSourceが未設定の場合、検証は成功させたまま配信をスキップし、Actionsログへ警告を出します。初回のみSourceを **GitHub Actions** に設定してください。
 
 - https://docs.github.com/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
 - https://github.com/actions/deploy-pages

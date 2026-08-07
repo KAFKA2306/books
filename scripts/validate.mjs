@@ -18,6 +18,9 @@ for (const work of catalog.works) {
 for (const edition of catalog.editions) {
   if (!workIds.has(edition.work_id)) failures.push(`orphan edition: ${edition.edition_id}`);
   if (edition.isbn13 && !isValidIsbn13(edition.isbn13)) failures.push(`invalid ISBN-13: ${edition.isbn13}`);
+  if (edition.verification === 'verified' && !edition.isbn13 && !edition.jan) failures.push(`verified edition lacks ISBN/JAN: ${edition.edition_id}`);
+  if (edition.verification === 'verified_without_isbn' && !edition.source_url) failures.push(`ISBN-less verified edition lacks source URL: ${edition.edition_id}`);
+  if (edition.source_url && !edition.source_url.startsWith('https://')) failures.push(`non-HTTPS source URL: ${edition.edition_id}`);
 }
 for (const holding of catalog.holdings) {
   if (!workIds.has(holding.work_id)) failures.push(`orphan holding work: ${holding.holding_id}`);
@@ -30,8 +33,32 @@ if (catalog.stats.edition_count !== catalog.editions.length) failures.push('edit
 if (catalog.stats.holding_count !== catalog.holdings.length) failures.push('holding_count mismatch');
 if (catalog.stats.input_count !== catalog.works.reduce((sum, work) => sum + work.item_count, 0)) failures.push('input_count mismatch');
 
+const issueRecords = catalog.issue_records ?? [];
+const ordinals = issueRecords.map((record) => record.ordinal);
+if (issueRecords.length !== 60) failures.push(`Issue #1 record count is ${issueRecords.length}, expected 60`);
+if (JSON.stringify([...ordinals].sort((a, b) => a - b)) !== JSON.stringify(Array.from({ length: 60 }, (_, index) => index + 1))) failures.push('Issue #1 ordinals are incomplete or duplicated');
+for (const record of issueRecords) {
+  if (!workIds.has(record.work_id)) failures.push(`Issue #1 record has no work: ${record.ordinal}`);
+  if (record.title_key !== titleKey(record.work_title)) failures.push(`Issue #1 title key mismatch: ${record.ordinal}`);
+}
+const forbiddenKeys = new Set(['title_raw', 'raw_title', 'original_title', 'source_text']);
+function scanForbidden(value, path = '$') {
+  if (Array.isArray(value)) return value.forEach((item, index) => scanForbidden(item, `${path}[${index}]`));
+  if (!value || typeof value !== 'object') return;
+  for (const [key, child] of Object.entries(value)) {
+    if (forbiddenKeys.has(key)) failures.push(`raw/original field is forbidden: ${path}.${key}`);
+    scanForbidden(child, `${path}.${key}`);
+  }
+}
+scanForbidden(issueRecords);
+
+if (catalog.stats.issue_1_record_count !== 60) failures.push('Issue #1 stats record count mismatch');
+if (catalog.stats.issue_1_duplicate_skipped_count !== 24) failures.push('Issue #1 duplicate skip count mismatch');
+if (catalog.stats.issue_1_added_record_count !== 36) failures.push('Issue #1 added record count mismatch');
+if (catalog.stats.issue_1_new_work_count !== 35) failures.push('Issue #1 new work count mismatch');
+
 if (failures.length) {
   console.error(failures.join('\n'));
   process.exit(1);
 }
-console.log(`validated ${catalog.works.length} works, ${catalog.editions.length} editions, ${catalog.holdings.length} holdings`);
+console.log(`validated ${catalog.works.length} works, ${catalog.editions.length} editions, ${catalog.holdings.length} holdings, ${issueRecords.length} issue records`);

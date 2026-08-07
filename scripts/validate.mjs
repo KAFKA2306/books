@@ -21,6 +21,13 @@ for (const edition of catalog.editions) {
   if (edition.verification === 'verified' && !edition.isbn13 && !edition.jan) failures.push(`verified edition lacks ISBN/JAN: ${edition.edition_id}`);
   if (edition.verification === 'verified_without_isbn' && !edition.source_url) failures.push(`ISBN-less verified edition lacks source URL: ${edition.edition_id}`);
   if (edition.source_url && !edition.source_url.startsWith('https://')) failures.push(`non-HTTPS source URL: ${edition.edition_id}`);
+  if (edition.verification_sources) {
+    const providers = edition.verification_sources.map((source) => source.provider).filter(Boolean);
+    if (new Set(providers).size < 2) failures.push(`automated ISBN lacks two providers: ${edition.edition_id}`);
+    for (const source of edition.verification_sources) {
+      if (source.url && !source.url.startsWith('https://')) failures.push(`non-HTTPS verification source: ${edition.edition_id}`);
+    }
+  }
 }
 for (const holding of catalog.holdings) {
   if (!workIds.has(holding.work_id)) failures.push(`orphan holding work: ${holding.holding_id}`);

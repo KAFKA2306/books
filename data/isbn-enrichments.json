@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichments.v1",
-  "updated_at": "2026-08-07T03:06:02.203Z",
+  "updated_at": "2026-08-07T15:37:42.258Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -137,6 +137,87 @@
       ],
       "replaces_edition_id": "pending:14c1ee654f17",
       "verified_at": "2026-08-07T03:06:02.203Z"
+    },
+    {
+      "work_id": "wrk_2471ab860005",
+      "isbn13": "9784816366031",
+      "title": "最新図解女性の発達障害サポートブック",
+      "authors": [
+        "本田, 秀夫, 児童精神科医",
+        "植田, みおり",
+        "本田, 秀夫, 児童精神科医,植田, みおり,本田秀夫, 植田みおり 著",
+        "本田,秀夫,児童精神科医 植田,みおり"
+      ],
+      "publisher": "ナツメ社",
+      "published_year": 2019,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029478695"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784816366031"
+        }
+      ],
+      "replaces_edition_id": "pending:2471ab860005",
+      "verified_at": "2026-08-07T15:37:42.258Z"
+    },
+    {
+      "work_id": "wrk_25b63cbadfa5",
+      "isbn13": "9784532198862",
+      "title": "あの会社のスゴい働き方",
+      "authors": [
+        "日本経済新聞社",
+        "日本経済新聞社,日経産業新聞 編"
+      ],
+      "publisher": "日本経済新聞出版社",
+      "published_year": 2019,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029458373"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784532198862"
+        }
+      ],
+      "replaces_edition_id": "pending:25b63cbadfa5",
+      "verified_at": "2026-08-07T15:37:42.258Z"
+    },
+    {
+      "work_id": "wrk_35a30202a75b",
+      "isbn13": "9784396112905",
+      "title": "ヒッグス粒子の謎",
+      "authors": [
+        "浅井, 祥仁, 1967-",
+        "浅井, 祥仁, 1967-,浅井祥仁 [著]",
+        "浅井,祥仁,1967-"
+      ],
+      "publisher": "祥伝社",
+      "published_year": 2012,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I023886744"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784396112905"
+        }
+      ],
+      "replaces_edition_id": "pending:35a30202a75b",
+      "verified_at": "2026-08-07T15:37:42.258Z"
     }
   ]
 }

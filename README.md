@@ -132,6 +132,7 @@ npm run check
 - Edition / Holdingの孤児参照
 - 集計値整合
 - 正規化とPrecheckのユニットテスト
+- 自動採用ISBNの複数提供元証跡
 
 ## 書誌情報の追加方針
 
@@ -142,6 +143,21 @@ ISBN検索は、ISBNそのものが判明している場合に最も確実です
 - Open Library検索: https://openlibrary.org/about/helpSearch
 
 タイトル検索だけで得たISBNは自動採用しません。候補が一意で、書名・著者・出版者・版・形式を照合できた場合のみ `verified` として登録します。
+
+## ISBN定期拡充
+
+`.github/workflows/isbn-enrichment.yml` を毎日02:17 UTC（日本時間11:17）に実行し、通常25作品ずつ再照合します。
+
+- 国立国会図書館サーチ、openBD、Google Booksから候補を取得
+- ISBNチェックディジット、タイトル類似度95%以上を必須化
+- 異なる提供元2つ以上が同じISBNを返した場合だけ採用
+- 合意候補が複数ある作品は `ambiguous` として登録しない
+- Kindle・電子版へ紙版ISBNを自動接続しない
+- 候補なしは30日後、曖昧候補は90日後、提供元障害は翌日に再試行
+- `npm run check` 成功後だけmainへ反映し、Pagesを再配信
+- 失敗時は `ISBN enrichment automation failed` Issueへ記録
+
+監査仕様と手動実行方法は [`docs/isbn-enrichment.md`](docs/isbn-enrichment.md) を参照してください。
 
 ## GitHub Pages
 

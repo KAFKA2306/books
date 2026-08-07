@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import zlib from 'node:zlib';
+import { applyIsbnEnrichments } from '../src/isbn-enrichment.mjs';
 import { mergeIssueCatalog } from '../src/merge-catalog.mjs';
 
 export async function loadCatalog(root = process.cwd()) {
@@ -18,5 +19,7 @@ export async function loadCatalog(root = process.cwd()) {
   const issueParts = await Promise.all(issueManifest.parts.map((part) => fs.readFile(path.join(root, 'data', part), 'utf8')));
   const issueEncoded = issueParts.join('').replace(/\s/g, '');
   const issueData = JSON.parse(zlib.gunzipSync(Buffer.from(issueEncoded, 'base64')).toString('utf8'));
-  return mergeIssueCatalog(base, issueData);
+  const merged = mergeIssueCatalog(base, issueData);
+  const enrichmentOverlay = JSON.parse(await fs.readFile(path.join(root, 'data/isbn-enrichments.json'), 'utf8'));
+  return applyIsbnEnrichments(merged, enrichmentOverlay);
 }

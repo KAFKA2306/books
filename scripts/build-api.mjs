@@ -55,7 +55,11 @@ const manifest = {
   api_version: 'v1',
   source_schema_version: catalog.schema_version,
   source_generated_at: catalog.generated_at,
-  generated_from: ['data/catalog.parts.json', 'data/issue-1-books.parts.json'],
+  generated_from: [
+    'data/catalog.parts.json',
+    'data/issue-1-books.parts.json',
+    'data/isbn-enrichments.json',
+  ],
   license: 'Repository license and source-specific terms apply',
   record_counts: {
     works: catalog.works.length,

@@ -73,11 +73,14 @@ test('Issue #1 official OCR corrections are canonicalized', () => {
   assert.ok(!titles.has('資産は金利が9割'));
 });
 
-test('verified ISBN editions are unique and valid', () => {
-  const values = catalog.editions.map((edition) => edition.isbn13).filter(Boolean);
+test('verified ISBN editions are unique, valid, and allowed to grow', () => {
+  const values = catalog.editions
+    .filter((edition) => edition.verification === 'verified' && edition.isbn13)
+    .map((edition) => edition.isbn13);
   assert.equal(values.length, new Set(values).size);
   assert.ok(values.every(isValidIsbn13));
-  assert.equal(catalog.stats.isbn_verified_count, 61);
+  assert.equal(catalog.stats.isbn_verified_count, values.length);
+  assert.ok(values.length >= 61);
 });
 
 test('raw source title fields are not stored', () => {

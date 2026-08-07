@@ -1,5 +1,142 @@
 {
   "schema": "kafka.books.isbn-enrichments.v1",
-  "updated_at": null,
-  "records": []
+  "updated_at": "2026-08-07T03:06:02.203Z",
+  "records": [
+    {
+      "work_id": "wrk_0040f74352d9",
+      "isbn13": "9784046002822",
+      "title": "図解100円のコーラを1000円で売る方法",
+      "authors": [
+        "永井, 孝尚",
+        "永井, 孝尚,永井孝尚 著",
+        "永井,孝尚"
+      ],
+      "publisher": "KADOKAWA",
+      "published_year": 2014,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I025367278"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784046002822"
+        }
+      ],
+      "replaces_edition_id": "pending:0040f74352d9",
+      "verified_at": "2026-08-07T03:06:02.203Z"
+    },
+    {
+      "work_id": "wrk_0172fe1421f4",
+      "isbn13": "9784478017036",
+      "title": "自分のアタマで考えよう : 知識にだまされない思考の技術",
+      "authors": [
+        "ちきりん",
+        "ちきりん,ちきりん 著"
+      ],
+      "publisher": "ダイヤモンド社",
+      "published_year": 2011,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000011305840"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784478017036"
+        }
+      ],
+      "replaces_edition_id": "pending:0172fe1421f4",
+      "verified_at": "2026-08-07T03:06:02.203Z"
+    },
+    {
+      "work_id": "wrk_05084368809f",
+      "isbn13": "9784863134355",
+      "title": "レッド・アトラス : 恐るべきソ連の世界地図",
+      "authors": [
+        "Davies, John Michael, 1942-",
+        "Kent, Alexander, 1977-",
+        "藤井, 留美, 1964-",
+        "Davies, John Michael, 1942-,Kent, Alexander, 1977-,藤井, 留美, 1964-,ジョン・デイビス, アレクサンダー・J・ケント 著,藤井留美 訳",
+        "Davies,JohnMichael,1942- Kent,Alexander,1977- ほか"
+      ],
+      "publisher": "日経ナショナルジオグラフィック社",
+      "published_year": 2019,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029569435"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784863134355"
+        }
+      ],
+      "replaces_edition_id": "pending:05084368809f",
+      "verified_at": "2026-08-07T03:06:02.203Z"
+    },
+    {
+      "work_id": "wrk_0fd2a8141935",
+      "isbn13": "9784254145731",
+      "title": "基礎高分子化学",
+      "authors": [
+        "成智, 聖司, 1931-",
+        "成智, 聖司, 1931-,成智聖司 [ほか]著",
+        "成智,聖司,1931-"
+      ],
+      "publisher": "朝倉書店",
+      "published_year": 1995,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000002461810"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784254145731"
+        }
+      ],
+      "replaces_edition_id": "pending:0fd2a8141935",
+      "verified_at": "2026-08-07T03:06:02.203Z"
+    },
+    {
+      "work_id": "wrk_14c1ee654f17",
+      "isbn13": "9784781908472",
+      "title": "複素関数概説",
+      "authors": [
+        "今吉, 洋一, 1947-2021",
+        "今吉, 洋一, 1947-2021,今吉洋一 著",
+        "今吉,洋一,1947-"
+      ],
+      "publisher": "サイエンス社",
+      "published_year": 1997,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000002638206"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784781908472"
+        }
+      ],
+      "replaces_edition_id": "pending:14c1ee654f17",
+      "verified_at": "2026-08-07T03:06:02.203Z"
+    }
+  ]
 }

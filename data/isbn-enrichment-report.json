@@ -1,19 +1,469 @@
 {
   "schema": "kafka.books.isbn-enrichment-report.v1",
-  "generated_at": null,
+  "generated_at": "2026-08-07T03:06:02.203Z",
   "policy": {
     "batch_limit": 25,
+    "concurrency": 4,
     "minimum_distinct_providers": 2,
     "title_similarity_threshold": 0.95,
-    "ambiguous_candidates_are_rejected": true
+    "ambiguous_candidates_are_rejected": true,
+    "provider_request_attempts": 2,
+    "provider_request_timeout_ms": 15000
   },
   "summary": {
-    "attempted": 0,
-    "enriched": 0,
-    "ambiguous": 0,
-    "no_consensus": 0,
+    "attempted": 25,
+    "enriched": 5,
+    "ambiguous": 4,
+    "no_consensus": 9,
     "no_candidate": 0,
-    "provider_error": 0
+    "provider_error": 7
   },
-  "results": []
+  "results": [
+    {
+      "work_id": "wrk_0025172962b9",
+      "title": "ハイレベル面接術",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_0040f74352d9",
+      "title": "図解100円のコーラを1000円で売る方法",
+      "outcome": "accepted",
+      "accepted_isbn13": "9784046002822",
+      "candidates": [
+        {
+          "isbn13": "9784046002822",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        }
+      ],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_0172fe1421f4",
+      "title": "自分のアタマで考えよう 知識にだまされない思考の技術",
+      "outcome": "accepted",
+      "accepted_isbn13": "9784478017036",
+      "candidates": [
+        {
+          "isbn13": "9784478017036",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        }
+      ],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_01e497859afb",
+      "title": "栄養学と食の基本辞典",
+      "outcome": "provider_error",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_02516067d844",
+      "title": "切り取れ、あの祈る手を",
+      "outcome": "provider_error",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_03ceb0cb730f",
+      "title": "例題とExcel演習で学ぶ多変量解析 因子分析・コレスポン",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_05084368809f",
+      "title": "レッド・アトラス 恐るべきソ連の世界地図",
+      "outcome": "accepted",
+      "accepted_isbn13": "9784863134355",
+      "candidates": [
+        {
+          "isbn13": "9784863134355",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        }
+      ],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_0649ceebf61b",
+      "title": "スティーブ・ジョブズ",
+      "outcome": "provider_error",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "ndl",
+          "message": "ndl request failed: This operation was aborted"
+        },
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_067694b72ff5",
+      "title": "植物知識",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_0ac8d6f215f7",
+      "title": "東京きたんしゅう",
+      "outcome": "provider_error",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_0acbf4571cf0",
+      "title": "命に国境はない 紛争地イラクで考える戦争",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_0c3102e584de",
+      "title": "アンの青春",
+      "outcome": "ambiguous",
+      "accepted_isbn13": null,
+      "candidates": [
+        {
+          "isbn13": "9784042179078",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        },
+        {
+          "isbn13": "9784087752885",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        }
+      ],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_0d301922403e",
+      "title": "TOEIC 金のフレーズ",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_0dd87e8b36e2",
+      "title": "ドイツは過去とどう向き合って来たか",
+      "outcome": "provider_error",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_0e4bc626c84a",
+      "title": "ココロコネクトアスランダム",
+      "outcome": "ambiguous",
+      "accepted_isbn13": null,
+      "candidates": [
+        {
+          "isbn13": "9784047283503",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        },
+        {
+          "isbn13": "9784047287365",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        }
+      ],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_0e7872401aef",
+      "title": "海辺のカフカ",
+      "outcome": "ambiguous",
+      "accepted_isbn13": null,
+      "candidates": [
+        {
+          "isbn13": "9784103534136",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        },
+        {
+          "isbn13": "9784103534143",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        }
+      ],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_0f4b29b00464",
+      "title": "ワーク・シフト 孤独と貧困から自由になる働き方の未来図",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_0fb53b63a6a7",
+      "title": "図解でわかる多変量解析 データの山から本",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_0fd2a8141935",
+      "title": "基礎高分子化学",
+      "outcome": "accepted",
+      "accepted_isbn13": "9784254145731",
+      "candidates": [
+        {
+          "isbn13": "9784254145731",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        }
+      ],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_117eec18ff40",
+      "title": "一問一答面接攻略",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_123f7184e7d7",
+      "title": "無敵の思考",
+      "outcome": "provider_error",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "ndl",
+          "message": "ndl request failed: This operation was aborted"
+        },
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_14c1ee654f17",
+      "title": "複素関数概説",
+      "outcome": "accepted",
+      "accepted_isbn13": "9784781908472",
+      "candidates": [
+        {
+          "isbn13": "9784781908472",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        }
+      ],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_14e018611a77",
+      "title": "ニュートン",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_14f8dcdf0210",
+      "title": "鳥類学者だからって鳥が好きだと思うなよ",
+      "outcome": "ambiguous",
+      "accepted_isbn13": null,
+      "candidates": [
+        {
+          "isbn13": "9784101215129",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        },
+        {
+          "isbn13": "9784103509110",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        }
+      ],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_15edeb5db3c8",
+      "title": "未来へ広がるサイエンス2",
+      "outcome": "provider_error",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    }
+  ]
 }

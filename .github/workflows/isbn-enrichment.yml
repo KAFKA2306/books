@@ -5,14 +5,21 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/isbn-enrichment.yml'
+      - 'scripts/enrich-isbn.mjs'
+      - 'src/isbn-enrichment.mjs'
   schedule:
     - cron: '17 2 * * *'
+    - cron: '47 14 * * *'
   workflow_dispatch:
     inputs:
       limit:
         description: Number of due works to inspect
         required: false
         default: '25'
+      concurrency:
+        description: Number of works to inspect in parallel
+        required: false
+        default: '4'
 
 permissions:
   actions: write
@@ -21,12 +28,12 @@ permissions:
 
 concurrency:
   group: isbn-enrichment
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   enrich:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 20
     env:
       GH_TOKEN: ${{ github.token }}
       GOOGLE_BOOKS_API_KEY: ${{ secrets.GOOGLE_BOOKS_API_KEY }}
@@ -43,7 +50,8 @@ jobs:
       - name: Inspect due works
         env:
           LIMIT: ${{ github.event.inputs.limit || '25' }}
-        run: npm run isbn:enrich -- --limit "$LIMIT"
+          CONCURRENCY: ${{ github.event.inputs.concurrency || '4' }}
+        run: npm run isbn:enrich -- --limit "$LIMIT" --concurrency "$CONCURRENCY"
 
       - name: Validate catalog and generated API
         run: npm run check

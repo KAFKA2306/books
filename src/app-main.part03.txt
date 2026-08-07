@@ -1,0 +1,77 @@
+')}</td></tr>
+        <tr><th>登録元</th><td>${holdings.map((holding) => `${escapeHtml(holding.source)} × ${holding.quantity}`).join('<br>')}</td></tr>
+      </tbody></table>
+      <div class="isbn-callout"><strong>${work.isbn_count ? `${work.isbn_count} ISBN` : 'ISBN 未確認'}</strong><span>${editions.filter((edition) => edition.isbn13).map((edition) => edition.isbn13).join(' / ') || editions[0]?.edition_id || 'g��レコードなし'} · 書名からISBNを推測しません。</span></div>
+    </div></div>`;
+  $('#detailDialog').showModal();
+}
+
+function renderMetrics() {
+  const stats = state.catalog.stats;
+  $('#metricWorks').textContent = fmtNumber.format(stats.work_count);
+  $('#metricRead').textContent = fmtNumber.format(stats.read_count);
+  const tracked = stats.read_count + stats.reading_count + stats.unread_count;
+  $('#metricReadRate').textContent = tracked ? `状態登録分の ${Math.round(stats.read_count / tracked * 100)}%` : '—';
+  $('#metricMerged').textContent = fmtNumber.format(stats.merged_input_count);
+  $('#metricIsbn').textContent = fmtNumber.format(stats.isbn_verified_count);
+  $('#metricSpend').textContent = fmtYen.format(stats.known_spend_yen);
+}
+
+function setView(view) {
+  state.view = view;
+  $('#gridButton').classList.toggle('is-active', view === 'grid');
+  $('#listButton').classList.toggle('is-active', view === 'list');
+  $('#gridButton').setAttribute('aria-pressed', String(view === 'grid'));
+  $('#listButton').setAttribute('aria-pressed', String(view === 'list'));
+  if (state.catalog) { renderBooks(); syncUrl(); }
+}
+
+function exportCsv() {
+  const headers = ['work_id','title','category','status','progress','rating','price_yen','item_count','isbn_status','sources'];
+  const rows = state.filtered.map((work) => headers.map((key) => key === 'sources' ? work.sources.join('|') : work[key] ?? ''));
+  const quote = (value) => `"${String(value).replaceAll('"','""')}"`;
+  const csv = '\uFEFF' + [headers, ...rows].map((row) => row.map(quote).join(',')).join('\n');
+  const url = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
+  const link = Object.assign(document.createElement('a'), { href: url, download: 'kafka-books.csv' }); link.click(); URL.revokeObjectURL(url);
+}
+
+function runPrecheck() {
+  const resultBox = $('#precheckResults');
+  try {
+    const candidates = JSON.parse($('#precheckInput').value);
+    if (!Array.isArray(candidates)) throw new TypeError('JSON配列を入力してください。');
+    const result = precheckCandidates(candidates, state.catalog);
+    $('#precheckSummary').textContent = `${result.summary.allowed}件許可 / ${result.summary.blocked}件停止`;
+    resultBox.innerHTML = result.results.map((entry) => `<article class="precheck-result ${entry.ok ? (entry.warnings.length ? 'is-warning' : '') : 'is-blocked'}"><header><strong>${entry.ok ? (entry.action === 'add_edition' ? '版を追加可能' : '新規作品として追加可能') : '追加停止'}</strong><code>${entry.isbn13 ?? 'ISBNなし'}</code></header><div>${escapeHtml(entry.normalized_title || '書名なし')}</div>${[...entry.errors, ...entry.warnings].length ? `<ul>${[...entry.errors, ...entry.warnings].map((message) => `<li>${escapeHtml(message)}</li>`).join('')}</ul>` : ''}</article>`).join('');
+  } catch (error) {
+    $('#precheckSummary').textContent = '入力エラー';
+    resultBox.innerHTML = `<article class="precheck-result is-blocked">${escapeHtml(error.message)}</article>`;
+  }
+}
+
+function escapeHtml(value) { return String(value).replace(/[&<>'"]/g, (char) => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char])); }
+
+function wireEvents() {
+  let timer;
+  $('#searchInput').addEventListener('input', (event) => { clearTimeout(timer); timer = setTimeout(() => { state.query = event.target.value.trim(); state.page = 1; applyFilters(); }, 120); });
+  $('#sortSelect').addEventListener('change', (event) => { state.sort = event.target.value; state.page = 1; applyFilters(); });
+  $('#gridButton').addEventListener('click', () => setView('grid'));
+  $('#listButton').addEventListener('click', () => setView('list'));
+  $('#csvButton').addEventListener('click', exportCsv);
+  $('#resetButton').addEventListener('click', () => { state.query=''; state.statuses.clear(); state.categories.clear(); state.sources.clear(); state.sort='acquired-desc'; state.page=1; setupFilters(); applyFilters(); });
+  $('#detailClose').addEventListener('click', () => $('#detailDialog').close());
+  $('#precheckButton').addEventListener('click', () => $('#precheckDialog').showModal());
+  $('#precheckClose').addEventListener('click', () => $('#precheckDialog').close());
+  $('#runPrecheck').addEventListener('click', runPrecheck);
+  document.addEventListener('keydown', (event) => { if (event.key === '/' && !['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName)) { event.preventDefault(); $('#searchInput').focus(); } });
+  for (const dialog of document.querySelectorAll('dialog')) dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+}
+
+try {
+  hydrateFromUrl();
+  state.catalog = await loadCatalog();
+  renderMetrics(); setupFilters(); wireEvents(); applyFilters();
+} catch (error) {
+  console.error(error);
+  $('#bookGrid').innerHTML = `<div class="empty-state"><strong>データを読み込めませんでした</strong><p>${escapeHtml(error.message)}</p></div>`;
+}

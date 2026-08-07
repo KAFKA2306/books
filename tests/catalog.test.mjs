@@ -55,3 +55,34 @@ test('duplicate ISBN in a batch is blocked', () => {
   assert.equal(result.ok, false);
   assert.equal(result.results[1].action, 'blocked');
 });
+
+test('Issue #1 resolves all 60 records without duplicate holdings', () => {
+  assert.equal(catalog.issue_records.length, 60);
+  assert.equal(catalog.stats.issue_1_duplicate_skipped_count, 24);
+  assert.equal(catalog.stats.issue_1_added_record_count, 36);
+  assert.equal(catalog.stats.issue_1_new_work_count, 35);
+});
+
+test('Issue #1 official OCR corrections are canonicalized', () => {
+  const titles = new Set(catalog.works.map((work) => work.title));
+  assert.ok(titles.has('メタスキル'));
+  assert.ok(titles.has('宗教認知科学入門'));
+  assert.ok(titles.has('身体性認知とは何か'));
+  assert.ok(titles.has('投資は金利が9割'));
+  assert.ok(titles.has('世界大激変'));
+  assert.ok(!titles.has('資産は金利が9割'));
+});
+
+test('verified ISBN editions are unique and valid', () => {
+  const values = catalog.editions.map((edition) => edition.isbn13).filter(Boolean);
+  assert.equal(values.length, new Set(values).size);
+  assert.ok(values.every(isValidIsbn13));
+  assert.equal(catalog.stats.isbn_verified_count, 61);
+});
+
+test('raw source title fields are not stored', () => {
+  const json = JSON.stringify(catalog.issue_records);
+  assert.equal(json.includes('title_raw'), false);
+  assert.equal(json.includes('raw_title'), false);
+  assert.equal(json.includes('source_text'), false);
+});

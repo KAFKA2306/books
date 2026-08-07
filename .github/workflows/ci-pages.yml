@@ -12,7 +12,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -24,6 +24,18 @@ jobs:
         with:
           node-version: 22
       - run: npm run check
+      - name: Smoke test API distributions
+        run: |
+          test -s api/v1/manifest.json
+          test -s api/v1/catalog.json
+          test -s api/v1/works.csv
+          node -e "const m=require('./api/v1/manifest.json'); if (!m.record_counts.works) process.exit(1)"
+      - name: Upload API audit artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: books-api-v1
+          path: api/v1/
+          retention-days: 30
       - name: Reject source data and generated debug files
         run: |
           test ! -e data/catalog.debug.json
@@ -39,6 +51,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm run api:build
       - name: Check whether Pages is enabled
         id: pages
         env:

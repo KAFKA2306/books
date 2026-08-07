@@ -17,6 +17,8 @@ const reportPath = path.join(root, 'data/isbn-enrichment-report.json');
 const args = parseArgs(process.argv.slice(2));
 const now = new Date();
 const nowIso = now.toISOString();
+const providerRequestAttempts = 2;
+const providerRequestTimeoutMs = 15_000;
 
 const catalog = await loadCatalog(root);
 const overlay = await readJson(overlayPath, {
@@ -36,21 +38,18 @@ if (!selected.length) {
   process.exit(0);
 }
 
-const results = [];
-for (const { work, pending_edition: pendingEdition } of selected) {
+const processed = await mapWithConcurrency(selected, args.concurrency, async ({ work, pending_edition: pendingEdition }) => {
   const providerErrors = [];
-  let candidates = [];
+  const candidates = [];
+  const initialLookups = await Promise.allSettled([
+    searchNdl(work.title),
+    searchGoogleBooks(work.title),
+  ]);
 
-  try {
-    candidates.push(...await searchNdl(work.title));
-  } catch (error) {
-    providerErrors.push({ provider: 'ndl', message: error.message });
-  }
-
-  try {
-    candidates.push(...await searchGoogleBooks(work.title));
-  } catch (error) {
-    providerErrors.push({ provider: 'google_books', message: error.message });
+  for (const [index, lookup] of initialLookups.entries()) {
+    const provider = index === 0 ? 'ndl' : 'google_books';
+    if (lookup.status === 'fulfilled') candidates.push(...lookup.value);
+    else providerErrors.push({ provider, message: errorMessage(lookup.reason) });
   }
 
   const candidateIsbns = [...new Set(candidates.map((candidate) => candidate.isbn13))]
@@ -59,7 +58,7 @@ for (const { work, pending_edition: pendingEdition } of selected) {
     try {
       candidates.push(...await lookupOpenBd(candidateIsbns));
     } catch (error) {
-      providerErrors.push({ provider: 'openbd', message: error.message });
+      providerErrors.push({ provider: 'openbd', message: errorMessage(error) });
     }
   }
 
@@ -67,33 +66,44 @@ for (const { work, pending_edition: pendingEdition } of selected) {
   let outcome = decision.outcome;
   if (!candidates.length && providerErrors.length) outcome = 'provider_error';
   else if (!candidates.length) outcome = 'no_candidate';
-  else if (outcome === 'no_consensus' && providerErrors.length >= 2) {
-    outcome = 'provider_error';
-  }
+  else if (outcome === 'no_consensus' && providerErrors.length >= 2) outcome = 'provider_error';
 
-  if (outcome === 'accepted') {
-    overlay.records.push({
-      ...decision.accepted,
-      replaces_edition_id: pendingEdition.edition_id,
-      verified_at: nowIso,
-    });
-  }
-
-  state.attempts[work.work_id] = {
-    attempted_at: nowIso,
-    outcome,
-    next_attempt_at: retryAfter(outcome, now),
-    candidate_count: decision.candidates.length,
-    provider_errors: providerErrors,
-  };
-  results.push({
+  const result = {
     work_id: work.work_id,
     title: work.title,
     outcome,
     accepted_isbn13: decision.accepted?.isbn13 ?? null,
     candidates: decision.candidates,
     provider_errors: providerErrors,
-  });
+  };
+  console.log(JSON.stringify({
+    work_id: work.work_id,
+    outcome,
+    candidate_count: decision.candidates.length,
+    provider_error_count: providerErrors.length,
+  }));
+
+  return {
+    result,
+    accepted: outcome === 'accepted' ? {
+      ...decision.accepted,
+      replaces_edition_id: pendingEdition.edition_id,
+      verified_at: nowIso,
+    } : null,
+    stateAttempt: {
+      attempted_at: nowIso,
+      outcome,
+      next_attempt_at: retryAfter(outcome, now),
+      candidate_count: decision.candidates.length,
+      provider_errors: providerErrors,
+    },
+  };
+});
+
+const results = processed.map((item) => item.result);
+for (const item of processed) {
+  if (item.accepted) overlay.records.push(item.accepted);
+  state.attempts[item.result.work_id] = item.stateAttempt;
 }
 
 const enriched = results.filter((result) => result.outcome === 'accepted').length;
@@ -106,9 +116,12 @@ const report = {
   generated_at: nowIso,
   policy: {
     batch_limit: args.limit,
+    concurrency: args.concurrency,
     minimum_distinct_providers: 2,
     title_similarity_threshold: 0.95,
     ambiguous_candidates_are_rejected: true,
+    provider_request_attempts: providerRequestAttempts,
+    provider_request_timeout_ms: providerRequestTimeoutMs,
   },
   summary: {
     attempted: results.length,
@@ -132,18 +145,45 @@ console.log(JSON.stringify(report.summary));
 
 function parseArgs(values) {
   let limit = 25;
+  let concurrency = 4;
   let dryRun = false;
   for (let index = 0; index < values.length; index += 1) {
     const value = values[index];
     if (value === '--dry-run') dryRun = true;
     else if (value === '--limit') limit = Number(values[index += 1]);
     else if (value.startsWith('--limit=')) limit = Number(value.slice('--limit='.length));
+    else if (value === '--concurrency') concurrency = Number(values[index += 1]);
+    else if (value.startsWith('--concurrency=')) concurrency = Number(value.slice('--concurrency='.length));
     else throw new Error(`Unknown argument: ${value}`);
   }
   if (!Number.isInteger(limit) || limit < 1 || limit > 100) {
     throw new Error('--limit must be an integer from 1 to 100');
   }
-  return { limit, dryRun };
+  if (!Number.isInteger(concurrency) || concurrency < 1 || concurrency > 10) {
+    throw new Error('--concurrency must be an integer from 1 to 10');
+  }
+  return { limit, concurrency, dryRun };
+}
+
+async function mapWithConcurrency(items, concurrency, worker) {
+  const results = new Array(items.length);
+  let cursor = 0;
+  async function runWorker() {
+    while (cursor < items.length) {
+      const index = cursor;
+      cursor += 1;
+      results[index] = await worker(items[index], index);
+    }
+  }
+  await Promise.all(Array.from(
+    { length: Math.min(concurrency, items.length) },
+    () => runWorker(),
+  ));
+  return results;
+}
+
+function errorMessage(error) {
+  return error instanceof Error ? error.message : String(error);
 }
 
 async function readJson(filePath, fallback) {
@@ -177,9 +217,7 @@ async function searchGoogleBooks(title) {
     printType: 'books',
     projection: 'lite',
   });
-  if (process.env.GOOGLE_BOOKS_API_KEY) {
-    params.set('key', process.env.GOOGLE_BOOKS_API_KEY);
-  }
+  if (process.env.GOOGLE_BOOKS_API_KEY) params.set('key', process.env.GOOGLE_BOOKS_API_KEY);
   url.search = params;
   return parseGoogleBooks(await fetchJson(url, 'google_books'));
 }
@@ -196,13 +234,13 @@ async function fetchJson(url, provider) {
 
 async function fetchText(url, provider) {
   let lastError;
-  for (let attempt = 1; attempt <= 3; attempt += 1) {
+  for (let attempt = 1; attempt <= providerRequestAttempts; attempt += 1) {
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 20_000);
+    const timeout = setTimeout(() => controller.abort(), providerRequestTimeoutMs);
     try {
       const response = await fetch(url, {
         headers: {
-          'User-Agent': 'KAFKA2306-books-isbn-enrichment/1.0 (+https://github.com/KAFKA2306/books)',
+          'User-Agent': 'KAFKA2306-books-isbn-enrichment/1.1 (+https://github.com/KAFKA2306/books)',
         },
         signal: controller.signal,
       });
@@ -210,12 +248,12 @@ async function fetchText(url, provider) {
       return await response.text();
     } catch (error) {
       lastError = error;
-      if (attempt < 3) {
+      if (attempt < providerRequestAttempts) {
         await new Promise((resolve) => setTimeout(resolve, attempt * 1_000));
       }
     } finally {
       clearTimeout(timeout);
     }
   }
-  throw new Error(`${provider} request failed: ${lastError?.message ?? 'unknown error'}`);
+  throw new Error(`${provider} request failed: ${errorMessage(lastError)}`);
 }

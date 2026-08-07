@@ -1,14 +1,15 @@
 {
   "name": "kafka-books",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "private": true,
   "type": "module",
   "scripts": {
     "test": "node --test",
     "validate": "node scripts/validate.mjs",
+    "validate:scripts": "node --check scripts/enrich-isbn.mjs",
     "api:build": "node scripts/build-api.mjs",
     "api:check": "npm run api:build && node --test tests/api-distribution.test.mjs",
-    "check": "npm run validate && npm run api:build && npm test",
+    "check": "npm run validate:scripts && npm run validate && npm run api:build && npm test",
     "catalog:precheck": "node scripts/precheck.mjs",
     "isbn:enrich": "node scripts/enrich-isbn.mjs"
   },

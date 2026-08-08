@@ -3,6 +3,7 @@
 個人の読書記録を、**作品（Work）** と **版（Edition）** を分離して管理する静的本棚データベースです。
 
 - 公開UI: https://kafka2306.github.io/books/
+- 公開API: https://kafka2306.github.io/books/api/v1/collections.json
 - リポジトリ: https://github.com/KAFKA2306/books
 
 ## 現在のデータ
@@ -15,7 +16,35 @@
 | ISBN確認済み | 61 |
 | 価格登録分の合計 | 166,395円 |
 
-Issue取込データは `data/issue-1-books.b64`（gzip+Base64）として配信し、ブラウザと検証CLIで同じ構造へ復元します。ISBNは推測で補完していません。書誌情報を一次情報で確認できた版だけを `isbn13` に登録する方針です。
+正準カタログは `data/catalog.json`、Issue #1由来の構造化取込は `data/issue-1-books.json` として可読JSONで保持します。旧 `base64+gzip` 分割データは互換fallbackのみです。ISBNは推測で補完せず、書誌情報を一次情報で確認できた版だけを `isbn13` に登録します。
+
+## 公開API
+
+API v1のBase URL:
+
+```text
+https://kafka2306.github.io/books/api/v1/
+```
+
+全リストの正準入口:
+
+```text
+https://kafka2306.github.io/books/api/v1/collections.json
+```
+
+`collections.json` から、公開中の全コレクション名・件数・JSON/CSVファイルを列挙できます。現在は次を公開します。
+
+- `works`
+- `editions`
+- `holdings`
+- `issue_records`
+- `isbn_enrichments`
+- `isbn_enrichment_attempts`
+- `isbn_enrichment_results`
+
+正準 `catalog.json` に将来新しいトップレベル配列を追加した場合、その配列も自動的にJSON/CSV APIへ追加されます。Kindle XML取込で `acquisitions` 等を追加する場合も同じ契約で配信します。
+
+API全体の生成元、件数、byte数、SHA-256は `api/v1/manifest.json` で監査できます。詳細は [`docs/api.md`](docs/api.md) を参照してください。
 
 ## Issue #1 取込結果
 
@@ -46,13 +75,14 @@ Kindle蔵書スクリーンショット由来の60件をprecheckへ通し、既�
 - URLへ検索条件を保持
 - 表示中データのCSV出力
 - 追加前のISBN・正規化書名重複チェック
+- 全公開リストのJSON/CSV API配信
 - GitHub Pagesへの自動配信
 
 ## データモデル
 
 ### `works`
 
-UIで1枚のカヌドとして表示する作品です。
+UIで1枚のカードとして表示する作品です。
 
 - `work_id`: `wrk_` + 正規化書名キーのSHA-256先頭12桁
 - `title`: 巻・版・上下・雑誌号を除いた表示名
@@ -133,6 +163,8 @@ npm run check
 - 集計値整合
 - 正規化とPrecheckのユニットテスト
 - 自動採用ISBNの複数提供元証跡
+- 正準catalogの全配列がAPIコレクションとして公開されること
+- 全APIコレクションにJSON/CSVが存在し、manifest件数と一致すること
 
 ## 書誌情報の追加方針
 

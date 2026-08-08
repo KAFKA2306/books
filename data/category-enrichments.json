@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-08T09:46:54.188Z",
+  "updated_at": "2026-08-08T13:15:30.887Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -518,6 +518,66 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": "9784775942154",
       "verified_at": "2026-08-08T09:46:54.188Z"
+    },
+    {
+      "work_id": "wrk_2da15755b49d",
+      "category": "経営・会計",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "336.92",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I030309994",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-08T13:15:30.887Z"
+    },
+    {
+      "work_id": "wrk_302aed946c28",
+      "category": "コンピュータ・AI",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "007.64",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000010191152",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-08T13:15:30.887Z"
+    },
+    {
+      "work_id": "wrk_3237e2f96f34",
+      "category": "通貨・物価",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "337.9",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I032417712",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-08T13:15:30.887Z"
+    },
+    {
+      "work_id": "wrk_34b8ac1d558c",
+      "category": "経済",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "333.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I034216750",
+      "match_mode": "isbn",
+      "title_similarity": 0.4,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784492371381",
+      "verified_at": "2026-08-08T13:15:30.887Z"
+    },
+    {
+      "work_id": "wrk_34f164275419",
+      "category": "ゲーム・娯楽",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "796",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000007415256",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-08T13:15:30.887Z"
     }
   ]
 }

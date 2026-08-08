@@ -1,0 +1,19 @@
+{
+  "schema": "kafka.books.classification-report.v1",
+  "generated_at": null,
+  "policy": {
+    "primary_scheme": "ndc10",
+    "source": "NDL Search OpenSearch",
+    "exact_isbn_lookup": true,
+    "ndc9_to_ndc10_conversion": false
+  },
+  "summary": {
+    "attempted": 0,
+    "enriched_editions": 0,
+    "classification_records_added": 0,
+    "ndc10_records_added": 0,
+    "no_classification": 0,
+    "provider_error": 0
+  },
+  "results": []
+}

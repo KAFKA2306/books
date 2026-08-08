@@ -3,7 +3,12 @@ import path from 'node:path';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import { loadCatalog } from '../scripts/load-catalog.mjs';
-import { normalizeIssueRecords, normalizeSourceGroup, SOURCE_GROUPS } from '../src/source-groups.mjs';
+import {
+  normalizeCatalogSources,
+  normalizeIssueRecords,
+  normalizeSourceGroup,
+  SOURCE_GROUPS,
+} from '../src/source-groups.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const allowed = new Set(SOURCE_GROUPS);
@@ -18,7 +23,7 @@ test('detailed registration sources collapse into three public groups', () => {
 });
 
 test('public catalog exposes only Kindle, paper books, and library', async () => {
-  const catalog = await loadCatalog(root);
+  const catalog = normalizeCatalogSources(await loadCatalog(root));
   const workSources = catalog.works.flatMap((work) => work.sources ?? []);
   const holdingSources = catalog.holdings.map((holding) => holding.source).filter(Boolean);
 

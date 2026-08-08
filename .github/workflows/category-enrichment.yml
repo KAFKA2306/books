@@ -20,7 +20,7 @@ on:
       limit:
         description: Number of works without NDC evidence to inspect
         required: false
-        default: '100'
+        default: '25'
 
 permissions:
   actions: write
@@ -50,7 +50,7 @@ jobs:
 
       - name: Inspect due works for NDL NDC evidence
         env:
-          LIMIT: ${{ github.event.inputs.limit || '100' }}
+          LIMIT: ${{ github.event.inputs.limit || '25' }}
         run: |
           set -o pipefail
           npm run category:enrich -- --limit "$LIMIT" 2>&1 | tee "$CATEGORY_LOG"

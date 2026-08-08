@@ -1,0 +1,15 @@
+{
+  "schema": "kafka.books.category-enrichment-report.v1",
+  "generated_at": null,
+  "rule_version": "ndc-map-v1",
+  "policy": {},
+  "summary": {
+    "attempted": 0,
+    "accepted": 0,
+    "ambiguous": 0,
+    "no_ndc": 0,
+    "no_candidate": 0,
+    "provider_error": 0
+  },
+  "results": []
+}

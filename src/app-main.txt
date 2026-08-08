@@ -1,0 +1,395 @@
+import { precheckCandidates } from './src/catalog.mjs';
+
+const $ = (selector) => document.querySelector(selector);
+const fmtNumber = new Intl.NumberFormat('ja-JP');
+const fmtYen = new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY', maximumFractionDigits: 0 });
+const PAGE_SIZE = 48;
+const statusLabels = { read: '読了', reading: '読書中', unread: '未読', untracked: '未登録' };
+const statusColors = { read: '#0f766e', reading: '#b7791f', unread: '#4f6fa6', untracked: '#94a3b8' };
+const palettes = ['#e6ece8','#ede8df','#e8e7ef','#e7ecef','#efe6e2','#e9eadf','#e5ede9','#ece7e1'];
+
+const state = {
+  catalog: null,
+  filtered: [],
+  query: '',
+  statuses: new Set(),
+  categories: new Set(),
+  sources: new Set(),
+  sort: 'acquired-desc',
+  view: 'grid',
+  page: 1,
+};
+
+async function loadCatalog() {
+  const response = await fetch('./api/v1/catalog.json', { cache: 'no-store' });
+  if (!response.ok) throw new Error(`正準APIの取得に失敗しました (${response.status})`);
+  const catalog = await response.json();
+  for (const key of ['works', 'editions', 'holdings']) {
+    if (!Array.isArray(catalog[key])) throw new Error(`catalog.${key} が配列ではありません`);
+  }
+  return catalog;
+}
+
+function hydrateFromUrl() {
+  const params = new URLSearchParams(location.search);
+  state.query = params.get('q') ?? '';
+  state.statuses = new Set(params.getAll('status'));
+  state.categories = new Set(params.getAll('category'));
+  state.sources = new Set(params.getAll('source'));
+  state.sort = params.get('sort') ?? 'acquired-desc';
+  state.view = params.get('view') === 'list' ? 'list' : 'grid';
+  state.page = Math.max(1, Number(params.get('page') ?? 1));
+}
+
+function syncUrl() {
+  const params = new URLSearchParams();
+  if (state.query) params.set('q', state.query);
+  [...state.statuses].forEach((value) => params.append('status', value));
+  [...state.categories].forEach((value) => params.append('category', value));
+  [...state.sources].forEach((value) => params.append('source', value));
+  if (state.sort !== 'acquired-desc') params.set('sort', state.sort);
+  if (state.view !== 'grid') params.set('view', state.view);
+  if (state.page > 1) params.set('page', state.page);
+  history.replaceState(null, '', `${location.pathname}${params.size ? `?${params}` : ''}`);
+}
+
+function countsFor(field) {
+  const counts = new Map();
+  for (const work of state.catalog.works) {
+    const values = Array.isArray(work[field]) ? work[field] : [work[field]];
+    for (const value of values) if (value) counts.set(value, (counts.get(value) ?? 0) + 1);
+  }
+  return counts;
+}
+
+function createChecks(container, entries, selected, labeler = (value) => value) {
+  container.innerHTML = '';
+  for (const [value, count] of entries) {
+    const row = document.createElement('label');
+    row.className = 'check-row';
+    row.innerHTML = `<input type="checkbox" value="${escapeHtml(value)}" ${selected.has(value) ? 'checked' : ''}><span>${escapeHtml(labeler(value))}</span><em>${fmtNumber.format(count)}</em>`;
+    row.querySelector('input').addEventListener('change', (event) => {
+      event.target.checked ? selected.add(value) : selected.delete(value);
+      state.page = 1;
+      applyFilters();
+    });
+    container.append(row);
+  }
+}
+
+function setupFilters() {
+  createChecks($('#statusFilters'), Object.entries(countsFor('status')), state.statuses, (value) => statusLabels[value] ?? value);
+  createChecks($('#categoryFilters'), [...countsFor('category')].sort((a,b) => b[1] - a[1] || a[0].localeCompare(b[0], 'ja')), state.categories);
+  createChecks($('#sourceFilters'), [...countsFor('sources')].sort((a,b) => b[1] - a[1]), state.sources);
+  $('#searchInput').value = state.query;
+  $('#sortSelect').value = state.sort;
+  setView(state.view);
+}
+
+function latestHoldingDate(workId) {
+  let latest = '';
+  for (const holding of state.catalog.holdings) {
+    if (holding.work_id === workId && holding.acquired_at && holding.acquired_at > latest) latest = holding.acquired_at;
+  }
+  return latest;
+}
+
+function applyFilters() {
+  const query = state.query.normalize('NFKC').toLocaleLowerCase('ja').trim();
+  state.filtered = state.catalog.works.filter((work) => {
+    const haystack = [work.title, work.author ?? '', work.category ?? '', ...(work.sources ?? []), ...(work.formats ?? [])]
+      .join(' ').normalize('NFKC').toLocaleLowerCase('ja');
+    return (!query || haystack.includes(query))
+      && (!state.statuses.size || state.statuses.has(work.status))
+      && (!state.categories.size || state.categories.has(work.category))
+      && (!state.sources.size || (work.sources ?? []).some((source) => state.sources.has(source)));
+  });
+
+  const rank = { read: 4, reading: 3, unread: 2, untracked: 1 };
+  state.filtered.sort((a, b) => {
+    if (state.sort === 'title-asc') return a.title.localeCompare(b.title, 'ja');
+    if (state.sort === 'author-asc') return (a.author ?? 'zzzz').localeCompare(b.author ?? 'zzzz', 'ja') || a.title.localeCompare(b.title, 'ja');
+    if (state.sort === 'rating-desc') return (b.rating ?? -1) - (a.rating ?? -1) || a.title.localeCompare(b.title, 'ja');
+    if (state.sort === 'price-desc') return (b.price_yen ?? -1) - (a.price_yen ?? -1) || a.title.localeCompare(b.title, 'ja');
+    if (state.sort === 'status-desc') return (rank[b.status] ?? 0) - (rank[a.status] ?? 0) || a.title.localeCompare(b.title, 'ja');
+    if (state.sort === 'items-desc') return (b.item_count ?? 0) - (a.item_count ?? 0) || a.title.localeCompare(b.title, 'ja');
+    return latestHoldingDate(b.work_id).localeCompare(latestHoldingDate(a.work_id)) || a.title.localeCompare(b.title, 'ja');
+  });
+
+  const maxPage = Math.max(1, Math.ceil(state.filtered.length / PAGE_SIZE));
+  state.page = Math.min(state.page, maxPage);
+  renderBooks();
+  renderActiveFilters();
+  renderPagination();
+  syncUrl();
+}
+
+function coverColor(work) {
+  let hash = 0;
+  for (const char of work.title_key) hash = ((hash << 5) - hash + char.charCodeAt(0)) | 0;
+  return palettes[Math.abs(hash) % palettes.length];
+}
+
+function preferredSource(work) {
+  const sources = work.sources ?? [];
+  if (sources.includes('Amazon Kindle XML')) return 'Kindle';
+  return sources[0] ?? '登録元なし';
+}
+
+function bookCard(work, index) {
+  const card = document.createElement('button');
+  card.type = 'button';
+  card.className = 'book-card';
+  card.setAttribute('aria-label', `${work.title}の詳細を見る`);
+  const author = work.author ? `<p class="book-author">${escapeHtml(work.author)}</p>` : '<p class="book-author is-empty">著者未登録</p>';
+  card.innerHTML = `
+    <div class="book-cover" style="--cover:${coverColor(work)}">
+      <div class="cover-inner">
+        <span class="cover-category">${escapeHtml(work.category ?? '未分類')}</span>
+        <strong class="cover-title">${escapeHtml(work.title)}</strong>
+        <span class="cover-index">KAFKA / ${String(index + 1).padStart(3,'0')}</span>
+      </div>
+    </div>
+    <div class="book-meta">
+      <h3>${escapeHtml(work.title)}</h3>
+      ${author}
+      <div class="meta-row">
+        <span class="status-dot" style="--status-color:${statusColors[work.status] ?? '#94a3b8'}">${statusLabels[work.status] ?? work.status}</span>
+        <span class="source-label">${escapeHtml(preferredSource(work))}</span>
+        ${(work.item_count ?? 0) > 1 ? `<span class="count-badge">${work.item_count}所蔵</span>` : ''}
+      </div>
+    </div>`;
+  card.addEventListener('click', () => showDetail(work));
+  return card;
+}
+
+function renderBooks() {
+  const grid = $('#bookGrid');
+  grid.innerHTML = '';
+  grid.classList.toggle('is-list', state.view === 'list');
+  const start = (state.page - 1) * PAGE_SIZE;
+  state.filtered.slice(start, start + PAGE_SIZE).forEach((work, index) => grid.append(bookCard(work, start + index)));
+  $('#resultCount').textContent = fmtNumber.format(state.filtered.length);
+  $('#emptyState').hidden = state.filtered.length !== 0;
+  grid.setAttribute('aria-busy', 'false');
+}
+
+function activeFilterCount() {
+  return Number(Boolean(state.query)) + state.statuses.size + state.categories.size + state.sources.size;
+}
+
+function renderActiveFilters() {
+  const box = $('#activeFilters');
+  box.innerHTML = '';
+  const addChip = (label, remove) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'filter-chip';
+    button.innerHTML = `${escapeHtml(label)} <span aria-hidden="true">×</span>`;
+    button.addEventListener('click', () => { remove(); state.page = 1; setupFilters(); applyFilters(); });
+    box.append(button);
+  };
+  if (state.query) addChip(`検索: ${state.query}`, () => { state.query = ''; });
+  [...state.statuses].forEach((value) => addChip(statusLabels[value] ?? value, () => state.statuses.delete(value)));
+  [...state.categories].forEach((value) => addChip(value, () => state.categories.delete(value)));
+  [...state.sources].forEach((value) => addChip(value, () => state.sources.delete(value)));
+  const count = activeFilterCount();
+  const toggle = $('#filterToggle');
+  if (toggle) toggle.textContent = count ? `絞り込み ${count}` : '絞り込み';
+}
+
+function renderPagination() {
+  const total = Math.ceil(state.filtered.length / PAGE_SIZE);
+  const nav = $('#pagination');
+  nav.innerHTML = '';
+  if (total <= 1) return;
+
+  const addButton = (label, page, options = {}) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = options.direction ? 'page-button page-direction' : 'page-button';
+    button.textContent = label;
+    if (options.current) button.setAttribute('aria-current', 'page');
+    if (options.label) button.setAttribute('aria-label', options.label);
+    button.disabled = options.disabled ?? false;
+    button.addEventListener('click', () => {
+      state.page = page;
+      applyFilters();
+      $('#catalog').scrollIntoView({ block: 'start' });
+    });
+    nav.append(button);
+  };
+
+  addButton('←', Math.max(1, state.page - 1), { direction: true, label: '前のページ', disabled: state.page === 1 });
+  const pages = [...new Set([1, total, state.page - 2, state.page - 1, state.page, state.page + 1, state.page + 2])]
+    .filter((value) => value >= 1 && value <= total)
+    .sort((a,b) => a-b);
+  let previous = 0;
+  for (const page of pages) {
+    if (previous && page - previous > 1) {
+      const ellipsis = document.createElement('span');
+      ellipsis.className = 'page-ellipsis';
+      ellipsis.textContent = '…';
+      nav.append(ellipsis);
+    }
+    addButton(String(page), page, { current: page === state.page, label: `${page}ページ` });
+    previous = page;
+  }
+  addButton('→', Math.min(total, state.page + 1), { direction: true, label: '次のページ', disabled: state.page === total });
+}
+
+function formatDate(value) {
+  if (!value) return '—';
+  return String(value).slice(0, 10);
+}
+
+function showDetail(work) {
+  const holdings = state.catalog.holdings.filter((holding) => holding.work_id === work.work_id);
+  const editions = state.catalog.editions.filter((edition) => edition.work_id === work.work_id);
+  const acquisitions = (state.catalog.acquisitions ?? []).filter((entry) => entry.work_id === work.work_id);
+  const rating = work.rating ? `${work.rating.toFixed(1)} / 5` : '未登録';
+  const progress = work.progress == null ? '未登録' : `${Math.round(work.progress * 100)}%`;
+
+  const editionRows = editions.map((edition) => {
+    const identifier = edition.isbn13 ? `ISBN ${edition.isbn13}` : edition.asin ? `ASIN ${edition.asin}` : edition.edition_id;
+    return `<article class="record-card"><div><strong>${escapeHtml(edition.title ?? work.title)}</strong><span>${escapeHtml(edition.format ?? '形式未登録')} · ${escapeHtml(edition.verification ?? 'unverified')}</span></div><code>${escapeHtml(identifier)}</code></article>`;
+  }).join('') || '<p class="detail-empty">Editionレコードなし</p>';
+
+  const holdingRows = holdings.map((holding) => `<article class="record-card"><div><strong>${escapeHtml(holding.source ?? '登録元なし')}</strong><span>${escapeHtml(holding.format ?? '形式未登録')} · ${formatDate(holding.acquired_at)}</span></div><code>× ${holding.quantity ?? 1}</code></article>`).join('') || '<p class="detail-empty">Holdingレコードなし</p>';
+
+  const acquisitionRows = acquisitions
+    .slice()
+    .sort((a,b) => (b.acquired_at ?? '').localeCompare(a.acquired_at ?? ''))
+    .slice(0, 8)
+    .map((entry) => `<article class="record-card"><div><strong>${escapeHtml(entry.acquisition_type ?? 'unknown')}</strong><span>${formatDate(entry.acquired_at)} · ${entry.owned ? 'owned' : 'history only'}</span></div><code>${escapeHtml(entry.asin ?? '—')}</code></article>`)
+    .join('');
+
+  $('#detailContent').innerHTML = `<div class="detail-layout">
+    <div class="detail-cover" style="--cover:${coverColor(work)}">${escapeHtml(work.title)}</div>
+    <div class="detail-info">
+      <p class="eyebrow">${escapeHtml(work.category ?? '未分類')}</p>
+      <h2>${escapeHtml(work.title)}</h2>
+      <p class="detail-author">${work.author ? escapeHtml(work.author) : '著者未登録'}</p>
+      <p class="detail-lead">Workを入口に、Edition・Holding・取得履歴を分けて確認できます。</p>
+      <div class="detail-tags"><span>${statusLabels[work.status] ?? work.status}</span><span>${holdings.length} Holding</span><span>${editions.length} Edition</span>${(work.sources ?? []).map((source) => `<span>${escapeHtml(source)}</span>`).join('')}</div>
+      <table class="detail-table"><tbody>
+        <tr><th>Work ID</th><td><code>${work.work_id}</code></td></tr>
+        <tr><th>読書進捗</th><td>${progress}</td></tr>
+        <tr><th>評価</th><td>${rating}</td></tr>
+        <tr><th>価格</th><td>${work.price_yen == null ? '未登録' : fmtYen.format(work.price_yen)}</td></tr>
+        <tr><th>形式</th><td>${(work.formats ?? []).map(escapeHtml).join(' / ') || '未登録'}</td></tr>
+      </tbody></table>
+      <section class="detail-section"><div class="section-heading"><h3>Edition</h3><span>${editions.length}</span></div>${editionRows}</section>
+      <section class="detail-section"><div class="section-heading"><h3>Holding</h3><span>${holdings.length}</span></div>${holdingRows}</section>
+      ${acquisitions.length ? `<section class="detail-section"><div class="section-heading"><h3>Acquisition</h3><span>${acquisitions.length}</span></div>${acquisitionRows}${acquisitions.length > 8 ? `<p class="detail-empty">ほか ${acquisitions.length - 8} 件</p>` : ''}</section>` : ''}
+      <div class="isbn-callout"><strong>${work.isbn_count ? `${work.isbn_count} ISBN` : 'ISBN 未確認'}</strong><span>ISBNとASINはEdition識別子として分離し、書名から推測しません。</span></div>
+    </div>
+  </div>`;
+  $('#detailDialog').showModal();
+}
+
+function renderMetrics() {
+  const stats = state.catalog.stats ?? {};
+  $('#metricWorks').textContent = fmtNumber.format(state.catalog.works.length);
+  $('#metricRead').textContent = fmtNumber.format(state.catalog.holdings.length);
+  $('#metricReadRate').textContent = `${fmtNumber.format(stats.input_count ?? state.catalog.holdings.length)} 入力`;
+  $('#metricMerged').textContent = fmtNumber.format(stats.kindle_owned_asin_count ?? 0);
+  $('#metricIsbn').textContent = fmtNumber.format(stats.isbn_verified_count ?? 0);
+  $('#metricSpend').textContent = fmtYen.format(stats.known_spend_yen ?? 0);
+}
+
+function setView(view) {
+  state.view = view;
+  $('#gridButton').classList.toggle('is-active', view === 'grid');
+  $('#listButton').classList.toggle('is-active', view === 'list');
+  $('#gridButton').setAttribute('aria-pressed', String(view === 'grid'));
+  $('#listButton').setAttribute('aria-pressed', String(view === 'list'));
+  if (state.catalog) { renderBooks(); syncUrl(); }
+}
+
+function exportCsv() {
+  const headers = ['work_id','title','author','category','status','progress','rating','price_yen','item_count','isbn_status','sources'];
+  const rows = state.filtered.map((work) => headers.map((key) => key === 'sources' ? (work.sources ?? []).join('|') : work[key] ?? ''));
+  const quote = (value) => `"${String(value).replaceAll('"','""')}"`;
+  const csv = '\uFEFF' + [headers, ...rows].map((row) => row.map(quote).join(',')).join('\n');
+  const url = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
+  const link = Object.assign(document.createElement('a'), { href: url, download: 'kafka-books.csv' });
+  link.click();
+  URL.revokeObjectURL(url);
+}
+
+function runPrecheck() {
+  const resultBox = $('#precheckResults');
+  try {
+    const candidates = JSON.parse($('#precheckInput').value);
+    if (!Array.isArray(candidates)) throw new TypeError('JSON配列を入力してください。');
+    const result = precheckCandidates(candidates, state.catalog);
+    $('#precheckSummary').textContent = `${result.summary.allowed}件許可 / ${result.summary.blocked}件停止`;
+    resultBox.innerHTML = result.results.map((entry) => `<article class="precheck-result ${entry.ok ? (entry.warnings.length ? 'is-warning' : '') : 'is-blocked'}"><header><strong>${entry.ok ? (entry.action === 'add_edition' ? '版を追加可能' : '新規作品として追加可能') : '追加停止'}</strong><code>${entry.isbn13 ?? 'ISBNなし'}</code></header><div>${escapeHtml(entry.normalized_title || '書名なし')}</div>${[...entry.errors, ...entry.warnings].length ? `<ul>${[...entry.errors, ...entry.warnings].map((message) => `<li>${escapeHtml(message)}</li>`).join('')}</ul>` : ''}</article>`).join('');
+  } catch (error) {
+    $('#precheckSummary').textContent = '入力エラー';
+    resultBox.innerHTML = `<article class="precheck-result is-blocked">${escapeHtml(error.message)}</article>`;
+  }
+}
+
+function escapeHtml(value) {
+  return String(value).replace(/[&<>'"]/g, (char) => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
+}
+
+function toggleFilters(force) {
+  const panel = $('#filterPanel');
+  const toggle = $('#filterToggle');
+  if (!panel || !toggle) return;
+  const open = force ?? !panel.classList.contains('is-open');
+  panel.classList.toggle('is-open', open);
+  toggle.setAttribute('aria-expanded', String(open));
+}
+
+function wireEvents() {
+  let timer;
+  $('#searchInput').addEventListener('input', (event) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      state.query = event.target.value.trim();
+      state.page = 1;
+      applyFilters();
+    }, 120);
+  });
+  $('#sortSelect').addEventListener('change', (event) => { state.sort = event.target.value; state.page = 1; applyFilters(); });
+  $('#gridButton').addEventListener('click', () => setView('grid'));
+  $('#listButton').addEventListener('click', () => setView('list'));
+  $('#csvButton').addEventListener('click', exportCsv);
+  $('#filterToggle')?.addEventListener('click', () => toggleFilters());
+  $('#resetButton').addEventListener('click', () => {
+    state.query=''; state.statuses.clear(); state.categories.clear(); state.sources.clear(); state.sort='acquired-desc'; state.page=1;
+    setupFilters(); applyFilters();
+  });
+  $('#detailClose').addEventListener('click', () => $('#detailDialog').close());
+  $('#precheckButton').addEventListener('click', () => $('#precheckDialog').showModal());
+  $('#precheckClose').addEventListener('click', () => $('#precheckDialog').close());
+  $('#runPrecheck').addEventListener('click', runPrecheck);
+  document.addEventListener('keydown', (event) => {
+    if (event.key === '/' && !['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName)) {
+      event.preventDefault();
+      if (matchMedia('(max-width: 820px)').matches) toggleFilters(true);
+      $('#searchInput').focus();
+    }
+    if (event.key === 'Escape' && matchMedia('(max-width: 820px)').matches) toggleFilters(false);
+  });
+  for (const dialog of document.querySelectorAll('dialog')) {
+    dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+  }
+}
+
+try {
+  hydrateFromUrl();
+  state.catalog = await loadCatalog();
+  renderMetrics();
+  setupFilters();
+  wireEvents();
+  applyFilters();
+} catch (error) {
+  console.error(error);
+  $('#bookGrid').setAttribute('aria-busy', 'false');
+  $('#bookGrid').innerHTML = `<div class="empty-state"><strong>データを読み込めませんでした</strong><p>${escapeHtml(error.message)}</p></div>`;
+}

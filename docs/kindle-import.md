@@ -22,9 +22,42 @@ npm run kindle:sync
 npm run kindle:sync -- "C:\Users\front\AppData\Local\Amazon\Kindle\Cache\KindleSyncMetadataCache.xml"
 ```
 
+## 現在のスナップショット
+
+2026-06-06同期XMLを今回取り込んだ結果:
+
+| 指標 | 件数 |
+|---|---:|
+| raw `meta_data` | 690 |
+| 完全重複除去後 | 685 |
+| Kindle item / 識別子 | 680 |
+| Purchase | 455 |
+| Sample | 204 |
+| Prime | 10 |
+| KindleDictionary | 1 |
+| origin不明 | 15 |
+
+680識別子のうち679件は通常の `B` で始まるKindle ASINで、1件はPersonal Document系の識別子です。後者は取得履歴として保持しますが、Amazon Kindle Edition/Holdingへは自動昇格させません。
+
+## 完全重複の扱い
+
+XMLには内容が完全一致する5行が存在しました。`scripts/import-kindle-xml.mjs` は次の意味情報がすべて一致する行だけを同一イベントとして除去します。
+
+- ASIN/識別子
+- title
+- authors / publishers
+- publication_date
+- acquired_at
+- origin_type
+- cde_contenttype / content_type / textbook_type
+
+`ordinal` や内部 `record_id` の違いは重複判定に使いません。
+
+一方、同じASINでも `Sample` と `Purchase`、取得日時、origin等が異なる行は別イベントとして保持します。これにより、Sample→Purchaseの履歴を消さず、同一Purchaseの二重計上だけを防ぎます。
+
 ## 保存形式
 
-生のXMLはリポジトリへ保存しません。`scripts/import-kindle-xml.mjs` が次の可読・監査可能な形式へ変換します。
+生のXMLはリポジトリへ保存しません。必要な情報だけを可読・監査可能な形式へ変換します。
 
 ```text
 data/kindle/
@@ -32,7 +65,10 @@ data/kindle/
   records-01.ndjson
   records-02.ndjson
   ...
+  records-14.ndjson
 ```
+
+現在のsnapshotは、列名をmanifestへ一度だけ持たせる `compact-ndjson-array` 形式です。Base64/gzipではなく、GitHub上で差分確認・検索可能なテキストとして保持します。
 
 `manifest.json` は以下を保持します。
 
@@ -40,18 +76,17 @@ data/kindle/
 - 入力XMLのSHA-256
 - Kindle同期日時
 - Kindleソフトウェアバージョン
-- 元レコード件数
-- 一意ASIN件数
-- Purchase / Sample / Prime / unknown等の件数
-- 各NDJSON分割の件数、byte数、SHA-256
+- raw件数 / 重複除去後件数
+- 一意識別子件数
+- Purchase / Sample / Prime / KindleDictionary / unknown件数
+- compact NDJSONのfields
+- 各分割の件数、byte数、SHA-256
 
-CIとローダーは分割ファイルの件数・byte数・SHA-256を検証し、一致しないデータを拒否します。
+ローダーは分割ファイルの件数・byte数・SHA-256と総件数を検証し、一致しないデータを拒否します。以前のobject-NDJSON形式も後方互換で読み取れます。
 
 ## データモデル
 
-XMLの各 `meta_data` は `kindle_records` として保持します。ASIN単位の重複をまとめた一覧は `kindle_items` です。
-
-取得イベントは `acquisitions` として分離します。
+各正規化行は `kindle_records` として保持します。識別子単位の統合一覧は `kindle_items`、取得イベントは `acquisitions` です。
 
 - `purchase`: 所有扱い。ASIN EditionとHoldingを作成
 - `sample`: 非所有。履歴のみ
@@ -65,11 +100,18 @@ XMLの各 `meta_data` は `kindle_records` として保持します。ASIN単位
 
 既存の `Kindleスクリーンショット` Holdingと、XMLのPurchaseが同じ正規化Workへ一致した場合、スクリーンショットHoldingを削除してASINベースの `Amazon Kindle XML` Holdingへ置換します。
 
-一致しない手入力レコードは自動削除しません。`kindle_match_audit` に `kept_unmatched` として残し、誤削除を防ぎます。
+今回の照合監査490件:
+
+- `created_work`: 410
+- `matched_work`: 45
+- `replaced_by_xml_purchase`: 2
+- `kept_unmatched`: 33
+
+一致しない手入力レコードは自動削除せず、`kindle_match_audit` に `kept_unmatched` として残します。
 
 ## API
 
-Kindleデータが存在すると、既存の全リストAPI契約により次も自動公開されます。
+Kindleデータは既存の全リストAPI契約により自動公開されます。
 
 ```text
 /api/v1/kindle_records.json
@@ -88,4 +130,4 @@ Kindleデータが存在すると、既存の全リストAPI契約により次�
 
 Kindle for PCを同期した後に `npm run kindle:sync` を再実行します。同じXMLからは決定論的に同じ正規化データが生成されます。
 
-変更を反映する場合は `data/kindle/` の差分をレビューし、通常の `npm run check` とPages CIを通してからmainへ反映します。
+変更を反映する場合は `data/kindle/` の差分をレビューし、`npm run check` とPages CIを通してからmainへ反映します。

@@ -4,6 +4,7 @@ import zlib from 'node:zlib';
 import { applyIsbnEnrichments } from '../src/isbn-enrichment.mjs';
 import { mergeIssueCatalog } from '../src/merge-catalog.mjs';
 import { loadKindleMetadata, mergeKindleCatalog } from '../src/kindle-metadata.mjs';
+import { loadCompactKindleMetadata } from '../src/kindle-storage.mjs';
 
 async function readJsonIfPresent(filePath) {
   try {
@@ -108,7 +109,12 @@ export async function loadCatalog(root = process.cwd()) {
 
   let merged = mergeIssueCatalog(base, issueData);
   const kindleManifest = await readJsonIfPresent(path.join(root, 'data/kindle/manifest.json'));
-  if (kindleManifest) merged = mergeKindleCatalog(merged, await loadKindleMetadata(root));
+  if (kindleManifest) {
+    const kindleData = kindleManifest.storage === 'compact-ndjson-array'
+      ? await loadCompactKindleMetadata(root, kindleManifest)
+      : await loadKindleMetadata(root);
+    merged = mergeKindleCatalog(merged, kindleData);
+  }
 
   const enrichmentOverlay = JSON.parse(
     await fs.readFile(path.join(root, 'data/isbn-enrichments.json'), 'utf8'),

@@ -3,6 +3,8 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { normalizeTitle, titleKey } from './catalog.mjs';
 
+export const KINDLE_PART_SIZE = 138;
+
 const ORIGIN_TYPES = new Map([
   ['Purchase', 'purchase'],
   ['Sample', 'sample'],
@@ -29,6 +31,10 @@ function decodeXmlEntities(value = '') {
     .replaceAll('&amp;', '&');
 }
 
+export function sha256(value) {
+  return crypto.createHash('sha256').update(value).digest('hex');
+}
+
 export function normalizeAmazonDate(value) {
   if (!value) return null;
   const text = String(value).trim();
@@ -49,8 +55,16 @@ function listValues(block, parent, child) {
     .filter(Boolean);
 }
 
-export function parseKindleMetadataXml(source) {
+export function extractKindleXmlPayload(source) {
   const text = String(source);
+  const start = text.indexOf('<response>');
+  const end = text.lastIndexOf('</response>');
+  if (start < 0 || end < start) throw new Error('Kindle metadata <response> root was not found');
+  return text.slice(start, end + '</response>'.length);
+}
+
+export function parseKindleMetadataXml(source) {
+  const text = extractKindleXmlPayload(source);
   const syncRaw = tagValue(text, 'sync_time');
   const syncParts = syncRaw.split(';');
   const softwarePart = syncParts.find((part) => part.startsWith('softwareVersion:'));
@@ -72,7 +86,10 @@ export function parseKindleMetadataXml(source) {
       textbook_type: tagValue(block, 'textbook_type') || null,
     };
   });
-
+  if (!records.length) throw new Error('Kindle metadata contains no records');
+  for (const record of records) {
+    if (!record.asin || !record.title) throw new Error(`Kindle metadata record ${record.ordinal} lacks ASIN/title`);
+  }
   return {
     sync_time: normalizeAmazonDate(syncParts[0] || null),
     source_software_version: softwarePart ? softwarePart.slice('softwareVersion:'.length) : null,
@@ -80,15 +97,17 @@ export function parseKindleMetadataXml(source) {
   };
 }
 
-function sha256(value) {
-  return crypto.createHash('sha256').update(value).digest('hex');
+export function kindleOriginCounts(records) {
+  return records.reduce((counts, record) => {
+    counts[record.origin_type] = (counts[record.origin_type] ?? 0) + 1;
+    return counts;
+  }, {});
 }
 
 export async function loadKindleMetadata(root = process.cwd()) {
   const dataDir = path.join(root, 'data', 'kindle');
   const manifest = JSON.parse(await fs.readFile(path.join(dataDir, 'manifest.json'), 'utf8'));
   const records = [];
-
   for (const part of manifest.parts) {
     const content = await fs.readFile(path.join(dataDir, part.name), 'utf8');
     const bytes = Buffer.byteLength(content);
@@ -98,10 +117,13 @@ export async function loadKindleMetadata(root = process.cwd()) {
     if (rows.length !== part.records) throw new Error(`Kindle metadata record mismatch: ${part.name}`);
     records.push(...rows);
   }
-
   if (records.length !== manifest.record_count) throw new Error('Kindle metadata total record count mismatch');
   if (new Set(records.map((record) => record.asin)).size !== manifest.unique_asin_count) {
     throw new Error('Kindle metadata unique ASIN count mismatch');
+  }
+  const originCounts = kindleOriginCounts(records);
+  if (JSON.stringify(originCounts) !== JSON.stringify(manifest.origin_counts)) {
+    throw new Error('Kindle metadata origin counts mismatch');
   }
   return { manifest, records };
 }
@@ -146,6 +168,7 @@ export function mergeKindleCatalog(catalog, kindleData) {
 
   const ownedWorkByAsin = new Map();
   const ownedEditionByAsin = new Map();
+  const matchedExistingWorkByAsin = new Map();
   const ownedWorkIds = new Set();
   let newWorkCount = 0;
 
@@ -158,6 +181,7 @@ export function mergeKindleCatalog(catalog, kindleData) {
     if (!key) throw new Error(`Kindle purchase has empty normalized title: ${asin}`);
 
     let work = workByKey.get(key);
+    const matchedExisting = Boolean(work);
     if (!work) {
       const workId = workIdForKey(key);
       if (workById.has(workId)) throw new Error(`Kindle work ID collision: ${workId}`);
@@ -210,6 +234,7 @@ export function mergeKindleCatalog(catalog, kindleData) {
 
     ownedWorkByAsin.set(asin, work.work_id);
     ownedEditionByAsin.set(asin, editionId);
+    matchedExistingWorkByAsin.set(asin, matchedExisting);
     ownedWorkIds.add(work.work_id);
   }
 
@@ -264,10 +289,8 @@ export function mergeKindleCatalog(catalog, kindleData) {
   for (const work of works) {
     const workHoldings = holdingsByWork.get(work.work_id) ?? [];
     work.item_count = workHoldings.reduce((sum, holding) => sum + holding.quantity, 0);
-    const sources = [...new Set(workHoldings.map((holding) => holding.source).filter(Boolean))];
-    const formats = [...new Set(workHoldings.map((holding) => holding.format).filter(Boolean))];
-    work.sources = sources;
-    work.formats = formats;
+    work.sources = [...new Set(workHoldings.map((holding) => holding.source).filter(Boolean))];
+    work.formats = [...new Set(workHoldings.map((holding) => holding.format).filter(Boolean))];
     const workEditions = editionsByWork.get(work.work_id) ?? [];
     const verified = workEditions.filter((edition) => edition.verification === 'verified' && edition.isbn13);
     work.isbn_count = new Set(verified.map((edition) => edition.isbn13)).size;
@@ -315,17 +338,36 @@ export function mergeKindleCatalog(catalog, kindleData) {
     };
   }).sort((a, b) => a.title.localeCompare(b.title, 'ja'));
 
+  const replacedWorkIds = new Set(screenshotHoldings.map((holding) => holding.work_id));
+  const kindleMatchAudit = [
+    ...[...ownedWorkByAsin.entries()].map(([asin, workId]) => ({
+      kind: 'purchase_asin',
+      asin,
+      work_id: workId,
+      action: matchedExistingWorkByAsin.get(asin) ? 'matched_existing_work' : 'created_new_work',
+    })),
+    ...catalog.holdings
+      .filter((holding) => holding.source === 'Kindleスクリーンショット')
+      .map((holding) => ({
+        kind: 'legacy_kindle_holding',
+        asin: null,
+        work_id: holding.work_id,
+        action: replacedWorkIds.has(holding.work_id) ? 'replaced_by_xml_purchase' : 'kept_unmatched',
+      })),
+  ];
+
   works.sort((a, b) => a.title.localeCompare(b.title, 'ja'));
   editions.sort((a, b) => a.edition_id.localeCompare(b.edition_id));
   holdings.sort((a, b) => a.holding_id.localeCompare(b.holding_id));
 
+  const inputCount = holdings.reduce((sum, holding) => sum + holding.quantity, 0);
   const stats = {
     ...catalog.stats,
-    input_count: holdings.reduce((sum, holding) => sum + holding.quantity, 0),
+    input_count: inputCount,
     work_count: works.length,
     edition_count: editions.length,
     holding_count: holdings.length,
-    merged_input_count: holdings.reduce((sum, holding) => sum + holding.quantity, 0) - works.length,
+    merged_input_count: inputCount - works.length,
     isbn_verified_count: new Set(editions.filter((edition) => edition.verification === 'verified').map((edition) => edition.isbn13).filter(Boolean)).size,
     untracked_count: works.filter((work) => work.status === 'untracked').length,
     kindle_record_count: records.length,
@@ -347,5 +389,6 @@ export function mergeKindleCatalog(catalog, kindleData) {
     kindle_records: records,
     kindle_items: kindleItems,
     acquisitions,
+    kindle_match_audit: kindleMatchAudit,
   };
 }

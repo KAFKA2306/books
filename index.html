@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="ISBNを中心に作品と版を分離した、KAFKAの読書データベース。">
-  <meta name="theme-color" content="#f5f4ef">
+  <meta name="description" content="Work / Edition / Holding / Acquisitionを分離して管理するKAFKAの読書データベース。">
+  <meta name="theme-color" content="#f3f6f4">
   <title>KAFKA BOOKS — 読書データベース</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="ui.css">
 </head>
 <body>
   <a class="skip-link" href="#catalog">本棚へ移動</a>
@@ -17,6 +18,7 @@
         <span><strong>KAFKA BOOKS</strong><small>Personal reading database</small></span>
       </a>
       <div class="header-actions">
+        <a class="button button-quiet header-api" href="./api/v1/collections.json">API</a>
         <button class="button button-quiet" id="precheckButton" type="button">追加前チェック</button>
         <a class="button button-primary" href="https://github.com/KAFKA2306/books" rel="noreferrer">GitHub</a>
       </div>
@@ -26,22 +28,22 @@
   <main>
     <section class="hero" aria-labelledby="heroTitle">
       <div>
-        <p class="eyebrow">WORK / EDITION / HOLDING</p>
-        <h1 id="heroTitle">多すぎる本を、<br>作品単位で静かに整理する。</h1>
-        <p class="hero-copy">巻・上下・版・雑誌号は代表作品へ統合。ISBNは版の優先キーとして扱い、曖昧な追加をprecheckで止めます。</p>
+        <p class="eyebrow">WORK / EDITION / HOLDING / ACQUISITION</p>
+        <h1 id="heroTitle">読むための本棚を、<br>探せるデータベースに。</h1>
+        <p class="hero-copy">作品は静かに1枚へ統合し、版・所蔵・Kindle取得履歴は裏側で分離。書名、著者、カテゴリ、登録元からすぐに絞り込めます。</p>
       </div>
       <div class="hero-aside" aria-label="データ方針">
-        <span>ISBN-first edition keys</span>
-        <span>Canonical work display</span>
+        <span>Work-first browsing</span>
+        <span>ISBN / ASIN edition keys</span>
         <span>Duplicate-safe import</span>
       </div>
     </section>
 
     <section class="metrics" aria-label="本棚の集計">
-      <article><span>作品</span><strong id="metricWorks">—</strong><small>統一表示</small></article>
-      <article><span>読了</span><strong id="metricRead">—</strong><small id="metricReadRate">—</small></article>
-      <article><span>統合</span><strong id="metricMerged">—</strong><small>巻・版・重複</small></article>
-      <article><span>ISBN確認済み</span><strong id="metricIsbn">—</strong><small>一次情報照合済み</small></article>
+      <article><span>作品</span><strong id="metricWorks">—</strong><small>Work</small></article>
+      <article><span>所蔵</span><strong id="metricRead">—</strong><small id="metricReadRate">Holding</small></article>
+      <article><span>Kindle購入</span><strong id="metricMerged">—</strong><small>購入ASIN</small></article>
+      <article><span>ISBN確認済み</span><strong id="metricIsbn">—</strong><small>検証済みEdition</small></article>
       <article><span>記録支出</span><strong id="metricSpend">—</strong><small>価格登録分</small></article>
     </section>
 
@@ -52,7 +54,7 @@
           <button class="text-button" id="resetButton" type="button">リセット</button>
         </div>
         <label class="search-field">
-          <span>書名・カテゴリを検索</span>
+          <span>書名・著者・カテゴリを検索</span>
           <input id="searchInput" type="search" placeholder="例：金融、カフカ、TOEIC" autocomplete="off">
           <kbd>/</kbd>
         </label>
@@ -60,33 +62,35 @@
         <fieldset><legend>カテゴリ</legend><div class="check-list scroll-list" id="categoryFilters"></div></fieldset>
         <fieldset><legend>登録元</legend><div class="check-list" id="sourceFilters"></div></fieldset>
         <label class="select-field"><span>並べ替え</span><select id="sortSelect">
-          <option value="acquired-desc">新しく登録</option>
+          <option value="acquired-desc">新しく取得</option>
           <option value="title-asc">書名 A–Z</option>
+          <option value="author-asc">著者 A–Z</option>
           <option value="rating-desc">評価が高い</option>
           <option value="price-desc">価格が高い</option>
           <option value="status-desc">読書状態</option>
-          <option value="items-desc">統合数が多い</option>
+          <option value="items-desc">所蔵数が多い</option>
         </select></label>
       </aside>
 
       <div class="catalog-main">
         <div class="catalog-toolbar">
-          <p><strong id="resultCount">—</strong><span>作品を表示</span></p>
+          <p><strong id="resultCount">—</strong><span>作品</span></p>
           <div class="toolbar-actions">
+            <button class="button button-quiet filter-toggle" id="filterToggle" type="button" aria-controls="filterPanel" aria-expanded="false">絞り込み</button>
             <button class="icon-button is-active" id="gridButton" type="button" aria-label="グリッド表示" aria-pressed="true">▦</button>
             <button class="icon-button" id="listButton" type="button" aria-label="リスト表示" aria-pressed="false">☷</button>
             <button class="button button-quiet" id="csvButton" type="button">CSV</button>
           </div>
         </div>
         <div class="active-filters" id="activeFilters" aria-live="polite"></div>
-        <div class="book-grid" id="bookGrid" aria-live="polite"></div>
+        <div class="book-grid" id="bookGrid" aria-live="polite" aria-busy="true"></div>
         <div class="empty-state" id="emptyState" hidden><strong>該当する作品がありません</strong><p>検索語またはフィルターを変更してください。</p></div>
         <nav class="pagination" id="pagination" aria-label="ページ切り替え"></nav>
       </div>
     </section>
   </main>
 
-  <footer><p>KAFKA BOOKS · ISBNは版の識別子として管理 · <a href="https://www.isbn-international.org/content/what-isbn">International ISBN Agency</a></p></footer>
+  <footer><p>KAFKA BOOKS · Work / Edition / Holding / Acquisition · <a href="./api/v1/collections.json">API collections</a></p></footer>
 
   <dialog class="detail-dialog" id="detailDialog">
     <button class="dialog-close" id="detailClose" type="button" aria-label="閉じる">×</button>

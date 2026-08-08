@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-report.v1",
-  "generated_at": "2026-08-08T03:44:16.427Z",
+  "generated_at": "2026-08-08T15:06:19.349Z",
   "policy": {
     "batch_limit": 25,
     "concurrency": 4,
@@ -13,15 +13,15 @@
   "summary": {
     "attempted": 25,
     "enriched": 4,
-    "ambiguous": 1,
-    "no_consensus": 6,
+    "ambiguous": 3,
+    "no_consensus": 12,
     "no_candidate": 0,
-    "provider_error": 14
+    "provider_error": 6
   },
   "results": [
     {
-      "work_id": "wrk_01e497859afb",
-      "title": "栄養学と食の基本辞典",
+      "work_id": "wrk_508c7feac779",
+      "title": "楽しい植物学",
       "outcome": "provider_error",
       "accepted_isbn13": null,
       "candidates": [],
@@ -33,21 +33,8 @@
       ]
     },
     {
-      "work_id": "wrk_02516067d844",
-      "title": "切り取れ、あの祈る手を",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_0649ceebf61b",
-      "title": "スティーブ・ジョブズ",
+      "work_id": "wrk_50fc00660a77",
+      "title": "カラー図解Raspberry Piではじめる機械学習",
       "outcome": "no_consensus",
       "accepted_isbn13": null,
       "candidates": [],
@@ -59,25 +46,8 @@
       ]
     },
     {
-      "work_id": "wrk_0ac8d6f215f7",
-      "title": "東京きたんしゅう",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "ndl",
-          "message": "ndl request failed: ndl returned HTTP 429"
-        },
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_0dd87e8b36e2",
-      "title": "ドイツは過去とどう向き合って来たか",
+      "work_id": "wrk_52cebd73d190",
+      "title": "分子から見た生物進化",
       "outcome": "provider_error",
       "accepted_isbn13": null,
       "candidates": [],
@@ -89,99 +59,8 @@
       ]
     },
     {
-      "work_id": "wrk_123f7184e7d7",
-      "title": "無敵の思考",
-      "outcome": "accepted",
-      "accepted_isbn13": "9784479308621",
-      "candidates": [
-        {
-          "isbn13": "9784479308621",
-          "providers": [
-            "ndl",
-            "openbd"
-          ],
-          "best_similarity": 1
-        }
-      ],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_15edeb5db3c8",
-      "title": "未来へ広がるサイエンス2",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_3745a66c9c10",
-      "title": "チェンジング・ブルー 気候変動の謎に迫る",
-      "outcome": "accepted",
-      "accepted_isbn13": "9784006032807",
-      "candidates": [
-        {
-          "isbn13": "9784006032807",
-          "providers": [
-            "ndl",
-            "openbd"
-          ],
-          "best_similarity": 1
-        }
-      ],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_38c5208b38c4",
-      "title": "新訳ハムレット",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "ndl",
-          "message": "ndl request failed: ndl returned HTTP 429"
-        },
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_39ec01834f19",
-      "title": "地球温暖化の予測は正しいか",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "ndl",
-          "message": "ndl request failed: ndl returned HTTP 429"
-        },
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_3a5c051662b5",
-      "title": "寄生獣",
+      "work_id": "wrk_54fc35dd55dc",
+      "title": "シュトラーセノイ",
       "outcome": "no_consensus",
       "accepted_isbn13": null,
       "candidates": [],
@@ -193,13 +72,39 @@
       ]
     },
     {
-      "work_id": "wrk_3a6c65cc6275",
-      "title": "プレゼンに勝つ図解の技術",
+      "work_id": "wrk_55b681a9fd07",
+      "title": "1Q84",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_561e61449855",
+      "title": "単純な脳複雑なわたし",
+      "outcome": "provider_error",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_56904e57fd9e",
+      "title": "働かないアリに意義がある",
       "outcome": "ambiguous",
       "accepted_isbn13": null,
       "candidates": [
         {
-          "isbn13": "9784532111519",
+          "isbn13": "9784046016287",
           "providers": [
             "ndl",
             "openbd"
@@ -207,7 +112,15 @@
           "best_similarity": 1
         },
         {
-          "isbn13": "9784532112721",
+          "isbn13": "9784635049207",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        },
+        {
+          "isbn13": "9784840136617",
           "providers": [
             "ndl",
             "openbd"
@@ -223,60 +136,13 @@
       ]
     },
     {
-      "work_id": "wrk_3cd368773f29",
-      "title": "そして、バトンは渡された",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "ndl",
-          "message": "ndl request failed: ndl returned HTTP 429"
-        },
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_3dfc456e3797",
-      "title": "小説聖書",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "ndl",
-          "message": "ndl request failed: ndl returned HTTP 429"
-        },
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_3f47490f4e95",
-      "title": "目の見えない人は世界をどう見ているか",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_40fbccec76cb",
-      "title": "色彩を持たない多崎つくると彼の巡礼の年",
+      "work_id": "wrk_56bd4b31ba4a",
+      "title": "物質科学入門",
       "outcome": "accepted",
-      "accepted_isbn13": "9784167905033",
+      "accepted_isbn13": "9784759808766",
       "candidates": [
         {
-          "isbn13": "9784167905033",
+          "isbn13": "9784759808766",
           "providers": [
             "ndl",
             "openbd"
@@ -292,21 +158,8 @@
       ]
     },
     {
-      "work_id": "wrk_4248f138a80d",
-      "title": "せっかち伯爵と時間泥棒",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_43588768077d",
-      "title": "彼女は一人で歩くのか?",
+      "work_id": "wrk_574b7e8b3a24",
+      "title": "勝てるエントリーシート負けない面接テクニック",
       "outcome": "no_consensus",
       "accepted_isbn13": null,
       "candidates": [],
@@ -318,13 +171,110 @@
       ]
     },
     {
-      "work_id": "wrk_44a3f6b0d47d",
-      "title": "大人の発達障害 生きづらさへの理解と対処",
-      "outcome": "accepted",
-      "accepted_isbn13": "9784065133156",
+      "work_id": "wrk_5a29c44ef797",
+      "title": "カナダの謎 なぜ『赤毛のアン』はロブスタ",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_5a9c4082bee2",
+      "title": "宇宙就職案内",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_5cc72c337f62",
+      "title": "そんな未来は嘘である",
+      "outcome": "provider_error",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_5d88863760e5",
+      "title": "無機化学概論小倉",
+      "outcome": "provider_error",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_5f51b8010c44",
+      "title": "電気化学渡辺",
+      "outcome": "provider_error",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_5fc2d0ed74ef",
+      "title": "アンの愛情",
+      "outcome": "ambiguous",
+      "accepted_isbn13": null,
       "candidates": [
         {
-          "isbn13": "9784065133156",
+          "isbn13": "9784042179085",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        },
+        {
+          "isbn13": "9784062704038",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        },
+        {
+          "isbn13": "9784062750998",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        },
+        {
+          "isbn13": "9784087605624",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        },
+        {
+          "isbn13": "9784102113431",
           "providers": [
             "ndl",
             "openbd"
@@ -340,8 +290,30 @@
       ]
     },
     {
-      "work_id": "wrk_48a948c94388",
-      "title": "はやぶさの超技術",
+      "work_id": "wrk_6342b9d0568f",
+      "title": "しないことリスト",
+      "outcome": "accepted",
+      "accepted_isbn13": "9784479307235",
+      "candidates": [
+        {
+          "isbn13": "9784479307235",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        }
+      ],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_6649d9d62517",
+      "title": "豊崎愛生",
       "outcome": "no_consensus",
       "accepted_isbn13": null,
       "candidates": [],
@@ -353,8 +325,8 @@
       ]
     },
     {
-      "work_id": "wrk_48d43b1c82f6",
-      "title": "ソフィーの世界",
+      "work_id": "wrk_677c8af92954",
+      "title": "さよなら絶望先生",
       "outcome": "no_consensus",
       "accepted_isbn13": null,
       "candidates": [],
@@ -366,16 +338,21 @@
       ]
     },
     {
-      "work_id": "wrk_49533146732d",
-      "title": "電気とエネルギーの未来は?",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
+      "work_id": "wrk_6848deacc481",
+      "title": "テレビが伝えない憲法の話",
+      "outcome": "accepted",
+      "accepted_isbn13": "9784569816227",
+      "candidates": [
         {
-          "provider": "ndl",
-          "message": "ndl request failed: This operation was aborted"
-        },
+          "isbn13": "9784569816227",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        }
+      ],
+      "provider_errors": [
         {
           "provider": "google_books",
           "message": "google_books request failed: google_books returned HTTP 429"
@@ -383,16 +360,21 @@
       ]
     },
     {
-      "work_id": "wrk_4c4a6d0d72c5",
-      "title": "予想通りに不合理",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
+      "work_id": "wrk_6a2d80416c1b",
+      "title": "ウイルスは生きている",
+      "outcome": "accepted",
+      "accepted_isbn13": "9784062883597",
+      "candidates": [
         {
-          "provider": "ndl",
-          "message": "ndl request failed: This operation was aborted"
-        },
+          "isbn13": "9784062883597",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        }
+      ],
+      "provider_errors": [
         {
           "provider": "google_books",
           "message": "google_books request failed: google_books returned HTTP 429"
@@ -400,8 +382,8 @@
       ]
     },
     {
-      "work_id": "wrk_4f4f4358556e",
-      "title": "心臓の力",
+      "work_id": "wrk_6b66d4cd28f8",
+      "title": "みなみけ",
       "outcome": "no_consensus",
       "accepted_isbn13": null,
       "candidates": [],
@@ -413,16 +395,76 @@
       ]
     },
     {
-      "work_id": "wrk_50477fff5113",
-      "title": "発達障害 生きづらさを抱える少数派の「種族」たち",
-      "outcome": "provider_error",
+      "work_id": "wrk_6bc67fc47f1e",
+      "title": "イングルサイドのアン",
+      "outcome": "no_consensus",
       "accepted_isbn13": null,
       "candidates": [],
       "provider_errors": [
         {
-          "provider": "ndl",
-          "message": "ndl request failed: This operation was aborted"
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_6df86f08996f",
+      "title": "「おいしさ」の科学 素材の秘密・味わいを",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_6e6b1be2e06d",
+      "title": "虐殺器官",
+      "outcome": "ambiguous",
+      "accepted_isbn13": null,
+      "candidates": [
+        {
+          "isbn13": "9784150309848",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
         },
+        {
+          "isbn13": "9784150311650",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        },
+        {
+          "isbn13": "9784152088314",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        }
+      ],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_7029a9a3f090",
+      "title": "教育の原理",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
         {
           "provider": "google_books",
           "message": "google_books request failed: google_books returned HTTP 429"

@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichments.v1",
-  "updated_at": "2026-08-08T03:44:16.427Z",
+  "updated_at": "2026-08-08T15:06:19.349Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -326,6 +326,115 @@
       ],
       "replaces_edition_id": "pending:44a3f6b0d47d",
       "verified_at": "2026-08-08T03:44:16.427Z"
+    },
+    {
+      "work_id": "wrk_56bd4b31ba4a",
+      "isbn13": "9784759808766",
+      "title": "物質科学入門",
+      "authors": [
+        "渡邉, 正義, 1954-",
+        "米屋, 勝利, 1938-",
+        "渡邉, 正義, 1954-,米屋, 勝利, 1938-,渡邉正義, 米屋勝利 編著",
+        "渡邉,正義,1954- 米屋,勝利,1938-"
+      ],
+      "publisher": "化学同人",
+      "published_year": 2002,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000004172976"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784759808766"
+        }
+      ],
+      "replaces_edition_id": "pending:56bd4b31ba4a",
+      "verified_at": "2026-08-08T15:06:19.349Z"
+    },
+    {
+      "work_id": "wrk_6342b9d0568f",
+      "isbn13": "9784479307235",
+      "title": "しないことリスト",
+      "authors": [
+        "pha, 1978-",
+        "pha, 1978-,pha 著",
+        "pha,1978-"
+      ],
+      "publisher": "大和書房",
+      "published_year": 2018,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029186655"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784479307235"
+        }
+      ],
+      "replaces_edition_id": "pending:6342b9d0568f",
+      "verified_at": "2026-08-08T15:06:19.349Z"
+    },
+    {
+      "work_id": "wrk_6848deacc481",
+      "isbn13": "9784569816227",
+      "title": "テレビが伝えない憲法の話",
+      "authors": [
+        "木村, 草太",
+        "木村, 草太,木村草太 著",
+        "木村,草太"
+      ],
+      "publisher": "PHP研究所",
+      "published_year": 2014,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I025377374"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784569816227"
+        }
+      ],
+      "replaces_edition_id": "pending:6848deacc481",
+      "verified_at": "2026-08-08T15:06:19.349Z"
+    },
+    {
+      "work_id": "wrk_6a2d80416c1b",
+      "isbn13": "9784062883597",
+      "title": "ウイルスは生きている",
+      "authors": [
+        "中屋敷, 均, 1964-",
+        "中屋敷, 均, 1964-,中屋敷均 著",
+        "中屋敷,均,1964-"
+      ],
+      "publisher": "講談社",
+      "published_year": 2016,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I027144459"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784062883597"
+        }
+      ],
+      "replaces_edition_id": "pending:6a2d80416c1b",
+      "verified_at": "2026-08-08T15:06:19.349Z"
     }
   ]
 }

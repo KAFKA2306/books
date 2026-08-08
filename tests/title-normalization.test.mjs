@@ -11,6 +11,7 @@ const expected = new Map([
   ['wrk_55b681a9fd07', ['1Q84', '村上春樹']],
   ['wrk_a5e6f1b281e4', ['画期的囲碁上達法 五路盤問題集', '福井正明']],
   ['wrk_ca712aafec58', ['Animal Farm', 'ジョージ・オーウェル']],
+  ['wrk_bc4ba83e25bf', ['凌ぎの手筋200', '金子タカシ']],
 ]);
 
 test('manually reviewed titles are applied one work at a time', async () => {
@@ -26,7 +27,7 @@ test('manually reviewed titles are applied one work at a time', async () => {
 test('rough memo titles no longer appear in generated works', async () => {
   const catalog = await loadCatalog(root);
   const titles = new Set(catalog.works.map((work) => work.title));
-  for (const oldTitle of ['1984年', '1Q84村上春樹', '5路盤問題集、囲碁文庫', 'animal farmオーウェル']) {
+  for (const oldTitle of ['1984年', '1Q84村上春樹', '5路盤問題集、囲碁文庫', 'animal farmオーウェル', 'しのぎのてすじ200金子タカシ']) {
     assert.equal(titles.has(oldTitle), false, `${oldTitle} still appears as a work title`);
   }
 });

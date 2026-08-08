@@ -47,6 +47,12 @@ test('operational source lists are API collections', () => {
     'isbn_enrichments',
     'isbn_enrichment_attempts',
     'isbn_enrichment_results',
+    'category_enrichments',
+    'category_enrichment_attempts',
+    'category_enrichment_results',
+    'classifications',
+    'classification_schemes',
+    'ndc10_main_classes',
   ]) {
     assert.ok(names.has(name), `${name} is missing from the API collection index`);
   }

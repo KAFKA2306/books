@@ -1,25 +1,20 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import zlib from 'node:zlib';
-import { applyIsbnEnrichments } from '../src/isbn-enrichment.mjs';
-import { mergeIssueCatalog } from '../src/merge-catalog.mjs';
 
-async function readJsonIfPresent(filePath) {
-  try {
-    return JSON.parse(await fs.readFile(filePath, 'utf8'));
-  } catch (error) {
-    if (error.code === 'ENOENT') return null;
-    throw error;
+const root = process.cwd();
+const dataDir = path.join(root, 'data');
+
+async function decodeParts(manifestName) {
+  const manifest = JSON.parse(await fs.readFile(path.join(dataDir, manifestName), 'utf8'));
+  if (!Array.isArray(manifest.parts) || !manifest.parts.length) {
+    throw new Error(`${manifestName}: parts is empty`);
   }
-}
-
-async function decodeLegacyParts(root, manifestName) {
-  const manifest = JSON.parse(await fs.readFile(path.join(root, 'data', manifestName), 'utf8'));
   const chunks = await Promise.all(
-    manifest.parts.map((part) => fs.readFile(path.join(root, 'data', part), 'utf8')),
+    manifest.parts.map((part) => fs.readFile(path.join(dataDir, part), 'utf8')),
   );
-  const compressed = Buffer.from(chunks.join('').replace(/\s/g, ''), 'base64');
-  return JSON.parse(zlib.gunzipSync(compressed).toString('utf8'));
+  const encoded = chunks.join('').replace(/\s/g, '');
+  return JSON.parse(zlib.gunzipSync(Buffer.from(encoded, 'base64')).toString('utf8'));
 }
 
 function expandCompactCatalog(compact) {
@@ -98,16 +93,26 @@ function expandCompactCatalog(compact) {
   };
 }
 
-export async function loadCatalog(root = process.cwd()) {
-  const readableBase = await readJsonIfPresent(path.join(root, 'data/catalog.json'));
-  const base = readableBase ?? expandCompactCatalog(await decodeLegacyParts(root, 'catalog.parts.json'));
+const compactCatalog = await decodeParts('catalog.parts.json');
+const issueCatalog = await decodeParts('issue-1-books.parts.json');
+const readableCatalog = expandCompactCatalog(compactCatalog);
 
-  const readableIssue = await readJsonIfPresent(path.join(root, 'data/issue-1-books.json'));
-  const issueData = readableIssue ?? await decodeLegacyParts(root, 'issue-1-books.parts.json');
+await Promise.all([
+  fs.writeFile(
+    path.join(dataDir, 'catalog.json'),
+    `${JSON.stringify(readableCatalog, null, 2)}\n`,
+    'utf8',
+  ),
+  fs.writeFile(
+    path.join(dataDir, 'issue-1-books.json'),
+    `${JSON.stringify(issueCatalog, null, 2)}\n`,
+    'utf8',
+  ),
+]);
 
-  const merged = mergeIssueCatalog(base, issueData);
-  const enrichmentOverlay = JSON.parse(
-    await fs.readFile(path.join(root, 'data/isbn-enrichments.json'), 'utf8'),
-  );
-  return applyIsbnEnrichments(merged, enrichmentOverlay);
-}
+console.log(JSON.stringify({
+  catalog_works: readableCatalog.works.length,
+  catalog_editions: readableCatalog.editions.length,
+  catalog_holdings: readableCatalog.holdings.length,
+  issue_records: Array.isArray(issueCatalog.records) ? issueCatalog.records.length : null,
+}));

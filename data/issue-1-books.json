@@ -1,0 +1,1553 @@
+{
+  "schema_version": "1.0.0",
+  "source_issue": 1,
+  "record_count": 60,
+  "records": [
+    {
+      "ordinal": 1,
+      "canonical_title": "強化学習",
+      "work_title": "強化学習",
+      "title_key": "強化学習",
+      "work_id": "wrk_5b1c228b2f24",
+      "category": "データサイエンス",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784627826618",
+          "title": "強化学習",
+          "authors": "Richard S. Sutton; Andrew G. Barto; 三上貞芳; 皆川雅章",
+          "publisher": "森北出版",
+          "published_at": "2000-12",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784627826618",
+          "edition_id": "isbn:9784627826618"
+        }
+      ]
+    },
+    {
+      "ordinal": 2,
+      "canonical_title": "会社を変える分析の力",
+      "work_title": "会社を変える分析の力",
+      "title_key": "会社を変える分析の力",
+      "work_id": "wrk_ec1d81e85467",
+      "category": "データサイエンス",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784062882187",
+          "title": "会社を変える分析の力",
+          "authors": "河本薫",
+          "publisher": "講談社",
+          "published_at": "2013-07-18",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784062882187",
+          "edition_id": "isbn:9784062882187"
+        }
+      ]
+    },
+    {
+      "ordinal": 3,
+      "canonical_title": "ガウス過程と機械学習",
+      "work_title": "ガウス過程と機械学習",
+      "title_key": "ガウス過程と機械学習",
+      "work_id": "wrk_b92da32026a1",
+      "category": "データサイエンス",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784061529267",
+          "title": "ガウス過程と機械学習",
+          "authors": "持橋大地; 大羽成征",
+          "publisher": "講談社",
+          "published_at": "2019-03",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784061529267",
+          "edition_id": "isbn:9784061529267"
+        }
+      ]
+    },
+    {
+      "ordinal": 4,
+      "canonical_title": "暗号解読",
+      "work_title": "暗号解読",
+      "title_key": "暗号解読",
+      "work_id": "wrk_b8b788462d56",
+      "category": "科学・技術",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784102159729",
+          "title": "暗号解読 上",
+          "authors": "サイモン・シン; 青木薫",
+          "publisher": "新潮社",
+          "published_at": "2007-06-28",
+          "format": "文庫",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784102159729",
+          "volume": "上",
+          "edition_id": "isbn:9784102159729"
+        }
+      ]
+    },
+    {
+      "ordinal": 5,
+      "canonical_title": "フォン・ノイマンの哲学",
+      "work_title": "フォン・ノイマンの哲学",
+      "title_key": "フォンノイマンの哲学",
+      "work_id": "wrk_6262dde2a259",
+      "category": "科学・技術",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784065224403",
+          "title": "フォン・ノイマンの哲学 人間のフリをした悪魔",
+          "authors": "高橋昌一郎",
+          "publisher": "講談社",
+          "published_at": "2021-02",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784065224403",
+          "edition_id": "isbn:9784065224403"
+        }
+      ]
+    },
+    {
+      "ordinal": 6,
+      "canonical_title": "宇宙創成",
+      "work_title": "宇宙創成",
+      "title_key": "宇宙創成",
+      "work_id": "wrk_38dc3cd73644",
+      "category": "科学・技術",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784102159750",
+          "title": "宇宙創成 下",
+          "authors": "サイモン・シン; 青木薫",
+          "publisher": "新潮社",
+          "published_at": "2009-01-28",
+          "format": "文庫",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784102159750",
+          "volume": "下",
+          "edition_id": "isbn:9784102159750"
+        }
+      ]
+    },
+    {
+      "ordinal": 7,
+      "canonical_title": "宇宙創成",
+      "work_title": "宇宙創成",
+      "title_key": "宇宙創成",
+      "work_id": "wrk_38dc3cd73644",
+      "category": "科学・技術",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784102159743",
+          "title": "宇宙創成 上",
+          "authors": "サイモン・シン; 青木薫",
+          "publisher": "新潮社",
+          "published_at": "2009-01-28",
+          "format": "文庫",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784102159743",
+          "volume": "上",
+          "edition_id": "isbn:9784102159743"
+        }
+      ]
+    },
+    {
+      "ordinal": 8,
+      "canonical_title": "代替医療解剖",
+      "work_title": "代替医療解剖",
+      "title_key": "代替医療解剖",
+      "work_id": "wrk_90602952911e",
+      "category": "科学・技術",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784102159767",
+          "title": "代替医療解剖",
+          "authors": "サイモン・シン; エツァート・エルンスト; 青木薫",
+          "publisher": "新潮社",
+          "published_at": "2013-08-28",
+          "format": "文庫",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784102159767",
+          "edition_id": "isbn:9784102159767"
+        }
+      ]
+    },
+    {
+      "ordinal": 9,
+      "canonical_title": "暗号解読",
+      "work_title": "暗号解読",
+      "title_key": "暗号解読",
+      "work_id": "wrk_b8b788462d56",
+      "category": "科学・技術",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784102159736",
+          "title": "暗号解読 下",
+          "authors": "サイモン・シン; 青木薫",
+          "publisher": "新潮社",
+          "published_at": "2007-06-28",
+          "format": "文庫",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784102159736",
+          "volume": "下",
+          "edition_id": "isbn:9784102159736"
+        }
+      ]
+    },
+    {
+      "ordinal": 10,
+      "canonical_title": "イメージでわかる表現英文法",
+      "work_title": "イメージでわかる表現英文法",
+      "title_key": "イメージでわかる表現英文法",
+      "work_id": "wrk_a38a8c783160",
+      "category": "その他",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784053043559",
+          "title": "イメージでわかる表現英文法",
+          "authors": "田中茂範; 弓桁太平; 神山きの",
+          "publisher": "Gakken",
+          "published_at": "2016-06-23",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784053043559",
+          "edition_id": "isbn:9784053043559"
+        }
+      ]
+    },
+    {
+      "ordinal": 11,
+      "canonical_title": "謎図鑑",
+      "work_title": "謎図鑑",
+      "title_key": "謎図鑑",
+      "work_id": "wrk_6fc45741ec57",
+      "category": "ゲーム・戦略",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784909474704",
+          "title": "謎図鑑",
+          "authors": "SCRAP",
+          "publisher": "SCRAP出版",
+          "published_at": "2023-07",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784909474704",
+          "edition_id": "isbn:9784909474704"
+        }
+      ]
+    },
+    {
+      "ordinal": 12,
+      "canonical_title": "NUDGE 実践 行動経済学",
+      "work_title": "NUDGE 実践 行動経済学",
+      "title_key": "nudge実践行動経済学",
+      "work_id": "wrk_e333f54655ee",
+      "category": "データサイエンス",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784296000982",
+          "title": "NUDGE 実践 行動経済学 完全版",
+          "authors": "リチャード・セイラー; キャス・サンスティーン; 遠藤真美",
+          "publisher": "日経BP",
+          "published_at": "2022-11-18",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784296000982",
+          "edition_id": "isbn:9784296000982"
+        }
+      ]
+    },
+    {
+      "ordinal": 13,
+      "canonical_title": "女と男 なぜわかりあえないのか",
+      "work_title": "女と男 なぜわかりあえないのか",
+      "title_key": "女と男なぜわかりあえないのか",
+      "work_id": "wrk_1664a411fc33",
+      "category": "心理・行動",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784166612659",
+          "title": "女と男 なぜわかりあえないのか",
+          "authors": "橘玲",
+          "publisher": "文藝春秋",
+          "published_at": "2020-06",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784166612659",
+          "edition_id": "isbn:9784166612659"
+        }
+      ]
+    },
+    {
+      "ordinal": 14,
+      "canonical_title": "中国の行動原理",
+      "work_title": "中国の行動原理",
+      "title_key": "中国の行動原理",
+      "work_id": "wrk_5507b2cdd5ad",
+      "category": "経済・社会",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784121025685",
+          "title": "中国の行動原理 国内潮流が決める国際関係",
+          "authors": "益尾知佐子",
+          "publisher": "中央公論新社",
+          "published_at": "2019-11",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784121025685",
+          "edition_id": "isbn:9784121025685"
+        }
+      ]
+    },
+    {
+      "ordinal": 15,
+      "canonical_title": "人間たちの話",
+      "work_title": "人間たちの話",
+      "title_key": "人間たちの話",
+      "work_id": "wrk_b04ad9e2242e",
+      "category": "文学・小説",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784150314200",
+          "title": "人間たちの話",
+          "authors": "柞刈湯葉",
+          "publisher": "早川書房",
+          "published_at": "2020-03-18",
+          "format": "文庫",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784150314200",
+          "edition_id": "isbn:9784150314200"
+        }
+      ]
+    },
+    {
+      "ordinal": 16,
+      "canonical_title": "夜のこと",
+      "work_title": "夜のこと",
+      "title_key": "夜のこと",
+      "work_id": "wrk_21a1a2a587ec",
+      "category": "文学・小説",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784594086268",
+          "title": "夜のこと",
+          "authors": "pha",
+          "publisher": "扶桑社",
+          "published_at": "2020-11",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784594086268",
+          "edition_id": "isbn:9784594086268"
+        }
+      ]
+    },
+    {
+      "ordinal": 17,
+      "canonical_title": "未来職安",
+      "work_title": "未来職安",
+      "title_key": "未来職安",
+      "work_id": "wrk_80ec8cab8670",
+      "category": "文学・小説",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784575241068",
+          "title": "未来職安",
+          "authors": "柞刈湯葉",
+          "publisher": "双葉社",
+          "published_at": "2018-07-20",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784575241068",
+          "edition_id": "isbn:9784575241068"
+        },
+        {
+          "isbn13": "9784575524406",
+          "title": "未来職安",
+          "authors": "柞刈湯葉",
+          "publisher": "双葉社",
+          "published_at": "2021-01",
+          "format": "文庫",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784575524406",
+          "edition_id": "isbn:9784575524406"
+        }
+      ]
+    },
+    {
+      "ordinal": 18,
+      "canonical_title": "AI法廷のハッカー弁護士",
+      "work_title": "AI法廷のハッカー弁護士",
+      "title_key": "ai法廷のハッカー弁護士",
+      "work_id": "wrk_1fccfe1c03cc",
+      "category": "文学・小説",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784152101389",
+          "title": "AI法廷のハッカー弁護士",
+          "authors": "竹田人造",
+          "publisher": "早川書房",
+          "published_at": "2022-05-24",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784152101389",
+          "edition_id": "isbn:9784152101389"
+        }
+      ]
+    },
+    {
+      "ordinal": 19,
+      "canonical_title": "地球の歩き方 オランダ ベルギー ルクセンブルク",
+      "work_title": "地球の歩き方 オランダ ベルギー ルクセンブルク",
+      "title_key": "地球の歩き方オランダベルギールクセンブルク",
+      "work_id": "wrk_cd014055f1dc",
+      "category": "その他",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784058012840",
+          "title": "A19 地球の歩き方 オランダ ベルギー ルクセンブルク 2021～2022",
+          "authors": "地球の歩き方編集室",
+          "publisher": "地球の歩き方",
+          "published_at": "2021-01-12",
+          "format": "旅行ガイド",
+          "verification": "verified",
+          "source_url": "https://hon.gakken.jp/book/2080128400",
+          "edition": "2021～2022年版",
+          "edition_id": "isbn:9784058012840"
+        }
+      ]
+    },
+    {
+      "ordinal": 20,
+      "canonical_title": "一度読んだら絶対に忘れない世界史の教科書 経済編",
+      "work_title": "一度読んだら絶対に忘れない世界史の教科書 経済編",
+      "title_key": "一度読んだら絶対に忘れない世界史の教科書経済編",
+      "work_id": "wrk_cda71870992a",
+      "category": "経済・社会",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784815606176",
+          "title": "一度読んだら絶対に忘れない世界史の教科書 経済編",
+          "authors": "山﨑圭一",
+          "publisher": "SBクリエイティブ",
+          "published_at": "2020-10-17",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784815606176",
+          "edition_id": "isbn:9784815606176"
+        }
+      ]
+    },
+    {
+      "ordinal": 21,
+      "canonical_title": "地球の歩き方 ヨーロッパ",
+      "work_title": "地球の歩き方 ヨーロッパ",
+      "title_key": "地球の歩き方ヨーロッパ",
+      "work_id": "wrk_bd5c15ca5bd7",
+      "category": "その他",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784058012666",
+          "title": "A01 地球の歩き方 ヨーロッパ 2020～2021",
+          "authors": "地球の歩き方編集室",
+          "publisher": "地球の歩き方",
+          "published_at": "2021-01-12",
+          "format": "旅行ガイド",
+          "verification": "verified",
+          "source_url": "https://hon.gakken.jp/book/2080126600",
+          "edition": "2020～2021年版",
+          "edition_id": "isbn:9784058012666"
+        }
+      ]
+    },
+    {
+      "ordinal": 22,
+      "canonical_title": "食糧と人類",
+      "work_title": "食糧と人類",
+      "title_key": "食糧と人類",
+      "work_id": "wrk_1d50b6447658",
+      "category": "経済・社会",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784532240028",
+          "title": "食糧と人類 飢餓を克服した大増産の文明史",
+          "authors": "ルース・ドフリース; 小川敏子",
+          "publisher": "日経BP 日本経済新聞出版本部",
+          "published_at": "2021-04-05",
+          "format": "文庫",
+          "verification": "verified",
+          "source_url": "https://www01.hanmoto.com/bd/isbn/9784532240028",
+          "edition_id": "isbn:9784532240028"
+        }
+      ]
+    },
+    {
+      "ordinal": 23,
+      "canonical_title": "ゾーン",
+      "work_title": "ゾーン",
+      "title_key": "ゾーン",
+      "work_id": "wrk_1edb33667f6a",
+      "category": "ゲーム・戦略",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784939103575",
+          "title": "ゾーン 「勝つ」相場心理学入門",
+          "authors": "マーク・ダグラス; 世良敬明",
+          "publisher": "パンローリング",
+          "published_at": "2002-03-13",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784939103575",
+          "edition_id": "isbn:9784939103575"
+        }
+      ]
+    },
+    {
+      "ordinal": 24,
+      "canonical_title": "なぜ株価は値上がるのか?",
+      "work_title": "なぜ株価は値上がるのか?",
+      "title_key": "なぜ株価は値上がるのか",
+      "work_id": "wrk_9d3860d9c5b7",
+      "category": "投資・金融",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784775990315",
+          "title": "なぜ株価は値上がるのか? 相場のプロが教える「利食いと損切りの極意」",
+          "authors": "矢口新",
+          "publisher": "パンローリング",
+          "published_at": "2006-10-12",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://www.panrolling.com/books/gr/neagaru.html",
+          "edition_id": "isbn:9784775990315"
+        }
+      ]
+    },
+    {
+      "ordinal": 25,
+      "canonical_title": "会社四季報プロ500 2021年夏号",
+      "work_title": "会社四季報プロ500 2021年夏号",
+      "title_key": "会社四季報プロ5002021年夏号",
+      "work_id": "wrk_ef8c155f4e00",
+      "category": "投機",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": null,
+          "title": "会社四季報プロ500 2021年 夏号",
+          "authors": "会社四季報プロ500編集部",
+          "publisher": "東洋経済新報社",
+          "published_at": "2021-06-18",
+          "format": "雑誌",
+          "verification": "verified_without_isbn",
+          "source_url": "https://str.toyokeizai.net/magazine/shikiho_pro500/20210618/",
+          "jan": "4910022750714",
+          "edition_id": "issue1:25:1"
+        }
+      ]
+    },
+    {
+      "ordinal": 26,
+      "canonical_title": "ファイナンス理論全史",
+      "work_title": "ファイナンス理論全史",
+      "title_key": "ファイナンス理論全史",
+      "work_id": "wrk_e3d9ecdc0e3e",
+      "category": "投資・金融",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784478103753",
+          "title": "ファイナンス理論全史",
+          "authors": "田渕直也",
+          "publisher": "ダイヤモンド社",
+          "published_at": "2017-12-15",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784478103753",
+          "edition_id": "isbn:9784478103753"
+        }
+      ]
+    },
+    {
+      "ordinal": 27,
+      "canonical_title": "ビジネスデータサイエンスの教科書",
+      "work_title": "ビジネスデータサイエンスの教科書",
+      "title_key": "ビジネスデータサイエンスの教科書",
+      "work_id": "wrk_e1246541f865",
+      "category": "データサイエンス",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784799109151",
+          "title": "ビジネスデータサイエンスの教科書",
+          "authors": "マット・タディ; 上杉隼人; 井上毅郎",
+          "publisher": "すばる舎",
+          "published_at": "2020-07-26",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784799109151",
+          "edition_id": "isbn:9784799109151"
+        }
+      ]
+    },
+    {
+      "ordinal": 28,
+      "canonical_title": "スイッチ!",
+      "work_title": "スイッチ!",
+      "title_key": "スイッチ",
+      "work_id": "wrk_7bc16821a9d6",
+      "category": "心理・行動",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784152093981",
+          "title": "スイッチ! 「変われない」を変える方法 新版",
+          "authors": "チップ・ハース; ダン・ハース; 千葉敏生",
+          "publisher": "早川書房",
+          "published_at": "2013-08",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784152093981",
+          "edition_id": "isbn:9784152093981"
+        }
+      ]
+    },
+    {
+      "ordinal": 29,
+      "canonical_title": "なるほどデザイン",
+      "work_title": "なるほどデザイン",
+      "title_key": "なるほどデザイン",
+      "work_id": "wrk_771a99aa0865",
+      "category": "その他",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784844365174",
+          "title": "なるほどデザイン 目で見て楽しむデザインの本。",
+          "authors": "筒井美希",
+          "publisher": "エムディエヌコーポレーション",
+          "published_at": "2015-07-31",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784844365174",
+          "edition_id": "isbn:9784844365174"
+        }
+      ]
+    },
+    {
+      "ordinal": 30,
+      "canonical_title": "習慣の力",
+      "work_title": "習慣の力",
+      "title_key": "習慣の力",
+      "work_id": "wrk_8e32e3437b1e",
+      "category": "心理・行動",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784150505424",
+          "title": "習慣の力 新版",
+          "authors": "チャールズ・デュヒッグ; 渡会圭子",
+          "publisher": "早川書房",
+          "published_at": "2019-07-04",
+          "format": "文庫",
+          "verification": "verified",
+          "source_url": "https://www.hayakawa-online.co.jp/shop/g/g0000090542/",
+          "edition_id": "isbn:9784150505424"
+        }
+      ]
+    },
+    {
+      "ordinal": 31,
+      "canonical_title": "街とその不確かな壁",
+      "work_title": "街とその不確かな壁",
+      "title_key": "街とその不確かな壁",
+      "work_id": "wrk_3a637c521e2b",
+      "category": "文学・小説",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784101001791",
+          "title": "街とその不確かな壁 下",
+          "authors": "村上春樹",
+          "publisher": "新潮社",
+          "published_at": "2025-05",
+          "format": "文庫",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784101001791",
+          "volume": "下",
+          "edition_id": "isbn:9784101001791"
+        }
+      ]
+    },
+    {
+      "ordinal": 32,
+      "canonical_title": "きょう、ゴリラをうえたよ",
+      "work_title": "きょう、ゴリラをうえたよ",
+      "title_key": "きょうゴリラをうえたよ",
+      "work_id": "wrk_6f125bc4452a",
+      "category": "科学・技術",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784041144312",
+          "title": "きょう、ゴリラをうえたよ 愉快で深いこどものいいまちがい集",
+          "authors": "水野太貴; 吉本ユータヌキ; 今井むつみ",
+          "publisher": "KADOKAWA",
+          "published_at": "2024-07-31",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://www.kadokawa.co.jp/product/322308000579/",
+          "edition_id": "isbn:9784041144312"
+        }
+      ]
+    },
+    {
+      "ordinal": 33,
+      "canonical_title": "街とその不確かな壁",
+      "work_title": "街とその不確かな壁",
+      "title_key": "街とその不確かな壁",
+      "work_id": "wrk_3a637c521e2b",
+      "category": "文学・小説",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784101001784",
+          "title": "街とその不確かな壁 上",
+          "authors": "村上春樹",
+          "publisher": "新潮社",
+          "published_at": "2025-05",
+          "format": "文庫",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784101001784",
+          "volume": "上",
+          "edition_id": "isbn:9784101001784"
+        }
+      ]
+    },
+    {
+      "ordinal": 34,
+      "canonical_title": "会話の0.2秒を言語学する",
+      "work_title": "会話の0.2秒を言語学する",
+      "title_key": "会話の02秒を言語学する",
+      "work_id": "wrk_c09c6cafa74b",
+      "category": "科学・技術",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784103564317",
+          "title": "会話の0.2秒を言語学する",
+          "authors": "水野太貴",
+          "publisher": "新潮社",
+          "published_at": "2025-08",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784103564317",
+          "edition_id": "isbn:9784103564317"
+        }
+      ]
+    },
+    {
+      "ordinal": 35,
+      "canonical_title": "7つの激変",
+      "work_title": "7つの激変",
+      "title_key": "7つの激変",
+      "work_id": "wrk_45e674909742",
+      "category": "経済・社会",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784492581254",
+          "title": "7つの激変 AI・気候変動・分断に挑む企業",
+          "authors": "川邊健太郎",
+          "publisher": "東洋経済新報社",
+          "published_at": "2026-06-24",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784492581254",
+          "edition_id": "isbn:9784492581254"
+        }
+      ]
+    },
+    {
+      "ordinal": 36,
+      "canonical_title": "メタスキル",
+      "work_title": "メタスキル",
+      "title_key": "メタスキル",
+      "work_id": "wrk_b9aa973f5d39",
+      "category": "科学・技術",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784910063454",
+          "title": "メタスキル 努力の価値が変わる時代の「AI×自分」戦略",
+          "authors": "深津貴之; けんすう; 尾原和啓",
+          "publisher": "ニューズピックス",
+          "published_at": "2026-05",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784910063454",
+          "edition_id": "isbn:9784910063454"
+        }
+      ]
+    },
+    {
+      "ordinal": 37,
+      "canonical_title": "2035 10年後のニッポン",
+      "work_title": "2035 10年後のニッポン",
+      "title_key": "203510年後のニッポン",
+      "work_id": "wrk_f999b3016b4e",
+      "category": "経済・社会",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784198656454",
+          "title": "2035 10年後のニッポン ホリエモンの未来予測大全",
+          "authors": "堀江貴文",
+          "publisher": "徳間書店",
+          "published_at": "2023-06",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784198656454",
+          "edition_id": "isbn:9784198656454"
+        }
+      ]
+    },
+    {
+      "ordinal": 38,
+      "canonical_title": "これからのAI、正しい付き合い方と使い方",
+      "work_title": "これからのAI、正しい付き合い方と使い方",
+      "title_key": "これからのai正しい付き合い方と使い方",
+      "work_id": "wrk_77ebf990a772",
+      "category": "科学・技術",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784041155271",
+          "title": "これからのAI、正しい付き合い方と使い方 「自分の頭で考える人」のための教科書",
+          "authors": "イーサン・モリック; 久保田敦子",
+          "publisher": "KADOKAWA",
+          "published_at": "2024-12",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784041155271",
+          "edition_id": "isbn:9784041155271"
+        }
+      ]
+    },
+    {
+      "ordinal": 39,
+      "canonical_title": "ザ・パターン・シーカー",
+      "work_title": "ザ・パターン・シーカー",
+      "title_key": "ザパターンシーカー",
+      "work_id": "wrk_51d9372f379e",
+      "category": "科学・技術",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784759820898",
+          "title": "ザ・パターン・シーカー 自閉症がいかに人類の発明を促したか",
+          "authors": "サイモン・バロン=コーエン; 篠田里佐",
+          "publisher": "化学同人",
+          "published_at": "2022-11",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784759820898",
+          "edition_id": "isbn:9784759820898"
+        }
+      ]
+    },
+    {
+      "ordinal": 40,
+      "canonical_title": "Autism and the Predictive Brain",
+      "work_title": "Autism and the Predictive Brain",
+      "title_key": "autismandthepredictivebrain",
+      "work_id": "wrk_4cde14267b9c",
+      "category": "科学・技術",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9781032358970",
+          "title": "Autism and the Predictive Brain: Absolute Thinking in a Relative World",
+          "authors": "Peter Vermeulen",
+          "publisher": "Routledge",
+          "published_at": "2022-12-30",
+          "format": "hardcover",
+          "verification": "verified",
+          "source_url": "https://www.routledge.com/Autism-and-the-Predictive-Brain-Absolute-Thinking-in-a-Relative-World/Vermeulen/p/book/9781032358970",
+          "language": "en",
+          "edition_id": "isbn:9781032358970"
+        },
+        {
+          "isbn13": "9781000788365",
+          "title": "Autism and the Predictive Brain: Absolute Thinking in a Relative World",
+          "authors": "Peter Vermeulen",
+          "publisher": "Routledge",
+          "published_at": "2022-12-30",
+          "format": "eBook",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9781000788365",
+          "language": "en",
+          "edition_id": "isbn:9781000788365"
+        }
+      ]
+    },
+    {
+      "ordinal": 41,
+      "canonical_title": "自閉スペクトラム症の人たちが生きる新しい世界",
+      "work_title": "自閉スペクトラム症の人たちが生きる新しい世界",
+      "title_key": "自閉スペクトラム症の人たちが生きる新しい世界",
+      "work_id": "wrk_381883622f08",
+      "category": "心理・行動",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784798184586",
+          "title": "自閉スペクトラム症の人たちが生きる新しい世界 アン・マスキング “ふつう”という仮面からの解放 ありのままの自分へ",
+          "authors": "デヴォン・プライス; 堀越英美",
+          "publisher": "翔泳社",
+          "published_at": "2024-07",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784798184586",
+          "edition_id": "isbn:9784798184586"
+        }
+      ]
+    },
+    {
+      "ordinal": 42,
+      "canonical_title": "宗教認知科学入門",
+      "work_title": "宗教認知科学入門",
+      "title_key": "宗教認知科学入門",
+      "work_id": "wrk_cfc1092c4b4a",
+      "category": "科学・技術",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784326103515",
+          "title": "宗教認知科学入門 進化・脳・認知・文化をつなぐ",
+          "authors": "クレア・ホワイト; 藤井修平ほか",
+          "publisher": "勁草書房",
+          "published_at": "2025-05-02",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784326103515",
+          "edition_id": "isbn:9784326103515"
+        }
+      ]
+    },
+    {
+      "ordinal": 43,
+      "canonical_title": "科学で宗教が解明できるか",
+      "work_title": "科学で宗教が解明できるか",
+      "title_key": "科学で宗教が解明できるか",
+      "work_id": "wrk_a6a65730d3d7",
+      "category": "科学・技術",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784326103171",
+          "title": "科学で宗教が解明できるか 進化生物学・認知科学に基づく宗教理論の構築",
+          "authors": "藤井修平",
+          "publisher": "勁草書房",
+          "published_at": "2023-01",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784326103171",
+          "edition_id": "isbn:9784326103171"
+        }
+      ]
+    },
+    {
+      "ordinal": 44,
+      "canonical_title": "身体性認知とは何か",
+      "work_title": "身体性認知とは何か",
+      "title_key": "身体性認知とは何か",
+      "work_id": "wrk_896819ce704b",
+      "category": "科学・技術",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784130101615",
+          "title": "身体性認知とは何か 4E認知の地平",
+          "authors": "ショーン・ギャラガー; 田中彰吾",
+          "publisher": "東京大学出版会",
+          "published_at": "2025-03",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784130101615",
+          "edition_id": "isbn:9784130101615"
+        }
+      ]
+    },
+    {
+      "ordinal": 45,
+      "canonical_title": "感覚史入門",
+      "work_title": "感覚史入門",
+      "title_key": "感覚史入門",
+      "work_id": "wrk_23e2272269cf",
+      "category": "科学・技術",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784582860962",
+          "title": "感覚史入門 なぜプラスチックを「清潔」に感じるのか",
+          "authors": "久野愛",
+          "publisher": "平凡社",
+          "published_at": "2025-12",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784582860962",
+          "edition_id": "isbn:9784582860962"
+        }
+      ]
+    },
+    {
+      "ordinal": 46,
+      "canonical_title": "子どもは40000回質問する",
+      "work_title": "子どもは40000回質問する",
+      "title_key": "子どもは40000回質問する",
+      "work_id": "wrk_d7a5a61de56d",
+      "category": "心理・行動",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784334770532",
+          "title": "子どもは40000回質問する あなたの人生を創る「好奇心」の驚くべき力",
+          "authors": "イアン・レズリー; 須川綾子",
+          "publisher": "光文社",
+          "published_at": "2022-05",
+          "format": "文庫",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784334770532",
+          "edition_id": "isbn:9784334770532"
+        }
+      ]
+    },
+    {
+      "ordinal": 47,
+      "canonical_title": "モダンオペレーティングシステム",
+      "work_title": "モダンオペレーティングシステム",
+      "title_key": "モダンオペレーティングシステム",
+      "work_id": "wrk_6f8a497c40ce",
+      "category": "科学・技術",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784296070992",
+          "title": "モダンオペレーティングシステム 第5版 上",
+          "authors": "Andrew S. Tanenbaum; Herbert Bos; 水野忠則ほか",
+          "publisher": "日経BP",
+          "published_at": "2025-11",
+          "format": "専門書",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784296070992",
+          "volume": "上",
+          "edition_id": "isbn:9784296070992"
+        },
+        {
+          "isbn13": "9784296071357",
+          "title": "モダンオペレーティングシステム 第5版 下",
+          "authors": "Andrew S. Tanenbaum; Herbert Bos; 水野忠則ほか",
+          "publisher": "日経BP",
+          "published_at": "2025-11",
+          "format": "専門書",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784296071357",
+          "volume": "下",
+          "edition_id": "isbn:9784296071357"
+        }
+      ]
+    },
+    {
+      "ordinal": 48,
+      "canonical_title": "テスト駆動開発",
+      "work_title": "テスト駆動開発",
+      "title_key": "テスト駆動開発",
+      "work_id": "wrk_a5d661f71e4b",
+      "category": "科学・技術",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784274217883",
+          "title": "テスト駆動開発",
+          "authors": "Kent Beck; 和田卓人",
+          "publisher": "オーム社",
+          "published_at": "2017-10-14",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784274217883",
+          "edition_id": "isbn:9784274217883"
+        }
+      ]
+    },
+    {
+      "ordinal": 49,
+      "canonical_title": "達人プログラマー",
+      "work_title": "達人プログラマー",
+      "title_key": "達人プログラマー",
+      "work_id": "wrk_dd27e01176c2",
+      "category": "科学・技術",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784274226298",
+          "title": "達人プログラマー 熟達に向けたあなたの旅 第2版",
+          "authors": "David Thomas; Andrew Hunt; 村上雅章",
+          "publisher": "オーム社",
+          "published_at": "2020-11",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784274226298",
+          "edition_id": "isbn:9784274226298"
+        }
+      ]
+    },
+    {
+      "ordinal": 50,
+      "canonical_title": "ヘッセ 人生の言葉",
+      "work_title": "ヘッセ 人生の言葉",
+      "title_key": "ヘッセ人生の言葉",
+      "work_id": "wrk_4835f537ca4c",
+      "category": "文学・小説",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784799319833",
+          "title": "ヘッセ 人生の言葉 エッセンシャル版",
+          "authors": "ヘルマン・ヘッセ; 白取春彦",
+          "publisher": "ディスカヴァー・トゥエンティワン",
+          "published_at": "2016-09",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784799319833",
+          "edition_id": "isbn:9784799319833"
+        }
+      ]
+    },
+    {
+      "ordinal": 51,
+      "canonical_title": "東洋医学はなぜ効くのか",
+      "work_title": "東洋医学はなぜ効くのか",
+      "title_key": "東洋医学はなぜ効くのか",
+      "work_id": "wrk_b610f6d3920d",
+      "category": "科学・技術",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784065357484",
+          "title": "東洋医学はなぜ効くのか",
+          "authors": "山本高穂; 大野智",
+          "publisher": "講談社",
+          "published_at": "2024-05",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784065357484",
+          "edition_id": "isbn:9784065357484"
+        }
+      ]
+    },
+    {
+      "ordinal": 52,
+      "canonical_title": "この世界が消えたあとの科学文明のつくりかた",
+      "work_title": "この世界が消えたあとの科学文明のつくりかた",
+      "title_key": "この世界が消えたあとの科学文明のつくりかた",
+      "work_id": "wrk_d00fd1626ea5",
+      "category": "科学・技術",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784309253251",
+          "title": "この世界が消えたあとの科学文明のつくりかた",
+          "authors": "ルイス・ダートネル; 東郷えりか",
+          "publisher": "河出書房新社",
+          "published_at": "2015-06",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784309253251",
+          "edition_id": "isbn:9784309253251"
+        }
+      ]
+    },
+    {
+      "ordinal": 53,
+      "canonical_title": "認知バイアス",
+      "work_title": "認知バイアス",
+      "title_key": "認知バイアス",
+      "work_id": "wrk_fa2af4007ecf",
+      "category": "心理・行動",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784065219515",
+          "title": "認知バイアス 心に潜むふしぎな働き",
+          "authors": "鈴木宏昭",
+          "publisher": "講談社",
+          "published_at": "2020-10",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784065219515",
+          "edition_id": "isbn:9784065219515"
+        }
+      ]
+    },
+    {
+      "ordinal": 54,
+      "canonical_title": "ジェームズ・クリアー式 複利で伸びる1つの習慣",
+      "work_title": "ジェームズ・クリアー式 複利で伸びる1つの習慣",
+      "title_key": "ジェームズクリアー式複利で伸びる1つの習慣",
+      "work_id": "wrk_2c367b301343",
+      "category": "心理・行動",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784775942154",
+          "title": "ジェームズ・クリアー式 複利で伸びる1つの習慣",
+          "authors": "ジェームズ・クリアー; 牛原眞弓",
+          "publisher": "パンローリング",
+          "published_at": "2019-11",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784775942154",
+          "edition_id": "isbn:9784775942154"
+        }
+      ]
+    },
+    {
+      "ordinal": 55,
+      "canonical_title": "ポーカーとゲーム理論2",
+      "work_title": "ポーカーとゲーム理論2",
+      "title_key": "ポーカーとゲーム理論2",
+      "work_id": "wrk_a88f52787dfe",
+      "category": "ゲーム・戦略",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784775949283",
+          "title": "ポーカーとゲーム理論2",
+          "authors": "アンドリュー・ブロコス; 松山宗彦",
+          "publisher": "パンローリング",
+          "published_at": "2022-01",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784775949283",
+          "edition_id": "isbn:9784775949283"
+        }
+      ]
+    },
+    {
+      "ordinal": 56,
+      "canonical_title": "投資は金利が9割",
+      "work_title": "投資は金利が9割",
+      "title_key": "投資は金利が9割",
+      "work_id": "wrk_296bb52e2908",
+      "category": "投資・金融",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784046076700",
+          "title": "投資は金利が9割",
+          "authors": "福室光生",
+          "publisher": "KADOKAWA",
+          "published_at": "2025-09",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784046076700",
+          "edition_id": "isbn:9784046076700"
+        }
+      ]
+    },
+    {
+      "ordinal": 57,
+      "canonical_title": "山崎元のライフマネジメント",
+      "work_title": "山崎元のライフマネジメント",
+      "title_key": "山崎元のライフマネジメント",
+      "work_id": "wrk_2250b995f41a",
+      "category": "投資・金融",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": null,
+          "title": "山崎元のライフマネジメント 幸せな人生のための基本戦略",
+          "authors": "山崎元",
+          "publisher": "Gakken",
+          "published_at": "2025-04-02",
+          "format": "電子書籍",
+          "verification": "verified_without_isbn",
+          "source_url": "https://books.apple.com/jp/book/id6743336666",
+          "edition_id": "issue1:57:1"
+        }
+      ]
+    },
+    {
+      "ordinal": 58,
+      "canonical_title": "免疫「超」入門",
+      "work_title": "免疫「超」入門",
+      "title_key": "免疫超入門",
+      "work_id": "wrk_14b6cfdf7819",
+      "category": "科学・技術",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784065340370",
+          "title": "免疫「超」入門",
+          "authors": "吉村昭彦",
+          "publisher": "講談社",
+          "published_at": "2023-11",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784065340370",
+          "edition_id": "isbn:9784065340370"
+        }
+      ]
+    },
+    {
+      "ordinal": 59,
+      "canonical_title": "永劫館超連続殺人事件",
+      "work_title": "永劫館超連続殺人事件",
+      "title_key": "永劫館超連続殺人事件",
+      "work_id": "wrk_61fd7b6fcc74",
+      "category": "文学・小説",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784065351437",
+          "title": "永劫館超連続殺人事件 魔女はXと死ぬことにした",
+          "authors": "南海遊; 清原紘",
+          "publisher": "星海社",
+          "published_at": "2024-03-28",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784065351437",
+          "edition_id": "isbn:9784065351437"
+        }
+      ]
+    },
+    {
+      "ordinal": 60,
+      "canonical_title": "世界大激変",
+      "work_title": "世界大激変",
+      "title_key": "世界大激変",
+      "work_id": "wrk_34b8ac1d558c",
+      "category": "経済・社会",
+      "holding": {
+        "source": "Kindleスクリーンショット",
+        "format": "Kindle"
+      },
+      "editions": [
+        {
+          "isbn13": "9784492371381",
+          "title": "世界大激変 混乱する世界をどう読むか",
+          "authors": "ジム・ロジャーズ; 大野和基",
+          "publisher": "東洋経済新報社",
+          "published_at": "2025-06-25",
+          "format": "紙書籍",
+          "verification": "verified",
+          "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784492371381",
+          "edition_id": "isbn:9784492371381"
+        }
+      ]
+    }
+  ]
+}

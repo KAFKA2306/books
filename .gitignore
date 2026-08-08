@@ -1,6 +1,5 @@
 node_modules/
 .DS_Store
 *.log
-data/catalog.json
 data/catalog.json.gz
 data/books.csv

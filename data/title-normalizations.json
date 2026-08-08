@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.title-normalizations.v1",
-  "updated_at": "2026-08-08T18:00:00+09:00",
+  "updated_at": "2026-08-09T03:58:00+09:00",
   "records": [
     {
       "work_id": "wrk_368805ff1c88",
@@ -36,6 +36,15 @@
       "author": "ジョージ・オーウェル",
       "source_url": "https://ndlsearch.ndl.go.jp/books/R100000136-I1970304959815116735",
       "source_title": "Animal Farm",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_bc4ba83e25bf",
+      "from_title": "しのぎのてすじ200金子タカシ",
+      "title": "凌ぎの手筋200",
+      "author": "金子タカシ",
+      "source_url": "https://www.asakawashobo.co.jp/products/detail.php?product_id=45",
+      "source_title": "凌ぎの手筋200",
       "review_method": "manual_bibliographic_review"
     }
   ]

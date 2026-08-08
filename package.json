@@ -1,18 +1,19 @@
 {
   "name": "kafka-books",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "private": true,
   "type": "module",
   "scripts": {
     "test": "node --test",
     "validate": "node scripts/validate.mjs",
-    "validate:scripts": "node --check scripts/enrich-isbn.mjs && node --check scripts/materialize-catalog.mjs",
+    "validate:scripts": "node --check scripts/enrich-isbn.mjs && node --check scripts/materialize-catalog.mjs && node --check scripts/import-kindle-xml.mjs && node --check src/kindle-metadata.mjs",
     "api:build": "node scripts/build-api.mjs",
     "api:check": "npm run api:build && node --test tests/api-distribution.test.mjs",
     "check": "npm run validate:scripts && npm run validate && npm run api:build && npm test",
     "catalog:precheck": "node scripts/precheck.mjs",
     "catalog:materialize": "node scripts/materialize-catalog.mjs",
-    "isbn:enrich": "node scripts/enrich-isbn.mjs"
+    "isbn:enrich": "node scripts/enrich-isbn.mjs",
+    "kindle:import": "node scripts/import-kindle-xml.mjs"
   },
   "engines": {
     "node": ">=22"

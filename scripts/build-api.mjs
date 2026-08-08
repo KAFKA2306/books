@@ -124,6 +124,7 @@ const manifest = {
     'data/isbn-enrichments.json',
     'data/isbn-enrichment-state.json',
     'data/isbn-enrichment-report.json',
+    'data/kindle/manifest.json',
   ],
   license: 'Repository license and source-specific terms apply',
   collection_index: 'collections.json',

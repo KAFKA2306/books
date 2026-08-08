@@ -29,7 +29,7 @@ permissions:
 
 concurrency:
   group: category-enrichment
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   enrich:

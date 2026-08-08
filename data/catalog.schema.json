@@ -12,327 +12,100 @@
     "holdings"
   ],
   "properties": {
-    "schema_version": {
-      "type": "string"
-    },
-    "generated_at": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "key_policy": {
-      "type": "object"
-    },
-    "stats": {
-      "type": "object"
-    },
-    "works": {
-      "type": "array",
-      "items": {
-        "$ref": "#/$defs/work"
-      }
-    },
-    "editions": {
-      "type": "array",
-      "items": {
-        "$ref": "#/$defs/edition"
-      }
-    },
-    "holdings": {
-      "type": "array",
-      "items": {
-        "$ref": "#/$defs/holding"
-      }
-    },
-    "issue_records": {
-      "type": "array",
-      "items": {
-        "$ref": "#/$defs/issueRecord"
-      }
-    },
+    "schema_version": { "type": "string" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "key_policy": { "type": "object" },
+    "stats": { "type": "object" },
+    "works": { "type": "array", "items": { "$ref": "#/$defs/work" } },
+    "editions": { "type": "array", "items": { "$ref": "#/$defs/edition" } },
+    "holdings": { "type": "array", "items": { "$ref": "#/$defs/holding" } },
+    "issue_records": { "type": "array", "items": { "$ref": "#/$defs/issueRecord" } },
     "issue_resolutions": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": [
-          "ordinal",
-          "work_id",
-          "action"
-        ],
+        "required": ["ordinal", "work_id", "action"],
         "properties": {
-          "ordinal": {
-            "type": "integer",
-            "minimum": 1
-          },
-          "work_id": {
-            "type": "string"
-          },
-          "action": {
-            "enum": [
-              "skipped_duplicate_holding",
-              "added_new_holding"
-            ]
-          }
+          "ordinal": { "type": "integer", "minimum": 1 },
+          "work_id": { "type": "string" },
+          "action": { "enum": ["skipped_duplicate_holding", "added_new_holding"] }
         }
       }
-    }
+    },
+    "acquisitions": { "type": "array", "items": { "$ref": "#/$defs/acquisition" } },
+    "kindle_items": { "type": "array", "items": { "$ref": "#/$defs/kindleItem" } },
+    "kindle_records": { "type": "array", "items": { "$ref": "#/$defs/kindleRecord" } }
   },
   "$defs": {
     "work": {
       "type": "object",
-      "required": [
-        "work_id",
-        "title",
-        "title_key",
-        "category",
-        "status",
-        "item_count",
-        "isbn_status"
-      ],
+      "required": ["work_id", "title", "title_key", "category", "status", "item_count", "isbn_status"],
       "properties": {
-        "work_id": {
-          "type": "string",
-          "pattern": "^wrk_[0-9a-f]{12}$"
-        },
-        "title": {
-          "type": "string",
-          "minLength": 1
-        },
-        "title_key": {
-          "type": "string",
-          "minLength": 1
-        },
-        "author": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "category": {
-          "type": "string"
-        },
-        "status": {
-          "enum": [
-            "read",
-            "reading",
-            "unread",
-            "untracked"
-          ]
-        },
-        "progress": {
-          "type": [
-            "number",
-            "null"
-          ],
-          "minimum": 0,
-          "maximum": 1
-        },
-        "rating": {
-          "type": [
-            "number",
-            "null"
-          ],
-          "minimum": 1,
-          "maximum": 5
-        },
-        "price_yen": {
-          "type": [
-            "integer",
-            "null"
-          ],
-          "minimum": 0
-        },
-        "item_count": {
-          "type": "integer",
-          "minimum": 1
-        },
-        "isbn_count": {
-          "type": "integer",
-          "minimum": 0
-        },
-        "isbn_status": {
-          "enum": [
-            "verified",
-            "partial",
-            "missing"
-          ]
-        }
+        "work_id": { "type": "string", "pattern": "^wrk_[0-9a-f]{12}$" },
+        "title": { "type": "string", "minLength": 1 },
+        "title_key": { "type": "string", "minLength": 1 },
+        "author": { "type": ["string", "null"] },
+        "category": { "type": "string" },
+        "status": { "enum": ["read", "reading", "unread", "untracked"] },
+        "progress": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "rating": { "type": ["number", "null"], "minimum": 1, "maximum": 5 },
+        "price_yen": { "type": ["integer", "null"], "minimum": 0 },
+        "item_count": { "type": "integer", "minimum": 1 },
+        "isbn_count": { "type": "integer", "minimum": 0 },
+        "isbn_status": { "enum": ["verified", "partial", "missing"] }
       }
     },
     "edition": {
       "type": "object",
-      "required": [
-        "edition_id",
-        "id_kind",
-        "work_id",
-        "isbn13",
-        "verification"
-      ],
+      "required": ["edition_id", "id_kind", "work_id", "isbn13", "verification"],
       "properties": {
-        "edition_id": {
-          "type": "string"
-        },
-        "id_kind": {
-          "enum": [
-            "isbn13",
-            "jan",
-            "pending_title_key",
-            "source_scoped"
-          ]
-        },
-        "work_id": {
-          "type": "string"
-        },
-        "isbn13": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "pattern": "^[0-9]{13}$"
-        },
-        "verification": {
-          "enum": [
-            "verified",
-            "verified_without_isbn",
-            "unverified",
-            "rejected"
-          ]
-        },
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "authors": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "publisher": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "published_at": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "published_year": {
-          "type": [
-            "integer",
-            "null"
-          ]
-        },
-        "format": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "language": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "source_url": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "uri"
-        },
-        "jan": {
-          "type": [
-            "string",
-            "null"
-          ]
-        }
+        "edition_id": { "type": "string" },
+        "id_kind": { "enum": ["isbn13", "asin", "jan", "pending_title_key", "source_scoped"] },
+        "work_id": { "type": "string" },
+        "isbn13": { "type": ["string", "null"], "pattern": "^[0-9]{13}$" },
+        "verification": { "enum": ["verified", "verified_without_isbn", "unverified", "rejected", "source_metadata"] },
+        "title": { "type": ["string", "null"] },
+        "authors": { "type": ["string", "null"] },
+        "publisher": { "type": ["string", "null"] },
+        "published_at": { "type": ["string", "null"] },
+        "published_year": { "type": ["integer", "null"] },
+        "format": { "type": ["string", "null"] },
+        "language": { "type": ["string", "null"] },
+        "source_url": { "type": ["string", "null"], "format": "uri" },
+        "jan": { "type": ["string", "null"] },
+        "asin": { "type": ["string", "null"], "pattern": "^B[0-9A-Z]{9}$" }
       }
     },
     "holding": {
       "type": "object",
-      "required": [
-        "holding_id",
-        "work_id",
-        "source",
-        "format",
-        "quantity"
-      ],
+      "required": ["holding_id", "work_id", "source", "format", "quantity"],
       "properties": {
-        "holding_id": {
-          "type": "string"
-        },
-        "work_id": {
-          "type": "string"
-        },
-        "source": {
-          "type": "string"
-        },
-        "format": {
-          "type": "string"
-        },
-        "quantity": {
-          "type": "integer",
-          "minimum": 1
-        }
+        "holding_id": { "type": "string" },
+        "work_id": { "type": "string" },
+        "source": { "type": "string" },
+        "format": { "type": "string" },
+        "quantity": { "type": "integer", "minimum": 1 },
+        "acquisition_type": { "type": ["string", "null"], "enum": ["purchase", "prime", null] },
+        "owned": { "type": ["boolean", "null"] }
       }
     },
     "issueRecord": {
       "type": "object",
-      "required": [
-        "ordinal",
-        "canonical_title",
-        "work_title",
-        "title_key",
-        "work_id",
-        "category",
-        "holding",
-        "editions"
-      ],
+      "required": ["ordinal", "canonical_title", "work_title", "title_key", "work_id", "category", "holding", "editions"],
       "additionalProperties": false,
       "properties": {
-        "ordinal": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 60
-        },
-        "canonical_title": {
-          "type": "string",
-          "minLength": 1
-        },
-        "work_title": {
-          "type": "string",
-          "minLength": 1
-        },
-        "title_key": {
-          "type": "string",
-          "minLength": 1
-        },
-        "work_id": {
-          "type": "string",
-          "pattern": "^wrk_[0-9a-f]{12}$"
-        },
-        "category": {
-          "type": "string"
-        },
+        "ordinal": { "type": "integer", "minimum": 1, "maximum": 60 },
+        "canonical_title": { "type": "string", "minLength": 1 },
+        "work_title": { "type": "string", "minLength": 1 },
+        "title_key": { "type": "string", "minLength": 1 },
+        "work_id": { "type": "string", "pattern": "^wrk_[0-9a-f]{12}$" },
+        "category": { "type": "string" },
         "holding": {
           "type": "object",
-          "required": [
-            "source",
-            "format"
-          ],
+          "required": ["source", "format"],
           "properties": {
-            "source": {
-              "type": "string"
-            },
-            "format": {
-              "type": "string"
-            }
+            "source": { "type": "string" },
+            "format": { "type": "string" }
           }
         },
         "editions": {
@@ -340,66 +113,74 @@
           "minItems": 1,
           "items": {
             "type": "object",
-            "required": [
-              "edition_id",
-              "title",
-              "verification",
-              "source_url"
-            ],
+            "required": ["edition_id", "title", "verification", "source_url"],
             "properties": {
-              "edition_id": {
-                "type": "string"
-              },
-              "isbn13": {
-                "type": [
-                  "string",
-                  "null"
-                ],
-                "pattern": "^[0-9]{13}$"
-              },
-              "jan": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "authors": {
-                "type": [
-                  "string",
-                  "null"
-                ]
-              },
-              "publisher": {
-                "type": [
-                  "string",
-                  "null"
-                ]
-              },
-              "published_at": {
-                "type": [
-                  "string",
-                  "null"
-                ]
-              },
-              "format": {
-                "type": "string"
-              },
-              "verification": {
-                "enum": [
-                  "verified",
-                  "verified_without_isbn"
-                ]
-              },
-              "source_url": {
-                "type": [
-                  "string",
-                  "null"
-                ],
-                "format": "uri"
-              }
+              "edition_id": { "type": "string" },
+              "isbn13": { "type": ["string", "null"], "pattern": "^[0-9]{13}$" },
+              "jan": { "type": "string" },
+              "title": { "type": "string" },
+              "authors": { "type": ["string", "null"] },
+              "publisher": { "type": ["string", "null"] },
+              "published_at": { "type": ["string", "null"] },
+              "format": { "type": "string" },
+              "verification": { "enum": ["verified", "verified_without_isbn"] },
+              "source_url": { "type": ["string", "null"], "format": "uri" }
             }
           }
         }
+      }
+    },
+    "acquisition": {
+      "type": "object",
+      "required": ["acquisition_id", "provider", "asin", "acquisition_type", "owned", "access_model"],
+      "properties": {
+        "acquisition_id": { "type": "string", "pattern": "^acq_[0-9a-f]{16}$" },
+        "provider": { "const": "amazon_kindle" },
+        "asin": { "type": "string", "pattern": "^B[0-9A-Z]{9}$" },
+        "acquisition_type": { "enum": ["purchase", "prime", "sample"] },
+        "acquired_at": { "type": ["string", "null"] },
+        "owned": { "type": "boolean" },
+        "access_model": { "enum": ["owned", "subscription", "sample"] },
+        "work_id": { "type": ["string", "null"] },
+        "edition_id": { "type": ["string", "null"] }
+      }
+    },
+    "kindleItem": {
+      "type": "object",
+      "required": ["item_id", "asin", "title", "authors", "publishers", "access_types", "catalog_eligible"],
+      "properties": {
+        "item_id": { "type": "string" },
+        "asin": { "type": "string", "pattern": "^B[0-9A-Z]{9}$" },
+        "title": { "type": "string" },
+        "authors": { "type": "array", "items": { "type": "string" } },
+        "publishers": { "type": "array", "items": { "type": "string" } },
+        "publication_date": { "type": ["string", "null"] },
+        "cde_contenttype": { "type": ["string", "null"] },
+        "content_type": { "type": ["string", "null"] },
+        "access_types": { "type": "array", "items": { "type": "string" } },
+        "catalog_eligible": { "type": "boolean" },
+        "first_acquired_at": { "type": ["string", "null"] },
+        "last_acquired_at": { "type": ["string", "null"] },
+        "work_id": { "type": ["string", "null"] },
+        "edition_id": { "type": ["string", "null"] }
+      }
+    },
+    "kindleRecord": {
+      "type": "object",
+      "required": ["record_id", "asin", "title", "authors", "publishers"],
+      "properties": {
+        "record_id": { "type": "string", "pattern": "^knd_[0-9a-f]{16}$" },
+        "asin": { "type": "string", "pattern": "^B[0-9A-Z]{9}$" },
+        "title": { "type": "string" },
+        "authors": { "type": "array", "items": { "type": "string" } },
+        "publishers": { "type": "array", "items": { "type": "string" } },
+        "publication_date": { "type": ["string", "null"] },
+        "acquired_at": { "type": ["string", "null"] },
+        "cde_contenttype": { "type": ["string", "null"] },
+        "content_type": { "type": ["string", "null"] },
+        "acquisition_type": { "type": ["string", "null"] },
+        "work_id": { "type": ["string", "null"] },
+        "edition_id": { "type": ["string", "null"] }
       }
     }
   }

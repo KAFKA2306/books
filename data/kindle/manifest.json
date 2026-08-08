@@ -1,0 +1,37 @@
+{
+  "schema": "kafka.books.kindle-metadata.v1",
+  "source": "KindleSyncMetadataCache.xml",
+  "source_sync_time": "2026-06-06T03:50:42+0000",
+  "raw_record_count": 690,
+  "record_count": 685,
+  "storage": "compact-ndjson-array",
+  "fields": [
+    "record_id",
+    "asin",
+    "title",
+    "authors",
+    "publishers",
+    "publication_date",
+    "acquired_at",
+    "cde_contenttype",
+    "content_type",
+    "acquisition_type"
+  ],
+  "part_size": 50,
+  "parts": [
+    "records-01.ndjson",
+    "records-02.ndjson",
+    "records-03.ndjson",
+    "records-04.ndjson",
+    "records-05.ndjson",
+    "records-06.ndjson",
+    "records-07.ndjson",
+    "records-08.ndjson",
+    "records-09.ndjson",
+    "records-10.ndjson",
+    "records-11.ndjson",
+    "records-12.ndjson",
+    "records-13.ndjson",
+    "records-14.ndjson"
+  ]
+}

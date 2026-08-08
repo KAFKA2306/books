@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-08T09:38:28.725Z",
+  "updated_at": "2026-08-08T09:46:54.188Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -386,6 +386,138 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-08T09:38:28.725Z"
+    },
+    {
+      "work_id": "wrk_23e2272269cf",
+      "category": "心理・行動",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "141.2",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I034452173",
+      "match_mode": "isbn",
+      "title_similarity": 0.32,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784582860962",
+      "verified_at": "2026-08-08T09:46:54.188Z"
+    },
+    {
+      "work_id": "wrk_2471ab860005",
+      "category": "医学・健康",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "493.76",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029478695",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784816366031",
+      "verified_at": "2026-08-08T09:46:54.188Z"
+    },
+    {
+      "work_id": "wrk_25b63cbadfa5",
+      "category": "経営・会計",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "336.4",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029458373",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784532198862",
+      "verified_at": "2026-08-08T09:46:54.188Z"
+    },
+    {
+      "work_id": "wrk_263180aeb8e4",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I024165778",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-08T09:46:54.188Z"
+    },
+    {
+      "work_id": "wrk_2659d0c5914b",
+      "category": "情報工学・制御",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "548.3",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I023890546",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-08T09:46:54.188Z"
+    },
+    {
+      "work_id": "wrk_27333a9f2ec0",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I027237210",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-08T09:46:54.188Z"
+    },
+    {
+      "work_id": "wrk_275135940100",
+      "category": "植物",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "477",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I028771441",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-08T09:46:54.188Z"
+    },
+    {
+      "work_id": "wrk_2871c7f36716",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "914.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I030039851",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-08T09:46:54.188Z"
+    },
+    {
+      "work_id": "wrk_296bb52e2908",
+      "category": "投資・金融",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "338.18",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I034265381",
+      "match_mode": "isbn",
+      "title_similarity": 0.4375,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784046076700",
+      "verified_at": "2026-08-08T09:46:54.188Z"
+    },
+    {
+      "work_id": "wrk_2b92210b3113",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "947",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I023157025",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-08T09:46:54.188Z"
+    },
+    {
+      "work_id": "wrk_2c367b301343",
+      "category": "自己啓発・生き方",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "159",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029989075",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784775942154",
+      "verified_at": "2026-08-08T09:46:54.188Z"
     }
   ]
 }

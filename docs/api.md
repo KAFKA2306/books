@@ -31,9 +31,12 @@ https://kafka2306.github.io/books/api/v1/manifest.json
 - `works.json` / `works.csv`
 - `editions.json` / `editions.csv`
 - `holdings.json` / `holdings.csv`
+- `acquisitions.json` / `acquisitions.csv`
+- `kindle_items.json` / `kindle_items.csv`
+- `kindle_records.json` / `kindle_records.csv`
 - `issue_resolutions.json` / `issue_resolutions.csv`
 
-`data/catalog.json` に将来新しいトップレベル配列を追加した場合、その配列も自動的に同名の JSON / CSV APIへ追加されます。したがって Kindle XML 取込で `acquisitions` 等を追加した場合もAPIビルド側の個別修正は不要です。
+`data/catalog.json` のトップレベル配列は自動的に同名のJSON/CSV APIへ追加されます。Kindle XML取込による `acquisitions`、`kindle_items`、`kindle_records` もこの仕組みで配信します。
 
 ### 補助・監査リスト
 
@@ -61,6 +64,8 @@ CIは以下を必須条件とします。
 3. 各コレクションに JSON と CSV の両方が存在すること
 4. JSON件数が `collections.json` と `manifest.json` の件数に一致すること
 5. 配信ファイルのbyte数とSHA-256が `manifest.json` に一致すること
-6. Work / Edition / Holding の主キーが一意であること
+6. Work / Edition / Holding / Acquisition / Kindle item / Kindle record の主キーが一意であること
+7. SampleがHoldingとして登録されないこと
+8. ASIN EditionがASIN単位で一意であること
 
 このため「DBには存在するがAPIから全件取得できないリスト」をCIで検出します。

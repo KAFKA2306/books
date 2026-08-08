@@ -1,0 +1,46 @@
+{
+  "schema": "kafka.books.kindle-metadata.v1",
+  "source_file": "KindleSyncMetadataCache.xml",
+  "source_sha256": "115e62054abfbe0cdba0ab549c87d9f8db0d3fa9bd94c00f7691365632a1ab39",
+  "sync_time": "2026-06-06T03:50:42Z",
+  "source_software_version": "70980",
+  "raw_record_count": 690,
+  "record_count": 685,
+  "unique_asin_count": 680,
+  "origin_counts": {
+    "purchase": 455,
+    "sample": 204,
+    "prime": 10,
+    "kindle_dictionary": 1,
+    "unknown": 15
+  },
+  "storage": "compact-ndjson-array",
+  "fields": [
+    "record_id",
+    "asin",
+    "title",
+    "authors",
+    "publishers",
+    "publication_date",
+    "acquired_at",
+    "cde_contenttype",
+    "content_type",
+    "acquisition_type"
+  ],
+  "parts": [
+    {"name":"records-01.ndjson","records":50,"bytes":13578,"sha256":"89ede724ad705344dae1c0bbc73799f7fa16b51c31e8180b6fae868930e70df1"},
+    {"name":"records-02.ndjson","records":50,"bytes":13160,"sha256":"9c8f9974314d3c7792bd206b71ea862934d97d2fee1fed704e508fee02d9cf0e"},
+    {"name":"records-03.ndjson","records":50,"bytes":12687,"sha256":"43b531888c60ccc76b9cef1daf44344eac1c44bdcd934ebd2d6d1454de125c4c"},
+    {"name":"records-04.ndjson","records":50,"bytes":14154,"sha256":"8675449ef0b30bacce50173e1c983c94fef06a05f6650a69f4e85dbfe444fabc"},
+    {"name":"records-05.ndjson","records":50,"bytes":12915,"sha256":"bedc9b49e5a4df4bc814ca22d8ae740dae521eaa8a565487795ceac097618074"},
+    {"name":"records-06.ndjson","records":50,"bytes":13441,"sha256":"41bbe68a646760ff8a8352bfa50988603d1343a515141624142987d9f2ce9d34"},
+    {"name":"records-07.ndjson","records":50,"bytes":12772,"sha256":"a2dbd00ae5bbee26fb89d1577a1de3f97620e426e86c89907994945fe1a3505c"},
+    {"name":"records-08.ndjson","records":50,"bytes":13215,"sha256":"c719ed6c4c9e95a88cb7d582593e178360f9c046492dd756b7dbc7d8f286e073"},
+    {"name":"records-09.ndjson","records":50,"bytes":12872,"sha256":"e4d492d42421cd90ee12fc41fe20f2a97ee5fbdb9dcb67bfe478f339abbf121a"},
+    {"name":"records-10.ndjson","records":50,"bytes":13278,"sha256":"3801e24d3117738fe9d123bb32b2d1e6123bdc182140c69574ae2c9240476198"},
+    {"name":"records-11.ndjson","records":50,"bytes":12791,"sha256":"8381130a9d288106cb782198419ff26b89d2690fdf1514baee0f8603847f3c4f"},
+    {"name":"records-12.ndjson","records":50,"bytes":11853,"sha256":"3dd0c92bab8ef02b24445c93021933b1e2cd43e784d8fcc7478419a4ae461582"},
+    {"name":"records-13.ndjson","records":50,"bytes":11381,"sha256":"d1ad46338441f21020efb45f24091978e1d29d56affac3b78a1487af2c1faaae"},
+    {"name":"records-14.ndjson","records":35,"bytes":9340,"sha256":"55c887c3ea6442e081059c34d0cbbdf68bc7f14dc5167e5d6e8296bc4271911c"}
+  ]
+}

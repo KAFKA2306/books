@@ -6,7 +6,7 @@
   "scripts": {
     "test": "node --test",
     "validate": "node scripts/validate.mjs",
-    "validate:scripts": "node --check scripts/enrich-isbn.mjs && node --check scripts/materialize-catalog.mjs && node --check scripts/import-kindle-xml.mjs && node --check src/kindle-metadata.mjs",
+    "validate:scripts": "node --check scripts/enrich-isbn.mjs && node --check scripts/materialize-catalog.mjs && node --check scripts/import-kindle-xml.mjs && node --check src/kindle-metadata.mjs && node --check src/kindle-storage.mjs",
     "api:build": "node scripts/build-api.mjs",
     "api:check": "npm run api:build && node --test tests/api-distribution.test.mjs",
     "check": "npm run validate:scripts && npm run validate && npm run api:build && npm test",

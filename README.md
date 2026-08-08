@@ -10,9 +10,11 @@
 
 | 指標 | 件数 |
 |---|---:|
-| 有効な所蔵入力 | 491 |
-| 統合後の作品 | 449 |
-| 巻・版として統合 | 42 |
+| 有効な所蔵入力 | 913 |
+| 統合後の作品 | 784 |
+| Edition | 974 |
+| Kindle ASIN | 680 |
+| Kindle取得イベント | 669 |
 | ISBN確認済み | 61 |
 | 価格登録分の合計 | 166,395円 |
 
@@ -37,15 +39,29 @@ https://kafka2306.github.io/books/api/v1/collections.json
 - `works`
 - `editions`
 - `holdings`
+- `acquisitions`
+- `kindle_items`
+- `kindle_records`
 - `issue_resolutions`
 - `issue_records`
 - `isbn_enrichments`
 - `isbn_enrichment_attempts`
 - `isbn_enrichment_results`
 
-正準 `catalog.json` に将来新しいトップレベル配列を追加した場合、その配列も自動的にJSON/CSV APIへ追加されます。Kindle XML取込で `acquisitions` 等を追加する場合も同じ契約で配信します。
+正準 `catalog.json` の全トップレベル配列は自動的にJSON/CSV APIへ追加されます。Kindle XML由来の `acquisitions`、`kindle_items`、`kindle_records` も同じ契約で全件配信します。
 
 API全体の生成元、件数、byte数、SHA-256は `api/v1/manifest.json` で監査できます。詳細は [`docs/api.md`](docs/api.md) を参照してください。
+
+## Kindle XML取込
+
+Kindle for PCが生成する `KindleSyncMetadataCache.xml` をローカルで正規化して取り込みます。raw XML自体はGitへ追加しません。
+
+```bash
+npm run kindle:import -- "/path/to/KindleSyncMetadataCache.xml"
+npm run check
+```
+
+現在取り込んだスナップショットは、690 metadata行から完全重複を除いて685レコード、680 ASINです。取得イベントはPurchase 455、Prime 10、Sample 204で、Purchase/Primeを持つ465 ASINだけを本棚のEdition/Holdingへ反映します。Sample-onlyは `acquisitions` / `kindle_items` / `kindle_records` APIには残しますが、本棚所蔵数には含めません。
 
 ## Issue #1 取込結果
 
@@ -97,7 +113,8 @@ UIで1枚のカードとして表示する作品です。
 
 - `isbn13`: **確認済みの場合の優先キー**
 - `edition_id`: ISBN未登録時は `pending:<hash>`
-- `verification`: `verified | verified_without_isbn | unverified | rejected`
+- `verification`: `verified | verified_without_isbn | source_metadata | unverified | rejected`
+- Kindle版は `edition_id = asin:<ASIN>`、`id_kind = asin` とし、紙版ISBNを推測で付与しない
 
 国際ISBN機関は、ISBNを特定のタイトル・版・形式を識別するプロダクト識別子と定義しています。作品内容そのものと、版・形式を同じIDで扱わないため、WorkとEditionを分離しています。
 
@@ -106,7 +123,15 @@ UIで1枚のカードとして表示する作品です。
 
 ### `holdings`
 
-Kindle購入、蔵書メモ、図書館履歴など、個人側の登録元です。同一作品・同一登録元は `quantity` へ集約し、入力原文は保存しません。
+購入・所蔵として本棚へ表示する権利です。Kindleでは `purchase` と `prime` のみHoldingへ反映し、`sample` はHoldingへ入れません。
+
+### `acquisitions`
+
+Amazon Kindleの取得イベントです。`purchase | prime | sample` を区別し、同一ASINにSampleとPurchaseの両方が存在しても別イベントとして保持します。
+
+### `kindle_items` / `kindle_records`
+
+`kindle_items` はASIN単位の統合ビュー、`kindle_records` はローカルKindleメタデータから抽出した監査レコードです。raw `KindleSyncMetadataCache.xml` は同期情報を含むためGitHubへ保存せず、必要な書誌・取得情報だけを `data/kindle/*.ndjson` に正規化して保存します。
 
 ## 正規化ポリシー
 
@@ -164,6 +189,8 @@ npm run check
 - 集計値整合
 - 正規化とPrecheckのユニットテスト
 - 自動採用ISBNの複数提供元証跡
+- ASIN Edition / Acquisition / Kindle item / Kindle record の一意性と参照整合
+- SampleがHoldingへ混入しないこと
 - 正準catalogの全配列がAPIコレクションとして公開されること
 - 全APIコレクションにJSON/CSVが存在し、manifest件数と一致すること
 

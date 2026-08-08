@@ -1,6 +1,5 @@
 import crypto from 'node:crypto';
 import fs from 'node:fs/promises';
-import os from 'node:os';
 import path from 'node:path';
 import {
   KINDLE_PART_SIZE,
@@ -13,9 +12,6 @@ function defaultKindleXmlPath() {
   if (process.env.KINDLE_XML_PATH) return process.env.KINDLE_XML_PATH;
   if (process.env.LOCALAPPDATA) {
     return path.join(process.env.LOCALAPPDATA, 'Amazon', 'Kindle', 'Cache', 'KindleSyncMetadataCache.xml');
-  }
-  if (process.platform === 'darwin') {
-    return path.join(os.homedir(), 'Library', 'Application Support', 'Kindle', 'Cache', 'KindleSyncMetadataCache.xml');
   }
   return null;
 }
@@ -39,10 +35,11 @@ function parseArgs(argv) {
 }
 
 const options = parseArgs(process.argv.slice(2));
-const inputPath = path.resolve(options.input ?? defaultKindleXmlPath() ?? '');
-if (!inputPath) {
+const inputCandidate = options.input ?? defaultKindleXmlPath();
+if (!inputCandidate) {
   throw new Error('Kindle XML path is required. Pass it as the first argument or set KINDLE_XML_PATH.');
 }
+const inputPath = path.resolve(inputCandidate);
 
 const sourceBuffer = await fs.readFile(inputPath);
 const sourceText = sourceBuffer.toString('utf8');

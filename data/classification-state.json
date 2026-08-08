@@ -1,0 +1,6 @@
+{
+  "schema": "kafka.books.classification-state.v1",
+  "updated_at": null,
+  "total_attempts": 0,
+  "attempts": {}
+}

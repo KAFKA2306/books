@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - agent/catalog-readable-source
     paths:
       - '.github/workflows/materialize-readable-catalog.yml'
       - 'scripts/materialize-catalog.mjs'
@@ -21,7 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ github.ref_name }}
           fetch-depth: 0
 
       - uses: actions/setup-node@v4
@@ -36,7 +37,7 @@ jobs:
 
       - name: Commit readable sources
         run: |
-          if git diff --quiet -- data/catalog.json data/issue-1-books.json; then
+          if [ -z "$(git status --porcelain -- data/catalog.json data/issue-1-books.json)" ]; then
             echo 'Readable catalog is already current.'
             exit 0
           fi
@@ -44,5 +45,5 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add data/catalog.json data/issue-1-books.json
           git commit -m 'chore(data): materialize readable catalog sources'
-          git pull --rebase origin main
-          git push origin HEAD:main
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

@@ -13,7 +13,8 @@
     "catalog:precheck": "node scripts/precheck.mjs",
     "catalog:materialize": "node scripts/materialize-catalog.mjs",
     "isbn:enrich": "node scripts/enrich-isbn.mjs",
-    "kindle:import": "node scripts/import-kindle-xml.mjs"
+    "kindle:import": "node scripts/import-kindle-xml.mjs",
+    "kindle:sync": "npm run kindle:import && npm run check"
   },
   "engines": {
     "node": ">=22"

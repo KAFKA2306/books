@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichments.v1",
-  "updated_at": "2026-08-07T15:37:42.258Z",
+  "updated_at": "2026-08-08T03:44:16.427Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -112,6 +112,33 @@
       "verified_at": "2026-08-07T03:06:02.203Z"
     },
     {
+      "work_id": "wrk_123f7184e7d7",
+      "isbn13": "9784479308621",
+      "title": "無敵の思考",
+      "authors": [
+        "ひろゆき, 1976-",
+        "ひろゆき, 1976-,ひろゆき 著",
+        "ひろゆき,1976-"
+      ],
+      "publisher": "大和書房",
+      "published_year": 2021,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I031363104"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784479308621"
+        }
+      ],
+      "replaces_edition_id": "pending:123f7184e7d7",
+      "verified_at": "2026-08-08T03:44:16.427Z"
+    },
+    {
       "work_id": "wrk_14c1ee654f17",
       "isbn13": "9784781908472",
       "title": "複素関数概説",
@@ -218,6 +245,87 @@
       ],
       "replaces_edition_id": "pending:35a30202a75b",
       "verified_at": "2026-08-07T15:37:42.258Z"
+    },
+    {
+      "work_id": "wrk_3745a66c9c10",
+      "isbn13": "9784006032807",
+      "title": "チェンジング・ブルー : 気候変動の謎に迫る",
+      "authors": [
+        "大河内, 直彦",
+        "大河内, 直彦,大河内直彦 著",
+        "大河内,直彦"
+      ],
+      "publisher": "岩波書店",
+      "published_year": 2015,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I025995713"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784006032807"
+        }
+      ],
+      "replaces_edition_id": "pending:3745a66c9c10",
+      "verified_at": "2026-08-08T03:44:16.427Z"
+    },
+    {
+      "work_id": "wrk_40fbccec76cb",
+      "isbn13": "9784167905033",
+      "title": "色彩を持たない多崎つくると、彼の巡礼の年",
+      "authors": [
+        "村上, 春樹, 1949-",
+        "村上, 春樹, 1949-,村上春樹 著",
+        "村上,春樹,1949-"
+      ],
+      "publisher": "文藝春秋",
+      "published_year": 2015,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I026914713"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784167905033"
+        }
+      ],
+      "replaces_edition_id": "pending:40fbccec76cb",
+      "verified_at": "2026-08-08T03:44:16.427Z"
+    },
+    {
+      "work_id": "wrk_44a3f6b0d47d",
+      "isbn13": "9784065133156",
+      "title": "大人の発達障害 : 生きづらさへの理解と対処",
+      "authors": [
+        "市橋, 秀夫, 1968-",
+        "市橋, 秀夫, 1968-,市橋秀夫 監修",
+        "市橋,秀夫,1968-"
+      ],
+      "publisher": "講談社",
+      "published_year": 2018,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029316183"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784065133156"
+        }
+      ],
+      "replaces_edition_id": "pending:44a3f6b0d47d",
+      "verified_at": "2026-08-08T03:44:16.427Z"
     }
   ]
 }

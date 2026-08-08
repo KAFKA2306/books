@@ -27,6 +27,27 @@ test('blob module imports are rewritten to the deployed app origin', () => {
   assert.doesNotMatch(rewritten, /['"]\.\/src\//);
 });
 
+test('browser application reads the canonical API instead of legacy compressed catalog', async () => {
+  const source = await readJoinedAppSource();
+  assert.match(source, /\.\/api\/v1\/catalog\.json/);
+  assert.match(source, /cache:\s*['"]no-store['"]/);
+  assert.doesNotMatch(source, /catalog\.parts\.json/);
+  assert.doesNotMatch(source, /issue-1-books\.parts\.json/);
+  assert.doesNotMatch(source, /DecompressionStream/);
+});
+
+test('large-catalog UX keeps removable filters, mobile filter toggle, and Work detail entities', async () => {
+  const source = await readJoinedAppSource();
+  assert.match(source, /filterToggle/);
+  assert.match(source, /renderPagination/);
+  assert.match(source, /Edition/);
+  assert.match(source, /Holding/);
+  assert.match(source, /Acquisition/);
+  const html = await fs.readFile(new URL('index.html', root), 'utf8');
+  assert.match(html, /id="filterToggle"/);
+  assert.match(html, /ui\.css/);
+});
+
 test('joined browser application is valid UTF-8 and valid module syntax', async () => {
   const source = await readJoinedAppSource();
   assert.doesNotMatch(source, /\uFFFD/u);

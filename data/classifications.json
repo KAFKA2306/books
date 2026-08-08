@@ -1,0 +1,43 @@
+{
+  "schema": "kafka.books.classifications.v1",
+  "updated_at": null,
+  "classification_schemes": [
+    {
+      "scheme_id": "ndc10",
+      "name": "日本十進分類法 新訂10版",
+      "authority": "日本図書館協会",
+      "role": "primary",
+      "uri_prefix": "http://id.ndl.go.jp/class/ndc10/",
+      "source_url": "https://www.jla.or.jp/ndc/"
+    },
+    {
+      "scheme_id": "ndc9",
+      "name": "日本十進分類法 新訂9版",
+      "authority": "日本図書館協会",
+      "role": "legacy_source_reported",
+      "uri_prefix": "http://id.ndl.go.jp/class/ndc9/",
+      "source_url": "https://www.jla.or.jp/committees/bunrui/"
+    },
+    {
+      "scheme_id": "ndlc",
+      "name": "国立国会図書館分類表",
+      "authority": "国立国会図書館",
+      "role": "supplemental",
+      "uri_prefix": "http://id.ndl.go.jp/class/ndlc/",
+      "source_url": "https://www.ndl.go.jp/data/catstandards/classification_subject"
+    }
+  ],
+  "ndc10_main_classes": [
+    { "code": "0", "label": "総記", "label_en": "General works" },
+    { "code": "1", "label": "哲学", "label_en": "Philosophy" },
+    { "code": "2", "label": "歴史", "label_en": "History" },
+    { "code": "3", "label": "社会科学", "label_en": "Social sciences" },
+    { "code": "4", "label": "自然科学", "label_en": "Natural sciences" },
+    { "code": "5", "label": "技術", "label_en": "Technology" },
+    { "code": "6", "label": "産業", "label_en": "Industry" },
+    { "code": "7", "label": "芸術", "label_en": "The arts" },
+    { "code": "8", "label": "言語", "label_en": "Language" },
+    { "code": "9", "label": "文学", "label_en": "Literature" }
+  ],
+  "records": []
+}

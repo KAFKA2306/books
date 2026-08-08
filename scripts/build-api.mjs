@@ -2,11 +2,11 @@ import crypto from 'node:crypto';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { loadCatalog } from './load-catalog.mjs';
-import { normalizeIssueRecords } from '../src/source-groups.mjs';
+import { normalizeCatalogSources, normalizeIssueRecords } from '../src/source-groups.mjs';
 
 const root = process.cwd();
 const outDir = path.join(root, 'api', 'v1');
-const catalog = await loadCatalog(root);
+const catalog = normalizeCatalogSources(await loadCatalog(root));
 
 function stable(value) {
   if (Array.isArray(value)) return value.map(stable);

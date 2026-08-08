@@ -74,6 +74,30 @@
           }
         }
       }
+    },
+    "kindle_records": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "kindle_items": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "acquisitions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "kindle_match_audit": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
     }
   },
   "$defs": {
@@ -174,10 +198,18 @@
         "id_kind": {
           "enum": [
             "isbn13",
+            "asin",
             "jan",
             "pending_title_key",
             "source_scoped"
           ]
+        },
+        "asin": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[A-Z0-9]{10}$"
         },
         "work_id": {
           "type": "string"
@@ -234,6 +266,12 @@
           ]
         },
         "language": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "metadata_source": {
           "type": [
             "string",
             "null"

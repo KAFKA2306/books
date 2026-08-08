@@ -1,6 +1,6 @@
 # KAFKA BOOKS
 
-個人の読書記録を、**作品（Work）** と **版（Edition）** を分離して管理する静的本棚データベースです。
+個人の読書記録を、**作品（Work）**・**版（Edition）**・**所蔵（Holding）**・**取得履歴（Acquisition）**を分離して管理する静的本棚データベースです。
 
 - 公開UI: https://kafka2306.github.io/books/
 - 公開API: https://kafka2306.github.io/books/api/v1/collections.json
@@ -16,7 +16,41 @@
 | ISBN確認済み | 61 |
 | 価格登録分の合計 | 166,395円 |
 
-正準カタログは `data/catalog.json`、Issue #1由来の構造化取込は `data/issue-1-books.json` として可読JSONで保持します。旧 `base64+gzip` 分割データは互換fallbackのみです。ISBNは推測で補完せず、書誌情報を一次情報で確認できた版だけを `isbn13` に登録します。
+正準カタログは `data/catalog.json`、Issue #1由来の構造化取込は `data/issue-1-books.json` として可読JSONで保持します。旧 `base64+gzip` 分割データは互換fallbackのみです。
+
+Kindleについては、手入力やスクリーンショットより **Kindle for PCの `KindleSyncMetadataCache.xml` を機械的な正準入力として優先**します。生XMLは保存せず、検索可能なNDJSONとSHA-256 manifestへ変換します。ISBNは推測で補完せず、一次情報で確認できた版だけを `isbn13` に登録します。
+
+## Kindle XML同期
+
+Windowsでは次だけで同期・検証できます。
+
+```powershell
+npm run kindle:sync
+```
+
+既定では次を自動検出します。
+
+```text
+%LOCALAPPDATA%\Amazon\Kindle\Cache\KindleSyncMetadataCache.xml
+```
+
+別パスを使う場合:
+
+```powershell
+npm run kindle:sync -- "C:\path\to\KindleSyncMetadataCache.xml"
+```
+
+生成物:
+
+```text
+data/kindle/
+  manifest.json
+  records-01.ndjson
+  records-02.ndjson
+  ...
+```
+
+`manifest.json` には入力XMLのSHA-256、同期日時、元レコード数、一意ASIN数、Purchase / Sample / Prime等の件数、各分割ファイルのbyte数とSHA-256を記録します。詳細は [`docs/kindle-import.md`](docs/kindle-import.md) を参照してください。
 
 ## 公開API
 
@@ -32,7 +66,7 @@ https://kafka2306.github.io/books/api/v1/
 https://kafka2306.github.io/books/api/v1/collections.json
 ```
 
-`collections.json` から、公開中の全コレクション名・件数・JSON/CSVファイルを列挙できます。現在は次を公開します。
+`collections.json` から公開中の全コレクション名・件数・JSON/CSVファイルを列挙できます。現在の基礎コレクションは次です。
 
 - `works`
 - `editions`
@@ -43,13 +77,30 @@ https://kafka2306.github.io/books/api/v1/collections.json
 - `isbn_enrichment_attempts`
 - `isbn_enrichment_results`
 
-正準 `catalog.json` に将来新しいトップレベル配列を追加した場合、その配列も自動的にJSON/CSV APIへ追加されます。Kindle XML取込で `acquisitions` 等を追加する場合も同じ契約で配信します。
+Kindle XMLが正準データへ取り込まれると、次も自動追加されます。
 
-API全体の生成元、件数、byte数、SHA-256は `api/v1/manifest.json` で監査できます。詳細は [`docs/api.md`](docs/api.md) を参照してください。
+- `kindle_records`: XMLの全取得レコード
+- `kindle_items`: ASIN単位の統合一覧
+- `acquisitions`: Purchase / Sample / Prime等の取得イベント
+- `kindle_match_audit`: 既存手入力Kindle所蔵との照合・置換監査
+
+正準catalogに新しいトップレベル配列が増えると、APIビルドが同名のJSON/CSVを自動生成します。API全体の生成元、件数、byte数、SHA-256は `api/v1/manifest.json` で監査できます。詳細は [`docs/api.md`](docs/api.md) を参照してください。
+
+## Kindleデータの扱い
+
+同一ASINにSampleとPurchaseが両方ある場合でも、イベントは両方保存します。
+
+- `purchase`: 所有。`asin:<ASIN>` EditionとHoldingを作成
+- `sample`: 非所有。Acquisition履歴のみ
+- `prime`: 非所有。Acquisition履歴のみ
+- `unknown`: 非所有。Acquisition履歴のみ
+- `kindle_dictionary`: 非所有。Acquisition履歴のみ
+
+既存の `Kindleスクリーンショット` HoldingとXMLのPurchaseが同じ正規化Workへ一致した場合、スクリーンショットHoldingをASINベースのHoldingへ置換します。一致しない手入力レコードは自動削除せず、`kindle_match_audit` に残します。
 
 ## Issue #1 取込結果
 
-Kindle蔵書スクリーンショット由来の60件をprecheckへ通し、既存所蔵との二重登録を回避しました。
+Kindle蔵書スクリーンショット由来の60件をprecheckへ通し、既存所蔵との二重登録を回避しました。これらはKindle XMLとの照合対象として残します。
 
 | 判定 | 件数 |
 |---|---:|
@@ -76,6 +127,7 @@ Kindle蔵書スクリーンショット由来の60件をprecheckへ通し、既�
 - URLへ検索条件を保持
 - 表示中データのCSV出力
 - 追加前のISBN・正規化書名重複チェック
+- Kindle XMLのASIN重複・取得種別の機械正規化
 - 全公開リストのJSON/CSV API配信
 - GitHub Pagesへの自動配信
 
@@ -89,24 +141,26 @@ UIで1枚のカードとして表示する作品です。
 - `title`: 巻・版・上下・雑誌号を除いた表示名
 - `title_key`: 空白・記号・大小文字差を除いた重複判定キー
 - `status`: `read | reading | unread | untracked`
-- `item_count`: 何件の入力を統合したか
+- `item_count`: 実所蔵数
 
 ### `editions`
 
 版・形式・言語ごとの出版物です。
 
-- `isbn13`: **確認済みの場合の優先キー**
-- `edition_id`: ISBN未登録時は `pending:<hash>`
+- 紙・出版物の確認済み識別子: `isbn13`
+- Kindle版の識別子: `asin`
+- Kindle Edition ID: `asin:<ASIN>`
 - `verification`: `verified | verified_without_isbn | unverified | rejected`
 
-国際ISBN機関は、ISBNを特定のタイトル・版・形式を識別するプロダクト識別子と定義しています。作品内容そのものと、版・形式を同じIDで扱わないため、WorkとEditionを分離しています。
-
-- International ISBN Agency: https://www.isbn-international.org/content/what-isbn
-- ISO 2108:2017: https://www.iso.org/standard/65483.html
+ISBNとASINを同じキーとして扱わず、WorkとEditionを分離します。
 
 ### `holdings`
 
-Kindle購入、蔵書メモ、図書館履歴など、個人側の登録元です。同一作品・同一登録元は `quantity` へ集約し、入力原文は保存しません。
+実際に所有・所蔵している単位です。KindleではXMLの `Purchase` だけをHoldingにします。SampleとPrimeを所蔵数へ加えません。
+
+### `acquisitions`
+
+所有とは別に、Amazon Kindleで観測された取得イベントを保持します。これによりSample→Purchaseの遷移も失わず記録できます。
 
 ## 正規化ポリシー
 
@@ -142,7 +196,7 @@ npm run catalog:precheck -- data/import.template.json
 3. 既存ISBNとの完全一致をブロック
 4. 同一バッチ内ISBN重複をブロック
 5. ISBNなしの正規化書名一致をブロック
-6. 新しいISBN + 既存作品名は、既存WorkへEdition追加として許可
+6. 新しいISBN + 既存作品名は既存WorkへEdition追加として許可
 7. 類似度86%以上は確認警告
 
 ## 検証
@@ -155,27 +209,18 @@ npm run check
 
 検証内容:
 
-- Work ID / title keyの一意性
+- Work ID / title key / Edition ID / Holding IDの一意性
+- ISBN-13チェックディジットとISBN重複
+- ASIN Editionの一意性・形式・provenance
+- Edition / Holding / Acquisitionの孤児参照
+- Kindle Purchase ASINとHoldingの1対1対応
+- Sample / PrimeがHoldingへ混入しないこと
+- Kindle manifestの件数・byte数・SHA-256
 - Issue #1の60件・重複停止数・新規Work数
-- 原文フィールドの不在
-- ISBN-13チェックディジット
-- ISBN重複
-- Edition / Holdingの孤児参照
-- 集計値整合
-- 正規化とPrecheckのユニットテスト
+- 正規化・Precheck・Kindle XML parserのユニットテスト
 - 自動採用ISBNの複数提供元証跡
 - 正準catalogの全配列がAPIコレクションとして公開されること
 - 全APIコレクションにJSON/CSVが存在し、manifest件数と一致すること
-
-## 書誌情報の追加方針
-
-ISBN検索は、ISBNそのものが判明している場合に最も確実です。国立国会図書館サーチとOpen LibraryはいずれもISBN検索を提供しています。
-
-- NDLサーチ ISBN検索: https://ndlsearch.ndl.go.jp/bib/help/isbn
-- NDLサーチ API: https://ndlsearch.ndl.go.jp/help/api/specifications
-- Open Library検索: https://openlibrary.org/about/helpSearch
-
-タイトル検索だけで得たISBNは自動採用しません。候補が一意で、書名・著者・出版者・版・形式を照合できた場合のみ `verified` として登録します。
 
 ## ISBN定期拡充
 
@@ -194,7 +239,4 @@ ISBN検索は、ISBNそのものが判明している場合に最も確実です
 
 ## GitHub Pages
 
-`main` へのpushでCI検証後にPagesへ配信します。GitHub PagesのSourceが未設定の場合、検証は成功させたまま配信をスキップし、Actionsログへ警告を出します。初回のみSourceを **GitHub Actions** に設定してください。
-
-- https://docs.github.com/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
-- https://github.com/actions/deploy-pages
+`main` へのpushでCI検証後にPagesへ配信します。GitHub PagesのSourceが未設定の場合、検証は成功させたまま配信をスキップし、Actionsログへ警告を出します。

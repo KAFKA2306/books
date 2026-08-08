@@ -31,6 +31,7 @@ https://kafka2306.github.io/books/api/v1/manifest.json
 - `works.json` / `works.csv`
 - `editions.json` / `editions.csv`
 - `holdings.json` / `holdings.csv`
+- `issue_resolutions.json` / `issue_resolutions.csv`
 
 `data/catalog.json` に将来新しいトップレベル配列を追加した場合、その配列も自動的に同名の JSON / CSV APIへ追加されます。したがって Kindle XML 取込で `acquisitions` 等を追加した場合もAPIビルド側の個別修正は不要です。
 

@@ -83,6 +83,8 @@ jobs:
             echo "enabled=false" >> "$GITHUB_OUTPUT"
             echo "::warning::GitHub Pages is not enabled. Set Settings > Pages > Source to GitHub Actions, then rerun this workflow."
           fi
+      - name: Remove raw source data from Pages artifact
+        run: rm -rf data
       - if: steps.pages.outputs.enabled == 'true'
         uses: actions/configure-pages@v5
       - if: steps.pages.outputs.enabled == 'true'

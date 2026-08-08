@@ -28,8 +28,20 @@ jobs:
         run: |
           test -s api/v1/manifest.json
           test -s api/v1/catalog.json
-          test -s api/v1/works.csv
-          node -e "const m=require('./api/v1/manifest.json'); if (!m.record_counts.works) process.exit(1)"
+          test -s api/v1/collections.json
+          node <<'NODE'
+          const fs = require('node:fs');
+          const manifest = JSON.parse(fs.readFileSync('api/v1/manifest.json', 'utf8'));
+          const index = JSON.parse(fs.readFileSync('api/v1/collections.json', 'utf8'));
+          if (!index.collections.length) process.exit(1);
+          for (const collection of index.collections) {
+            const jsonPath = `api/v1/${collection.json}`;
+            const csvPath = `api/v1/${collection.csv}`;
+            if (!fs.existsSync(jsonPath) || !fs.existsSync(csvPath)) process.exit(1);
+            const rows = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+            if (!Array.isArray(rows) || rows.length !== manifest.record_counts[collection.name]) process.exit(1);
+          }
+          NODE
       - name: Upload API audit artifact
         uses: actions/upload-artifact@v4
         with:

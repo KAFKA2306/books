@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-08T13:15:30.887Z",
+  "updated_at": "2026-08-08T19:02:39.232Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -578,6 +578,138 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-08T13:15:30.887Z"
+    },
+    {
+      "work_id": "wrk_35a30202a75b",
+      "category": "物理",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "429.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I023886744",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784396112905",
+      "verified_at": "2026-08-08T19:02:39.232Z"
+    },
+    {
+      "work_id": "wrk_3745a66c9c10",
+      "category": "地球科学",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "451.85",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I025995713",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784006032807",
+      "verified_at": "2026-08-08T19:02:39.232Z"
+    },
+    {
+      "work_id": "wrk_381883622f08",
+      "category": "医学・健康",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "493.76",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I033583527",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784798184586",
+      "verified_at": "2026-08-08T19:02:39.232Z"
+    },
+    {
+      "work_id": "wrk_38c5208b38c4",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "932.5",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I033683416",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-08T19:02:39.232Z"
+    },
+    {
+      "work_id": "wrk_38dc3cd73644",
+      "category": "天文・宇宙",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "443.9",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000010013753",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784102159743",
+      "verified_at": "2026-08-08T19:02:39.232Z"
+    },
+    {
+      "work_id": "wrk_39820dfb35dd",
+      "category": "心理・行動",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "141.5",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I027111320",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-08T19:02:39.232Z"
+    },
+    {
+      "work_id": "wrk_3a5c051662b5",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I025906489",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-08T19:02:39.232Z"
+    },
+    {
+      "work_id": "wrk_3a637c521e2b",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "913.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I034037329",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784101001784",
+      "verified_at": "2026-08-08T19:02:39.232Z"
+    },
+    {
+      "work_id": "wrk_3a6c65cc6275",
+      "category": "経営・会計",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "336.49",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000009196779",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-08T19:02:39.232Z"
+    },
+    {
+      "work_id": "wrk_3ba27a10e1a0",
+      "category": "語学・言語",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "830.79",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I028334619",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-08T19:02:39.232Z"
+    },
+    {
+      "work_id": "wrk_3dfc456e3797",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "933.7",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000002693911",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-08T19:02:39.232Z"
     }
   ]
 }

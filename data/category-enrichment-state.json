@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichment-state.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-08T13:15:30.887Z",
+  "updated_at": "2026-08-08T19:02:39.232Z",
   "attempts": {
     "wrk_0025172962b9": {
       "attempted_at": "2026-08-08T09:15:33.779Z",
@@ -1752,7 +1752,257 @@
       "ndc_code": null,
       "source_isbn13": null,
       "provider_error": null
+    },
+    "wrk_357d51c057e9": {
+      "attempted_at": "2026-08-08T19:02:39.232Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-22T19:02:39.232Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_35a30202a75b": {
+      "attempted_at": "2026-08-08T19:02:39.232Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-05T19:02:39.232Z",
+      "category": "物理",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "429.6",
+      "source_isbn13": "9784396112905",
+      "provider_error": null
+    },
+    "wrk_368805ff1c88": {
+      "attempted_at": "2026-08-08T19:02:39.232Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-22T19:02:39.232Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_36b4ce266c04": {
+      "attempted_at": "2026-08-08T19:02:39.232Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-22T19:02:39.232Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_3745a66c9c10": {
+      "attempted_at": "2026-08-08T19:02:39.232Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-05T19:02:39.232Z",
+      "category": "地球科学",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "451.85",
+      "source_isbn13": "9784006032807",
+      "provider_error": null
+    },
+    "wrk_37ba9cccc0e6": {
+      "attempted_at": "2026-08-08T19:02:39.232Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-22T19:02:39.232Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_37cc846abbfd": {
+      "attempted_at": "2026-08-08T19:02:39.232Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-22T19:02:39.232Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_381883622f08": {
+      "attempted_at": "2026-08-08T19:02:39.232Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-05T19:02:39.232Z",
+      "category": "医学・健康",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "493.76",
+      "source_isbn13": "9784798184586",
+      "provider_error": null
+    },
+    "wrk_38658621c6ab": {
+      "attempted_at": "2026-08-08T19:02:39.232Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-22T19:02:39.232Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_38c5208b38c4": {
+      "attempted_at": "2026-08-08T19:02:39.232Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-05T19:02:39.232Z",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "932.5",
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_38dc3cd73644": {
+      "attempted_at": "2026-08-08T19:02:39.232Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-05T19:02:39.232Z",
+      "category": "天文・宇宙",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "443.9",
+      "source_isbn13": "9784102159743",
+      "provider_error": null
+    },
+    "wrk_39820dfb35dd": {
+      "attempted_at": "2026-08-08T19:02:39.232Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-05T19:02:39.232Z",
+      "category": "心理・行動",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "141.5",
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_39ec01834f19": {
+      "attempted_at": "2026-08-08T19:02:39.232Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-22T19:02:39.232Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_3a1a851926b7": {
+      "attempted_at": "2026-08-08T19:02:39.232Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-22T19:02:39.232Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_3a5c051662b5": {
+      "attempted_at": "2026-08-08T19:02:39.232Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-05T19:02:39.232Z",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "726.1",
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_3a637c521e2b": {
+      "attempted_at": "2026-08-08T19:02:39.232Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-05T19:02:39.232Z",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "913.6",
+      "source_isbn13": "9784101001784",
+      "provider_error": null
+    },
+    "wrk_3a6c65cc6275": {
+      "attempted_at": "2026-08-08T19:02:39.232Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-05T19:02:39.232Z",
+      "category": "経営・会計",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "336.49",
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_3ba27a10e1a0": {
+      "attempted_at": "2026-08-08T19:02:39.232Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-05T19:02:39.232Z",
+      "category": "語学・言語",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "830.79",
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_3c7f030de214": {
+      "attempted_at": "2026-08-08T19:02:39.232Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-22T19:02:39.232Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_3cd368773f29": {
+      "attempted_at": "2026-08-08T19:02:39.232Z",
+      "outcome": "ambiguous",
+      "next_attempt_at": "2026-09-07T19:02:39.232Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_3cd4c2bc4bc2": {
+      "attempted_at": "2026-08-08T19:02:39.232Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-22T19:02:39.232Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_3d3e8df911e4": {
+      "attempted_at": "2026-08-08T19:02:39.232Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-22T19:02:39.232Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_3dc5621fedbb": {
+      "attempted_at": "2026-08-08T19:02:39.232Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-22T19:02:39.232Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_3dfc456e3797": {
+      "attempted_at": "2026-08-08T19:02:39.232Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-05T19:02:39.232Z",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "933.7",
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_3e490567c44a": {
+      "attempted_at": "2026-08-08T19:02:39.232Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-22T19:02:39.232Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
     }
   },
-  "total_attempts": 175
+  "total_attempts": 200
 }

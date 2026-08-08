@@ -37,6 +37,7 @@ https://kafka2306.github.io/books/api/v1/collections.json
 - `works`
 - `editions`
 - `holdings`
+- `issue_resolutions`
 - `issue_records`
 - `isbn_enrichments`
 - `isbn_enrichment_attempts`

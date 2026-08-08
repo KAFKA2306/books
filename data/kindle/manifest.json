@@ -12,35 +12,23 @@
     "kindle_dictionary": 1
   },
   "parts": [
-    {
-      "name": "records-01.ndjson",
-      "records": 138,
-      "bytes": 53459,
-      "sha256": "087117f7865edf1d7e8a75617565bcc06cfd320974046b0357cb15099b72ca57"
-    },
-    {
-      "name": "records-02.ndjson",
-      "records": 138,
-      "bytes": 54564,
-      "sha256": "539ef428390d9fbc499a3e67827b843d7428cba040c04869a5892ba3d8de9304"
-    },
-    {
-      "name": "records-03.ndjson",
-      "records": 138,
-      "bytes": 53343,
-      "sha256": "9c92c57bef8ef5ae7d3c3834c8a35b3b5027110c72f960073629185f1357a009"
-    },
-    {
-      "name": "records-04.ndjson",
-      "records": 138,
-      "bytes": 53055,
-      "sha256": "5eb61c984fc45dc72e11a83c0e43a8fec0d8ff6565a8f59784734c5194cd95bd"
-    },
-    {
-      "name": "records-05.ndjson",
-      "records": 138,
-      "bytes": 51003,
-      "sha256": "c04273d4bf303e0c5c901d3cff7425be7b99127b924d0d502686182e1eccfdce"
-    }
+    {"name":"records-01.ndjson","records":39,"bytes":15355,"sha256":"f054c4911ad106d83e7527a6d09888820efe15b403e9c2252e3eb1e4dc253334"},
+    {"name":"records-02.ndjson","records":39,"bytes":15328,"sha256":"c3c0c9195b1a7728ae4f69e3dd6e2f6fe508d9df67ec43d44eeee98ec5b5cdd4"},
+    {"name":"records-03.ndjson","records":39,"bytes":14918,"sha256":"0748a0d914b0e8194b407512d533613edea4d64e271d8a9c240b129ff72b8e89"},
+    {"name":"records-04.ndjson","records":39,"bytes":14839,"sha256":"5d559ee1aa4b4579d5132e9ec79eb550d7551a5007f4fc34880963c5491ea12c"},
+    {"name":"records-05.ndjson","records":39,"bytes":15842,"sha256":"13b15c5a073c9b51753851a3d67248f003c7aa32391910a3d0062677c965f30e"},
+    {"name":"records-06.ndjson","records":39,"bytes":15302,"sha256":"6c74763e8032024cdd847e8cdff1b8c65eaf2b63184a0e65f88cbe564b3091bf"},
+    {"name":"records-07.ndjson","records":39,"bytes":15279,"sha256":"e8d4760c1a19c6df4c431c9ae256259911887707d8460189d44ab80528067abf"},
+    {"name":"records-08.ndjson","records":39,"bytes":15001,"sha256":"0ef452de8d50e847ea407576ca204e568f5e346283fc7ffb4f83ceb19df3e54b"},
+    {"name":"records-09.ndjson","records":39,"bytes":14460,"sha256":"1ceceba75a233b062e32ed1cff5b40d7ce3083c13ef898419313e501a19c93c3"},
+    {"name":"records-10.ndjson","records":39,"bytes":15269,"sha256":"1dde6d25dbfd8a059f3c181f4a8d99803800908f1086e7338cfe07f260dfa2d6"},
+    {"name":"records-11.ndjson","records":39,"bytes":15317,"sha256":"1afffb058be087bb01395c36b98b18fdf75e25830dd0cb8efbd84507ec41030a"},
+    {"name":"records-12.ndjson","records":39,"bytes":15098,"sha256":"72e1b0bbbf3640f075c1e7c757fc848d7885b4c1559e7e635de39ab3e4df0f10"},
+    {"name":"records-13.ndjson","records":39,"bytes":15041,"sha256":"b7542cc3ccc3aac1124c419c6d1805bbc770d2ea5d1c14a7694e09cbc13b6684"},
+    {"name":"records-14.ndjson","records":39,"bytes":14905,"sha256":"13e6879f55498f8ad4aa7cf39135c9eef071e73f6ea147a0a3ffb600676dced8"},
+    {"name":"records-15.ndjson","records":39,"bytes":14405,"sha256":"9dd3268b65b557e131d774fd2d0615df1653a85951fbdedb2a698a7553691d3f"},
+    {"name":"records-16.ndjson","records":39,"bytes":14504,"sha256":"f51ac9a6b02241820b9848f1e76b1242b038fbea664e824af24607317d17c92a"},
+    {"name":"records-17.ndjson","records":39,"bytes":13895,"sha256":"0cd455d4c3443fbecc7a04240817c33aeab7313a3a453fae96835b1ec3031273"},
+    {"name":"records-18.ndjson","records":27,"bytes":10666,"sha256":"1958796bb33d68d995e29a8eb05c6d512d91dec8e6394280c3bd6ce0ef35ce03"}
   ]
 }

@@ -73,7 +73,7 @@ test('manifest hashes and byte sizes match files', async () => {
 
 test('every collection has a CSV distribution', async () => {
   for (const collection of collectionIndex.collections) {
-    const content = await fs.readFile(new URL(collection.csv), 'utf8').catch(async () => fs.readFile(new URL(collection.csv, base), 'utf8'));
+    const content = await fs.readFile(new URL(collection.csv, base), 'utf8');
     assert.ok(content.length > 0, `${collection.csv} is empty`);
     assert.ok(content.includes('\n'), `${collection.csv} has no header terminator`);
   }

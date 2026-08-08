@@ -2,6 +2,7 @@ import crypto from 'node:crypto';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { loadCatalog } from './load-catalog.mjs';
+import { normalizeIssueRecords } from '../src/source-groups.mjs';
 
 const root = process.cwd();
 const outDir = path.join(root, 'api', 'v1');
@@ -67,7 +68,7 @@ const canonicalCollections = Object.fromEntries(
 );
 
 const supplementalCollections = {
-  issue_records: issueData.records ?? [],
+  issue_records: normalizeIssueRecords(issueData.records ?? []),
   isbn_enrichments: isbnEnrichments.records ?? [],
   isbn_enrichment_attempts: Object.entries(isbnEnrichmentState.attempts ?? {}).map(
     ([work_id, attempt]) => ({ work_id, ...attempt }),

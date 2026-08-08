@@ -5,14 +5,15 @@
   "type": "module",
   "scripts": {
     "test": "node --test",
-    "validate": "node scripts/validate.mjs",
-    "validate:scripts": "node --check scripts/enrich-isbn.mjs && node --check scripts/materialize-catalog.mjs && node --check scripts/import-kindle-xml.mjs && node --check src/kindle-metadata.mjs && node --check src/kindle-storage.mjs",
+    "validate": "node scripts/validate.mjs && node scripts/validate-classifications.mjs",
+    "validate:scripts": "node --check scripts/enrich-isbn.mjs && node --check scripts/enrich-classifications.mjs && node --check scripts/materialize-catalog.mjs && node --check scripts/import-kindle-xml.mjs && node --check src/classification.mjs && node --check src/kindle-metadata.mjs && node --check src/kindle-storage.mjs",
     "api:build": "node scripts/build-api.mjs",
     "api:check": "npm run api:build && node --test tests/api-distribution.test.mjs",
     "check": "npm run validate:scripts && npm run validate && npm run api:build && npm test",
     "catalog:precheck": "node scripts/precheck.mjs",
     "catalog:materialize": "node scripts/materialize-catalog.mjs",
     "isbn:enrich": "node scripts/enrich-isbn.mjs",
+    "classification:enrich": "node scripts/enrich-classifications.mjs",
     "kindle:import": "node scripts/import-kindle-xml.mjs",
     "kindle:sync": "npm run kindle:import && npm run check"
   },

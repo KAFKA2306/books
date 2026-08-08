@@ -6,6 +6,7 @@ import { applyIsbnEnrichments } from '../src/isbn-enrichment.mjs';
 import { mergeIssueCatalog } from '../src/merge-catalog.mjs';
 import { loadKindleMetadata, mergeKindleCatalog } from '../src/kindle-metadata.mjs';
 import { loadCompactKindleMetadata } from '../src/kindle-storage.mjs';
+import { applyTitleNormalizations } from '../src/title-normalization.mjs';
 
 async function readJsonIfPresent(filePath) {
   try {
@@ -127,5 +128,11 @@ export async function loadCatalog(root = process.cwd()) {
     rule_version: 'ndc-map-v1',
     records: [],
   };
-  return applyCategoryEnrichments(merged, categoryOverlay);
+  merged = applyCategoryEnrichments(merged, categoryOverlay);
+
+  const titleOverlay = await readJsonIfPresent(path.join(root, 'data/title-normalizations.json')) ?? {
+    schema: 'kafka.books.title-normalizations.v1',
+    records: [],
+  };
+  return applyTitleNormalizations(merged, titleOverlay);
 }

@@ -106,11 +106,12 @@ export async function loadCatalog(root = process.cwd()) {
   const readableIssue = await readJsonIfPresent(path.join(root, 'data/issue-1-books.json'));
   const issueData = readableIssue ?? await decodeLegacyParts(root, 'issue-1-books.parts.json');
 
-  const issueMerged = mergeIssueCatalog(base, issueData);
-  const kindleData = await loadKindleMetadata(root);
-  const kindleMerged = mergeKindleCatalog(issueMerged, kindleData);
+  let merged = mergeIssueCatalog(base, issueData);
+  const kindleManifest = await readJsonIfPresent(path.join(root, 'data/kindle/manifest.json'));
+  if (kindleManifest) merged = mergeKindleCatalog(merged, await loadKindleMetadata(root));
+
   const enrichmentOverlay = JSON.parse(
     await fs.readFile(path.join(root, 'data/isbn-enrichments.json'), 'utf8'),
   );
-  return applyIsbnEnrichments(kindleMerged, enrichmentOverlay);
+  return applyIsbnEnrichments(merged, enrichmentOverlay);
 }

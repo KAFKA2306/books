@@ -14,6 +14,7 @@ test('normalizes NDC codes and maps explicit KAFKA categories', () => {
   assert.equal(normalizeNdcCode('338.155'), '338.155');
   assert.equal(categoryForNdc('007.64'), 'コンピュータ・AI');
   assert.equal(categoryForNdc('338.155'), '投資・金融');
+  assert.equal(categoryForNdc('448.9'), '地図・測地');
   assert.equal(categoryForNdc('547.48'), '情報通信・ネットワーク');
   assert.equal(categoryForNdc('726.1'), '漫画・コミック');
   assert.equal(categoryForNdc('491.8'), '医学・健康');
@@ -72,12 +73,13 @@ test('rejects title matches when NDC categories conflict', () => {
   assert.equal(decision.outcome, 'ambiguous');
 });
 
-test('overlay changes only 未分類 works and keeps provenance', () => {
+test('overlay changes only 未分類 works, derives category from NDC, and keeps provenance', () => {
   const catalog = {
     stats: {},
     works: [
       { work_id: 'wrk_a', title: 'A', category: '未分類' },
       { work_id: 'wrk_b', title: 'B', category: '投資・金融' },
+      { work_id: 'wrk_map', title: 'Map', category: '未分類' },
     ],
     editions: [],
     holdings: [],
@@ -94,11 +96,17 @@ test('overlay changes only 未分類 works and keeps provenance', () => {
         source_url: 'https://ndlsearch.ndl.go.jp/books/b', match_mode: 'title', title_similarity: 1,
         rule_version: CATEGORY_RULE_VERSION, verified_at: '2026-08-08T00:00:00.000Z',
       },
+      {
+        work_id: 'wrk_map', category: '天文・宇宙', ndc_scheme: 'NDC10', ndc_code: '448.9',
+        source_url: 'https://ndlsearch.ndl.go.jp/books/map', match_mode: 'isbn', title_similarity: 1,
+        rule_version: CATEGORY_RULE_VERSION, verified_at: '2026-08-08T00:00:00.000Z',
+      },
     ],
   };
   const result = applyCategoryEnrichments(catalog, overlay);
   assert.equal(result.works[0].category, 'コンピュータ・AI');
   assert.equal(result.works[0].classification.source, 'ndl_search');
   assert.equal(result.works[1].category, '投資・金融');
-  assert.equal(result.stats.category_enriched_count, 1);
+  assert.equal(result.works[2].category, '地図・測地');
+  assert.equal(result.stats.category_enriched_count, 2);
 });

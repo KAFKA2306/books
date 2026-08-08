@@ -48,9 +48,19 @@ for (const edition of catalog.editions) {
   editionsByWork.set(edition.work_id, list);
 }
 
-const selected = eligibleCategoryWorks(catalog, state, now).slice(0, args.limit);
 const results = [];
 const acceptedByWork = new Map(overlay.records.map((record) => [record.work_id, record]));
+// The existing helper selects `未分類` works. For standards enrichment we also need
+// NDC evidence for works that already have a hand-curated display category. Treat only
+// works without an accepted NDC record as due, without changing their canonical category.
+const selectionCatalog = {
+  ...catalog,
+  works: catalog.works.map((work) => ({
+    ...work,
+    category: acceptedByWork.has(work.work_id) ? '__classification_complete__' : '未分類',
+  })),
+};
+const selected = eligibleCategoryWorks(selectionCatalog, state, now).slice(0, args.limit);
 
 for (let index = 0; index < selected.length; index += 1) {
   const work = selected[index];
@@ -78,12 +88,15 @@ for (let index = 0; index < selected.length; index += 1) {
     providerError = errorMessage(error);
   }
 
+  const sourceIsbn13 = decision?.accepted?.match_mode === 'isbn' ? (isbn13s[0] ?? null) : null;
   const result = {
     work_id: work.work_id,
     title: work.title,
     outcome,
     category: decision?.accepted?.category ?? null,
+    ndc_scheme: decision?.accepted?.ndc_scheme ?? null,
     ndc_code: decision?.accepted?.ndc_code ?? null,
+    source_isbn13: sourceIsbn13,
     match_mode: decision?.accepted?.match_mode ?? null,
     matches: decision?.matches ?? 0,
     provider_error: providerError,
@@ -94,6 +107,7 @@ for (let index = 0; index < selected.length; index += 1) {
     acceptedByWork.set(work.work_id, {
       work_id: work.work_id,
       ...decision.accepted,
+      source_isbn13: sourceIsbn13,
       verified_at: nowIso,
     });
   }
@@ -102,7 +116,9 @@ for (let index = 0; index < selected.length; index += 1) {
     outcome,
     next_attempt_at: categoryRetryAfter(outcome, now),
     category: decision?.accepted?.category ?? null,
+    ndc_scheme: decision?.accepted?.ndc_scheme ?? null,
     ndc_code: decision?.accepted?.ndc_code ?? null,
+    source_isbn13: sourceIsbn13,
     provider_error: providerError,
   };
 
@@ -112,6 +128,7 @@ for (let index = 0; index < selected.length; index += 1) {
     work_id: work.work_id,
     outcome,
     category: decision?.accepted?.category ?? null,
+    ndc_scheme: decision?.accepted?.ndc_scheme ?? null,
     ndc_code: decision?.accepted?.ndc_code ?? null,
     provider_error: providerError,
   }));
@@ -131,6 +148,7 @@ const report = {
     source: 'National Diet Library Search OpenSearch API',
     source_endpoint: 'https://ndlsearch.ndl.go.jp/api/opensearch',
     category_source: 'NDC classification mapped by explicit deterministic rules',
+    standard_classification_source: 'source-reported NDC code is retained without cross-version conversion',
     isbn_match_preferred: true,
     title_similarity_threshold: 0.97,
     ambiguous_categories_are_rejected: true,
@@ -193,7 +211,7 @@ async function fetchText(url) {
     try {
       const response = await fetch(url, {
         headers: {
-          'User-Agent': 'KAFKA2306-books-category-enrichment/1.0 (+https://github.com/KAFKA2306/books)',
+          'User-Agent': 'KAFKA2306-books-category-enrichment/1.1 (+https://github.com/KAFKA2306/books)',
         },
         signal: controller.signal,
       });

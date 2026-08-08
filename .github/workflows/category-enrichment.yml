@@ -1,4 +1,4 @@
-name: Enrich book categories
+name: Enrich book categories and classifications
 
 on:
   push:
@@ -7,6 +7,8 @@ on:
       - '.github/workflows/category-enrichment.yml'
       - 'scripts/enrich-categories.mjs'
       - 'src/category-enrichment.mjs'
+      - 'src/library-classification.mjs'
+      - 'scripts/load-catalog.mjs'
       - 'data/catalog.json'
       - 'data/issue-1-books.json'
       - 'data/isbn-enrichments.json'
@@ -16,7 +18,7 @@ on:
   workflow_dispatch:
     inputs:
       limit:
-        description: Number of due uncategorized works to inspect
+        description: Number of works without NDC evidence to inspect
         required: false
         default: '100'
 
@@ -46,7 +48,7 @@ jobs:
         with:
           node-version: 22
 
-      - name: Inspect due uncategorized works
+      - name: Inspect due works for NDL NDC evidence
         env:
           LIMIT: ${{ github.event.inputs.limit || '100' }}
         run: |
@@ -68,7 +70,7 @@ jobs:
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Commit verified category state
+      - name: Commit verified NDC evidence and categories
         if: steps.changes.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
@@ -77,7 +79,7 @@ jobs:
             data/category-enrichments.json \
             data/category-enrichment-state.json \
             data/category-enrichment-report.json
-          git commit -m "chore(data): enrich deterministic book categories"
+          git commit -m "chore(data): enrich NDL classification evidence"
           git pull --rebase origin main
           git push origin HEAD:main
 
@@ -92,13 +94,13 @@ jobs:
           title="Category enrichment automation failed"
           log_tail=$(tail -n 120 "$CATEGORY_LOG" 2>/dev/null || true)
           body=$(cat <<EOF
-          The deterministic NDC category enrichment workflow failed.
+          The deterministic NDL/NDC enrichment workflow failed.
 
           - Workflow: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}
           - Commit: ${GITHUB_SHA}
           - Trigger: ${GITHUB_EVENT_NAME}
 
-          The catalog was not updated unless classification, validation, and push all completed successfully.
+          NDC9 values are never converted into NDC10 values. The catalog was not updated unless validation and push completed successfully.
 
           ### Log tail
 

@@ -7,6 +7,7 @@ on:
       - agent/catalog-readable-source
     paths:
       - '.github/workflows/materialize-readable-catalog.yml'
+      - '.gitignore'
       - 'scripts/materialize-catalog.mjs'
       - 'scripts/load-catalog.mjs'
       - 'package.json'

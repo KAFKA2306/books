@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import zlib from 'node:zlib';
+import { applyCategoryEnrichments } from '../src/category-enrichment.mjs';
 import { applyIsbnEnrichments } from '../src/isbn-enrichment.mjs';
 import { mergeIssueCatalog } from '../src/merge-catalog.mjs';
 import { loadKindleMetadata, mergeKindleCatalog } from '../src/kindle-metadata.mjs';
@@ -116,8 +117,15 @@ export async function loadCatalog(root = process.cwd()) {
     merged = mergeKindleCatalog(merged, kindleData);
   }
 
-  const enrichmentOverlay = JSON.parse(
+  const isbnOverlay = JSON.parse(
     await fs.readFile(path.join(root, 'data/isbn-enrichments.json'), 'utf8'),
   );
-  return applyIsbnEnrichments(merged, enrichmentOverlay);
+  merged = applyIsbnEnrichments(merged, isbnOverlay);
+
+  const categoryOverlay = await readJsonIfPresent(path.join(root, 'data/category-enrichments.json')) ?? {
+    schema: 'kafka.books.category-enrichments.v1',
+    rule_version: 'ndc-map-v1',
+    records: [],
+  };
+  return applyCategoryEnrichments(merged, categoryOverlay);
 }

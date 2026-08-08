@@ -1,0 +1,6 @@
+{
+  "schema": "kafka.books.category-enrichments.v1",
+  "rule_version": "ndc-map-v1",
+  "updated_at": null,
+  "records": []
+}

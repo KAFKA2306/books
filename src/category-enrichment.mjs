@@ -120,6 +120,7 @@ export function categoryForNdc(value) {
   if (code.startsWith('420')) return '物理';
   if (code.startsWith('430')) return '化学';
   if (code.startsWith('440')) return '天文・宇宙';
+  if (code.startsWith('448')) return '地図・測地';
   if (code.startsWith('450')) return '地球科学';
   if (code.startsWith('460')) return '生物学';
   if (code.startsWith('470')) return '植物';
@@ -282,8 +283,10 @@ export function applyCategoryEnrichments(catalog, overlay) {
     if (!record.category || !record.ndc_code || record.rule_version !== CATEGORY_RULE_VERSION) {
       throw new Error(`Invalid category enrichment record: ${record.work_id}`);
     }
+    const derivedCategory = categoryForNdc(record.ndc_code);
+    if (!derivedCategory) throw new Error(`Unmappable NDC category enrichment: ${record.work_id}`);
     if (work.category !== '未分類') continue;
-    work.category = record.category;
+    work.category = derivedCategory;
     work.classification = {
       scheme: record.ndc_scheme,
       code: record.ndc_code,

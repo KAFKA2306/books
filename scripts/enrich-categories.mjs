@@ -113,6 +113,7 @@ for (let index = 0; index < selected.length; index += 1) {
     outcome,
     category: decision?.accepted?.category ?? null,
     ndc_code: decision?.accepted?.ndc_code ?? null,
+    provider_error: providerError,
   }));
   if (index + 1 < selected.length) await sleep(requestIntervalMs);
 }
@@ -212,7 +213,9 @@ function errorMessage(error) {
   return error instanceof Error ? error.message : String(error);
 }
 
-const sleep = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
+function sleep(milliseconds) {
+  return new Promise((resolve) => setTimeout(resolve, milliseconds));
+}
 
 async function readJson(filePath, fallback) {
   try {

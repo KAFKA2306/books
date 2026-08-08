@@ -3,3 +3,5 @@ node_modules/
 *.log
 data/catalog.json.gz
 data/books.csv
+KindleSyncMetadataCache.xml
+**/KindleSyncMetadataCache.xml

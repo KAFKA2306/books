@@ -48,11 +48,12 @@ jobs:
           name: books-api-v1
           path: api/v1/
           retention-days: 30
-      - name: Reject source data and generated debug files
+      - name: Reject raw source data and generated debug files
         run: |
           test ! -e data/catalog.debug.json
           test ! -e data/raw.json
           test ! -e data/source_records.json
+          test -z "$(find . -name 'KindleSyncMetadataCache.xml' -print -quit)"
 
   deploy:
     if: github.event_name != 'pull_request'

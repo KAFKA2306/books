@@ -35,6 +35,7 @@ jobs:
     timeout-minutes: 30
     env:
       GH_TOKEN: ${{ github.token }}
+      CATEGORY_LOG: /tmp/category-enrichment.log
     steps:
       - uses: actions/checkout@v4
         with:
@@ -48,7 +49,9 @@ jobs:
       - name: Inspect due uncategorized works
         env:
           LIMIT: ${{ github.event.inputs.limit || '100' }}
-        run: npm run category:enrich -- --limit "$LIMIT"
+        run: |
+          set -o pipefail
+          npm run category:enrich -- --limit "$LIMIT" 2>&1 | tee "$CATEGORY_LOG"
 
       - name: Validate catalog and generated API
         run: npm run check
@@ -87,6 +90,7 @@ jobs:
         continue-on-error: true
         run: |
           title="Category enrichment automation failed"
+          log_tail=$(tail -n 120 "$CATEGORY_LOG" 2>/dev/null || true)
           body=$(cat <<EOF
           The deterministic NDC category enrichment workflow failed.
 
@@ -95,6 +99,12 @@ jobs:
           - Trigger: ${GITHUB_EVENT_NAME}
 
           The catalog was not updated unless classification, validation, and push all completed successfully.
+
+          ### Log tail
+
+          \`\`\`text
+          ${log_tail}
+          \`\`\`
           EOF
           )
           existing=$(gh issue list --state open --search "\"${title}\" in:title" --json number --jq '.[0].number // empty')

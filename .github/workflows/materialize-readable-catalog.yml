@@ -1,0 +1,47 @@
+name: Materialize readable catalog
+
+on:
+  push:
+    branches:
+      - agent/catalog-readable-source
+    paths:
+      - '.github/workflows/materialize-readable-catalog.yml'
+      - 'scripts/materialize-catalog.mjs'
+      - 'scripts/load-catalog.mjs'
+      - 'package.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Materialize readable sources
+        run: npm run catalog:materialize
+
+      - name: Validate readable catalog
+        run: npm run check
+
+      - name: Commit readable sources
+        run: |
+          if git diff --quiet -- data/catalog.json data/issue-1-books.json; then
+            echo 'Readable catalog is already current.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/catalog.json data/issue-1-books.json
+          git commit -m 'chore(data): materialize readable catalog sources'
+          git push origin HEAD:${GITHUB_REF_NAME}

@@ -14,6 +14,13 @@ export const CLASSIFICATION_SCHEMES = [
     uri_prefix: 'http://id.ndl.go.jp/class/ndc9/',
   },
   {
+    scheme_id: 'ndc8',
+    name: '日本十進分類法 新訂8版',
+    authority: '日本図書館協会',
+    role: 'legacy_source_reported',
+    uri_prefix: null,
+  },
+  {
     scheme_id: 'ndc',
     name: '日本十進分類法（版不明）',
     authority: '日本図書館協会',
@@ -39,6 +46,7 @@ export function normalizeScheme(value) {
   const normalized = String(value ?? '').trim().toLowerCase();
   if (normalized === 'ndc10') return 'ndc10';
   if (normalized === 'ndc9') return 'ndc9';
+  if (normalized === 'ndc8') return 'ndc8';
   if (normalized === 'ndc') return 'ndc';
   return null;
 }

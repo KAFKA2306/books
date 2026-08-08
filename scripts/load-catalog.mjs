@@ -3,6 +3,8 @@ import path from 'node:path';
 import zlib from 'node:zlib';
 import { applyIsbnEnrichments } from '../src/isbn-enrichment.mjs';
 import { mergeIssueCatalog } from '../src/merge-catalog.mjs';
+import { applyKindleMetadata } from '../src/kindle-import.mjs';
+import { readKindleMetadata } from '../src/kindle-storage.mjs';
 
 async function readJsonIfPresent(filePath) {
   try {
@@ -109,5 +111,7 @@ export async function loadCatalog(root = process.cwd()) {
   const enrichmentOverlay = JSON.parse(
     await fs.readFile(path.join(root, 'data/isbn-enrichments.json'), 'utf8'),
   );
-  return applyIsbnEnrichments(merged, enrichmentOverlay);
+  const enriched = applyIsbnEnrichments(merged, enrichmentOverlay);
+  const kindleMetadata = await readKindleMetadata(root);
+  return kindleMetadata ? applyKindleMetadata(enriched, kindleMetadata) : enriched;
 }

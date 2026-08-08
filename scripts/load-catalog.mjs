@@ -3,6 +3,7 @@ import path from 'node:path';
 import zlib from 'node:zlib';
 import { applyCategoryEnrichments } from '../src/category-enrichment.mjs';
 import { applyIsbnEnrichments } from '../src/isbn-enrichment.mjs';
+import { deriveLibraryClassifications } from '../src/library-classification.mjs';
 import { mergeIssueCatalog } from '../src/merge-catalog.mjs';
 import { loadKindleMetadata, mergeKindleCatalog } from '../src/kindle-metadata.mjs';
 import { loadCompactKindleMetadata } from '../src/kindle-storage.mjs';
@@ -134,5 +135,6 @@ export async function loadCatalog(root = process.cwd()) {
     schema: 'kafka.books.title-normalizations.v1',
     records: [],
   };
-  return applyTitleNormalizations(merged, titleOverlay);
+  merged = applyTitleNormalizations(merged, titleOverlay);
+  return deriveLibraryClassifications(merged, categoryOverlay);
 }

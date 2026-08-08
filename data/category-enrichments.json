@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-08T09:15:33.779Z",
+  "updated_at": "2026-08-08T09:38:28.725Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -302,6 +302,90 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": "9784532240028",
       "verified_at": "2026-08-08T09:15:33.779Z"
+    },
+    {
+      "work_id": "wrk_1dbbe0d33491",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC",
+      "ndc_code": "933",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000001081849",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-08T09:38:28.725Z"
+    },
+    {
+      "work_id": "wrk_1f1498e352d5",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC8",
+      "ndc_code": "913.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000002037145",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-08T09:38:28.725Z"
+    },
+    {
+      "work_id": "wrk_1f338b212ad6",
+      "category": "経営・会計",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "336",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029033721",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-08T09:38:28.725Z"
+    },
+    {
+      "work_id": "wrk_1fccfe1c03cc",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "913.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I032144389",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784152101389",
+      "verified_at": "2026-08-08T09:38:28.725Z"
+    },
+    {
+      "work_id": "wrk_20810eaa69a0",
+      "category": "心理・行動",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "141.62",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I032134794",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-08T09:38:28.725Z"
+    },
+    {
+      "work_id": "wrk_21a1a2a587ec",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "913.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I030721398",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784594086268",
+      "verified_at": "2026-08-08T09:38:28.725Z"
+    },
+    {
+      "work_id": "wrk_22300ebb3fbc",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC",
+      "ndc_code": "933",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000000987818",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-08T09:38:28.725Z"
     }
   ]
 }

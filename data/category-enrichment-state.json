@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichment-state.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-08T09:15:33.779Z",
+  "updated_at": "2026-08-08T09:38:28.725Z",
   "attempts": {
     "wrk_0025172962b9": {
       "attempted_at": "2026-08-08T09:15:33.779Z",
@@ -1002,7 +1002,257 @@
       "ndc_code": null,
       "source_isbn13": null,
       "provider_error": null
+    },
+    "wrk_1d92737d7bbf": {
+      "attempted_at": "2026-08-08T09:38:28.725Z",
+      "outcome": "provider_error",
+      "next_attempt_at": "2026-08-09T09:38:28.725Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": "ndl request failed: This operation was aborted"
+    },
+    "wrk_1dbbe0d33491": {
+      "attempted_at": "2026-08-08T09:38:28.725Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-05T09:38:28.725Z",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC",
+      "ndc_code": "933",
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_1defa0d65614": {
+      "attempted_at": "2026-08-08T09:38:28.725Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-22T09:38:28.725Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_1dfdc444ef20": {
+      "attempted_at": "2026-08-08T09:38:28.725Z",
+      "outcome": "provider_error",
+      "next_attempt_at": "2026-08-09T09:38:28.725Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": "ndl request failed: This operation was aborted"
+    },
+    "wrk_1e39930dcfd5": {
+      "attempted_at": "2026-08-08T09:38:28.725Z",
+      "outcome": "provider_error",
+      "next_attempt_at": "2026-08-09T09:38:28.725Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": "ndl request failed: This operation was aborted"
+    },
+    "wrk_1e7377fd982a": {
+      "attempted_at": "2026-08-08T09:38:28.725Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-22T09:38:28.725Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_1e881d90bebb": {
+      "attempted_at": "2026-08-08T09:38:28.725Z",
+      "outcome": "provider_error",
+      "next_attempt_at": "2026-08-09T09:38:28.725Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": "ndl request failed: This operation was aborted"
+    },
+    "wrk_1edb33667f6a": {
+      "attempted_at": "2026-08-08T09:38:28.725Z",
+      "outcome": "provider_error",
+      "next_attempt_at": "2026-08-09T09:38:28.725Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": "ndl request failed: This operation was aborted"
+    },
+    "wrk_1f1498e352d5": {
+      "attempted_at": "2026-08-08T09:38:28.725Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-05T09:38:28.725Z",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC8",
+      "ndc_code": "913.6",
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_1f338b212ad6": {
+      "attempted_at": "2026-08-08T09:38:28.725Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-05T09:38:28.725Z",
+      "category": "経営・会計",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "336",
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_1f6f102b49c4": {
+      "attempted_at": "2026-08-08T09:38:28.725Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-22T09:38:28.725Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_1f70a0500332": {
+      "attempted_at": "2026-08-08T09:38:28.725Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-22T09:38:28.725Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_1f797f0d6f9f": {
+      "attempted_at": "2026-08-08T09:38:28.725Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-22T09:38:28.725Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_1fccfe1c03cc": {
+      "attempted_at": "2026-08-08T09:38:28.725Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-05T09:38:28.725Z",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "913.6",
+      "source_isbn13": "9784152101389",
+      "provider_error": null
+    },
+    "wrk_202f686fb4de": {
+      "attempted_at": "2026-08-08T09:38:28.725Z",
+      "outcome": "provider_error",
+      "next_attempt_at": "2026-08-09T09:38:28.725Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": "ndl request failed: This operation was aborted"
+    },
+    "wrk_20810eaa69a0": {
+      "attempted_at": "2026-08-08T09:38:28.725Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-05T09:38:28.725Z",
+      "category": "心理・行動",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "141.62",
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_20b39a08c2bd": {
+      "attempted_at": "2026-08-08T09:38:28.725Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-22T09:38:28.725Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_20f323c253e3": {
+      "attempted_at": "2026-08-08T09:38:28.725Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-22T09:38:28.725Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_212113280dcc": {
+      "attempted_at": "2026-08-08T09:38:28.725Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-22T09:38:28.725Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_21a1a2a587ec": {
+      "attempted_at": "2026-08-08T09:38:28.725Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-05T09:38:28.725Z",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "913.6",
+      "source_isbn13": "9784594086268",
+      "provider_error": null
+    },
+    "wrk_21f677672743": {
+      "attempted_at": "2026-08-08T09:38:28.725Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-22T09:38:28.725Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_22300ebb3fbc": {
+      "attempted_at": "2026-08-08T09:38:28.725Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-05T09:38:28.725Z",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC",
+      "ndc_code": "933",
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_2250b995f41a": {
+      "attempted_at": "2026-08-08T09:38:28.725Z",
+      "outcome": "provider_error",
+      "next_attempt_at": "2026-08-09T09:38:28.725Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": "ndl request failed: This operation was aborted"
+    },
+    "wrk_227b11200920": {
+      "attempted_at": "2026-08-08T09:38:28.725Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-22T09:38:28.725Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_234b6fa5c521": {
+      "attempted_at": "2026-08-08T09:38:28.725Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-22T09:38:28.725Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
     }
   },
-  "total_attempts": 100
+  "total_attempts": 125
 }

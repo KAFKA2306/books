@@ -25,24 +25,83 @@ function sha256(content) {
 
 function csvCell(value) {
   if (value === null || value === undefined) return '';
-  const text = Array.isArray(value) ? value.join('|') : String(value);
+  const text = typeof value === 'object' ? JSON.stringify(stable(value)) : String(value);
   return /[",\n]/.test(text) ? `"${text.replaceAll('"', '""')}"` : text;
 }
 
-function toCsv(rows, fields) {
+function normalizeCsvRows(rows) {
+  if (rows.every((row) => row && typeof row === 'object' && !Array.isArray(row))) return rows;
+  return rows.map((value) => ({ value }));
+}
+
+function csvFields(rows) {
+  const fields = [];
+  const seen = new Set();
+  for (const row of rows) {
+    for (const key of Object.keys(row)) {
+      if (seen.has(key)) continue;
+      seen.add(key);
+      fields.push(key);
+    }
+  }
+  return fields.length ? fields : ['value'];
+}
+
+function toCsv(rawRows) {
+  const rows = normalizeCsvRows(rawRows);
+  const fields = csvFields(rows);
   return `${fields.join(',')}\n${rows.map((row) => fields.map((field) => csvCell(row[field])).join(',')).join('\n')}\n`;
 }
+
+async function readJson(relativePath) {
+  return JSON.parse(await fs.readFile(path.join(root, relativePath), 'utf8'));
+}
+
+const issueData = await readJson('data/issue-1-books.json');
+const isbnEnrichments = await readJson('data/isbn-enrichments.json');
+const isbnEnrichmentState = await readJson('data/isbn-enrichment-state.json');
+const isbnEnrichmentReport = await readJson('data/isbn-enrichment-report.json');
+
+const canonicalCollections = Object.fromEntries(
+  Object.entries(catalog).filter(([, value]) => Array.isArray(value)),
+);
+
+const supplementalCollections = {
+  issue_records: issueData.records ?? [],
+  isbn_enrichments: isbnEnrichments.records ?? [],
+  isbn_enrichment_attempts: Object.entries(isbnEnrichmentState.attempts ?? {}).map(
+    ([work_id, attempt]) => ({ work_id, ...attempt }),
+  ),
+  isbn_enrichment_results: isbnEnrichmentReport.results ?? [],
+};
+
+const collections = {
+  ...canonicalCollections,
+  ...supplementalCollections,
+};
+
+const collectionIndex = Object.entries(collections).map(([name, rows]) => ({
+  name,
+  kind: Object.hasOwn(canonicalCollections, name) ? 'canonical' : 'supplemental',
+  count: rows.length,
+  json: `${name}.json`,
+  csv: `${name}.csv`,
+}));
 
 await fs.mkdir(outDir, { recursive: true });
 const distributions = {
   'catalog.json': json(catalog),
-  'works.json': json(catalog.works),
-  'editions.json': json(catalog.editions),
-  'holdings.json': json(catalog.holdings),
-  'works.csv': toCsv(catalog.works, ['work_id','title','title_key','author','category','status','progress','rating','price_yen','acquired_at','item_count','isbn_count','isbn_status','sources','formats']),
-  'editions.csv': toCsv(catalog.editions, ['edition_id','id_kind','work_id','isbn13','isbn10','language','publisher','published_year','format','verification']),
-  'holdings.csv': toCsv(catalog.holdings, ['holding_id','work_id','edition_id','source','format','quantity','acquired_at','price_yen','progress','rating']),
+  'collections.json': json({
+    schema: 'kafka.books.api-collections.v1',
+    api_version: 'v1',
+    collections: collectionIndex,
+  }),
 };
+
+for (const [name, rows] of Object.entries(collections)) {
+  distributions[`${name}.json`] = json(rows);
+  distributions[`${name}.csv`] = toCsv(rows);
+}
 
 const files = [];
 for (const [name, content] of Object.entries(distributions)) {
@@ -50,22 +109,25 @@ for (const [name, content] of Object.entries(distributions)) {
   files.push({ name, bytes: Buffer.byteLength(content), sha256: sha256(content) });
 }
 
+const recordCounts = Object.fromEntries(
+  Object.entries(collections).map(([name, rows]) => [name, rows.length]),
+);
+
 const manifest = {
   schema: 'kafka.books.api-manifest.v1',
   api_version: 'v1',
   source_schema_version: catalog.schema_version,
   source_generated_at: catalog.generated_at,
   generated_from: [
-    'data/catalog.parts.json',
-    'data/issue-1-books.parts.json',
+    'data/catalog.json',
+    'data/issue-1-books.json',
     'data/isbn-enrichments.json',
+    'data/isbn-enrichment-state.json',
+    'data/isbn-enrichment-report.json',
   ],
   license: 'Repository license and source-specific terms apply',
-  record_counts: {
-    works: catalog.works.length,
-    editions: catalog.editions.length,
-    holdings: catalog.holdings.length,
-  },
+  collection_index: 'collections.json',
+  record_counts: recordCounts,
   cache: { max_age_seconds: 3600, validation: 'sha256' },
   files,
 };

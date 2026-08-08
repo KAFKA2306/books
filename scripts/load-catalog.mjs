@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import zlib from 'node:zlib';
+import { applyClassificationOverlay } from '../src/classification.mjs';
 import { applyIsbnEnrichments } from '../src/isbn-enrichment.mjs';
 import { mergeIssueCatalog } from '../src/merge-catalog.mjs';
 import { loadKindleMetadata, mergeKindleCatalog } from '../src/kindle-metadata.mjs';
@@ -119,5 +120,7 @@ export async function loadCatalog(root = process.cwd()) {
   const enrichmentOverlay = JSON.parse(
     await fs.readFile(path.join(root, 'data/isbn-enrichments.json'), 'utf8'),
   );
-  return applyIsbnEnrichments(merged, enrichmentOverlay);
+  const withIsbn = applyIsbnEnrichments(merged, enrichmentOverlay);
+  const classificationOverlay = await readJsonIfPresent(path.join(root, 'data/classifications.json'));
+  return classificationOverlay ? applyClassificationOverlay(withIsbn, classificationOverlay) : withIsbn;
 }

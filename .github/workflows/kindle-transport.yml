@@ -1,0 +1,35 @@
+name: Materialize Kindle transport
+
+on:
+  push:
+    branches:
+      - agent/kindle-xml-data
+    paths:
+      - 'data/kindle/transport.part*.b64'
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/kindle-xml-data
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Materialize canonical Kindle data
+        run: node scripts/materialize-kindle-transport.mjs
+      - name: Validate full catalog and API
+        run: npm run check
+      - name: Commit canonical Kindle data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm data/kindle/transport.part*.b64
+          git add data/kindle/manifest.json data/kindle/records-*.ndjson
+          git commit -m "Materialize Kindle XML canonical data"
+          git push origin HEAD:agent/kindle-xml-data

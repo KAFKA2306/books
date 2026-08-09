@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichments.v1",
-  "updated_at": "2026-08-08T15:06:19.349Z",
+  "updated_at": "2026-08-09T03:53:20.078Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -274,6 +274,34 @@
       "verified_at": "2026-08-08T03:44:16.427Z"
     },
     {
+      "work_id": "wrk_38c5208b38c4",
+      "isbn13": "9784041149928",
+      "title": "新訳ハムレット",
+      "authors": [
+        "Shakespeare, William, 1564-1616",
+        "河合, 祥一郎, 1960-",
+        "Shakespeare, William, 1564-1616,河合, 祥一郎, 1960-,シェイクスピア [著],河合祥一郎 訳",
+        "Shakespeare,William,1564-1616 河合,祥一郎,1960-"
+      ],
+      "publisher": "KADOKAWA",
+      "published_year": 2024,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I033683416"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784041149928"
+        }
+      ],
+      "replaces_edition_id": "pending:38c5208b38c4",
+      "verified_at": "2026-08-09T03:53:20.078Z"
+    },
+    {
       "work_id": "wrk_40fbccec76cb",
       "isbn13": "9784167905033",
       "title": "色彩を持たない多崎つくると、彼の巡礼の年",
@@ -326,6 +354,33 @@
       ],
       "replaces_edition_id": "pending:44a3f6b0d47d",
       "verified_at": "2026-08-08T03:44:16.427Z"
+    },
+    {
+      "work_id": "wrk_50477fff5113",
+      "isbn13": "9784797398328",
+      "title": "発達障害 : 生きづらさを抱える少数派の「種族」たち",
+      "authors": [
+        "本田, 秀夫, 児童精神科医",
+        "本田, 秀夫, 児童精神科医,本田秀夫 著",
+        "本田,秀夫,児童精神科医"
+      ],
+      "publisher": "SBクリエイティブ",
+      "published_year": 2018,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029355236"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784797398328"
+        }
+      ],
+      "replaces_edition_id": "pending:50477fff5113",
+      "verified_at": "2026-08-09T03:53:20.078Z"
     },
     {
       "work_id": "wrk_56bd4b31ba4a",
@@ -435,6 +490,33 @@
       ],
       "replaces_edition_id": "pending:6a2d80416c1b",
       "verified_at": "2026-08-08T15:06:19.349Z"
+    },
+    {
+      "work_id": "wrk_70ba56a21dbc",
+      "isbn13": "9784780310559",
+      "title": "13歳からのジャーナリスト : 社会正義を求め世界を駆ける",
+      "authors": [
+        "伊藤, 千尋, 1949-",
+        "伊藤, 千尋, 1949-,伊藤千尋 著",
+        "伊藤,千尋,1949-"
+      ],
+      "publisher": "かもがわ出版",
+      "published_year": 2019,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I030026945"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784780310559"
+        }
+      ],
+      "replaces_edition_id": "pending:70ba56a21dbc",
+      "verified_at": "2026-08-09T03:53:20.078Z"
     }
   ]
 }

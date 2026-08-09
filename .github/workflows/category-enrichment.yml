@@ -85,7 +85,19 @@ jobs:
 
       - name: Rebuild and deploy Pages
         if: steps.changes.outputs.changed == 'true'
-        run: gh workflow run ci-pages.yml --ref main
+        run: |
+          expected_sha=$(git rev-parse HEAD)
+          for attempt in $(seq 1 15); do
+            visible_sha=$(gh api "repos/${GITHUB_REPOSITORY}/commits/main" --jq '.sha')
+            if [ "$visible_sha" = "$expected_sha" ]; then
+              gh workflow run ci-pages.yml --ref main
+              exit 0
+            fi
+            echo "Waiting for main ref: expected=${expected_sha} visible=${visible_sha} attempt=${attempt}/15"
+            sleep 2
+          done
+          echo "main ref did not converge to ${expected_sha} before Pages dispatch" >&2
+          exit 1
 
       - name: Record automation failure
         if: failure()

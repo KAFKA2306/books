@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-09T06:12:00.737Z",
+  "updated_at": "2026-08-09T06:15:21.558Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -938,6 +938,114 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": "9784121025685",
       "verified_at": "2026-08-09T06:12:00.737Z"
+    },
+    {
+      "work_id": "wrk_56904e57fd9e",
+      "category": "動物",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "481.71",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000011192227",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-09T06:15:21.558Z"
+    },
+    {
+      "work_id": "wrk_56bd4b31ba4a",
+      "category": "物理",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "428",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000004172976",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784759808766",
+      "verified_at": "2026-08-09T06:15:21.558Z"
+    },
+    {
+      "work_id": "wrk_58044931e891",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "914.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I033500161",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-09T06:15:21.558Z"
+    },
+    {
+      "work_id": "wrk_58aaffa068ad",
+      "category": "経営・ビジネス",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "335",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I025769406",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-09T06:15:21.558Z"
+    },
+    {
+      "work_id": "wrk_59d37c43a7e4",
+      "category": "経済",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "331.19",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I027572427",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-09T06:15:21.558Z"
+    },
+    {
+      "work_id": "wrk_5a7f7e1a3967",
+      "category": "資源・金属",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "568.09",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I027342439",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-09T06:15:21.558Z"
+    },
+    {
+      "work_id": "wrk_5a9c4082bee2",
+      "category": "機械工学",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "538.9",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I023582178",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-09T06:15:21.558Z"
+    },
+    {
+      "work_id": "wrk_5b1c228b2f24",
+      "category": "コンピュータ・AI",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "007.13",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000002949835",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784627826618",
+      "verified_at": "2026-08-09T06:15:21.558Z"
+    },
+    {
+      "work_id": "wrk_5bf897e4cdcc",
+      "category": "心理・行動",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "141.51",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I030680380",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-09T06:15:21.558Z"
     }
   ]
 }

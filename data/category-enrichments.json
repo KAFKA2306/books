@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-09T06:15:21.558Z",
+  "updated_at": "2026-08-09T07:26:08.955Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -1046,6 +1046,114 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-09T06:15:21.558Z"
+    },
+    {
+      "work_id": "wrk_5dd781a876f6",
+      "category": "音楽",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "764.7",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029355408",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-09T07:26:08.955Z"
+    },
+    {
+      "work_id": "wrk_5e7766cc8fcd",
+      "category": "心理・行動",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "141.5",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000011293372",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-09T07:26:08.955Z"
+    },
+    {
+      "work_id": "wrk_5fc2d0ed74ef",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC",
+      "ndc_code": "933",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000000951226",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-09T07:26:08.955Z"
+    },
+    {
+      "work_id": "wrk_604c6d39c4d0",
+      "category": "投資・金融",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "338.9",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I031898471",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-09T07:26:08.955Z"
+    },
+    {
+      "work_id": "wrk_61fd7b6fcc74",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "913.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I033381705",
+      "match_mode": "isbn",
+      "title_similarity": 0.6,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784065351437",
+      "verified_at": "2026-08-09T07:26:08.955Z"
+    },
+    {
+      "work_id": "wrk_625b5ad62758",
+      "category": "投資・金融",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "338.183",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I026409290",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-09T07:26:08.955Z"
+    },
+    {
+      "work_id": "wrk_6262dde2a259",
+      "category": "伝記・人物",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "289.3",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I031258568",
+      "match_mode": "isbn",
+      "title_similarity": 0.6428571428571429,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784065224403",
+      "verified_at": "2026-08-09T07:26:08.955Z"
+    },
+    {
+      "work_id": "wrk_6342b9d0568f",
+      "category": "自己啓発・生き方",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "159",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029186655",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784479307235",
+      "verified_at": "2026-08-09T07:26:08.955Z"
+    },
+    {
+      "work_id": "wrk_645d219b47e1",
+      "category": "経済",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "331",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I026287613",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-09T07:26:08.955Z"
     }
   ]
 }

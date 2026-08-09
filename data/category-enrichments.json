@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-08T19:02:39.232Z",
+  "updated_at": "2026-08-09T02:31:56.719Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -710,6 +710,102 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-08T19:02:39.232Z"
+    },
+    {
+      "work_id": "wrk_3e6e74f1ea02",
+      "category": "投資・金融",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "338.183",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I025014501",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-09T02:31:56.719Z"
+    },
+    {
+      "work_id": "wrk_3edcc2663b55",
+      "category": "社会科学",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "309.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I028763396",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-09T02:31:56.719Z"
+    },
+    {
+      "work_id": "wrk_400e3b2ef0e9",
+      "category": "経済",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "332.2",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029418381",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-09T02:31:56.719Z"
+    },
+    {
+      "work_id": "wrk_40fbccec76cb",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "913.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I026914713",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784167905033",
+      "verified_at": "2026-08-09T02:31:56.719Z"
+    },
+    {
+      "work_id": "wrk_41f7b2608142",
+      "category": "数学",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "417",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029976550",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-09T02:31:56.719Z"
+    },
+    {
+      "work_id": "wrk_43588768077d",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "913.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I026773776",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-09T02:31:56.719Z"
+    },
+    {
+      "work_id": "wrk_44a3f6b0d47d",
+      "category": "医学・健康",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "493.76",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029316183",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784065133156",
+      "verified_at": "2026-08-09T02:31:56.719Z"
+    },
+    {
+      "work_id": "wrk_45e674909742",
+      "category": "コンピュータ・AI",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "007.35",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I034769695",
+      "match_mode": "isbn",
+      "title_similarity": 0.23529411764705882,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784492581254",
+      "verified_at": "2026-08-09T02:31:56.719Z"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-09T06:08:49.164Z",
+  "updated_at": "2026-08-09T06:12:00.737Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -878,6 +878,66 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-09T06:08:49.164Z"
+    },
+    {
+      "work_id": "wrk_50477fff5113",
+      "category": "医学・健康",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "493.76",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029355236",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784797398328",
+      "verified_at": "2026-08-09T06:12:00.737Z"
+    },
+    {
+      "work_id": "wrk_509c1500ae37",
+      "category": "語学・言語",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "830.79",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I030283733",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-09T06:12:00.737Z"
+    },
+    {
+      "work_id": "wrk_51d9372f379e",
+      "category": "医学・健康",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "493.76",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I032499717",
+      "match_mode": "isbn",
+      "title_similarity": 0.48484848484848486,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784759820898",
+      "verified_at": "2026-08-09T06:12:00.737Z"
+    },
+    {
+      "work_id": "wrk_53301e5e0212",
+      "category": "伝記・人物",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "289.3",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I031258568",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-09T06:12:00.737Z"
+    },
+    {
+      "work_id": "wrk_5507b2cdd5ad",
+      "category": "国際関係・地政学",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "319.22",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I030059972",
+      "match_mode": "isbn",
+      "title_similarity": 0.5,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784121025685",
+      "verified_at": "2026-08-09T06:12:00.737Z"
     }
   ]
 }

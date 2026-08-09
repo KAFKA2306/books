@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichments.v1",
-  "updated_at": "2026-08-09T03:53:20.078Z",
+  "updated_at": "2026-08-09T15:13:38.785Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -517,6 +517,144 @@
       ],
       "replaces_edition_id": "pending:70ba56a21dbc",
       "verified_at": "2026-08-09T03:53:20.078Z"
+    },
+    {
+      "work_id": "wrk_733477650555",
+      "isbn13": "9784061545052",
+      "title": "なっとくする量子力学",
+      "authors": [
+        "都筑, 卓司, 1928-2002",
+        "都筑, 卓司, 1928-2002,都筑卓司 著",
+        "都筑,卓司,1928-2002"
+      ],
+      "publisher": "講談社",
+      "published_year": 1994,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000002333198"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784061545052"
+        }
+      ],
+      "replaces_edition_id": "pending:733477650555",
+      "verified_at": "2026-08-09T15:13:38.785Z"
+    },
+    {
+      "work_id": "wrk_76265ec80a99",
+      "isbn13": "9784623072637",
+      "title": "教養のための現代史入門",
+      "authors": [
+        "小澤, 卓也",
+        "田中, 聡, 1964- 日本古代史",
+        "水野, 博子, 1970-",
+        "小澤, 卓也,田中, 聡, 1964- 日本古代史,水野, 博子, 1970-,小澤卓也, 田中聡, 水野博子 編著",
+        "小澤,卓也 田中,聡,1964-日本古代史 水野,博子,1970-"
+      ],
+      "publisher": "ミネルヴァ書房",
+      "published_year": 2015,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I026414093"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784623072637"
+        }
+      ],
+      "replaces_edition_id": "pending:76265ec80a99",
+      "verified_at": "2026-08-09T15:13:38.785Z"
+    },
+    {
+      "work_id": "wrk_7da437748da8",
+      "isbn13": "9784785352165",
+      "title": "微生物学 : 地球と健康を守る",
+      "authors": [
+        "坂本, 順司, 1956-",
+        "坂本, 順司, 1956-,坂本順司 著",
+        "坂本,順司,1956-"
+      ],
+      "publisher": "裳華房",
+      "published_year": 2008,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000009373642"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784785352165"
+        }
+      ],
+      "replaces_edition_id": "pending:7da437748da8",
+      "verified_at": "2026-08-09T15:13:38.785Z"
+    },
+    {
+      "work_id": "wrk_7dea89ff66d1",
+      "isbn13": "9784891947989",
+      "title": "ソクラテスの弁明 : 関西弁訳",
+      "authors": [
+        "Plato",
+        "北口, 裕康",
+        "Plato,北口, 裕康,プラトン 著,北口裕康 訳",
+        "Plato 北口,裕康"
+      ],
+      "publisher": "パルコエンタテインメント事業局出版担当",
+      "published_year": 2009,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000010179089"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784891947989"
+        }
+      ],
+      "replaces_edition_id": "pending:7dea89ff66d1",
+      "verified_at": "2026-08-09T15:13:38.785Z"
+    },
+    {
+      "work_id": "wrk_7fb82393c41f",
+      "isbn13": "9784839946074",
+      "title": "すぐ勝てる!急戦矢倉",
+      "authors": [
+        "及川, 拓馬, 1987-",
+        "及川, 拓馬, 1987-,及川拓馬 著",
+        "及川,拓馬,1987-"
+      ],
+      "publisher": "マイナビ",
+      "published_year": 2013,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I024259458"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784839946074"
+        }
+      ],
+      "replaces_edition_id": "pending:7fb82393c41f",
+      "verified_at": "2026-08-09T15:13:38.785Z"
     }
   ]
 }

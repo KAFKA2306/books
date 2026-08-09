@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-report.v1",
-  "generated_at": "2026-08-09T03:53:20.078Z",
+  "generated_at": "2026-08-09T15:13:38.785Z",
   "policy": {
     "batch_limit": 25,
     "concurrency": 4,
@@ -12,16 +12,16 @@
   },
   "summary": {
     "attempted": 25,
-    "enriched": 3,
-    "ambiguous": 2,
-    "no_consensus": 5,
+    "enriched": 5,
+    "ambiguous": 1,
+    "no_consensus": 8,
     "no_candidate": 0,
-    "provider_error": 15
+    "provider_error": 11
   },
   "results": [
     {
-      "work_id": "wrk_01e497859afb",
-      "title": "栄養学と食の基本辞典",
+      "work_id": "wrk_508c7feac779",
+      "title": "楽しい植物学",
       "outcome": "provider_error",
       "accepted_isbn13": null,
       "candidates": [],
@@ -33,8 +33,8 @@
       ]
     },
     {
-      "work_id": "wrk_02516067d844",
-      "title": "切り取れ、あの祈る手を",
+      "work_id": "wrk_52cebd73d190",
+      "title": "分子から見た生物進化",
       "outcome": "provider_error",
       "accepted_isbn13": null,
       "candidates": [],
@@ -46,8 +46,8 @@
       ]
     },
     {
-      "work_id": "wrk_0ac8d6f215f7",
-      "title": "東京きたんしゅう",
+      "work_id": "wrk_561e61449855",
+      "title": "単純な脳複雑なわたし",
       "outcome": "provider_error",
       "accepted_isbn13": null,
       "candidates": [],
@@ -59,8 +59,8 @@
       ]
     },
     {
-      "work_id": "wrk_0dd87e8b36e2",
-      "title": "ドイツは過去とどう向き合って来たか",
+      "work_id": "wrk_5cc72c337f62",
+      "title": "そんな未来は嘘である",
       "outcome": "provider_error",
       "accepted_isbn13": null,
       "candidates": [],
@@ -72,8 +72,8 @@
       ]
     },
     {
-      "work_id": "wrk_15edeb5db3c8",
-      "title": "未来へ広がるサイエンス2",
+      "work_id": "wrk_5d88863760e5",
+      "title": "無機化学概論小倉",
       "outcome": "provider_error",
       "accepted_isbn13": null,
       "candidates": [],
@@ -85,8 +85,8 @@
       ]
     },
     {
-      "work_id": "wrk_18d2ce5a28b3",
-      "title": "東レ改訂版井上",
+      "work_id": "wrk_5f51b8010c44",
+      "title": "電気化学渡辺",
       "outcome": "provider_error",
       "accepted_isbn13": null,
       "candidates": [],
@@ -98,8 +98,8 @@
       ]
     },
     {
-      "work_id": "wrk_19005b022805",
-      "title": "地球外生命9つの論点",
+      "work_id": "wrk_7299c697af57",
+      "title": "物理数学の直感的方法",
       "outcome": "provider_error",
       "accepted_isbn13": null,
       "candidates": [],
@@ -111,91 +111,13 @@
       ]
     },
     {
-      "work_id": "wrk_1ca55d657738",
-      "title": "秘書検定二級",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_1f6f102b49c4",
-      "title": "その子、発達障害ではありません IN-C",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_234b6fa5c521",
-      "title": "世界ナンバーワンのコンサルティングファームのルール",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_334ebe0b573f",
-      "title": "大学への数学ショートプログラム",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_3564709c22d4",
-      "title": "げなうドイツ語",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_368805ff1c88",
-      "title": "一九八四年",
-      "outcome": "no_consensus",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_38c5208b38c4",
-      "title": "新訳ハムレット",
+      "work_id": "wrk_733477650555",
+      "title": "なっとくする量子力学",
       "outcome": "accepted",
-      "accepted_isbn13": "9784041149928",
+      "accepted_isbn13": "9784061545052",
       "candidates": [
         {
-          "isbn13": "9784041149928",
+          "isbn13": "9784061545052",
           "providers": [
             "ndl",
             "openbd"
@@ -211,8 +133,43 @@
       ]
     },
     {
-      "work_id": "wrk_39ec01834f19",
-      "title": "地球温暖化の予測は正しいか",
+      "work_id": "wrk_76265ec80a99",
+      "title": "教養のための現代史入門",
+      "outcome": "accepted",
+      "accepted_isbn13": "9784623072637",
+      "candidates": [
+        {
+          "isbn13": "9784623072637",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        }
+      ],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_76bca688a12b",
+      "title": "一人暮らしのラクチンごはん",
+      "outcome": "provider_error",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_7967ce140bfd",
+      "title": "風は青海を渡るのか?",
       "outcome": "no_consensus",
       "accepted_isbn13": null,
       "candidates": [],
@@ -224,13 +181,148 @@
       ]
     },
     {
-      "work_id": "wrk_3cd368773f29",
-      "title": "そして、バトンは渡された",
+      "work_id": "wrk_79a111fcbc6a",
+      "title": "妖狐×僕SS",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_79ac7ba1d011",
+      "title": "「あなた」という商品を高く売る方法 キャ (NHK出版新書)",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_7ad3f74041b6",
+      "title": "子供が幸せになる学校",
+      "outcome": "provider_error",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_7adc4638626a",
+      "title": "騎士団長ゴロシ上",
+      "outcome": "provider_error",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_7c8a655cde27",
+      "title": "お金2.0",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_7da437748da8",
+      "title": "微生物学地球と健康を守る",
+      "outcome": "accepted",
+      "accepted_isbn13": "9784785352165",
+      "candidates": [
+        {
+          "isbn13": "9784785352165",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        }
+      ],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_7dea89ff66d1",
+      "title": "ソクラテスの弁明 関西弁訳",
+      "outcome": "accepted",
+      "accepted_isbn13": "9784891947989",
+      "candidates": [
+        {
+          "isbn13": "9784891947989",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        }
+      ],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_7e8884490097",
+      "title": "ゼロから見直すエネルギー",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_7e9aee67d35d",
+      "title": "渚にて",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_7f9d8757da57",
+      "title": "掟上今日子の退職願",
       "outcome": "ambiguous",
       "accepted_isbn13": null,
       "candidates": [
         {
-          "isbn13": "9784160901100",
+          "isbn13": "9784062199063",
           "providers": [
             "ndl",
             "openbd"
@@ -238,15 +330,7 @@
           "best_similarity": 1
         },
         {
-          "isbn13": "9784163907956",
-          "providers": [
-            "ndl",
-            "openbd"
-          ],
-          "best_similarity": 1
-        },
-        {
-          "isbn13": "9784167915544",
+          "isbn13": "9784065197370",
           "providers": [
             "ndl",
             "openbd"
@@ -262,78 +346,13 @@
       ]
     },
     {
-      "work_id": "wrk_3dfc456e3797",
-      "title": "小説聖書",
-      "outcome": "no_consensus",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_3f47490f4e95",
-      "title": "目の見えない人は世界をどう見ているか",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_4248f138a80d",
-      "title": "せっかち伯爵と時間泥棒",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_49533146732d",
-      "title": "電気とエネルギーの未来は?",
-      "outcome": "no_consensus",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_4c4a6d0d72c5",
-      "title": "予想通りに不合理",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_50477fff5113",
-      "title": "発達障害 生きづらさを抱える少数派の「種族」たち",
+      "work_id": "wrk_7fb82393c41f",
+      "title": "すぐ勝てる急戦矢倉",
       "outcome": "accepted",
-      "accepted_isbn13": "9784797398328",
+      "accepted_isbn13": "9784839946074",
       "candidates": [
         {
-          "isbn13": "9784797398328",
+          "isbn13": "9784839946074",
           "providers": [
             "ndl",
             "openbd"
@@ -349,30 +368,8 @@
       ]
     },
     {
-      "work_id": "wrk_70ba56a21dbc",
-      "title": "13歳からのジャーナリスト 社会正義を求め世界を駆ける",
-      "outcome": "accepted",
-      "accepted_isbn13": "9784780310559",
-      "candidates": [
-        {
-          "isbn13": "9784780310559",
-          "providers": [
-            "ndl",
-            "openbd"
-          ],
-          "best_similarity": 1
-        }
-      ],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_70ec7a7d8e78",
-      "title": "新六法",
+      "work_id": "wrk_8071b3f07069",
+      "title": "亜人",
       "outcome": "no_consensus",
       "accepted_isbn13": null,
       "candidates": [],
@@ -384,28 +381,24 @@
       ]
     },
     {
-      "work_id": "wrk_70f891afbad8",
-      "title": "自壊する帝国",
-      "outcome": "ambiguous",
+      "work_id": "wrk_820ba461ef25",
+      "title": "世界の終わりとハードボイルドワンダーランド",
+      "outcome": "provider_error",
       "accepted_isbn13": null,
-      "candidates": [
+      "candidates": [],
+      "provider_errors": [
         {
-          "isbn13": "9784101331720",
-          "providers": [
-            "ndl",
-            "openbd"
-          ],
-          "best_similarity": 1
-        },
-        {
-          "isbn13": "9784104752027",
-          "providers": [
-            "ndl",
-            "openbd"
-          ],
-          "best_similarity": 1
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
         }
-      ],
+      ]
+    },
+    {
+      "work_id": "wrk_83664c0c6479",
+      "title": "ソクラテスの弁明 (マンガで読む名作)",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
       "provider_errors": [
         {
           "provider": "google_books",

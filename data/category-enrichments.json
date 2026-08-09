@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-09T07:26:08.955Z",
+  "updated_at": "2026-08-09T13:18:48.715Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -146,6 +146,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-08T09:15:33.779Z"
+    },
+    {
+      "work_id": "wrk_0e60a6595ec0",
+      "category": "コンピュータ・AI",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "007.64",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I027164257",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-09T13:18:48.715Z"
     },
     {
       "work_id": "wrk_0e7872401aef",
@@ -304,6 +316,18 @@
       "verified_at": "2026-08-08T09:15:33.779Z"
     },
     {
+      "work_id": "wrk_1d92737d7bbf",
+      "category": "語学・言語",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "830.79",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I028835013",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-09T13:18:48.715Z"
+    },
+    {
       "work_id": "wrk_1dbbe0d33491",
       "category": "文学・小説",
       "ndc_scheme": "NDC",
@@ -314,6 +338,30 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-08T09:38:28.725Z"
+    },
+    {
+      "work_id": "wrk_1e881d90bebb",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "913.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029200105",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-09T13:18:48.715Z"
+    },
+    {
+      "work_id": "wrk_1edb33667f6a",
+      "category": "投資・金融",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "338.18",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000003073898",
+      "match_mode": "isbn",
+      "title_similarity": 0.36363636363636365,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784939103575",
+      "verified_at": "2026-08-09T13:18:48.715Z"
     },
     {
       "work_id": "wrk_1f1498e352d5",
@@ -350,6 +398,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": "9784152101389",
       "verified_at": "2026-08-08T09:38:28.725Z"
+    },
+    {
+      "work_id": "wrk_202f686fb4de",
+      "category": "物理",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "420.28",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I024778578",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-09T13:18:48.715Z"
     },
     {
       "work_id": "wrk_20810eaa69a0",
@@ -506,6 +566,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-08T09:46:54.188Z"
+    },
+    {
+      "work_id": "wrk_2c17e11e7a95",
+      "category": "歴史",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "210",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029919395",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-09T13:18:48.715Z"
     },
     {
       "work_id": "wrk_2c367b301343",

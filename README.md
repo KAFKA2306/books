@@ -1,6 +1,10 @@
 # KAFKA BOOKS
 
-個人の読書記録を、**作品（Work）**・**版（Edition）**・**所蔵（Holding）**・**取得履歴（Acquisition）**を分離して管理する静的本棚データベースです。
+**本を859作品持つと、「何冊持っているか」すら簡単には答えられなくなる。**
+
+同じ作品の別版、Kindleの`Sample`と`Purchase`、所有と取得履歴。これらを全部「1冊」として扱うと、読書記録はすぐに曖昧になります。
+
+KAFKA BOOKSは、個人の読書記録を**作品（Work）**・**版（Edition）**・**所蔵（Holding）**・**取得履歴（Acquisition）**へ分解し、「何を読んだか」「どの版か」「本当に所有しているか」を混ぜずに管理する静的本棚データベースです。
 
 - 公開UI: https://kafka2306.github.io/books/
 - 公開API: https://kafka2306.github.io/books/api/v1/collections.json

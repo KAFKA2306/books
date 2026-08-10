@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-10T08:08:44.347Z",
+  "updated_at": "2026-08-10T08:12:37.200Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -1538,6 +1538,126 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": "9784152093981",
       "verified_at": "2026-08-10T08:08:44.347Z"
+    },
+    {
+      "work_id": "wrk_7d1d6d8543e9",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029025796",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-10T08:12:37.200Z"
+    },
+    {
+      "work_id": "wrk_7d8d01003568",
+      "category": "経済",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "331.82",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I026086771",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-10T08:12:37.200Z"
+    },
+    {
+      "work_id": "wrk_7da437748da8",
+      "category": "生物学",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "465",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000009373642",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784785352165",
+      "verified_at": "2026-08-10T08:12:37.200Z"
+    },
+    {
+      "work_id": "wrk_7dea89ff66d1",
+      "category": "哲学・思想",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "131.3",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000010179089",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784891947989",
+      "verified_at": "2026-08-10T08:12:37.200Z"
+    },
+    {
+      "work_id": "wrk_7f9d8757da57",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "913.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I026975605",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-10T08:12:37.200Z"
+    },
+    {
+      "work_id": "wrk_7fe573008afb",
+      "category": "コンピュータ・AI",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "007.6384",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I033333321",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-10T08:12:37.200Z"
+    },
+    {
+      "work_id": "wrk_7fea6304ddd0",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "726.101",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I025894724",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-10T08:12:37.200Z"
+    },
+    {
+      "work_id": "wrk_80ec8cab8670",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "913.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029076101",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784575241068",
+      "verified_at": "2026-08-10T08:12:37.200Z"
+    },
+    {
+      "work_id": "wrk_81102d89d9af",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000007918724",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-10T08:12:37.200Z"
+    },
+    {
+      "work_id": "wrk_81806d8335a2",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I028387719",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-10T08:12:37.200Z"
     }
   ]
 }

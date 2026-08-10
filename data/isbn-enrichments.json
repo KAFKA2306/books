@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichments.v1",
-  "updated_at": "2026-08-09T15:13:38.785Z",
+  "updated_at": "2026-08-10T04:08:56.980Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -655,6 +655,63 @@
       ],
       "replaces_edition_id": "pending:7fb82393c41f",
       "verified_at": "2026-08-09T15:13:38.785Z"
+    },
+    {
+      "work_id": "wrk_874f6d6303cb",
+      "isbn13": "9784074387137",
+      "title": "見たくなる!日本の野鳥420",
+      "authors": [
+        "鳥くん",
+        "永井, 凱巳, 1944-",
+        "鳥くん,永井, 凱巳, 1944-,♪鳥くん, 永井凱巳 著",
+        "鳥くん 永井,凱巳,1944-"
+      ],
+      "publisher": "主婦の友社",
+      "published_year": 2019,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I030014626"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784074387137"
+        }
+      ],
+      "replaces_edition_id": "pending:874f6d6303cb",
+      "verified_at": "2026-08-10T04:08:56.980Z"
+    },
+    {
+      "work_id": "wrk_954c7efc666e",
+      "isbn13": "9784622087038",
+      "title": "アウシュヴィッツの巻物 : 証言資料",
+      "authors": [
+        "Chare, Nicholas",
+        "Williams, Dominic Paul",
+        "二階, 宗人, 1950-",
+        "Chare, Nicholas,Williams, Dominic Paul,二階, 宗人, 1950-,ニコラス・チェア, ドミニク・ウィリアムズ [著],二階宗人 訳",
+        "Chare,Nicholas Williams,DominicPaul 二階,宗人,1950-"
+      ],
+      "publisher": "みすず書房",
+      "published_year": 2019,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029649014"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784622087038"
+        }
+      ],
+      "replaces_edition_id": "pending:954c7efc666e",
+      "verified_at": "2026-08-10T04:08:56.980Z"
     }
   ]
 }

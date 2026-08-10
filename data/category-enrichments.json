@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-09T19:05:32.870Z",
+  "updated_at": "2026-08-10T02:37:41.838Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -1334,6 +1334,114 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": "9784041144312",
       "verified_at": "2026-08-09T19:05:32.870Z"
+    },
+    {
+      "work_id": "wrk_6f5893f31e27",
+      "category": "哲学・思想",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "116.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I033709265",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-10T02:37:41.838Z"
+    },
+    {
+      "work_id": "wrk_6f8a497c40ce",
+      "category": "コンピュータ・AI",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "007.634",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I034365266",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784296070992",
+      "verified_at": "2026-08-10T02:37:41.838Z"
+    },
+    {
+      "work_id": "wrk_6fc45741ec57",
+      "category": "ゲーム・娯楽",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "798.3",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I032898795",
+      "match_mode": "isbn",
+      "title_similarity": 0.23529411764705882,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784909474704",
+      "verified_at": "2026-08-10T02:37:41.838Z"
+    },
+    {
+      "work_id": "wrk_70b6cf34e77e",
+      "category": "科学一般",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "401",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I023338228",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-10T02:37:41.838Z"
+    },
+    {
+      "work_id": "wrk_70f891afbad8",
+      "category": "歴史",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "238.075",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000008194334",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-10T02:37:41.838Z"
+    },
+    {
+      "work_id": "wrk_720b2b880059",
+      "category": "心理・行動",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "141.74",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I023371149",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-10T02:37:41.838Z"
+    },
+    {
+      "work_id": "wrk_724b23a54dad",
+      "category": "哲学・思想",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "114.2",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029218827",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-10T02:37:41.838Z"
+    },
+    {
+      "work_id": "wrk_733477650555",
+      "category": "物理",
+      "ndc_scheme": "NDC8",
+      "ndc_code": "421.3",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000002333198",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784061545052",
+      "verified_at": "2026-08-10T02:37:41.838Z"
+    },
+    {
+      "work_id": "wrk_758efbe3fe19",
+      "category": "経営・会計",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "336.3",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I033387239",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-10T02:37:41.838Z"
     }
   ]
 }

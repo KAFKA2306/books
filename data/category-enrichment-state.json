@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichment-state.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-09T19:05:32.870Z",
+  "updated_at": "2026-08-10T02:37:41.838Z",
   "attempts": {
     "wrk_0025172962b9": {
       "attempted_at": "2026-08-08T09:15:33.779Z",
@@ -3552,7 +3552,257 @@
       "ndc_code": "810",
       "source_isbn13": "9784041144312",
       "provider_error": null
+    },
+    "wrk_6f5893f31e27": {
+      "attempted_at": "2026-08-10T02:37:41.838Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-07T02:37:41.838Z",
+      "category": "哲学・思想",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "116.1",
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_6f8a497c40ce": {
+      "attempted_at": "2026-08-10T02:37:41.838Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-07T02:37:41.838Z",
+      "category": "コンピュータ・AI",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "007.634",
+      "source_isbn13": "9784296070992",
+      "provider_error": null
+    },
+    "wrk_6fc45741ec57": {
+      "attempted_at": "2026-08-10T02:37:41.838Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-07T02:37:41.838Z",
+      "category": "ゲーム・娯楽",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "798.3",
+      "source_isbn13": "9784909474704",
+      "provider_error": null
+    },
+    "wrk_6ff4da8d4373": {
+      "attempted_at": "2026-08-10T02:37:41.838Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-24T02:37:41.838Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_7029a9a3f090": {
+      "attempted_at": "2026-08-10T02:37:41.838Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-24T02:37:41.838Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_70a097dce8be": {
+      "attempted_at": "2026-08-10T02:37:41.838Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-24T02:37:41.838Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_70b6cf34e77e": {
+      "attempted_at": "2026-08-10T02:37:41.838Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-07T02:37:41.838Z",
+      "category": "科学一般",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "401",
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_70ba56a21dbc": {
+      "attempted_at": "2026-08-10T02:37:41.838Z",
+      "outcome": "no_ndc",
+      "next_attempt_at": "2026-09-09T02:37:41.838Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_70ec7a7d8e78": {
+      "attempted_at": "2026-08-10T02:37:41.838Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-24T02:37:41.838Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_70f891afbad8": {
+      "attempted_at": "2026-08-10T02:37:41.838Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-07T02:37:41.838Z",
+      "category": "歴史",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "238.075",
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_714179f784a9": {
+      "attempted_at": "2026-08-10T02:37:41.838Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-24T02:37:41.838Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_715fbb187207": {
+      "attempted_at": "2026-08-10T02:37:41.838Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-24T02:37:41.838Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_720b2b880059": {
+      "attempted_at": "2026-08-10T02:37:41.838Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-07T02:37:41.838Z",
+      "category": "心理・行動",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "141.74",
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_721efb5356be": {
+      "attempted_at": "2026-08-10T02:37:41.838Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-24T02:37:41.838Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_7233c2aec8bc": {
+      "attempted_at": "2026-08-10T02:37:41.838Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-24T02:37:41.838Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_7245f5cfdcc3": {
+      "attempted_at": "2026-08-10T02:37:41.838Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-24T02:37:41.838Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_724b23a54dad": {
+      "attempted_at": "2026-08-10T02:37:41.838Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-07T02:37:41.838Z",
+      "category": "哲学・思想",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "114.2",
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_7299c697af57": {
+      "attempted_at": "2026-08-10T02:37:41.838Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-24T02:37:41.838Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_733477650555": {
+      "attempted_at": "2026-08-10T02:37:41.838Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-07T02:37:41.838Z",
+      "category": "物理",
+      "ndc_scheme": "NDC8",
+      "ndc_code": "421.3",
+      "source_isbn13": "9784061545052",
+      "provider_error": null
+    },
+    "wrk_7395651f3beb": {
+      "attempted_at": "2026-08-10T02:37:41.838Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-24T02:37:41.838Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_73c9fe9f91ba": {
+      "attempted_at": "2026-08-10T02:37:41.838Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-24T02:37:41.838Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_7422084227ac": {
+      "attempted_at": "2026-08-10T02:37:41.838Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-24T02:37:41.838Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_7434207da002": {
+      "attempted_at": "2026-08-10T02:37:41.838Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-24T02:37:41.838Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_7497372784f2": {
+      "attempted_at": "2026-08-10T02:37:41.838Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-08-24T02:37:41.838Z",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "provider_error": null
+    },
+    "wrk_758efbe3fe19": {
+      "attempted_at": "2026-08-10T02:37:41.838Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-07T02:37:41.838Z",
+      "category": "経営・会計",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "336.3",
+      "source_isbn13": null,
+      "provider_error": null
     }
   },
-  "total_attempts": 355
+  "total_attempts": 380
 }

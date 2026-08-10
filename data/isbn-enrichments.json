@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichments.v1",
-  "updated_at": "2026-08-10T04:08:56.980Z",
+  "updated_at": "2026-08-10T15:40:02.447Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -712,6 +712,33 @@
       ],
       "replaces_edition_id": "pending:954c7efc666e",
       "verified_at": "2026-08-10T04:08:56.980Z"
+    },
+    {
+      "work_id": "wrk_984a6bd5f73c",
+      "isbn13": "9784806141129",
+      "title": "残業3時間を朝30分で片づける仕事術",
+      "authors": [
+        "永井, 孝尚",
+        "永井, 孝尚,永井孝尚 著",
+        "永井,孝尚"
+      ],
+      "publisher": "中経出版",
+      "published_year": 2011,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000011232983"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784806141129"
+        }
+      ],
+      "replaces_edition_id": "pending:984a6bd5f73c",
+      "verified_at": "2026-08-10T15:40:02.447Z"
     }
   ]
 }

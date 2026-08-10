@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-10T02:37:41.838Z",
+  "updated_at": "2026-08-10T08:08:44.347Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -1442,6 +1442,102 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-10T02:37:41.838Z"
+    },
+    {
+      "work_id": "wrk_76265ec80a99",
+      "category": "歴史",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "209.75",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I026414093",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784623072637",
+      "verified_at": "2026-08-10T08:08:44.347Z"
+    },
+    {
+      "work_id": "wrk_76b4f7ec6479",
+      "category": "家族・ジェンダー",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "367.9",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I030442077",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-10T08:08:44.347Z"
+    },
+    {
+      "work_id": "wrk_77ebf990a772",
+      "category": "コンピュータ・AI",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "007.13",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I033840475",
+      "match_mode": "isbn",
+      "title_similarity": 0.7058823529411765,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784041155271",
+      "verified_at": "2026-08-10T08:08:44.347Z"
+    },
+    {
+      "work_id": "wrk_785ff27ed2aa",
+      "category": "経済",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "333.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I034216750",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-10T08:08:44.347Z"
+    },
+    {
+      "work_id": "wrk_7961a6447035",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "913.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I025917723",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-10T08:08:44.347Z"
+    },
+    {
+      "work_id": "wrk_7967ce140bfd",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "913.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I027346030",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-10T08:08:44.347Z"
+    },
+    {
+      "work_id": "wrk_7a31a9843187",
+      "category": "経済",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "332.107",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I033565071",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-10T08:08:44.347Z"
+    },
+    {
+      "work_id": "wrk_7bc16821a9d6",
+      "category": "心理・行動",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "141.5",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I024747524",
+      "match_mode": "isbn",
+      "title_similarity": 0.35294117647058826,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784152093981",
+      "verified_at": "2026-08-10T08:08:44.347Z"
     }
   ]
 }

@@ -1,0 +1,52 @@
+name: Books MCP contract
+
+on:
+  pull_request:
+    paths:
+      - "scripts/books_read_model.py"
+      - "scripts/books_mcp_server.py"
+      - "tests/test_books_mcp.py"
+      - "docs/mcp.md"
+      - ".github/workflows/mcp-contract.yml"
+      - "scripts/build-api.mjs"
+      - "scripts/load-catalog.mjs"
+      - "data/catalog.json"
+      - "data/kindle/**"
+      - "data/isbn-enrichments.json"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/books_read_model.py"
+      - "scripts/books_mcp_server.py"
+      - "tests/test_books_mcp.py"
+      - "docs/mcp.md"
+      - ".github/workflows/mcp-contract.yml"
+      - "scripts/build-api.mjs"
+      - "scripts/load-catalog.mjs"
+      - "data/catalog.json"
+      - "data/kindle/**"
+      - "data/isbn-enrichments.json"
+
+permissions:
+  contents: read
+
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Materialize the public read model
+        run: npm run api:build
+      - name: Install MCP v2 and test dependencies
+        run: python -m pip install 'mcp>=2,<3' 'pytest>=8,<9'
+      - name: Check Python syntax
+        run: python -m py_compile scripts/books_read_model.py scripts/books_mcp_server.py tests/test_books_mcp.py
+      - name: Verify MCP discovery and API parity
+        run: python -m pytest tests/test_books_mcp.py

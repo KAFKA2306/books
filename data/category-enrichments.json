@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-10T08:12:37.200Z",
+  "updated_at": "2026-08-10T13:48:48.564Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -338,6 +338,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-08T09:38:28.725Z"
+    },
+    {
+      "work_id": "wrk_1e39930dcfd5",
+      "category": "経済",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "331",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029994379",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-10T13:48:48.564Z"
     },
     {
       "work_id": "wrk_1e881d90bebb",
@@ -1658,6 +1670,126 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-10T08:12:37.200Z"
+    },
+    {
+      "work_id": "wrk_838895385cfc",
+      "category": "経済",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "331",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I030334068",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-10T13:48:48.564Z"
+    },
+    {
+      "work_id": "wrk_84abb220b112",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC",
+      "ndc_code": "929.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000001273775",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-10T13:48:48.564Z"
+    },
+    {
+      "work_id": "wrk_8542714fda13",
+      "category": "コンピュータ・AI",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "007.35",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I028814419",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-10T13:48:48.564Z"
+    },
+    {
+      "work_id": "wrk_8550c643590c",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I028940000",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-10T13:48:48.564Z"
+    },
+    {
+      "work_id": "wrk_85d20d4ad719",
+      "category": "社会・人間関係",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "361.8",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I031378525",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-10T13:48:48.564Z"
+    },
+    {
+      "work_id": "wrk_867de0c46bcd",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000007918724",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-10T13:48:48.564Z"
+    },
+    {
+      "work_id": "wrk_874f6d6303cb",
+      "category": "動物",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "488.21",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I030014626",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784074387137",
+      "verified_at": "2026-08-10T13:48:48.564Z"
+    },
+    {
+      "work_id": "wrk_879ebf767833",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I024903649",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-10T13:48:48.564Z"
+    },
+    {
+      "work_id": "wrk_88b811166a73",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I030083125",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-10T13:48:48.564Z"
+    },
+    {
+      "work_id": "wrk_896819ce704b",
+      "category": "心理・行動",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "141.51",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I033990923",
+      "match_mode": "isbn",
+      "title_similarity": 0.6956521739130435,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784130101615",
+      "verified_at": "2026-08-10T13:48:48.564Z"
     }
   ]
 }

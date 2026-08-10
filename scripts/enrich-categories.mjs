@@ -8,6 +8,11 @@ import {
   eligibleCategoryWorks,
   parseNdlCategorySearch,
 } from '../src/category-enrichment.mjs';
+import {
+  CATEGORY_TITLE_NORMALIZATION_VERSION,
+  normalizeCategoryLookupTitle,
+  normalizeCategorySearchRecords,
+} from '../src/category-title-normalization.mjs';
 
 const root = process.cwd();
 const overlayPath = path.join(root, 'data/category-enrichments.json');
@@ -69,6 +74,7 @@ for (let index = 0; index < selected.length; index += 1) {
     .filter((edition) => edition.verification === 'verified' && edition.isbn13)
     .map((edition) => edition.isbn13))]
     .sort();
+  const lookupTitle = normalizeCategoryLookupTitle(work.title) || work.title;
 
   let outcome;
   let decision = null;
@@ -77,11 +83,15 @@ for (let index = 0; index < selected.length; index += 1) {
     let records = [];
     if (isbn13s.length) {
       records = await searchNdl({ isbn: isbn13s[0] });
-      if (!records.length) records = await searchNdl({ title: work.title });
+      if (!records.length) records = await searchNdl({ title: lookupTitle });
     } else {
-      records = await searchNdl({ title: work.title });
+      records = await searchNdl({ title: lookupTitle });
     }
-    decision = decideCategory(work, records, { isbn13s });
+    decision = decideCategory(
+      { ...work, title: lookupTitle },
+      normalizeCategorySearchRecords(records),
+      { isbn13s },
+    );
     outcome = decision.outcome;
   } catch (error) {
     outcome = 'provider_error';
@@ -92,6 +102,7 @@ for (let index = 0; index < selected.length; index += 1) {
   const result = {
     work_id: work.work_id,
     title: work.title,
+    lookup_title: lookupTitle,
     outcome,
     category: decision?.accepted?.category ?? null,
     ndc_scheme: decision?.accepted?.ndc_scheme ?? null,
@@ -151,6 +162,7 @@ const report = {
     standard_classification_source: 'source-reported NDC code is retained without cross-version conversion',
     isbn_match_preferred: true,
     title_similarity_threshold: 0.97,
+    title_lookup_normalization: CATEGORY_TITLE_NORMALIZATION_VERSION,
     ambiguous_categories_are_rejected: true,
     request_concurrency: 1,
     request_interval_ms: requestIntervalMs,

@@ -21,6 +21,30 @@ test('removes only trailing bibliographic volume and series decorations', () => 
   );
 });
 
+test('removes known Kindle retail decorations before NDL lookup', () => {
+  assert.equal(
+    normalizeCategoryLookupTitle('ゆらぎ荘の幽奈さん【期間限定無料】 1 (ジャンプコミックスDIGITAL)'),
+    'ゆらぎ荘の幽奈さん',
+  );
+  assert.equal(
+    normalizeCategoryLookupTitle('食戟のソーマ【期間限定無料】 1 (ジャンプコミックスDIGITAL)'),
+    '食戟のソーマ',
+  );
+  assert.equal(
+    normalizeCategoryLookupTitle('いちご100% モノクロ版【期間限定無料】 1 (ジャンプコミックスDIGITAL)'),
+    'いちご100%',
+  );
+  assert.equal(
+    normalizeCategoryLookupTitle('しゃばけ【しゃばけシリーズ第1弾】'),
+    'しゃばけ',
+  );
+});
+
+test('does not strip a bare trailing number without known retail or bibliographic context', () => {
+  assert.equal(normalizeCategoryLookupTitle('プロジェクト 2025'), 'プロジェクト 2025');
+  assert.equal(normalizeCategoryLookupTitle('2001'), '2001');
+});
+
 test('keeps meaningful parenthetical title text', () => {
   assert.equal(
     normalizeCategoryLookupTitle('「死」とは何か (イェール大学で23年連続の人気講義)'),

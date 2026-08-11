@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-11T13:46:52.525Z",
+  "updated_at": "2026-08-11T19:28:51.001Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -472,6 +472,18 @@
       "verified_at": "2026-08-11T13:46:52.525Z"
     },
     {
+      "work_id": "wrk_1dfdc444ef20",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I030310637",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-11T19:28:51.001Z"
+    },
+    {
       "work_id": "wrk_1e39930dcfd5",
       "category": "経済",
       "ndc_scheme": "NDC10",
@@ -482,6 +494,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-10T13:48:48.564Z"
+    },
+    {
+      "work_id": "wrk_1e7377fd982a",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "913.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I025917723",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-11T19:28:51.001Z"
     },
     {
       "work_id": "wrk_1e881d90bebb",
@@ -532,6 +556,18 @@
       "verified_at": "2026-08-08T09:38:28.725Z"
     },
     {
+      "work_id": "wrk_1f70a0500332",
+      "category": "投資・金融",
+      "ndc_scheme": "NDC8",
+      "ndc_code": "338.18",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000002477902",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-11T19:28:51.001Z"
+    },
+    {
       "work_id": "wrk_1fccfe1c03cc",
       "category": "文学・小説",
       "ndc_scheme": "NDC10",
@@ -566,6 +602,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-08T09:38:28.725Z"
+    },
+    {
+      "work_id": "wrk_20f323c253e3",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I024832653",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-11T19:28:51.001Z"
     },
     {
       "work_id": "wrk_21a1a2a587ec",
@@ -614,6 +662,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": "9784816366031",
       "verified_at": "2026-08-08T09:46:54.188Z"
+    },
+    {
+      "work_id": "wrk_257665985879",
+      "category": "技術・工学",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "500",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I026422846",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-11T19:28:51.001Z"
     },
     {
       "work_id": "wrk_25b63cbadfa5",
@@ -676,6 +736,18 @@
       "verified_at": "2026-08-08T09:46:54.188Z"
     },
     {
+      "work_id": "wrk_28482102f7b2",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I024832653",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-11T19:28:51.001Z"
+    },
+    {
       "work_id": "wrk_2871c7f36716",
       "category": "文学・小説",
       "ndc_scheme": "NDC10",
@@ -686,6 +758,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-08T09:46:54.188Z"
+    },
+    {
+      "work_id": "wrk_293159ecf635",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I025798814",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-11T19:28:51.001Z"
     },
     {
       "work_id": "wrk_296bb52e2908",

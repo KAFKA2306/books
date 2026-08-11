@@ -1,12 +1,13 @@
 {
   "schema": "kafka.books.category-enrichment-state.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-11T02:30:58.716Z",
+  "updated_at": "2026-08-11T05:04:45.768Z",
   "attempts": {
     "wrk_0025172962b9": {
-      "attempted_at": "2026-08-08T09:15:33.779Z",
+      "attempted_at": "2026-08-11T05:04:45.768Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-22T09:15:33.779Z",
+      "next_attempt_at": "2026-08-25T05:04:45.768Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -24,9 +25,10 @@
       "provider_error": null
     },
     "wrk_00b1d56b0883": {
-      "attempted_at": "2026-08-08T09:15:33.779Z",
+      "attempted_at": "2026-08-11T05:04:45.768Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-22T09:15:33.779Z",
+      "next_attempt_at": "2026-08-25T05:04:45.768Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -34,9 +36,10 @@
       "provider_error": null
     },
     "wrk_012b6febd3c5": {
-      "attempted_at": "2026-08-08T09:15:33.779Z",
+      "attempted_at": "2026-08-11T05:04:45.768Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-22T09:15:33.779Z",
+      "next_attempt_at": "2026-08-25T05:04:45.768Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -54,9 +57,10 @@
       "provider_error": null
     },
     "wrk_0184827d95ad": {
-      "attempted_at": "2026-08-09T13:18:48.715Z",
+      "attempted_at": "2026-08-11T05:04:45.768Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-23T13:18:48.715Z",
+      "next_attempt_at": "2026-08-25T05:04:45.768Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -64,9 +68,10 @@
       "provider_error": null
     },
     "wrk_019f6635859b": {
-      "attempted_at": "2026-08-08T09:15:33.779Z",
+      "attempted_at": "2026-08-11T05:04:45.768Z",
       "outcome": "ambiguous",
-      "next_attempt_at": "2026-09-07T09:15:33.779Z",
+      "next_attempt_at": "2026-09-10T05:04:45.768Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -74,9 +79,10 @@
       "provider_error": null
     },
     "wrk_01ad486ad9cb": {
-      "attempted_at": "2026-08-08T09:15:33.779Z",
+      "attempted_at": "2026-08-11T05:04:45.768Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-22T09:15:33.779Z",
+      "next_attempt_at": "2026-08-25T05:04:45.768Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -84,9 +90,10 @@
       "provider_error": null
     },
     "wrk_01dcf6c17668": {
-      "attempted_at": "2026-08-08T09:15:33.779Z",
+      "attempted_at": "2026-08-11T05:04:45.768Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-22T09:15:33.779Z",
+      "next_attempt_at": "2026-08-25T05:04:45.768Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -94,9 +101,10 @@
       "provider_error": null
     },
     "wrk_01e497859afb": {
-      "attempted_at": "2026-08-09T13:18:48.715Z",
+      "attempted_at": "2026-08-11T05:04:45.768Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-23T13:18:48.715Z",
+      "next_attempt_at": "2026-08-25T05:04:45.768Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -104,9 +112,10 @@
       "provider_error": null
     },
     "wrk_023069908972": {
-      "attempted_at": "2026-08-08T09:15:33.779Z",
+      "attempted_at": "2026-08-11T05:04:45.768Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-22T09:15:33.779Z",
+      "next_attempt_at": "2026-08-25T05:04:45.768Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -114,9 +123,10 @@
       "provider_error": null
     },
     "wrk_02516067d844": {
-      "attempted_at": "2026-08-09T13:18:48.715Z",
+      "attempted_at": "2026-08-11T05:04:45.768Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-23T13:18:48.715Z",
+      "next_attempt_at": "2026-08-25T05:04:45.768Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -124,9 +134,10 @@
       "provider_error": null
     },
     "wrk_03ceb0cb730f": {
-      "attempted_at": "2026-08-08T09:15:33.779Z",
+      "attempted_at": "2026-08-11T05:04:45.768Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-22T09:15:33.779Z",
+      "next_attempt_at": "2026-08-25T05:04:45.768Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -144,9 +155,10 @@
       "provider_error": null
     },
     "wrk_052dab5e5b07": {
-      "attempted_at": "2026-08-08T09:15:33.779Z",
+      "attempted_at": "2026-08-11T05:04:45.768Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-22T09:15:33.779Z",
+      "next_attempt_at": "2026-08-25T05:04:45.768Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -154,9 +166,10 @@
       "provider_error": null
     },
     "wrk_0575b79c91c3": {
-      "attempted_at": "2026-08-08T09:15:33.779Z",
+      "attempted_at": "2026-08-11T05:04:45.768Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-22T09:15:33.779Z",
+      "next_attempt_at": "2026-08-25T05:04:45.768Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -164,9 +177,10 @@
       "provider_error": null
     },
     "wrk_05a59763e09b": {
-      "attempted_at": "2026-08-08T09:15:33.779Z",
+      "attempted_at": "2026-08-11T05:04:45.768Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-22T09:15:33.779Z",
+      "next_attempt_at": "2026-08-25T05:04:45.768Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -184,9 +198,10 @@
       "provider_error": null
     },
     "wrk_061c2026e958": {
-      "attempted_at": "2026-08-08T09:15:33.779Z",
+      "attempted_at": "2026-08-11T05:04:45.768Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-22T09:15:33.779Z",
+      "next_attempt_at": "2026-08-25T05:04:45.768Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -204,9 +219,10 @@
       "provider_error": null
     },
     "wrk_0649ceebf61b": {
-      "attempted_at": "2026-08-08T09:15:33.779Z",
+      "attempted_at": "2026-08-11T05:04:45.768Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-22T09:15:33.779Z",
+      "next_attempt_at": "2026-08-25T05:04:45.768Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -214,9 +230,10 @@
       "provider_error": null
     },
     "wrk_066af4637988": {
-      "attempted_at": "2026-08-08T09:15:33.779Z",
+      "attempted_at": "2026-08-11T05:04:45.768Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-22T09:15:33.779Z",
+      "next_attempt_at": "2026-08-25T05:04:45.768Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -224,9 +241,10 @@
       "provider_error": null
     },
     "wrk_066b82b7f7d5": {
-      "attempted_at": "2026-08-08T09:15:33.779Z",
+      "attempted_at": "2026-08-11T05:04:45.768Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-22T09:15:33.779Z",
+      "next_attempt_at": "2026-08-25T05:04:45.768Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -254,9 +272,10 @@
       "provider_error": null
     },
     "wrk_070add84ff79": {
-      "attempted_at": "2026-08-08T09:15:33.779Z",
+      "attempted_at": "2026-08-11T05:04:45.768Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-22T09:15:33.779Z",
+      "next_attempt_at": "2026-08-25T05:04:45.768Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -264,12 +283,13 @@
       "provider_error": null
     },
     "wrk_0740cf6d7426": {
-      "attempted_at": "2026-08-08T09:15:33.779Z",
-      "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-22T09:15:33.779Z",
-      "category": null,
-      "ndc_scheme": null,
-      "ndc_code": null,
+      "attempted_at": "2026-08-11T05:04:45.768Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-08T05:04:45.768Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "726.1",
       "source_isbn13": null,
       "provider_error": null
     },
@@ -284,19 +304,21 @@
       "provider_error": null
     },
     "wrk_07839dc7de6d": {
-      "attempted_at": "2026-08-08T09:15:33.779Z",
-      "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-22T09:15:33.779Z",
-      "category": null,
-      "ndc_scheme": null,
-      "ndc_code": null,
+      "attempted_at": "2026-08-11T05:04:45.768Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-08T05:04:45.768Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "726.1",
       "source_isbn13": null,
       "provider_error": null
     },
     "wrk_079f94beebb3": {
-      "attempted_at": "2026-08-08T09:15:33.779Z",
+      "attempted_at": "2026-08-11T05:04:45.768Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-22T09:15:33.779Z",
+      "next_attempt_at": "2026-08-25T05:04:45.768Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -304,9 +326,10 @@
       "provider_error": null
     },
     "wrk_08652c518326": {
-      "attempted_at": "2026-08-08T09:15:33.779Z",
+      "attempted_at": "2026-08-11T05:04:45.768Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-22T09:15:33.779Z",
+      "next_attempt_at": "2026-08-25T05:04:45.768Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -314,9 +337,10 @@
       "provider_error": null
     },
     "wrk_09256f1e291f": {
-      "attempted_at": "2026-08-09T13:18:48.715Z",
+      "attempted_at": "2026-08-11T05:04:45.768Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-23T13:18:48.715Z",
+      "next_attempt_at": "2026-08-25T05:04:45.768Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -334,9 +358,10 @@
       "provider_error": null
     },
     "wrk_0ac8d6f215f7": {
-      "attempted_at": "2026-08-08T09:15:33.779Z",
+      "attempted_at": "2026-08-11T05:04:45.768Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-22T09:15:33.779Z",
+      "next_attempt_at": "2026-08-25T05:04:45.768Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,

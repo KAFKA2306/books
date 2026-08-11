@@ -123,21 +123,26 @@ def collection_provenance(name: str) -> dict[str, Any]:
     info = manifest()
     file_name = f"{name}.json"
     item = next((row for row in info.get("files", []) if row.get("name") == file_name), None)
-    if item is None:
-        return {
-            "collection": name,
-            "source_generated_at": info.get("source_generated_at"),
-            "artifact": None,
-            "null_reason": "collection_not_materialized",
-        }
+    available = item is not None
+    generated_at = info.get("generated_at") or info.get("source_generated_at")
+    data_as_of = info.get("data_as_of") or info.get("source_generated_at")
     return {
+        "canonical_id": f"kafka.books.api.v1:{name}",
+        "schema_version": info.get("source_schema_version"),
+        "data_as_of": data_as_of,
+        "generated_at": generated_at,
+        "source_type": "materialized_api_json",
+        "source_id": file_name,
+        "source_hash": item.get("sha256") if item else None,
+        "freshness": "snapshot" if available else "unavailable",
+        "null_reason": None if available else "collection_not_materialized",
+        "derivation_method": "deterministic_materialization",
         "collection": name,
         "source_schema_version": info.get("source_schema_version"),
         "source_generated_at": info.get("source_generated_at"),
-        "artifact": file_name,
-        "bytes": item.get("bytes"),
-        "sha256": item.get("sha256"),
-        "null_reason": None,
+        "artifact": file_name if available else None,
+        "bytes": item.get("bytes") if item else None,
+        "sha256": item.get("sha256") if item else None,
     }
 
 
@@ -158,6 +163,8 @@ def data_health() -> dict[str, Any]:
         "api_version": info.get("api_version"),
         "source_schema_version": info.get("source_schema_version"),
         "source_generated_at": info.get("source_generated_at"),
+        "data_as_of": info.get("data_as_of") or info.get("source_generated_at"),
+        "generated_at": info.get("generated_at") or info.get("source_generated_at"),
         "record_counts": info.get("record_counts"),
         "file_count": len(files),
         "artifact_hashes_valid": hashes_valid,

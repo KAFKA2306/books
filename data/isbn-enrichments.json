@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichments.v1",
-  "updated_at": "2026-08-10T15:40:02.447Z",
+  "updated_at": "2026-08-11T03:55:12.138Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -739,6 +739,168 @@
       ],
       "replaces_edition_id": "pending:984a6bd5f73c",
       "verified_at": "2026-08-10T15:40:02.447Z"
+    },
+    {
+      "work_id": "wrk_a4567152c3c2",
+      "isbn13": "9784492533871",
+      "title": "LIFE SHIFT : 100年時代の人生戦略",
+      "authors": [
+        "Gratton, Lynda, 1955-",
+        "Scott, Andrew, 1965-",
+        "池村, 千秋, 1971-",
+        "Gratton, Lynda, 1955-,Scott, Andrew, 1965-,池村, 千秋, 1971-,リンダ・グラットン, アンドリュー・スコット 著,池村千秋 訳",
+        "Gratton,Lynda,1955- Scott,Andrew,1965- 池村,千秋,1971-"
+      ],
+      "publisher": "東洋経済新報社",
+      "published_year": 2016,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I027650990"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784492533871"
+        }
+      ],
+      "replaces_edition_id": "pending:a4567152c3c2",
+      "verified_at": "2026-08-11T03:55:12.138Z"
+    },
+    {
+      "work_id": "wrk_aaa67261c1dd",
+      "isbn13": "9784863134232",
+      "title": "科学の迷信 : 世界をまどわせた思い込みの真相",
+      "authors": [],
+      "publisher": "日経ナショナルジオグラフィック社",
+      "published_year": 2018,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 0.972972972972973,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029174314"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784863134232"
+        }
+      ],
+      "replaces_edition_id": "pending:aaa67261c1dd",
+      "verified_at": "2026-08-11T03:55:12.138Z"
+    },
+    {
+      "work_id": "wrk_adb0c17865d9",
+      "isbn13": "9784046040534",
+      "title": "世界のエリートが学んでいるMBA必読書50冊を1冊にまとめてみた",
+      "authors": [
+        "永井, 孝尚",
+        "永井, 孝尚,永井孝尚 著",
+        "永井,孝尚"
+      ],
+      "publisher": "KADOKAWA",
+      "published_year": 2019,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029629236"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784046040534"
+        }
+      ],
+      "replaces_edition_id": "pending:adb0c17865d9",
+      "verified_at": "2026-08-11T03:55:12.138Z"
+    },
+    {
+      "work_id": "wrk_b0d40314a1ca",
+      "isbn13": "9784768469637",
+      "title": "ベーシック・インカム : 基本所得のある社会へ",
+      "authors": [
+        "Werner, Götz W",
+        "渡辺, 一男, 1946-",
+        "Werner, Götz W,渡辺, 一男, 1946-,ゲッツ・W.ヴェルナー 著,渡辺一男 訳",
+        "Werner,GötzW 渡辺,一男,1946-"
+      ],
+      "publisher": "現代書館",
+      "published_year": 2007,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000009172794"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784768469637"
+        }
+      ],
+      "replaces_edition_id": "pending:b0d40314a1ca",
+      "verified_at": "2026-08-11T03:55:12.138Z"
+    },
+    {
+      "work_id": "wrk_b95fcbce2797",
+      "isbn13": "9784480687111",
+      "title": "世にも美しい数学入門",
+      "authors": [
+        "藤原, 正彦, 1943-",
+        "小川, 洋子, 1962-",
+        "藤原, 正彦, 1943-,小川, 洋子, 1962-,藤原正彦, 小川洋子 著",
+        "藤原正彦／著 小川洋子／著"
+      ],
+      "publisher": "筑摩書房",
+      "published_year": 2005,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000007703259"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784480687111"
+        }
+      ],
+      "replaces_edition_id": "pending:b95fcbce2797",
+      "verified_at": "2026-08-11T03:55:12.138Z"
+    },
+    {
+      "work_id": "wrk_bc4ba83e25bf",
+      "isbn13": "9784861370397",
+      "title": "凌ぎの手筋200",
+      "authors": [
+        "金子, タカシ, 1961-",
+        "金子, タカシ, 1961-,金子タカシ 著",
+        "金子,タカシ,1961-"
+      ],
+      "publisher": "浅川書房",
+      "published_year": 2013,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I024350352"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784861370397"
+        }
+      ],
+      "replaces_edition_id": "pending:bc4ba83e25bf",
+      "verified_at": "2026-08-11T03:55:12.138Z"
     }
   ]
 }

@@ -127,6 +127,8 @@ const manifest = {
   api_version: 'v1',
   source_schema_version: catalog.schema_version,
   source_generated_at: catalog.generated_at,
+  data_as_of: catalog.generated_at,
+  generated_at: catalog.generated_at,
   generated_from: [
     'data/catalog.json',
     'data/issue-1-books.json',

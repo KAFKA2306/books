@@ -58,5 +58,5 @@ jobs:
         run: python -m pytest tests/test_books_mcp.py
       - name: Verify clean checkout after generated read-model tests
         run: |
-          rm -rf api/v1
+          rm -rf api/v1 .pytest_cache scripts/__pycache__ tests/__pycache__
           test -z "$(git status --porcelain --untracked-files=all)"

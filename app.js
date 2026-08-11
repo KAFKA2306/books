@@ -1,5 +1,23 @@
 import { loadJoinedModule } from './src/module-loader.mjs';
 import { normalizeSourceGroup } from './src/source-groups.mjs';
+import { createDisplayCatalog, includeLowPriceFromSearch } from './src/display-visibility.mjs';
+
+const INCLUDE_LOW_PRICE_PARAM = 'include_low_price';
+
+function includeLowPriceEnabled() {
+  return includeLowPriceFromSearch(window.location.search);
+}
+
+function installVisibilityHistoryGuard() {
+  if (!includeLowPriceEnabled()) return;
+  const originalReplaceState = history.replaceState.bind(history);
+  history.replaceState = (state, unused, url) => {
+    if (url == null) return originalReplaceState(state, unused, url);
+    const next = new URL(String(url), window.location.href);
+    next.searchParams.set(INCLUDE_LOW_PRICE_PARAM, '1');
+    return originalReplaceState(state, unused, `${next.pathname}${next.search}${next.hash}`);
+  };
+}
 
 function normalizeLegacySourceUrl() {
   const url = new URL(window.location.href);
@@ -14,6 +32,45 @@ function normalizeLegacySourceUrl() {
   url.searchParams.delete('source');
   normalized.forEach((source) => url.searchParams.append('source', source));
   history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
+}
+
+function wireLowPriceToggle() {
+  const toggle = document.querySelector('#includeLowPriceToggle');
+  if (!toggle) return;
+  toggle.checked = includeLowPriceEnabled();
+  toggle.addEventListener('change', () => {
+    const url = new URL(window.location.href);
+    if (toggle.checked) url.searchParams.set(INCLUDE_LOW_PRICE_PARAM, '1');
+    else url.searchParams.delete(INCLUDE_LOW_PRICE_PARAM);
+    url.searchParams.delete('page');
+    window.location.assign(`${url.pathname}${url.search}${url.hash}`);
+  });
+}
+
+function installCatalogDisplayBoundary() {
+  const canonicalCatalogUrl = new URL('./api/v1/catalog.json', import.meta.url);
+  const originalFetch = window.fetch.bind(window);
+
+  window.fetch = async (input, init) => {
+    const requestUrl = input instanceof Request
+      ? new URL(input.url, window.location.href)
+      : new URL(String(input), window.location.href);
+    const response = await originalFetch(input, init);
+    if (!response.ok || requestUrl.href !== canonicalCatalogUrl.href) return response;
+
+    const catalog = await response.clone().json();
+    const displayCatalog = createDisplayCatalog(catalog, { includeLowPrice: includeLowPriceEnabled() });
+    const headers = new Headers(response.headers);
+    headers.set('content-type', 'application/json; charset=utf-8');
+    headers.delete('content-length');
+    headers.delete('content-encoding');
+
+    return new Response(JSON.stringify(displayCatalog), {
+      status: response.status,
+      statusText: response.statusText,
+      headers,
+    });
+  };
 }
 
 function renderStartupError(error) {
@@ -32,7 +89,10 @@ function renderStartupError(error) {
 }
 
 try {
+  installVisibilityHistoryGuard();
   normalizeLegacySourceUrl();
+  wireLowPriceToggle();
+  installCatalogDisplayBoundary();
   await loadJoinedModule({
     manifestUrl: new URL('./src/app.parts.json', import.meta.url),
     appModuleUrl: import.meta.url,

@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-11T05:04:45.768Z",
+  "updated_at": "2026-08-11T07:41:14.235Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -148,6 +148,18 @@
       "verified_at": "2026-08-08T09:15:33.779Z"
     },
     {
+      "work_id": "wrk_0bbf5cee3c8f",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029025796",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-11T07:41:14.235Z"
+    },
+    {
       "work_id": "wrk_0c3102e584de",
       "category": "文学・小説",
       "ndc_scheme": "NDC",
@@ -184,6 +196,18 @@
       "verified_at": "2026-08-09T13:18:48.715Z"
     },
     {
+      "work_id": "wrk_0e6590394c0a",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000011262258",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-11T07:41:14.235Z"
+    },
+    {
       "work_id": "wrk_0e7872401aef",
       "category": "文学・小説",
       "ndc_scheme": "NDC9",
@@ -196,6 +220,18 @@
       "verified_at": "2026-08-08T09:15:33.779Z"
     },
     {
+      "work_id": "wrk_0e8a1b4bae2b",
+      "category": "商業",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "673.99",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029648979",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-11T07:41:14.235Z"
+    },
+    {
       "work_id": "wrk_0fd2a8141935",
       "category": "化学",
       "ndc_scheme": "NDC8",
@@ -206,6 +242,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": "9784254145731",
       "verified_at": "2026-08-08T09:15:33.779Z"
+    },
+    {
+      "work_id": "wrk_1070e7365565",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I030446916",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-11T07:41:14.235Z"
     },
     {
       "work_id": "wrk_123f7184e7d7",

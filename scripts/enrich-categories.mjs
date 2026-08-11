@@ -65,7 +65,19 @@ const selectionCatalog = {
     category: acceptedByWork.has(work.work_id) ? '__classification_complete__' : '未分類',
   })),
 };
-const selected = eligibleCategoryWorks(selectionCatalog, state, now).slice(0, args.limit);
+// A stricter/newer title normalizer can make a previous no_candidate result searchable.
+// Retry those records immediately once per normalization version instead of waiting for
+// the ordinary 14/30-day backoff. Accepted evidence is still excluded above.
+const selectionState = {
+  ...state,
+  attempts: Object.fromEntries(Object.entries(state.attempts ?? {}).map(([workId, attempt]) => [
+    workId,
+    attempt?.title_normalization_version === CATEGORY_TITLE_NORMALIZATION_VERSION
+      ? attempt
+      : { ...attempt, next_attempt_at: null },
+  ])),
+};
+const selected = eligibleCategoryWorks(selectionCatalog, selectionState, now).slice(0, args.limit);
 
 for (let index = 0; index < selected.length; index += 1) {
   const work = selected[index];
@@ -126,6 +138,7 @@ for (let index = 0; index < selected.length; index += 1) {
     attempted_at: nowIso,
     outcome,
     next_attempt_at: categoryRetryAfter(outcome, now),
+    title_normalization_version: CATEGORY_TITLE_NORMALIZATION_VERSION,
     category: decision?.accepted?.category ?? null,
     ndc_scheme: decision?.accepted?.ndc_scheme ?? null,
     ndc_code: decision?.accepted?.ndc_code ?? null,

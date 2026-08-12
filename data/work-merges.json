@@ -1,0 +1,16 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "updated_at": "2026-08-12T19:15:00+09:00",
+  "records": [
+    {
+      "from_work_id": "wrk_40ca39f0033d",
+      "into_work_id": "wrk_3a5c051662b5",
+      "from_title": "寄生獣(3) (アフタヌーンコミックス)",
+      "into_title": "寄生獣",
+      "author": "岩明均",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000029954",
+      "source_title": "寄生獣（３）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    }
+  ]
+}

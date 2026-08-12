@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.title-normalizations.v1",
-  "updated_at": "2026-08-12T18:50:00+09:00",
+  "updated_at": "2026-08-12T19:14:00+09:00",
   "records": [
     {
       "work_id": "wrk_368805ff1c88",
@@ -173,6 +173,42 @@
       "author": "庵田定夏",
       "source_url": "https://store.kadokawa.co.jp/shop/g/g201207000242/",
       "source_title": "ココロコネクト アスランダム 上",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_3c7f030de214",
+      "from_title": "インベスターZ(1)",
+      "title": "インベスターＺ",
+      "author": "三田紀房",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000018461",
+      "source_title": "インベスターＺ（１）",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_3dc5621fedbb",
+      "from_title": "To LOVEる―とらぶる― モノクロ版【期間限定無料】 1 (ジャンプコミックスDIGITAL)",
+      "title": "To LOVEる―とらぶる―",
+      "author": "矢吹健太朗, 長谷見沙貴",
+      "source_url": "https://www.shueisha.co.jp/books/items/contents.html?isbn=978-4-08-874278-6",
+      "source_title": "To LOVEる―とらぶる― 1",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_3e67e8be5751",
+      "from_title": "ハンツー×トラッシュ(1) (ヤングマガジンコミックス)",
+      "title": "ハンツー×トラッシュ",
+      "author": "こばやしひよこ",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000338509",
+      "source_title": "ハンツー×トラッシュ（１８）限定版",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_3e771e07c8d1",
+      "from_title": "目黒さんは初めてじゃない(1) (パルシィコミックス)",
+      "title": "目黒さんは初めてじゃない",
+      "author": "９℃",
+      "source_url": "https://www.kodansha.co.jp/titles/1000031083",
+      "source_title": "目黒さんは初めてじゃない",
       "review_method": "manual_bibliographic_review"
     }
   ]

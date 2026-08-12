@@ -34,6 +34,18 @@ test('removes known Kindle retail decorations before NDL lookup', () => {
   assert.equal(normalizeCategoryLookupTitle('しゃばけ【しゃばけシリーズ第1弾】'), 'しゃばけ');
 });
 
+test('removes explicit retailer edition labels without guessing bibliographic content', () => {
+  assert.equal(normalizeCategoryLookupTitle('Pro Git (English Edition)'), 'Pro Git');
+  assert.equal(normalizeCategoryLookupTitle('統計学入門 (Kindle版)'), '統計学入門');
+  assert.equal(normalizeCategoryLookupTitle('統計学入門 (電子書籍版)'), '統計学入門');
+  assert.equal(
+    normalizeCategoryLookupTitle(
+      'Foundations of Quantum Theory (Fundamental Theories of Physics Book 188) (English Edition)',
+    ),
+    'Foundations of Quantum Theory',
+  );
+});
+
 test('normalizes bibliographic subtitle separators to the stable main title', () => {
   assert.equal(
     normalizeCategoryLookupTitle('13歳からの地政学 : カイゾクとの地球儀航海'),

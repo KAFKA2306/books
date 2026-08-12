@@ -1,4 +1,4 @@
-export const CATEGORY_TITLE_NORMALIZATION_VERSION = 'bibliographic-suffix-v2';
+export const CATEGORY_TITLE_NORMALIZATION_VERSION = 'bibliographic-suffix-v3';
 
 const TRAILING_SERIES_LABEL = /\s*[（(][^()（）]{0,80}(?:コミックス?|コミック|文庫|新書|叢書|シリーズ)[^()（）]*[)）]\s*$/u;
 const TRAILING_PAREN_VOLUME = /\s*[（(]\s*(?:第\s*)?\d+(?:\.\d+)?\s*(?:巻|話)?\s*[)）]\s*$/u;
@@ -9,10 +9,16 @@ const HAS_INLINE_LIMITED_FREE_LABEL = /【\s*期間限定無料(?:版)?\s*】/u;
 const RETAIL_MONOCHROME_LABEL = /(?:^|\s)モノクロ版(?=\s|【|$)/gu;
 const HAS_RETAIL_MONOCHROME_LABEL = /(?:^|\s)モノクロ版(?=\s|【|$)/u;
 const TRAILING_BRACKET_SERIES_POSITION = /\s*【[^】]{0,80}(?:シリーズ)?第\s*\d+\s*弾】\s*$/u;
+const BIBLIOGRAPHIC_SUBTITLE_SEPARATOR = /\s+[:：]\s+/u;
 
 export function normalizeCategoryLookupTitle(value) {
   let title = String(value ?? '').normalize('NFKC').replace(/\s+/gu, ' ').trim();
   if (!title) return '';
+
+  // NDL bibliographic titles commonly serialize a subtitle as `main title : subtitle`.
+  // Category lookup needs the stable main title on both the local and NDL side, while
+  // an ordinary colon without surrounding spaces remains part of the title.
+  title = title.split(BIBLIOGRAPHIC_SUBTITLE_SEPARATOR, 1)[0].trim();
 
   // Only allow a bare trailing number to be removed when the original value contains
   // a known retail/bibliographic decoration that makes the number unambiguously a volume.

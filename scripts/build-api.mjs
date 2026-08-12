@@ -3,10 +3,13 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { loadCatalog } from './load-catalog.mjs';
 import { normalizeCatalogSources, normalizeIssueRecords } from '../src/source-groups.mjs';
+import { normalizeBibliographicDisplayCatalog } from '../src/bibliographic-display-normalization.mjs';
 
 const root = process.cwd();
 const outDir = path.join(root, 'api', 'v1');
-const catalog = normalizeCatalogSources(await loadCatalog(root));
+const catalog = normalizeBibliographicDisplayCatalog(
+  normalizeCatalogSources(await loadCatalog(root)),
+);
 
 function stable(value) {
   if (Array.isArray(value)) return value.map(stable);

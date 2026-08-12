@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.title-normalizations.v1",
-  "updated_at": "2026-08-12T18:42:00+09:00",
+  "updated_at": "2026-08-12T18:50:00+09:00",
   "records": [
     {
       "work_id": "wrk_368805ff1c88",
@@ -137,6 +137,42 @@
       "title": "ドミニオンマニアックスZERO",
       "source_url": "https://dominion-thu.tumblr.com/maniax-zero",
       "source_title": "ドミニオンマニアックスZERO",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_4248f138a80d",
+      "from_title": "せっかち伯爵と時間泥棒",
+      "title": "せっかち伯爵と時間どろぼう",
+      "author": "久米田康治",
+      "source_url": "https://www.kodansha.co.jp/titles/1000006582",
+      "source_title": "せっかち伯爵と時間どろぼう",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_0dd87e8b36e2",
+      "from_title": "ドイツは過去とどう向き合って来たか",
+      "title": "ドイツは過去とどう向き合ってきたか",
+      "author": "熊谷徹",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000008493044",
+      "source_title": "ドイツは過去とどう向き合ってきたか",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_7fb82393c41f",
+      "from_title": "すぐ勝てる急戦矢倉",
+      "title": "すぐ勝てる！急戦矢倉",
+      "author": "及川拓馬",
+      "source_url": "https://book.mynavi.jp/ec/products/detail/id%3D23034",
+      "source_title": "すぐ勝てる！急戦矢倉",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_0e4bc626c84a",
+      "from_title": "ココロコネクトアスランダム",
+      "title": "ココロコネクト アスランダム",
+      "author": "庵田定夏",
+      "source_url": "https://store.kadokawa.co.jp/shop/g/g201207000242/",
+      "source_title": "ココロコネクト アスランダム 上",
       "review_method": "manual_bibliographic_review"
     }
   ]

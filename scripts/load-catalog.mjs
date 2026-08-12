@@ -8,6 +8,7 @@ import { mergeIssueCatalog } from '../src/merge-catalog.mjs';
 import { loadKindleMetadata, mergeKindleCatalog } from '../src/kindle-metadata.mjs';
 import { loadCompactKindleMetadata } from '../src/kindle-storage.mjs';
 import { applyTitleNormalizations } from '../src/title-normalization.mjs';
+import { applyWorkMerges } from '../src/work-merge.mjs';
 
 async function readJsonIfPresent(filePath) {
   try {
@@ -136,5 +137,11 @@ export async function loadCatalog(root = process.cwd()) {
     records: [],
   };
   merged = applyTitleNormalizations(merged, titleOverlay);
+
+  const workMergeOverlay = await readJsonIfPresent(path.join(root, 'data/work-merges.json')) ?? {
+    schema: 'kafka.books.work-merges.v1',
+    records: [],
+  };
+  merged = applyWorkMerges(merged, workMergeOverlay);
   return deriveLibraryClassifications(merged, categoryOverlay);
 }

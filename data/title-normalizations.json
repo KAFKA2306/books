@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.title-normalizations.v1",
-  "updated_at": "2026-08-12T18:38:00+09:00",
+  "updated_at": "2026-08-12T18:42:00+09:00",
   "records": [
     {
       "work_id": "wrk_368805ff1c88",
@@ -85,6 +85,58 @@
       "title": "コンピュータ将棋の進歩 6 (プロ棋士に並ぶ)",
       "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I023585373",
       "source_title": "コンピュータ将棋の進歩 6 (プロ棋士に並ぶ)",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_3564709c22d4",
+      "from_title": "げなうドイツ語",
+      "title": "ゲナウ! : コミュニケーションのドイツ語",
+      "author": "新倉真矢子, 亀ケ谷昌秀, 正木晶子, 中野有希子",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I026025456",
+      "source_title": "ゲナウ! : コミュニケーションのドイツ語",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_dd2db3769980",
+      "from_title": "チャイニーズドリーム",
+      "title": "チャイニーズ・ドリーム",
+      "author": "丸川知雄",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I024397027",
+      "source_title": "チャイニーズ・ドリーム : 大衆資本主義が世界を変える",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_3e490567c44a",
+      "from_title": "ゆるキャン",
+      "title": "ゆるキャン△",
+      "author": "あfろ",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I033973979",
+      "source_title": "ゆるキャン△ : highschool girls go yurucamp in nature!",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_839bba547984",
+      "from_title": "けいおん",
+      "title": "けいおん!",
+      "author": "かきふらい",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000011228891",
+      "source_title": "けいおん!",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_f892fc99d026",
+      "from_title": "ドミニオンマニアックススペシャル",
+      "title": "ドミニオンマニアックスSPECIAL",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I027079134",
+      "source_title": "ドミニオンマニアックスSPECIAL",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_f1e66e24f412",
+      "from_title": "ドミニオンマニアックスゼロ",
+      "title": "ドミニオンマニアックスZERO",
+      "source_url": "https://dominion-thu.tumblr.com/maniax-zero",
+      "source_title": "ドミニオンマニアックスZERO",
       "review_method": "manual_bibliographic_review"
     }
   ]

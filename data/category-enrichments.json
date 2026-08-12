@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-12T17:10:13.143Z",
+  "updated_at": "2026-08-12T17:19:15.226Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -26,6 +26,30 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": "9784478017036",
       "verified_at": "2026-08-08T09:15:33.779Z"
+    },
+    {
+      "work_id": "wrk_0184827d95ad",
+      "category": "投資・金融",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "338.8",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I028965584",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-12T17:19:15.226Z"
+    },
+    {
+      "work_id": "wrk_01dcf6c17668",
+      "category": "政治",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "312.9",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I031980944",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-12T17:19:15.226Z"
     },
     {
       "work_id": "wrk_05084368809f",

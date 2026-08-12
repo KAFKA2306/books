@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.category-enrichment-report.v1",
-  "generated_at": "2026-08-12T17:10:13.143Z",
+  "generated_at": "2026-08-12T17:19:15.226Z",
   "rule_version": "ndc-map-v1",
   "policy": {
     "source": "National Diet Library Search OpenSearch API",
@@ -9,7 +9,7 @@
     "standard_classification_source": "source-reported NDC code is retained without cross-version conversion",
     "isbn_match_preferred": true,
     "title_similarity_threshold": 0.97,
-    "title_lookup_normalization": "bibliographic-suffix-v3",
+    "title_lookup_normalization": "bibliographic-suffix-v4",
     "ambiguous_categories_are_rejected": true,
     "request_concurrency": 1,
     "request_interval_ms": 350,
@@ -18,10 +18,10 @@
   },
   "summary": {
     "attempted": 25,
-    "accepted": 3,
+    "accepted": 2,
     "ambiguous": 1,
     "no_ndc": 0,
-    "no_candidate": 20,
+    "no_candidate": 21,
     "provider_error": 1
   },
   "results": [
@@ -67,14 +67,14 @@
     {
       "work_id": "wrk_0184827d95ad",
       "title": "インデックス投資は勝者のゲーム ──株式市場から利益を得る常識的方法",
-      "lookup_title": "インデックス投資は勝者のゲーム ──株式市場から利益を得る常識的方法",
-      "outcome": "no_candidate",
-      "category": null,
-      "ndc_scheme": null,
-      "ndc_code": null,
+      "lookup_title": "インデックス投資は勝者のゲーム",
+      "outcome": "accepted",
+      "category": "投資・金融",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "338.8",
       "source_isbn13": null,
-      "match_mode": null,
-      "matches": 0,
+      "match_mode": "title",
+      "matches": 2,
       "provider_error": null
     },
     {
@@ -106,14 +106,14 @@
     {
       "work_id": "wrk_01dcf6c17668",
       "title": "13歳からの地政学―カイゾクとの地球儀航海",
-      "lookup_title": "13歳からの地政学―カイゾクとの地球儀航海",
-      "outcome": "no_candidate",
-      "category": null,
-      "ndc_scheme": null,
-      "ndc_code": null,
+      "lookup_title": "13歳からの地政学",
+      "outcome": "accepted",
+      "category": "政治",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "312.9",
       "source_isbn13": null,
-      "match_mode": null,
-      "matches": 0,
+      "match_mode": "title",
+      "matches": 1,
       "provider_error": null
     },
     {
@@ -195,19 +195,6 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_05a59763e09b",
-      "title": "マネーの公理",
-      "lookup_title": "マネーの公理",
-      "outcome": "accepted",
-      "category": "投資・金融",
-      "ndc_scheme": "NDC9",
-      "ndc_code": "338.18",
-      "source_isbn13": null,
-      "match_mode": "title",
-      "matches": 1,
-      "provider_error": null
-    },
-    {
       "work_id": "wrk_061c2026e958",
       "title": "レイシズム",
       "lookup_title": "レイシズム",
@@ -224,19 +211,6 @@
       "work_id": "wrk_0649ceebf61b",
       "title": "スティーブ・ジョブズ",
       "lookup_title": "スティーブ・ジョブズ",
-      "outcome": "no_candidate",
-      "category": null,
-      "ndc_scheme": null,
-      "ndc_code": null,
-      "source_isbn13": null,
-      "match_mode": null,
-      "matches": 0,
-      "provider_error": null
-    },
-    {
-      "work_id": "wrk_066af4637988",
-      "title": "A.T. カーニー 業界別 経営アジェンダ 2024 (日本経済新聞出版)",
-      "lookup_title": "A.T. カーニー 業界別 経営アジェンダ 2024 (日本経済新聞出版)",
       "outcome": "provider_error",
       "category": null,
       "ndc_scheme": null,
@@ -245,6 +219,19 @@
       "match_mode": null,
       "matches": 0,
       "provider_error": "ndl request failed: This operation was aborted"
+    },
+    {
+      "work_id": "wrk_066af4637988",
+      "title": "A.T. カーニー 業界別 経営アジェンダ 2024 (日本経済新聞出版)",
+      "lookup_title": "A.T. カーニー 業界別 経営アジェンダ 2024 (日本経済新聞出版)",
+      "outcome": "no_candidate",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "match_mode": null,
+      "matches": 0,
+      "provider_error": null
     },
     {
       "work_id": "wrk_066b82b7f7d5",
@@ -270,32 +257,6 @@
       "source_isbn13": null,
       "match_mode": null,
       "matches": 0,
-      "provider_error": null
-    },
-    {
-      "work_id": "wrk_079f94beebb3",
-      "title": "THIS IS MARKETING",
-      "lookup_title": "THIS IS MARKETING",
-      "outcome": "accepted",
-      "category": "商業",
-      "ndc_scheme": "NDC10",
-      "ndc_code": "675",
-      "source_isbn13": null,
-      "match_mode": "title",
-      "matches": 1,
-      "provider_error": null
-    },
-    {
-      "work_id": "wrk_08652c518326",
-      "title": "「その日暮らし」の人類学",
-      "lookup_title": "「その日暮らし」の人類学",
-      "outcome": "accepted",
-      "category": "民俗・文化",
-      "ndc_scheme": "NDC9",
-      "ndc_code": "389",
-      "source_isbn13": null,
-      "match_mode": "title",
-      "matches": 1,
       "provider_error": null
     },
     {
@@ -341,6 +302,45 @@
       "work_id": "wrk_0b152214a88a",
       "title": "【第26話】やり直し姫は夫と恋したい: 分からずや",
       "lookup_title": "【第26話】やり直し姫は夫と恋したい: 分からずや",
+      "outcome": "no_candidate",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "match_mode": null,
+      "matches": 0,
+      "provider_error": null
+    },
+    {
+      "work_id": "wrk_0b4de6df62e2",
+      "title": "アイドルとヲタクの理想の関係1~13巻 アイドルとヲタクの理想の関係(期間限定無料版)",
+      "lookup_title": "アイドルとヲタクの理想の関係1~13巻 アイドルとヲタクの理想の関係(期間限定無料版)",
+      "outcome": "no_candidate",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "match_mode": null,
+      "matches": 0,
+      "provider_error": null
+    },
+    {
+      "work_id": "wrk_0ba95a58e6a2",
+      "title": "ズボラさんでも簡単にできる魔法のホットクックレシピ: ボタンひとつでおふくろの味を再現!",
+      "lookup_title": "ズボラさんでも簡単にできる魔法のホットクックレシピ: ボタンひとつでおふくろの味を再現!",
+      "outcome": "no_candidate",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "match_mode": null,
+      "matches": 0,
+      "provider_error": null
+    },
+    {
+      "work_id": "wrk_0d301922403e",
+      "title": "TOEIC 金のフレーズ",
+      "lookup_title": "TOEIC 金のフレーズ",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,

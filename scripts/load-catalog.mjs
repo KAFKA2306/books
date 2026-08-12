@@ -137,11 +137,11 @@ export async function loadCatalog(root = process.cwd()) {
     records: [],
   };
   merged = applyTitleNormalizations(merged, titleOverlay);
+  merged = deriveLibraryClassifications(merged, categoryOverlay);
 
   const workMergeOverlay = await readJsonIfPresent(path.join(root, 'data/work-merges.json')) ?? {
     schema: 'kafka.books.work-merges.v1',
     records: [],
   };
-  merged = applyWorkMerges(merged, workMergeOverlay);
-  return deriveLibraryClassifications(merged, categoryOverlay);
+  return applyWorkMerges(merged, workMergeOverlay);
 }

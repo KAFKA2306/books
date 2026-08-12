@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.title-normalizations.v1",
-  "updated_at": "2026-08-13T07:52:00+09:00",
+  "updated_at": "2026-08-13T07:56:00+09:00",
   "records": [
     {"work_id":"wrk_368805ff1c88","from_title":"1984年","title":"一九八四年","author":"ジョージ・オーウェル","source_url":"https://ndlsearch.ndl.go.jp/books/R100000001-I19111009210192478","source_title":"一九八四年","review_method":"manual_bibliographic_review"},
     {"work_id":"wrk_55b681a9fd07","from_title":"1Q84村上春樹","title":"1Q84","author":"村上春樹","source_url":"https://www.shinchosha.co.jp/book/353422/","source_title":"1Q84 BOOK1","review_method":"manual_bibliographic_review"},
@@ -28,6 +28,8 @@
     {"work_id":"wrk_3e771e07c8d1","from_title":"目黒さんは初めてじゃない(1) (パルシィコミックス)","title":"目黒さんは初めてじゃない","author":"９℃","source_url":"https://www.kodansha.co.jp/titles/1000031083","source_title":"目黒さんは初めてじゃない","review_method":"manual_bibliographic_review"},
     {"work_id":"wrk_12ca3c015602","from_title":"CITY(1) (モーニングコミックス)","title":"ＣＩＴＹ","author":"あらゐけいいち","source_url":"https://www.kodansha.co.jp/comic/products/0000018904","source_title":"ＣＩＴＹ（１）","review_method":"manual_bibliographic_review"},
     {"work_id":"wrk_85ffd1dea9d5","from_title":"To LOVEる―とらぶる―ダークネス モノクロ版【期間限定無料】 1 (ジャンプコミックスDIGITAL)","title":"To LOVEる―とらぶる― ダークネス","author":"矢吹健太朗, 長谷見沙貴","source_url":"https://www.shueisha.co.jp/books/items/contents.html?isbn=978-4-08-870205-6","source_title":"To LOVEる―とらぶる― ダークネス 1","review_method":"manual_bibliographic_review"},
-    {"work_id":"wrk_947b1ef82551","from_title":"いちご100% モノクロ版【期間限定無料】 1 (ジャンプコミックスDIGITAL)","title":"いちご100％","author":"河下水希","source_url":"https://www.shueisha.co.jp/books/items/contents.html?isbn=978-4-08-619394-8","source_title":"いちご100％ 1","review_method":"manual_bibliographic_review"}
+    {"work_id":"wrk_947b1ef82551","from_title":"いちご100% モノクロ版【期間限定無料】 1 (ジャンプコミックスDIGITAL)","title":"いちご100％","author":"河下水希","source_url":"https://www.shueisha.co.jp/books/items/contents.html?isbn=978-4-08-619394-8","source_title":"いちご100％ 1","review_method":"manual_bibliographic_review"},
+    {"work_id":"wrk_f6f5461c2b25","from_title":"彼女、お借りします(1) (週刊少年マガジンコミックス)","title":"彼女、お借りします","author":"宮島礼吏","source_url":"https://www.kodansha.co.jp/comic/products/0000023140","source_title":"彼女、お借りします（１）","review_method":"manual_bibliographic_review"},
+    {"work_id":"wrk_a43f46a9b9eb","from_title":"テセウスの船(1) (モーニングコミックス)","title":"テセウスの船","author":"東元俊哉","source_url":"https://www.kodansha.co.jp/comic/products/0000023212","source_title":"テセウスの船（１）","review_method":"manual_bibliographic_review"}
   ]
 }

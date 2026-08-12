@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.work-merges.v1",
-  "updated_at": "2026-08-13T07:53:00+09:00",
+  "updated_at": "2026-08-13T07:57:00+09:00",
   "records": [
     {"from_work_id":"wrk_40ca39f0033d","into_work_id":"wrk_3a5c051662b5","from_title":"寄生獣(3) (アフタヌーンコミックス)","into_title":"寄生獣","author":"岩明均","source_url":"https://www.kodansha.co.jp/comic/products/0000029954","source_title":"寄生獣（３）","reason":"volume_and_label_were_embedded_in_work_title"},
     {"from_work_id":"wrk_c30372c9e211","into_work_id":"wrk_3a5c051662b5","from_title":"寄生獣(1) (アフタヌーンコミックス)","into_title":"寄生獣","author":"岩明均","source_url":"https://www.kodansha.co.jp/comic/products/0000029944","source_title":"寄生獣（１）","reason":"volume_and_label_were_embedded_in_work_title"},
@@ -11,6 +11,10 @@
     {"from_work_id":"wrk_4fdeb742e289","into_work_id":"wrk_12ca3c015602","from_title":"CITY(2) (モーニングコミックス)","into_title":"ＣＩＴＹ","author":"あらゐけいいち","source_url":"https://www.kodansha.co.jp/comic/products/0000018915","source_title":"ＣＩＴＹ（２）","reason":"volume_and_label_were_embedded_in_work_title"},
     {"from_work_id":"wrk_7d484d224f9b","into_work_id":"wrk_12ca3c015602","from_title":"CITY(3) (モーニングコミックス)","into_title":"ＣＩＴＹ","author":"あらゐけいいち","source_url":"https://www.kodansha.co.jp/comic/products/0000023182","source_title":"ＣＩＴＹ（３）","reason":"volume_and_label_were_embedded_in_work_title"},
     {"from_work_id":"wrk_fdcc220754b1","into_work_id":"wrk_85ffd1dea9d5","from_title":"To LOVEる―とらぶる―ダークネス モノクロ版【期間限定無料】 2 (ジャンプコミックスDIGITAL)","into_title":"To LOVEる―とらぶる― ダークネス","author":"矢吹健太朗 / 長谷見沙貴","source_url":"https://www.shueisha.co.jp/books/items/contents.html?isbn=978-4-08-870264-3","source_title":"To LOVEる―とらぶる― ダークネス 2","reason":"retail_annotation_volume_and_imprint_were_embedded_in_work_title"},
-    {"from_work_id":"wrk_f6930fe4cf26","into_work_id":"wrk_947b1ef82551","from_title":"いちご100% モノクロ版【期間限定無料】 2 (ジャンプコミックスDIGITAL)","into_title":"いちご100％","author":"河下水希","source_url":"https://www.shueisha.co.jp/books/items/contents.html?isbn=978-4-08-619395-5","source_title":"いちご100％ 2","reason":"retail_annotation_volume_and_imprint_were_embedded_in_work_title"}
+    {"from_work_id":"wrk_f6930fe4cf26","into_work_id":"wrk_947b1ef82551","from_title":"いちご100% モノクロ版【期間限定無料】 2 (ジャンプコミックスDIGITAL)","into_title":"いちご100％","author":"河下水希","source_url":"https://www.shueisha.co.jp/books/items/contents.html?isbn=978-4-08-619395-5","source_title":"いちご100％ 2","reason":"retail_annotation_volume_and_imprint_were_embedded_in_work_title"},
+    {"from_work_id":"wrk_f4b4c6f94199","into_work_id":"wrk_f6f5461c2b25","from_title":"彼女、お借りします(2) (週刊少年マガジンコミックス)","into_title":"彼女、お借りします","author":"宮島礼吏","source_url":"https://www.kodansha.co.jp/comic/products/0000052462","source_title":"彼女、お借りします（２）","reason":"volume_and_label_were_embedded_in_work_title"},
+    {"from_work_id":"wrk_5f8732b6509b","into_work_id":"wrk_f6f5461c2b25","from_title":"彼女、お借りします(3) (週刊少年マガジンコミックス)","into_title":"彼女、お借りします","author":"宮島礼吏","source_url":"https://www.kodansha.co.jp/comic/products/0000053189","source_title":"彼女、お借りします（３）","reason":"volume_and_label_were_embedded_in_work_title"},
+    {"from_work_id":"wrk_b589720d9267","into_work_id":"wrk_a43f46a9b9eb","from_title":"テセウスの船(2) (モーニングコミックス)","into_title":"テセウスの船","author":"東元俊哉","source_url":"https://www.kodansha.co.jp/comic/products/0000052788","source_title":"テセウスの船（２）","reason":"volume_and_label_were_embedded_in_work_title"},
+    {"from_work_id":"wrk_f81692deae32","into_work_id":"wrk_a43f46a9b9eb","from_title":"テセウスの船(3) (モーニングコミックス)","into_title":"テセウスの船","author":"東元俊哉","source_url":"https://www.kodansha.co.jp/comic/products/0000115433","source_title":"テセウスの船（３）","reason":"volume_and_label_were_embedded_in_work_title"}
   ]
 }

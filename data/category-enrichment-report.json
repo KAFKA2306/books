@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.category-enrichment-report.v1",
-  "generated_at": "2026-08-12T13:52:31.496Z",
+  "generated_at": "2026-08-12T17:10:13.143Z",
   "rule_version": "ndc-map-v1",
   "policy": {
     "source": "National Diet Library Search OpenSearch API",
@@ -9,7 +9,7 @@
     "standard_classification_source": "source-reported NDC code is retained without cross-version conversion",
     "isbn_match_preferred": true,
     "title_similarity_threshold": 0.97,
-    "title_lookup_normalization": "bibliographic-suffix-v2",
+    "title_lookup_normalization": "bibliographic-suffix-v3",
     "ambiguous_categories_are_rejected": true,
     "request_concurrency": 1,
     "request_interval_ms": 350,
@@ -18,17 +18,17 @@
   },
   "summary": {
     "attempted": 25,
-    "accepted": 0,
-    "ambiguous": 2,
+    "accepted": 3,
+    "ambiguous": 1,
     "no_ndc": 0,
-    "no_candidate": 19,
-    "provider_error": 4
+    "no_candidate": 20,
+    "provider_error": 1
   },
   "results": [
     {
-      "work_id": "wrk_15edeb5db3c8",
-      "title": "未来へ広がるサイエンス2",
-      "lookup_title": "未来へ広がるサイエンス2",
+      "work_id": "wrk_0025172962b9",
+      "title": "ハイレベル面接術",
+      "lookup_title": "ハイレベル面接術",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -39,9 +39,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_1617f54c083d",
-      "title": "やめてみた。 本当に必要なものが見えてくる",
-      "lookup_title": "やめてみた。 本当に必要なものが見えてくる",
+      "work_id": "wrk_00b1d56b0883",
+      "title": "JavaScript and HTML5 Now (English Edition)",
+      "lookup_title": "JavaScript and HTML5 Now (English Edition)",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -52,9 +52,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_162e59ae9be7",
-      "title": "対TOPIX業種指数チャートの動きに乗る",
-      "lookup_title": "対TOPIX業種指数チャートの動きに乗る",
+      "work_id": "wrk_012b6febd3c5",
+      "title": "機械学習スタートアップシリーズ これならわかる深層学習入門",
+      "lookup_title": "機械学習スタートアップシリーズ これならわかる深層学習入門",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -65,9 +65,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_19005b022805",
-      "title": "地球外生命9つの論点",
-      "lookup_title": "地球外生命9つの論点",
+      "work_id": "wrk_0184827d95ad",
+      "title": "インデックス投資は勝者のゲーム ──株式市場から利益を得る常識的方法",
+      "lookup_title": "インデックス投資は勝者のゲーム ──株式市場から利益を得る常識的方法",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -78,61 +78,22 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_1966565cbcba",
-      "title": "DXビジネスモデル 80事例に学ぶ利益を生み出す攻めの戦略 できるビジネスシリーズ",
-      "lookup_title": "DXビジネスモデル 80事例に学ぶ利益を生み出す攻めの戦略 できるビジネスシリーズ",
-      "outcome": "no_candidate",
-      "category": null,
-      "ndc_scheme": null,
-      "ndc_code": null,
-      "source_isbn13": null,
-      "match_mode": null,
-      "matches": 0,
-      "provider_error": null
-    },
-    {
-      "work_id": "wrk_1977bddebb03",
-      "title": "13歳からの地政学",
-      "lookup_title": "13歳からの地政学",
-      "outcome": "no_candidate",
-      "category": null,
-      "ndc_scheme": null,
-      "ndc_code": null,
-      "source_isbn13": null,
-      "match_mode": null,
-      "matches": 0,
-      "provider_error": null
-    },
-    {
-      "work_id": "wrk_1b50d2eba14f",
-      "title": "亜人(3) (アフタヌーンコミックス)",
-      "lookup_title": "亜人",
-      "outcome": "no_candidate",
-      "category": null,
-      "ndc_scheme": null,
-      "ndc_code": null,
-      "source_isbn13": null,
-      "match_mode": null,
-      "matches": 0,
-      "provider_error": null
-    },
-    {
-      "work_id": "wrk_1b6c3175e9cf",
-      "title": "よくわからないけれど異世界に転生していたようです(1) (シリウスコミックス)",
-      "lookup_title": "よくわからないけれど異世界に転生していたようです",
+      "work_id": "wrk_019f6635859b",
+      "title": "ファンタスティック・ビーストと魔法使いの旅",
+      "lookup_title": "ファンタスティック・ビーストと魔法使いの旅",
       "outcome": "ambiguous",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
       "source_isbn13": null,
       "match_mode": null,
-      "matches": 20,
+      "matches": 5,
       "provider_error": null
     },
     {
-      "work_id": "wrk_1ca55d657738",
-      "title": "秘書検定二級",
-      "lookup_title": "秘書検定二級",
+      "work_id": "wrk_01ad486ad9cb",
+      "title": "ニューノーマル【単行本版】1 (コミックアウル)",
+      "lookup_title": "ニューノーマル【単行本版】1",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -143,9 +104,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_4f6324726da9",
-      "title": "Particle Accelerator Physics (Graduate Texts in Physics) (English Edition)",
-      "lookup_title": "Particle Accelerator Physics (Graduate Texts in Physics) (English Edition)",
+      "work_id": "wrk_01dcf6c17668",
+      "title": "13歳からの地政学―カイゾクとの地球儀航海",
+      "lookup_title": "13歳からの地政学―カイゾクとの地球儀航海",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -156,9 +117,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_4f9564ddb43c",
-      "title": "婚活区~29歳独身、結婚しないと出られない街で~(1) (コミックMELO)",
-      "lookup_title": "婚活区~29歳独身、結婚しないと出られない街で~",
+      "work_id": "wrk_01e497859afb",
+      "title": "栄養学と食の基本辞典",
+      "lookup_title": "栄養学と食の基本辞典",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -169,9 +130,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_4f9b2b9561c3",
-      "title": "人体六〇〇万年史 下──科学が明かす進化・健康・疾病 (早川書房)",
-      "lookup_title": "人体六〇〇万年史 下──科学が明かす進化・健康・疾病 (早川書房)",
+      "work_id": "wrk_023069908972",
+      "title": "ホモ・デウス 上 テクノロジーとサピエンスの未来 ホモ・デウス テクノロジーとサピエンスの未来 (河出文庫)",
+      "lookup_title": "ホモ・デウス 上 テクノロジーとサピエンスの未来 ホモ・デウス テクノロジーとサピエンスの未来",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -182,9 +143,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_4fdeb742e289",
-      "title": "CITY(2) (モーニングコミックス)",
-      "lookup_title": "CITY",
+      "work_id": "wrk_02516067d844",
+      "title": "切り取れ、あの祈る手を",
+      "lookup_title": "切り取れ、あの祈る手を",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -195,9 +156,87 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_504ed0e04017",
-      "title": "日経テクノロジー展望2024 世界を変える100の技術",
-      "lookup_title": "日経テクノロジー展望2024 世界を変える100の技術",
+      "work_id": "wrk_03ceb0cb730f",
+      "title": "例題とExcel演習で学ぶ多変量解析 因子分析・コレスポン",
+      "lookup_title": "例題とExcel演習で学ぶ多変量解析 因子分析・コレスポン",
+      "outcome": "no_candidate",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "match_mode": null,
+      "matches": 0,
+      "provider_error": null
+    },
+    {
+      "work_id": "wrk_052dab5e5b07",
+      "title": "What is Dart? (English Edition)",
+      "lookup_title": "What is Dart? (English Edition)",
+      "outcome": "no_candidate",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "match_mode": null,
+      "matches": 0,
+      "provider_error": null
+    },
+    {
+      "work_id": "wrk_0575b79c91c3",
+      "title": "【単話売】指先でトロけさせて ~美容師の彼は絶倫なテクニシャン~ 1話 (恋愛白書シェリーKiss)",
+      "lookup_title": "【単話売】指先でトロけさせて ~美容師の彼は絶倫なテクニシャン~ 1話 (恋愛白書シェリーKiss)",
+      "outcome": "no_candidate",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "match_mode": null,
+      "matches": 0,
+      "provider_error": null
+    },
+    {
+      "work_id": "wrk_05a59763e09b",
+      "title": "マネーの公理",
+      "lookup_title": "マネーの公理",
+      "outcome": "accepted",
+      "category": "投資・金融",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "338.18",
+      "source_isbn13": null,
+      "match_mode": "title",
+      "matches": 1,
+      "provider_error": null
+    },
+    {
+      "work_id": "wrk_061c2026e958",
+      "title": "レイシズム",
+      "lookup_title": "レイシズム",
+      "outcome": "no_candidate",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "match_mode": null,
+      "matches": 0,
+      "provider_error": null
+    },
+    {
+      "work_id": "wrk_0649ceebf61b",
+      "title": "スティーブ・ジョブズ",
+      "lookup_title": "スティーブ・ジョブズ",
+      "outcome": "no_candidate",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "match_mode": null,
+      "matches": 0,
+      "provider_error": null
+    },
+    {
+      "work_id": "wrk_066af4637988",
+      "title": "A.T. カーニー 業界別 経営アジェンダ 2024 (日本経済新聞出版)",
+      "lookup_title": "A.T. カーニー 業界別 経営アジェンダ 2024 (日本経済新聞出版)",
       "outcome": "provider_error",
       "category": null,
       "ndc_scheme": null,
@@ -208,9 +247,9 @@
       "provider_error": "ndl request failed: This operation was aborted"
     },
     {
-      "work_id": "wrk_508c7feac779",
-      "title": "楽しい植物学",
-      "lookup_title": "楽しい植物学",
+      "work_id": "wrk_066b82b7f7d5",
+      "title": "「い、1分でイくわけないじゃんっ!」~即イキおもちゃVS絶対イかないJD1 (MENSスクリーモ)",
+      "lookup_title": "「い、1分でイくわけないじゃんっ!」~即イキおもちゃVS絶対イかないJD1 (MENSスクリーモ)",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -221,9 +260,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_50fc00660a77",
-      "title": "カラー図解Raspberry Piではじめる機械学習",
-      "lookup_title": "カラー図解Raspberry Piではじめる機械学習",
+      "work_id": "wrk_070add84ff79",
+      "title": "うしろのカノジョ(分冊版) 【第1話】 (主任がゆく!スペシャル)",
+      "lookup_title": "うしろのカノジョ(分冊版) 【第1話】 (主任がゆく!スペシャル)",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -234,22 +273,35 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_514fa4bdf24d",
-      "title": "この会社に好きな人がいます(1) (モーニングコミックス)",
-      "lookup_title": "この会社に好きな人がいます",
-      "outcome": "provider_error",
-      "category": null,
-      "ndc_scheme": null,
-      "ndc_code": null,
+      "work_id": "wrk_079f94beebb3",
+      "title": "THIS IS MARKETING",
+      "lookup_title": "THIS IS MARKETING",
+      "outcome": "accepted",
+      "category": "商業",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "675",
       "source_isbn13": null,
-      "match_mode": null,
-      "matches": 0,
-      "provider_error": "ndl request failed: This operation was aborted"
+      "match_mode": "title",
+      "matches": 1,
+      "provider_error": null
     },
     {
-      "work_id": "wrk_51c8fd7b91b2",
-      "title": "市場サイクルを極める 勝率を高める王道の投資哲学 (日本経済新聞出版)",
-      "lookup_title": "市場サイクルを極める 勝率を高める王道の投資哲学 (日本経済新聞出版)",
+      "work_id": "wrk_08652c518326",
+      "title": "「その日暮らし」の人類学",
+      "lookup_title": "「その日暮らし」の人類学",
+      "outcome": "accepted",
+      "category": "民俗・文化",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "389",
+      "source_isbn13": null,
+      "match_mode": "title",
+      "matches": 1,
+      "provider_error": null
+    },
+    {
+      "work_id": "wrk_09256f1e291f",
+      "title": "えろいことするために巨乳美少女奴隷を買ったはずが、お師匠さまと慕われて思った通りにいかなくなる話1巻 (グラストCOMICS)",
+      "lookup_title": "えろいことするために巨乳美少女奴隷を買ったはずが、お師匠さまと慕われて思った通りにいかなくなる話1巻 (グラストCOMICS)",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -260,9 +312,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_51f62a2664ed",
-      "title": "インデックス投資は勝者のゲーム",
-      "lookup_title": "インデックス投資は勝者のゲーム",
+      "work_id": "wrk_0ac8d6f215f7",
+      "title": "東京きたんしゅう",
+      "lookup_title": "東京きたんしゅう",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -273,9 +325,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_52236b4fc1ca",
-      "title": "The Brownian Motion: A Rigorous but Gentle Introduction for Economists (Springer Texts in Business and Economics) (English Edition)",
-      "lookup_title": "The Brownian Motion: A Rigorous but Gentle Introduction for Economists (Springer Texts in Business and Economics) (English Edition)",
+      "work_id": "wrk_0acbf4571cf0",
+      "title": "命に国境はない 紛争地イラクで考える戦争",
+      "lookup_title": "命に国境はない 紛争地イラクで考える戦争",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -286,9 +338,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_52cebd73d190",
-      "title": "分子から見た生物進化",
-      "lookup_title": "分子から見た生物進化",
+      "work_id": "wrk_0b152214a88a",
+      "title": "【第26話】やり直し姫は夫と恋したい: 分からずや",
+      "lookup_title": "【第26話】やり直し姫は夫と恋したい: 分からずや",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -297,58 +349,6 @@
       "match_mode": null,
       "matches": 0,
       "provider_error": null
-    },
-    {
-      "work_id": "wrk_533ca5f1263a",
-      "title": "脳科学は人格を変えられるか?",
-      "lookup_title": "脳科学は人格を変えられるか?",
-      "outcome": "ambiguous",
-      "category": null,
-      "ndc_scheme": null,
-      "ndc_code": null,
-      "source_isbn13": null,
-      "match_mode": null,
-      "matches": 2,
-      "provider_error": null
-    },
-    {
-      "work_id": "wrk_54303b70534f",
-      "title": "手品先輩(2) (ヤングマガジンコミックス)",
-      "lookup_title": "手品先輩",
-      "outcome": "provider_error",
-      "category": null,
-      "ndc_scheme": null,
-      "ndc_code": null,
-      "source_isbn13": null,
-      "match_mode": null,
-      "matches": 0,
-      "provider_error": "ndl request failed: This operation was aborted"
-    },
-    {
-      "work_id": "wrk_5494594a59cd",
-      "title": "ピーチボーイリバーサイド(3) (月刊少年マガジンR)",
-      "lookup_title": "ピーチボーイリバーサイド(3) (月刊少年マガジンR)",
-      "outcome": "no_candidate",
-      "category": null,
-      "ndc_scheme": null,
-      "ndc_code": null,
-      "source_isbn13": null,
-      "match_mode": null,
-      "matches": 0,
-      "provider_error": null
-    },
-    {
-      "work_id": "wrk_54fc35dd55dc",
-      "title": "シュトラーセ・ノイ",
-      "lookup_title": "シュトラーセ・ノイ",
-      "outcome": "provider_error",
-      "category": null,
-      "ndc_scheme": null,
-      "ndc_code": null,
-      "source_isbn13": null,
-      "match_mode": null,
-      "matches": 0,
-      "provider_error": "ndl request failed: This operation was aborted"
     }
   ]
 }

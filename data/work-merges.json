@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.work-merges.v1",
-  "updated_at": "2026-08-13T07:57:00+09:00",
+  "updated_at": "2026-08-13T08:03:00+09:00",
   "records": [
     {"from_work_id":"wrk_40ca39f0033d","into_work_id":"wrk_3a5c051662b5","from_title":"寄生獣(3) (アフタヌーンコミックス)","into_title":"寄生獣","author":"岩明均","source_url":"https://www.kodansha.co.jp/comic/products/0000029954","source_title":"寄生獣（３）","reason":"volume_and_label_were_embedded_in_work_title"},
     {"from_work_id":"wrk_c30372c9e211","into_work_id":"wrk_3a5c051662b5","from_title":"寄生獣(1) (アフタヌーンコミックス)","into_title":"寄生獣","author":"岩明均","source_url":"https://www.kodansha.co.jp/comic/products/0000029944","source_title":"寄生獣（１）","reason":"volume_and_label_were_embedded_in_work_title"},
@@ -15,6 +15,10 @@
     {"from_work_id":"wrk_f4b4c6f94199","into_work_id":"wrk_f6f5461c2b25","from_title":"彼女、お借りします(2) (週刊少年マガジンコミックス)","into_title":"彼女、お借りします","author":"宮島礼吏","source_url":"https://www.kodansha.co.jp/comic/products/0000052462","source_title":"彼女、お借りします（２）","reason":"volume_and_label_were_embedded_in_work_title"},
     {"from_work_id":"wrk_5f8732b6509b","into_work_id":"wrk_f6f5461c2b25","from_title":"彼女、お借りします(3) (週刊少年マガジンコミックス)","into_title":"彼女、お借りします","author":"宮島礼吏","source_url":"https://www.kodansha.co.jp/comic/products/0000053189","source_title":"彼女、お借りします（３）","reason":"volume_and_label_were_embedded_in_work_title"},
     {"from_work_id":"wrk_b589720d9267","into_work_id":"wrk_a43f46a9b9eb","from_title":"テセウスの船(2) (モーニングコミックス)","into_title":"テセウスの船","author":"東元俊哉","source_url":"https://www.kodansha.co.jp/comic/products/0000052788","source_title":"テセウスの船（２）","reason":"volume_and_label_were_embedded_in_work_title"},
-    {"from_work_id":"wrk_f81692deae32","into_work_id":"wrk_a43f46a9b9eb","from_title":"テセウスの船(3) (モーニングコミックス)","into_title":"テセウスの船","author":"東元俊哉","source_url":"https://www.kodansha.co.jp/comic/products/0000115433","source_title":"テセウスの船（３）","reason":"volume_and_label_were_embedded_in_work_title"}
+    {"from_work_id":"wrk_f81692deae32","into_work_id":"wrk_a43f46a9b9eb","from_title":"テセウスの船(3) (モーニングコミックス)","into_title":"テセウスの船","author":"東元俊哉","source_url":"https://www.kodansha.co.jp/comic/products/0000115433","source_title":"テセウスの船（３）","reason":"volume_and_label_were_embedded_in_work_title"},
+    {"from_work_id":"wrk_867de0c46bcd","into_work_id":"wrk_81102d89d9af","from_title":"さよなら絶望先生(2) (週刊少年マガジンコミックス)","into_title":"さよなら絶望先生","author":"久米田康治","source_url":"https://www.kodansha.co.jp/comic/products/0000012013","source_title":"さよなら絶望先生（２）","reason":"volume_and_label_were_embedded_in_work_title"},
+    {"from_work_id":"wrk_7245f5cfdcc3","into_work_id":"wrk_81102d89d9af","from_title":"さよなら絶望先生(3) (週刊少年マガジンコミックス)","into_title":"さよなら絶望先生","author":"久米田康治","source_url":"https://www.kodansha.co.jp/comic/products/0000012040","source_title":"さよなら絶望先生（３）","reason":"volume_and_label_were_embedded_in_work_title"},
+    {"from_work_id":"wrk_e577fec594dd","into_work_id":"wrk_95a25d1b02c6","from_title":"宝石の国(2) (アフタヌーンコミックス)","into_title":"宝石の国","author":"市川春子","source_url":"https://www.kodansha.co.jp/comic/products/0000047310","source_title":"宝石の国（２）","reason":"volume_and_label_were_embedded_in_work_title"},
+    {"from_work_id":"wrk_ab358ce88f18","into_work_id":"wrk_95a25d1b02c6","from_title":"宝石の国(3) (アフタヌーンコミックス)","into_title":"宝石の国","author":"市川春子","source_url":"https://www.kodansha.co.jp/comic/products/0000047352","source_title":"宝石の国（３）","reason":"volume_and_label_were_embedded_in_work_title"}
   ]
 }

@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.title-normalizations.v1",
-  "updated_at": "2026-08-09T03:58:00+09:00",
+  "updated_at": "2026-08-12T18:38:00+09:00",
   "records": [
     {
       "work_id": "wrk_368805ff1c88",
@@ -45,6 +45,46 @@
       "author": "金子タカシ",
       "source_url": "https://www.asakawashobo.co.jp/products/detail.php?product_id=45",
       "source_title": "凌ぎの手筋200",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_1f1498e352d5",
+      "from_title": "アドバード",
+      "title": "アド・バード",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000049-I032496630",
+      "source_title": "アド・バード",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_54fc35dd55dc",
+      "from_title": "シュトラーセノイ",
+      "title": "シュトラーセ・ノイ",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I024613116",
+      "source_title": "シュトラーセ・ノイ",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_c8a14afdd26f",
+      "from_title": "ジスにもとづく標準製図法",
+      "title": "JISにもとづく標準製図法",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000009257753",
+      "source_title": "JISにもとづく標準製図法",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_ce3b9a97d380",
+      "from_title": "デザインドリアリティ",
+      "title": "デザインド・リアリティ",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000009986026",
+      "source_title": "デザインド・リアリティ : 半径300メートルの文化心理学",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_f31fa4eb028d",
+      "from_title": "コンピュータ将棋の進歩6プロ棋士に学ぶ",
+      "title": "コンピュータ将棋の進歩 6 (プロ棋士に並ぶ)",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I023585373",
+      "source_title": "コンピュータ将棋の進歩 6 (プロ棋士に並ぶ)",
       "review_method": "manual_bibliographic_review"
     }
   ]

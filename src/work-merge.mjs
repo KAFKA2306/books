@@ -30,6 +30,19 @@ function recomputeWorkAggregates(works, editions, holdings) {
   }
 }
 
+function remapClassifications(rows, redirects) {
+  const byId = new Map();
+  for (const row of rows ?? []) {
+    const workId = remapWorkId(row.work_id, redirects);
+    const classificationId = row.classification_id?.startsWith('cls:')
+      ? `cls:${workId}:${row.scheme_id}:${row.code}`
+      : row.classification_id;
+    const remapped = { ...row, work_id: workId, classification_id: classificationId };
+    if (!byId.has(classificationId)) byId.set(classificationId, remapped);
+  }
+  return [...byId.values()];
+}
+
 export function applyWorkMerges(catalog, overlay) {
   if (!overlay || overlay.schema !== WORK_MERGE_SCHEMA) {
     throw new Error(`invalid work merge schema: ${overlay?.schema ?? 'missing'}`);
@@ -80,6 +93,7 @@ export function applyWorkMerges(catalog, overlay) {
   const kindleMatchAudit = (catalog.kindle_match_audit ?? []).map((item) => ({ ...item, work_id: remapWorkId(item.work_id, redirects) }));
   const issueRecords = (catalog.issue_records ?? []).map((item) => ({ ...item, work_id: remapWorkId(item.work_id, redirects) }));
   const issueResolutions = (catalog.issue_resolutions ?? []).map((item) => ({ ...item, work_id: remapWorkId(item.work_id, redirects) }));
+  const classifications = remapClassifications(catalog.classifications ?? [], redirects);
 
   recomputeWorkAggregates(mergedWorks, editions, holdings);
   mergedWorks.sort((a, b) => a.title.localeCompare(b.title, 'ja'));
@@ -94,6 +108,9 @@ export function applyWorkMerges(catalog, overlay) {
     merged_input_count: inputCount - mergedWorks.length,
     isbn_verified_count: new Set(editions.filter((edition) => edition.verification === 'verified').map((edition) => edition.isbn13).filter(Boolean)).size,
     untracked_count: mergedWorks.filter((work) => work.status === 'untracked').length,
+    classification_record_count: classifications.length,
+    classified_work_count: new Set(classifications.map((row) => row.work_id)).size,
+    ndc10_classified_work_count: new Set(classifications.filter((row) => row.scheme_id === 'ndc10').map((row) => row.work_id)).size,
     work_merge_count: records.length,
   };
 
@@ -108,6 +125,7 @@ export function applyWorkMerges(catalog, overlay) {
     kindle_match_audit: kindleMatchAudit,
     issue_records: issueRecords,
     issue_resolutions: issueResolutions,
+    classifications,
     work_merge_audit: records.map((record) => ({ ...record })),
   };
 }

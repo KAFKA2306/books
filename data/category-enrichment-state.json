@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichment-state.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-12T07:56:12.435Z",
+  "updated_at": "2026-08-12T10:19:19.477Z",
   "attempts": {
     "wrk_0025172962b9": {
       "attempted_at": "2026-08-11T05:04:45.768Z",
@@ -2320,9 +2320,10 @@
       "provider_error": "ndl request failed: ndl returned HTTP 429"
     },
     "wrk_42b0eba19446": {
-      "attempted_at": "2026-08-09T02:31:56.719Z",
+      "attempted_at": "2026-08-12T10:19:19.477Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-23T02:31:56.719Z",
+      "next_attempt_at": "2026-08-26T10:19:19.477Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -2330,9 +2331,10 @@
       "provider_error": null
     },
     "wrk_4331ce6d3d02": {
-      "attempted_at": "2026-08-09T02:31:56.719Z",
+      "attempted_at": "2026-08-12T10:19:19.477Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-23T02:31:56.719Z",
+      "next_attempt_at": "2026-08-26T10:19:19.477Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -2350,12 +2352,13 @@
       "provider_error": null
     },
     "wrk_43cca93392f6": {
-      "attempted_at": "2026-08-09T02:31:56.719Z",
-      "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-23T02:31:56.719Z",
-      "category": null,
-      "ndc_scheme": null,
-      "ndc_code": null,
+      "attempted_at": "2026-08-12T10:19:19.477Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-09T10:19:19.477Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "726.1",
       "source_isbn13": null,
       "provider_error": null
     },
@@ -2370,22 +2373,24 @@
       "provider_error": null
     },
     "wrk_44def9f2d8bc": {
-      "attempted_at": "2026-08-09T02:31:56.719Z",
-      "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-23T02:31:56.719Z",
+      "attempted_at": "2026-08-12T10:19:19.477Z",
+      "outcome": "provider_error",
+      "next_attempt_at": "2026-08-13T10:19:19.477Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
       "source_isbn13": null,
-      "provider_error": null
+      "provider_error": "ndl request failed: This operation was aborted"
     },
     "wrk_459549e15f1e": {
-      "attempted_at": "2026-08-09T02:31:56.719Z",
-      "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-23T02:31:56.719Z",
-      "category": null,
-      "ndc_scheme": null,
-      "ndc_code": null,
+      "attempted_at": "2026-08-12T10:19:19.477Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-09T10:19:19.477Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
+      "category": "ゲーム・娯楽",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "798",
       "source_isbn13": null,
       "provider_error": null
     },
@@ -2400,19 +2405,21 @@
       "provider_error": null
     },
     "wrk_46531fdf7646": {
-      "attempted_at": "2026-08-09T06:08:49.164Z",
-      "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-23T06:08:49.164Z",
-      "category": null,
-      "ndc_scheme": null,
-      "ndc_code": null,
+      "attempted_at": "2026-08-12T10:19:19.477Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-09T10:19:19.477Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "726.1",
       "source_isbn13": null,
       "provider_error": null
     },
     "wrk_468599538509": {
-      "attempted_at": "2026-08-09T06:08:49.164Z",
+      "attempted_at": "2026-08-12T10:19:19.477Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-23T06:08:49.164Z",
+      "next_attempt_at": "2026-08-26T10:19:19.477Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -2420,9 +2427,10 @@
       "provider_error": null
     },
     "wrk_4737ff4a3ce5": {
-      "attempted_at": "2026-08-09T06:08:49.164Z",
+      "attempted_at": "2026-08-12T10:19:19.477Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-23T06:08:49.164Z",
+      "next_attempt_at": "2026-08-26T10:19:19.477Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -2440,9 +2448,10 @@
       "provider_error": null
     },
     "wrk_48a948c94388": {
-      "attempted_at": "2026-08-09T06:08:49.164Z",
+      "attempted_at": "2026-08-12T10:19:19.477Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-23T06:08:49.164Z",
+      "next_attempt_at": "2026-08-26T10:19:19.477Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -2450,9 +2459,10 @@
       "provider_error": null
     },
     "wrk_48d43b1c82f6": {
-      "attempted_at": "2026-08-09T06:08:49.164Z",
+      "attempted_at": "2026-08-12T10:19:19.477Z",
       "outcome": "no_ndc",
-      "next_attempt_at": "2026-09-08T06:08:49.164Z",
+      "next_attempt_at": "2026-09-11T10:19:19.477Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -2460,9 +2470,10 @@
       "provider_error": null
     },
     "wrk_49533146732d": {
-      "attempted_at": "2026-08-09T06:08:49.164Z",
+      "attempted_at": "2026-08-12T10:19:19.477Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-23T06:08:49.164Z",
+      "next_attempt_at": "2026-08-26T10:19:19.477Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -2480,12 +2491,13 @@
       "provider_error": null
     },
     "wrk_49b13fae066a": {
-      "attempted_at": "2026-08-09T06:08:49.164Z",
-      "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-23T06:08:49.164Z",
-      "category": null,
-      "ndc_scheme": null,
-      "ndc_code": null,
+      "attempted_at": "2026-08-12T10:19:19.477Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-09T10:19:19.477Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
+      "category": "投資・金融",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "338.18",
       "source_isbn13": null,
       "provider_error": null
     },
@@ -2500,19 +2512,21 @@
       "provider_error": null
     },
     "wrk_4aeecb229dd7": {
-      "attempted_at": "2026-08-09T06:08:49.164Z",
-      "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-23T06:08:49.164Z",
+      "attempted_at": "2026-08-12T10:19:19.477Z",
+      "outcome": "provider_error",
+      "next_attempt_at": "2026-08-13T10:19:19.477Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
       "source_isbn13": null,
-      "provider_error": null
+      "provider_error": "ndl request failed: This operation was aborted"
     },
     "wrk_4bb146ac91a9": {
-      "attempted_at": "2026-08-09T06:08:49.164Z",
+      "attempted_at": "2026-08-12T10:19:19.477Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-23T06:08:49.164Z",
+      "next_attempt_at": "2026-08-26T10:19:19.477Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -2520,19 +2534,21 @@
       "provider_error": null
     },
     "wrk_4be151d6635d": {
-      "attempted_at": "2026-08-09T06:08:49.164Z",
-      "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-23T06:08:49.164Z",
-      "category": null,
-      "ndc_scheme": null,
-      "ndc_code": null,
+      "attempted_at": "2026-08-12T10:19:19.477Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-09T10:19:19.477Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "726.1",
       "source_isbn13": null,
       "provider_error": null
     },
     "wrk_4c0a23a8eba5": {
-      "attempted_at": "2026-08-09T06:08:49.164Z",
+      "attempted_at": "2026-08-12T10:19:19.477Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-23T06:08:49.164Z",
+      "next_attempt_at": "2026-08-26T10:19:19.477Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -2540,9 +2556,10 @@
       "provider_error": null
     },
     "wrk_4c4a6d0d72c5": {
-      "attempted_at": "2026-08-09T06:08:49.164Z",
+      "attempted_at": "2026-08-12T10:19:19.477Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-23T06:08:49.164Z",
+      "next_attempt_at": "2026-08-26T10:19:19.477Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -2560,9 +2577,10 @@
       "provider_error": null
     },
     "wrk_4cde14267b9c": {
-      "attempted_at": "2026-08-09T06:08:49.164Z",
+      "attempted_at": "2026-08-12T10:19:19.477Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-23T06:08:49.164Z",
+      "next_attempt_at": "2026-08-26T10:19:19.477Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -2570,14 +2588,15 @@
       "provider_error": null
     },
     "wrk_4d47b3f9cb03": {
-      "attempted_at": "2026-08-09T06:08:49.164Z",
-      "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-23T06:08:49.164Z",
+      "attempted_at": "2026-08-12T10:19:19.477Z",
+      "outcome": "provider_error",
+      "next_attempt_at": "2026-08-13T10:19:19.477Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
       "source_isbn13": null,
-      "provider_error": null
+      "provider_error": "ndl request failed: This operation was aborted"
     },
     "wrk_4d62d2b9dc92": {
       "attempted_at": "2026-08-09T06:08:49.164Z",
@@ -2600,9 +2619,10 @@
       "provider_error": null
     },
     "wrk_4db095ad59b8": {
-      "attempted_at": "2026-08-09T06:08:49.164Z",
+      "attempted_at": "2026-08-12T10:19:19.477Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-23T06:08:49.164Z",
+      "next_attempt_at": "2026-08-26T10:19:19.477Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -2610,9 +2630,10 @@
       "provider_error": null
     },
     "wrk_4db949501790": {
-      "attempted_at": "2026-08-09T06:08:49.164Z",
+      "attempted_at": "2026-08-12T10:19:19.477Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-23T06:08:49.164Z",
+      "next_attempt_at": "2026-08-26T10:19:19.477Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -2620,9 +2641,10 @@
       "provider_error": null
     },
     "wrk_4dca04545f92": {
-      "attempted_at": "2026-08-09T06:08:49.164Z",
+      "attempted_at": "2026-08-12T10:19:19.477Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-23T06:08:49.164Z",
+      "next_attempt_at": "2026-08-26T10:19:19.477Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -2630,9 +2652,10 @@
       "provider_error": null
     },
     "wrk_4e9d08ff6f2f": {
-      "attempted_at": "2026-08-09T06:08:49.164Z",
-      "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-23T06:08:49.164Z",
+      "attempted_at": "2026-08-12T10:19:19.477Z",
+      "outcome": "ambiguous",
+      "next_attempt_at": "2026-09-11T10:19:19.477Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -2640,9 +2663,10 @@
       "provider_error": null
     },
     "wrk_4f1ffa69ed25": {
-      "attempted_at": "2026-08-09T06:08:49.164Z",
+      "attempted_at": "2026-08-12T10:19:19.477Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-23T06:08:49.164Z",
+      "next_attempt_at": "2026-08-26T10:19:19.477Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
@@ -2650,9 +2674,10 @@
       "provider_error": null
     },
     "wrk_4f4f4358556e": {
-      "attempted_at": "2026-08-09T06:12:00.737Z",
+      "attempted_at": "2026-08-12T10:19:19.477Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-08-23T06:12:00.737Z",
+      "next_attempt_at": "2026-08-26T10:19:19.477Z",
+      "title_normalization_version": "bibliographic-suffix-v2",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,

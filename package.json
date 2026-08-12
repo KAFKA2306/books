@@ -6,7 +6,7 @@
   "scripts": {
     "test": "node --test",
     "validate": "node scripts/audit-title-key-collisions.mjs && node scripts/validate.mjs && node scripts/validate-classifications.mjs",
-    "validate:scripts": "node --check scripts/enrich-isbn.mjs && node --check scripts/enrich-categories.mjs && node --check scripts/materialize-catalog.mjs && node --check scripts/import-kindle-xml.mjs && node --check scripts/diagnose-migration.mjs && node --check scripts/audit-title-key-collisions.mjs && node --check src/category-enrichment.mjs && node --check src/library-classification.mjs && node --check src/kindle-metadata.mjs && node --check src/kindle-storage.mjs && node --check src/migration-diagnosis.mjs && node --check src/bibliographic-display-normalization.mjs",
+    "validate:scripts": "node --check scripts/enrich-isbn.mjs && node --check scripts/enrich-categories.mjs && node --check scripts/materialize-catalog.mjs && node --check scripts/import-kindle-xml.mjs && node --check scripts/diagnose-migration.mjs && node --check scripts/audit-title-key-collisions.mjs && node --check src/category-enrichment.mjs && node --check src/library-classification.mjs && node --check src/kindle-metadata.mjs && node --check src/kindle-storage.mjs && node --check src/migration-diagnosis.mjs && node --check src/bibliographic-display-normalization.mjs && node --check src/work-merge.mjs",
     "api:build": "node scripts/build-api.mjs",
     "api:check": "npm run api:build && node --test tests/api-distribution.test.mjs",
     "check": "npm run validate:scripts && npm run validate && npm run api:build && npm test",

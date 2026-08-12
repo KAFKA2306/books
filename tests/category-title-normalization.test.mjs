@@ -40,6 +40,18 @@ test('removes known Kindle retail decorations before NDL lookup', () => {
   );
 });
 
+test('normalizes NDL bibliographic subtitles to the stable main title', () => {
+  assert.equal(
+    normalizeCategoryLookupTitle('13歳からの地政学 : カイゾクとの地球儀航海'),
+    '13歳からの地政学',
+  );
+  assert.equal(
+    normalizeCategoryLookupTitle('インデックス投資は勝者のゲーム ： 株式市場から利益を得る常識的方法'),
+    'インデックス投資は勝者のゲーム',
+  );
+  assert.equal(normalizeCategoryLookupTitle('AI:未来'), 'AI:未来');
+});
+
 test('does not strip a bare trailing number without known retail or bibliographic context', () => {
   assert.equal(normalizeCategoryLookupTitle('プロジェクト 2025'), 'プロジェクト 2025');
   assert.equal(normalizeCategoryLookupTitle('2001'), '2001');
@@ -91,5 +103,23 @@ test('normalized title comparison accepts one NDL NDC category without lowering 
   const decision = decideCategory(work, records);
   assert.equal(decision.outcome, 'accepted');
   assert.equal(decision.accepted.category, '漫画・コミック');
+  assert.equal(decision.accepted.title_similarity, 1);
+});
+
+test('NDL subtitle normalization recovers a real main-title match without lowering threshold', () => {
+  const work = {
+    work_id: 'wrk_13sai',
+    title: normalizeCategoryLookupTitle('13歳からの地政学'),
+    category: '未分類',
+  };
+  const records = normalizeCategorySearchRecords([{
+    title: '13歳からの地政学 : カイゾクとの地球儀航海',
+    isbns: ['9784492444689'],
+    ndc: [{ scheme: 'NDC10', code: '312.9' }],
+    source_url: 'https://ndlsearch.ndl.go.jp/books/R100000002-I031980944',
+  }]);
+  const decision = decideCategory(work, records);
+  assert.equal(decision.outcome, 'accepted');
+  assert.equal(decision.accepted.category, '政治');
   assert.equal(decision.accepted.title_similarity, 1);
 });

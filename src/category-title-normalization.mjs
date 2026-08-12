@@ -1,9 +1,11 @@
-export const CATEGORY_TITLE_NORMALIZATION_VERSION = 'bibliographic-suffix-v4';
+export const CATEGORY_TITLE_NORMALIZATION_VERSION = 'bibliographic-suffix-v5';
 
 const TRAILING_SERIES_LABEL = /\s*[（(][^()（）]{0,80}(?:コミックス?|コミック|文庫|新書|叢書|シリーズ)[^()（）]*[)）]\s*$/u;
 const TRAILING_PAREN_VOLUME = /\s*[（(]\s*(?:第\s*)?\d+(?:\.\d+)?\s*(?:巻|話)?\s*[)）]\s*$/u;
 const TRAILING_JAPANESE_VOLUME = /\s+第?\s*\d+(?:\.\d+)?\s*巻\s*$/u;
 const TRAILING_PLAIN_VOLUME = /\s+\d+(?:\.\d+)?\s*$/u;
+const TRAILING_RETAIL_EDITION = /\s*[（(]\s*(?:English Edition|Kindle版|電子書籍版)\s*[)）]\s*$/iu;
+const TRAILING_ENGLISH_SERIES_VOLUME = /\s*[（(][^()（）]{0,80}\bBook\s+\d+(?:\.\d+)?\s*[)）]\s*$/iu;
 const INLINE_LIMITED_FREE_LABEL = /\s*【\s*期間限定無料(?:版)?\s*】\s*/gu;
 const HAS_INLINE_LIMITED_FREE_LABEL = /【\s*期間限定無料(?:版)?\s*】/u;
 const RETAIL_MONOCHROME_LABEL = /(?:^|\s)モノクロ版(?=\s|【|$)/gu;
@@ -42,6 +44,8 @@ export function normalizeCategoryLookupTitle(value) {
   do {
     previous = title;
     title = title
+      .replace(TRAILING_RETAIL_EDITION, '')
+      .replace(TRAILING_ENGLISH_SERIES_VOLUME, '')
       .replace(TRAILING_SERIES_LABEL, '')
       .replace(TRAILING_BRACKET_SERIES_POSITION, '')
       .replace(TRAILING_PAREN_VOLUME, '')

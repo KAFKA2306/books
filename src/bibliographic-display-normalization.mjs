@@ -22,6 +22,11 @@ export const CANONICAL_CATEGORIES = Object.freeze([
   'その他',
 ]);
 
+const TITLE_DISPLAY_ALIASES = new Map([
+  ['トーイック公式問題集', 'TOEIC 公式問題集'],
+  ['TOEIC公式問題集', 'TOEIC 公式問題集'],
+]);
+
 const CATEGORY_ALIASES = new Map([
   ['経済', '経済・社会'],
   ['社会科学', '経済・社会'],
@@ -69,6 +74,11 @@ function compactPersonName(value = '') {
   return CJK.test(normalized) ? normalized.replace(/\s+/gu, '') : normalized;
 }
 
+export function normalizeTitleDisplay(value = '') {
+  const normalized = normalizeTitle(clean(value));
+  return TITLE_DISPLAY_ALIASES.get(normalized) ?? normalized;
+}
+
 export function normalizeAuthorDisplay(value = '') {
   const raw = clean(value).replace(/^[,、;\s]+|[,、;\s]+$/gu, '');
   if (!raw) return '';
@@ -108,7 +118,7 @@ export function normalizeCategoryDisplay(value = '') {
 
 function normalizeWork(work) {
   const originalTitle = clean(work.title);
-  const title = normalizeTitle(originalTitle);
+  const title = normalizeTitleDisplay(originalTitle);
   const originalAuthor = clean(work.author);
   const author = normalizeAuthorDisplay(originalAuthor);
   const originalCategory = clean(work.category);
@@ -134,7 +144,7 @@ function normalizeWork(work) {
 function normalizeEdition(edition) {
   if (!edition.title) return { ...edition };
   const originalTitle = clean(edition.title);
-  const title = normalizeTitle(originalTitle);
+  const title = normalizeTitleDisplay(originalTitle);
   if (!title || title === originalTitle) return { ...edition };
   return {
     ...edition,

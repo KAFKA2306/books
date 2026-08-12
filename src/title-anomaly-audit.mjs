@@ -1,5 +1,5 @@
 const COMMERCIAL_ANNOTATION = /(?:【[^】]{1,80}】|期間限定(?:無料)?|無料版|モノクロ版|カラー版|分冊版|合本版|特装版|限定版)/u;
-const VOLUME_METADATA = /(?:\(|（)\s*\d{1,3}\s*(?:\)|）)|(?:^|\s)第?\d{1,3}\s*(?:巻|冊)(?:\s|$)/u;
+const VOLUME_METADATA = /(?:\(|（)\s*\d{1,3}\s*(?:\)|）)|(?:^|\s)第?\d{1,3}\s*(?:巻|冊)(?:\s|$)|\s\d{1,3}\s+(?=\([^)]*(?:コミックス|コミック|DIGITAL)[^)]*\)\s*$)/iu;
 const FORMAT_MARKER = /(?:Kindle版|電子書籍版|単行本版|文庫版|コミック版)/iu;
 const IMPRINT_SUFFIX = /(?:コミックス|コミック|文庫|新書|DIGITAL)(?:\)|）|】)?\s*$/iu;
 const ROLE_SUFFIX = /(?:著|訳|監修|編著|編|原著|原作)\s*$/u;

@@ -11,10 +11,7 @@ test('removes only trailing bibliographic volume and series decorations', () => 
     normalizeCategoryLookupTitle('ボールルームへようこそ(1) (月刊少年マガジンコミックス)'),
     'ボールルームへようこそ',
   );
-  assert.equal(
-    normalizeCategoryLookupTitle('ゆゆ式 3巻 (まんがタイムKRコミックス)'),
-    'ゆゆ式',
-  );
+  assert.equal(normalizeCategoryLookupTitle('ゆゆ式 3巻 (まんがタイムKRコミックス)'), 'ゆゆ式');
   assert.equal(
     normalizeCategoryLookupTitle('中国の行動原理 国内潮流が決める国際関係 (中公新書)'),
     '中国の行動原理 国内潮流が決める国際関係',
@@ -34,22 +31,24 @@ test('removes known Kindle retail decorations before NDL lookup', () => {
     normalizeCategoryLookupTitle('いちご100% モノクロ版【期間限定無料】 1 (ジャンプコミックスDIGITAL)'),
     'いちご100%',
   );
-  assert.equal(
-    normalizeCategoryLookupTitle('しゃばけ【しゃばけシリーズ第1弾】'),
-    'しゃばけ',
-  );
+  assert.equal(normalizeCategoryLookupTitle('しゃばけ【しゃばけシリーズ第1弾】'), 'しゃばけ');
 });
 
-test('normalizes NDL bibliographic subtitles to the stable main title', () => {
+test('normalizes bibliographic subtitle separators to the stable main title', () => {
   assert.equal(
     normalizeCategoryLookupTitle('13歳からの地政学 : カイゾクとの地球儀航海'),
     '13歳からの地政学',
   );
   assert.equal(
-    normalizeCategoryLookupTitle('インデックス投資は勝者のゲーム ： 株式市場から利益を得る常識的方法'),
+    normalizeCategoryLookupTitle('13歳からの地政学―カイゾクとの地球儀航海'),
+    '13歳からの地政学',
+  );
+  assert.equal(
+    normalizeCategoryLookupTitle('インデックス投資は勝者のゲーム ──株式市場から利益を得る常識的方法'),
     'インデックス投資は勝者のゲーム',
   );
   assert.equal(normalizeCategoryLookupTitle('AI:未来'), 'AI:未来');
+  assert.equal(normalizeCategoryLookupTitle('AI―未来'), 'AI―未来');
 });
 
 test('does not strip a bare trailing number without known retail or bibliographic context', () => {
@@ -106,10 +105,10 @@ test('normalized title comparison accepts one NDL NDC category without lowering 
   assert.equal(decision.accepted.title_similarity, 1);
 });
 
-test('NDL subtitle normalization recovers a real main-title match without lowering threshold', () => {
+test('observed retailer dash title matches the NDL main title without lowering threshold', () => {
   const work = {
     work_id: 'wrk_13sai',
-    title: normalizeCategoryLookupTitle('13歳からの地政学'),
+    title: normalizeCategoryLookupTitle('13歳からの地政学―カイゾクとの地球儀航海'),
     category: '未分類',
   };
   const records = normalizeCategorySearchRecords([{

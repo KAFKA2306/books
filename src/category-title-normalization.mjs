@@ -1,4 +1,4 @@
-export const CATEGORY_TITLE_NORMALIZATION_VERSION = 'bibliographic-suffix-v3';
+export const CATEGORY_TITLE_NORMALIZATION_VERSION = 'bibliographic-suffix-v4';
 
 const TRAILING_SERIES_LABEL = /\s*[（(][^()（）]{0,80}(?:コミックス?|コミック|文庫|新書|叢書|シリーズ)[^()（）]*[)）]\s*$/u;
 const TRAILING_PAREN_VOLUME = /\s*[（(]\s*(?:第\s*)?\d+(?:\.\d+)?\s*(?:巻|話)?\s*[)）]\s*$/u;
@@ -9,19 +9,25 @@ const HAS_INLINE_LIMITED_FREE_LABEL = /【\s*期間限定無料(?:版)?\s*】/u;
 const RETAIL_MONOCHROME_LABEL = /(?:^|\s)モノクロ版(?=\s|【|$)/gu;
 const HAS_RETAIL_MONOCHROME_LABEL = /(?:^|\s)モノクロ版(?=\s|【|$)/u;
 const TRAILING_BRACKET_SERIES_POSITION = /\s*【[^】]{0,80}(?:シリーズ)?第\s*\d+\s*弾】\s*$/u;
-const BIBLIOGRAPHIC_SUBTITLE_SEPARATOR = /\s+[:：]\s+/u;
+const BIBLIOGRAPHIC_SUBTITLE_SEPARATORS = [/\s+[:：]\s+/u, /―(?=\S{4,}$)/u, /\s+──(?=\S{4,}$)/u];
+
+function stripBibliographicSubtitle(title) {
+  const indices = BIBLIOGRAPHIC_SUBTITLE_SEPARATORS
+    .map((pattern) => title.search(pattern))
+    .filter((index) => index >= 6);
+  if (!indices.length) return title;
+  return title.slice(0, Math.min(...indices)).trim();
+}
 
 export function normalizeCategoryLookupTitle(value) {
   let title = String(value ?? '').normalize('NFKC').replace(/\s+/gu, ' ').trim();
   if (!title) return '';
 
-  // NDL bibliographic titles commonly serialize a subtitle as `main title : subtitle`.
-  // Category lookup needs the stable main title on both the local and NDL side, while
-  // an ordinary colon without surrounding spaces remains part of the title.
-  title = title.split(BIBLIOGRAPHIC_SUBTITLE_SEPARATOR, 1)[0].trim();
+  // NDL often serializes subtitles with a spaced colon, while retailer titles can use
+  // a Japanese horizontal bar or double dash for the same boundary. Strip only when
+  // the main title is already substantial; short punctuation-bearing titles stay intact.
+  title = stripBibliographicSubtitle(title);
 
-  // Only allow a bare trailing number to be removed when the original value contains
-  // a known retail/bibliographic decoration that makes the number unambiguously a volume.
   const mayStripPlainVolume = TRAILING_SERIES_LABEL.test(title)
     || HAS_INLINE_LIMITED_FREE_LABEL.test(title)
     || HAS_RETAIL_MONOCHROME_LABEL.test(title);

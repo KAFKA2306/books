@@ -6,10 +6,11 @@
   "scripts": {
     "test": "node --test",
     "validate": "node scripts/audit-title-key-collisions.mjs && node scripts/validate.mjs && node scripts/validate-classifications.mjs",
-    "validate:scripts": "node --check scripts/enrich-isbn.mjs && node --check scripts/enrich-categories.mjs && node --check scripts/materialize-catalog.mjs && node --check scripts/import-kindle-xml.mjs && node --check scripts/diagnose-migration.mjs && node --check scripts/audit-title-key-collisions.mjs && node --check src/category-enrichment.mjs && node --check src/library-classification.mjs && node --check src/kindle-metadata.mjs && node --check src/kindle-storage.mjs && node --check src/migration-diagnosis.mjs && node --check src/bibliographic-display-normalization.mjs && node --check src/work-merge.mjs",
+    "validate:scripts": "node --check scripts/enrich-isbn.mjs && node --check scripts/enrich-categories.mjs && node --check scripts/materialize-catalog.mjs && node --check scripts/import-kindle-xml.mjs && node --check scripts/diagnose-migration.mjs && node --check scripts/audit-title-key-collisions.mjs && node --check scripts/audit-title-anomalies.mjs && node --check src/category-enrichment.mjs && node --check src/library-classification.mjs && node --check src/kindle-metadata.mjs && node --check src/kindle-storage.mjs && node --check src/migration-diagnosis.mjs && node --check src/bibliographic-display-normalization.mjs && node --check src/work-merge.mjs && node --check src/title-anomaly-audit.mjs",
     "api:build": "node scripts/build-api.mjs",
     "api:check": "npm run api:build && node --test tests/api-distribution.test.mjs",
-    "check": "npm run validate:scripts && npm run validate && npm run api:build && npm test",
+    "title:audit": "node scripts/audit-title-anomalies.mjs",
+    "check": "npm run validate:scripts && npm run validate && npm run api:build && npm run title:audit && npm test",
     "catalog:precheck": "node scripts/precheck.mjs",
     "catalog:materialize": "node scripts/materialize-catalog.mjs",
     "migration:diagnose": "node scripts/diagnose-migration.mjs",

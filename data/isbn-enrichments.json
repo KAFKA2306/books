@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichments.v1",
-  "updated_at": "2026-08-12T04:18:13.856Z",
+  "updated_at": "2026-08-12T15:40:24.731Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -928,6 +928,62 @@
       ],
       "replaces_edition_id": "pending:bdac9c0a5b6e",
       "verified_at": "2026-08-12T04:18:13.856Z"
+    },
+    {
+      "work_id": "wrk_d7e5f72a2077",
+      "isbn13": "9784334752873",
+      "title": "アドルフ",
+      "authors": [
+        "Constant, Benjamin, 1767-1830",
+        "中村, 佳子, 1967-",
+        "Constant, Benjamin, 1767-1830,中村, 佳子, 1967-,コンスタン 著,中村佳子 訳",
+        "Constant,Benjamin,1767-1830 中村,佳子,1967-"
+      ],
+      "publisher": "光文社",
+      "published_year": 2014,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I025291905"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784334752873"
+        }
+      ],
+      "replaces_edition_id": "pending:d7e5f72a2077",
+      "verified_at": "2026-08-12T15:40:24.731Z"
+    },
+    {
+      "work_id": "wrk_e62f79aa0989",
+      "isbn13": "9784478371527",
+      "title": "競争の戦略",
+      "authors": [
+        "Porter, Michael E, 1947-",
+        "土岐, 坤, 1920-1999",
+        "Porter, Michael E, 1947-,土岐, 坤, 1920-1999,M.E.ポーター 著,土岐坤 他訳",
+        "Porter,MichaelE,1947- 土岐,坤,1920-1999"
+      ],
+      "publisher": "ダイヤモンド社",
+      "published_year": 1995,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000002406052"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784478371527"
+        }
+      ],
+      "replaces_edition_id": "pending:e62f79aa0989",
+      "verified_at": "2026-08-12T15:40:24.731Z"
     }
   ]
 }

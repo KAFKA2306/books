@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-report.v1",
-  "generated_at": "2026-08-12T04:18:13.856Z",
+  "generated_at": "2026-08-12T15:40:24.731Z",
   "policy": {
     "batch_limit": 25,
     "concurrency": 4,
@@ -12,29 +12,16 @@
   },
   "summary": {
     "attempted": 25,
-    "enriched": 1,
-    "ambiguous": 1,
-    "no_consensus": 4,
+    "enriched": 2,
+    "ambiguous": 5,
+    "no_consensus": 12,
     "no_candidate": 0,
-    "provider_error": 19
+    "provider_error": 6
   },
   "results": [
     {
-      "work_id": "wrk_820ba461ef25",
-      "title": "世界の終わりとハードボイルドワンダーランド",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_8c37175648d9",
-      "title": "不合理だからすべてがうまくいく",
+      "work_id": "wrk_c9eee2e7dbbb",
+      "title": "善意で貧困はなくせるのか? 貧乏人の行動",
       "outcome": "no_consensus",
       "accepted_isbn13": null,
       "candidates": [],
@@ -46,8 +33,8 @@
       ]
     },
     {
-      "work_id": "wrk_92391d2576a4",
-      "title": "TOEIC リスニング・リーディング問題集",
+      "work_id": "wrk_ca5f87236bdc",
+      "title": "昔は良かった病",
       "outcome": "provider_error",
       "accepted_isbn13": null,
       "candidates": [],
@@ -59,189 +46,8 @@
       ]
     },
     {
-      "work_id": "wrk_93da6e6b1b79",
-      "title": "品性がにじみ出る言葉遣い",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_960378886748",
-      "title": "TOEFL ITP直前模試",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "ndl",
-          "message": "ndl request failed: This operation was aborted"
-        },
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_97f99ad2dc35",
-      "title": "帰って来たヒトラー",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_9aedbcaa2a50",
-      "title": "合格実例集セオリーエントリーシート編",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "ndl",
-          "message": "ndl request failed: This operation was aborted"
-        },
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_9c3a2c7c3187",
-      "title": "入門初級ドイツ語文法",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_9e107563f000",
-      "title": "Pythonで動かして学ぶ!あたらしい機械学習の教科書 数式とプログラムをつなげて理解できる",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_a655cacf97a3",
-      "title": "らくがき四コマ",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_a763baec332a",
-      "title": "ナショナルジオグラフィックにわかには信じ",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "ndl",
-          "message": "ndl request failed: This operation was aborted"
-        },
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_a9fd6ed9c5e8",
-      "title": "死なない奴ら",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_af6a9618d5cf",
-      "title": "線型代数学伊吹山",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "ndl",
-          "message": "ndl request failed: This operation was aborted"
-        },
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_b34b35bff923",
-      "title": "トーイック公式問題集",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_bdac9c0a5b6e",
-      "title": "面白くて仕事に役立つ数学",
-      "outcome": "accepted",
-      "accepted_isbn13": "9784797380835",
-      "candidates": [
-        {
-          "isbn13": "9784797380835",
-          "providers": [
-            "ndl",
-            "openbd"
-          ],
-          "best_similarity": 1
-        }
-      ],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_be42faadf0e1",
-      "title": "売れるしくみをつくるマーケットリサーチ大全 元「マクロミル」リサーチディレクターによるあらゆる業種",
+      "work_id": "wrk_ca712aafec58",
+      "title": "Animal Farm",
       "outcome": "no_consensus",
       "accepted_isbn13": null,
       "candidates": [],
@@ -253,13 +59,65 @@
       ]
     },
     {
-      "work_id": "wrk_bed678f84270",
-      "title": "Pythonで動かして学ぶ!あたらしい機械学習の教科書",
+      "work_id": "wrk_cb55c3298df8",
+      "title": "はっぴやー",
+      "outcome": "provider_error",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_ce3b9a97d380",
+      "title": "デザインド・リアリティ",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_cff81dacceaf",
+      "title": "猫のゆりかご",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_d31f81a57683",
+      "title": "物語シリーズ,偽猫黒猫しろ恋傷",
+      "outcome": "provider_error",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_d745bfa9091b",
+      "title": "国境の南太陽の西",
       "outcome": "ambiguous",
       "accepted_isbn13": null,
       "candidates": [
         {
-          "isbn13": "9784798144986",
+          "isbn13": "9784062060813",
           "providers": [
             "ndl",
             "openbd"
@@ -267,15 +125,7 @@
           "best_similarity": 1
         },
         {
-          "isbn13": "9784798159911",
-          "providers": [
-            "ndl",
-            "openbd"
-          ],
-          "best_similarity": 1
-        },
-        {
-          "isbn13": "9784798171494",
+          "isbn13": "9784062630863",
           "providers": [
             "ndl",
             "openbd"
@@ -291,28 +141,20 @@
       ]
     },
     {
-      "work_id": "wrk_bfa7e6c58770",
-      "title": "アトキンス物理化学",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
+      "work_id": "wrk_d7e5f72a2077",
+      "title": "アドルフ",
+      "outcome": "accepted",
+      "accepted_isbn13": "9784334752873",
+      "candidates": [
         {
-          "provider": "ndl",
-          "message": "ndl request failed: This operation was aborted"
-        },
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
+          "isbn13": "9784334752873",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
         }
-      ]
-    },
-    {
-      "work_id": "wrk_c329a384ff37",
-      "title": "マンガでわかる心療内科",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
+      ],
       "provider_errors": [
         {
           "provider": "google_books",
@@ -321,8 +163,8 @@
       ]
     },
     {
-      "work_id": "wrk_c37d93bcf7ba",
-      "title": "TOEIC 究極の模試",
+      "work_id": "wrk_d87d3b804576",
+      "title": "日経エレクトロニクス",
       "outcome": "no_consensus",
       "accepted_isbn13": null,
       "candidates": [],
@@ -334,25 +176,8 @@
       ]
     },
     {
-      "work_id": "wrk_c76de699eebf",
-      "title": "世界史を変えた薬",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "ndl",
-          "message": "ndl request failed: This operation was aborted"
-        },
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_c7a8228ed5fb",
-      "title": "届出一つでお金がもらえる",
+      "work_id": "wrk_d8f1ecc0746e",
+      "title": "美味しい一人ごはん",
       "outcome": "provider_error",
       "accepted_isbn13": null,
       "candidates": [],
@@ -364,39 +189,295 @@
       ]
     },
     {
-      "work_id": "wrk_c80cfcbe79e5",
-      "title": "株のからくり",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "ndl",
-          "message": "ndl request failed: This operation was aborted"
-        },
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_c8a14afdd26f",
-      "title": "ジスにもとづく標準製図法",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_c9d03c3173fa",
-      "title": "クリスチャン分析化学",
+      "work_id": "wrk_d9a82fef9c01",
+      "title": "福祉政治",
       "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_dcd5f3e4683b",
+      "title": "女のいない男たち",
+      "outcome": "ambiguous",
+      "accepted_isbn13": null,
+      "candidates": [
+        {
+          "isbn13": "9784163900742",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        },
+        {
+          "isbn13": "9784167907082",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        }
+      ],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_dd2db3769980",
+      "title": "チャイニーズ・ドリーム",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_e0f57b1b57a2",
+      "title": "植物たちの戦争 病原体との5億年サバイバ",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_e124882e3454",
+      "title": "ブロックチェーン革命",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_e1c21b55c1dd",
+      "title": "数学ガール",
+      "outcome": "ambiguous",
+      "accepted_isbn13": null,
+      "candidates": [
+        {
+          "isbn13": "9784797341379",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        },
+        {
+          "isbn13": "9784840122924",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        },
+        {
+          "isbn13": "9784840125864",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        }
+      ],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_e62f79aa0989",
+      "title": "競争の戦略",
+      "outcome": "accepted",
+      "accepted_isbn13": "9784478371527",
+      "candidates": [
+        {
+          "isbn13": "9784478371527",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        }
+      ],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_e93dcd3ea806",
+      "title": "真空のカラクリ",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_ea0caef99971",
+      "title": "となりの関くん",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_ea367de00771",
+      "title": "三匹のおっさん",
+      "outcome": "ambiguous",
+      "accepted_isbn13": null,
+      "candidates": [
+        {
+          "isbn13": "9784062932035",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        },
+        {
+          "isbn13": "9784101276342",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        },
+        {
+          "isbn13": "9784103018759",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        },
+        {
+          "isbn13": "9784163280004",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        },
+        {
+          "isbn13": "9784167831011",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        }
+      ],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_ebc566e980bf",
+      "title": "高校から大学への憲法",
+      "outcome": "ambiguous",
+      "accepted_isbn13": null,
+      "candidates": [
+        {
+          "isbn13": "9784589031518",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        },
+        {
+          "isbn13": "9784589037411",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        },
+        {
+          "isbn13": "9784589043979",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        }
+      ],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_ede9c0073ff6",
+      "title": "新しい薬をどう作るか",
+      "outcome": "provider_error",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_ee2fac82a018",
+      "title": "お金持ちになれる黄金の羽根の拾い方 知的人生設計のすすめ 2015",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_ef510c5e6a17",
+      "title": "ゼロから分かる民法",
+      "outcome": "provider_error",
       "accepted_isbn13": null,
       "candidates": [],
       "provider_errors": [

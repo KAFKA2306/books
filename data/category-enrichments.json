@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-12T17:19:15.226Z",
+  "updated_at": "2026-08-12T19:30:14.190Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -232,6 +232,18 @@
       "verified_at": "2026-08-08T09:15:33.779Z"
     },
     {
+      "work_id": "wrk_0dd87e8b36e2",
+      "category": "歴史",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "234.075",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000008493044",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-12T19:30:14.190Z"
+    },
+    {
       "work_id": "wrk_0e4bc626c84a",
       "category": "文学・小説",
       "ndc_scheme": "NDC9",
@@ -292,6 +304,18 @@
       "verified_at": "2026-08-11T07:41:14.235Z"
     },
     {
+      "work_id": "wrk_0f0fd7b7742a",
+      "category": "投資・金融",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "338.18",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I025776423",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-12T19:30:14.190Z"
+    },
+    {
       "work_id": "wrk_0fd2a8141935",
       "category": "化学",
       "ndc_scheme": "NDC8",
@@ -326,6 +350,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": "9784479308621",
       "verified_at": "2026-08-08T09:15:33.779Z"
+    },
+    {
+      "work_id": "wrk_131778895881",
+      "category": "宗教・思想",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "165.3",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I028563257",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-12T19:30:14.190Z"
     },
     {
       "work_id": "wrk_13e2fdc11d5e",

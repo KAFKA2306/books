@@ -11,11 +11,17 @@ on:
       - "scripts/build-api.mjs"
       - "scripts/load-catalog.mjs"
       - "src/source-groups.mjs"
+      - "src/title-normalization.mjs"
+      - "src/work-merge.mjs"
+      - "src/bibliographic-display-normalization.mjs"
+      - "src/library-classification.mjs"
       - "data/catalog*"
       - "data/issue-1-books*"
       - "data/kindle/**"
       - "data/isbn-enrichment*"
       - "data/category-enrichment*"
+      - "data/title-normalizations*"
+      - "data/work-merges*"
   push:
     branches: [main]
     paths:
@@ -27,11 +33,17 @@ on:
       - "scripts/build-api.mjs"
       - "scripts/load-catalog.mjs"
       - "src/source-groups.mjs"
+      - "src/title-normalization.mjs"
+      - "src/work-merge.mjs"
+      - "src/bibliographic-display-normalization.mjs"
+      - "src/library-classification.mjs"
       - "data/catalog*"
       - "data/issue-1-books*"
       - "data/kindle/**"
       - "data/isbn-enrichment*"
       - "data/category-enrichment*"
+      - "data/title-normalizations*"
+      - "data/work-merges*"
 
 permissions:
   contents: read

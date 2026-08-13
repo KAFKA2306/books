@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichments.v1",
-  "updated_at": "2026-08-13T04:21:26.706Z",
+  "updated_at": "2026-08-13T15:40:17.299Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -928,6 +928,60 @@
       ],
       "replaces_edition_id": "pending:bdac9c0a5b6e",
       "verified_at": "2026-08-12T04:18:13.856Z"
+    },
+    {
+      "work_id": "wrk_c76de699eebf",
+      "isbn13": "9784062883382",
+      "title": "世界史を変えた薬",
+      "authors": [
+        "佐藤, 健太郎, 1970-",
+        "佐藤, 健太郎, 1970-,佐藤健太郎 著",
+        "佐藤,健太郎,1970-"
+      ],
+      "publisher": "講談社",
+      "published_year": 2015,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I026773772"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784062883382"
+        }
+      ],
+      "replaces_edition_id": "pending:c76de699eebf",
+      "verified_at": "2026-08-13T15:40:17.299Z"
+    },
+    {
+      "work_id": "wrk_c80cfcbe79e5",
+      "isbn13": "9784582853421",
+      "title": "株のからくり",
+      "authors": [
+        "奥村, 宏, 1930-",
+        "奥村, 宏, 1930-,奥村宏 著",
+        "奥村,宏,1930-"
+      ],
+      "publisher": "平凡社",
+      "published_year": 2006,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000008332893"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784582853421"
+        }
+      ],
+      "replaces_edition_id": "pending:c80cfcbe79e5",
+      "verified_at": "2026-08-13T15:40:17.299Z"
     },
     {
       "work_id": "wrk_d7e5f72a2077",

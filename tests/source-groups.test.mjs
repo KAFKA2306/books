@@ -18,6 +18,9 @@ test('detailed registration sources collapse into three public groups', () => {
   assert.equal(normalizeSourceGroup('Kindle購入履歴'), 'Kindle');
   assert.equal(normalizeSourceGroup('Kindleスクリーンショット'), 'Kindle');
   assert.equal(normalizeSourceGroup('電子書籍メモ'), 'Kindle');
+  assert.equal(normalizeSourceGroup('Amazon注文履歴', '単行本'), '紙の本');
+  assert.equal(normalizeSourceGroup('Amazon注文履歴', 'Kindle'), 'Kindle');
+  assert.equal(normalizeSourceGroup('Amazon', 'Paperback'), '紙の本');
   assert.equal(normalizeSourceGroup('蔵書メモ'), '紙の本');
   assert.equal(normalizeSourceGroup('福山市図書館履歴'), '図書館');
 });

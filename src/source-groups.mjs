@@ -1,9 +1,21 @@
 export const SOURCE_GROUPS = Object.freeze(['Kindle', '紙の本', '図書館']);
 
 export function normalizeSourceGroup(source = '', format = '') {
-  const text = `${source ?? ''} ${format ?? ''}`.normalize('NFKC').toLocaleLowerCase('ja');
+  const sourceText = `${source ?? ''}`.normalize('NFKC').toLocaleLowerCase('ja');
+  const formatText = `${format ?? ''}`.normalize('NFKC').toLocaleLowerCase('ja');
+  const text = `${sourceText} ${formatText}`;
+
   if (text.includes('図書館')) return '図書館';
-  if (text.includes('kindle') || text.includes('電子書籍') || text.includes('amazon')) return 'Kindle';
+  if (
+    sourceText.includes('kindle') ||
+    sourceText.includes('電子書籍') ||
+    formatText.includes('kindle') ||
+    formatText.includes('電子書籍') ||
+    formatText.includes('ebook') ||
+    formatText.includes('e-book')
+  ) {
+    return 'Kindle';
+  }
   return '紙の本';
 }
 

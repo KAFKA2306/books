@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-13T07:56:53.521Z",
+  "updated_at": "2026-08-13T13:52:02.963Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -976,6 +976,18 @@
       "verified_at": "2026-08-08T09:46:54.188Z"
     },
     {
+      "work_id": "wrk_2d19d6758ef8",
+      "category": "経営・ビジネス",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "335",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I025769406",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-13T13:52:02.963Z"
+    },
+    {
       "work_id": "wrk_2da15755b49d",
       "category": "経営・会計",
       "ndc_scheme": "NDC10",
@@ -1012,6 +1024,18 @@
       "verified_at": "2026-08-08T13:15:30.887Z"
     },
     {
+      "work_id": "wrk_31f5878f6c1b",
+      "category": "経営・会計",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "336.17",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I031840097",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-13T13:52:02.963Z"
+    },
+    {
       "work_id": "wrk_3237e2f96f34",
       "category": "通貨・物価",
       "ndc_scheme": "NDC10",
@@ -1022,6 +1046,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-08T13:15:30.887Z"
+    },
+    {
+      "work_id": "wrk_3251607f4112",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029065495",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-13T13:52:02.963Z"
     },
     {
       "work_id": "wrk_32c4175f6d41",
@@ -1070,6 +1106,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": "9784396112905",
       "verified_at": "2026-08-08T19:02:39.232Z"
+    },
+    {
+      "work_id": "wrk_36b4ce266c04",
+      "category": "投資・金融",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "338.183",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000009988825",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-13T13:52:02.963Z"
     },
     {
       "work_id": "wrk_3745a66c9c10",
@@ -1130,6 +1178,30 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-08T19:02:39.232Z"
+    },
+    {
+      "work_id": "wrk_39ec01834f19",
+      "category": "地球科学",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "451.85",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000009934524",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-13T13:52:02.963Z"
+    },
+    {
+      "work_id": "wrk_3a1a851926b7",
+      "category": "政治",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "311.7",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I032230028",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-13T13:52:02.963Z"
     },
     {
       "work_id": "wrk_3a5c051662b5",

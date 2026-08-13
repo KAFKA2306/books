@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-13T03:02:29.810Z",
+  "updated_at": "2026-08-13T07:56:53.521Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -508,6 +508,18 @@
       "verified_at": "2026-08-08T09:15:33.779Z"
     },
     {
+      "work_id": "wrk_1d13f8553d6b",
+      "category": "経済",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "332",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000008283617",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-13T07:56:53.521Z"
+    },
+    {
       "work_id": "wrk_1d171e36ecc3",
       "category": "文学・小説",
       "ndc_scheme": "NDC",
@@ -712,6 +724,18 @@
       "verified_at": "2026-08-08T09:38:28.725Z"
     },
     {
+      "work_id": "wrk_20b39a08c2bd",
+      "category": "自己啓発・生き方",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "159",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I026384740",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-13T07:56:53.521Z"
+    },
+    {
       "work_id": "wrk_20f323c253e3",
       "category": "漫画・コミック",
       "ndc_scheme": "NDC9",
@@ -760,6 +784,18 @@
       "verified_at": "2026-08-08T09:46:54.188Z"
     },
     {
+      "work_id": "wrk_2422dd6641a9",
+      "category": "情報通信・ネットワーク",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "547.48",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000003605770",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-13T07:56:53.521Z"
+    },
+    {
       "work_id": "wrk_2471ab860005",
       "category": "医学・健康",
       "ndc_scheme": "NDC10",
@@ -770,6 +806,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": "9784816366031",
       "verified_at": "2026-08-08T09:46:54.188Z"
+    },
+    {
+      "work_id": "wrk_24e810b31631",
+      "category": "投資・金融",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "338.01",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I028688125",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-13T07:56:53.521Z"
     },
     {
       "work_id": "wrk_257665985879",

@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-13T13:52:02.963Z",
+  "updated_at": "2026-08-13T19:29:13.488Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -1276,6 +1276,30 @@
       "verified_at": "2026-08-08T19:02:39.232Z"
     },
     {
+      "work_id": "wrk_3e490567c44a",
+      "category": "映画・演劇",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "778.77",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I032898240",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-13T19:29:13.488Z"
+    },
+    {
+      "work_id": "wrk_3e67e8be5751",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I024169941",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-13T19:29:13.488Z"
+    },
+    {
       "work_id": "wrk_3e6e74f1ea02",
       "category": "投資・金融",
       "ndc_scheme": "NDC9",
@@ -1286,6 +1310,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-09T02:31:56.719Z"
+    },
+    {
+      "work_id": "wrk_3e771e07c8d1",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029317509",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-13T19:29:13.488Z"
     },
     {
       "work_id": "wrk_3edcc2663b55",
@@ -1346,6 +1382,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-09T02:31:56.719Z"
+    },
+    {
+      "work_id": "wrk_4248f138a80d",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I025242459",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-13T19:29:13.488Z"
     },
     {
       "work_id": "wrk_43588768077d",
@@ -1420,6 +1468,18 @@
       "verified_at": "2026-08-12T10:19:19.477Z"
     },
     {
+      "work_id": "wrk_4737ff4a3ce5",
+      "category": "投資・金融",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "338.18",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000011044459",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-13T19:29:13.488Z"
+    },
+    {
       "work_id": "wrk_4835f537ca4c",
       "category": "文学・小説",
       "ndc_scheme": "NDC9",
@@ -1430,6 +1490,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": "9784799319833",
       "verified_at": "2026-08-09T06:08:49.164Z"
+    },
+    {
+      "work_id": "wrk_49533146732d",
+      "category": "電気・電子",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "543",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000011289886",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-13T19:29:13.488Z"
     },
     {
       "work_id": "wrk_499da6de8458",
@@ -1466,6 +1538,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-09T06:08:49.164Z"
+    },
+    {
+      "work_id": "wrk_4aeecb229dd7",
+      "category": "キャリア・労働",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "366.44",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029547493",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-13T19:29:13.488Z"
     },
     {
       "work_id": "wrk_4be151d6635d",

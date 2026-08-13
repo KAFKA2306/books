@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { diagnoseMigration, parseCsv, renderDiagnosisHtml } from '../src/migration-diagnosis.mjs';
+import { diagnoseMigration, parseCsv, parseIsbnList, parseJson, parseMigrationInput, renderDiagnosisHtml } from '../src/migration-diagnosis.mjs';
 
 const catalog = {
   works: [
@@ -15,6 +15,24 @@ const catalog = {
 test('parseCsv handles quoted commas and optional fields', () => {
   const rows = parseCsv('title,isbn,source,price\n"Test, Book",9784102113417,Kindle,1200\n');
   assert.deepEqual(rows, [{ title: 'Test, Book', isbn: '9784102113417', source: 'Kindle', price: '1200' }]);
+});
+
+test('parseJson accepts arrays and an items envelope without inventing fields', () => {
+  assert.deepEqual(parseJson('[{"title":"新しい本","isbn":"9784102113417"}]'), [{ title: '新しい本', isbn: '9784102113417' }]);
+  assert.deepEqual(parseJson('{"items":[{"title":"別の本"}]}'), [{ title: '別の本' }]);
+  assert.throws(() => parseJson('{"title":"not-an-array"}'), /items array/);
+});
+
+test('parseIsbnList ignores blank/comment lines and preserves each ISBN for validation', () => {
+  assert.deepEqual(parseIsbnList('# export\n9784102113417\n\ninvalid-isbn\n'), [
+    { title: '', isbn: '9784102113417' },
+    { title: '', isbn: 'invalid-isbn' },
+  ]);
+});
+
+test('parseMigrationInput rejects unknown formats', () => {
+  assert.deepEqual(parseMigrationInput('title,isbn\nA,9784102113417\n', 'csv'), [{ title: 'A', isbn: '9784102113417' }]);
+  assert.throws(() => parseMigrationInput('x', 'xml'), /Unsupported migration input format/);
 });
 
 test('diagnoseMigration keeps catalog read-only and emits machine-readable reason codes', () => {

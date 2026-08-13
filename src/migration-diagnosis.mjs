@@ -34,6 +34,31 @@ export function parseCsv(text) {
   return rows.slice(1).map((values) => Object.fromEntries(headers.map((header, index) => [header, (values[index] ?? '').trim()])));
 }
 
+export function parseJson(text) {
+  const parsed = JSON.parse(text);
+  const rows = Array.isArray(parsed) ? parsed : parsed?.items;
+  if (!Array.isArray(rows)) throw new Error('JSON input must be an array or an object with an items array.');
+  return rows.map((row, index) => {
+    if (typeof row !== 'object' || row === null || Array.isArray(row)) throw new Error(`JSON row ${index + 1} must be an object.`);
+    return row;
+  });
+}
+
+export function parseIsbnList(text) {
+  return text
+    .split(/\r?\n/)
+    .map((value) => value.trim())
+    .filter((value) => value && !value.startsWith('#'))
+    .map((isbn) => ({ title: '', isbn }));
+}
+
+export function parseMigrationInput(text, format) {
+  if (format === 'csv') return parseCsv(text);
+  if (format === 'json') return parseJson(text);
+  if (format === 'isbn-list') return parseIsbnList(text);
+  throw new Error(`Unsupported migration input format: ${format}`);
+}
+
 function reasonCodes(result) {
   const codes = [];
   const joined = result.errors.join('\n');

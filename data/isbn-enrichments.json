@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichments.v1",
-  "updated_at": "2026-08-14T04:19:09.828Z",
+  "updated_at": "2026-08-14T15:34:30.424Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -83,6 +83,33 @@
       ],
       "replaces_edition_id": "pending:05084368809f",
       "verified_at": "2026-08-07T03:06:02.203Z"
+    },
+    {
+      "work_id": "wrk_0dd87e8b36e2",
+      "isbn13": "9784874983782",
+      "title": "ドイツは過去とどう向き合ってきたか",
+      "authors": [
+        "熊谷, 徹, 1959-",
+        "熊谷, 徹, 1959-,熊谷徹 著",
+        "熊谷,徹,1959-"
+      ],
+      "publisher": "高文研",
+      "published_year": 2007,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000008493044"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784874983782"
+        }
+      ],
+      "replaces_edition_id": "pending:0dd87e8b36e2",
+      "verified_at": "2026-08-14T15:34:30.424Z"
     },
     {
       "work_id": "wrk_0fd2a8141935",
@@ -218,6 +245,33 @@
       ],
       "replaces_edition_id": "pending:25b63cbadfa5",
       "verified_at": "2026-08-07T15:37:42.258Z"
+    },
+    {
+      "work_id": "wrk_3564709c22d4",
+      "isbn13": "9784808611842",
+      "title": "ゲナウ! : コミュニケーションのドイツ語",
+      "authors": [
+        "新倉, 真矢子",
+        "新倉, 真矢子,新倉真矢子, 亀ヶ谷昌秀, 正木晶子, 中野有希子 著",
+        "新倉,真矢子"
+      ],
+      "publisher": "第三書房",
+      "published_year": 2010,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000010707508"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784808611842"
+        }
+      ],
+      "replaces_edition_id": "pending:3564709c22d4",
+      "verified_at": "2026-08-14T15:34:30.424Z"
     },
     {
       "work_id": "wrk_35a30202a75b",

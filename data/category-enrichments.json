@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-14T03:01:35.678Z",
+  "updated_at": "2026-08-14T07:54:19.629Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -1708,6 +1708,18 @@
       "verified_at": "2026-08-09T06:12:00.737Z"
     },
     {
+      "work_id": "wrk_5596a41ca215",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I024903649",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-14T07:54:19.629Z"
+    },
+    {
       "work_id": "wrk_56904e57fd9e",
       "category": "動物",
       "ndc_scheme": "NDC9",
@@ -1732,6 +1744,18 @@
       "verified_at": "2026-08-09T06:15:21.558Z"
     },
     {
+      "work_id": "wrk_574a5f923eb7",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "913.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000004212519",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-14T07:54:19.629Z"
+    },
+    {
       "work_id": "wrk_58044931e891",
       "category": "文学・小説",
       "ndc_scheme": "NDC10",
@@ -1754,6 +1778,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-09T06:15:21.558Z"
+    },
+    {
+      "work_id": "wrk_59d257c19856",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I027147610",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-14T07:54:19.629Z"
     },
     {
       "work_id": "wrk_59d37c43a7e4",
@@ -1814,6 +1850,30 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-09T06:15:21.558Z"
+    },
+    {
+      "work_id": "wrk_5bfe1c982889",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I027725577",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-14T07:54:19.629Z"
+    },
+    {
+      "work_id": "wrk_5c12756b6ef5",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I028963839",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-14T07:54:19.629Z"
     },
     {
       "work_id": "wrk_5dd781a876f6",

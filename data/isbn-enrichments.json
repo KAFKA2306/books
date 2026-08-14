@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichments.v1",
-  "updated_at": "2026-08-13T15:40:17.299Z",
+  "updated_at": "2026-08-14T04:19:09.828Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -1038,6 +1038,37 @@
       ],
       "replaces_edition_id": "pending:e62f79aa0989",
       "verified_at": "2026-08-12T15:40:24.731Z"
+    },
+    {
+      "work_id": "wrk_f3f3b2d74275",
+      "isbn13": "9784431710592",
+      "title": "気候変動 : 多角的視点から",
+      "authors": [
+        "Burroughs, William James",
+        "松野, 太郎, 1934-",
+        "大淵, 済",
+        "谷本, 陽一, 1966-",
+        "向川, 均",
+        "Burroughs, William James,松野, 太郎, 1934-,大淵, 済,谷本, 陽一, 1966-,向川, 均,W.J.バローズ 著,松野太郎 監訳,大淵済, 谷本陽一, 向川均 訳",
+        "Burroughs,WilliamJames 松野,太郎,1934- 大淵,済 谷本,陽一,1966- ほか"
+      ],
+      "publisher": "シュプリンガー・フェアラーク東京",
+      "published_year": 2003,
+      "format": null,
+      "language": "ja",
+      "title_similarity": 1,
+      "sources": [
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000004310445"
+        },
+        {
+          "provider": "openbd",
+          "url": "https://api.openbd.jp/v1/get?isbn=9784431710592"
+        }
+      ],
+      "replaces_edition_id": "pending:f3f3b2d74275",
+      "verified_at": "2026-08-14T04:19:09.828Z"
     }
   ]
 }

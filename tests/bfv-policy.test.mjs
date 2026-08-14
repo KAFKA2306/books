@@ -44,9 +44,11 @@ test('ingestion rules bind policy to canonical repository commands and evidence'
 });
 
 test('README keeps Work, Edition, and Holding as the canonical identity layers', () => {
-  for (const layer of ['### Work', '### Edition', '### Holding']) {
-    assert.ok(readme.includes(layer), `missing canonical layer documentation: ${layer}`);
-  }
+  assert.match(
+    readme,
+    /作品（Work）・版（Edition）・所蔵（Holding）/u,
+    'README must document Work, Edition, and Holding together as distinct canonical concepts',
+  );
 });
 
 test('non-canonical weekly research workflow stays removed', async () => {

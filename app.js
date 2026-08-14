@@ -22,9 +22,12 @@ function installVisibilityHistoryGuard() {
 function normalizeLegacySourceUrl() {
   const url = new URL(window.location.href);
   const sources = url.searchParams.getAll('source');
-  if (!sources.length) return;
-
   const normalized = [...new Set(sources.map((source) => normalizeSourceGroup(source)))];
+
+  if (url.searchParams.get('view') === 'list' && normalized.length === 0) {
+    normalized.push('Kindle');
+  }
+
   const unchanged = normalized.length === sources.length
     && normalized.every((value, index) => value === sources[index]);
   if (unchanged) return;

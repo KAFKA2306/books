@@ -21,7 +21,7 @@ const reportPath = path.join(root, 'data/category-enrichment-report.json');
 const args = parseArgs(process.argv.slice(2));
 const now = new Date();
 const nowIso = now.toISOString();
-const requestTimeoutMs = 15_000;
+const requestTimeoutMs = 30_000;
 const requestAttempts = 2;
 const requestIntervalMs = 350;
 

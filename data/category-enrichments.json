@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-14T13:48:05.034Z",
+  "updated_at": "2026-08-15T01:52:36.924Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -1084,6 +1084,18 @@
       "verified_at": "2026-08-13T13:52:02.963Z"
     },
     {
+      "work_id": "wrk_32c03c4482bc",
+      "category": "キャリア・労働",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "366.04",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I030127980",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-15T01:52:36.924Z"
+    },
+    {
       "work_id": "wrk_32c4175f6d41",
       "category": "資源・金属",
       "ndc_scheme": "NDC9",
@@ -2104,6 +2116,18 @@
       "verified_at": "2026-08-09T19:05:32.870Z"
     },
     {
+      "work_id": "wrk_6a63163a8819",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I027811659",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-15T01:52:36.924Z"
+    },
+    {
       "work_id": "wrk_6b17eea1bf27",
       "category": "投資・金融",
       "ndc_scheme": "NDC10",
@@ -2150,6 +2174,66 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-09T19:05:32.870Z"
+    },
+    {
+      "work_id": "wrk_6c2b943bc70f",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I030552443",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-15T01:52:36.924Z"
+    },
+    {
+      "work_id": "wrk_6c453b5621d5",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029125898",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-15T01:52:36.924Z"
+    },
+    {
+      "work_id": "wrk_6dc03f6caf10",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I031192187",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-15T01:52:36.924Z"
+    },
+    {
+      "work_id": "wrk_6de33da08ea5",
+      "category": "投資・金融",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "338.253",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I033100610",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-15T01:52:36.924Z"
+    },
+    {
+      "work_id": "wrk_6e015a33acd6",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I028963839",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-15T01:52:36.924Z"
     },
     {
       "work_id": "wrk_6e797dd35af8",
@@ -2234,6 +2318,30 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-10T02:37:41.838Z"
+    },
+    {
+      "work_id": "wrk_714179f784a9",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I023631913",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-15T01:52:36.924Z"
+    },
+    {
+      "work_id": "wrk_715fbb187207",
+      "category": "技術・工学",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "509.5",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I032071405",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-15T01:52:36.924Z"
     },
     {
       "work_id": "wrk_720b2b880059",

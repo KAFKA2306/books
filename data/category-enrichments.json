@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-15T01:52:36.924Z",
+  "updated_at": "2026-08-15T07:00:56.895Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -1708,6 +1708,18 @@
       "verified_at": "2026-08-09T06:12:00.737Z"
     },
     {
+      "work_id": "wrk_51f62a2664ed",
+      "category": "投資・金融",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "338.8",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I028965584",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-15T07:00:56.895Z"
+    },
+    {
       "work_id": "wrk_53301e5e0212",
       "category": "伝記・人物",
       "ndc_scheme": "NDC10",
@@ -2356,6 +2368,18 @@
       "verified_at": "2026-08-10T02:37:41.838Z"
     },
     {
+      "work_id": "wrk_721efb5356be",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000011262258",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-15T07:00:56.895Z"
+    },
+    {
       "work_id": "wrk_724b23a54dad",
       "category": "哲学・思想",
       "ndc_scheme": "NDC10",
@@ -2378,6 +2402,54 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": "9784061545052",
       "verified_at": "2026-08-10T02:37:41.838Z"
+    },
+    {
+      "work_id": "wrk_7395651f3beb",
+      "category": "投資・金融",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "338.183",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000010660169",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-15T07:00:56.895Z"
+    },
+    {
+      "work_id": "wrk_7422084227ac",
+      "category": "医学・健康",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "493.7",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000002563723",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-15T07:00:56.895Z"
+    },
+    {
+      "work_id": "wrk_7434207da002",
+      "category": "投資・金融",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "338.183",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I025072602",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-15T07:00:56.895Z"
+    },
+    {
+      "work_id": "wrk_7497372784f2",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029392403",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-15T07:00:56.895Z"
     },
     {
       "work_id": "wrk_758efbe3fe19",
@@ -2462,6 +2534,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-10T08:08:44.347Z"
+    },
+    {
+      "work_id": "wrk_79a111fcbc6a",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000010848602",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-15T07:00:56.895Z"
     },
     {
       "work_id": "wrk_7a31a9843187",

@@ -68,6 +68,7 @@ const selectionState = {
   attempts: Object.fromEntries(Object.entries(state.attempts ?? {}).map(([workId, attempt]) => [
     workId,
     attempt?.title_normalization_version === CATEGORY_TITLE_NORMALIZATION_VERSION
+      && attempt?.source_data_provider === ndlDataProvider
       ? attempt
       : { ...attempt, next_attempt_at: null },
   ])),
@@ -134,6 +135,7 @@ for (let index = 0; index < selected.length; index += 1) {
     outcome,
     next_attempt_at: categoryRetryAfter(outcome, now),
     title_normalization_version: CATEGORY_TITLE_NORMALIZATION_VERSION,
+    source_data_provider: ndlDataProvider,
     category: decision?.accepted?.category ?? null,
     ndc_scheme: decision?.accepted?.ndc_scheme ?? null,
     ndc_code: decision?.accepted?.ndc_code ?? null,

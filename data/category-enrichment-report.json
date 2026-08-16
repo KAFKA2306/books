@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.category-enrichment-report.v1",
-  "generated_at": "2026-08-16T08:40:15.721Z",
+  "generated_at": "2026-08-16T13:03:46.608Z",
   "rule_version": "ndc-map-v1",
   "policy": {
     "source": "National Diet Library Search OpenSearch API",
@@ -20,16 +20,16 @@
   "summary": {
     "attempted": 25,
     "accepted": 0,
-    "ambiguous": 1,
-    "no_ndc": 1,
-    "no_candidate": 23,
+    "ambiguous": 0,
+    "no_ndc": 0,
+    "no_candidate": 25,
     "provider_error": 0
   },
   "results": [
     {
-      "work_id": "wrk_0ebd6e295f2a",
-      "title": "【第2話】やり直し姫は夫と恋したい: 恋をしたから",
-      "lookup_title": "【第2話】やり直し姫は夫と恋したい: 恋をしたから",
+      "work_id": "wrk_1be6ae79a812",
+      "title": "一度読んだら絶対に忘れない世界史の教科書【経済編】 公立高校教師YouTuberが書いた",
+      "lookup_title": "一度読んだら絶対に忘れない世界史の教科書【経済編】 公立高校教師YouTuberが書いた",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -40,9 +40,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_0f4b29b00464",
-      "title": "ワーク・シフト 孤独と貧困から自由になる働き方の未来図",
-      "lookup_title": "ワーク・シフト 孤独と貧困から自由になる働き方の未来図",
+      "work_id": "wrk_1c4c00263baa",
+      "title": "Dr.クロワッサン 痛みが消える「きくち体操」",
+      "lookup_title": "Dr.クロワッサン 痛みが消える「きくち体操」",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -53,9 +53,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_0fa235bfee6c",
-      "title": "Pro Git (English Edition)",
-      "lookup_title": "Pro Git",
+      "work_id": "wrk_1ca55d657738",
+      "title": "秘書検定二級",
+      "lookup_title": "秘書検定二級",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -66,9 +66,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_0fb53b63a6a7",
-      "title": "図解でわかる多変量解析 データの山から本",
-      "lookup_title": "図解でわかる多変量解析 データの山から本",
+      "work_id": "wrk_1cc66d2883cc",
+      "title": "3D彼女 リアルガール 新装版(3) (デザートコミックス)",
+      "lookup_title": "3D彼女 リアルガール 新装版",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -79,9 +79,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_103ce5ed6887",
-      "title": "ここからはオトナの時間です。(1) (コイパレ)",
-      "lookup_title": "ここからはオトナの時間です。(1) (コイパレ)",
+      "work_id": "wrk_1f6f102b49c4",
+      "title": "その子、発達障害ではありません IN-C",
+      "lookup_title": "その子、発達障害ではありません IN-C",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -92,9 +92,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_103fbef17520",
-      "title": "「その日暮らし」の人類学~もう一つの資本主義経済~ (光文社新書)",
-      "lookup_title": "「その日暮らし」の人類学~もう一つの資本主義経済~",
+      "work_id": "wrk_1f797f0d6f9f",
+      "title": "大学生物学の教科書",
+      "lookup_title": "大学生物学の教科書",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -105,9 +105,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_10bc7fa30417",
-      "title": "蜘蛛の糸",
-      "lookup_title": "蜘蛛の糸",
+      "work_id": "wrk_212113280dcc",
+      "title": "若い読者のためのアメリカ史 【イェール大学出版局 リトル・ヒストリー】",
+      "lookup_title": "若い読者のためのアメリカ史 【イェール大学出版局 リトル・ヒストリー】",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -118,22 +118,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_117eec18ff40",
-      "title": "一問一答面接攻略",
-      "lookup_title": "一問一答面接攻略",
-      "outcome": "no_ndc",
-      "category": null,
-      "ndc_scheme": null,
-      "ndc_code": null,
-      "source_isbn13": null,
-      "match_mode": null,
-      "matches": 3,
-      "provider_error": null
-    },
-    {
-      "work_id": "wrk_12ca3c015602",
-      "title": "ＣＩＴＹ",
-      "lookup_title": "CITY",
+      "work_id": "wrk_21f677672743",
+      "title": "電子書籍制作者のためのCSSスタイル&色見本 (English Edition)",
+      "lookup_title": "電子書籍制作者のためのCSSスタイル&色見本",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -144,9 +131,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_134a1523dac4",
-      "title": "亜人(1) (アフタヌーンコミックス)",
-      "lookup_title": "亜人",
+      "work_id": "wrk_2250b995f41a",
+      "title": "山崎元のライフマネジメント",
+      "lookup_title": "山崎元のライフマネジメント",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -157,9 +144,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_137c419e576e",
-      "title": "【第8話】やり直し姫は夫と恋したい: 走る姫",
-      "lookup_title": "【第8話】やり直し姫は夫と恋したい: 走る姫",
+      "work_id": "wrk_234b6fa5c521",
+      "title": "世界ナンバーワンのコンサルティングファームのルール",
+      "lookup_title": "世界ナンバーワンのコンサルティングファームのルール",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -170,9 +157,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_14a2d58c0fb5",
-      "title": "An Introduction to Nonlinear Optimization Theory (English Edition)",
-      "lookup_title": "An Introduction to Nonlinear Optimization Theory",
+      "work_id": "wrk_2431ce1690ff",
+      "title": "決定版 図説 旧約・新約聖書 この一冊で聖書がまるごとわかる!",
+      "lookup_title": "決定版 図説 旧約・新約聖書 この一冊で聖書がまるごとわかる!",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -183,9 +170,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_14e018611a77",
-      "title": "ニュートン",
-      "lookup_title": "ニュートン",
+      "work_id": "wrk_248c55a16ac5",
+      "title": "ブルー・オーシャン戦略 競争のない世界を",
+      "lookup_title": "ブルー・オーシャン戦略 競争のない世界を",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -196,9 +183,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_15edeb5db3c8",
-      "title": "未来へ広がるサイエンス2",
-      "lookup_title": "未来へ広がるサイエンス2",
+      "work_id": "wrk_24c8f340eb10",
+      "title": "若い読者のための経済学史 【イェール大学出版局 リトル・ヒストリー】",
+      "lookup_title": "若い読者のための経済学史 【イェール大学出版局 リトル・ヒストリー】",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -209,9 +196,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_1617f54c083d",
-      "title": "やめてみた。 本当に必要なものが見えてくる",
-      "lookup_title": "やめてみた。 本当に必要なものが見えてくる",
+      "work_id": "wrk_25021ec103c9",
+      "title": "われわれはなぜ嘘つきで自信過剰でお人好しなのか",
+      "lookup_title": "われわれはなぜ嘘つきで自信過剰でお人好しなのか",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -222,9 +209,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_162e59ae9be7",
-      "title": "対TOPIX業種指数チャートの動きに乗る",
-      "lookup_title": "対TOPIX業種指数チャートの動きに乗る",
+      "work_id": "wrk_26ce8cb3c094",
+      "title": "Measure, Integration & Real Analysis (Graduate Texts in Mathematics Book 282) (English Edition)",
+      "lookup_title": "Measure, Integration & Real Analysis",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -235,9 +222,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_16f96c1f1b56",
-      "title": "婚約未遂 ~今夜、婚約者の弟に抱かれます~ 1話 【単話売】 婚約未遂 ~今夜、婚約者の弟に抱かれます~ 【単話売】 (恋愛白書シェリーKiss)",
-      "lookup_title": "婚約未遂 ~今夜、婚約者の弟に抱かれます~ 1話 【単話売】 婚約未遂 ~今夜、婚約者の弟に抱かれます~ 【単話売】 (恋愛白書シェリーKiss)",
+      "work_id": "wrk_2b14a74854ca",
+      "title": "2人だけのオフ会に大人なおねえさんがきた【1巻】",
+      "lookup_title": "2人だけのオフ会に大人なおねえさんがきた【1巻】",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -248,9 +235,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_1728177c7677",
-      "title": "41歳の通訳者が15年ぶりに本気で取り組んだ英語学習法 君は心躍る英語に触れているか! GOTCHA!新書",
-      "lookup_title": "41歳の通訳者が15年ぶりに本気で取り組んだ英語学習法 君は心躍る英語に触れているか! GOTCHA!新書",
+      "work_id": "wrk_2b296d57c116",
+      "title": "3D彼女 リアルガール 新装版(2) (デザートコミックス)",
+      "lookup_title": "3D彼女 リアルガール 新装版",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -261,9 +248,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_17684c5c17d7",
-      "title": "賭けの考え方 カジノブックシリーズ",
-      "lookup_title": "賭けの考え方 カジノブックシリーズ",
+      "work_id": "wrk_2d1960f75a91",
+      "title": "【第29話】やり直し姫は夫と恋したい: 七つ首",
+      "lookup_title": "【第29話】やり直し姫は夫と恋したい: 七つ首",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -274,9 +261,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_17e91f1c6ac4",
-      "title": "めしにしましょう(2) 【電子限定カラーレシピ付き】 (イブニングコミックス)",
-      "lookup_title": "めしにしましょう(2) 【電子限定カラーレシピ付き】",
+      "work_id": "wrk_2d4f9a75b3b8",
+      "title": "消えた巨大生物 スーパービジュアル再現",
+      "lookup_title": "消えた巨大生物 スーパービジュアル再現",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -287,9 +274,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_18d2ce5a28b3",
-      "title": "東レ改訂版井上",
-      "lookup_title": "東レ改訂版井上",
+      "work_id": "wrk_2daa7d156ef4",
+      "title": "基礎からわかる電磁気学",
+      "lookup_title": "基礎からわかる電磁気学",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -300,9 +287,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_19005b022805",
-      "title": "地球外生命9つの論点",
-      "lookup_title": "地球外生命9つの論点",
+      "work_id": "wrk_2dc40b70c574",
+      "title": "会計クイズを解くだけで財務3表がわかる",
+      "lookup_title": "会計クイズを解くだけで財務3表がわかる",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -313,9 +300,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_1966565cbcba",
-      "title": "DXビジネスモデル 80事例に学ぶ利益を生み出す攻めの戦略 できるビジネスシリーズ",
-      "lookup_title": "DXビジネスモデル 80事例に学ぶ利益を生み出す攻めの戦略 できるビジネスシリーズ",
+      "work_id": "wrk_2de7beacc4da",
+      "title": "方丈記",
+      "lookup_title": "方丈記",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -326,9 +313,9 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_1b50d2eba14f",
-      "title": "亜人(3) (アフタヌーンコミックス)",
-      "lookup_title": "亜人",
+      "work_id": "wrk_2e2edf4d0577",
+      "title": "話す英語 実戦力徹底トレーニング",
+      "lookup_title": "話す英語 実戦力徹底トレーニング",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -339,16 +326,29 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_1b6c3175e9cf",
-      "title": "よくわからないけれど異世界に転生していたようです(1) (シリウスコミックス)",
-      "lookup_title": "よくわからないけれど異世界に転生していたようです",
-      "outcome": "ambiguous",
+      "work_id": "wrk_2e70ec50cf7c",
+      "title": "裸はいつから恥ずかしくなったか ──「裸体」の日本近代史 (ちくま文庫)",
+      "lookup_title": "裸はいつから恥ずかしくなったか ──「裸体」の日本近代史",
+      "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
       "source_isbn13": null,
       "match_mode": null,
-      "matches": 20,
+      "matches": 0,
+      "provider_error": null
+    },
+    {
+      "work_id": "wrk_30971b711d93",
+      "title": "大人の発達障害&HSP 困りごとがスッキリ! 生きづらさを感じるあなたが自分らしく生きられるヒント",
+      "lookup_title": "大人の発達障害&HSP 困りごとがスッキリ! 生きづらさを感じるあなたが自分らしく生きられるヒント",
+      "outcome": "no_candidate",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "match_mode": null,
+      "matches": 0,
       "provider_error": null
     }
   ]

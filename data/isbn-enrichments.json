@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichments.v1",
-  "updated_at": "2026-08-15T14:59:42.531Z",
+  "updated_at": "2026-08-16T03:13:48.466Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",

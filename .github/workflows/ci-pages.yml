@@ -53,11 +53,6 @@ jobs:
           test ! -e data/catalog.debug.json
           test ! -e data/raw.json
           test ! -e data/source_records.json
-      - name: Verify clean checkout
-        run: |
-          git reset --hard HEAD
-          git clean -fdx
-          test -z "$(git status --porcelain --untracked-files=all)"
 
   deploy:
     if: github.event_name != 'pull_request'

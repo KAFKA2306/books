@@ -1,0 +1,22 @@
+{
+  "schema": "kafka.books.category-enrichments.v1",
+  "rule_version": "ndc-map-v1",
+  "updated_at": "2026-08-16T00:00:00.000Z",
+  "records": [
+    {
+      "work_id": "wrk_012b6febd3c5",
+      "category": "コンピュータ・AI",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "007.13",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I028568441",
+      "match_mode": "primary_bibliographic_record",
+      "title_similarity": null,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-16T00:00:00.000Z",
+      "source_title": "これならわかる深層学習入門",
+      "source_series": "機械学習スタートアップシリーズ",
+      "source_bibliographic_id": "028568441"
+    }
+  ]
+}

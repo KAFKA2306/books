@@ -24,6 +24,7 @@ const nowIso = now.toISOString();
 const requestTimeoutMs = 30_000;
 const requestAttempts = 2;
 const requestIntervalMs = 350;
+const ndlDataProvider = 'iss-ndl-opac';
 
 const catalog = await loadCatalog(root);
 const overlay = await readJson(overlayPath, {
@@ -55,9 +56,6 @@ for (const edition of catalog.editions) {
 
 const results = [];
 const acceptedByWork = new Map(overlay.records.map((record) => [record.work_id, record]));
-// The existing helper selects `未分類` works. For standards enrichment we also need
-// NDC evidence for works that already have a hand-curated display category. Treat only
-// works without an accepted NDC record as due, without changing their canonical category.
 const selectionCatalog = {
   ...catalog,
   works: catalog.works.map((work) => ({
@@ -65,9 +63,6 @@ const selectionCatalog = {
     category: acceptedByWork.has(work.work_id) ? '__classification_complete__' : '未分類',
   })),
 };
-// A stricter/newer title normalizer can make a previous no_candidate result searchable.
-// Retry those records immediately once per normalization version instead of waiting for
-// the ordinary 14/30-day backoff. Accepted evidence is still excluded above.
 const selectionState = {
   ...state,
   attempts: Object.fromEntries(Object.entries(state.attempts ?? {}).map(([workId, attempt]) => [
@@ -171,6 +166,7 @@ const report = {
   policy: {
     source: 'National Diet Library Search OpenSearch API',
     source_endpoint: 'https://ndlsearch.ndl.go.jp/api/opensearch',
+    source_data_provider: ndlDataProvider,
     category_source: 'NDC classification mapped by explicit deterministic rules',
     standard_classification_source: 'source-reported NDC code is retained without cross-version conversion',
     isbn_match_preferred: true,
@@ -220,7 +216,7 @@ function parseArgs(values) {
 
 async function searchNdl({ isbn = null, title = null }) {
   const url = new URL('https://ndlsearch.ndl.go.jp/api/opensearch');
-  const params = new URLSearchParams({ cnt: '20', dpid: 'iss-ndl-opac-national' });
+  const params = new URLSearchParams({ cnt: '20', dpid: ndlDataProvider });
   if (isbn) params.set('isbn', isbn);
   else if (title) params.set('title', title);
   else throw new Error('NDL search requires isbn or title');

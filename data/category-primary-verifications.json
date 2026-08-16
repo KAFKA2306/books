@@ -17,21 +17,6 @@
       "source_title": "これならわかる深層学習入門",
       "source_series": "機械学習スタートアップシリーズ",
       "source_bibliographic_id": "028568441"
-    },
-    {
-      "work_id": "wrk_061c2026e958",
-      "category": "政治",
-      "ndc_scheme": "NDC10",
-      "ndc_code": "316.8",
-      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I030339360",
-      "match_mode": "primary_bibliographic_record",
-      "title_similarity": 1,
-      "rule_version": "ndc-map-v1",
-      "source_isbn13": null,
-      "verified_at": "2026-08-16T00:00:00.000Z",
-      "source_title": "レイシズム",
-      "source_series": "講談社学術文庫 ; 2570",
-      "source_bibliographic_id": "030339360"
     }
   ]
 }

@@ -1,6 +1,6 @@
 # Book ingestion and normalization rules
 
-This document is the operational ingestion contract referenced by `AGENTS.md`. It records the repository's existing canonical behavior instead of creating a second normalization implementation.
+This document records the repository's existing ingestion behavior and the paths that implement it. `AGENTS.md` points here instead of repeating these rules.
 
 ## Canonical paths
 
@@ -15,7 +15,7 @@ This document is the operational ingestion contract referenced by `AGENTS.md`. I
 
 Use `canonicalIsbn13()` from `src/catalog.mjs`; do not implement another formatter in an ingestion path.
 
-The current contract is:
+The current behavior is:
 
 1. Strip non-ISBN punctuation through the existing normalizer.
 2. Validate ISBN-10 before converting it to ISBN-13.
@@ -32,7 +32,7 @@ The International ISBN Agency states that ISBNs assigned since 1 January 2007 co
 
 ## Duplicate decisions
 
-`precheckCandidates()` is authoritative for candidate imports. Preserve its machine-readable result rather than replacing a blocked decision with an undocumented manual choice.
+Use `precheckCandidates()` for candidate imports. Preserve its machine-readable result rather than replacing a blocked decision with an undocumented manual choice.
 
 Current decision boundaries include:
 
@@ -66,7 +66,7 @@ Do not invent a source URL, acquisition date, ISBN, edition, or format to satisf
 
 ## Automated ISBN enrichment
 
-The existing ISBN enrichment process is stricter than a single-source lookup: the repository requires a valid ISBN-13, high title similarity, agreement from at least two providers, a unique qualifying ISBN, an eligible single unverified non-digital Edition, and duplicate/reference validation before adoption. Keep those guards intact.
+The existing ISBN enrichment process is stricter than a single-source lookup: the repository requires a valid ISBN-13, high title similarity, agreement from at least two providers, a unique qualifying ISBN, an eligible single unverified non-digital Edition, and duplicate/reference validation before adoption. Keep those checks intact.
 
 The current public-source documentation is in `docs/isbn-enrichment.md`. Enrichment changes must retain adopted-source evidence and the attempt/report state, then pass `npm run check` before publication.
 
@@ -78,23 +78,21 @@ Only a `purchase` becomes a Kindle Holding. Sample, Prime, dictionary, and unkno
 
 ## Rollback
 
-Canonical ingestion changes must be reviewable in Git. To rollback:
+Catalog and ingestion changes must be reviewable in Git. To roll back:
 
 1. Revert the commit/PR that introduced the catalog or overlay change.
 2. Do not delete older evidence merely because the current decision changed.
 3. Re-run `npm run check` and regenerate API artifacts through the existing build path.
 4. Confirm the resulting diff returns to the previous known-good catalog/evidence state.
 
-A rollback that requires guessing old values or reconstructing deleted provenance fails the Operational Contract.
+A rollback that requires guessing old values or reconstructing deleted provenance is not acceptable.
 
-## BFV review checklist
+## Verification before merge
 
-For every proposed ingestion change, record a Claim and the acceptance criterion it makes provable. Apply the Deletion Test from `AGENTS.md`: if removing the change leaves ISBN reproducibility, duplicate auditability, rollback, and provenance all provable, reject the change as unnecessary.
-
-Required verification before merge:
+Run:
 
 ```bash
 npm run check
 ```
 
-When the change contains import candidates, also preserve/review the `catalog:precheck` result. Stop once the requested outcome is proven; unrelated normalization cleanup belongs in a separate issue.
+When the change contains import candidates, also preserve and review the `catalog:precheck` result. Keep unrelated normalization or cleanup work in a separate issue.

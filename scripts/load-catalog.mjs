@@ -19,6 +19,30 @@ async function readJsonIfPresent(filePath) {
   }
 }
 
+function mergeCategoryOverlays(automated, primary) {
+  const recordsByWork = new Map();
+  for (const overlay of [automated, primary]) {
+    for (const record of overlay?.records ?? []) {
+      const existing = recordsByWork.get(record.work_id);
+      if (existing) {
+        const sameClassification = existing.ndc_scheme === record.ndc_scheme
+          && existing.ndc_code === record.ndc_code
+          && existing.category === record.category;
+        if (!sameClassification) {
+          throw new Error(`Conflicting category evidence for ${record.work_id}`);
+        }
+        continue;
+      }
+      recordsByWork.set(record.work_id, record);
+    }
+  }
+  return {
+    schema: 'kafka.books.category-enrichments.v1',
+    rule_version: 'ndc-map-v1',
+    records: [...recordsByWork.values()].sort((a, b) => a.work_id.localeCompare(b.work_id)),
+  };
+}
+
 async function decodeLegacyParts(root, manifestName) {
   const manifest = JSON.parse(await fs.readFile(path.join(root, 'data', manifestName), 'utf8'));
   const chunks = await Promise.all(
@@ -125,11 +149,17 @@ export async function loadCatalog(root = process.cwd()) {
   );
   merged = applyIsbnEnrichments(merged, isbnOverlay);
 
-  const categoryOverlay = await readJsonIfPresent(path.join(root, 'data/category-enrichments.json')) ?? {
+  const automatedCategoryOverlay = await readJsonIfPresent(path.join(root, 'data/category-enrichments.json')) ?? {
     schema: 'kafka.books.category-enrichments.v1',
     rule_version: 'ndc-map-v1',
     records: [],
   };
+  const primaryCategoryOverlay = await readJsonIfPresent(path.join(root, 'data/category-primary-verifications.json')) ?? {
+    schema: 'kafka.books.category-enrichments.v1',
+    rule_version: 'ndc-map-v1',
+    records: [],
+  };
+  const categoryOverlay = mergeCategoryOverlays(automatedCategoryOverlay, primaryCategoryOverlay);
   merged = applyCategoryEnrichments(merged, categoryOverlay);
 
   const titleOverlay = await readJsonIfPresent(path.join(root, 'data/title-normalizations.json')) ?? {

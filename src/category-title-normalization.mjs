@@ -1,4 +1,4 @@
-export const CATEGORY_TITLE_NORMALIZATION_VERSION = 'bibliographic-suffix-v5';
+export const CATEGORY_TITLE_NORMALIZATION_VERSION = 'bibliographic-suffix-v6';
 
 const TRAILING_SERIES_LABEL = /\s*[（(][^()（）]{0,80}(?:コミックス?|コミック|文庫|新書|叢書|シリーズ)[^()（）]*[)）]\s*$/u;
 const TRAILING_PAREN_VOLUME = /\s*[（(]\s*(?:第\s*)?\d+(?:\.\d+)?\s*(?:巻|話)?\s*[)）]\s*$/u;
@@ -6,6 +6,8 @@ const TRAILING_JAPANESE_VOLUME = /\s+第?\s*\d+(?:\.\d+)?\s*巻\s*$/u;
 const TRAILING_PLAIN_VOLUME = /\s+\d+(?:\.\d+)?\s*$/u;
 const TRAILING_RETAIL_EDITION = /\s*[（(]\s*(?:English Edition|Kindle版|電子書籍版)\s*[)）]\s*$/iu;
 const TRAILING_ENGLISH_SERIES_VOLUME = /\s*[（(][^()（）]{0,80}\bBook\s+\d+(?:\.\d+)?\s*[)）]\s*$/iu;
+const TRAILING_RETAIL_PUBLISHER = /\s*[（(][^()（）]{1,48}(?:書房|出版社?|出版局|ブックス)[)）]\s*$/u;
+const RETAIL_QUOTED_MAIN_WITH_SUBTITLE = /^(.*?[」』】][^\s]{1,20})\s+\S.{3,}$/u;
 const INLINE_LIMITED_FREE_LABEL = /\s*【\s*期間限定無料(?:版)?\s*】\s*/gu;
 const HAS_INLINE_LIMITED_FREE_LABEL = /【\s*期間限定無料(?:版)?\s*】/u;
 const RETAIL_MONOCHROME_LABEL = /(?:^|\s)モノクロ版(?=\s|【|$)/gu;
@@ -25,10 +27,22 @@ export function normalizeCategoryLookupTitle(value) {
   let title = String(value ?? '').normalize('NFKC').replace(/\s+/gu, ' ').trim();
   if (!title) return '';
 
+  const hadRetailPublisherSuffix = TRAILING_RETAIL_PUBLISHER.test(title);
+  if (hadRetailPublisherSuffix) title = title.replace(TRAILING_RETAIL_PUBLISHER, '').trim();
+
   // NDL often serializes subtitles with a spaced colon, while retailer titles can use
   // a Japanese horizontal bar or double dash for the same boundary. Strip only when
   // the main title is already substantial; short punctuation-bearing titles stay intact.
   title = stripBibliographicSubtitle(title);
+
+  // Some retailer exports append a publisher in parentheses and flatten NDL's subtitle
+  // separator into a plain space. Only after a publisher suffix was positively identified,
+  // recover the quoted main title. The accepted NDL record still has to satisfy the
+  // unchanged 0.97 similarity/category-consistency decision boundary.
+  if (hadRetailPublisherSuffix) {
+    const quotedMain = title.match(RETAIL_QUOTED_MAIN_WITH_SUBTITLE)?.[1];
+    if (quotedMain?.length >= 8) title = quotedMain;
+  }
 
   const mayStripPlainVolume = TRAILING_SERIES_LABEL.test(title)
     || HAS_INLINE_LIMITED_FREE_LABEL.test(title)

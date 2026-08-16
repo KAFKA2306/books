@@ -63,6 +63,17 @@ test('normalizes bibliographic subtitle separators to the stable main title', ()
   assert.equal(normalizeCategoryLookupTitle('AI―未来'), 'AI―未来');
 });
 
+test('recovers quoted main title when retailer flattened subtitle and appended publisher', () => {
+  assert.equal(
+    normalizeCategoryLookupTitle('いつも「時間がない」あなたに 欠乏の行動経済学 (早川書房)'),
+    'いつも「時間がない」あなたに',
+  );
+  assert.equal(
+    normalizeCategoryLookupTitle('世界秩序の変化に対処するための原則 なぜ国家は興亡するのか (日本経済新聞出版)'),
+    '世界秩序の変化に対処するための原則 なぜ国家は興亡するのか',
+  );
+});
+
 test('does not strip a bare trailing number without known retail or bibliographic context', () => {
   assert.equal(normalizeCategoryLookupTitle('プロジェクト 2025'), 'プロジェクト 2025');
   assert.equal(normalizeCategoryLookupTitle('2001'), '2001');
@@ -132,5 +143,23 @@ test('observed retailer dash title matches the NDL main title without lowering t
   const decision = decideCategory(work, records);
   assert.equal(decision.outcome, 'accepted');
   assert.equal(decision.accepted.category, '政治');
+  assert.equal(decision.accepted.title_similarity, 1);
+});
+
+test('retailer publisher normalization matches NDL subtitle form without lowering threshold', () => {
+  const work = {
+    work_id: 'wrk_time_scarcity',
+    title: normalizeCategoryLookupTitle('いつも「時間がない」あなたに 欠乏の行動経済学 (早川書房)'),
+    category: '未分類',
+  };
+  const records = normalizeCategorySearchRecords([{
+    title: 'いつも「時間がない」あなたに : 欠乏の行動経済学',
+    isbns: ['9784150504830'],
+    ndc: [{ scheme: 'NDC9', code: '331' }],
+    source_url: 'https://ndlsearch.ndl.go.jp/books/R100000002-I027805905',
+  }]);
+  const decision = decideCategory(work, records);
+  assert.equal(decision.outcome, 'accepted');
+  assert.equal(decision.accepted.category, '経済');
   assert.equal(decision.accepted.title_similarity, 1);
 });

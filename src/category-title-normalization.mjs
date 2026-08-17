@@ -1,4 +1,4 @@
-export const CATEGORY_TITLE_NORMALIZATION_VERSION = 'bibliographic-suffix-v9';
+export const CATEGORY_TITLE_NORMALIZATION_VERSION = 'bibliographic-suffix-v10';
 
 const TRAILING_SERIES_LABEL = /\s*[（(][^()（）]{0,80}(?:コミックス?|コミック|文庫|新書|叢書|シリーズ)[^()（）]*[)）]\s*$/u;
 const TRAILING_PAREN_VOLUME = /\s*[（(]\s*(?:第\s*)?\d+(?:\.\d+)?\s*(?:巻|話)?\s*[)）]\s*$/u;
@@ -17,6 +17,7 @@ const HAS_RETAIL_MONOCHROME_LABEL = /(?:^|\s)モノクロ版(?=\s|【|$)/u;
 const TRAILING_BRACKET_SERIES_POSITION = /\s*【[^】]{0,80}(?:シリーズ)?第\s*\d+\s*弾】\s*$/u;
 const BIBLIOGRAPHIC_SUBTITLE_SEPARATORS = [/\s+[:：]\s+/u, /―(?=\S{4,}$)/u, /\s+──(?=\S{4,}$)/u];
 const JAPANESE_CHARACTER = /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]/u;
+const JAPANESE_MAIN_WITH_LATIN_PARALLEL_TITLE = /^(.{6,}[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}].*?)\s+=\s+[A-Za-z].+$/u;
 const MIN_SEARCH_PREFIX_LENGTH = 6;
 const MIN_SEARCH_REMAINDER_LENGTH = 6;
 
@@ -28,12 +29,20 @@ function stripBibliographicSubtitle(title) {
   return title.slice(0, Math.min(...indices)).trim();
 }
 
+function stripBibliographicParallelTitle(title) {
+  return title.match(JAPANESE_MAIN_WITH_LATIN_PARALLEL_TITLE)?.[1]?.trim() ?? title;
+}
+
 export function normalizeCategoryLookupTitle(value) {
   let title = String(value ?? '').normalize('NFKC').replace(/\s+/gu, ' ').trim();
   if (!title) return '';
 
   const hadRetailPublisherSuffix = TRAILING_RETAIL_PUBLISHER.test(title);
   if (hadRetailPublisherSuffix) title = title.replace(TRAILING_RETAIL_PUBLISHER, '').trim();
+
+  // NDL can serialize a Japanese main title and its Latin parallel title with a spaced equals sign.
+  // Strip only that bibliographic shape; ordinary equals signs remain meaningful title text.
+  title = stripBibliographicParallelTitle(title);
 
   // NDL often serializes subtitles with a spaced colon, while retailer titles can use
   // a Japanese horizontal bar or double dash for the same boundary. Strip only when

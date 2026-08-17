@@ -19,9 +19,9 @@ async function readJsonIfPresent(filePath) {
   }
 }
 
-function mergeCategoryOverlays(automated, primary) {
+export function mergeCategoryOverlays(automated, primary) {
   const recordsByWork = new Map();
-  for (const overlay of [automated, primary]) {
+  for (const overlay of [primary, automated]) {
     for (const record of overlay?.records ?? []) {
       const existing = recordsByWork.get(record.work_id);
       if (existing) {

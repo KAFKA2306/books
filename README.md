@@ -58,7 +58,7 @@ KAFKA BOOKS の差別化はschemaの多さではなく、**「なぜこの本を
 - `data/kindle/manifest.json` + `data/kindle/records-*.ndjson` — Kindle正規化データ
 - `data/isbn-enrichments.json` — ISBN拡充overlay
 
-旧 `base64+gzip` 分割データは互換fallbackです。
+`catalog.json` と `issue-1-books.json` は読み取り可能なJSONを唯一の入力経路とし、旧 `base64+gzip` 分割データへのfallbackは持ちません。
 
 ## Kindle XML → 所蔵までの境界
 
@@ -186,9 +186,10 @@ CIでは少なくとも次を検証します。
 data/        canonical catalog / Kindle / enrichment data
 api/v1/      generated public API
 scripts/     import / normalize / validate / build
-site/        static bookshelf UI
+src/         canonical domain / normalization logic
 docs/        API / import / operating contracts
 tests/       deterministic contracts
+index.html   static bookshelf UI entry point
 ```
 
 ## Done

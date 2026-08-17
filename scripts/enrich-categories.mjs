@@ -60,7 +60,7 @@ const selectionCatalog = {
   ...catalog,
   works: catalog.works.map((work) => ({
     ...work,
-    category: acceptedByWork.has(work.work_id) ? '__classification_complete__' : '未分類',
+    category: work.category === '未分類' ? '未分類' : '__classification_complete__',
   })),
 };
 const selectionState = {

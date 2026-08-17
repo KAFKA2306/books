@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-17T07:29:53.039Z",
+  "updated_at": "2026-08-17T07:42:46.530Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -374,6 +374,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": "9784254145731",
       "verified_at": "2026-08-08T09:15:33.779Z"
+    },
+    {
+      "work_id": "wrk_103ce5ed6887",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I031565957",
+      "match_mode": "title_containment",
+      "title_similarity": 0.8275862068965517,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-17T07:42:46.530Z"
     },
     {
       "work_id": "wrk_103fbef17520",

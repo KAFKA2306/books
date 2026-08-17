@@ -1,6 +1,7 @@
-import { canonicalIsbn13, diceSimilarity } from './catalog.mjs';
+import { canonicalIsbn13, diceSimilarity, titleKey } from './catalog.mjs';
 
 export const CATEGORY_RULE_VERSION = 'ndc-map-v1';
+const MIN_TITLE_CONTAINMENT_KEY_LENGTH = 8;
 
 const decodeEntities = (value = '') => String(value)
   .replaceAll('&amp;', '&')
@@ -204,6 +205,15 @@ function firstMappableNdc(record) {
   return null;
 }
 
+function isSafeBoundaryTitleContainment(leftTitle, rightTitle) {
+  const left = titleKey(leftTitle);
+  const right = titleKey(rightTitle);
+  if (!left || !right || left === right) return false;
+  const [shorter, longer] = left.length <= right.length ? [left, right] : [right, left];
+  return shorter.length >= MIN_TITLE_CONTAINMENT_KEY_LENGTH
+    && (longer.startsWith(shorter) || longer.endsWith(shorter));
+}
+
 export function decideCategory(work, records, { isbn13s = [], titleThreshold = 0.97 } = {}) {
   const expectedIsbns = new Set(isbn13s.map(canonicalIsbn13).filter(Boolean));
   const isbnMode = expectedIsbns.size > 0;
@@ -211,12 +221,13 @@ export function decideCategory(work, records, { isbn13s = [], titleThreshold = 0
     .map((record) => ({
       record,
       similarity: diceSimilarity(work.title, record.title ?? ''),
+      boundaryContainment: isSafeBoundaryTitleContainment(work.title, record.title ?? ''),
       ndc: firstMappableNdc(record),
     }))
-    .filter(({ record, similarity }) => (
+    .filter(({ record, similarity, boundaryContainment }) => (
       isbnMode
         ? record.isbns.some((isbn) => expectedIsbns.has(canonicalIsbn13(isbn)))
-        : similarity >= titleThreshold
+        : similarity >= titleThreshold || boundaryContainment
     ));
 
   if (!matches.length) return { outcome: 'no_candidate', accepted: null, matches: 0 };
@@ -242,7 +253,9 @@ export function decideCategory(work, records, { isbn13s = [], titleThreshold = 0
       ndc_scheme: winner.ndc.scheme,
       ndc_code: winner.ndc.code,
       source_url: winner.record.source_url,
-      match_mode: isbnMode ? 'isbn' : 'title',
+      match_mode: isbnMode
+        ? 'isbn'
+        : winner.similarity >= titleThreshold ? 'title' : 'title_containment',
       title_similarity: winner.similarity,
       rule_version: CATEGORY_RULE_VERSION,
     },
@@ -261,7 +274,7 @@ export function eligibleCategoryWorks(catalog, state, now = new Date()) {
 }
 
 export function applyCategoryEnrichments(catalog, overlay) {
-  const records = Array.isArray(overlay?.records) ? overlay.records : [];
+  const records = Array.isArray(categoryOverlay?.records) ? categoryOverlay.records : [];
   if (!records.length) {
     return {
       ...catalog,

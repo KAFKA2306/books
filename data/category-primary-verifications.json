@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-17T03:26:37.000Z",
+  "updated_at": "2026-08-17T03:34:00.000Z",
   "records": [
     {
       "work_id": "wrk_012b6febd3c5",
@@ -169,6 +169,21 @@
       "source_bibliographic_id": "027144459"
     },
     {
+      "work_id": "wrk_6df86f08996f",
+      "category": "医学・健康",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "498.53",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I028853423",
+      "match_mode": "primary_bibliographic_record",
+      "title_similarity": null,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-17T03:34:00.000Z",
+      "source_title": "「おいしさ」の科学 : 素材の秘密・味わいを生み出す技術",
+      "source_series": "ブルーバックス ; B-2051",
+      "source_bibliographic_id": "028853423"
+    },
+    {
       "work_id": "wrk_7c8a655cde27",
       "category": "経済",
       "ndc_scheme": "NDC10",
@@ -182,6 +197,21 @@
       "source_title": "お金2.0 : 新しい経済のルールと生き方",
       "source_series": null,
       "source_bibliographic_id": "028633356"
+    },
+    {
+      "work_id": "wrk_beb9fff5f683",
+      "category": "自己啓発・生き方",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "159",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I023728562",
+      "match_mode": "primary_bibliographic_record",
+      "title_similarity": null,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-17T03:34:00.000Z",
+      "source_title": "「頭のゴミ」を捨てれば、脳は一瞬で目覚める!",
+      "source_series": null,
+      "source_bibliographic_id": "023728562"
     },
     {
       "work_id": "wrk_bfa7e6c58770",

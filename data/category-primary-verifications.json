@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-17T03:34:00.000Z",
+  "updated_at": "2026-08-17T03:35:00.000Z",
   "records": [
     {
       "work_id": "wrk_012b6febd3c5",
@@ -17,6 +17,21 @@
       "source_title": "これならわかる深層学習入門",
       "source_series": "機械学習スタートアップシリーズ",
       "source_bibliographic_id": "028568441"
+    },
+    {
+      "work_id": "wrk_0f4b29b00464",
+      "category": "キャリア・労働",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "366",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I023809146",
+      "match_mode": "primary_bibliographic_record",
+      "title_similarity": null,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-17T03:35:00.000Z",
+      "source_title": "ワーク・シフト = WORK SHIFT : 孤独と貧困から自由になる働き方の未来図〈2025〉",
+      "source_series": null,
+      "source_bibliographic_id": "023809146"
     },
     {
       "work_id": "wrk_48a948c94388",
@@ -199,6 +214,37 @@
       "source_bibliographic_id": "028633356"
     },
     {
+      "work_id": "wrk_8c37175648d9",
+      "category": "経済",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "331",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I025328982",
+      "match_mode": "primary_bibliographic_record",
+      "title_similarity": null,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-17T03:35:00.000Z",
+      "source_title": "不合理だからうまくいく : 行動経済学で「人を動かす」",
+      "source_series": "ハヤカワ文庫 NF ; 405",
+      "source_bibliographic_id": "025328982",
+      "source_note": "「不合理だからすべてがうまくいく」(2010年刊)の改題"
+    },
+    {
+      "work_id": "wrk_b95fcbce2797",
+      "category": "数学",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "410",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000007703259",
+      "match_mode": "primary_bibliographic_record",
+      "title_similarity": null,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-17T03:35:00.000Z",
+      "source_title": "世にも美しい数学入門",
+      "source_series": "ちくまプリマー新書 ; 11",
+      "source_bibliographic_id": "000007703259"
+    },
+    {
       "work_id": "wrk_beb9fff5f683",
       "category": "自己啓発・生き方",
       "ndc_scheme": "NDC9",
@@ -257,6 +303,22 @@
       "source_title": "デザインド・リアリティ : 半径300メートルの文化心理学",
       "source_series": null,
       "source_bibliographic_id": "000009986026"
+    },
+    {
+      "work_id": "wrk_e470776be662",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "913.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I034572356",
+      "match_mode": "primary_bibliographic_record",
+      "title_similarity": null,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-17T03:35:00.000Z",
+      "source_title": "下町ロケット [3]",
+      "source_series": "文春文庫 ; い64-11",
+      "source_bibliographic_id": "034572356",
+      "source_note": "その他のタイトル: ゴースト。小学館 2018年刊の再刊"
     },
     {
       "work_id": "wrk_fc31947faf48",

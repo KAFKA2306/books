@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-17T03:22:15.000Z",
+  "updated_at": "2026-08-17T03:26:37.000Z",
   "records": [
     {
       "work_id": "wrk_012b6febd3c5",
@@ -167,6 +167,66 @@
       "source_title": "ウイルスは生きている",
       "source_series": "講談社現代新書 ; 2359",
       "source_bibliographic_id": "027144459"
+    },
+    {
+      "work_id": "wrk_7c8a655cde27",
+      "category": "経済",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "330",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I028633356",
+      "match_mode": "primary_bibliographic_record",
+      "title_similarity": null,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-17T03:26:37.000Z",
+      "source_title": "お金2.0 : 新しい経済のルールと生き方",
+      "source_series": null,
+      "source_bibliographic_id": "028633356"
+    },
+    {
+      "work_id": "wrk_bfa7e6c58770",
+      "category": "化学",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "431",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I028014280",
+      "match_mode": "primary_bibliographic_record",
+      "title_similarity": null,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-17T03:26:37.000Z",
+      "source_title": "アトキンス物理化学",
+      "source_series": null,
+      "source_bibliographic_id": "028014280"
+    },
+    {
+      "work_id": "wrk_c8a14afdd26f",
+      "category": "技術・工学",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "501.8",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029818869",
+      "match_mode": "primary_bibliographic_record",
+      "title_similarity": null,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-17T03:26:37.000Z",
+      "source_title": "JISにもとづく標準製図法",
+      "source_series": null,
+      "source_bibliographic_id": "029818869"
+    },
+    {
+      "work_id": "wrk_ce3b9a97d380",
+      "category": "社会・人間関係",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "361.5",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000009986026",
+      "match_mode": "primary_bibliographic_record",
+      "title_similarity": null,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-17T03:26:37.000Z",
+      "source_title": "デザインド・リアリティ : 半径300メートルの文化心理学",
+      "source_series": null,
+      "source_bibliographic_id": "000009986026"
     },
     {
       "work_id": "wrk_fc31947faf48",

@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-17T03:09:00.000Z",
+  "updated_at": "2026-08-17T03:22:15.000Z",
   "records": [
     {
       "work_id": "wrk_012b6febd3c5",
@@ -137,6 +137,51 @@
       "source_title": "脳科学は人格を変えられるか?",
       "source_series": null,
       "source_bibliographic_id": "025578410"
+    },
+    {
+      "work_id": "wrk_5e7766cc8fcd",
+      "category": "心理・行動",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "141.5",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000011293372",
+      "match_mode": "primary_bibliographic_record",
+      "title_similarity": null,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-17T03:22:15.000Z",
+      "source_title": "ずるい考え方 : ゼロから始めるラテラルシンキング入門",
+      "source_series": null,
+      "source_bibliographic_id": "000011293372"
+    },
+    {
+      "work_id": "wrk_6a2d80416c1b",
+      "category": "生物学",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "465.8",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I027144459",
+      "match_mode": "primary_bibliographic_record",
+      "title_similarity": null,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-17T03:22:15.000Z",
+      "source_title": "ウイルスは生きている",
+      "source_series": "講談社現代新書 ; 2359",
+      "source_bibliographic_id": "027144459"
+    },
+    {
+      "work_id": "wrk_fc31947faf48",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "913.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029628994",
+      "match_mode": "primary_bibliographic_record",
+      "title_similarity": null,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-17T03:22:15.000Z",
+      "source_title": "アリス殺し",
+      "source_series": "創元推理文庫 ; Mこ5-4",
+      "source_bibliographic_id": "029628994"
     }
   ]
 }

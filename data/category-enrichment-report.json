@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.category-enrichment-report.v1",
-  "generated_at": "2026-08-17T07:48:29.886Z",
+  "generated_at": "2026-08-17T07:52:53.708Z",
   "rule_version": "ndc-map-v1",
   "policy": {
     "source": "National Diet Library Search OpenSearch API",
@@ -10,7 +10,7 @@
     "standard_classification_source": "source-reported NDC code is retained without cross-version conversion",
     "isbn_match_preferred": true,
     "title_similarity_threshold": 0.97,
-    "title_lookup_normalization": "bibliographic-suffix-v9",
+    "title_lookup_normalization": "bibliographic-suffix-v10",
     "title_search_fallback": "first substantial Japanese title segment after an empty full-title response",
     "ambiguous_categories_are_rejected": true,
     "request_concurrency": 1,

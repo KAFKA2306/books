@@ -1,4 +1,4 @@
-export const CATEGORY_TITLE_NORMALIZATION_VERSION = 'bibliographic-suffix-v8';
+export const CATEGORY_TITLE_NORMALIZATION_VERSION = 'bibliographic-suffix-v9';
 
 const TRAILING_SERIES_LABEL = /\s*[（(][^()（）]{0,80}(?:コミックス?|コミック|文庫|新書|叢書|シリーズ)[^()（）]*[)）]\s*$/u;
 const TRAILING_PAREN_VOLUME = /\s*[（(]\s*(?:第\s*)?\d+(?:\.\d+)?\s*(?:巻|話)?\s*[)）]\s*$/u;
@@ -10,6 +10,8 @@ const TRAILING_RETAIL_PUBLISHER = /\s*[（(][^()（）]{1,48}(?:書房|出版社
 const RETAIL_QUOTED_MAIN_WITH_SUBTITLE = /^(.*?[」』】][^\s]{1,20})\s+\S.{3,}$/u;
 const INLINE_LIMITED_FREE_LABEL = /\s*【\s*期間限定無料(?:版)?\s*】\s*/gu;
 const HAS_INLINE_LIMITED_FREE_LABEL = /【\s*期間限定無料(?:版)?\s*】/u;
+const INLINE_SINGLE_VOLUME_LABEL = /\s*【\s*単行本版\s*】\s*/gu;
+const HAS_INLINE_SINGLE_VOLUME_LABEL = /【\s*単行本版\s*】/u;
 const RETAIL_MONOCHROME_LABEL = /(?:^|\s)モノクロ版(?=\s|【|$)/gu;
 const HAS_RETAIL_MONOCHROME_LABEL = /(?:^|\s)モノクロ版(?=\s|【|$)/u;
 const TRAILING_BRACKET_SERIES_POSITION = /\s*【[^】]{0,80}(?:シリーズ)?第\s*\d+\s*弾】\s*$/u;
@@ -33,15 +35,8 @@ export function normalizeCategoryLookupTitle(value) {
   const hadRetailPublisherSuffix = TRAILING_RETAIL_PUBLISHER.test(title);
   if (hadRetailPublisherSuffix) title = title.replace(TRAILING_RETAIL_PUBLISHER, '').trim();
 
-  // NDL often serializes subtitles with a spaced colon, while retailer titles can use
-  // a Japanese horizontal bar or double dash for the same boundary. Strip only when
-  // the main title is already substantial; short punctuation-bearing titles stay intact.
   title = stripBibliographicSubtitle(title);
 
-  // Some retailer exports append a publisher in parentheses and flatten NDL's subtitle
-  // separator into a plain space. Only after a publisher suffix was positively identified,
-  // recover the quoted main title. The accepted NDL record still has to satisfy the
-  // category decision rules after normalization.
   if (hadRetailPublisherSuffix) {
     const quotedMain = title.match(RETAIL_QUOTED_MAIN_WITH_SUBTITLE)?.[1];
     if (quotedMain?.length >= 8) title = quotedMain;
@@ -49,10 +44,12 @@ export function normalizeCategoryLookupTitle(value) {
 
   const mayStripPlainVolume = TRAILING_SERIES_LABEL.test(title)
     || HAS_INLINE_LIMITED_FREE_LABEL.test(title)
+    || HAS_INLINE_SINGLE_VOLUME_LABEL.test(title)
     || HAS_RETAIL_MONOCHROME_LABEL.test(title);
 
   title = title
     .replace(INLINE_LIMITED_FREE_LABEL, ' ')
+    .replace(INLINE_SINGLE_VOLUME_LABEL, ' ')
     .replace(RETAIL_MONOCHROME_LABEL, ' ')
     .replace(/\s+/gu, ' ')
     .trim();

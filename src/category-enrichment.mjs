@@ -274,7 +274,7 @@ export function eligibleCategoryWorks(catalog, state, now = new Date()) {
 }
 
 export function applyCategoryEnrichments(catalog, overlay) {
-  const records = Array.isArray(categoryOverlay?.records) ? categoryOverlay.records : [];
+  const records = Array.isArray(overlay?.records) ? overlay.records : [];
   if (!records.length) {
     return {
       ...catalog,

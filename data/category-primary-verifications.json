@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-17T03:47:24.000Z",
+  "updated_at": "2026-08-17T07:32:59.000Z",
   "records": [
     {
       "work_id": "wrk_012b6febd3c5",
@@ -17,6 +17,21 @@
       "source_title": "これならわかる深層学習入門",
       "source_series": "機械学習スタートアップシリーズ",
       "source_bibliographic_id": "028568441"
+    },
+    {
+      "work_id": "wrk_0acbf4571cf0",
+      "category": "法律",
+      "ndc_scheme": "NDC",
+      "ndc_code": "329.39",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029682246",
+      "match_mode": "primary_bibliographic_record",
+      "title_similarity": null,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-17T07:32:59.000Z",
+      "source_title": "命に国境はない : 紛争地イラクで考える戦争と平和",
+      "source_series": "岩波ブックレット ; No.1002",
+      "source_bibliographic_id": "029682246"
     },
     {
       "work_id": "wrk_0f4b29b00464",

@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.category-enrichment-report.v1",
-  "generated_at": "2026-08-17T07:42:46.530Z",
+  "generated_at": "2026-08-17T07:48:29.886Z",
   "rule_version": "ndc-map-v1",
   "policy": {
     "source": "National Diet Library Search OpenSearch API",
@@ -10,7 +10,7 @@
     "standard_classification_source": "source-reported NDC code is retained without cross-version conversion",
     "isbn_match_preferred": true,
     "title_similarity_threshold": 0.97,
-    "title_lookup_normalization": "bibliographic-suffix-v8",
+    "title_lookup_normalization": "bibliographic-suffix-v9",
     "title_search_fallback": "first substantial Japanese title segment after an empty full-title response",
     "ambiguous_categories_are_rejected": true,
     "request_concurrency": 1,
@@ -20,10 +20,10 @@
   },
   "summary": {
     "attempted": 25,
-    "accepted": 1,
+    "accepted": 0,
     "ambiguous": 2,
     "no_ndc": 1,
-    "no_candidate": 21,
+    "no_candidate": 22,
     "provider_error": 0
   },
   "results": [
@@ -69,7 +69,7 @@
     {
       "work_id": "wrk_01ad486ad9cb",
       "title": "ニューノーマル【単行本版】1 (コミックアウル)",
-      "lookup_title": "ニューノーマル【単行本版】1",
+      "lookup_title": "ニューノーマル",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,
@@ -301,19 +301,6 @@
       "provider_error": null
     },
     {
-      "work_id": "wrk_103ce5ed6887",
-      "title": "ここからはオトナの時間です。(1) (コイパレ)",
-      "lookup_title": "ここからはオトナの時間です。(1) (コイパレ)",
-      "outcome": "accepted",
-      "category": "漫画・コミック",
-      "ndc_scheme": "NDC10",
-      "ndc_code": "726.1",
-      "source_isbn13": null,
-      "match_mode": "title_containment",
-      "matches": 1,
-      "provider_error": null
-    },
-    {
       "work_id": "wrk_10bc7fa30417",
       "title": "蜘蛛の糸",
       "lookup_title": "蜘蛛の糸",
@@ -343,6 +330,19 @@
       "work_id": "wrk_134a1523dac4",
       "title": "亜人(1) (アフタヌーンコミックス)",
       "lookup_title": "亜人",
+      "outcome": "no_candidate",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "match_mode": null,
+      "matches": 0,
+      "provider_error": null
+    },
+    {
+      "work_id": "wrk_137c419e576e",
+      "title": "【第8話】やり直し姫は夫と恋したい: 走る姫",
+      "lookup_title": "【第8話】やり直し姫は夫と恋したい: 走る姫",
       "outcome": "no_candidate",
       "category": null,
       "ndc_scheme": null,

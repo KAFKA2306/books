@@ -1,5 +1,8 @@
 # KAFKA BOOKS
 
+[![Validate and deploy Pages](https://github.com/KAFKA2306/books/actions/workflows/ci-pages.yml/badge.svg)](https://github.com/KAFKA2306/books/actions/workflows/ci-pages.yml)
+[![Books MCP contract](https://github.com/KAFKA2306/books/actions/workflows/mcp-contract.yml/badge.svg)](https://github.com/KAFKA2306/books/actions/workflows/mcp-contract.yml)
+
 **本が増えるほど、「持っているか」「読んだか」「どの版か」が一つの答えではなくなる。**
 
 KAFKA BOOKS は、個人の蔵書を **作品（Work）・版（Edition）・所蔵（Holding）・取得履歴（Acquisition）** に分け、曖昧な読書記録を「後から確認できる本棚」へ変える静的ライブラリDBです。
@@ -192,4 +195,4 @@ tests/       deterministic contracts
 
 このrepositoryの完成条件は「本をたくさん登録する」ことではありません。
 
-**新しい記録が増えても、何を作品・版・所有・取得と判断したかを後から説明できること**を維持できている状態をDoneとします。
+**新しい記録が増えても、何を作品・版・所有・取得と判断したかを後から説明できること**を維持できている状態にする。

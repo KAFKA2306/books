@@ -10,6 +10,7 @@ import {
 } from '../src/category-enrichment.mjs';
 import {
   CATEGORY_TITLE_NORMALIZATION_VERSION,
+  categorySearchFallbackTitle,
   normalizeCategoryLookupTitle,
   normalizeCategorySearchRecords,
 } from '../src/category-title-normalization.mjs';
@@ -91,9 +92,9 @@ for (let index = 0; index < selected.length; index += 1) {
     let records = [];
     if (isbn13s.length) {
       records = await searchNdl({ isbn: isbn13s[0] });
-      if (!records.length) records = await searchNdl({ title: lookupTitle });
+      if (!records.length) records = await searchNdlByTitle(lookupTitle);
     } else {
-      records = await searchNdl({ title: lookupTitle });
+      records = await searchNdlByTitle(lookupTitle);
     }
     decision = decideCategory(
       { ...work, title: lookupTitle },
@@ -174,6 +175,7 @@ const report = {
     isbn_match_preferred: true,
     title_similarity_threshold: 0.97,
     title_lookup_normalization: CATEGORY_TITLE_NORMALIZATION_VERSION,
+    title_search_fallback: 'first substantial Japanese title segment after an empty full-title response',
     ambiguous_categories_are_rejected: true,
     request_concurrency: 1,
     request_interval_ms: requestIntervalMs,
@@ -224,6 +226,15 @@ async function searchNdl({ isbn = null, title = null }) {
   else throw new Error('NDL search requires isbn or title');
   url.search = params;
   return parseNdlCategorySearch(await fetchText(url));
+}
+
+async function searchNdlByTitle(title) {
+  const records = await searchNdl({ title });
+  if (records.length) return records;
+  const fallbackTitle = categorySearchFallbackTitle(title);
+  if (!fallbackTitle || fallbackTitle === title) return records;
+  await sleep(requestIntervalMs);
+  return searchNdl({ title: fallbackTitle });
 }
 
 async function fetchText(url) {

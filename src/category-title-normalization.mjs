@@ -1,4 +1,4 @@
-export const CATEGORY_TITLE_NORMALIZATION_VERSION = 'bibliographic-suffix-v7';
+export const CATEGORY_TITLE_NORMALIZATION_VERSION = 'bibliographic-suffix-v8';
 
 const TRAILING_SERIES_LABEL = /\s*[（(][^()（）]{0,80}(?:コミックス?|コミック|文庫|新書|叢書|シリーズ)[^()（）]*[)）]\s*$/u;
 const TRAILING_PAREN_VOLUME = /\s*[（(]\s*(?:第\s*)?\d+(?:\.\d+)?\s*(?:巻|話)?\s*[)）]\s*$/u;
@@ -14,6 +14,9 @@ const RETAIL_MONOCHROME_LABEL = /(?:^|\s)モノクロ版(?=\s|【|$)/gu;
 const HAS_RETAIL_MONOCHROME_LABEL = /(?:^|\s)モノクロ版(?=\s|【|$)/u;
 const TRAILING_BRACKET_SERIES_POSITION = /\s*【[^】]{0,80}(?:シリーズ)?第\s*\d+\s*弾】\s*$/u;
 const BIBLIOGRAPHIC_SUBTITLE_SEPARATORS = [/\s+[:：]\s+/u, /―(?=\S{4,}$)/u, /\s+──(?=\S{4,}$)/u];
+const JAPANESE_CHARACTER = /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]/u;
+const MIN_SEARCH_PREFIX_LENGTH = 6;
+const MIN_SEARCH_REMAINDER_LENGTH = 6;
 
 function stripBibliographicSubtitle(title) {
   const indices = BIBLIOGRAPHIC_SUBTITLE_SEPARATORS
@@ -69,6 +72,17 @@ export function normalizeCategoryLookupTitle(value) {
   } while (title && title !== previous);
 
   return title;
+}
+
+export function categorySearchFallbackTitle(value) {
+  const title = normalizeCategoryLookupTitle(value);
+  const boundary = title.indexOf(' ');
+  if (boundary < 0) return null;
+  const prefix = title.slice(0, boundary).trim();
+  const remainder = title.slice(boundary + 1).trim();
+  if (prefix.length < MIN_SEARCH_PREFIX_LENGTH || remainder.length < MIN_SEARCH_REMAINDER_LENGTH) return null;
+  if (!JAPANESE_CHARACTER.test(prefix)) return null;
+  return prefix;
 }
 
 export function normalizeCategorySearchRecords(records) {

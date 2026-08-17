@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-17T02:55:00.000Z",
+  "updated_at": "2026-08-17T03:09:00.000Z",
   "records": [
     {
       "work_id": "wrk_012b6febd3c5",
@@ -77,6 +77,21 @@
       "source_title": "資産価値測定総論",
       "source_series": "ウィザードブックシリーズ = Wizard book series ; v.131",
       "source_bibliographic_id": "000009223708"
+    },
+    {
+      "work_id": "wrk_4f4f4358556e",
+      "category": "医学・健康",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "491.323",
+      "source_url": "https://ndlsearch.ndl.go.jp/en/search?cs=bib&f-ndc=%22491.323%22&from=0&size=20",
+      "match_mode": "primary_bibliographic_record",
+      "title_similarity": null,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-17T03:09:00.000Z",
+      "source_title": "心臓の力 : 休めない臓器はなぜ「それ」を宿したのか",
+      "source_series": "ブルーバックス ; B-1929",
+      "source_bibliographic_id": null
     },
     {
       "work_id": "wrk_504ed0e04017",

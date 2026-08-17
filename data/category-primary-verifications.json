@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-17T07:32:59.000Z",
+  "updated_at": "2026-08-17T07:55:00.000Z",
   "records": [
     {
       "work_id": "wrk_012b6febd3c5",
@@ -17,6 +17,22 @@
       "source_title": "これならわかる深層学習入門",
       "source_series": "機械学習スタートアップシリーズ",
       "source_bibliographic_id": "028568441"
+    },
+    {
+      "work_id": "wrk_01ad486ad9cb",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I031779084",
+      "match_mode": "primary_bibliographic_record",
+      "title_similarity": null,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-17T07:55:00.000Z",
+      "source_title": "ニューノーマル",
+      "source_series": "コミックアウル",
+      "source_bibliographic_id": "031779084",
+      "source_note": "NDL資料は第2巻。ローカルWorkは【単行本版】第1巻で、主タイトルとシリーズが一致するためWork単位の分類にのみ使用し、版・ISBNは補完しない"
     },
     {
       "work_id": "wrk_0acbf4571cf0",

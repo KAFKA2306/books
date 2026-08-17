@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { loadCatalog } from '../scripts/load-catalog.mjs';
+import { loadCatalog, mergeCategoryOverlays } from '../scripts/load-catalog.mjs';
 
 test('primary NDL category verification is current-use and source-reported', async () => {
   const catalog = await loadCatalog();
@@ -24,4 +24,40 @@ test('primary NDL category verification is current-use and source-reported', asy
     'https://ndlsearch.ndl.go.jp/books/R100000002-I028568441',
   );
   assert.equal(classification.verification, 'source_reported');
+});
+
+test('primary evidence wins when automated evidence reports the same classification', () => {
+  const automated = {
+    records: [{
+      work_id: 'wrk_same', category: 'コンピュータ・AI', ndc_scheme: 'NDC10', ndc_code: '007.13',
+      match_mode: 'title_containment', source_url: 'https://ndlsearch.ndl.go.jp/books/automated',
+    }],
+  };
+  const primary = {
+    records: [{
+      work_id: 'wrk_same', category: 'コンピュータ・AI', ndc_scheme: 'NDC10', ndc_code: '007.13',
+      match_mode: 'primary_bibliographic_record', source_url: 'https://ndlsearch.ndl.go.jp/books/primary',
+    }],
+  };
+  const merged = mergeCategoryOverlays(automated, primary);
+  assert.equal(merged.records.length, 1);
+  assert.equal(merged.records[0].match_mode, 'primary_bibliographic_record');
+  assert.equal(merged.records[0].source_url, 'https://ndlsearch.ndl.go.jp/books/primary');
+});
+
+test('conflicting primary and automated classifications are rejected', () => {
+  const automated = {
+    records: [{
+      work_id: 'wrk_conflict', category: '数学', ndc_scheme: 'NDC9', ndc_code: '417',
+    }],
+  };
+  const primary = {
+    records: [{
+      work_id: 'wrk_conflict', category: '経済', ndc_scheme: 'NDC9', ndc_code: '331',
+    }],
+  };
+  assert.throws(
+    () => mergeCategoryOverlays(automated, primary),
+    /Conflicting category evidence for wrk_conflict/,
+  );
 });

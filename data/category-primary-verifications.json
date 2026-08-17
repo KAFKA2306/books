@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-17T03:42:00.000Z",
+  "updated_at": "2026-08-17T03:47:24.000Z",
   "records": [
     {
       "work_id": "wrk_012b6febd3c5",
@@ -154,6 +154,21 @@
       "source_bibliographic_id": "025578410"
     },
     {
+      "work_id": "wrk_561e61449855",
+      "category": "医学・健康",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "491.371",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I024778291",
+      "match_mode": "primary_bibliographic_record",
+      "title_similarity": null,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-17T03:47:24.000Z",
+      "source_title": "単純な脳、複雑な「私」 : または、自分を使い回しながら進化した脳をめぐる4つの講義",
+      "source_series": "ブルーバックス ; B-1830",
+      "source_bibliographic_id": "024778291"
+    },
+    {
       "work_id": "wrk_5e7766cc8fcd",
       "category": "心理・行動",
       "ndc_scheme": "NDC9",
@@ -259,6 +274,21 @@
       "source_title": "世界から猫が消えたなら",
       "source_series": null,
       "source_bibliographic_id": "024003971"
+    },
+    {
+      "work_id": "wrk_a8ed67780697",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "913.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I031605176",
+      "match_mode": "primary_bibliographic_record",
+      "title_similarity": null,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-17T03:47:24.000Z",
+      "source_title": "ある男",
+      "source_series": "文春文庫 ; ひ19-3",
+      "source_bibliographic_id": "031605176"
     },
     {
       "work_id": "wrk_b95fcbce2797",

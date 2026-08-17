@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-17T03:35:00.000Z",
+  "updated_at": "2026-08-17T03:42:00.000Z",
   "records": [
     {
       "work_id": "wrk_012b6febd3c5",
@@ -214,6 +214,22 @@
       "source_bibliographic_id": "028633356"
     },
     {
+      "work_id": "wrk_820ba461ef25",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "913.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000073-I14434067",
+      "match_mode": "primary_bibliographic_record",
+      "title_similarity": null,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-17T03:42:00.000Z",
+      "source_title": "世界の終りとハードボイルド・ワンダーランド",
+      "source_series": "新潮文庫",
+      "source_bibliographic_id": null,
+      "source_note": "NDL資料は上巻。ローカルWorkは巻情報を持たず、表記が「世界の終わりとハードボイルドワンダーランド」"
+    },
+    {
       "work_id": "wrk_8c37175648d9",
       "category": "経済",
       "ndc_scheme": "NDC9",
@@ -228,6 +244,21 @@
       "source_series": "ハヤカワ文庫 NF ; 405",
       "source_bibliographic_id": "025328982",
       "source_note": "「不合理だからすべてがうまくいく」(2010年刊)の改題"
+    },
+    {
+      "work_id": "wrk_a289e812751e",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "913.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000073-I10368390",
+      "match_mode": "primary_bibliographic_record",
+      "title_similarity": null,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-17T03:42:00.000Z",
+      "source_title": "世界から猫が消えたなら",
+      "source_series": null,
+      "source_bibliographic_id": "024003971"
     },
     {
       "work_id": "wrk_b95fcbce2797",
@@ -319,6 +350,21 @@
       "source_series": "文春文庫 ; い64-11",
       "source_bibliographic_id": "034572356",
       "source_note": "その他のタイトル: ゴースト。小学館 2018年刊の再刊"
+    },
+    {
+      "work_id": "wrk_ea367de00771",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "913.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I023430693",
+      "match_mode": "primary_bibliographic_record",
+      "title_similarity": null,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-17T03:42:00.000Z",
+      "source_title": "三匹のおっさん",
+      "source_series": "文春文庫 ; あ60-1",
+      "source_bibliographic_id": "023430693"
     },
     {
       "work_id": "wrk_fc31947faf48",

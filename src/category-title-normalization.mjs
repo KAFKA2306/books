@@ -35,8 +35,15 @@ export function normalizeCategoryLookupTitle(value) {
   const hadRetailPublisherSuffix = TRAILING_RETAIL_PUBLISHER.test(title);
   if (hadRetailPublisherSuffix) title = title.replace(TRAILING_RETAIL_PUBLISHER, '').trim();
 
+  // NDL often serializes subtitles with a spaced colon, while retailer titles can use
+  // a Japanese horizontal bar or double dash for the same boundary. Strip only when
+  // the main title is already substantial; short punctuation-bearing titles stay intact.
   title = stripBibliographicSubtitle(title);
 
+  // Some retailer exports append a publisher in parentheses and flatten NDL's subtitle
+  // separator into a plain space. Only after a publisher suffix was positively identified,
+  // recover the quoted main title. The accepted NDL record still has to satisfy the
+  // category decision rules after normalization.
   if (hadRetailPublisherSuffix) {
     const quotedMain = title.match(RETAIL_QUOTED_MAIN_WITH_SUBTITLE)?.[1];
     if (quotedMain?.length >= 8) title = quotedMain;

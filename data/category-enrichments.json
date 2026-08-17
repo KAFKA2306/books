@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-17T08:47:04.216Z",
+  "updated_at": "2026-08-17T13:10:07.417Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -1132,6 +1132,18 @@
       "verified_at": "2026-08-08T09:46:54.188Z"
     },
     {
+      "work_id": "wrk_2b296d57c116",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I028399394",
+      "match_mode": "title_containment",
+      "title_similarity": 0.8571428571428571,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-17T13:10:07.417Z"
+    },
+    {
       "work_id": "wrk_2b92210b3113",
       "category": "文学・小説",
       "ndc_scheme": "NDC9",
@@ -1202,6 +1214,30 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-08T13:15:30.887Z"
+    },
+    {
+      "work_id": "wrk_2daa7d156ef4",
+      "category": "物理",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "427",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000008107035",
+      "match_mode": "title_containment",
+      "title_similarity": 0.8333333333333334,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-17T13:10:07.417Z"
+    },
+    {
+      "work_id": "wrk_2e70ec50cf7c",
+      "category": "民俗・文化",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "384.7",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I027260765",
+      "match_mode": "title_containment",
+      "title_similarity": 0.7368421052631579,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-17T13:10:07.417Z"
     },
     {
       "work_id": "wrk_2ed5a778aa30",
@@ -1286,6 +1322,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-12T02:48:09.934Z"
+    },
+    {
+      "work_id": "wrk_340fa5154ecd",
+      "category": "宗教・思想",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "165.3",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I028563257",
+      "match_mode": "title_containment",
+      "title_similarity": 0.5185185185185185,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-17T13:10:07.417Z"
     },
     {
       "work_id": "wrk_34b8ac1d558c",
@@ -1538,6 +1586,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-13T19:29:13.488Z"
+    },
+    {
+      "work_id": "wrk_3ebded2f7ef4",
+      "category": "医学・健康",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "491.8",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I026409161",
+      "match_mode": "title_containment",
+      "title_similarity": 0.8148148148148148,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-17T13:10:07.417Z"
     },
     {
       "work_id": "wrk_3edcc2663b55",

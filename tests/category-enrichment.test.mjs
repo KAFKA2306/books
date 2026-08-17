@@ -63,6 +63,33 @@ test('prefers exact ISBN evidence and maps one deterministic category', () => {
   assert.equal(decision.accepted.match_mode, 'isbn');
 });
 
+test('accepts sufficiently long title contained at a bibliographic boundary', () => {
+  const work = { work_id: 'wrk_test', title: 'はやぶさの超技術', category: '未分類' };
+  const records = [{
+    title: '小惑星探査機「はやぶさ」の超技術',
+    isbns: [],
+    ndc: [{ scheme: 'NDC9', code: '538.94' }],
+    source_url: 'https://ndlsearch.ndl.go.jp/books/R100000002-I000011156764',
+  }];
+  const decision = decideCategory(work, records);
+  assert.equal(decision.outcome, 'accepted');
+  assert.equal(decision.accepted.category, '機械工学');
+  assert.equal(decision.accepted.match_mode, 'title_containment');
+  assert.ok(decision.accepted.title_similarity < 0.97);
+});
+
+test('rejects short title containment', () => {
+  const work = { work_id: 'wrk_test', title: 'ある男', category: '未分類' };
+  const records = [{
+    title: 'ある男の秘密',
+    isbns: [],
+    ndc: [{ scheme: 'NDC10', code: '913.6' }],
+    source_url: 'https://ndlsearch.ndl.go.jp/books/example',
+  }];
+  const decision = decideCategory(work, records);
+  assert.equal(decision.outcome, 'no_candidate');
+});
+
 test('rejects title matches when NDC categories conflict', () => {
   const work = { work_id: 'wrk_test', title: '同じ本', category: '未分類' };
   const records = [

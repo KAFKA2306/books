@@ -1,4 +1,4 @@
-export const CATEGORY_TITLE_NORMALIZATION_VERSION = 'bibliographic-suffix-v6';
+export const CATEGORY_TITLE_NORMALIZATION_VERSION = 'bibliographic-suffix-v7';
 
 const TRAILING_SERIES_LABEL = /\s*[（(][^()（）]{0,80}(?:コミックス?|コミック|文庫|新書|叢書|シリーズ)[^()（）]*[)）]\s*$/u;
 const TRAILING_PAREN_VOLUME = /\s*[（(]\s*(?:第\s*)?\d+(?:\.\d+)?\s*(?:巻|話)?\s*[)）]\s*$/u;
@@ -38,7 +38,7 @@ export function normalizeCategoryLookupTitle(value) {
   // Some retailer exports append a publisher in parentheses and flatten NDL's subtitle
   // separator into a plain space. Only after a publisher suffix was positively identified,
   // recover the quoted main title. The accepted NDL record still has to satisfy the
-  // unchanged 0.97 similarity/category-consistency decision boundary.
+  // category decision rules after normalization.
   if (hadRetailPublisherSuffix) {
     const quotedMain = title.match(RETAIL_QUOTED_MAIN_WITH_SUBTITLE)?.[1];
     if (quotedMain?.length >= 8) title = quotedMain;

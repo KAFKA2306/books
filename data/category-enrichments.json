@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-17T01:57:46.496Z",
+  "updated_at": "2026-08-17T07:25:26.421Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -52,6 +52,18 @@
       "verified_at": "2026-08-12T17:19:15.226Z"
     },
     {
+      "work_id": "wrk_03ceb0cb730f",
+      "category": "数学",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "417",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I027967824",
+      "match_mode": "title_containment",
+      "title_similarity": 0.7906976744186046,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-17T07:25:26.421Z"
+    },
+    {
       "work_id": "wrk_05084368809f",
       "category": "天文・宇宙",
       "ndc_scheme": "NDC10",
@@ -98,6 +110,30 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-08T09:15:33.779Z"
+    },
+    {
+      "work_id": "wrk_0649ceebf61b",
+      "category": "伝記・人物",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "289.3",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I030085591",
+      "match_mode": "title_containment",
+      "title_similarity": 0.7619047619047619,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-17T07:25:26.421Z"
+    },
+    {
+      "work_id": "wrk_066af4637988",
+      "category": "産業",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "602.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I033159072",
+      "match_mode": "title_containment",
+      "title_similarity": 0.8823529411764706,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-17T07:25:26.421Z"
     },
     {
       "work_id": "wrk_067694b72ff5",

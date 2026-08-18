@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-18T07:08:12.160Z",
+  "updated_at": "2026-08-18T13:11:52.762Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -3136,6 +3136,18 @@
       "verified_at": "2026-08-15T13:02:05.319Z"
     },
     {
+      "work_id": "wrk_83664c0c6479",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000010702975",
+      "match_mode": "title_containment",
+      "title_similarity": 0.6363636363636364,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-18T13:11:52.762Z"
+    },
+    {
       "work_id": "wrk_838895385cfc",
       "category": "経済",
       "ndc_scheme": "NDC10",
@@ -3182,6 +3194,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-10T13:48:48.564Z"
+    },
+    {
+      "work_id": "wrk_85a770fa1274",
+      "category": "投資・金融",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "338.18",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I030741191",
+      "match_mode": "title_containment",
+      "title_similarity": 0.5294117647058824,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-18T13:11:52.762Z"
     },
     {
       "work_id": "wrk_85d20d4ad719",
@@ -3256,6 +3280,18 @@
       "verified_at": "2026-08-10T13:48:48.564Z"
     },
     {
+      "work_id": "wrk_894b07c7bae9",
+      "category": "経営・会計",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "336.17",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I031840097",
+      "match_mode": "title_containment",
+      "title_similarity": 0.47058823529411764,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-18T13:11:52.762Z"
+    },
+    {
       "work_id": "wrk_896819ce704b",
       "category": "心理・行動",
       "ndc_scheme": "NDC10",
@@ -3278,6 +3314,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-15T15:13:24.279Z"
+    },
+    {
+      "work_id": "wrk_8a8c19ea6269",
+      "category": "語学・言語",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "816",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I026019656",
+      "match_mode": "title_containment",
+      "title_similarity": 0.75,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-18T13:11:52.762Z"
     },
     {
       "work_id": "wrk_8b38a4d288c9",
@@ -3350,6 +3398,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-15T15:13:24.279Z"
+    },
+    {
+      "work_id": "wrk_8e1c87941533",
+      "category": "キャリア・労働",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "366.44",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029547493",
+      "match_mode": "title_containment",
+      "title_similarity": 0.7636363636363637,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-18T13:11:52.762Z"
     },
     {
       "work_id": "wrk_8e32e3437b1e",

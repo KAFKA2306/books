@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-17T19:01:40.745Z",
+  "updated_at": "2026-08-18T01:53:29.774Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -2164,6 +2164,18 @@
       "verified_at": "2026-08-09T06:15:21.558Z"
     },
     {
+      "work_id": "wrk_5a29c44ef797",
+      "category": "地理・旅行",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "295.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029624368",
+      "match_mode": "title_containment",
+      "title_similarity": 0.8,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-18T01:53:29.774Z"
+    },
+    {
       "work_id": "wrk_5a7f7e1a3967",
       "category": "資源・金属",
       "ndc_scheme": "NDC9",
@@ -2234,6 +2246,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-14T07:54:19.629Z"
+    },
+    {
+      "work_id": "wrk_5cd2711f01a6",
+      "category": "自己啓発・生き方",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "159",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I027467993",
+      "match_mode": "title_containment",
+      "title_similarity": 0.875,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-18T01:53:29.774Z"
     },
     {
       "work_id": "wrk_5dd781a876f6",

@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 import { diagnoseMigration, parseCsv, parseIsbnList, parseJson, parseMigrationInput, renderDiagnosisHtml } from '../src/migration-diagnosis.mjs';
 
 const catalog = {
@@ -61,4 +62,17 @@ test('renderDiagnosisHtml states the non-mutating boundary', () => {
   assert.match(html, /dry-run/);
   assert.match(html, /正準catalogを書き換えません/);
   assert.match(html, /safe_new_work/);
+});
+
+test('migration result exposes a qualified paid-migration inquiry without requesting private catalog data', async () => {
+  const html = await readFile(new URL('../migration.html', import.meta.url), 'utf8');
+  assert.match(html, /100冊以上の移行を相談/);
+  assert.match(html, /github\.com\/KAFKA2306\/books\/issues\/new\?title=/);
+  assert.match(html, /蔵書数の目安/);
+  assert.match(html, /元データ形式/);
+  assert.match(html, /診断結果で困っている点/);
+  assert.match(html, /希望する支援/);
+  assert.match(html, /希望時期/);
+  assert.match(html, /公開Issue/);
+  assert.match(html, /蔵書内容そのものや非公開情報は貼り付けず/);
 });

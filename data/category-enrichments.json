@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-18T13:11:52.762Z",
+  "updated_at": "2026-08-18T19:00:11.022Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -3496,6 +3496,18 @@
       "verified_at": "2026-08-10T19:24:58.773Z"
     },
     {
+      "work_id": "wrk_921e0cf0a8a2",
+      "category": "経営・会計",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "336.92",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I030316417",
+      "match_mode": "title_containment",
+      "title_similarity": 0.5581395348837209,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-18T19:00:11.022Z"
+    },
+    {
       "work_id": "wrk_92db5cd7670c",
       "category": "漫画・コミック",
       "ndc_scheme": "NDC9",
@@ -3602,6 +3614,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-11T02:30:58.716Z"
+    },
+    {
+      "work_id": "wrk_96cc43955eb3",
+      "category": "数学",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "417",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000011171717",
+      "match_mode": "title_containment",
+      "title_similarity": 0.6153846153846154,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-18T19:00:11.022Z"
     },
     {
       "work_id": "wrk_984a6bd5f73c",

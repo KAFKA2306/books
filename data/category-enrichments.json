@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-18T01:53:29.774Z",
+  "updated_at": "2026-08-18T07:08:12.160Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -2824,6 +2824,18 @@
       "verified_at": "2026-08-10T08:08:44.347Z"
     },
     {
+      "work_id": "wrk_77080cbbcd1e",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I028399394",
+      "match_mode": "title_containment",
+      "title_similarity": 0.8571428571428571,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-18T07:08:12.160Z"
+    },
+    {
       "work_id": "wrk_77ebf990a772",
       "category": "コンピュータ・AI",
       "ndc_scheme": "NDC10",
@@ -2882,6 +2894,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-15T07:00:56.895Z"
+    },
+    {
+      "work_id": "wrk_79ac7ba1d011",
+      "category": "キャリア・労働",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "366.29",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I028384655",
+      "match_mode": "title_containment",
+      "title_similarity": 0.9333333333333333,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-18T07:08:12.160Z"
     },
     {
       "work_id": "wrk_7a31a9843187",

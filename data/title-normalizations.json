@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.title-normalizations.v1",
-  "updated_at": "2026-08-20T00:36:45+09:00",
+  "updated_at": "2026-08-20T01:43:00+09:00",
   "records": [
     {"work_id":"wrk_368805ff1c88","from_title":"1984年","title":"一九八四年","author":"ジョージ・オーウェル","source_url":"https://ndlsearch.ndl.go.jp/books/R100000001-I19111009210192478","source_title":"一九八四年","review_method":"manual_bibliographic_review"},
     {"work_id":"wrk_55b681a9fd07","from_title":"1Q84村上春樹","title":"1Q84","author":"村上春樹","source_url":"https://www.shinchosha.co.jp/book/353422/","source_title":"1Q84 BOOK1","review_method":"manual_bibliographic_review"},
@@ -34,6 +34,7 @@
     {"work_id":"wrk_95a25d1b02c6","from_title":"宝石の国(1) (アフタヌーンコミックス)","title":"宝石の国","author":"市川春子","source_url":"https://www.kodansha.co.jp/comic/products/0000047266","source_title":"宝石の国（１）","review_method":"manual_bibliographic_review"},
     {"work_id":"wrk_92db5cd7670c","from_title":"ゆらぎ荘の幽奈さん【期間限定無料】 1 (ジャンプコミックスDIGITAL)","title":"ゆらぎ荘の幽奈さん","author":"ミウラタダヒロ","source_url":"https://www.shueisha.co.jp/books/items/contents.html?jdcn=08880715880715315501","source_title":"ゆらぎ荘の幽奈さん 1","review_method":"manual_bibliographic_review"},
     {"work_id":"wrk_1728177c7677","from_title":"41歳の通訳者が15年ぶりに本気で取り組んだ英語学習法 君は心躍る英語に触れているか! GOTCHA!新書","title":"41歳の通訳者が15年ぶりに本気で取り組んだ英語学習法 君は心躍る英語に触れているか！","author":"川合亮平","source_url":"https://ej.alc.co.jp/tag/CULTURE/20191015-gotcha-shinsho4-on-sale","source_title":"41歳の通訳者が15年ぶりに本気で取り組んだ英語学習法","review_method":"manual_bibliographic_review"},
-    {"work_id":"wrk_79ac7ba1d011","from_title":"「あなた」という商品を高く売る方法 キャ (NHK出版新書)","title":"「あなた」という商品を高く売る方法 キャリア戦略をマーケティングから考える","author":"永井孝尚","source_url":"https://www.nhk-book.co.jp/list/smallcategory-37002.html?mode=page&pageNo=24","source_title":"「あなた」という商品を高く売る方法 キャリア戦略をマーケティングから考える","review_method":"manual_bibliographic_review"}
+    {"work_id":"wrk_79ac7ba1d011","from_title":"「あなた」という商品を高く売る方法 キャ (NHK出版新書)","title":"「あなた」という商品を高く売る方法 キャリア戦略をマーケティングから考える","author":"永井孝尚","source_url":"https://www.nhk-book.co.jp/list/smallcategory-37002.html?mode=page&pageNo=24","source_title":"「あなた」という商品を高く売る方法 キャリア戦略をマーケティングから考える","review_method":"manual_bibliographic_review"},
+    {"work_id":"wrk_0e2a5a3ee99a","from_title":"カードキャプターさくら クリアカード編(1) (なかよしコミックス)","title":"カードキャプターさくら クリアカード編","author":"ＣＬＡＭＰ","source_url":"https://www.kodansha.co.jp/comic/products/0000048066","source_title":"カードキャプターさくら　クリアカード編（１）","review_method":"manual_bibliographic_review"}
   ]
 }

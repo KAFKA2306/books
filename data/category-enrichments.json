@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-19T06:14:19.380Z",
+  "updated_at": "2026-08-19T07:09:15.534Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -2968,6 +2968,18 @@
       "verified_at": "2026-08-10T08:08:44.347Z"
     },
     {
+      "work_id": "wrk_7bd0596b62b0",
+      "category": "物理",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "420",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029490507",
+      "match_mode": "title_containment",
+      "title_similarity": 0.7272727272727273,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-19T07:09:15.534Z"
+    },
+    {
       "work_id": "wrk_7d1d6d8543e9",
       "category": "漫画・コミック",
       "ndc_scheme": "NDC10",
@@ -4022,6 +4034,78 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-19T06:14:19.380Z"
+    },
+    {
+      "work_id": "wrk_ac447793505d",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I024519971",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-19T07:09:15.534Z"
+    },
+    {
+      "work_id": "wrk_acbb9793d1da",
+      "category": "社会・労働・福祉",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "364",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I028789217",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-19T07:09:15.534Z"
+    },
+    {
+      "work_id": "wrk_ad10103f63fc",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029025796",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-19T07:09:15.534Z"
+    },
+    {
+      "work_id": "wrk_adb0c17865d9",
+      "category": "経営・ビジネス",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "335.031",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029629236",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784046040534",
+      "verified_at": "2026-08-19T07:09:15.534Z"
+    },
+    {
+      "work_id": "wrk_af3ca3e822b1",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I030628987",
+      "match_mode": "title_containment",
+      "title_similarity": 0.4,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-19T07:09:15.534Z"
+    },
+    {
+      "work_id": "wrk_b0d40314a1ca",
+      "category": "社会・労働・福祉",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "364",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000009172794",
+      "match_mode": "isbn",
+      "title_similarity": 0.6153846153846154,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784768469637",
+      "verified_at": "2026-08-19T07:09:15.534Z"
     }
   ]
 }

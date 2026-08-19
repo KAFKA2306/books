@@ -12,13 +12,28 @@ test('detects commercial annotations, volume metadata, and imprint suffixes', ()
   assert.ok(reasons.includes('imprint_or_series_suffix'));
 });
 
+test('detects format and creator-role suffix metadata', () => {
+  assert.deepEqual(
+    detectTitleAnomalies({ title: '作品名 Kindle版', author: null }),
+    ['format_marker'],
+  );
+  assert.deepEqual(
+    detectTitleAnomalies({ title: '作品名 著', author: null }),
+    ['creator_role_suffix'],
+  );
+});
+
 test('detects creator appended to a title when the catalog already knows the author', () => {
   const reasons = detectTitleAnomalies({ title: 'Animal Farm オーウェル', author: 'オーウェル' });
   assert.ok(reasons.includes('author_appended_to_title'));
 });
 
-test('does not flag an ordinary title', () => {
+test('does not flag an ordinary or already-normalized title', () => {
   assert.deepEqual(detectTitleAnomalies({ title: '22世紀の民主主義', author: '成田悠輔' }), []);
+  assert.deepEqual(
+    detectTitleAnomalies({ title: 'To LOVEる―とらぶる―', author: '矢吹健太朗, 長谷見沙貴' }),
+    [],
+  );
 });
 
 test('audit output contains only candidates and prioritizes multi-reason rows', () => {

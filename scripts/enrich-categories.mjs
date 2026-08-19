@@ -23,8 +23,8 @@ const args = parseArgs(process.argv.slice(2));
 const now = new Date();
 const nowIso = now.toISOString();
 const requestTimeoutMs = 30_000;
-const requestAttempts = 2;
-const requestIntervalMs = 350;
+const requestAttempts = 3;
+const requestIntervalMs = 1_000;
 const ndlDataProvider = 'iss-ndl-opac';
 
 const catalog = await loadCatalog(root);

@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-19T13:12:57.912Z",
+  "updated_at": "2026-08-19T18:56:27.039Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -4262,6 +4262,150 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-19T13:12:57.912Z"
+    },
+    {
+      "work_id": "wrk_bda74b6d4f50",
+      "category": "投資・金融",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "338.2",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I026955682",
+      "match_mode": "title_containment",
+      "title_similarity": 0.7027027027027027,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-19T18:56:27.039Z"
+    },
+    {
+      "work_id": "wrk_bdac9c0a5b6e",
+      "category": "経営・会計",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "336.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I028444713",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784797380835",
+      "verified_at": "2026-08-19T18:56:27.039Z"
+    },
+    {
+      "work_id": "wrk_be42faadf0e1",
+      "category": "商業",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "675.2",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I030012071",
+      "match_mode": "title_containment",
+      "title_similarity": 0.6153846153846154,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-19T18:56:27.039Z"
+    },
+    {
+      "work_id": "wrk_bed678f84270",
+      "category": "コンピュータ・AI",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "007.13",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I028750224",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-19T18:56:27.039Z"
+    },
+    {
+      "work_id": "wrk_bf21ec8bb9a7",
+      "category": "語学・言語",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "835",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I027372396",
+      "match_mode": "title_containment",
+      "title_similarity": 0.6153846153846154,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-19T18:56:27.039Z"
+    },
+    {
+      "work_id": "wrk_c2ce4b1f7ca6",
+      "category": "投資・金融",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "338.9",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I033835543",
+      "match_mode": "title_containment",
+      "title_similarity": 0.5454545454545454,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-19T18:56:27.039Z"
+    },
+    {
+      "work_id": "wrk_c5a8fd452e66",
+      "category": "経営・会計",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "336",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I033489909",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-19T18:56:27.039Z"
+    },
+    {
+      "work_id": "wrk_c76de699eebf",
+      "category": "医学・健康",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "499.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I026773772",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784062883382",
+      "verified_at": "2026-08-19T18:56:27.039Z"
+    },
+    {
+      "work_id": "wrk_c80cfcbe79e5",
+      "category": "投資・金融",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "338.155",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000008332893",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784582853421",
+      "verified_at": "2026-08-19T18:56:27.039Z"
+    },
+    {
+      "work_id": "wrk_c90b4dfd3de7",
+      "category": "医学・健康",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "491.371",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I023818048",
+      "match_mode": "title_containment",
+      "title_similarity": 0.6923076923076923,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-19T18:56:27.039Z"
+    },
+    {
+      "work_id": "wrk_c9d03c3173fa",
+      "category": "化学",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "433",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000007687410",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-19T18:56:27.039Z"
+    },
+    {
+      "work_id": "wrk_c9eee2e7dbbb",
+      "category": "経済",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "333.8",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I024221600",
+      "match_mode": "title_containment",
+      "title_similarity": 0.7857142857142857,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-19T18:56:27.039Z"
     }
   ]
 }

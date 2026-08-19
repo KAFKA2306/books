@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.work-merges.v1",
-  "updated_at": "2026-08-19T20:36:58+09:00",
+  "updated_at": "2026-08-20T01:43:00+09:00",
   "records": [
     {"from_work_id":"wrk_40ca39f0033d","into_work_id":"wrk_3a5c051662b5","from_title":"寄生獣(3) (アフタヌーンコミックス)","into_title":"寄生獣","author":"岩明均","source_url":"https://www.kodansha.co.jp/comic/products/0000029954","source_title":"寄生獣（３）","reason":"volume_and_label_were_embedded_in_work_title"},
     {"from_work_id":"wrk_c30372c9e211","into_work_id":"wrk_3a5c051662b5","from_title":"寄生獣(1) (アフタヌーンコミックス)","into_title":"寄生獣","author":"岩明均","source_url":"https://www.kodansha.co.jp/comic/products/0000029944","source_title":"寄生獣（１）","reason":"volume_and_label_were_embedded_in_work_title"},
@@ -21,6 +21,8 @@
     {"from_work_id":"wrk_7245f5cfdcc3","into_work_id":"wrk_677c8af92954","from_title":"さよなら絶望先生(3) (週刊少年マガジンコミックス)","into_title":"さよなら絶望先生","author":"久米田康治","source_url":"https://www.kodansha.co.jp/comic/products/0000012040","source_title":"さよなら絶望先生（３）","reason":"volume_and_label_were_embedded_in_work_title"},
     {"from_work_id":"wrk_e577fec594dd","into_work_id":"wrk_95a25d1b02c6","from_title":"宝石の国(2) (アフタヌーンコミックス)","into_title":"宝石の国","author":"市川春子","source_url":"https://www.kodansha.co.jp/comic/products/0000047310","source_title":"宝石の国（２）","reason":"volume_and_label_were_embedded_in_work_title"},
     {"from_work_id":"wrk_ab358ce88f18","into_work_id":"wrk_95a25d1b02c6","from_title":"宝石の国(3) (アフタヌーンコミックス)","into_title":"宝石の国","author":"市川春子","source_url":"https://www.kodansha.co.jp/comic/products/0000047352","source_title":"宝石の国（３）","reason":"volume_and_label_were_embedded_in_work_title"},
-    {"from_work_id":"wrk_82ee13c8c8c4","into_work_id":"wrk_92db5cd7670c","from_title":"ゆらぎ荘の幽奈さん【期間限定無料】 2 (ジャンプコミックスDIGITAL)","into_title":"ゆらぎ荘の幽奈さん","author":"ミウラタダヒロ","source_url":"https://www.shueisha.co.jp/books/items/contents.html?isbn=978-4-08-880754-6","source_title":"ゆらぎ荘の幽奈さん 2","reason":"retail_annotation_volume_and_imprint_were_embedded_in_work_title"}
+    {"from_work_id":"wrk_82ee13c8c8c4","into_work_id":"wrk_92db5cd7670c","from_title":"ゆらぎ荘の幽奈さん【期間限定無料】 2 (ジャンプコミックスDIGITAL)","into_title":"ゆらぎ荘の幽奈さん","author":"ミウラタダヒロ","source_url":"https://www.shueisha.co.jp/books/items/contents.html?isbn=978-4-08-880754-6","source_title":"ゆらぎ荘の幽奈さん 2","reason":"retail_annotation_volume_and_imprint_were_embedded_in_work_title"},
+    {"from_work_id":"wrk_5e5521848689","into_work_id":"wrk_0e2a5a3ee99a","from_title":"カードキャプターさくら クリアカード編(2) (なかよしコミックス)","into_title":"カードキャプターさくら クリアカード編","author":"ＣＬＡＭＰ","source_url":"https://www.kodansha.co.jp/comic/products/0000048108","source_title":"カードキャプターさくら　クリアカード編（２）","reason":"volume_and_label_were_embedded_in_work_title"},
+    {"from_work_id":"wrk_37ba9cccc0e6","into_work_id":"wrk_0e2a5a3ee99a","from_title":"カードキャプターさくら クリアカード編(3) (なかよしコミックス)","into_title":"カードキャプターさくら クリアカード編","author":"ＣＬＡＭＰ","source_url":"https://www.kodansha.co.jp/comic/products/0000048171","source_title":"カードキャプターさくら　クリアカード編（３）","reason":"volume_and_label_were_embedded_in_work_title"}
   ]
 }

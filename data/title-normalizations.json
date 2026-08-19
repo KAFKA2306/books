@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.title-normalizations.v1",
-  "updated_at": "2026-08-20T03:34:00+09:00",
+  "updated_at": "2026-08-20T07:34:00+09:00",
   "records": [
     {"work_id":"wrk_368805ff1c88","from_title":"1984年","title":"一九八四年","author":"ジョージ・オーウェル","source_url":"https://ndlsearch.ndl.go.jp/books/R100000001-I19111009210192478","source_title":"一九八四年","review_method":"manual_bibliographic_review"},
     {"work_id":"wrk_55b681a9fd07","from_title":"1Q84村上春樹","title":"1Q84","author":"村上春樹","source_url":"https://www.shinchosha.co.jp/book/353422/","source_title":"1Q84 BOOK1","review_method":"manual_bibliographic_review"},
@@ -38,6 +38,7 @@
     {"work_id":"wrk_0e2a5a3ee99a","from_title":"カードキャプターさくら クリアカード編(1) (なかよしコミックス)","title":"カードキャプターさくら クリアカード編","author":"ＣＬＡＭＰ","source_url":"https://www.kodansha.co.jp/comic/products/0000048066","source_title":"カードキャプターさくら　クリアカード編（１）","review_method":"manual_bibliographic_review"},
     {"work_id":"wrk_95e86ea4cbdf","from_title":"食戟のソーマ【期間限定無料】 1 (ジャンプコミックスDIGITAL)","title":"食戟のソーマ","author":"附田祐斗, 佐伯俊, 森崎友紀","source_url":"https://www.shueisha.co.jp/books/items/contents.html?jdcn=08870721870721315501","source_title":"食戟のソーマ 1","review_method":"manual_bibliographic_review"},
     {"work_id":"wrk_023069908972","from_title":"ホモ・デウス 上 テクノロジーとサピエンスの未来 ホモ・デウス テクノロジーとサピエンスの未来 (河出文庫)","title":"ホモ・デウス 上 テクノロジーとサピエンスの未来","author":"ユヴァル・ノア・ハラリ","source_url":"https://www.kawade.co.jp/np/isbn/9784309467580/","source_title":"ホモ・デウス　上 テクノロジーとサピエンスの未来","review_method":"manual_bibliographic_review"},
-    {"work_id":"wrk_87a786c943ab","from_title":"ホモ・デウス 下 テクノロジーとサピエンスの未来 ホモ・デウス テクノロジーとサピエンスの未来 (河出文庫)","title":"ホモ・デウス 下 テクノロジーとサピエンスの未来","author":"ユヴァル・ノア・ハラリ","source_url":"https://www.kawade.co.jp/np/isbn/9784309467597/","source_title":"ホモ・デウス　下 テクノロジーとサピエンスの未来","review_method":"manual_bibliographic_review"}
+    {"work_id":"wrk_87a786c943ab","from_title":"ホモ・デウス 下 テクノロジーとサピエンスの未来 ホモ・デウス テクノロジーとサピエンスの未来 (河出文庫)","title":"ホモ・デウス 下 テクノロジーとサピエンスの未来","author":"ユヴァル・ノア・ハラリ","source_url":"https://www.kawade.co.jp/np/isbn/9784309467597/","source_title":"ホモ・デウス　下 テクノロジーとサピエンスの未来","review_method":"manual_bibliographic_review"},
+    {"work_id":"wrk_43cca93392f6","from_title":"2.5次元の誘惑【期間限定無料】 2 (ジャンプコミックスDIGITAL)","title":"2.5次元の誘惑","author":"橋本悠","source_url":"https://www.shueisha.co.jp/books/items/contents.html?jdcn=08882182882129315501","source_title":"2.5次元の誘惑 2","review_method":"manual_bibliographic_review"}
   ]
 }

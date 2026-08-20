@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-19T18:56:27.039Z",
+  "updated_at": "2026-08-20T01:54:27.537Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -4406,6 +4406,126 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-19T18:56:27.039Z"
+    },
+    {
+      "work_id": "wrk_cdb18183765f",
+      "category": "語学・言語",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "830.7",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029067556",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-20T01:54:27.537Z"
+    },
+    {
+      "work_id": "wrk_ce331cd5f526",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "726.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I027633704",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-20T01:54:27.537Z"
+    },
+    {
+      "work_id": "wrk_cea932769850",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029011102",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-20T01:54:27.537Z"
+    },
+    {
+      "work_id": "wrk_d28218d9c811",
+      "category": "投資・金融",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "338.253",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I033100610",
+      "match_mode": "title_containment",
+      "title_similarity": 0.48484848484848486,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-20T01:54:27.537Z"
+    },
+    {
+      "work_id": "wrk_d4f9ac1307c3",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I027015067",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-20T01:54:27.537Z"
+    },
+    {
+      "work_id": "wrk_d745bfa9091b",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC8",
+      "ndc_code": "913.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000002211698",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-20T01:54:27.537Z"
+    },
+    {
+      "work_id": "wrk_d7e5f72a2077",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "953.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I025291905",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784334752873",
+      "verified_at": "2026-08-20T01:54:27.537Z"
+    },
+    {
+      "work_id": "wrk_d7f61508dc88",
+      "category": "技術・工学",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "509.5",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I032071405",
+      "match_mode": "title_containment",
+      "title_similarity": 0.5964912280701754,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-20T01:54:27.537Z"
+    },
+    {
+      "work_id": "wrk_d87d3b804576",
+      "category": "コンピュータ・AI",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "007.609",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I026010556",
+      "match_mode": "title_containment",
+      "title_similarity": 0.43902439024390244,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-20T01:54:27.537Z"
+    },
+    {
+      "work_id": "wrk_d98d82be9f38",
+      "category": "コンピュータ・AI",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "007.13",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000002949835",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-20T01:54:27.537Z"
     }
   ]
 }

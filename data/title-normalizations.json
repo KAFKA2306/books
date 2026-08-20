@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.title-normalizations.v1",
-  "updated_at": "2026-08-20T10:37:42+09:00",
+  "updated_at": "2026-08-20T12:34:48+09:00",
   "records": [
     {"work_id":"wrk_368805ff1c88","from_title":"1984年","title":"一九八四年","author":"ジョージ・オーウェル","source_url":"https://ndlsearch.ndl.go.jp/books/R100000001-I19111009210192478","source_title":"一九八四年","review_method":"manual_bibliographic_review"},
     {"work_id":"wrk_55b681a9fd07","from_title":"1Q84村上春樹","title":"1Q84","author":"村上春樹","source_url":"https://www.shinchosha.co.jp/book/353422/","source_title":"1Q84 BOOK1","review_method":"manual_bibliographic_review"},
@@ -42,6 +42,7 @@
     {"work_id":"wrk_43cca93392f6","from_title":"2.5次元の誘惑【期間限定無料】 2 (ジャンプコミックスDIGITAL)","title":"2.5次元の誘惑","author":"橋本悠","source_url":"https://www.shueisha.co.jp/books/items/contents.html?jdcn=08882182882129315501","source_title":"2.5次元の誘惑 2","review_method":"manual_bibliographic_review"},
     {"work_id":"wrk_7f4eb000327f","from_title":"サクラ、サク。【期間限定無料】 1 (マーガレットコミックスDIGITAL)","title":"サクラ、サク。","author":"咲坂伊緒","source_url":"https://www.shueisha.co.jp/books/items/contents.html?jdcn=08X10000000014379500","source_title":"サクラ、サク。 1","review_method":"manual_bibliographic_review"},
     {"work_id":"wrk_81004742c6e3","from_title":"ド級編隊エグゼロス【期間限定無料】 1 (ジャンプコミックスDIGITAL)","title":"ド級編隊エグゼロス","author":"きただりょうま","source_url":"https://www.shueisha.co.jp/books/search/search.html?seriesid=51237","source_title":"ド級編隊エグゼロス 1","review_method":"manual_bibliographic_review"},
-    {"work_id":"wrk_2ed5a778aa30","from_title":"焼いてるふたり(1) (モーニングコミックス)","title":"焼いてるふたり","source_url":"https://www.kodansha.co.jp/comic/products/0000346780","source_title":"焼いてるふたり（１）","review_method":"manual_bibliographic_review"}
+    {"work_id":"wrk_2ed5a778aa30","from_title":"焼いてるふたり(1) (モーニングコミックス)","title":"焼いてるふたり","source_url":"https://www.kodansha.co.jp/comic/products/0000346780","source_title":"焼いてるふたり（１）","review_method":"manual_bibliographic_review"},
+    {"work_id":"wrk_4f9564ddb43c","from_title":"婚活区~29歳独身、結婚しないと出られない街で~(1) (コミックMELO)","title":"婚活区～29歳独身、結婚しないと出られない街で～","author":"青村栄里","source_url":"https://www.mangabox.me/reader/330521/episodes/","source_title":"婚活区～29歳独身、結婚しないと出られない街で～","review_method":"manual_bibliographic_review"}
   ]
 }

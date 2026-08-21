@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-21T02:00:36.805Z",
+  "updated_at": "2026-08-21T07:11:05.037Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -5042,6 +5042,54 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-21T02:00:36.805Z"
+    },
+    {
+      "work_id": "wrk_f6fd606e9ec0",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC",
+      "ndc_code": "933",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000001101127",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-21T07:11:05.037Z"
+    },
+    {
+      "work_id": "wrk_f74aef0285cc",
+      "category": "コンピュータ・AI",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "007.6384",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I028842549",
+      "match_mode": "title_containment",
+      "title_similarity": 0.625,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-21T07:11:05.037Z"
+    },
+    {
+      "work_id": "wrk_f7ba3300f41a",
+      "category": "商業",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "675",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029316385",
+      "match_mode": "title_containment",
+      "title_similarity": 0.896551724137931,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-21T07:11:05.037Z"
+    },
+    {
+      "work_id": "wrk_f892fc99d026",
+      "category": "ゲーム・娯楽",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "798",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I027079134",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-21T07:11:05.037Z"
     }
   ]
 }

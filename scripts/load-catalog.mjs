@@ -58,6 +58,13 @@ export function mergeCategoryOverlays(automated, ...primaryOverlays) {
   };
 }
 
+export function mergeTitleNormalizationOverlays(...overlays) {
+  return {
+    schema: 'kafka.books.title-normalizations.v1',
+    records: overlays.flatMap((overlay) => overlay?.records ?? []),
+  };
+}
+
 export async function loadCatalog(root = process.cwd()) {
   const base = JSON.parse(
     await fs.readFile(path.join(root, 'data/catalog.json'), 'utf8'),
@@ -104,7 +111,13 @@ export async function loadCatalog(root = process.cwd()) {
     schema: 'kafka.books.title-normalizations.v1',
     records: [],
   };
-  merged = applyTitleNormalizations(merged, titleOverlay);
+  const titlePartitions = await readJsonDirectoryIfPresent(
+    path.join(root, 'data/title-normalizations'),
+  );
+  merged = applyTitleNormalizations(
+    merged,
+    mergeTitleNormalizationOverlays(titleOverlay, ...titlePartitions),
+  );
   merged = deriveLibraryClassifications(merged, categoryOverlay);
 
   const workMergeOverlay = await readJsonIfPresent(path.join(root, 'data/work-merges.json')) ?? {

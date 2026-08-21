@@ -1,0 +1,23 @@
+{
+  "schema": "kafka.books.category-enrichments.v1",
+  "rule_version": "ndc-map-v1",
+  "updated_at": "2026-08-21T13:20:00.000Z",
+  "records": [
+    {
+      "work_id": "wrk_fd64415da0cd",
+      "category": "社会・人間関係",
+      "ndc_scheme": "NDC",
+      "ndc_code": "361.5",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000002926200",
+      "match_mode": "primary_bibliographic_record",
+      "title_similarity": null,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-21T13:20:00.000Z",
+      "source_title": "銃・病原菌・鉄 : 一万三〇〇〇年にわたる人類史の謎. 上",
+      "source_series": null,
+      "source_bibliographic_id": "000002926200",
+      "source_note": "ローカルWorkの『十病原菌鉄』は区切り・文字が欠落した転記。NDL書誌で作品タイトル・著者・NDC 361.5を確認し、Work単位のタイトル正規化と分類にのみ使用する。巻・ISBN・Editionは補完しない"
+    }
+  ]
+}

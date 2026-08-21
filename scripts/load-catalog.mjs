@@ -18,9 +18,25 @@ async function readJsonIfPresent(filePath) {
   }
 }
 
-export function mergeCategoryOverlays(automated, primary) {
+async function readJsonDirectoryIfPresent(dirPath) {
+  try {
+    const entries = await fs.readdir(dirPath, { withFileTypes: true });
+    const filenames = entries
+      .filter((entry) => entry.isFile() && entry.name.endsWith('.json'))
+      .map((entry) => entry.name)
+      .sort();
+    return Promise.all(
+      filenames.map((filename) => readJsonIfPresent(path.join(dirPath, filename))),
+    );
+  } catch (error) {
+    if (error.code === 'ENOENT') return [];
+    throw error;
+  }
+}
+
+export function mergeCategoryOverlays(automated, ...primaryOverlays) {
   const recordsByWork = new Map();
-  for (const overlay of [primary, automated]) {
+  for (const overlay of [...primaryOverlays, automated]) {
     for (const record of overlay?.records ?? []) {
       const existing = recordsByWork.get(record.work_id);
       if (existing) {
@@ -74,7 +90,14 @@ export async function loadCatalog(root = process.cwd()) {
     rule_version: 'ndc-map-v1',
     records: [],
   };
-  const categoryOverlay = mergeCategoryOverlays(automatedCategoryOverlay, primaryCategoryOverlay);
+  const primaryCategoryPartitions = await readJsonDirectoryIfPresent(
+    path.join(root, 'data/category-primary-verifications'),
+  );
+  const categoryOverlay = mergeCategoryOverlays(
+    automatedCategoryOverlay,
+    primaryCategoryOverlay,
+    ...primaryCategoryPartitions,
+  );
   merged = applyCategoryEnrichments(merged, categoryOverlay);
 
   const titleOverlay = await readJsonIfPresent(path.join(root, 'data/title-normalizations.json')) ?? {

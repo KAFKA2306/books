@@ -1,0 +1,39 @@
+{
+  "schema": "kafka.books.category-enrichments.v1",
+  "rule_version": "ndc-map-v1",
+  "updated_at": "2026-08-21T12:14:00.000Z",
+  "records": [
+    {
+      "work_id": "wrk_f9dda831cba7",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I030575495",
+      "match_mode": "primary_bibliographic_record",
+      "title_similarity": null,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-21T12:14:00.000Z",
+      "source_title": "フラジャイル : 病理医岸京一郎の所見",
+      "source_series": "アフタヌーンKC",
+      "source_bibliographic_id": "030575495",
+      "source_note": "NDL資料は第18巻。ローカルWorkは第3巻で、主タイトル・シリーズ・作品著者関係が一致するためWork単位のNDC分類にのみ使用し、版・ISBNは補完しない"
+    },
+    {
+      "work_id": "wrk_facbbdc12286",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I025373800",
+      "match_mode": "primary_bibliographic_record",
+      "title_similarity": null,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-21T12:14:00.000Z",
+      "source_title": "新世界より",
+      "source_series": "講談社コミックスマガジン ; KCM5019. Shonen Magazine Comics",
+      "source_bibliographic_id": "025373800",
+      "source_note": "NDL資料は漫画版第6巻。ローカルWorkは週刊少年マガジンコミックス第1巻で、主タイトル・原作・漫画作品系列が一致するためWork単位のNDC分類にのみ使用し、版・ISBNは補完しない"
+    }
+  ]
+}

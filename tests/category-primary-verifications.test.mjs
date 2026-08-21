@@ -26,6 +26,39 @@ test('primary NDL category verification is current-use and source-reported', asy
   assert.equal(classification.verification, 'source_reported');
 });
 
+test('partitioned primary NDL evidence is loaded into the canonical catalog', async () => {
+  const catalog = await loadCatalog();
+  const cases = [
+    {
+      workId: 'wrk_f9dda831cba7',
+      schemeId: 'ndc10',
+      sourceUrl: 'https://ndlsearch.ndl.go.jp/books/R100000002-I030575495',
+    },
+    {
+      workId: 'wrk_facbbdc12286',
+      schemeId: 'ndc9',
+      sourceUrl: 'https://ndlsearch.ndl.go.jp/books/R100000002-I025373800',
+    },
+  ];
+
+  for (const { workId, schemeId, sourceUrl } of cases) {
+    const work = catalog.works.find((item) => item.work_id === workId);
+    assert.ok(work, `missing partitioned work ${workId}`);
+    assert.equal(work.category, '漫画・コミック');
+    assert.equal(work.classification?.source_url, sourceUrl);
+    assert.equal(work.classification?.match_mode, 'primary_bibliographic_record');
+
+    const classification = catalog.classifications.find((item) => (
+      item.work_id === workId
+      && item.scheme_id === schemeId
+      && item.code === '726.1'
+    ));
+    assert.ok(classification, `missing partitioned NDC classification for ${workId}`);
+    assert.equal(classification.source_url, sourceUrl);
+    assert.equal(classification.verification, 'source_reported');
+  }
+});
+
 test('primary evidence wins when automated evidence reports the same classification', () => {
   const automated = {
     records: [{
@@ -43,6 +76,30 @@ test('primary evidence wins when automated evidence reports the same classificat
   assert.equal(merged.records.length, 1);
   assert.equal(merged.records[0].match_mode, 'primary_bibliographic_record');
   assert.equal(merged.records[0].source_url, 'https://ndlsearch.ndl.go.jp/books/primary');
+});
+
+test('multiple primary partitions keep deterministic primary precedence', () => {
+  const automated = {
+    records: [{
+      work_id: 'wrk_partition', category: '数学', ndc_scheme: 'NDC9', ndc_code: '410',
+      match_mode: 'title', source_url: 'https://ndlsearch.ndl.go.jp/books/automated',
+    }],
+  };
+  const firstPrimary = {
+    records: [{
+      work_id: 'wrk_partition', category: '数学', ndc_scheme: 'NDC9', ndc_code: '410',
+      match_mode: 'primary_bibliographic_record', source_url: 'https://ndlsearch.ndl.go.jp/books/primary-a',
+    }],
+  };
+  const secondPrimary = {
+    records: [{
+      work_id: 'wrk_partition', category: '数学', ndc_scheme: 'NDC9', ndc_code: '410',
+      match_mode: 'primary_bibliographic_record', source_url: 'https://ndlsearch.ndl.go.jp/books/primary-b',
+    }],
+  };
+  const merged = mergeCategoryOverlays(automated, firstPrimary, secondPrimary);
+  assert.equal(merged.records.length, 1);
+  assert.equal(merged.records[0].source_url, 'https://ndlsearch.ndl.go.jp/books/primary-a');
 });
 
 test('conflicting primary and automated classifications are rejected', () => {

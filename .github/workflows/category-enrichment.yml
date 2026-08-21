@@ -13,6 +13,8 @@ on:
       - 'data/catalog.json'
       - 'data/issue-1-books.json'
       - 'data/isbn-enrichments.json'
+      - 'data/category-primary-verifications.json'
+      - 'data/category-primary-verifications/**'
       - 'data/kindle/**'
   schedule:
     - cron: '17 */6 * * *'

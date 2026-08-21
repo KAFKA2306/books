@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-21T07:11:05.037Z",
+  "updated_at": "2026-08-21T10:41:24.348Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -5090,6 +5090,174 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-21T07:11:05.037Z"
+    },
+    {
+      "work_id": "wrk_fa28ef4a36a0",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I028862976",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-21T10:41:24.348Z"
+    },
+    {
+      "work_id": "wrk_fbd1db3198cb",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I031357449",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-21T10:41:24.348Z"
+    },
+    {
+      "work_id": "wrk_fc549f36c32f",
+      "category": "投資・金融",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "338.155",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029848307",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-21T10:41:24.348Z"
+    },
+    {
+      "work_id": "wrk_fc57580332d2",
+      "category": "ゲーム・娯楽",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "797.2",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000010927542",
+      "match_mode": "title_containment",
+      "title_similarity": 0.6829268292682927,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-21T10:41:24.348Z"
+    },
+    {
+      "work_id": "wrk_fcb7c8d70ec9",
+      "category": "ゲーム・娯楽",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "796",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000008344074",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-21T10:41:24.348Z"
+    },
+    {
+      "work_id": "wrk_fcef9369288e",
+      "category": "コンピュータ・AI",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "007.64",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I032602721",
+      "match_mode": "title_containment",
+      "title_similarity": 0.5185185185185185,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-21T10:41:24.348Z"
+    },
+    {
+      "work_id": "wrk_fcf64f696f89",
+      "category": "社会・人間関係",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "361.4",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I034221451",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-21T10:41:24.348Z"
+    },
+    {
+      "work_id": "wrk_fd22500399c6",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "913.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000009428059",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-21T10:41:24.348Z"
+    },
+    {
+      "work_id": "wrk_fd43cd35949a",
+      "category": "化学工業",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "570.95",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I023321970",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-21T10:41:24.348Z"
+    },
+    {
+      "work_id": "wrk_fd8a787a3b82",
+      "category": "通貨・物価",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "337",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000002864751",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-21T10:41:24.348Z"
+    },
+    {
+      "work_id": "wrk_fdc8acb1c7ae",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I025891783",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-21T10:41:24.348Z"
+    },
+    {
+      "work_id": "wrk_fe353a039503",
+      "category": "漫画・コミック",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "726.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I030789932",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-21T10:41:24.348Z"
+    },
+    {
+      "work_id": "wrk_feee65b17e4c",
+      "category": "物理",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "429.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I024199434",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-21T10:41:24.348Z"
+    },
+    {
+      "work_id": "wrk_ffef4730ea99",
+      "category": "投資・金融",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "338.15",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029713735",
+      "match_mode": "title_containment",
+      "title_similarity": 0.49122807017543857,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-21T10:41:24.348Z"
     }
   ]
 }

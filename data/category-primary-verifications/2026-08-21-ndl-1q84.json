@@ -8,16 +8,16 @@
       "category": "文学・小説",
       "ndc_scheme": "NDC9",
       "ndc_code": "913.6",
-      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000010215237",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000011172379",
       "match_mode": "primary_bibliographic_record",
       "title_similarity": null,
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-21T16:37:56Z",
-      "source_title": "1Q84(イチ・キュウ・ハチ・ヨン)",
-      "source_series": null,
-      "source_bibliographic_id": "000010215237",
-      "source_note": "NDL資料はBOOK1。ローカルWorkは巻情報を持たないため、作品タイトル・著者一致からWork単位のNDC分類にのみ使用し、巻・版・ISBNは補完しない"
+      "source_title": "1Q84. BOOK1(4月-6月) 1",
+      "source_series": "大活字文庫 ; 198",
+      "source_bibliographic_id": "000011172379",
+      "source_note": "NDL資料は大活字版BOOK1。ローカルWorkは巻・版情報を持たないため、作品タイトル・著者一致からWork単位のNDC分類にのみ使用し、巻・版・ISBNは補完しない"
     }
   ]
 }

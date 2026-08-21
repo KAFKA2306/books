@@ -22,9 +22,9 @@ const reportPath = path.join(root, 'data/category-enrichment-report.json');
 const args = parseArgs(process.argv.slice(2));
 const now = new Date();
 const nowIso = now.toISOString();
-const requestTimeoutMs = 30_000;
+const requestTimeoutMs = 60_000;
 const requestAttempts = 3;
-const requestIntervalMs = 1_000;
+const requestIntervalMs = 3_000;
 const ndlDataProvider = 'iss-ndl-opac';
 
 const catalog = await loadCatalog(root);
@@ -253,7 +253,7 @@ async function fetchText(url) {
       return await response.text();
     } catch (error) {
       lastError = error;
-      if (attempt < requestAttempts) await sleep(attempt * 1_000);
+      if (attempt < requestAttempts) await sleep(attempt * requestIntervalMs);
     } finally {
       clearTimeout(timeout);
     }

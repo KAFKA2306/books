@@ -1,0 +1,15 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "updated_at": "2026-08-21T15:42:19Z",
+  "records": [
+    {
+      "work_id": "wrk_fe8ae231cb6e",
+      "from_title": "自然流中原の振り飛車破り",
+      "title": "自然流中原誠の振飛車破り",
+      "author": "中原誠",
+      "source_url": "https://www.library-noda.jp/iLisvirtual/?count=7&holcd=500092093&key=00&keycode=1&mode=sp&type=2",
+      "source_title": "自然流中原誠の振飛車破り",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

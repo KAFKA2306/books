@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-21T13:14:44.496Z",
+  "updated_at": "2026-08-21T14:42:45.319Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -4646,6 +4646,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-20T13:14:59.688Z"
+    },
+    {
+      "work_id": "wrk_dfa1e5005c79",
+      "category": "政治",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "311.7",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I032230028",
+      "match_mode": "title_containment",
+      "title_similarity": 0.43243243243243246,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-21T14:42:45.319Z"
     },
     {
       "work_id": "wrk_e0459b03c223",

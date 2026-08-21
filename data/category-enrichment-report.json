@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.category-enrichment-report.v1",
-  "generated_at": "2026-08-21T13:14:44.496Z",
+  "generated_at": "2026-08-21T14:42:45.319Z",
   "rule_version": "ndc-map-v1",
   "policy": {
     "source": "National Diet Library Search OpenSearch API",
@@ -19,12 +19,52 @@
     "request_timeout_ms": 60000
   },
   "summary": {
-    "attempted": 0,
-    "accepted": 0,
+    "attempted": 3,
+    "accepted": 1,
     "ambiguous": 0,
     "no_ndc": 0,
-    "no_candidate": 0,
+    "no_candidate": 2,
     "provider_error": 0
   },
-  "results": []
+  "results": [
+    {
+      "work_id": "wrk_dec34ec70df5",
+      "title": "恋するアステロイド",
+      "lookup_title": "恋するアステロイド",
+      "outcome": "no_candidate",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "match_mode": null,
+      "matches": 0,
+      "provider_error": null
+    },
+    {
+      "work_id": "wrk_dfa1e5005c79",
+      "title": "22世紀の民主主義 選挙はアルゴリズムになり、政治家はネコになる",
+      "lookup_title": "22世紀の民主主義 選挙はアルゴリズムになり、政治家はネコになる",
+      "outcome": "accepted",
+      "category": "政治",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "311.7",
+      "source_isbn13": null,
+      "match_mode": "title_containment",
+      "matches": 1,
+      "provider_error": null
+    },
+    {
+      "work_id": "wrk_e052df6a667f",
+      "title": "現代の金融入門 [新版] (ちくま新書)",
+      "lookup_title": "現代の金融入門 [新版]",
+      "outcome": "no_candidate",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "match_mode": null,
+      "matches": 0,
+      "provider_error": null
+    }
+  ]
 }

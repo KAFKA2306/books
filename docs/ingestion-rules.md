@@ -7,9 +7,16 @@ This document records the repository's existing ingestion behavior and the paths
 - Catalog normalization and duplicate decisions: `src/catalog.mjs`
 - Import precheck CLI: `scripts/precheck.mjs`
 - Canonical catalog: `data/catalog.json`
+- Issue-import evidence: `data/issue-1-books.json`
 - ISBN evidence overlay: `data/isbn-enrichments.json`
 - ISBN attempt/report state: `data/isbn-enrichment-state.json`, `data/isbn-enrichment-report.json`
+- Automated category evidence: `data/category-enrichments.json`
+- Primary-source category evidence: `data/category-primary-verifications.json` and sorted `data/category-primary-verifications/*.json` partitions
+- Bibliographic display corrections: `data/title-normalizations.json` and sorted `data/title-normalizations/*.json` partitions
+- Work identity merges: `data/work-merges.json`
 - Kindle evidence: `data/kindle/manifest.json` and `data/kindle/records-*.ndjson`
+
+`data/category-primary-verifications/*.json` and `data/title-normalizations/*.json` are partitions of their respective logical evidence sets, not separate authorities. `scripts/load-catalog.mjs` loads them in deterministic filename order and rejects conflicting evidence through the existing merge/normalization contracts.
 
 ## ISBN normalization
 
@@ -60,6 +67,7 @@ A new or changed Work/Edition must remain traceable to evidence already supporte
 - an import/source record retained in the repository,
 - an ISBN enrichment record containing the adopted ISBN and source URLs,
 - a Kindle normalized record plus `data/kindle/manifest.json` input hash/count evidence,
+- a primary-source category or title-normalization record that names the affected Work and source URL,
 - another versioned audit/overlay record that identifies the source and decision.
 
 Do not invent a source URL, acquisition date, ISBN, edition, or format to satisfy schema completeness. If provenance is insufficient, leave the candidate blocked or unverified.

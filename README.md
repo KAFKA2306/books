@@ -53,12 +53,9 @@ KAFKA BOOKS の差別化はschemaの多さではなく、**「なぜこの本を
 
 ## 正準データ
 
-- `data/catalog.json` — 基本カタログ
-- `data/issue-1-books.json` — Issue取込記録
-- `data/kindle/manifest.json` + `data/kindle/records-*.ndjson` — Kindle正規化データ
-- `data/isbn-enrichments.json` — ISBN拡充overlay
+入力、書誌・分類overlay、merge、provenanceの正準pathと適用順序は [docs/ingestion-rules.md](docs/ingestion-rules.md) に集約します。READMEでは同じpath一覧を重複管理しません。
 
-`catalog.json` と `issue-1-books.json` は読み取り可能なJSONを唯一の入力経路とし、旧 `base64+gzip` 分割データへのfallbackは持ちません。
+`catalog.json` と `issue-1-books.json` は読み取り可能なJSONを入力とし、旧 `base64+gzip` 分割データへのfallbackは持ちません。公開側は `api/v1/manifest.json` と各collectionのSHA-256から生成結果を監査できます。
 
 ## Kindle XML → 所蔵までの境界
 

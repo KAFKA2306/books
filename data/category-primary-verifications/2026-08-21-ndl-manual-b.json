@@ -1,0 +1,23 @@
+{
+  "schema": "kafka.books.category-enrichments.v1",
+  "rule_version": "ndc-map-v1",
+  "updated_at": "2026-08-21T12:30:00.000Z",
+  "records": [
+    {
+      "work_id": "wrk_fb1ce254e7f1",
+      "category": "通貨・物価",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "337.31",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I027746970",
+      "match_mode": "primary_bibliographic_record",
+      "title_similarity": null,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-21T12:30:00.000Z",
+      "source_title": "金価格は6倍になるいますぐ金(ゴールド)を買いなさい",
+      "source_series": null,
+      "source_bibliographic_id": "027746970",
+      "source_note": "NDL個別書誌で主タイトル・著者・出版社が一致し、NDC9 337.31を確認。ローカルWorkのEdition/ISBNはこの分類証拠から補完しない"
+    }
+  ]
+}

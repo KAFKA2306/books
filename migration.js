@@ -1,4 +1,4 @@
-import { diagnoseMigration, parseCsv, renderDiagnosisHtml } from './src/migration-diagnosis.mjs';
+import { diagnoseMigration, parseMigrationInput, renderDiagnosisHtml } from './src/migration-diagnosis.mjs';
 
 const fileInput = document.querySelector('#migrationFile');
 const diagnoseButton = document.querySelector('#diagnoseButton');
@@ -17,6 +17,14 @@ fileInput.addEventListener('change', () => {
   diagnoseButton.disabled = fileInput.files.length !== 1;
   statusNode.textContent = fileInput.files.length === 1 ? `${fileInput.files[0].name} を選択しました。` : '';
 });
+
+function inputFormat(file) {
+  const name = file.name.toLowerCase();
+  if (name.endsWith('.csv') || file.type === 'text/csv') return 'csv';
+  if (name.endsWith('.json') || file.type === 'application/json') return 'json';
+  if (name.endsWith('.txt') || file.type === 'text/plain') return 'isbn-list';
+  throw new Error('対応形式はCSV、JSON、1行1ISBNのテキストです。');
+}
 
 function download(name, type, content) {
   const url = URL.createObjectURL(new Blob([content], { type }));
@@ -69,13 +77,14 @@ diagnoseButton.addEventListener('click', async () => {
   diagnoseButton.disabled = true;
   statusNode.textContent = '診断中…';
   try {
+    const file = fileInput.files[0];
     const [text, response] = await Promise.all([
-      fileInput.files[0].text(),
+      file.text(),
       fetch('./api/v1/catalog.json', { cache: 'no-store' }),
     ]);
     if (!response.ok) throw new Error(`catalog取得失敗: HTTP ${response.status}`);
-    const rows = parseCsv(text);
-    if (!rows.length) throw new Error('CSVに診断対象の行がありません。');
+    const rows = parseMigrationInput(text, inputFormat(file));
+    if (!rows.length) throw new Error('診断対象の行がありません。');
     const catalog = await response.json();
     currentReport = diagnoseMigration(rows, catalog);
     render(currentReport);

@@ -1,0 +1,25 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_e72572088022",
+      "into_work_id": "wrk_b2f83889f227",
+      "from_title": "きみはかわいい女の子(2) (別冊フレンドコミックス)",
+      "into_title": "きみはかわいい女の子",
+      "author": "いちのへ瑠美",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000046985",
+      "source_title": "きみはかわいい女の子（２）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    },
+    {
+      "from_work_id": "wrk_d4f9ac1307c3",
+      "into_work_id": "wrk_b2f83889f227",
+      "from_title": "きみはかわいい女の子(3) (別冊フレンドコミックス)",
+      "into_title": "きみはかわいい女の子",
+      "author": "いちのへ瑠美",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000047021",
+      "source_title": "きみはかわいい女の子（３）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    }
+  ]
+}

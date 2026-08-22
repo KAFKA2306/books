@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-report.v1",
-  "generated_at": "2026-08-22T03:08:09.787Z",
+  "generated_at": "2026-08-22T14:59:24.562Z",
   "policy": {
     "batch_limit": 25,
     "concurrency": 4,
@@ -14,14 +14,14 @@
     "attempted": 25,
     "enriched": 0,
     "ambiguous": 0,
-    "no_consensus": 2,
+    "no_consensus": 0,
     "no_candidate": 0,
-    "provider_error": 23
+    "provider_error": 25
   },
   "results": [
     {
-      "work_id": "wrk_960378886748",
-      "title": "TOEFL ITP直前模試",
+      "work_id": "wrk_01e497859afb",
+      "title": "栄養学と食の基本辞典",
       "outcome": "provider_error",
       "accepted_isbn13": null,
       "candidates": [],
@@ -33,42 +33,8 @@
       ]
     },
     {
-      "work_id": "wrk_97f99ad2dc35",
-      "title": "帰って来たヒトラー",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "ndl",
-          "message": "ndl request failed: ndl returned HTTP 429"
-        },
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_9aedbcaa2a50",
-      "title": "合格実例集セオリーエントリーシート編",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "ndl",
-          "message": "ndl request failed: ndl returned HTTP 429"
-        },
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_9c3a2c7c3187",
-      "title": "入門初級ドイツ語文法",
+      "work_id": "wrk_02516067d844",
+      "title": "切り取れ、あの祈る手を",
       "outcome": "provider_error",
       "accepted_isbn13": null,
       "candidates": [],
@@ -80,8 +46,8 @@
       ]
     },
     {
-      "work_id": "wrk_9e107563f000",
-      "title": "Pythonで動かして学ぶ!あたらしい機械学習の教科書 数式とプログラムをつなげて理解できる",
+      "work_id": "wrk_0ac8d6f215f7",
+      "title": "東京きたんしゅう",
       "outcome": "provider_error",
       "accepted_isbn13": null,
       "candidates": [],
@@ -93,64 +59,8 @@
       ]
     },
     {
-      "work_id": "wrk_a655cacf97a3",
-      "title": "らくがき四コマ",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_a763baec332a",
-      "title": "ナショナルジオグラフィックにわかには信じ",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_a9fd6ed9c5e8",
-      "title": "死なない奴ら",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_af6a9618d5cf",
-      "title": "線型代数学伊吹山",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "ndl",
-          "message": "ndl request failed: ndl returned HTTP 429"
-        },
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_b34b35bff923",
-      "title": "トーイック公式問題集",
+      "work_id": "wrk_15edeb5db3c8",
+      "title": "未来へ広がるサイエンス2",
       "outcome": "provider_error",
       "accepted_isbn13": null,
       "candidates": [],
@@ -166,8 +76,151 @@
       ]
     },
     {
-      "work_id": "wrk_c329a384ff37",
-      "title": "マンガでわかる心療内科",
+      "work_id": "wrk_18d2ce5a28b3",
+      "title": "東レ改訂版井上",
+      "outcome": "provider_error",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_19005b022805",
+      "title": "地球外生命9つの論点",
+      "outcome": "provider_error",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_1ca55d657738",
+      "title": "秘書検定二級",
+      "outcome": "provider_error",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_1f6f102b49c4",
+      "title": "その子、発達障害ではありません IN-C",
+      "outcome": "provider_error",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_234b6fa5c521",
+      "title": "世界ナンバーワンのコンサルティングファームのルール",
+      "outcome": "provider_error",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_334ebe0b573f",
+      "title": "大学への数学ショートプログラム",
+      "outcome": "provider_error",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_3f47490f4e95",
+      "title": "目の見えない人は世界をどう見ているか",
+      "outcome": "provider_error",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_4c4a6d0d72c5",
+      "title": "予想通りに不合理",
+      "outcome": "provider_error",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_508c7feac779",
+      "title": "楽しい植物学",
+      "outcome": "provider_error",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_52cebd73d190",
+      "title": "分子から見た生物進化",
+      "outcome": "provider_error",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_561e61449855",
+      "title": "単純な脳複雑なわたし",
+      "outcome": "provider_error",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_errors": [
+        {
+          "provider": "google_books",
+          "message": "google_books request failed: google_books returned HTTP 429"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_5cc72c337f62",
+      "title": "そんな未来は嘘である",
       "outcome": "provider_error",
       "accepted_isbn13": null,
       "candidates": [],
@@ -183,8 +236,8 @@
       ]
     },
     {
-      "work_id": "wrk_c7a8228ed5fb",
-      "title": "届出一つでお金がもらえる",
+      "work_id": "wrk_5d88863760e5",
+      "title": "無機化学概論小倉",
       "outcome": "provider_error",
       "accepted_isbn13": null,
       "candidates": [],
@@ -196,8 +249,8 @@
       ]
     },
     {
-      "work_id": "wrk_ca5f87236bdc",
-      "title": "昔は良かった病",
+      "work_id": "wrk_5f51b8010c44",
+      "title": "電気化学渡辺",
       "outcome": "provider_error",
       "accepted_isbn13": null,
       "candidates": [],
@@ -209,42 +262,8 @@
       ]
     },
     {
-      "work_id": "wrk_cb55c3298df8",
-      "title": "はっぴやー",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "ndl",
-          "message": "ndl request failed: ndl returned HTTP 429"
-        },
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_d31f81a57683",
-      "title": "物語シリーズ,偽猫黒猫しろ恋傷",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "ndl",
-          "message": "ndl request failed: ndl returned HTTP 429"
-        },
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_d8f1ecc0746e",
-      "title": "美味しい一人ごはん",
+      "work_id": "wrk_7299c697af57",
+      "title": "物理数学の直感的方法",
       "outcome": "provider_error",
       "accepted_isbn13": null,
       "candidates": [],
@@ -260,8 +279,8 @@
       ]
     },
     {
-      "work_id": "wrk_ede9c0073ff6",
-      "title": "新しい薬をどう作るか",
+      "work_id": "wrk_76bca688a12b",
+      "title": "一人暮らしのラクチンごはん",
       "outcome": "provider_error",
       "accepted_isbn13": null,
       "candidates": [],
@@ -273,8 +292,8 @@
       ]
     },
     {
-      "work_id": "wrk_ef510c5e6a17",
-      "title": "ゼロから分かる民法",
+      "work_id": "wrk_7ad3f74041b6",
+      "title": "子供が幸せになる学校",
       "outcome": "provider_error",
       "accepted_isbn13": null,
       "candidates": [],
@@ -286,21 +305,8 @@
       ]
     },
     {
-      "work_id": "wrk_f0045e033ac3",
-      "title": "一冊で哲学の名著を読む 『ソクラテスの弁明』",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_f1e66e24f412",
-      "title": "ドミニオンマニアックスZERO",
+      "work_id": "wrk_7adc4638626a",
+      "title": "騎士団長ゴロシ上",
       "outcome": "provider_error",
       "accepted_isbn13": null,
       "candidates": [],
@@ -316,8 +322,8 @@
       ]
     },
     {
-      "work_id": "wrk_f541f6d7f63f",
-      "title": "優しい囲碁トレーニング中盤の基本高尾",
+      "work_id": "wrk_820ba461ef25",
+      "title": "世界の終わりとハードボイルドワンダーランド",
       "outcome": "provider_error",
       "accepted_isbn13": null,
       "candidates": [],
@@ -329,56 +335,22 @@
       ]
     },
     {
-      "work_id": "wrk_f6fd606e9ec0",
-      "title": "地球の長い午後",
+      "work_id": "wrk_92391d2576a4",
+      "title": "TOEIC リスニング・リーディング問題集",
       "outcome": "provider_error",
       "accepted_isbn13": null,
       "candidates": [],
       "provider_errors": [
         {
-          "provider": "ndl",
-          "message": "ndl request failed: This operation was aborted"
-        },
-        {
           "provider": "google_books",
           "message": "google_books request failed: google_books returned HTTP 429"
         }
       ]
     },
     {
-      "work_id": "wrk_f7706832fa4c",
-      "title": "美味しいを科学してレシピにしました",
+      "work_id": "wrk_93da6e6b1b79",
+      "title": "品性がにじみ出る言葉遣い",
       "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "ndl",
-          "message": "ndl request failed: This operation was aborted"
-        },
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_fd64415da0cd",
-      "title": "銃・病原菌・鉄",
-      "outcome": "no_consensus",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_fe8ae231cb6e",
-      "title": "自然流中原誠の振飛車破り",
-      "outcome": "no_consensus",
       "accepted_isbn13": null,
       "candidates": [],
       "provider_errors": [

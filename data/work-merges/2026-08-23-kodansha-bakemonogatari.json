@@ -1,0 +1,25 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_acd0408fa62b",
+      "into_work_id": "wrk_4c0a23a8eba5",
+      "from_title": "化物語(2) (週刊少年マガジンコミックス)",
+      "into_title": "化物語",
+      "author": "西尾維新 / 大暮維人",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000312426",
+      "source_title": "化物語（２）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    },
+    {
+      "from_work_id": "wrk_de0013b0d1d2",
+      "into_work_id": "wrk_4c0a23a8eba5",
+      "from_title": "化物語(3) (週刊少年マガジンコミックス)",
+      "into_title": "化物語",
+      "author": "西尾維新 / 大暮維人",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000314345",
+      "source_title": "化物語（３）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    }
+  ]
+}

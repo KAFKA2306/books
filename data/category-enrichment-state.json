@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichment-state.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-21T19:00:57.992Z",
+  "updated_at": "2026-08-22T01:53:38.778Z",
   "attempts": {
     "wrk_0025172962b9": {
       "attempted_at": "2026-08-17T07:52:53.708Z",
@@ -8028,16 +8028,16 @@
       "provider_error": null
     },
     "wrk_efa37cdf10d6": {
-      "attempted_at": "2026-08-20T19:04:15.088Z",
-      "outcome": "provider_error",
-      "next_attempt_at": "2026-08-21T19:04:15.088Z",
+      "attempted_at": "2026-08-22T01:53:38.778Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-19T01:53:38.778Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
-      "category": null,
-      "ndc_scheme": null,
-      "ndc_code": null,
+      "category": "コンピュータ・AI",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "007.13",
       "source_isbn13": null,
-      "provider_error": "ndl request failed: This operation was aborted"
+      "provider_error": null
     },
     "wrk_efa8bb369d3b": {
       "attempted_at": "2026-08-20T19:04:15.088Z",

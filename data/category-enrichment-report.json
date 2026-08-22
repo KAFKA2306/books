@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.category-enrichment-report.v1",
-  "generated_at": "2026-08-21T19:00:57.992Z",
+  "generated_at": "2026-08-22T01:53:38.778Z",
   "rule_version": "ndc-map-v1",
   "policy": {
     "source": "National Diet Library Search OpenSearch API",
@@ -19,12 +19,26 @@
     "request_timeout_ms": 60000
   },
   "summary": {
-    "attempted": 0,
-    "accepted": 0,
+    "attempted": 1,
+    "accepted": 1,
     "ambiguous": 0,
     "no_ndc": 0,
     "no_candidate": 0,
     "provider_error": 0
   },
-  "results": []
+  "results": [
+    {
+      "work_id": "wrk_efa37cdf10d6",
+      "title": "これからのAI、正しい付き合い方と使い方 「共同知能」と共生するためのヒント",
+      "lookup_title": "これからのAI、正しい付き合い方と使い方 「共同知能」と共生するためのヒント",
+      "outcome": "accepted",
+      "category": "コンピュータ・AI",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "007.13",
+      "source_isbn13": null,
+      "match_mode": "title_containment",
+      "matches": 1,
+      "provider_error": null
+    }
+  ]
 }

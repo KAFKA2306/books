@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-21T19:00:57.992Z",
+  "updated_at": "2026-08-22T01:53:38.778Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -4934,6 +4934,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-20T19:04:15.088Z"
+    },
+    {
+      "work_id": "wrk_efa37cdf10d6",
+      "category": "コンピュータ・AI",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "007.13",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I033840475",
+      "match_mode": "title_containment",
+      "title_similarity": 0.7058823529411765,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-08-22T01:53:38.778Z"
     },
     {
       "work_id": "wrk_f0045e033ac3",

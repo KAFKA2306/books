@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.category-enrichment-report.v1",
-  "generated_at": "2026-08-22T18:51:43.860Z",
+  "generated_at": "2026-08-22T19:47:42.954Z",
   "rule_version": "ndc-map-v1",
   "policy": {
     "source": "National Diet Library Search OpenSearch API",

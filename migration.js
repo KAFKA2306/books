@@ -2,6 +2,7 @@ import { diagnoseMigration, parseMigrationInput, renderDiagnosisHtml } from './s
 
 const fileInput = document.querySelector('#migrationFile');
 const diagnoseButton = document.querySelector('#diagnoseButton');
+const sampleButton = document.querySelector('#sampleButton');
 const statusNode = document.querySelector('#diagnosisStatus');
 const resultSection = document.querySelector('#diagnosisResult');
 const metricsNode = document.querySelector('#diagnosisMetrics');
@@ -72,20 +73,25 @@ function metric(label, value) {
   return node;
 }
 
+async function fetchCatalog() {
+  const response = await fetch('./api/v1/catalog.json', { cache: 'no-store' });
+  if (!response.ok) throw new Error(`catalog取得失敗: HTTP ${response.status}`);
+  return response.json();
+}
+
 diagnoseButton.addEventListener('click', async () => {
   if (fileInput.files.length !== 1) return;
   diagnoseButton.disabled = true;
+  sampleButton.disabled = true;
   statusNode.textContent = '診断中…';
   try {
     const file = fileInput.files[0];
-    const [text, response] = await Promise.all([
+    const [text, catalog] = await Promise.all([
       file.text(),
-      fetch('./api/v1/catalog.json', { cache: 'no-store' }),
+      fetchCatalog(),
     ]);
-    if (!response.ok) throw new Error(`catalog取得失敗: HTTP ${response.status}`);
     const rows = parseMigrationInput(text, inputFormat(file));
     if (!rows.length) throw new Error('診断対象の行がありません。');
-    const catalog = await response.json();
     currentReport = diagnoseMigration(rows, catalog);
     render(currentReport);
     statusNode.textContent = `診断完了: ${currentReport.summary.total}件。catalogは変更していません。`;
@@ -95,6 +101,30 @@ diagnoseButton.addEventListener('click', async () => {
     statusNode.textContent = `診断できませんでした: ${error.message}`;
   } finally {
     diagnoseButton.disabled = false;
+    sampleButton.disabled = false;
+  }
+});
+
+sampleButton.addEventListener('click', async () => {
+  diagnoseButton.disabled = true;
+  sampleButton.disabled = true;
+  statusNode.textContent = 'サンプル診断中…';
+  try {
+    const catalog = await fetchCatalog();
+    const rows = [
+      { title: 'サンプル蔵書・未登録作品', isbn: '' },
+      { title: 'サンプルISBNエラー', isbn: '1234' },
+    ];
+    currentReport = diagnoseMigration(rows, catalog);
+    render(currentReport);
+    statusNode.textContent = '架空データ2件のサンプル診断を表示しています。catalogは変更していません。';
+  } catch (error) {
+    currentReport = null;
+    resultSection.hidden = true;
+    statusNode.textContent = `サンプル診断できませんでした: ${error.message}`;
+  } finally {
+    diagnoseButton.disabled = fileInput.files.length !== 1;
+    sampleButton.disabled = false;
   }
 });
 

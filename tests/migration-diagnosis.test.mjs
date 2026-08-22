@@ -64,6 +64,17 @@ test('renderDiagnosisHtml states the non-mutating boundary', () => {
   assert.match(html, /safe_new_work/);
 });
 
+test('public migration UI exposes every already-supported input format', async () => {
+  const [html, js] = await Promise.all([
+    readFile(new URL('../migration.html', import.meta.url), 'utf8'),
+    readFile(new URL('../migration.js', import.meta.url), 'utf8'),
+  ]);
+  assert.match(html, /accept="\.csv,\.json,\.txt,text\/csv,application\/json,text\/plain"/);
+  assert.match(html, /CSV・JSON・ISBN一覧/);
+  assert.match(js, /parseMigrationInput/);
+  assert.match(js, /'isbn-list'/);
+});
+
 test('migration result exposes a qualified paid-migration inquiry without requesting private catalog data', async () => {
   const html = await readFile(new URL('../migration.html', import.meta.url), 'utf8');
   assert.match(html, /100冊以上の移行を相談/);

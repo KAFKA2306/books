@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.work-merges.v1",
-  "updated_at": "2026-08-23T02:34:00+09:00",
+  "updated_at": "2026-08-23T03:36:00+09:00",
   "records": [
     {"from_work_id":"wrk_40ca39f0033d","into_work_id":"wrk_3a5c051662b5","from_title":"寄生獣(3) (アフタヌーンコミックス)","into_title":"寄生獣","author":"岩明均","source_url":"https://www.kodansha.co.jp/comic/products/0000029954","source_title":"寄生獣（３）","reason":"volume_and_label_were_embedded_in_work_title"},
     {"from_work_id":"wrk_c30372c9e211","into_work_id":"wrk_3a5c051662b5","from_title":"寄生獣(1) (アフタヌーンコミックス)","into_title":"寄生獣","author":"岩明均","source_url":"https://www.kodansha.co.jp/comic/products/0000029944","source_title":"寄生獣（１）","reason":"volume_and_label_were_embedded_in_work_title"},
@@ -54,6 +54,8 @@
     {"from_work_id":"wrk_be8667b68716","into_work_id":"wrk_cb8ff85a1977","from_title":"【第28話】やり直し姫は夫と恋したい: はじまり","into_title":"やり直し姫は夫と恋したい","author":"田鵺功空","source_url":"https://shonenjumpplus.com/episode/3270296674426087135","source_title":"やり直し姫は夫と恋したい","reason":"episode_number_and_episode_subtitle_are_not_work_identity"},
     {"from_work_id":"wrk_2d1960f75a91","into_work_id":"wrk_cb8ff85a1977","from_title":"【第29話】やり直し姫は夫と恋したい: 七つ首","into_title":"やり直し姫は夫と恋したい","author":"田鵺功空","source_url":"https://shonenjumpplus.com/episode/3270296674426087135","source_title":"やり直し姫は夫と恋したい","reason":"episode_number_and_episode_subtitle_are_not_work_identity"},
     {"from_work_id":"wrk_8ff6f1b15181","into_work_id":"wrk_cb8ff85a1977","from_title":"【第30話】やり直し姫は夫と恋したい: 比翼","into_title":"やり直し姫は夫と恋したい","author":"田鵺功空","source_url":"https://shonenjumpplus.com/episode/3270296674426087135","source_title":"やり直し姫は夫と恋したい","reason":"episode_number_and_episode_subtitle_are_not_work_identity"},
-    {"from_work_id":"wrk_e9f12b184113","into_work_id":"wrk_cb8ff85a1977","from_title":"【第31話】やり直し姫は夫と恋したい【最終話】: 約束","into_title":"やり直し姫は夫と恋したい","author":"田鵺功空","source_url":"https://shonenjumpplus.com/episode/3270296674426087135","source_title":"やり直し姫は夫と恋したい","reason":"episode_number_and_episode_subtitle_are_not_work_identity"}
+    {"from_work_id":"wrk_e9f12b184113","into_work_id":"wrk_cb8ff85a1977","from_title":"【第31話】やり直し姫は夫と恋したい【最終話】: 約束","into_title":"やり直し姫は夫と恋したい","author":"田鵺功空","source_url":"https://shonenjumpplus.com/episode/3270296674426087135","source_title":"やり直し姫は夫と恋したい","reason":"episode_number_and_episode_subtitle_are_not_work_identity"},
+    {"from_work_id":"wrk_46531fdf7646","into_work_id":"wrk_dc50d54a91cd","from_title":"ハコヅメ~交番女子の逆襲~(2) (モーニングコミックス)","into_title":"ハコヅメ～交番女子の逆襲～","author":"泰三子","source_url":"https://www.kodansha.co.jp/comic/products/0000310368","source_title":"ハコヅメ～交番女子の逆襲～（２）","reason":"volume_and_label_were_embedded_in_work_title"},
+    {"from_work_id":"wrk_8550c643590c","into_work_id":"wrk_dc50d54a91cd","from_title":"ハコヅメ~交番女子の逆襲~(3) (モーニングコミックス)","into_title":"ハコヅメ～交番女子の逆襲～","author":"泰三子","source_url":"https://www.kodansha.co.jp/comic/products/0000312936","source_title":"ハコヅメ～交番女子の逆襲～（３）","reason":"volume_and_label_were_embedded_in_work_title"}
   ]
 }

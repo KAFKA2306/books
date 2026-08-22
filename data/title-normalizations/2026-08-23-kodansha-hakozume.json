@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_dc50d54a91cd",
+      "from_title": "ハコヅメ~交番女子の逆襲~(1) (モーニングコミックス)",
+      "title": "ハコヅメ～交番女子の逆襲～",
+      "author": "泰三子",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000115816",
+      "source_title": "ハコヅメ～交番女子の逆襲～（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

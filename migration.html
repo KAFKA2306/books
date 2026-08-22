@@ -33,7 +33,11 @@
       </ol>
       <label class="file-field"><span>蔵書データ</span><input id="migrationFile" type="file" accept=".csv,.json,.txt,text/csv,application/json,text/plain"></label>
       <p class="field-help">CSV / JSONは <code>title</code>, <code>isbn</code>（または isbn13 / isbn10）, source, status, price, purchase_date の部分集合に対応します。ISBN一覧は1行1ISBNのテキストです。</p>
-      <button class="button button-primary" id="diagnoseButton" type="button" disabled>診断する</button>
+      <div class="download-actions">
+        <button class="button button-primary" id="diagnoseButton" type="button" disabled>診断する</button>
+        <button class="button button-quiet" id="sampleButton" type="button">サンプル結果を見る</button>
+      </div>
+      <p class="field-help">サンプルは架空の2件だけを使い、公開catalogに対して同じdry-run診断を実行します。</p>
       <p id="diagnosisStatus" aria-live="polite"></p>
     </section>
 

@@ -75,6 +75,19 @@ test('public migration UI exposes every already-supported input format', async (
   assert.match(js, /'isbn-list'/);
 });
 
+test('public migration UI offers a privacy-safe sample diagnosis before upload', async () => {
+  const [html, js] = await Promise.all([
+    readFile(new URL('../migration.html', import.meta.url), 'utf8'),
+    readFile(new URL('../migration.js', import.meta.url), 'utf8'),
+  ]);
+  assert.match(html, /id="sampleButton"/);
+  assert.match(html, /サンプル結果を見る/);
+  assert.match(html, /架空の2件/);
+  assert.match(js, /サンプル蔵書・未登録作品/);
+  assert.match(js, /サンプルISBNエラー/);
+  assert.match(js, /isbn: '1234'/);
+});
+
 test('migration result exposes a qualified paid-migration inquiry without requesting private catalog data', async () => {
   const html = await readFile(new URL('../migration.html', import.meta.url), 'utf8');
   assert.match(html, /100冊以上の移行を相談/);

@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichment-state.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-22T07:03:07.324Z",
+  "updated_at": "2026-08-22T13:04:09.214Z",
   "attempts": {
     "wrk_0025172962b9": {
       "attempted_at": "2026-08-17T07:52:53.708Z",
@@ -3515,16 +3515,16 @@
       "provider_error": null
     },
     "wrk_61bbc01a016e": {
-      "attempted_at": "2026-08-21T07:11:05.037Z",
-      "outcome": "provider_error",
-      "next_attempt_at": "2026-08-22T07:11:05.037Z",
+      "attempted_at": "2026-08-22T13:04:09.214Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-09-05T13:04:09.214Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
       "source_isbn13": null,
-      "provider_error": "ndl request failed: This operation was aborted"
+      "provider_error": null
     },
     "wrk_61fd7b6fcc74": {
       "attempted_at": "2026-08-09T07:26:08.955Z",
@@ -3922,16 +3922,16 @@
       "provider_error": null
     },
     "wrk_6e6b1be2e06d": {
-      "attempted_at": "2026-08-21T07:11:05.037Z",
-      "outcome": "provider_error",
-      "next_attempt_at": "2026-08-22T07:11:05.037Z",
+      "attempted_at": "2026-08-22T13:04:09.214Z",
+      "outcome": "ambiguous",
+      "next_attempt_at": "2026-09-21T13:04:09.214Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
       "source_isbn13": null,
-      "provider_error": "ndl request failed: This operation was aborted"
+      "provider_error": null
     },
     "wrk_6e797dd35af8": {
       "attempted_at": "2026-08-09T19:05:32.870Z",
@@ -7368,16 +7368,16 @@
       "provider_error": null
     },
     "wrk_d9c77e409339": {
-      "attempted_at": "2026-08-21T07:11:05.037Z",
-      "outcome": "provider_error",
-      "next_attempt_at": "2026-08-22T07:11:05.037Z",
+      "attempted_at": "2026-08-22T13:04:09.214Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-09-05T13:04:09.214Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
       "source_isbn13": null,
-      "provider_error": "ndl request failed: ndl returned HTTP 429"
+      "provider_error": null
     },
     "wrk_db98df904e07": {
       "attempted_at": "2026-08-20T07:10:18.168Z",
@@ -7404,16 +7404,16 @@
       "provider_error": null
     },
     "wrk_dcd5f3e4683b": {
-      "attempted_at": "2026-08-21T07:11:05.037Z",
-      "outcome": "provider_error",
-      "next_attempt_at": "2026-08-22T07:11:05.037Z",
+      "attempted_at": "2026-08-22T13:04:09.214Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-19T13:04:09.214Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
-      "category": null,
-      "ndc_scheme": null,
-      "ndc_code": null,
+      "category": "文学・小説",
+      "ndc_scheme": "NDC",
+      "ndc_code": "933",
       "source_isbn13": null,
-      "provider_error": "ndl request failed: ndl returned HTTP 429"
+      "provider_error": null
     },
     "wrk_dcdcd8bf24ee": {
       "attempted_at": "2026-08-20T07:10:18.168Z",
@@ -8328,28 +8328,28 @@
       "provider_error": null
     },
     "wrk_f648d6712cf8": {
-      "attempted_at": "2026-08-21T07:11:05.037Z",
-      "outcome": "provider_error",
-      "next_attempt_at": "2026-08-22T07:11:05.037Z",
+      "attempted_at": "2026-08-22T13:04:09.214Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-09-05T13:04:09.214Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
       "source_isbn13": null,
-      "provider_error": "ndl request failed: ndl returned HTTP 429"
+      "provider_error": null
     },
     "wrk_f6f5461c2b25": {
-      "attempted_at": "2026-08-21T07:11:05.037Z",
-      "outcome": "provider_error",
-      "next_attempt_at": "2026-08-22T07:11:05.037Z",
+      "attempted_at": "2026-08-22T13:04:09.214Z",
+      "outcome": "ambiguous",
+      "next_attempt_at": "2026-09-21T13:04:09.214Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
       "source_isbn13": null,
-      "provider_error": "ndl request failed: This operation was aborted"
+      "provider_error": null
     },
     "wrk_f6fd606e9ec0": {
       "attempted_at": "2026-08-21T07:11:05.037Z",
@@ -8364,16 +8364,16 @@
       "provider_error": null
     },
     "wrk_f725dc18a906": {
-      "attempted_at": "2026-08-21T07:11:05.037Z",
-      "outcome": "provider_error",
-      "next_attempt_at": "2026-08-22T07:11:05.037Z",
+      "attempted_at": "2026-08-22T13:04:09.214Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-19T13:04:09.214Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
-      "category": null,
-      "ndc_scheme": null,
-      "ndc_code": null,
+      "category": "投資・金融",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "338.183",
       "source_isbn13": null,
-      "provider_error": "ndl request failed: ndl returned HTTP 429"
+      "provider_error": null
     },
     "wrk_f73548468f88": {
       "attempted_at": "2026-08-21T07:11:05.037Z",
@@ -8400,28 +8400,28 @@
       "provider_error": null
     },
     "wrk_f7706832fa4c": {
-      "attempted_at": "2026-08-21T07:11:05.037Z",
-      "outcome": "provider_error",
-      "next_attempt_at": "2026-08-22T07:11:05.037Z",
+      "attempted_at": "2026-08-22T13:04:09.214Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-09-05T13:04:09.214Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
       "source_isbn13": null,
-      "provider_error": "ndl request failed: ndl returned HTTP 429"
+      "provider_error": null
     },
     "wrk_f7ae23ab566c": {
-      "attempted_at": "2026-08-21T07:11:05.037Z",
-      "outcome": "provider_error",
-      "next_attempt_at": "2026-08-22T07:11:05.037Z",
+      "attempted_at": "2026-08-22T13:04:09.214Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-09-05T13:04:09.214Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
       "source_isbn13": null,
-      "provider_error": "ndl request failed: This operation was aborted"
+      "provider_error": null
     },
     "wrk_f7ba3300f41a": {
       "attempted_at": "2026-08-21T07:11:05.037Z",
@@ -8448,16 +8448,16 @@
       "provider_error": null
     },
     "wrk_f833313abba7": {
-      "attempted_at": "2026-08-21T07:11:05.037Z",
-      "outcome": "provider_error",
-      "next_attempt_at": "2026-08-22T07:11:05.037Z",
+      "attempted_at": "2026-08-22T13:04:09.214Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-09-05T13:04:09.214Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
       "source_isbn13": null,
-      "provider_error": "ndl request failed: This operation was aborted"
+      "provider_error": null
     },
     "wrk_f8681b0151fc": {
       "attempted_at": "2026-08-21T07:11:05.037Z",
@@ -8484,16 +8484,16 @@
       "provider_error": null
     },
     "wrk_f8c94ffc1d59": {
-      "attempted_at": "2026-08-21T07:11:05.037Z",
-      "outcome": "provider_error",
-      "next_attempt_at": "2026-08-22T07:11:05.037Z",
+      "attempted_at": "2026-08-22T13:04:09.214Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-09-05T13:04:09.214Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
       "source_isbn13": null,
-      "provider_error": "ndl request failed: This operation was aborted"
+      "provider_error": null
     },
     "wrk_f8cb2b462806": {
       "attempted_at": "2026-08-21T07:11:05.037Z",
@@ -8520,16 +8520,16 @@
       "provider_error": null
     },
     "wrk_f93ef3fa5d7e": {
-      "attempted_at": "2026-08-21T07:11:05.037Z",
-      "outcome": "provider_error",
-      "next_attempt_at": "2026-08-22T07:11:05.037Z",
+      "attempted_at": "2026-08-22T13:04:09.214Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-09-05T13:04:09.214Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
       "source_isbn13": null,
-      "provider_error": "ndl request failed: This operation was aborted"
+      "provider_error": null
     },
     "wrk_f9bdc7897ad8": {
       "attempted_at": "2026-08-21T10:41:24.348Z",

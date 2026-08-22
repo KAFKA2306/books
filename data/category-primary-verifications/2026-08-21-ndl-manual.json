@@ -4,7 +4,7 @@
   "updated_at": "2026-08-21T12:14:00.000Z",
   "records": [
     {
-      "work_id": "wrk_f9dda831cba7",
+      "work_id": "wrk_9fed66931313",
       "category": "漫画・コミック",
       "ndc_scheme": "NDC10",
       "ndc_code": "726.1",
@@ -17,7 +17,7 @@
       "source_title": "フラジャイル : 病理医岸京一郎の所見",
       "source_series": "アフタヌーンKC",
       "source_bibliographic_id": "030575495",
-      "source_note": "NDL資料は第18巻。ローカルWorkは第3巻で、主タイトル・シリーズ・作品著者関係が一致するためWork単位のNDC分類にのみ使用し、版・ISBNは補完しない"
+      "source_note": "NDL資料は第18巻。講談社公式書誌で第1〜3巻が同一Work系列であることを確認済みのため、正準WorkのNDC分類にのみ使用し、版・ISBNは補完しない"
     },
     {
       "work_id": "wrk_facbbdc12286",

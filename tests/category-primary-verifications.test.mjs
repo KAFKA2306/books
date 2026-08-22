@@ -30,7 +30,7 @@ test('partitioned primary NDL evidence is loaded into the canonical catalog', as
   const catalog = await loadCatalog();
   const cases = [
     {
-      workId: 'wrk_f9dda831cba7',
+      workId: 'wrk_9fed66931313',
       schemeId: 'ndc10',
       sourceUrl: 'https://ndlsearch.ndl.go.jp/books/R100000002-I030575495',
     },

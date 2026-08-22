@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_4c0a23a8eba5",
+      "from_title": "化物語(1) (週刊少年マガジンコミックス)",
+      "title": "化物語",
+      "author": "西尾維新 / 大暮維人",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000310196",
+      "source_title": "化物語（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

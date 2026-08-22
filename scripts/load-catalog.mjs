@@ -65,6 +65,13 @@ export function mergeTitleNormalizationOverlays(...overlays) {
   };
 }
 
+export function mergeWorkMergeOverlays(...overlays) {
+  return {
+    schema: 'kafka.books.work-merges.v1',
+    records: overlays.flatMap((overlay) => overlay?.records ?? []),
+  };
+}
+
 export async function loadCatalog(root = process.cwd()) {
   const base = JSON.parse(
     await fs.readFile(path.join(root, 'data/catalog.json'), 'utf8'),
@@ -124,5 +131,11 @@ export async function loadCatalog(root = process.cwd()) {
     schema: 'kafka.books.work-merges.v1',
     records: [],
   };
-  return applyWorkMerges(merged, workMergeOverlay);
+  const workMergePartitions = await readJsonDirectoryIfPresent(
+    path.join(root, 'data/work-merges'),
+  );
+  return applyWorkMerges(
+    merged,
+    mergeWorkMergeOverlays(workMergeOverlay, ...workMergePartitions),
+  );
 }

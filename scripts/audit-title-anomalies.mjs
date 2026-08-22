@@ -13,8 +13,6 @@ for (const [reason, count] of [...reasonCounts.entries()].sort((a, b) => b[1] - 
   console.log(`  ${reason}: ${count}`);
 }
 
-for (const row of rows.slice(0, 120)) {
+for (const row of rows) {
   console.log(`${row.reasons.join(',')}\t${row.work_id}\t${row.title}${row.author ? `\t${row.author}` : ''}`);
 }
-
-if (rows.length > 120) console.log(`... ${rows.length - 120} additional candidates omitted from log`);

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="蔵書CSVをブラウザ内だけで診断し、重複・ISBN・類似作品候補を確認します。">
+  <meta name="description" content="蔵書CSV・JSON・ISBN一覧をブラウザ内だけで診断し、重複・ISBN・類似作品候補を確認します。">
   <title>蔵書移行診断 — KAFKA BOOKS</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="ui.css">
@@ -19,20 +19,20 @@
   <main class="migration-main">
     <section class="migration-hero">
       <p class="eyebrow">LOCAL / DRY-RUN / NO UPLOAD</p>
-      <h1>蔵書CSVを、書き込む前に診断。</h1>
-      <p>CSVを選ぶと、現在のKAFKA BOOKSと同じISBNチェック・正規化書名・batch重複・類似作品ルールでブラウザ内診断します。</p>
-      <div class="privacy-notice"><strong>蔵書内容は外部送信しません。</strong><span>選択したCSVはこのページのメモリ内だけで処理します。公開catalogの取得以外にネットワーク送信は行いません。</span></div>
+      <h1>蔵書データを、書き込む前に診断。</h1>
+      <p>CSV・JSON・ISBN一覧を選ぶと、現在のKAFKA BOOKSと同じISBNチェック・正規化書名・batch重複・類似作品ルールでブラウザ内診断します。</p>
+      <div class="privacy-notice"><strong>蔵書内容は外部送信しません。</strong><span>選択したファイルはこのページのメモリ内だけで処理します。公開catalogの取得以外にネットワーク送信は行いません。</span></div>
     </section>
 
     <section class="migration-card" aria-labelledby="diagnosisTitle">
       <h2 id="diagnosisTitle">無料診断</h2>
       <ol>
-        <li>CSVを選択</li>
+        <li>CSV・JSON・ISBN一覧を選択</li>
         <li>「診断する」を押す</li>
         <li>必要ならJSON / HTMLを保存</li>
       </ol>
-      <label class="file-field"><span>蔵書CSV</span><input id="migrationFile" type="file" accept=".csv,text/csv"></label>
-      <p class="field-help">対応列: <code>title</code>, <code>isbn</code>（または isbn13 / isbn10）, source, status, price, purchase_date。MVPはCSVのみです。</p>
+      <label class="file-field"><span>蔵書データ</span><input id="migrationFile" type="file" accept=".csv,.json,.txt,text/csv,application/json,text/plain"></label>
+      <p class="field-help">CSV / JSONは <code>title</code>, <code>isbn</code>（または isbn13 / isbn10）, source, status, price, purchase_date の部分集合に対応します。ISBN一覧は1行1ISBNのテキストです。</p>
       <button class="button button-primary" id="diagnoseButton" type="button" disabled>診断する</button>
       <p id="diagnosisStatus" aria-live="polite"></p>
     </section>

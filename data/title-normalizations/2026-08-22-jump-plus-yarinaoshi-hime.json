@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "updated_at": "2026-08-22T11:34:00Z",
+  "records": [
+    {
+      "work_id": "wrk_cb8ff85a1977",
+      "from_title": "【第21話】やり直し姫は夫と恋したい: やり直した世界",
+      "title": "やり直し姫は夫と恋したい",
+      "source_url": "https://shonenjumpplus.com/episode/3269754496592589668",
+      "source_title": "やり直し姫は夫と恋したい",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

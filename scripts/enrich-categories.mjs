@@ -76,6 +76,18 @@ const selectionState = {
 };
 const selected = eligibleCategoryWorks(selectionCatalog, selectionState, now).slice(0, args.limit);
 
+if (selected.length === 0) {
+  console.log(JSON.stringify({
+    attempted: 0,
+    accepted: 0,
+    ambiguous: 0,
+    no_ndc: 0,
+    no_candidate: 0,
+    provider_error: 0,
+  }));
+  process.exit(0);
+}
+
 for (let index = 0; index < selected.length; index += 1) {
   const work = selected[index];
   const editions = editionsByWork.get(work.work_id) ?? [];

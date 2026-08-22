@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.work-merges.v1",
-  "updated_at": "2026-08-20T02:38:00+09:00",
+  "updated_at": "2026-08-22T13:36:00Z",
   "records": [
     {"from_work_id":"wrk_40ca39f0033d","into_work_id":"wrk_3a5c051662b5","from_title":"寄生獣(3) (アフタヌーンコミックス)","into_title":"寄生獣","author":"岩明均","source_url":"https://www.kodansha.co.jp/comic/products/0000029954","source_title":"寄生獣（３）","reason":"volume_and_label_were_embedded_in_work_title"},
     {"from_work_id":"wrk_c30372c9e211","into_work_id":"wrk_3a5c051662b5","from_title":"寄生獣(1) (アフタヌーンコミックス)","into_title":"寄生獣","author":"岩明均","source_url":"https://www.kodansha.co.jp/comic/products/0000029944","source_title":"寄生獣（１）","reason":"volume_and_label_were_embedded_in_work_title"},
@@ -24,6 +24,9 @@
     {"from_work_id":"wrk_82ee13c8c8c4","into_work_id":"wrk_92db5cd7670c","from_title":"ゆらぎ荘の幽奈さん【期間限定無料】 2 (ジャンプコミックスDIGITAL)","into_title":"ゆらぎ荘の幽奈さん","author":"ミウラタダヒロ","source_url":"https://www.shueisha.co.jp/books/items/contents.html?isbn=978-4-08-880754-6","source_title":"ゆらぎ荘の幽奈さん 2","reason":"retail_annotation_volume_and_imprint_were_embedded_in_work_title"},
     {"from_work_id":"wrk_5e5521848689","into_work_id":"wrk_0e2a5a3ee99a","from_title":"カードキャプターさくら クリアカード編(2) (なかよしコミックス)","into_title":"カードキャプターさくら クリアカード編","author":"ＣＬＡＭＰ","source_url":"https://www.kodansha.co.jp/comic/products/0000048108","source_title":"カードキャプターさくら　クリアカード編（２）","reason":"volume_and_label_were_embedded_in_work_title"},
     {"from_work_id":"wrk_37ba9cccc0e6","into_work_id":"wrk_0e2a5a3ee99a","from_title":"カードキャプターさくら クリアカード編(3) (なかよしコミックス)","into_title":"カードキャプターさくら クリアカード編","author":"ＣＬＡＭＰ","source_url":"https://www.kodansha.co.jp/comic/products/0000048171","source_title":"カードキャプターさくら　クリアカード編（３）","reason":"volume_and_label_were_embedded_in_work_title"},
-    {"from_work_id":"wrk_8b92b3cf0b5c","into_work_id":"wrk_95e86ea4cbdf","from_title":"食戟のソーマ【期間限定無料】 2 (ジャンプコミックスDIGITAL)","into_title":"食戟のソーマ","author":"附田祐斗 / 佐伯俊 / 森崎友紀","source_url":"https://www.shueisha.co.jp/books/items/contents.html?jdcn=08870762870721315501&rf=ak","source_title":"食戟のソーマ 2","reason":"retail_annotation_volume_and_imprint_were_embedded_in_work_title"}
+    {"from_work_id":"wrk_8b92b3cf0b5c","into_work_id":"wrk_95e86ea4cbdf","from_title":"食戟のソーマ【期間限定無料】 2 (ジャンプコミックスDIGITAL)","into_title":"食戟のソーマ","author":"附田祐斗 / 佐伯俊 / 森崎友紀","source_url":"https://www.shueisha.co.jp/books/items/contents.html?jdcn=08870762870721315501&rf=ak","source_title":"食戟のソーマ 2","reason":"retail_annotation_volume_and_imprint_were_embedded_in_work_title"},
+    {"from_work_id":"wrk_f93ef3fa5d7e","into_work_id":"wrk_cb8ff85a1977","from_title":"【第10話】やり直し姫は夫と恋したい: 似た者","into_title":"やり直し姫は夫と恋したい","author":"田鵺功空","source_url":"https://shonenjumpplus.com/episode/3270296674426087135","source_title":"やり直し姫は夫と恋したい","reason":"episode_number_and_episode_subtitle_are_not_work_identity"},
+    {"from_work_id":"wrk_f833313abba7","into_work_id":"wrk_cb8ff85a1977","from_title":"【第22話】やり直し姫は夫と恋したい: 平穏な日々","into_title":"やり直し姫は夫と恋したい","author":"田鵺功空","source_url":"https://shonenjumpplus.com/episode/3270296674426087135","source_title":"やり直し姫は夫と恋したい","reason":"episode_number_and_episode_subtitle_are_not_work_identity"},
+    {"from_work_id":"wrk_d9c77e409339","into_work_id":"wrk_cb8ff85a1977","from_title":"【第23話】やり直し姫は夫と恋したい: 悪意のやり直し","into_title":"やり直し姫は夫と恋したい","author":"田鵺功空","source_url":"https://shonenjumpplus.com/episode/3270296674426087135","source_title":"やり直し姫は夫と恋したい","reason":"episode_number_and_episode_subtitle_are_not_work_identity"}
   ]
 }

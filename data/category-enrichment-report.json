@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.category-enrichment-report.v1",
-  "generated_at": "2026-08-22T01:53:38.778Z",
+  "generated_at": "2026-08-22T07:03:07.324Z",
   "rule_version": "ndc-map-v1",
   "policy": {
     "source": "National Diet Library Search OpenSearch API",
@@ -19,25 +19,90 @@
     "request_timeout_ms": 60000
   },
   "summary": {
-    "attempted": 1,
-    "accepted": 1,
+    "attempted": 6,
+    "accepted": 3,
     "ambiguous": 0,
     "no_ndc": 0,
-    "no_candidate": 0,
+    "no_candidate": 3,
     "provider_error": 0
   },
   "results": [
     {
-      "work_id": "wrk_efa37cdf10d6",
-      "title": "これからのAI、正しい付き合い方と使い方 「共同知能」と共生するためのヒント",
-      "lookup_title": "これからのAI、正しい付き合い方と使い方 「共同知能」と共生するためのヒント",
+      "work_id": "wrk_cb8ff85a1977",
+      "title": "【第21話】やり直し姫は夫と恋したい: やり直した世界",
+      "lookup_title": "【第21話】やり直し姫は夫と恋したい: やり直した世界",
+      "outcome": "no_candidate",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "match_mode": null,
+      "matches": 0,
+      "provider_error": null
+    },
+    {
+      "work_id": "wrk_cd4ab42d3105",
+      "title": "「豊かさ」の誕生 成長と発展の文明史 「豊かさ」の誕生 成長と発展の文明史 (日本経済新聞出版)",
+      "lookup_title": "「豊かさ」の誕生",
       "outcome": "accepted",
-      "category": "コンピュータ・AI",
+      "category": "経済",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "332",
+      "source_isbn13": null,
+      "match_mode": "title",
+      "matches": 3,
+      "provider_error": null
+    },
+    {
+      "work_id": "wrk_effe6c528968",
+      "title": "君と時計と嘘の塔 分冊版(2) (ARIAコミックス)",
+      "lookup_title": "君と時計と嘘の塔 分冊版",
+      "outcome": "no_candidate",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "match_mode": null,
+      "matches": 0,
+      "provider_error": null
+    },
+    {
+      "work_id": "wrk_f045838eaea5",
+      "title": "ねじまき鳥クロニクル",
+      "lookup_title": "ねじまき鳥クロニクル",
+      "outcome": "accepted",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC8",
+      "ndc_code": "913.6",
+      "source_isbn13": null,
+      "match_mode": "title",
+      "matches": 7,
+      "provider_error": null
+    },
+    {
+      "work_id": "wrk_f0cccdcd3fe9",
+      "title": "その恋は詰みです。 (Ficus)",
+      "lookup_title": "その恋は詰みです。 (Ficus)",
+      "outcome": "accepted",
+      "category": "漫画・コミック",
       "ndc_scheme": "NDC10",
-      "ndc_code": "007.13",
+      "ndc_code": "726.1",
       "source_isbn13": null,
       "match_mode": "title_containment",
       "matches": 1,
+      "provider_error": null
+    },
+    {
+      "work_id": "wrk_f1e66e24f412",
+      "title": "ドミニオンマニアックスZERO",
+      "lookup_title": "ドミニオンマニアックスZERO",
+      "outcome": "no_candidate",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "match_mode": null,
+      "matches": 0,
       "provider_error": null
     }
   ]

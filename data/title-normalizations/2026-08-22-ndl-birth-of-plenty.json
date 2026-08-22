@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "updated_at": "2026-08-22T09:30:00Z",
+  "records": [
+    {
+      "work_id": "wrk_cd4ab42d3105",
+      "from_title": "「豊かさ」の誕生 成長と発展の文明史 「豊かさ」の誕生 成長と発展の文明史 (日本経済新聞出版)",
+      "title": "「豊かさ」の誕生 : 成長と発展の文明史",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000008283617",
+      "source_title": "「豊かさ」の誕生 : 成長と発展の文明史",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

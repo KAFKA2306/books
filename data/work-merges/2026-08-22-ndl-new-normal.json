@@ -1,0 +1,15 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_83cb62bfa866",
+      "into_work_id": "wrk_01ad486ad9cb",
+      "from_title": "ニューノーマル【単行本版】2 (コミックアウル)",
+      "into_title": "ニューノーマル",
+      "author": "相原瑛人",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I031779084",
+      "source_title": "ニューノーマル = New Normal. 2",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    }
+  ]
+}

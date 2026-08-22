@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_b2f83889f227",
+      "from_title": "きみはかわいい女の子(1) (別冊フレンドコミックス)",
+      "title": "きみはかわいい女の子",
+      "author": "いちのへ瑠美",
+      "source_url": "https://www.kodansha.co.jp/titles/1000026875",
+      "source_title": "きみはかわいい女の子",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

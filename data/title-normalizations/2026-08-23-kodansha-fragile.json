@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_9fed66931313",
+      "from_title": "フラジャイル(1) (アフタヌーンコミックス)",
+      "title": "フラジャイル",
+      "author": "恵三朗 / 草水敏",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000047374",
+      "source_title": "フラジャイル（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

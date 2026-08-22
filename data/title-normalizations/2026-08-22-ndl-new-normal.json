@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_01ad486ad9cb",
+      "from_title": "ニューノーマル【単行本版】1 (コミックアウル)",
+      "title": "ニューノーマル",
+      "author": "相原瑛人",
+      "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-isbn=9784910617008",
+      "source_title": "ニューノーマル",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

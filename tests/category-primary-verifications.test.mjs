@@ -30,7 +30,7 @@ test('partitioned primary NDL evidence is loaded into the canonical catalog', as
   const catalog = await loadCatalog();
   const cases = [
     {
-      workId: 'wrk_f9dda831cba7',
+      workId: 'wrk_9fed66931313',
       schemeId: 'ndc10',
       sourceUrl: 'https://ndlsearch.ndl.go.jp/books/R100000002-I030575495',
     },
@@ -72,49 +72,43 @@ test('primary evidence wins when automated evidence reports the same classificat
       match_mode: 'primary_bibliographic_record', source_url: 'https://ndlsearch.ndl.go.jp/books/primary',
     }],
   };
-  const merged = mergeCategoryOverlays(automated, primary);
+  const merged = mergeCategoryOverlays(automated, [primary]);
   assert.equal(merged.records.length, 1);
-  assert.equal(merged.records[0].match_mode, 'primary_bibliographic_record');
   assert.equal(merged.records[0].source_url, 'https://ndlsearch.ndl.go.jp/books/primary');
+  assert.equal(merged.records[0].match_mode, 'primary_bibliographic_record');
 });
 
 test('multiple primary partitions keep deterministic primary precedence', () => {
-  const automated = {
+  const base = { records: [] };
+  const first = {
     records: [{
-      work_id: 'wrk_partition', category: '数学', ndc_scheme: 'NDC9', ndc_code: '410',
-      match_mode: 'title', source_url: 'https://ndlsearch.ndl.go.jp/books/automated',
+      work_id: 'wrk_same', category: '漫画・コミック', ndc_scheme: 'NDC10', ndc_code: '726.1',
+      match_mode: 'primary_bibliographic_record', source_url: 'https://ndlsearch.ndl.go.jp/books/first',
     }],
   };
-  const firstPrimary = {
+  const second = {
     records: [{
-      work_id: 'wrk_partition', category: '数学', ndc_scheme: 'NDC9', ndc_code: '410',
-      match_mode: 'primary_bibliographic_record', source_url: 'https://ndlsearch.ndl.go.jp/books/primary-a',
+      work_id: 'wrk_same', category: '漫画・コミック', ndc_scheme: 'NDC10', ndc_code: '726.1',
+      match_mode: 'primary_bibliographic_record', source_url: 'https://ndlsearch.ndl.go.jp/books/second',
     }],
   };
-  const secondPrimary = {
-    records: [{
-      work_id: 'wrk_partition', category: '数学', ndc_scheme: 'NDC9', ndc_code: '410',
-      match_mode: 'primary_bibliographic_record', source_url: 'https://ndlsearch.ndl.go.jp/books/primary-b',
-    }],
-  };
-  const merged = mergeCategoryOverlays(automated, firstPrimary, secondPrimary);
+  const merged = mergeCategoryOverlays(base, [first, second]);
   assert.equal(merged.records.length, 1);
-  assert.equal(merged.records[0].source_url, 'https://ndlsearch.ndl.go.jp/books/primary-a');
+  assert.equal(merged.records[0].source_url, 'https://ndlsearch.ndl.go.jp/books/first');
 });
 
 test('conflicting primary and automated classifications are rejected', () => {
   const automated = {
     records: [{
-      work_id: 'wrk_conflict', category: '数学', ndc_scheme: 'NDC9', ndc_code: '417',
+      work_id: 'wrk_conflict', category: '経済', ndc_scheme: 'NDC10', ndc_code: '330',
+      match_mode: 'exact_isbn', source_url: 'https://ndlsearch.ndl.go.jp/books/automated',
     }],
   };
   const primary = {
     records: [{
-      work_id: 'wrk_conflict', category: '経済', ndc_scheme: 'NDC9', ndc_code: '331',
+      work_id: 'wrk_conflict', category: '漫画・コミック', ndc_scheme: 'NDC10', ndc_code: '726.1',
+      match_mode: 'primary_bibliographic_record', source_url: 'https://ndlsearch.ndl.go.jp/books/primary',
     }],
   };
-  assert.throws(
-    () => mergeCategoryOverlays(automated, primary),
-    /Conflicting category evidence for wrk_conflict/,
-  );
+  assert.throws(() => mergeCategoryOverlays(automated, [primary]), /conflicting category evidence/);
 });

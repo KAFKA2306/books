@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_81102d89d9af",
+      "from_title": "さよなら絶望先生(1) (週刊少年マガジンコミックス)",
+      "title": "さよなら絶望先生",
+      "author": "久米田康治",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000011977",
+      "source_title": "さよなら絶望先生（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

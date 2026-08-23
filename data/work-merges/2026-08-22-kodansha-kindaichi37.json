@@ -1,0 +1,25 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_0bbf5cee3c8f",
+      "into_work_id": "wrk_ad10103f63fc",
+      "from_title": "金田一37歳の事件簿(2) (イブニングコミックス)",
+      "into_title": "金田一37歳の事件簿",
+      "author": "天樹征丸 / さとうふみや",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000314450",
+      "source_title": "金田一３７歳の事件簿（２）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    },
+    {
+      "from_work_id": "wrk_7d1d6d8543e9",
+      "into_work_id": "wrk_ad10103f63fc",
+      "from_title": "金田一37歳の事件簿(3) (イブニングコミックス)",
+      "into_title": "金田一37歳の事件簿",
+      "author": "天樹征丸 / さとうふみや",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000320234",
+      "source_title": "金田一３７歳の事件簿（３）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    }
+  ]
+}

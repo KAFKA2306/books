@@ -1,0 +1,35 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_134a1523dac4",
+      "into_work_id": "wrk_8071b3f07069",
+      "from_title": "亜人(1) (アフタヌーンコミックス)",
+      "into_title": "亜人",
+      "author": "桜井画門 / 三浦追儺",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000047229",
+      "source_title": "亜人（１）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    },
+    {
+      "from_work_id": "wrk_ca17f707c1fd",
+      "into_work_id": "wrk_8071b3f07069",
+      "from_title": "亜人(2) (アフタヌーンコミックス)",
+      "into_title": "亜人",
+      "author": "桜井画門",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000047262",
+      "source_title": "亜人（２）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    },
+    {
+      "from_work_id": "wrk_1b50d2eba14f",
+      "into_work_id": "wrk_8071b3f07069",
+      "from_title": "亜人(3) (アフタヌーンコミックス)",
+      "into_title": "亜人",
+      "author": "桜井画門",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000047294",
+      "source_title": "亜人（３）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    }
+  ]
+}

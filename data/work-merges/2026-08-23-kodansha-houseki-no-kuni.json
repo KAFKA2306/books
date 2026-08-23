@@ -1,0 +1,25 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_e577fec594dd",
+      "into_work_id": "wrk_95a25d1b02c6",
+      "from_title": "宝石の国(2) (アフタヌーンコミックス)",
+      "into_title": "宝石の国",
+      "author": "市川春子",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000047310",
+      "source_title": "宝石の国（２）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    },
+    {
+      "from_work_id": "wrk_ab358ce88f18",
+      "into_work_id": "wrk_95a25d1b02c6",
+      "from_title": "宝石の国(3) (アフタヌーンコミックス)",
+      "into_title": "宝石の国",
+      "author": "市川春子",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000047352",
+      "source_title": "宝石の国（３）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    }
+  ]
+}

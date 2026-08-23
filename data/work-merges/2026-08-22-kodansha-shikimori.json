@@ -1,0 +1,15 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_e6927fb2c016",
+      "into_work_id": "wrk_934845fcfdc0",
+      "from_title": "可愛いだけじゃない式守さん(2) (マガジンポケットコミックス)",
+      "into_title": "可愛いだけじゃない式守さん",
+      "author": "真木蛍五",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000324314",
+      "source_title": "可愛いだけじゃない式守さん（２）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    }
+  ]
+}

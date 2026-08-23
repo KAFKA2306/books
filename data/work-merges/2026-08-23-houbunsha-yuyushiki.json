@@ -1,0 +1,55 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_721efb5356be",
+      "into_work_id": "wrk_9c4cc93c91f0",
+      "from_title": "ゆゆ式 3巻 (まんがタイムKRコミックス)",
+      "into_title": "ゆゆ式",
+      "author": "三上小又",
+      "source_url": "https://houbunsha.co.jp/patron/pdf/202205_ordersheet_mangatimeKR.pdf",
+      "source_title": "ゆゆ式 3",
+      "reason": "volume_number_and_imprint_are_not_work_identity"
+    },
+    {
+      "from_work_id": "wrk_1defa0d65614",
+      "into_work_id": "wrk_9c4cc93c91f0",
+      "from_title": "ゆゆ式 4巻 (まんがタイムKRコミックス)",
+      "into_title": "ゆゆ式",
+      "author": "三上小又",
+      "source_url": "https://houbunsha.co.jp/patron/pdf/202205_ordersheet_mangatimeKR.pdf",
+      "source_title": "ゆゆ式 4",
+      "reason": "volume_number_and_imprint_are_not_work_identity"
+    },
+    {
+      "from_work_id": "wrk_0e6590394c0a",
+      "into_work_id": "wrk_9c4cc93c91f0",
+      "from_title": "ゆゆ式 5巻 (まんがタイムKRコミックス)",
+      "into_title": "ゆゆ式",
+      "author": "三上小又",
+      "source_url": "https://houbunsha.co.jp/patron/pdf/202205_ordersheet_mangatimeKR.pdf",
+      "source_title": "ゆゆ式 5",
+      "reason": "volume_number_and_imprint_are_not_work_identity"
+    },
+    {
+      "from_work_id": "wrk_f01510bed8b1",
+      "into_work_id": "wrk_9c4cc93c91f0",
+      "from_title": "ゆゆ式 6巻 (まんがタイムKRコミックス)",
+      "into_title": "ゆゆ式",
+      "author": "三上小又",
+      "source_url": "https://houbunsha.co.jp/patron/pdf/202205_ordersheet_mangatimeKR.pdf",
+      "source_title": "ゆゆ式 6",
+      "reason": "volume_number_and_imprint_are_not_work_identity"
+    },
+    {
+      "from_work_id": "wrk_a9e87c99a579",
+      "into_work_id": "wrk_9c4cc93c91f0",
+      "from_title": "ゆゆ式 7巻 (まんがタイムKRコミックス)",
+      "into_title": "ゆゆ式",
+      "author": "三上小又",
+      "source_url": "https://houbunsha.co.jp/patron/pdf/202205_ordersheet_mangatimeKR.pdf",
+      "source_title": "ゆゆ式 7",
+      "reason": "volume_number_and_imprint_are_not_work_identity"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_6e015a33acd6",
+      "into_work_id": "wrk_5c12756b6ef5",
+      "from_title": "花野井くんと恋の病(2) (デザートコミックス)",
+      "into_title": "花野井くんと恋の病",
+      "author": "森野萌",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000314058",
+      "source_title": "花野井くんと恋の病（２）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    }
+  ]
+}

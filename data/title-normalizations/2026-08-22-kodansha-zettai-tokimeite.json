@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_fa28ef4a36a0",
+      "from_title": "絶対にときめいてはいけない!(1) (デザートコミックス)",
+      "title": "絶対にときめいてはいけない!",
+      "author": "築島治",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000115428",
+      "source_title": "絶対にときめいてはいけない！（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

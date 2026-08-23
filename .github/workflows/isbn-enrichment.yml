@@ -69,6 +69,12 @@ jobs:
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
+          if git diff --quiet -- data/isbn-enrichments.json; then
+            echo "catalog_changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "catalog_changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Commit verified enrichment state
         if: steps.changes.outputs.changed == 'true'
         run: |
@@ -83,7 +89,7 @@ jobs:
           git push origin HEAD:main
 
       - name: Rebuild and deploy Pages
-        if: steps.changes.outputs.changed == 'true'
+        if: steps.changes.outputs.catalog_changed == 'true'
         run: gh workflow run ci-pages.yml --ref main
 
       - name: Record automation failure

@@ -1,0 +1,45 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_94ddf2e7c050",
+      "into_work_id": "wrk_3c7f030de214",
+      "from_title": "インベスターZ(2)",
+      "into_title": "インベスターＺ",
+      "author": "三田紀房",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000018483",
+      "source_title": "インベスターＺ（２）",
+      "reason": "volume_number_is_not_work_identity"
+    },
+    {
+      "from_work_id": "wrk_15710f032b26",
+      "into_work_id": "wrk_3c7f030de214",
+      "from_title": "インベスターZ(3)",
+      "into_title": "インベスターＺ",
+      "author": "三田紀房",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000018518",
+      "source_title": "インベスターＺ（３）",
+      "reason": "volume_number_is_not_work_identity"
+    },
+    {
+      "from_work_id": "wrk_28482102f7b2",
+      "into_work_id": "wrk_3c7f030de214",
+      "from_title": "インベスターZ(4)",
+      "into_title": "インベスターＺ",
+      "author": "三田紀房",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000018548",
+      "source_title": "インベスターＺ（４）",
+      "reason": "volume_number_is_not_work_identity"
+    },
+    {
+      "from_work_id": "wrk_20f323c253e3",
+      "into_work_id": "wrk_3c7f030de214",
+      "from_title": "インベスターZ(5)",
+      "into_title": "インベスターＺ",
+      "author": "三田紀房",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000018576",
+      "source_title": "インベスターＺ（５）",
+      "reason": "volume_number_is_not_work_identity"
+    }
+  ]
+}

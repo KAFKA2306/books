@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_a43f46a9b9eb",
+      "from_title": "テセウスの船(1) (モーニングコミックス)",
+      "title": "テセウスの船",
+      "author": "東元俊哉",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000023212",
+      "source_title": "テセウスの船（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

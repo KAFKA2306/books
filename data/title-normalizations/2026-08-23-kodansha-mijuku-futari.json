@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_e18b3ca1b0b6",
+      "from_title": "未熟なふたりでございますが(1) (コミックDAYSコミックス)",
+      "title": "未熟なふたりでございますが",
+      "author": "カワハラ恋",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000312038",
+      "source_title": "未熟なふたりでございますが（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

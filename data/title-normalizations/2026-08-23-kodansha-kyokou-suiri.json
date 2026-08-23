@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_f2453d9d6768",
+      "from_title": "虚構推理(1) (月刊少年マガジンR)",
+      "title": "虚構推理",
+      "author": "片瀬茶柴 / 城平京",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000043374",
+      "source_title": "虚構推理（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_b589720d9267",
+      "into_work_id": "wrk_a43f46a9b9eb",
+      "from_title": "テセウスの船(2) (モーニングコミックス)",
+      "into_title": "テセウスの船",
+      "author": "東元俊哉",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000052788",
+      "source_title": "テセウスの船（２）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    },
+    {
+      "from_work_id": "wrk_f81692deae32",
+      "into_work_id": "wrk_a43f46a9b9eb",
+      "from_title": "テセウスの船(3) (モーニングコミックス)",
+      "into_title": "テセウスの船",
+      "author": "東元俊哉",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000115433",
+      "source_title": "テセウスの船（３）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_ab28c0d43922",
+      "into_work_id": "wrk_e18b3ca1b0b6",
+      "from_title": "未熟なふたりでございますが(2) (コミックDAYSコミックス)",
+      "into_title": "未熟なふたりでございますが",
+      "author": "カワハラ恋",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000315329",
+      "source_title": "未熟なふたりでございますが（２）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    },
+    {
+      "from_work_id": "wrk_6c453b5621d5",
+      "into_work_id": "wrk_e18b3ca1b0b6",
+      "from_title": "未熟なふたりでございますが(3) (コミックDAYSコミックス)",
+      "into_title": "未熟なふたりでございますが",
+      "author": "カワハラ恋",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000320267",
+      "source_title": "未熟なふたりでございますが（３）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    }
+  ]
+}

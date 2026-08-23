@@ -1,0 +1,25 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_5e5521848689",
+      "into_work_id": "wrk_0e2a5a3ee99a",
+      "from_title": "カードキャプターさくら クリアカード編(2) (なかよしコミックス)",
+      "into_title": "カードキャプターさくら クリアカード編",
+      "author": "CLAMP",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000048108",
+      "source_title": "カードキャプターさくら　クリアカード編（２）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    },
+    {
+      "from_work_id": "wrk_37ba9cccc0e6",
+      "into_work_id": "wrk_0e2a5a3ee99a",
+      "from_title": "カードキャプターさくら クリアカード編(3) (なかよしコミックス)",
+      "into_title": "カードキャプターさくら クリアカード編",
+      "author": "CLAMP",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000048171",
+      "source_title": "カードキャプターさくら　クリアカード編（３）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    }
+  ]
+}

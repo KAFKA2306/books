@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_514fa4bdf24d",
+      "from_title": "この会社に好きな人がいます(1) (モーニングコミックス)",
+      "title": "この会社に好きな人がいます",
+      "author": "榎本あかまる",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000323159",
+      "source_title": "この会社に好きな人がいます（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

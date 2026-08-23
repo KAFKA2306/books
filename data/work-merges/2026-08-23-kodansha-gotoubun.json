@@ -1,0 +1,15 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_4db095ad59b8",
+      "into_work_id": "wrk_42862e4f779c",
+      "from_title": "五等分の花嫁(2) (週刊少年マガジンコミックス)",
+      "into_title": "五等分の花嫁",
+      "author": "春場ねぎ",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000052993",
+      "source_title": "五等分の花嫁（２）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    }
+  ]
+}

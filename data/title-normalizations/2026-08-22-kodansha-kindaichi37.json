@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_ad10103f63fc",
+      "from_title": "金田一37歳の事件簿(1) (イブニングコミックス)",
+      "title": "金田一37歳の事件簿",
+      "author": "天樹征丸 / さとうふみや",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000310283",
+      "source_title": "金田一３７歳の事件簿（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

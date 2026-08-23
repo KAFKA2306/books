@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_facbbdc12286",
+      "from_title": "新世界より(1) (週刊少年マガジンコミックス)",
+      "title": "新世界より",
+      "author": "及川徹 / 貴志祐介",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000017527",
+      "source_title": "新世界より（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

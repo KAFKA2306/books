@@ -60,3 +60,10 @@ test('removed weekly research workflow stays removed', async () => {
     { code: 'ENOENT' },
   );
 });
+
+test('legacy root title-normalization path stays removed', async () => {
+  await assert.rejects(
+    () => access(new URL('../data/title-normalizations.json', import.meta.url)),
+    { code: 'ENOENT' },
+  );
+});

@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_934845fcfdc0",
+      "from_title": "可愛いだけじゃない式守さん(1) (マガジンポケットコミックス)",
+      "title": "可愛いだけじゃない式守さん",
+      "author": "真木蛍五",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000322963",
+      "source_title": "可愛いだけじゃない式守さん（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_42862e4f779c",
+      "from_title": "五等分の花嫁(1) (週刊少年マガジンコミックス)",
+      "title": "五等分の花嫁",
+      "author": "春場ねぎ",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000023177",
+      "source_title": "五等分の花嫁（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

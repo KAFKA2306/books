@@ -1,0 +1,25 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_8c2586beebc5",
+      "into_work_id": "wrk_c30372c9e211",
+      "from_title": "寄生獣(2) (アフタヌーンコミックス)",
+      "into_title": "寄生獣",
+      "author": "岩明均",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000029947",
+      "source_title": "寄生獣（２）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    },
+    {
+      "from_work_id": "wrk_40ca39f0033d",
+      "into_work_id": "wrk_c30372c9e211",
+      "from_title": "寄生獣(3) (アフタヌーンコミックス)",
+      "into_title": "寄生獣",
+      "author": "岩明均",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000029954",
+      "source_title": "寄生獣（３）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    }
+  ]
+}

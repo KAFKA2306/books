@@ -20,7 +20,7 @@ on:
       concurrency:
         description: Number of works to inspect in parallel
         required: false
-        default: '4'
+        default: '1'
 
 permissions:
   actions: write
@@ -51,7 +51,7 @@ jobs:
       - name: Inspect due works
         env:
           LIMIT: ${{ github.event.inputs.limit || '25' }}
-          CONCURRENCY: ${{ github.event.inputs.concurrency || '4' }}
+          CONCURRENCY: ${{ github.event.inputs.concurrency || '1' }}
         run: npm run isbn:enrich -- --limit "$LIMIT" --concurrency "$CONCURRENCY"
 
       - name: Validate catalog and generated API

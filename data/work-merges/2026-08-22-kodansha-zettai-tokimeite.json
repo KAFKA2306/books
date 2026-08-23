@@ -1,0 +1,25 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_e3e5511651e0",
+      "into_work_id": "wrk_fa28ef4a36a0",
+      "from_title": "絶対にときめいてはいけない!(2) (デザートコミックス)",
+      "into_title": "絶対にときめいてはいけない!",
+      "author": "築島治",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000312749",
+      "source_title": "絶対にときめいてはいけない！（２）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    },
+    {
+      "from_work_id": "wrk_65f4e473f75c",
+      "into_work_id": "wrk_fa28ef4a36a0",
+      "from_title": "絶対にときめいてはいけない!(3) (デザートコミックス)",
+      "into_title": "絶対にときめいてはいけない!",
+      "author": "築島治",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000318638",
+      "source_title": "絶対にときめいてはいけない！（３）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    }
+  ]
+}

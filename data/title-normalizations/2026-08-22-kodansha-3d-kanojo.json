@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_77080cbbcd1e",
+      "from_title": "3D彼女 リアルガール 新装版(1) (デザートコミックス)",
+      "title": "3D彼女 リアルガール 新装版",
+      "author": "那波マオ",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000042049",
+      "source_title": "３Ｄ彼女　リアルガール　新装版（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

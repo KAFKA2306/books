@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { access, readdir } from 'node:fs/promises';
 import { applyWorkMerges } from '../src/work-merge.mjs';
 
 function fixture() {
@@ -57,4 +58,11 @@ test('fails closed on title drift', () => {
   const bad = structuredClone(overlay);
   bad.records[0].from_title = '別タイトル';
   assert.throws(() => applyWorkMerges(fixture(), bad), /source title drift/);
+});
+
+test('stores work-merge evidence only in the canonical partition directory', async () => {
+  await assert.rejects(access(new URL('../data/work-merges.json', import.meta.url)));
+  const files = await readdir(new URL('../data/work-merges/', import.meta.url));
+  assert.ok(files.includes('legacy.json'));
+  assert.ok(files.every((name) => name.endsWith('.json')));
 });

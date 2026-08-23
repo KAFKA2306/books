@@ -114,16 +114,12 @@ export async function loadCatalog(root = process.cwd()) {
   );
   merged = applyCategoryEnrichments(merged, categoryOverlay);
 
-  const titleOverlay = await readJsonIfPresent(path.join(root, 'data/title-normalizations.json')) ?? {
-    schema: 'kafka.books.title-normalizations.v1',
-    records: [],
-  };
   const titlePartitions = await readJsonDirectoryIfPresent(
     path.join(root, 'data/title-normalizations'),
   );
   merged = applyTitleNormalizations(
     merged,
-    mergeTitleNormalizationOverlays(titleOverlay, ...titlePartitions),
+    mergeTitleNormalizationOverlays(...titlePartitions),
   );
   merged = deriveLibraryClassifications(merged, categoryOverlay);
 

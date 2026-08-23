@@ -1,0 +1,15 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_f1a8e20ae0f8",
+      "into_work_id": "wrk_facbbdc12286",
+      "from_title": "新世界より(2) (週刊少年マガジンコミックス)",
+      "into_title": "新世界より",
+      "author": "及川徹 / 貴志祐介",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000017560",
+      "source_title": "新世界より（２）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    }
+  ]
+}

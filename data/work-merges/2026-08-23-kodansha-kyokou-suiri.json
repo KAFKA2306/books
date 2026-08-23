@@ -1,0 +1,25 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_b017903da9ef",
+      "into_work_id": "wrk_f2453d9d6768",
+      "from_title": "虚構推理(2) (月刊少年マガジンR)",
+      "into_title": "虚構推理",
+      "author": "片瀬茶柴 / 城平京",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000043379",
+      "source_title": "虚構推理（２）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    },
+    {
+      "from_work_id": "wrk_5754afb11f1d",
+      "into_work_id": "wrk_f2453d9d6768",
+      "from_title": "虚構推理(3) (月刊少年マガジンR)",
+      "into_title": "虚構推理",
+      "author": "片瀬茶柴 / 城平京",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000047920",
+      "source_title": "虚構推理（３）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_5c12756b6ef5",
+      "from_title": "花野井くんと恋の病(1) (デザートコミックス)",
+      "title": "花野井くんと恋の病",
+      "author": "森野萌",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000116236",
+      "source_title": "花野井くんと恋の病（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

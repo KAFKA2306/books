@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_1e7377fd982a",
+      "from_title": "異世界魔王と召喚少女の奴隷魔術(1) (シリウスコミックス)",
+      "title": "異世界魔王と召喚少女の奴隷魔術",
+      "author": "福田直叶 / むらさきゆきや / 鶴崎貴大",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000045285",
+      "source_title": "異世界魔王と召喚少女の奴隷魔術（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

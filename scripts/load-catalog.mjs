@@ -99,17 +99,11 @@ export async function loadCatalog(root = process.cwd()) {
     rule_version: 'ndc-map-v1',
     records: [],
   };
-  const primaryCategoryOverlay = await readJsonIfPresent(path.join(root, 'data/category-primary-verifications.json')) ?? {
-    schema: 'kafka.books.category-enrichments.v1',
-    rule_version: 'ndc-map-v1',
-    records: [],
-  };
   const primaryCategoryPartitions = await readJsonDirectoryIfPresent(
     path.join(root, 'data/category-primary-verifications'),
   );
   const categoryOverlay = mergeCategoryOverlays(
     automatedCategoryOverlay,
-    primaryCategoryOverlay,
     ...primaryCategoryPartitions,
   );
   merged = applyCategoryEnrichments(merged, categoryOverlay);

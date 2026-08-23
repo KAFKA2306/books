@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { access } from 'node:fs/promises';
 import { loadCatalog, mergeCategoryOverlays } from '../scripts/load-catalog.mjs';
 
 test('primary NDL category verification is current-use and source-reported', async () => {
@@ -24,6 +25,14 @@ test('primary NDL category verification is current-use and source-reported', asy
     'https://ndlsearch.ndl.go.jp/books/R100000002-I028568441',
   );
   assert.equal(classification.verification, 'source_reported');
+});
+
+test('primary category evidence has one canonical path', async () => {
+  await assert.rejects(
+    access(new URL('../data/category-primary-verifications.json', import.meta.url)),
+    { code: 'ENOENT' },
+  );
+  await access(new URL('../data/category-primary-verifications/legacy.json', import.meta.url));
 });
 
 test('partitioned primary NDL evidence is loaded into the canonical catalog', async () => {

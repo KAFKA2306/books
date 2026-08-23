@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_8eb8a3818ab6",
+      "from_title": "なんでここに先生が!?(1) (ヤングマガジンコミックス)",
+      "title": "なんでここに先生が!?",
+      "author": "蘇募ロウ",
+      "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-title=%E3%81%AA%E3%82%93%E3%81%A7%E3%81%93%E3%81%93%E3%81%AB%E5%85%88%E7%94%9F%E3%81%8C%21%3F%201&q-author=%E8%98%87%E5%8B%9F%E3%83%AD%E3%82%A6",
+      "source_title": "なんでここに先生が!? 1",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_6a63163a8819",
+      "into_work_id": "wrk_8eb8a3818ab6",
+      "from_title": "なんでここに先生が!?(2) (ヤングマガジンコミックス)",
+      "into_title": "なんでここに先生が!?",
+      "author": "蘇募ロウ",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000023073",
+      "source_title": "なんでここに先生が！？（２）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    },
+    {
+      "from_work_id": "wrk_b1ae9ae6cd44",
+      "into_work_id": "wrk_8eb8a3818ab6",
+      "from_title": "なんでここに先生が!?(3) (ヤングマガジンコミックス)",
+      "into_title": "なんでここに先生が!?",
+      "author": "蘇募ロウ",
+      "source_url": "https://ndlsearch.ndl.go.jp/search?cs=bib&q-title=%E3%81%AA%E3%82%93%E3%81%A7%E3%81%93%E3%81%93%E3%81%AB%E5%85%88%E7%94%9F%E3%81%8C%21%3F%203&q-author=%E8%98%87%E5%8B%9F%E3%83%AD%E3%82%A6",
+      "source_title": "なんでここに先生が!? 3",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    }
+  ]
+}

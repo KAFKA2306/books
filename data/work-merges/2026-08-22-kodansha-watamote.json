@@ -1,0 +1,25 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_5596a41ca215",
+      "into_work_id": "wrk_fb8eafcc7cd4",
+      "from_title": "私がモテてどうすんだ(2) (別冊フレンドコミックス)",
+      "into_title": "私がモテてどうすんだ",
+      "author": "ぢゅん子",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000036698",
+      "source_title": "私がモテてどうすんだ（２）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    },
+    {
+      "from_work_id": "wrk_879ebf767833",
+      "into_work_id": "wrk_fb8eafcc7cd4",
+      "from_title": "私がモテてどうすんだ(3) (別冊フレンドコミックス)",
+      "into_title": "私がモテてどうすんだ",
+      "author": "ぢゅん子",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000036714",
+      "source_title": "私がモテてどうすんだ（３）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_fb8eafcc7cd4",
+      "from_title": "私がモテてどうすんだ(1) (別冊フレンドコミックス)",
+      "title": "私がモテてどうすんだ",
+      "author": "ぢゅん子",
+      "source_url": "https://www.kodansha.co.jp/titles/1000006457",
+      "source_title": "私がモテてどうすんだ",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

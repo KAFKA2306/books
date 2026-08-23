@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_c30372c9e211",
+      "from_title": "寄生獣(1) (アフタヌーンコミックス)",
+      "title": "寄生獣",
+      "author": "岩明均",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000029944",
+      "source_title": "寄生獣（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_e2f585defc2d",
+      "from_title": "娘の友達(1) (コミックDAYSコミックス)",
+      "title": "娘の友達",
+      "author": "萩原あさ美",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000323702",
+      "source_title": "娘の友達（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

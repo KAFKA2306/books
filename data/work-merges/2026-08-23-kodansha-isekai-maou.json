@@ -1,0 +1,25 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_7961a6447035",
+      "into_work_id": "wrk_1e7377fd982a",
+      "from_title": "異世界魔王と召喚少女の奴隷魔術(2) (シリウスコミックス)",
+      "into_title": "異世界魔王と召喚少女の奴隷魔術",
+      "author": "福田直叶 / むらさきゆきや / 鶴崎貴大",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000047715",
+      "source_title": "異世界魔王と召喚少女の奴隷魔術（２）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    },
+    {
+      "from_work_id": "wrk_efa8bb369d3b",
+      "into_work_id": "wrk_1e7377fd982a",
+      "from_title": "異世界魔王と召喚少女の奴隷魔術(3) (シリウスコミックス)",
+      "into_title": "異世界魔王と召喚少女の奴隷魔術",
+      "author": "福田直叶 / むらさきゆきや / 鶴崎貴大",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000047735",
+      "source_title": "異世界魔王と召喚少女の奴隷魔術（３）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    }
+  ]
+}

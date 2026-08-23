@@ -1,0 +1,15 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_e8fd80e83a66",
+      "into_work_id": "wrk_514fa4bdf24d",
+      "from_title": "この会社に好きな人がいます(2) (モーニングコミックス)",
+      "into_title": "この会社に好きな人がいます",
+      "author": "榎本あかまる",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000327387",
+      "source_title": "この会社に好きな人がいます（２）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    }
+  ]
+}

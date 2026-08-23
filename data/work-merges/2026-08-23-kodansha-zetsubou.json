@@ -1,0 +1,25 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_867de0c46bcd",
+      "into_work_id": "wrk_81102d89d9af",
+      "from_title": "さよなら絶望先生(2) (週刊少年マガジンコミックス)",
+      "into_title": "さよなら絶望先生",
+      "author": "久米田康治",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000012013",
+      "source_title": "さよなら絶望先生（２）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    },
+    {
+      "from_work_id": "wrk_7245f5cfdcc3",
+      "into_work_id": "wrk_81102d89d9af",
+      "from_title": "さよなら絶望先生(3) (週刊少年マガジンコミックス)",
+      "into_title": "さよなら絶望先生",
+      "author": "久米田康治",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000012040",
+      "source_title": "さよなら絶望先生（３）",
+      "reason": "volume_and_label_were_embedded_in_work_title"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_9115f7f0b942",
+      "from_title": "五等分の花嫁 フルカラー版(1) (週刊少年マガジンコミックス)",
+      "title": "五等分の花嫁 フルカラー版",
+      "author": "春場ねぎ",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000341659",
+      "source_title": "五等分の花嫁　フルカラー版（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

@@ -77,6 +77,8 @@ jobs:
 
       - name: Commit verified enrichment state
         if: steps.changes.outputs.changed == 'true'
+        env:
+          CATALOG_CHANGED: ${{ steps.changes.outputs.catalog_changed }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -84,7 +86,12 @@ jobs:
             data/isbn-enrichments.json \
             data/isbn-enrichment-state.json \
             data/isbn-enrichment-report.json
-          git commit -m "chore(data): enrich verified ISBN metadata"
+          if [ "$CATALOG_CHANGED" = "true" ]; then
+            message="chore(data): enrich verified ISBN metadata"
+          else
+            message="chore(data): record ISBN enrichment attempts"
+          fi
+          git commit -m "$message"
           git pull --rebase origin main
           git push origin HEAD:main
 

@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_5bfe1c982889",
+      "from_title": "めしにしましょう(1) (イブニングコミックス)",
+      "title": "めしにしましょう",
+      "author": "小林銅蟲",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000039136",
+      "source_title": "めしにしましょう（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

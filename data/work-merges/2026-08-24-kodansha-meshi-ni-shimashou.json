@@ -1,0 +1,15 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_17e91f1c6ac4",
+      "into_work_id": "wrk_5bfe1c982889",
+      "from_title": "めしにしましょう(2) 【電子限定カラーレシピ付き】 (イブニングコミックス)",
+      "into_title": "めしにしましょう",
+      "author": "小林銅蟲",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000039152",
+      "source_title": "めしにしましょう（２）",
+      "reason": "volume_label_and_electronic_bonus_were_embedded_in_work_title"
+    }
+  ]
+}

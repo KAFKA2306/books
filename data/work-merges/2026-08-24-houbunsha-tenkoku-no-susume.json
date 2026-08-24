@@ -1,0 +1,15 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_ac447793505d",
+      "into_work_id": "wrk_649b4621c57c",
+      "from_title": "天国のススメ! 3巻 (まんがタイムコミックス)",
+      "into_title": "天国のススメ！",
+      "author": "宮成樂",
+      "source_url": "https://houbunsha.co.jp/patron/pdf/202603_ordersheet_mangatime.pdf",
+      "source_title": "天国のススメ！ 3",
+      "reason": "volume_number_and_imprint_are_not_work_identity"
+    }
+  ]
+}

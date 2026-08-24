@@ -1,0 +1,25 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_effe6c528968",
+      "into_work_id": "wrk_e5c79602a2f8",
+      "from_title": "君と時計と嘘の塔 分冊版(2) (ARIAコミックス)",
+      "into_title": "君と時計と嘘の塔",
+      "author": "綾崎隼 / 西ノ木はら / pomodorosa",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000046758",
+      "source_title": "君と時計と嘘の塔（１）",
+      "reason": "retail_split_episode_number_and_imprint_were_embedded_in_work_title"
+    },
+    {
+      "from_work_id": "wrk_e6ddb7faf887",
+      "into_work_id": "wrk_e5c79602a2f8",
+      "from_title": "君と時計と嘘の塔 分冊版(3) (ARIAコミックス)",
+      "into_title": "君と時計と嘘の塔",
+      "author": "綾崎隼 / 西ノ木はら / pomodorosa",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000046758",
+      "source_title": "君と時計と嘘の塔（１）",
+      "reason": "retail_split_episode_number_and_imprint_were_embedded_in_work_title"
+    }
+  ]
+}

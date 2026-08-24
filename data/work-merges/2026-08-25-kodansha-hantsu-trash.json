@@ -1,0 +1,23 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_227b11200920",
+      "into_work_id": "wrk_3e67e8be5751",
+      "from_title": "ハンツー×トラッシュ(2) (ヤングマガジンコミックス)",
+      "into_title": "ハンツー×トラッシュ",
+      "author": "こばやしひよこ",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000015977",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "from_work_id": "wrk_0740cf6d7426",
+      "into_work_id": "wrk_3e67e8be5751",
+      "from_title": "ハンツー×トラッシュ(3) (ヤングマガジンコミックス)",
+      "into_title": "ハンツー×トラッシュ",
+      "author": "こばやしひよこ",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000015977",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

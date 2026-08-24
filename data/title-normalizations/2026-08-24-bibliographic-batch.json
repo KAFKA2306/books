@@ -1,0 +1,21 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_af6a9618d5cf",
+      "from_title": "線型代数学伊吹山",
+      "title": "線型代数学",
+      "source_url": "https://ci.nii.ac.jp/ncid/BN01525672",
+      "source_title": "線型代数学",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_f541f6d7f63f",
+      "from_title": "優しい囲碁トレーニング中盤の基本高尾",
+      "title": "中盤の基本",
+      "source_url": "https://ci.nii.ac.jp/ncid/BB21843676",
+      "source_title": "中盤の基本",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

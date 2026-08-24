@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_3e67e8be5751",
+      "from_title": "ハンツー×トラッシュ(1) (ヤングマガジンコミックス)",
+      "title": "ハンツー×トラッシュ",
+      "author": "こばやしひよこ",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000015977",
+      "source_title": "ハンツー×トラッシュ（２）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_188607e8425c",
+      "from_title": "ざんげ飯(1) (コミックDAYSコミックス)",
+      "title": "ざんげ飯",
+      "author": "こだまはつみ",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000345392",
+      "source_title": "ざんげ飯（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

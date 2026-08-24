@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_1d51f21f17bf",
+      "from_title": "月曜日のたわわ(1) (ヤングマガジンコミックス)",
+      "title": "月曜日のたわわ",
+      "author": "比村奇石",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000349427",
+      "source_title": "月曜日のたわわ（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

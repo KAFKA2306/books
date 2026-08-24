@@ -51,6 +51,16 @@ export function mergeIsbnOverlays(...overlays) {
   };
 }
 
+export async function loadIsbnOverlay(root = process.cwd()) {
+  const automated = JSON.parse(
+    await fs.readFile(path.join(root, 'data/isbn-enrichments.json'), 'utf8'),
+  );
+  const primaryPartitions = await readJsonDirectoryIfPresent(
+    path.join(root, 'data/isbn-primary-verifications'),
+  );
+  return mergeIsbnOverlays(automated, ...primaryPartitions);
+}
+
 export function mergeCategoryOverlays(automated, ...primaryOverlays) {
   const recordsByWork = new Map();
   for (const overlay of [...primaryOverlays, automated]) {
@@ -106,16 +116,7 @@ export async function loadCatalog(root = process.cwd()) {
     merged = mergeKindleCatalog(merged, kindleData);
   }
 
-  const automatedIsbnOverlay = JSON.parse(
-    await fs.readFile(path.join(root, 'data/isbn-enrichments.json'), 'utf8'),
-  );
-  const primaryIsbnPartitions = await readJsonDirectoryIfPresent(
-    path.join(root, 'data/isbn-primary-verifications'),
-  );
-  merged = applyIsbnEnrichments(
-    merged,
-    mergeIsbnOverlays(automatedIsbnOverlay, ...primaryIsbnPartitions),
-  );
+  merged = applyIsbnEnrichments(merged, await loadIsbnOverlay(root));
 
   const automatedCategoryOverlay = await readJsonIfPresent(path.join(root, 'data/category-enrichments.json')) ?? {
     schema: 'kafka.books.category-enrichments.v1',

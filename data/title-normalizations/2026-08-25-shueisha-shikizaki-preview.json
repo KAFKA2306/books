@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_6551f998a87d",
+      "from_title": "【先行試し読み】四季崎姉妹はあばかれたい (ヤングジャンプコミックスDIGITAL)",
+      "title": "四季崎姉妹はあばかれたい",
+      "author": "朝倉亮介",
+      "source_url": "https://books.shueisha.co.jp/items/contents.html?jdcn=08X10000000020279000",
+      "source_title": "四季崎姉妹はあばかれたい 1／朝倉亮介｜ヤングジャンプコミックスDIGITAL｜2022年4月19日発売",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_1728177c7677",
+      "from_title": "41歳の通訳者が15年ぶりに本気で取り組んだ英語学習法 君は心躍る英語に触れているか! GOTCHA!新書",
+      "title": "41歳の通訳者が15年ぶりに本気で取り組んだ英語学習法 君は心躍る英語に触れているか！",
+      "author": "川合亮平",
+      "source_url": "https://ej.alc.co.jp/tag/STUDY/20190405-kawai-study-jissen-1",
+      "source_title": "41歳の通訳者が15年ぶりに本気で取り組んだ英語学習法 君は心躍る英語に触れているか！",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

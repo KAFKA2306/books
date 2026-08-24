@@ -17,7 +17,7 @@ ISBN未確認の所蔵を、機械的かつ監査可能に再照合する運用�
 - Google Books API
   - https://developers.google.com/books/docs/v1/using
 
-Google Books APIキーは任意です。リポジトリSecret `GOOGLE_BOOKS_API_KEY` が設定されている場合だけ使用します。
+Google Booksの公開データrequestもAPI keyまたはOAuth tokenによるapplication identificationが必要です。このworkflowではリポジトリSecret `GOOGLE_BOOKS_API_KEY` が設定されている場合だけGoogle Booksを照会し、未設定時はNDLで見つけたISBN候補をopenBDで相互照合します。Secret値そのものはreportへ保存せず、Google Books照会が有効だったかだけを `policy.google_books_enabled` に記録します。
 
 ## 自動採用条件
 

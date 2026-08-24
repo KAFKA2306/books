@@ -34,6 +34,23 @@ async function readJsonDirectoryIfPresent(dirPath) {
   }
 }
 
+export function mergeIsbnOverlays(...overlays) {
+  const recordsByWork = new Map();
+  for (const overlay of overlays) {
+    for (const record of overlay?.records ?? []) {
+      const existing = recordsByWork.get(record.work_id);
+      if (existing && existing.isbn13 !== record.isbn13) {
+        throw new Error(`Conflicting ISBN evidence for ${record.work_id}`);
+      }
+      recordsByWork.set(record.work_id, record);
+    }
+  }
+  return {
+    schema: 'kafka.books.isbn-enrichments.v1',
+    records: [...recordsByWork.values()].sort((a, b) => a.work_id.localeCompare(b.work_id)),
+  };
+}
+
 export function mergeCategoryOverlays(automated, ...primaryOverlays) {
   const recordsByWork = new Map();
   for (const overlay of [...primaryOverlays, automated]) {
@@ -89,10 +106,16 @@ export async function loadCatalog(root = process.cwd()) {
     merged = mergeKindleCatalog(merged, kindleData);
   }
 
-  const isbnOverlay = JSON.parse(
+  const automatedIsbnOverlay = JSON.parse(
     await fs.readFile(path.join(root, 'data/isbn-enrichments.json'), 'utf8'),
   );
-  merged = applyIsbnEnrichments(merged, isbnOverlay);
+  const primaryIsbnPartitions = await readJsonDirectoryIfPresent(
+    path.join(root, 'data/isbn-primary-verifications'),
+  );
+  merged = applyIsbnEnrichments(
+    merged,
+    mergeIsbnOverlays(automatedIsbnOverlay, ...primaryIsbnPartitions),
+  );
 
   const automatedCategoryOverlay = await readJsonIfPresent(path.join(root, 'data/category-enrichments.json')) ?? {
     schema: 'kafka.books.category-enrichments.v1',

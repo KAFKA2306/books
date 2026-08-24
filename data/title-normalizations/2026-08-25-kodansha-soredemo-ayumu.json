@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_e0459b03c223",
+      "from_title": "それでも歩は寄せてくる(1) (週刊少年マガジンコミックス)",
+      "title": "それでも歩は寄せてくる",
+      "author": "山本崇一朗",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000322791",
+      "source_title": "それでも歩は寄せてくる（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

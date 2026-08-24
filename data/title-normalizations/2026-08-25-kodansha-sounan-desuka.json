@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_81806d8335a2",
+      "from_title": "ソウナンですか?(3) (ヤングマガジンコミックス)",
+      "title": "ソウナンですか？",
+      "author": "さがら梨々 / 岡本健太郎",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000313941",
+      "source_title": "ソウナンですか？（３）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

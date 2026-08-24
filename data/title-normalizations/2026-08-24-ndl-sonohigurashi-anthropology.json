@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_103fbef17520",
+      "from_title": "「その日暮らし」の人類学~もう一つの資本主義経済~ (光文社新書)",
+      "title": "「その日暮らし」の人類学 : もう一つの資本主義経済",
+      "author": "小川さやか",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I027447277",
+      "source_title": "「その日暮らし」の人類学 : もう一つの資本主義経済",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

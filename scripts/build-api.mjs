@@ -1,7 +1,7 @@
 import crypto from 'node:crypto';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { loadCatalog } from './load-catalog.mjs';
+import { loadCatalog, loadIsbnOverlay } from './load-catalog.mjs';
 import { normalizeCatalogSources, normalizeIssueRecords } from '../src/source-groups.mjs';
 import { normalizeBibliographicDisplayCatalog } from '../src/bibliographic-display-normalization.mjs';
 
@@ -62,7 +62,7 @@ async function readJson(relativePath) {
 }
 
 const issueData = await readJson('data/issue-1-books.json');
-const isbnEnrichments = await readJson('data/isbn-enrichments.json');
+const isbnEnrichments = await loadIsbnOverlay(root);
 const isbnEnrichmentState = await readJson('data/isbn-enrichment-state.json');
 const isbnEnrichmentReport = await readJson('data/isbn-enrichment-report.json');
 const categoryEnrichments = await readJson('data/category-enrichments.json');
@@ -136,6 +136,7 @@ const manifest = {
     'data/catalog.json',
     'data/issue-1-books.json',
     'data/isbn-enrichments.json',
+    'data/isbn-primary-verifications/',
     'data/isbn-enrichment-state.json',
     'data/isbn-enrichment-report.json',
     'data/category-enrichments.json',

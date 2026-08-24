@@ -58,6 +58,22 @@ test('operational source lists are API collections', () => {
   }
 });
 
+test('primary ISBN verification evidence is exposed by the API', async () => {
+  const rows = await readJson('isbn_enrichments.json');
+  const expected = new Map([
+    ['wrk_960378886748', '9784757410435'],
+    ['wrk_af6a9618d5cf', '9784764910010'],
+    ['wrk_f541f6d7f63f', '9784262104799'],
+  ]);
+  for (const [workId, isbn13] of expected) {
+    assert.ok(
+      rows.some((row) => row.work_id === workId && row.isbn13 === isbn13),
+      `${workId} primary ISBN evidence is missing from API`,
+    );
+  }
+  assert.ok(manifest.generated_from.includes('data/isbn-primary-verifications/'));
+});
+
 test('core entity identifiers remain unique', async () => {
   const works = await readJson('works.json');
   const editions = await readJson('editions.json');

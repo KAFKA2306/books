@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_83a153a023aa",
+      "from_title": "ローカル女子の遠吠え【電子限定版】 1巻 (まんがタイムコミックス)",
+      "title": "ローカル女子の遠吠え",
+      "author": "瀬戸口みづき",
+      "source_url": "https://houbunsha.co.jp/comics/detail.php?current=3&p=%25A5%25ED%25A1%25BC%25A5%25AB%25A5%25EB%25BD%25F7%25BB%25D2%25A4%25CE%25B1%25F3%25CB%25CA%25A4%25A8",
+      "source_title": "ローカル女子の遠吠え 1巻（2016/05/07発売） まんがタイムコミックス ISBN：978-4-8322-5483-1",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

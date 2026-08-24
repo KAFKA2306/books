@@ -20,6 +20,7 @@ const now = new Date();
 const nowIso = now.toISOString();
 const providerRequestAttempts = 2;
 const providerRequestTimeoutMs = 15_000;
+const googleBooksApiKey = process.env.GOOGLE_BOOKS_API_KEY?.trim() || null;
 
 const catalog = await loadCatalog(root);
 const overlay = await readJson(overlayPath, {
@@ -42,13 +43,19 @@ if (!selected.length) {
 const processed = await mapWithConcurrency(selected, args.concurrency, async ({ work, pending_edition: pendingEdition }) => {
   const providerErrors = [];
   const candidates = [];
-  const initialLookups = await Promise.allSettled([
-    searchNdl(work.title),
-    searchGoogleBooks(work.title),
-  ]);
+  const initialLookups = [
+    { provider: 'ndl', request: searchNdl(work.title) },
+  ];
+  if (googleBooksApiKey) {
+    initialLookups.push({
+      provider: 'google_books',
+      request: searchGoogleBooks(work.title, googleBooksApiKey),
+    });
+  }
+  const lookupResults = await Promise.allSettled(initialLookups.map(({ request }) => request));
 
-  for (const [index, lookup] of initialLookups.entries()) {
-    const provider = index === 0 ? 'ndl' : 'google_books';
+  for (const [index, lookup] of lookupResults.entries()) {
+    const provider = initialLookups[index].provider;
     if (lookup.status === 'fulfilled') candidates.push(...lookup.value);
     else providerErrors.push({ provider, message: errorMessage(lookup.reason) });
   }
@@ -125,6 +132,7 @@ const report = {
     ambiguous_candidates_are_rejected: true,
     provider_request_attempts: providerRequestAttempts,
     provider_request_timeout_ms: providerRequestTimeoutMs,
+    google_books_enabled: Boolean(googleBooksApiKey),
   },
   summary: {
     attempted: results.length,
@@ -213,16 +221,15 @@ async function searchNdl(title) {
   return parseNdlOpenSearch(await fetchText(url, 'ndl'));
 }
 
-async function searchGoogleBooks(title) {
+async function searchGoogleBooks(title, apiKey) {
   const url = new URL('https://www.googleapis.com/books/v1/volumes');
-  const params = new URLSearchParams({
+  url.search = new URLSearchParams({
     q: `intitle:"${title}"`,
     maxResults: '10',
     printType: 'books',
     projection: 'lite',
+    key: apiKey,
   });
-  if (process.env.GOOGLE_BOOKS_API_KEY) params.set('key', process.env.GOOGLE_BOOKS_API_KEY);
-  url.search = params;
   return parseGoogleBooks(await fetchJson(url, 'google_books'));
 }
 

@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { loadCatalog } from './load-catalog.mjs';
+import { retryAfterMilliseconds } from '../src/http-retry.mjs';
 import {
   consolidateCandidates,
   eligibleWorks,
@@ -145,7 +146,7 @@ console.log(JSON.stringify(report.summary));
 
 function parseArgs(values) {
   let limit = 25;
-  let concurrency = 4;
+  let concurrency = 1;
   let dryRun = false;
   for (let index = 0; index < values.length; index += 1) {
     const value = values[index];
@@ -244,12 +245,17 @@ async function fetchText(url, provider) {
         },
         signal: controller.signal,
       });
-      if (!response.ok) throw new Error(`${provider} returned HTTP ${response.status}`);
+      if (!response.ok) {
+        const error = new Error(`${provider} returned HTTP ${response.status}`);
+        error.retryAfter = response.headers.get('retry-after');
+        throw error;
+      }
       return await response.text();
     } catch (error) {
       lastError = error;
       if (attempt < providerRequestAttempts) {
-        await new Promise((resolve) => setTimeout(resolve, attempt * 1_000));
+        const delay = retryAfterMilliseconds(error?.retryAfter) ?? attempt * 1_000;
+        await new Promise((resolve) => setTimeout(resolve, delay));
       }
     } finally {
       clearTimeout(timeout);

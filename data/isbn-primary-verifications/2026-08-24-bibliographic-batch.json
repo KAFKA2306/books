@@ -1,0 +1,72 @@
+{
+  "schema": "kafka.books.isbn-enrichments.v1",
+  "records": [
+    {
+      "work_id": "wrk_960378886748",
+      "replaces_edition_id": "pending:960378886748",
+      "isbn13": "9784757410435",
+      "title": "TOEFLテストITP直前模試 : 模擬試験まるごと4回分",
+      "publisher": "アルク",
+      "published_year": 2006,
+      "language": "ja",
+      "sources": [
+        {
+          "provider": "cinii",
+          "url": "https://ci.nii.ac.jp/ncid/BA79108988"
+        },
+        {
+          "provider": "google_books",
+          "url": "https://books.google.com/books/about/TOEFL%E3%83%86%E3%82%B9%E3%83%88_ITP%E7%9B%B4%E5%89%8D%E6%A8%A1%E8%A9%A6.html?id=Dm2zrdsByfgC"
+        }
+      ],
+      "verified_at": "2026-08-24T10:06:12Z"
+    },
+    {
+      "work_id": "wrk_af6a9618d5cf",
+      "replaces_edition_id": "pending:af6a9618d5cf",
+      "isbn13": "9784764910010",
+      "title": "線型代数学",
+      "authors": [
+        "伊吹山知義"
+      ],
+      "publisher": "近代科学社",
+      "published_year": 1987,
+      "language": "ja",
+      "sources": [
+        {
+          "provider": "cinii",
+          "url": "https://ci.nii.ac.jp/ncid/BN01525672"
+        },
+        {
+          "provider": "impress_holdings",
+          "url": "https://prtimes.jp/main/html/rd/p/000003056.000005875.html"
+        }
+      ],
+      "verified_at": "2026-08-24T10:06:12Z"
+    },
+    {
+      "work_id": "wrk_f541f6d7f63f",
+      "replaces_edition_id": "pending:f541f6d7f63f",
+      "isbn13": "9784262104799",
+      "title": "中盤の基本",
+      "publisher": "池田書店",
+      "published_year": 2015,
+      "language": "ja",
+      "sources": [
+        {
+          "provider": "ikedashoten",
+          "url": "https://www.ikedashoten.co.jp/bookimage/file_8.pdf"
+        },
+        {
+          "provider": "cinii",
+          "url": "https://ci.nii.ac.jp/ncid/BB21843676"
+        },
+        {
+          "provider": "hmv",
+          "url": "https://www.hmv.co.jp/artist_%E9%AB%98%E5%B0%BE%E7%B4%B3%E8%B7%AF_000000000525781/item_%E4%B8%AD%E7%9B%A4%E3%81%AE%E5%9F%BA%E6%9C%AC-%E3%82%84%E3%81%95%E3%81%97%E3%81%84%E5%9B%B2%E7%A2%81%E3%83%88%E3%83%AC%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0_6522053"
+        }
+      ],
+      "verified_at": "2026-08-24T10:06:12Z"
+    }
+  ]
+}

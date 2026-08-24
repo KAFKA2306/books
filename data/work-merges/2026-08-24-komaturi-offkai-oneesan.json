@@ -1,0 +1,15 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_d7fb15b8b987",
+      "into_work_id": "wrk_2b14a74854ca",
+      "from_title": "2人だけのオフ会に大人なおねえさんがきた【2巻】",
+      "into_title": "2人だけのオフ会に大人なおねえさんがきた",
+      "author": "小祭たまご",
+      "source_url": "https://x.com/komaturi1/status/1578635236950560769",
+      "source_title": "【無料書籍】 2人だけのオフ会に大人なおねえさんがきた【2巻】が配信されました! kindleインディーズにて無料で2巻まで配信中",
+      "reason": "volume_label_was_embedded_in_work_title"
+    }
+  ]
+}

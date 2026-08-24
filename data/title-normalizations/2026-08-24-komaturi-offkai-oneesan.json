@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_2b14a74854ca",
+      "from_title": "2人だけのオフ会に大人なおねえさんがきた【1巻】",
+      "title": "2人だけのオフ会に大人なおねえさんがきた",
+      "author": "小祭たまご",
+      "source_url": "https://x.com/komaturi1/status/1513162481468076037",
+      "source_title": "「2人だけのオフ会に大人なおねえさんがきた」第1巻が配信開始されました!",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

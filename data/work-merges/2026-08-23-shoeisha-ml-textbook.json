@@ -1,0 +1,15 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_9e107563f000",
+      "into_work_id": "wrk_bed678f84270",
+      "from_title": "Pythonで動かして学ぶ!あたらしい機械学習の教科書 数式とプログラムをつなげて理解できる",
+      "into_title": "Pythonで動かして学ぶ!あたらしい機械学習の教科書",
+      "author": "伊藤真",
+      "source_url": "https://www.shoeisha.co.jp/book/detail/9784798144986",
+      "source_title": "Pythonで動かして学ぶ！あたらしい機械学習の教科書",
+      "reason": "descriptive_subtitle_was_embedded_in_duplicate_work_title"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_eab952681c53",
+      "from_title": "七つ屋志のぶの宝石匣(1) (Kissコミックス)",
+      "title": "七つ屋志のぶの宝石匣",
+      "author": "二ノ宮知子",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000036399",
+      "source_title": "七つ屋志のぶの宝石匣（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

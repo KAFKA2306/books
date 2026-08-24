@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_b9a128a21aa8",
+      "from_title": "雪女と蟹を食う(1) (ヤングマガジンコミックス)",
+      "title": "雪女と蟹を食う",
+      "author": "Gino0808",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000321677",
+      "source_title": "雪女と蟹を食う（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

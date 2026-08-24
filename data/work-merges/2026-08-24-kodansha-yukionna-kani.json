@@ -1,0 +1,15 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_2ce725978646",
+      "into_work_id": "wrk_b9a128a21aa8",
+      "from_title": "雪女と蟹を食う(2) (ヤングマガジンコミックス)",
+      "into_title": "雪女と蟹を食う",
+      "author": "Gino0808",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000324431",
+      "source_title": "雪女と蟹を食う（２）",
+      "reason": "volume_number_and_imprint_are_not_work_identity"
+    }
+  ]
+}

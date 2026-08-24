@@ -108,8 +108,10 @@ for (const item of processed) {
 }
 
 const enriched = results.filter((result) => result.outcome === 'accepted').length;
-overlay.records.sort((left, right) => left.work_id.localeCompare(right.work_id));
-overlay.updated_at = nowIso;
+if (enriched > 0) {
+  overlay.records.sort((left, right) => left.work_id.localeCompare(right.work_id));
+  overlay.updated_at = nowIso;
+}
 state.updated_at = nowIso;
 state.total_attempts = Object.keys(state.attempts).length;
 const report = {
@@ -136,11 +138,12 @@ const report = {
 };
 
 if (!args.dryRun) {
-  await Promise.all([
-    writeJson(overlayPath, overlay),
+  const writes = [
     writeJson(statePath, state),
     writeJson(reportPath, report),
-  ]);
+  ];
+  if (enriched > 0) writes.push(writeJson(overlayPath, overlay));
+  await Promise.all(writes);
 }
 console.log(JSON.stringify(report.summary));
 

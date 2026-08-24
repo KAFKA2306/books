@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_a57db92321c7",
+      "from_title": "きっと愛され女子になる! 1巻 (まんがタイムコミックス)",
+      "title": "きっと愛され女子になる！",
+      "author": "瀬戸口みづき",
+      "source_url": "https://houbunsha.co.jp/search/writing.php?s=ki",
+      "source_title": "きっと愛され女子になる！",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

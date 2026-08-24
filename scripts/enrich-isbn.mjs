@@ -70,6 +70,7 @@ const processed = await mapWithConcurrency(selected, args.concurrency, async ({ 
     }
   }
 
+  const providerCandidateCounts = countCandidatesByProvider(candidates);
   const decision = consolidateCandidates(work, candidates);
   let outcome = decision.outcome;
   if (!candidates.length && providerErrors.length) outcome = 'provider_error';
@@ -82,12 +83,14 @@ const processed = await mapWithConcurrency(selected, args.concurrency, async ({ 
     outcome,
     accepted_isbn13: decision.accepted?.isbn13 ?? null,
     candidates: decision.candidates,
+    provider_candidate_counts: providerCandidateCounts,
     provider_errors: providerErrors,
   };
   console.log(JSON.stringify({
     work_id: work.work_id,
     outcome,
     candidate_count: decision.candidates.length,
+    provider_candidate_counts: providerCandidateCounts,
     provider_error_count: providerErrors.length,
   }));
 
@@ -142,6 +145,7 @@ const report = {
     no_candidate: results.filter((result) => result.outcome === 'no_candidate').length,
     provider_error: results.filter((result) => result.outcome === 'provider_error').length,
   },
+  provider_summary: summarizeProviders(results, Boolean(googleBooksApiKey)),
   results,
 };
 
@@ -192,6 +196,39 @@ async function mapWithConcurrency(items, concurrency, worker) {
     () => runWorker(),
   ));
   return results;
+}
+
+function countCandidatesByProvider(candidates) {
+  const counts = {};
+  for (const candidate of candidates) {
+    const provider = candidate?.provider;
+    if (!provider) continue;
+    counts[provider] = (counts[provider] ?? 0) + 1;
+  }
+  return counts;
+}
+
+function summarizeProviders(results, googleBooksEnabled) {
+  const enabled = { ndl: true, openbd: true, google_books: googleBooksEnabled };
+  return Object.fromEntries(Object.entries(enabled).map(([provider, isEnabled]) => {
+    const candidateCount = results.reduce(
+      (sum, result) => sum + (result.provider_candidate_counts?.[provider] ?? 0),
+      0,
+    );
+    const worksWithCandidates = results.filter(
+      (result) => (result.provider_candidate_counts?.[provider] ?? 0) > 0,
+    ).length;
+    const errors = results.reduce(
+      (sum, result) => sum + result.provider_errors.filter((error) => error.provider === provider).length,
+      0,
+    );
+    return [provider, {
+      enabled: isEnabled,
+      candidate_count: candidateCount,
+      works_with_candidates: worksWithCandidates,
+      error_count: errors,
+    }];
+  }));
 }
 
 function errorMessage(error) {

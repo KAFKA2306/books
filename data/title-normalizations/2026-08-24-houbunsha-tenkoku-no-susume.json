@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_649b4621c57c",
+      "from_title": "天国のススメ! 1巻 (まんがタイムコミックス)",
+      "title": "天国のススメ！",
+      "author": "宮成樂",
+      "source_url": "https://houbunsha.co.jp/patron/pdf/202603_ordersheet_mangatime.pdf",
+      "source_title": "天国のススメ！ 1",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

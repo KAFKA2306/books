@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_f8681b0151fc",
+      "from_title": "すわっぷ⇔すわっぷ 1巻 (まんがタイムKRコミックス)",
+      "title": "すわっぷ⇔すわっぷ",
+      "author": "とめきち",
+      "source_url": "https://houbunsha.co.jp/patron/pdf/201805_ordersheet_mangatimeKR.pdf",
+      "source_title": "すわっぷ⇔すわっぷ １",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

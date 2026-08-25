@@ -1,11 +1,13 @@
 import { loadCatalog } from './load-catalog.mjs';
+import { workIdentityKey } from '../src/work-identity.mjs';
 
 const catalog = await loadCatalog();
 const byKey = new Map();
 for (const work of catalog.works) {
-  const list = byKey.get(work.title_key) ?? [];
+  const key = workIdentityKey(work);
+  const list = byKey.get(key) ?? [];
   list.push(work);
-  byKey.set(work.title_key, list);
+  byKey.set(key, list);
 }
 
 const collisions = [...byKey.entries()]
@@ -14,10 +16,10 @@ const collisions = [...byKey.entries()]
 
 if (collisions.length) {
   for (const [key, works] of collisions) {
-    console.error(`duplicate title_key: ${key}`);
-    for (const work of works) console.error(`  ${work.work_id}\t${work.title}`);
+    console.error(`duplicate work identity key: ${JSON.stringify(key)}`);
+    for (const work of works) console.error(`  ${work.work_id}\t${work.title}\t${work.work_type ?? 'unspecified'}`);
   }
   process.exit(1);
 }
 
-console.log(`no title_key collisions across ${catalog.works.length} works`);
+console.log(`no work identity collisions across ${catalog.works.length} works`);

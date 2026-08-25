@@ -31,10 +31,39 @@
         "work_identity_collisions_after_merge": 0,
         "forced_collision_accepts": 0
       }
+    },
+    {
+      "workflow": "single_record",
+      "issue": 219,
+      "pr": 223,
+      "measurement_started_at": "2026-08-25T23:36:56Z",
+      "merged_at": "2026-08-25T23:38:50Z",
+      "elapsed_seconds": 114,
+      "records_reviewed": 1,
+      "records_accepted": 1,
+      "records_rejected": 0,
+      "primary_source_lookup_count": 2,
+      "ci_attempt_count": 1,
+      "ci_failed_closed_count": 0,
+      "rejection_reasons": {},
+      "seconds_per_reviewed_record": 114,
+      "seconds_per_accepted_record": 114,
+      "reviewed_records_per_hour": 31.57894736842105,
+      "accepted_records_per_hour": 31.57894736842105,
+      "start_source_url": "https://github.com/KAFKA2306/books/issues/219#issuecomment-5418448856",
+      "result_source_url": "https://github.com/KAFKA2306/books/pull/223",
+      "merge_commit": "4a8568778257d58cc8a6e409a9081e35a9361a03",
+      "quality": {
+        "primary_source_provenance_required": true,
+        "work_identity_collisions_after_merge": 0,
+        "forced_collision_accepts": 0
+      }
     }
   ],
   "comparison_boundary": {
-    "historical_single_record_end_to_end_available": false,
-    "reason": "Historical single-record reviews did not persist a pre-research start timestamp, so an end-to-end speedup multiplier versus the old workflow cannot yet be estimated without mismatched measurement boundaries."
+    "matched_end_to_end_control_available": true,
+    "batch_speedup_per_reviewed_record": 6.031746031746032,
+    "batch_speedup_per_accepted_record": 2.4126984126984126,
+    "interpretation": "The batch observation reviewed candidates 6.03x faster per reviewed record and produced accepted normalizations 2.41x faster per accepted record than the directly timed one-record control. This is a matched-boundary observation, not a population estimate."
   }
 }

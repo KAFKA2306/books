@@ -124,7 +124,7 @@ export function renderDiagnosisHtml(report) {
       <td>${escapeHtml(result.input.title)}</td>
       <td>${escapeHtml(result.isbn13 ?? result.input.isbn ?? '')}</td>
       <td>${escapeHtml(result.reason_codes.join(', '))}</td>
-      <td>${escapeHtml([...result.errors, ...result.warnings].join(' / ')}</td>
+      <td>${escapeHtml([...result.errors, ...result.warnings].join(' / '))}</td>
     </tr>`).join('');
   return `<!doctype html>
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>蔵書移行診断</title>

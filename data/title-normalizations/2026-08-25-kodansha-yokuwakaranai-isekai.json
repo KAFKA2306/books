@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_1b6c3175e9cf",
+      "from_title": "よくわからないけれど異世界に転生していたようです(1) (シリウスコミックス)",
+      "title": "よくわからないけれど異世界に転生していたようです",
+      "author": "あし",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000338716",
+      "source_title": "よくわからないけれど異世界に転生していたようです（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

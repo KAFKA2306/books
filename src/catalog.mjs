@@ -16,15 +16,18 @@ export function isbn10To13(v){const d=normalizeIsbn(v);if(!isValidIsbn10(d))retu
 export function canonicalIsbn13(v){const d=normalizeIsbn(v);if(!d)return null;if(d.length===10)return isbn10To13(d);return isValidIsbn13(d)?d:null}
 export function diceSimilarity(a,b){const l=titleKey(a),r=titleKey(b);if(l===r)return 1;if(l.length<2||r.length<2)return 0;const p=new Map;for(let i=0;i<l.length-1;i++){const x=l.slice(i,i+2);p.set(x,(p.get(x)||0)+1)}let n=0;for(let i=0;i<r.length-1;i++){const x=r.slice(i,i+2),c=p.get(x)||0;if(c){n++;p.set(x,c-1)}}return 2*n/((l.length-1)+(r.length-1))}
 export function precheckCandidates(candidates,catalog,{similarityThreshold=.86}={}){
- const isbnMap=new Map(catalog.editions.filter(e=>e.isbn13).map(e=>[e.isbn13,e])),titleMap=new Map(catalog.works.map(w=>[w.title_key,w])),batchIsbn=new Set,batchTitle=new Set,results=[];
+ const isbnMap=new Map(catalog.editions.filter(e=>e.isbn13).map(e=>[e.isbn13,e])),titleMap=new Map,batchIsbn=new Set,batchTitle=new Set,results=[];
+ for(const work of catalog.works){const matches=titleMap.get(work.title_key)??[];matches.push(work);titleMap.set(work.title_key,matches)}
  for(const [index,input]of candidates.entries()){
   const normalized_title=normalizeTitle(input.title),key=titleKey(normalized_title),raw=normalizeIsbn(input.isbn13??input.isbn10??input.isbn??''),isbn13=canonicalIsbn13(raw),errors=[],warnings=[];let action='create_work',matched=null;
   if(!normalized_title)errors.push('書名が空です。');if(raw&&!isbn13)errors.push('ISBNの形式またはチェックディジットが不正です。');
   if(isbn13&&isbnMap.has(isbn13)){const e=isbnMap.get(isbn13);matched=catalog.works.find(w=>w.work_id===e.work_id)||null;errors.push(`ISBN ${isbn13} は既に登録済みです。`)}
   if(isbn13&&batchIsbn.has(isbn13))errors.push(`同じ入力内でISBN ${isbn13} が重複しています。`);
-  const exact=titleMap.get(key);if(exact){matched=exact;if(!isbn13)errors.push('ISBN未指定かつ正規化書名が既存作品と一致します。');else if(!errors.length){action='add_edition';warnings.push('既存作品へ新しい版として追加します。')}}
+  const exactMatches=titleMap.get(key)??[];
+  if(exactMatches.length>1&&!matched){errors.push(`正規化書名が複数の既存作品と一致し、作品identityを一意に決定できません: ${exactMatches.map(work=>`${work.title}${work.work_type?` [${work.work_type}]`:''} (${work.work_id})`).join(' / ')}`)}
+  else if(exactMatches.length===1){const exact=exactMatches[0];if(!matched)matched=exact;if(!isbn13)errors.push('ISBN未指定かつ正規化書名が既存作品と一致します。');else if(!errors.length){action='add_edition';warnings.push('既存作品へ新しい版として追加します。')}}
   if(key&&batchTitle.has(key)&&!isbn13)errors.push('同じ入力内で正規化書名が重複しています。');
-  if(!exact&&key){const similar=catalog.works.map(work=>({work,score:diceSimilarity(normalized_title,work.title)})).filter(x=>x.score>=similarityThreshold).sort((a,b)=>b.score-a.score).slice(0,3);if(similar.length)warnings.push(`類似作品候補: ${similar.map(x=>`${x.work.title} (${Math.round(x.score*100)}%)`).join(' / ')}`)}
+  if(!exactMatches.length&&key){const similar=catalog.works.map(work=>({work,score:diceSimilarity(normalized_title,work.title)})).filter(x=>x.score>=similarityThreshold).sort((a,b)=>b.score-a.score).slice(0,3);if(similar.length)warnings.push(`類似作品候補: ${similar.map(x=>`${x.work.title} (${Math.round(x.score*100)}%)`).join(' / ')}`)}
   if(isbn13)batchIsbn.add(isbn13);if(key)batchTitle.add(key);if(errors.length)action='blocked';results.push({index,input,normalized_title,title_key:key,isbn13,action,matched_work_id:matched?.work_id??null,matched_title:matched?.title??null,errors,warnings,ok:!errors.length})
  }
  return{ok:results.every(x=>x.ok),summary:{total:results.length,allowed:results.filter(x=>x.ok).length,blocked:results.filter(x=>!x.ok).length,create_work:results.filter(x=>x.action==='create_work').length,add_edition:results.filter(x=>x.action==='add_edition').length},results}

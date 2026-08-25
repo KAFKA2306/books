@@ -12,7 +12,7 @@
     "title:audit": "node scripts/audit-title-anomalies.mjs",
     "title:review-batch": "node scripts/build-title-review-batch.mjs",
     "title:review-batch:json": "node scripts/build-title-review-batch.mjs --json",
-    "check": "npm run validate:scripts && npm run validate && npm run api:build && npm run title:audit && npm test",
+    "check": "npm run validate:scripts && npm run validate && npm run api:build && npm run title:audit && npm run title:review-batch > /dev/null && npm test",
     "catalog:precheck": "node scripts/precheck.mjs",
     "catalog:materialize": "node scripts/materialize-catalog.mjs",
     "migration:diagnose": "node scripts/diagnose-migration.mjs",

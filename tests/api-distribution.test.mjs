@@ -53,9 +53,24 @@ test('operational source lists are API collections', () => {
     'classifications',
     'classification_schemes',
     'ndc10_main_classes',
+    'migration_identity_evidence_audit',
+    'migration_identity_evidence_groups',
   ]) {
     assert.ok(names.has(name), `${name} is missing from the API collection index`);
   }
+});
+
+test('migration identity evidence audit is reproducibly exposed', async () => {
+  const [summary] = await readJson('migration_identity_evidence_audit.json');
+  const groups = await readJson('migration_identity_evidence_groups.json');
+  assert.equal(summary.schema, 'kafka.books.migration-identity-evidence-audit.v1');
+  assert.equal(summary.ambiguous_title_groups, groups.length);
+  assert.equal(
+    summary.ambiguous_works,
+    groups.reduce((total, group) => total + group.work_count, 0),
+  );
+  assert.ok(summary.standard_url.startsWith('https://www.ifla.org/'));
+  assert.ok(manifest.generated_from.includes('data/work-identities/'));
 });
 
 test('primary ISBN verification evidence is exposed by the API', async () => {

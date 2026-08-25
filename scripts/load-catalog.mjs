@@ -7,6 +7,7 @@ import { mergeIssueCatalog } from '../src/merge-catalog.mjs';
 import { loadKindleMetadata, mergeKindleCatalog } from '../src/kindle-metadata.mjs';
 import { loadCompactKindleMetadata } from '../src/kindle-storage.mjs';
 import { applyTitleNormalizations } from '../src/title-normalization.mjs';
+import { applyWorkIdentities } from '../src/work-identity.mjs';
 import { applyWorkMerges } from '../src/work-merge.mjs';
 
 async function readJsonIfPresent(filePath) {
@@ -99,6 +100,20 @@ export function mergeTitleNormalizationOverlays(...overlays) {
   };
 }
 
+export function mergeWorkIdentityOverlays(...overlays) {
+  const records = [];
+  for (const overlay of overlays) {
+    if (overlay?.schema !== 'kafka.books.work-identities.v1' || !Array.isArray(overlay.records)) {
+      throw new Error(`invalid work identity partition schema: ${overlay?.schema ?? 'missing'}`);
+    }
+    records.push(...overlay.records);
+  }
+  return {
+    schema: 'kafka.books.work-identities.v1',
+    records,
+  };
+}
+
 export function mergeWorkMergeOverlays(...overlays) {
   return {
     schema: 'kafka.books.work-merges.v1',
@@ -145,6 +160,14 @@ export async function loadCatalog(root = process.cwd()) {
   merged = applyTitleNormalizations(
     merged,
     mergeTitleNormalizationOverlays(...titlePartitions),
+  );
+
+  const identityPartitions = await readJsonDirectoryIfPresent(
+    path.join(root, 'data/work-identities'),
+  );
+  merged = applyWorkIdentities(
+    merged,
+    mergeWorkIdentityOverlays(...identityPartitions),
   );
   merged = deriveLibraryClassifications(merged, categoryOverlay);
 

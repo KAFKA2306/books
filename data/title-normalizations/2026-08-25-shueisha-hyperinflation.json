@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_fbd1db3198cb",
+      "from_title": "ハイパーインフレーション 1 (ジャンプコミックスDIGITAL)",
+      "title": "ハイパーインフレーション",
+      "author": "住吉九",
+      "source_url": "https://www.shueisha.co.jp/books/items/contents.html?isbn=978-4-08-882620-2",
+      "source_title": "ハイパーインフレーション 1",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

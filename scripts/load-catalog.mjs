@@ -86,9 +86,16 @@ export function mergeCategoryOverlays(automated, ...primaryOverlays) {
 }
 
 export function mergeTitleNormalizationOverlays(...overlays) {
+  const records = [];
+  for (const overlay of overlays) {
+    if (overlay?.schema !== 'kafka.books.title-normalizations.v1' || !Array.isArray(overlay.records)) {
+      throw new Error(`invalid title normalization partition schema: ${overlay?.schema ?? 'missing'}`);
+    }
+    records.push(...overlay.records);
+  }
   return {
     schema: 'kafka.books.title-normalizations.v1',
-    records: overlays.flatMap((overlay) => overlay?.records ?? []),
+    records,
   };
 }
 

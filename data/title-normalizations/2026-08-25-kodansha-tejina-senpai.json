@@ -1,0 +1,13 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_54303b70534f",
+      "from_title": "手品先輩(2) (ヤングマガジンコミックス)",
+      "title": "手品先輩",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000016693",
+      "source_title": "手品先輩（２）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

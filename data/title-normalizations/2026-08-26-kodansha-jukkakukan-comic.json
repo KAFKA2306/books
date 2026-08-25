@@ -1,0 +1,13 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_b54a006c4d2d",
+      "from_title": "十角館の殺人(1) (アフタヌーンコミックス)",
+      "title": "十角館の殺人",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000325725",
+      "source_title": "十角館の殺人（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

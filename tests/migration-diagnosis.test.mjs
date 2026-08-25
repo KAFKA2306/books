@@ -56,6 +56,20 @@ test('diagnoseMigration keeps catalog read-only and emits machine-readable reaso
   assert.ok(report.results[3].reason_codes.includes('duplicate_in_batch'));
 });
 
+test('diagnoseMigration blocks same-title cross-media ambiguity with a stable reason code', () => {
+  const ambiguousCatalog = {
+    works: [
+      { work_id: 'novel', title: '十角館の殺人', title_key: '十角館の殺人', work_type: 'text' },
+      { work_id: 'comic', title: '十角館の殺人', title_key: '十角館の殺人', work_type: 'comic' },
+    ],
+    editions: [],
+  };
+  const report = diagnoseMigration([{ title: '十角館の殺人', isbn: '9780306406157' }], ambiguousCatalog);
+  assert.equal(report.results[0].action, 'blocked');
+  assert.deepEqual(report.results[0].reason_codes, ['ambiguous_work_identity']);
+  assert.equal(report.summary.reason_counts.ambiguous_work_identity, 1);
+});
+
 test('renderDiagnosisHtml states the non-mutating boundary', () => {
   const report = diagnoseMigration([{ title: '新しい本', isbn: '' }], catalog);
   const html = renderDiagnosisHtml(report);

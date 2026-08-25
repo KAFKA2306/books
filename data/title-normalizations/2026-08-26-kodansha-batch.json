@@ -1,0 +1,53 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_b6a3716fd4af",
+      "from_title": "女神のカフェテラス(1) (週刊少年マガジンコミックス)",
+      "title": "女神のカフェテラス",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000352061",
+      "source_title": "女神のカフェテラス（１）",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_e79df4d0dbf2",
+      "from_title": "将来的に死んでくれ(2) (週刊少年マガジンコミックス)",
+      "title": "将来的に死んでくれ",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000023051",
+      "source_title": "将来的に死んでくれ（２）",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_3251607f4112",
+      "from_title": "小学生がママでもいいですか?(1) (シリウスコミックス)",
+      "title": "小学生がママでもいいですか？",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000310123",
+      "source_title": "小学生がママでもいいですか？（１）",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_eb9e100f33e4",
+      "from_title": "推しが隣で授業に集中できない!(1) (コミックDAYSコミックス)",
+      "title": "推しが隣で授業に集中できない！",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000350455",
+      "source_title": "推しが隣で授業に集中できない！（１）",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_1dfdc444ef20",
+      "from_title": "紛争でしたら八田まで(1) (モーニングコミックス)",
+      "title": "紛争でしたら八田まで",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000338642",
+      "source_title": "紛争でしたら八田まで（１）",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_59d257c19856",
+      "from_title": "僕と君の大切な話(1) (デザートコミックス)",
+      "title": "僕と君の大切な話",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000041317",
+      "source_title": "僕と君の大切な話（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

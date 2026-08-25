@@ -1,13 +1,13 @@
 {
-  "schema_version": "kafka.books.title-normalizations.v1",
-  "generated_date": "2026-08-25",
-  "notes": "Primary-source normalization: volume and Kindle imprint metadata are excluded from the canonical Work title.",
-  "normalizations": [
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
     {
       "work_id": "wrk_54303b70534f",
       "from_title": "手品先輩(2) (ヤングマガジンコミックス)",
-      "to_title": "手品先輩",
-      "source_url": "https://www.kodansha.co.jp/comic/products/0000016693"
+      "title": "手品先輩",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000016693",
+      "source_title": "手品先輩（２）",
+      "review_method": "manual_bibliographic_review"
     }
   ]
 }

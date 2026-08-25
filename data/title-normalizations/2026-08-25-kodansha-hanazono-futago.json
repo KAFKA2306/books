@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_fe353a039503",
+      "from_title": "花園さんちのふたごちゃん(2) (週刊少年マガジンコミックス)",
+      "title": "花園さんちのふたごちゃん",
+      "author": "北島音奈",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000349120",
+      "source_title": "花園さんちのふたごちゃん（２）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

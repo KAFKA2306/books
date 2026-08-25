@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_5fb88ab91b6c",
+      "from_title": "リエゾン(1) ーこどものこころ診療所ー (モーニングコミックス)",
+      "title": "リエゾンーこどものこころ診療所ー",
+      "author": "ヨンチャン",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000342151",
+      "source_title": "リエゾン　ーこどものこころ診療所ー（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

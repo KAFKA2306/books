@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_714179f784a9",
+      "from_title": "ボールルームへようこそ(1) (月刊少年マガジンコミックス)",
+      "title": "ボールルームへようこそ",
+      "author": "竹内友",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000043342",
+      "source_title": "ボールルームへようこそ（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

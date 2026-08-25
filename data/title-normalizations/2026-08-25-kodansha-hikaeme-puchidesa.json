@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_b8775c76f505",
+      "from_title": "ひかえめに言っても、これは愛 プチデザ(1) (デザートコミックス)",
+      "title": "ひかえめに言っても、これは愛 プチデザ(1)",
+      "author": "藤もも",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000381608",
+      "source_title": "ひかえめに言っても、これは愛　プチデザ（１６）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 import { cleanSpace } from './catalog.mjs';
 
+const IFLA_LRM_URL = 'https://www.ifla.org/g/standards/current-ifla-standards/';
+
 function evidenceKey(value) {
   return cleanSpace(value ?? '').toLocaleLowerCase('ja').replace(/[\s・･,，、]/g, '');
 }
@@ -65,6 +67,8 @@ export function auditMigrationIdentityEvidence(works = []) {
 
   return {
     schema: 'kafka.books.migration-identity-evidence-audit.v1',
+    identity_model: 'IFLA Library Reference Model (LRM), LRM-E2 Work',
+    standard_url: IFLA_LRM_URL,
     summary: {
       total_works: works.length,
       ambiguous_title_groups: groups.length,

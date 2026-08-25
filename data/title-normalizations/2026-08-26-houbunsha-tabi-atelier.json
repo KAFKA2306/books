@@ -1,0 +1,13 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_88b811166a73",
+      "from_title": "旅する海とアトリエ 1巻 (まんがタイムKRコミックス)",
+      "title": "旅する海とアトリエ",
+      "source_url": "https://houbunsha.co.jp/patron/pdf/202205_ordersheet_mangatimeKR.pdf",
+      "source_title": "旅する海とアトリエ 1",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

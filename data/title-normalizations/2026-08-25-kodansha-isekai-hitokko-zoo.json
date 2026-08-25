@@ -1,0 +1,13 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_77126b805d2c",
+      "from_title": "異世界ひとっ娘動物園(1) 僕は絶滅危惧種の飼育員になりました (ヤングマガジンコミックス)",
+      "title": "異世界ひとっ娘動物園",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000345970",
+      "source_title": "異世界ひとっ娘動物園（１）　僕は絶滅危惧種の飼育員になりました",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

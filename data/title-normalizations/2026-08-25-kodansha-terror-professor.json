@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_7497372784f2",
+      "from_title": "テロール教授の怪しい授業(1) (モーニングコミックス)",
+      "title": "テロール教授の怪しい授業",
+      "author": "カルロ・ゼン / 石田点",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000318297",
+      "source_title": "テロール教授の怪しい授業（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

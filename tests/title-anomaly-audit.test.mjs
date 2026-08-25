@@ -12,6 +12,20 @@ test('detects commercial annotations, volume metadata, and imprint suffixes', ()
   assert.ok(reasons.includes('imprint_or_series_suffix'));
 });
 
+test('distinguishes semantic bracketed title text from retail annotations', () => {
+  assert.deepEqual(
+    detectTitleAnomalies({ title: 'バーナード嬢曰く。【友情篇】', author: '施川 ユウキ' }),
+    [],
+  );
+  assert.deepEqual(
+    detectTitleAnomalies({ title: '一度読んだら絶対に忘れない世界史の教科書【経済編】', author: '山﨑 圭一' }),
+    [],
+  );
+  assert.ok(
+    detectTitleAnomalies({ title: '作品名【電子限定特典付き】', author: null }).includes('commercial_annotation'),
+  );
+});
+
 test('detects format and creator-role suffix metadata', () => {
   assert.deepEqual(
     detectTitleAnomalies({ title: '作品名 Kindle版', author: null }),

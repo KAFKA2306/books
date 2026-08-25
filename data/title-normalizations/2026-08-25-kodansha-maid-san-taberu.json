@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_6c2b943bc70f",
+      "from_title": "メイドさんは食べるだけ(1) (コミックDAYSコミックス)",
+      "title": "メイドさんは食べるだけ",
+      "author": "前屋進",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000343784",
+      "source_title": "メイドさんは食べるだけ（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

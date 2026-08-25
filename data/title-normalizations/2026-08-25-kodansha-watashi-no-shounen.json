@@ -1,0 +1,13 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_e0488e422f39",
+      "from_title": "私の少年(2) (ヤングマガジンコミックス)",
+      "title": "私の少年",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000311819",
+      "source_title": "私の少年（２）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

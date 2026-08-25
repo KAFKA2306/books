@@ -67,6 +67,7 @@ function reasonCodes(result) {
   if (joined.includes('同じ入力内でISBN') || joined.includes('同じ入力内で正規化書名')) codes.push('duplicate_in_batch');
   if (joined.includes('書名が空')) codes.push('insufficient_metadata');
   if (joined.includes('ISBN未指定かつ正規化書名が既存作品と一致')) codes.push('existing_work_without_isbn');
+  if (joined.includes('作品identityを一意に決定できません')) codes.push('ambiguous_work_identity');
   if (result.warnings.some((warning) => warning.startsWith('類似作品候補:'))) codes.push('review_similar_title');
   if (!codes.length && result.action === 'create_work') codes.push('safe_new_work');
   if (!codes.length && result.action === 'add_edition') codes.push('safe_new_edition');
@@ -123,7 +124,7 @@ export function renderDiagnosisHtml(report) {
       <td>${escapeHtml(result.input.title)}</td>
       <td>${escapeHtml(result.isbn13 ?? result.input.isbn ?? '')}</td>
       <td>${escapeHtml(result.reason_codes.join(', '))}</td>
-      <td>${escapeHtml([...result.errors, ...result.warnings].join(' / '))}</td>
+      <td>${escapeHtml([...result.errors, ...result.warnings].join(' / ')}</td>
     </tr>`).join('');
   return `<!doctype html>
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>蔵書移行診断</title>

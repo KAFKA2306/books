@@ -15,11 +15,11 @@ export function isValidIsbn10(v){const d=normalizeIsbn(v);if(!/^[0-9]{9}[0-9X]$/
 export function isbn10To13(v){const d=normalizeIsbn(v);if(!isValidIsbn10(d))return null;const b=`978${d.slice(0,9)}`;return b+isbn13CheckDigit(b)}
 export function canonicalIsbn13(v){const d=normalizeIsbn(v);if(!d)return null;if(d.length===10)return isbn10To13(d);return isValidIsbn13(d)?d:null}
 export function diceSimilarity(a,b){const l=titleKey(a),r=titleKey(b);if(l===r)return 1;if(l.length<2||r.length<2)return 0;const p=new Map;for(let i=0;i<l.length-1;i++){const x=l.slice(i,i+2);p.set(x,(p.get(x)||0)+1)}let n=0;for(let i=0;i<r.length-1;i++){const x=r.slice(i,i+2),c=p.get(x)||0;if(c){n++;p.set(x,c-1)}}return 2*n/((l.length-1)+(r.length-1))}
-const identityKey=(v='')=>cleanSpace(v).toLocaleLowerCase('ja').replace(/[\s・･,，、]/g,'');
+const identityKey=(v='')=>cleanSpace(v??'').toLocaleLowerCase('ja').replace(/[\s・･,，、]/g,'');
 function narrowByIdentityEvidence(matches,input){
  let narrowed=matches;
- const workType=cleanSpace(input.work_type).toLocaleLowerCase('ja');
- if(workType)narrowed=narrowed.filter(work=>cleanSpace(work.work_type).toLocaleLowerCase('ja')===workType);
+ const workType=cleanSpace(input.work_type??'').toLocaleLowerCase('ja');
+ if(workType)narrowed=narrowed.filter(work=>cleanSpace(work.work_type??'').toLocaleLowerCase('ja')===workType);
  const author=identityKey(input.author);
  if(author)narrowed=narrowed.filter(work=>identityKey(work.author)===author);
  return{matches:narrowed,hasEvidence:Boolean(workType||author)};

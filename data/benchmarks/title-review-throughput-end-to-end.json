@@ -1,0 +1,40 @@
+{
+  "schema": "kafka.books.title-review-throughput-end-to-end.v1",
+  "metric_scope": "persisted_measurement_start_to_pr_merge",
+  "scope_note": "Directly measures elapsed wall-clock time from a persisted GitHub start marker through primary-source review, evidence assembly, PR creation, CI correction cycles, and merge. Reviewed and rejected records are retained explicitly.",
+  "observations": [
+    {
+      "workflow": "batch",
+      "issue": 219,
+      "pr": 221,
+      "measurement_started_at": "2026-08-25T22:37:50Z",
+      "merged_at": "2026-08-25T22:40:59Z",
+      "elapsed_seconds": 189,
+      "records_reviewed": 10,
+      "records_accepted": 4,
+      "records_rejected": 6,
+      "primary_source_lookup_count": 10,
+      "ci_attempt_count": 2,
+      "ci_failed_closed_count": 1,
+      "rejection_reasons": {
+        "duplicate_work_identity": 6
+      },
+      "seconds_per_reviewed_record": 18.9,
+      "seconds_per_accepted_record": 47.25,
+      "reviewed_records_per_hour": 190.47619047619048,
+      "accepted_records_per_hour": 76.19047619047619,
+      "start_source_url": "https://github.com/KAFKA2306/books/issues/219#issuecomment-5417805780",
+      "result_source_url": "https://github.com/KAFKA2306/books/pull/221",
+      "merge_commit": "77cd2ec089cca682fa199a8a6bf2ea0f8855b2fa",
+      "quality": {
+        "primary_source_provenance_required": true,
+        "work_identity_collisions_after_merge": 0,
+        "forced_collision_accepts": 0
+      }
+    }
+  ],
+  "comparison_boundary": {
+    "historical_single_record_end_to_end_available": false,
+    "reason": "Historical single-record reviews did not persist a pre-research start timestamp, so an end-to-end speedup multiplier versus the old workflow cannot yet be estimated without mismatched measurement boundaries."
+  }
+}

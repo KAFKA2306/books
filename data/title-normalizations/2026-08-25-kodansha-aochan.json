@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_65042ebaa1d2",
+      "from_title": "淫らな青ちゃんは勉強ができない(1) (少年マガジンエッジコミックス)",
+      "title": "淫らな青ちゃんは勉強ができない",
+      "author": "カワハラ恋",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000318874",
+      "source_title": "淫らな青ちゃんは勉強ができない（８）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

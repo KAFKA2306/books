@@ -47,6 +47,41 @@ test('new ISBN on existing work is classified as a new edition', () => {
   assert.equal(result.results[0].action, 'add_edition');
 });
 
+test('same-title distinct works are blocked when ISBN does not identify one work', () => {
+  const sameTitleCatalog = {
+    works: [
+      { work_id: 'novel', title: '十角館の殺人', title_key: titleKey('十角館の殺人'), work_type: 'text' },
+      { work_id: 'comic', title: '十角館の殺人', title_key: titleKey('十角館の殺人'), work_type: 'comic' },
+    ],
+    editions: [],
+  };
+  const result = precheckCandidates([{ title: '十角館の殺人', isbn13: '9780306406157' }], sameTitleCatalog);
+  assert.equal(result.ok, false);
+  assert.equal(result.results[0].action, 'blocked');
+  assert.equal(result.results[0].matched_work_id, null);
+  assert.match(result.results[0].errors.join('\n'), /作品identityを一意に決定できません/);
+  assert.match(result.results[0].errors.join('\n'), /\[text\]/);
+  assert.match(result.results[0].errors.join('\n'), /\[comic\]/);
+});
+
+test('existing ISBN remains authoritative when same-title distinct works exist', () => {
+  const sameTitleCatalog = {
+    works: [
+      { work_id: 'novel', title: '十角館の殺人', title_key: titleKey('十角館の殺人'), work_type: 'text' },
+      { work_id: 'comic', title: '十角館の殺人', title_key: titleKey('十角館の殺人'), work_type: 'comic' },
+    ],
+    editions: [
+      { edition_id: 'comic-edition', work_id: 'comic', isbn13: '9780306406157' },
+    ],
+  };
+  const result = precheckCandidates([{ title: '十角館の殺人', isbn13: '9780306406157' }], sameTitleCatalog);
+  assert.equal(result.ok, false);
+  assert.equal(result.results[0].action, 'blocked');
+  assert.equal(result.results[0].matched_work_id, 'comic');
+  assert.match(result.results[0].errors.join('\n'), /既に登録済み/);
+  assert.doesNotMatch(result.results[0].errors.join('\n'), /作品identityを一意に決定できません/);
+});
+
 test('duplicate ISBN in a batch is blocked', () => {
   const result = precheckCandidates([
     { title: 'A', isbn13: '9780306406157' },

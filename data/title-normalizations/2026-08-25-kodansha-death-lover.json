@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_cea932769850",
+      "from_title": "デスラバ(1) (週刊少年マガジンコミックス)",
+      "title": "デスラバ",
+      "author": "智弘カイ / カズタカ",
+      "source_url": "https://www.kodansha.co.jp/titles/1000031301",
+      "source_title": "デスラバ",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

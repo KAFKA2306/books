@@ -1,0 +1,13 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_9e6cd2acd59d",
+      "from_title": "寄生獣リバーシ(1) (コミックDAYSコミックス)",
+      "title": "寄生獣リバーシ",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000312557",
+      "source_title": "寄生獣リバーシ（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

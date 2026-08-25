@@ -1,5 +1,6 @@
 const COMMERCIAL_ANNOTATION = /(?:【[^】]*(?:期間限定|無料版?|モノクロ版|カラー版|分冊版|合本版|特装版|限定版|電子限定|先行試し読み|試し読み|見本|ダイジェスト版|単話売|短編|旧版|同人版)[^】]*】|期間限定(?:無料)?|無料版|モノクロ版|カラー版|分冊版|合本版|特装版|限定版)/u;
 const VOLUME_METADATA = /(?:\(|（)\s*\d{1,3}\s*(?:\)|）)|(?:^|\s)第?\d{1,3}\s*(?:巻|冊)(?:\s|$)|\s\d{1,3}\s+(?=\([^)]*(?:コミックス|コミック|DIGITAL)[^)]*\)\s*$)/iu;
+const SEMANTIC_SERIAL_UNIT = /(?:^|\s)プチデザ\s*(?:\(|（)\s*\d{1,3}\s*(?:\)|）)/u;
 const FORMAT_MARKER = /(?:Kindle版|電子書籍版|単行本版|文庫版|コミック版)/iu;
 const IMPRINT_SUFFIX = /(?:コミックス|コミック|文庫|新書|DIGITAL)(?:\)|）|】)?\s*$/iu;
 const ROLE_SUFFIX = /(?:著|訳|監修|編著|編|原著|原作)\s*$/u;
@@ -25,7 +26,7 @@ export function detectTitleAnomalies(work) {
 
   const reasons = [];
   if (COMMERCIAL_ANNOTATION.test(title)) reasons.push('commercial_annotation');
-  if (VOLUME_METADATA.test(title)) reasons.push('volume_metadata');
+  if (VOLUME_METADATA.test(title) && !SEMANTIC_SERIAL_UNIT.test(title)) reasons.push('volume_metadata');
   if (FORMAT_MARKER.test(title)) reasons.push('format_marker');
   if (IMPRINT_SUFFIX.test(title)) reasons.push('imprint_or_series_suffix');
   if (ROLE_SUFFIX.test(title)) reasons.push('creator_role_suffix');

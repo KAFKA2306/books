@@ -26,6 +26,17 @@ test('distinguishes semantic bracketed title text from retail annotations', () =
   );
 });
 
+test('preserves publisher-defined microcontent serial titles', () => {
+  assert.deepEqual(
+    detectTitleAnomalies({ title: 'ひかえめに言っても、これは愛 プチデザ(1)', author: '藤もも' }),
+    [],
+  );
+  assert.deepEqual(
+    detectTitleAnomalies({ title: 'ひかえめに言っても、これは愛　プチデザ（１６）', author: '藤もも' }),
+    [],
+  );
+});
+
 test('detects format and creator-role suffix metadata', () => {
   assert.deepEqual(
     detectTitleAnomalies({ title: '作品名 Kindle版', author: null }),

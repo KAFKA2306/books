@@ -4,12 +4,14 @@ import path from 'node:path';
 import { loadCatalog, loadIsbnOverlay } from './load-catalog.mjs';
 import { normalizeCatalogSources, normalizeIssueRecords } from '../src/source-groups.mjs';
 import { normalizeBibliographicDisplayCatalog } from '../src/bibliographic-display-normalization.mjs';
+import { auditMigrationIdentityEvidence } from '../src/migration-identity-evidence-audit.mjs';
 
 const root = process.cwd();
 const outDir = path.join(root, 'api', 'v1');
 const catalog = normalizeBibliographicDisplayCatalog(
   normalizeCatalogSources(await loadCatalog(root)),
 );
+const migrationIdentityEvidenceAudit = auditMigrationIdentityEvidence(catalog.works);
 
 function stable(value) {
   if (Array.isArray(value)) return value.map(stable);
@@ -85,6 +87,13 @@ const supplementalCollections = {
     ([work_id, attempt]) => ({ work_id, ...attempt }),
   ),
   category_enrichment_results: categoryEnrichmentReport.results ?? [],
+  migration_identity_evidence_audit: [{
+    schema: migrationIdentityEvidenceAudit.schema,
+    identity_model: migrationIdentityEvidenceAudit.identity_model,
+    standard_url: migrationIdentityEvidenceAudit.standard_url,
+    ...migrationIdentityEvidenceAudit.summary,
+  }],
+  migration_identity_evidence_groups: migrationIdentityEvidenceAudit.groups,
 };
 
 const collections = {
@@ -142,6 +151,7 @@ const manifest = {
     'data/category-enrichments.json',
     'data/category-enrichment-state.json',
     'data/category-enrichment-report.json',
+    'data/work-identities/',
   ],
   license: 'Repository license and source-specific terms apply',
   collection_index: 'collections.json',

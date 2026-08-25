@@ -1,0 +1,13 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_e7366be9be53",
+      "from_title": "解雇された暗黒兵士(30代)のスローなセカンドライフ(1) (ヤングマガジンコミックス)",
+      "title": "解雇された暗黒兵士（３０代）のスローなセカンドライフ",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000338537",
+      "source_title": "解雇された暗黒兵士（３０代）のスローなセカンドライフ（１）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

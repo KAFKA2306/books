@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_f7f2ab37b004",
+      "from_title": "バーナード嬢曰く。【友情篇】 (REXコミックス)",
+      "title": "バーナード嬢曰く。【友情篇】",
+      "author": "施川 ユウキ",
+      "source_url": "https://dbook.docomo.ne.jp/item/1f2a43fe280f6315207ed52cc2916abc600d7446c07f0c378bc630698ecfd725/2000/",
+      "source_title": "バーナード嬢曰く。【友情篇】",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

@@ -30,6 +30,7 @@ test('duplicate title normalizations remain fail-closed across partitions', () =
   };
   const overlay = mergeTitleNormalizationOverlays(
     {
+      schema: 'kafka.books.title-normalizations.v1',
       records: [{
         work_id: 'wrk_duplicate',
         from_title: '誤記',
@@ -38,6 +39,7 @@ test('duplicate title normalizations remain fail-closed across partitions', () =
       }],
     },
     {
+      schema: 'kafka.books.title-normalizations.v1',
       records: [{
         work_id: 'wrk_duplicate',
         from_title: '誤記',
@@ -49,5 +51,15 @@ test('duplicate title normalizations remain fail-closed across partitions', () =
   assert.throws(
     () => applyTitleNormalizations(catalog, overlay),
     /duplicate title normalization: wrk_duplicate/,
+  );
+});
+
+test('malformed title normalization partitions are rejected instead of silently ignored', () => {
+  assert.throws(
+    () => mergeTitleNormalizationOverlays({
+      schema_version: 'kafka.books.title-normalizations.v1',
+      normalizations: [],
+    }),
+    /invalid title normalization partition schema: missing/,
   );
 });

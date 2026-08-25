@@ -68,6 +68,7 @@ function reasonCodes(result) {
   if (joined.includes('書名が空')) codes.push('insufficient_metadata');
   if (joined.includes('ISBN未指定かつ正規化書名が既存作品と一致')) codes.push('existing_work_without_isbn');
   if (joined.includes('作品identityを一意に決定できません')) codes.push('ambiguous_work_identity');
+  if (joined.includes('著者またはwork_typeが、同名の既存作品identityと一致しません')) codes.push('identity_evidence_mismatch');
   if (result.warnings.some((warning) => warning.startsWith('類似作品候補:'))) codes.push('review_similar_title');
   if (!codes.length && result.action === 'create_work') codes.push('safe_new_work');
   if (!codes.length && result.action === 'add_edition') codes.push('safe_new_edition');
@@ -78,6 +79,8 @@ export function normalizeMigrationRows(rows) {
   return rows.map((row) => ({
     title: row.title ?? '',
     isbn: row.isbn ?? row.isbn13 ?? row.isbn10 ?? '',
+    author: row.author || null,
+    work_type: row.work_type || null,
     source: row.source || null,
     status: row.status || null,
     price: row.price === '' || row.price == null ? null : Number(row.price),

@@ -1,0 +1,18 @@
+{
+  "schema": "kafka.books.work-identities.v1",
+  "records": [
+    {
+      "work_id": "wrk_ef4d2b3827f5",
+      "work_type": "text",
+      "source_url": "https://www.kodansha.co.jp/book/products/0000157546",
+      "source_title": "十角館の殺人"
+    },
+    {
+      "work_id": "wrk_b54a006c4d2d",
+      "work_type": "comic",
+      "adaptation_of_work_id": "wrk_ef4d2b3827f5",
+      "source_url": "https://afternoon.kodansha.co.jp/c/jukkakukan.html",
+      "source_title": "十角館の殺人"
+    }
+  ]
+}

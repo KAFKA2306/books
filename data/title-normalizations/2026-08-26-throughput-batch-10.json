@@ -1,0 +1,37 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_459549e15f1e",
+      "from_title": "カードゲームで本当に強くなる考え方 (ちくまプリマー新書)",
+      "title": "カードゲームで本当に強くなる考え方",
+      "source_url": "https://www.chikumashobo.co.jp/product/9784480685353",
+      "source_title": "カードゲームで本当に強くなる考え方",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_fcf64f696f89",
+      "from_title": "自己決定の落とし穴 (ちくまプリマー新書)",
+      "title": "自己決定の落とし穴",
+      "source_url": "https://www.chikumashobo.co.jp/product/9784480685308/",
+      "source_title": "自己決定の落とし穴",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_2e70ec50cf7c",
+      "from_title": "裸はいつから恥ずかしくなったか ──「裸体」の日本近代史 (ちくま文庫)",
+      "title": "裸はいつから恥ずかしくなったか",
+      "source_url": "https://www.chikumashobo.co.jp/product/9784480433626/",
+      "source_title": "裸はいつから恥ずかしくなったか",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_5e030d7c0cb9",
+      "from_title": "「具体⇔抽象」トレーニング 思考力が飛躍的にアップする29問 (PHPビジネス新書)",
+      "title": "「具体⇔抽象」トレーニング",
+      "source_url": "https://www.php.co.jp/books/detail.php?isbn=978-4-569-84599-9",
+      "source_title": "「具体⇔抽象」トレーニング",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

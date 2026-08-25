@@ -1,12 +1,13 @@
 import { loadCatalog } from './load-catalog.mjs';
 import { isValidIsbn13, titleKey } from '../src/catalog.mjs';
+import { workIdentityKey } from '../src/work-identity.mjs';
 
 const catalog = await loadCatalog();
 const failures = [];
 const unique = (items) => new Set(items).size === items.length;
 
 if (!unique(catalog.works.map((work) => work.work_id))) failures.push('work_id is not unique');
-if (!unique(catalog.works.map((work) => work.title_key))) failures.push('title_key is not unique');
+if (!unique(catalog.works.map((work) => workIdentityKey(work)))) failures.push('work identity key is not unique');
 if (!unique(catalog.editions.map((edition) => edition.edition_id))) failures.push('edition_id is not unique');
 if (!unique(catalog.holdings.map((holding) => holding.holding_id))) failures.push('holding_id is not unique');
 
@@ -14,6 +15,7 @@ const workIds = new Set(catalog.works.map((work) => work.work_id));
 const editionIds = new Set(catalog.editions.map((edition) => edition.edition_id));
 for (const work of catalog.works) {
   if (titleKey(work.title) !== work.title_key) failures.push(`title_key mismatch: ${work.title}`);
+  if (work.adaptation_of_work_id && !workIds.has(work.adaptation_of_work_id)) failures.push(`orphan adaptation target: ${work.work_id}`);
 }
 for (const edition of catalog.editions) {
   if (!workIds.has(edition.work_id)) failures.push(`orphan edition: ${edition.edition_id}`);
@@ -68,7 +70,7 @@ function scanForbidden(value, path = '$') {
 scanForbidden(issueRecords);
 
 if (catalog.stats.issue_1_record_count !== 60) failures.push('Issue #1 stats record count mismatch');
-if (catalog.stats.issue_1_duplicate_skipped_count !== 24) failures.push('Issue #1 duplicate skip count mismatch');
+if (catalog.stats.issue_1_duplicate_skipped_count !== 24) failures.push('Issue #1 stats duplicate skip count mismatch');
 if (catalog.stats.issue_1_added_record_count !== 36) failures.push('Issue #1 added record count mismatch');
 if (catalog.stats.issue_1_new_work_count !== 35) failures.push('Issue #1 new work count mismatch');
 

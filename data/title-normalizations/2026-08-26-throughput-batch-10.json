@@ -1,0 +1,85 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_459549e15f1e",
+      "from_title": "カードゲームで本当に強くなる考え方 (ちくまプリマー新書)",
+      "title": "カードゲームで本当に強くなる考え方",
+      "source_url": "https://www.chikumashobo.co.jp/product/9784480685353",
+      "source_title": "カードゲームで本当に強くなる考え方",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_8cefc83eeb19",
+      "from_title": "カール・マルクス ──「資本主義」と闘った社会思想家 (ちくま新書)",
+      "title": "カール・マルクス",
+      "source_url": "https://chikumashobo.co.jp/product/9784480068897/",
+      "source_title": "カール・マルクス",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_fcf64f696f89",
+      "from_title": "自己決定の落とし穴 (ちくまプリマー新書)",
+      "title": "自己決定の落とし穴",
+      "source_url": "https://www.chikumashobo.co.jp/product/9784480685308/",
+      "source_title": "自己決定の落とし穴",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_60c0a5934a99",
+      "from_title": "世界史をつくった海賊 (ちくま新書)",
+      "title": "世界史をつくった海賊",
+      "source_url": "https://www.chikumashobo.co.jp/product/9784480065940/",
+      "source_title": "世界史をつくった海賊",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_2e70ec50cf7c",
+      "from_title": "裸はいつから恥ずかしくなったか ──「裸体」の日本近代史 (ちくま文庫)",
+      "title": "裸はいつから恥ずかしくなったか",
+      "source_url": "https://www.chikumashobo.co.jp/product/9784480433626/",
+      "source_title": "裸はいつから恥ずかしくなったか",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_76b4f7ec6479",
+      "from_title": "女と男 なぜわかりあえないのか (文春新書)",
+      "title": "女と男 なぜわかりあえないのか",
+      "source_url": "https://books.bunshun.jp/ud/book/num/9784166612659",
+      "source_title": "女と男 なぜわかりあえないのか",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_4e9d08ff6f2f",
+      "from_title": "脳科学は人格を変えられるか? (文春文庫)",
+      "title": "脳科学は人格を変えられるか？",
+      "source_url": "https://books.bunshun.jp/ud/book/num/9784167908980",
+      "source_title": "脳科学は人格を変えられるか？",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_257665985879",
+      "from_title": "この世界が消えたあとの 科学文明のつくりかた (河出文庫)",
+      "title": "この世界が消えたあとの 科学文明のつくりかた",
+      "source_url": "https://www.kawade.co.jp/np/isbn/9784309464800/",
+      "source_title": "この世界が消えたあとの　科学文明のつくりかた",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_574a5f923eb7",
+      "from_title": "蹴りたい背中 (河出文庫)",
+      "title": "蹴りたい背中",
+      "source_url": "https://www.kawade.co.jp/np/isbn/9784309408415/",
+      "source_title": "蹴りたい背中",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_5e030d7c0cb9",
+      "from_title": "「具体⇔抽象」トレーニング 思考力が飛躍的にアップする29問 (PHPビジネス新書)",
+      "title": "「具体⇔抽象」トレーニング",
+      "source_url": "https://www.php.co.jp/books/detail.php?isbn=978-4-569-84599-9",
+      "source_title": "「具体⇔抽象」トレーニング",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

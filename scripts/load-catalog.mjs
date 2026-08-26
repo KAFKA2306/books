@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { reconcileCategoriesFromClassifications } from '../src/category-classification-reconciliation.mjs';
 import { applyCategoryEnrichments } from '../src/category-enrichment.mjs';
 import { consolidateLegacyKindleHoldings } from '../src/holding-deduplication.mjs';
 import { applyIsbnEnrichments } from '../src/isbn-enrichment.mjs';
@@ -179,5 +180,6 @@ export async function loadCatalog(root = process.cwd()) {
     merged,
     mergeWorkMergeOverlays(...workMergePartitions),
   );
+  merged = reconcileCategoriesFromClassifications(merged);
   return consolidateLegacyKindleHoldings(merged);
 }

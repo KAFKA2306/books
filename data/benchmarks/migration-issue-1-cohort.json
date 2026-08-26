@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "benchmark": "historical_library_migration_cohort",
+  "cohort": {
+    "repository": "KAFKA2306/books",
+    "source_issue": 1,
+    "source_issue_url": "https://github.com/KAFKA2306/books/issues/1",
+    "result_comment_url": "https://github.com/KAFKA2306/books/issues/1#issuecomment-5210326837",
+    "merged_pr": 3,
+    "merge_commit": "3da7431fcd73bb9ff7804ed8e84bffe7a5bad806",
+    "input_type": "Kindle bookshelf screenshots",
+    "input_records": 60
+  },
+  "observed_outcome": {
+    "existing_holdings_stopped_by_precheck": 24,
+    "holdings_added": 36,
+    "new_works_added": 35,
+    "verified_editions_registered": 61,
+    "final_state": {
+      "valid_inputs": 491,
+      "works": 449,
+      "editions": 512,
+      "holdings": 451
+    }
+  },
+  "derived_metrics": {
+    "existing_holding_stop_rate": 0.4,
+    "holding_add_rate": 0.6,
+    "new_works_per_added_holding": 0.9722222222,
+    "verified_editions_per_input_record": 1.0166666667
+  },
+  "cost_interpretation": {
+    "automatic_duplicate_prevention_records": 24,
+    "automatic_duplicate_prevention_share": 0.4,
+    "manual_review_records": null,
+    "manual_review_rate": null,
+    "elapsed_minutes": null,
+    "records_per_hour": null,
+    "reason": "The historical run persisted final routing outcomes but did not record per-record human-review decisions or elapsed research time. Do not infer labor cost or throughput from PR/CI counts."
+  },
+  "provenance": [
+    {
+      "claim": "60 records were structured; 24 existing holdings were stopped; 36 holdings and 35 Works were added; 61 verified Editions were registered.",
+      "source": "https://github.com/KAFKA2306/books/issues/1#issuecomment-5210326837"
+    },
+    {
+      "claim": "The input cohort was 60 fully visible Kindle bookshelf records and bibliographic fields were to be verified against publisher or National Diet Library sources.",
+      "source": "https://github.com/KAFKA2306/books/issues/1"
+    },
+    {
+      "claim": "The normalized records are persisted in data/issue-1-books.json with source-backed Edition metadata.",
+      "source": "data/issue-1-books.json"
+    }
+  ],
+  "measurement_gap": {
+    "highest_value_missing_fields": [
+      "per_record_reason_code_before_mutation",
+      "human_review_required",
+      "research_elapsed_seconds",
+      "total_elapsed_seconds"
+    ],
+    "next_measurement": "Capture these fields on the next real 100-1000 record migration so manual-review rate and records/hour are observed rather than inferred."
+  }
+}

@@ -84,9 +84,10 @@ async function fetchCatalog() {
 async function renderObservedCaseStudy() {
   if (!caseStudyMetrics || !caseStudyNote) return;
   try {
-    const response = await fetch('./data/benchmarks/migration-issue-1-cohort.json', { cache: 'no-store' });
+    const response = await fetch('./api/v1/migration_issue_1_benchmark.json', { cache: 'no-store' });
     if (!response.ok) throw new Error(`benchmark取得失敗: HTTP ${response.status}`);
-    const benchmark = await response.json();
+    const [benchmark] = await response.json();
+    if (!benchmark) throw new Error('benchmarkが空です。');
     const cohort = benchmark.cohort;
     const outcome = benchmark.observed_outcome;
     const metrics = benchmark.derived_metrics;

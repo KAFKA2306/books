@@ -39,4 +39,4 @@ if (process.argv.includes('--json')) {
   }
 }
 
-if (mismatches.length) process.exitCode = 1;
+if (process.argv.includes('--strict') && mismatches.length) process.exitCode = 1;

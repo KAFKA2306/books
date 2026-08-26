@@ -1,0 +1,32 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_49b13fae066a",
+      "from_title": "お金は「歴史」で儲けなさい (朝日文庫)",
+      "title": "お金は「歴史」で儲けなさい",
+      "author": "加谷 珪一",
+      "source_url": "https://publications.asahi.com/product/21491.html",
+      "source_title": "お金は「歴史」で儲けなさい",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_0e8a1b4bae2b",
+      "from_title": "やってはいけない不動産投資 (朝日新書)",
+      "title": "やってはいけない不動産投資",
+      "author": "藤田 知也",
+      "source_url": "https://publications.asahi.com/product/20983.html",
+      "source_title": "やってはいけない不動産投資",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_42b0eba19446",
+      "from_title": "全面改訂 第3版 ほったらかし投資術 (朝日新書)",
+      "title": "全面改訂 第3版 ほったらかし投資術",
+      "author": "山崎 元 / 水瀬 ケンイチ",
+      "source_url": "https://publications.asahi.com/product/23441.html",
+      "source_title": "全面改訂 第3版 ほったらかし投資術",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

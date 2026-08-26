@@ -22,7 +22,29 @@ test('flags same-work same-day legacy and Amazon XML Kindle holdings', () => {
   ]);
   assert.equal(audit.summary.candidate_group_count, 1);
   assert.equal(audit.summary.candidate_holding_count, 2);
+  assert.equal(audit.summary.quantity_reconciled_group_count, 1);
+  assert.equal(audit.summary.quantity_mismatch_group_count, 0);
   assert.equal(audit.candidates[0].asin_backed_xml, true);
+  assert.equal(audit.candidates[0].legacy_kindle_quantity, 1);
+  assert.equal(audit.candidates[0].amazon_xml_quantity, 1);
+  assert.equal(audit.candidates[0].quantity_reconciles, true);
+  assert.equal(audit.candidates[0].evidence_status, 'quantity_reconciled');
+});
+
+test('classifies represented quantity mismatch instead of implying a duplicate', () => {
+  const audit = auditHoldingDuplicates([
+    holding({ quantity: 1 }),
+    holding({ holding_id: 'h2', edition_id: 'asin:B000UPPER', source: 'Amazon Kindle XML', quantity: 1 }),
+    holding({ holding_id: 'h3', edition_id: 'asin:B000LOWER', source: 'Amazon Kindle XML', quantity: 1 }),
+  ]);
+  assert.equal(audit.summary.candidate_group_count, 1);
+  assert.equal(audit.summary.quantity_reconciled_group_count, 0);
+  assert.equal(audit.summary.quantity_mismatch_group_count, 1);
+  assert.equal(audit.candidates[0].legacy_kindle_quantity, 1);
+  assert.equal(audit.candidates[0].amazon_xml_quantity, 2);
+  assert.equal(audit.candidates[0].quantity_reconciles, false);
+  assert.equal(audit.candidates[0].evidence_status, 'quantity_mismatch');
+  assert.ok(audit.candidates[0].reasons.includes('represented_quantity_mismatch'));
 });
 
 test('does not flag different acquisition days', () => {

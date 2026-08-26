@@ -20,6 +20,10 @@ function isLegacyKindleHolding(holding) {
   return isKindleHolding(holding) && !isAmazonXmlHolding(holding);
 }
 
+function representedQuantity(rows) {
+  return rows.reduce((sum, row) => sum + Number(row.quantity ?? 0), 0);
+}
+
 export function auditHoldingDuplicates(holdings = []) {
   const groups = new Map();
   for (const holding of holdings) {
@@ -42,7 +46,10 @@ export function auditHoldingDuplicates(holdings = []) {
     const holdingIds = rows.map((row) => row.holding_id).filter(Boolean).sort();
     const editionIds = [...new Set(rows.map((row) => row.edition_id).filter(Boolean))].sort();
     const sources = [...new Set(rows.map((row) => row.source).filter(Boolean))].sort();
-    const quantity = rows.reduce((sum, row) => sum + Number(row.quantity ?? 0), 0);
+    const quantity = representedQuantity(rows);
+    const amazonXmlQuantity = representedQuantity(xmlRows);
+    const legacyKindleQuantity = representedQuantity(legacyRows);
+    const quantityReconciles = amazonXmlQuantity === legacyKindleQuantity;
 
     candidates.push({
       work_id: rows[0].work_id,
@@ -53,12 +60,17 @@ export function auditHoldingDuplicates(holdings = []) {
       holding_count: rows.length,
       quantity,
       amazon_xml_holding_count: xmlRows.length,
+      amazon_xml_quantity: amazonXmlQuantity,
       legacy_kindle_holding_count: legacyRows.length,
+      legacy_kindle_quantity: legacyKindleQuantity,
+      quantity_reconciles: quantityReconciles,
+      evidence_status: quantityReconciles ? 'quantity_reconciled' : 'quantity_mismatch',
       asin_backed_xml: xmlRows.every((row) => String(row.edition_id ?? '').startsWith('asin:')),
       reasons: [
         'same_work',
         'same_acquisition_date',
         'cross_source_kindle_holdings',
+        quantityReconciles ? 'represented_quantity_matches' : 'represented_quantity_mismatch',
       ],
     });
   }
@@ -71,6 +83,8 @@ export function auditHoldingDuplicates(holdings = []) {
       candidate_holding_count: candidates.reduce((sum, row) => sum + row.holding_count, 0),
       candidate_quantity: candidates.reduce((sum, row) => sum + row.quantity, 0),
       asin_backed_group_count: candidates.filter((row) => row.asin_backed_xml).length,
+      quantity_reconciled_group_count: candidates.filter((row) => row.quantity_reconciles).length,
+      quantity_mismatch_group_count: candidates.filter((row) => !row.quantity_reconciles).length,
     },
     candidates,
   };

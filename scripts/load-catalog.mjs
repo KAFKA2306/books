@@ -136,7 +136,7 @@ export async function loadCatalog(root = process.cwd()) {
     const kindleData = kindleManifest.storage === 'compact-ndjson-array'
       ? await loadCompactKindleMetadata(root, kindleManifest)
       : await loadKindleMetadata(root);
-    merged = consolidateLegacyKindleHoldings(mergeKindleCatalog(merged, kindleData));
+    merged = mergeKindleCatalog(merged, kindleData);
   }
 
   merged = applyIsbnEnrichments(merged, await loadIsbnOverlay(root));
@@ -175,8 +175,9 @@ export async function loadCatalog(root = process.cwd()) {
   const workMergePartitions = await readJsonDirectoryIfPresent(
     path.join(root, 'data/work-merges'),
   );
-  return applyWorkMerges(
+  merged = applyWorkMerges(
     merged,
     mergeWorkMergeOverlays(...workMergePartitions),
   );
+  return consolidateLegacyKindleHoldings(merged);
 }

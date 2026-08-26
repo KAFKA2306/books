@@ -18,7 +18,9 @@ export function reconcileCategoriesFromClassifications(catalog) {
     if (!categories?.size) return work;
     if (categories.size !== 1) {
       conflicts += 1;
-      return work;
+      if (work.category === '未分類') return work;
+      reconciled += 1;
+      return { ...work, category: '未分類' };
     }
 
     const [expectedCategory] = categories;

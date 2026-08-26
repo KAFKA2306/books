@@ -1,0 +1,29 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_ad12e7f19089",
+      "from_title": "就職氷河期世代 データで読み解く所得・家族形成・格差 (中公新書)",
+      "title": "就職氷河期世代 データで読み解く所得・家族形成・格差",
+      "source_url": "https://www.chuko.co.jp/shinsho/2024/10/102825.html",
+      "source_title": "就職氷河期世代 データで読み解く所得・家族形成・格差",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_340fa5154ecd",
+      "from_title": "聖書、コーラン、仏典 原典から宗教の本質をさぐる (中公新書)",
+      "title": "聖書、コーラン、仏典 原典から宗教の本質をさぐる",
+      "source_url": "https://www.chuko.co.jp/shinsho/2017/10/102459.html",
+      "source_title": "聖書、コーラン、仏典 原典から宗教の本質をさぐる",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_7233c2aec8bc",
+      "from_title": "中国の行動原理 国内潮流が決める国際関係 (中公新書)",
+      "title": "中国の行動原理 国内潮流が決める国際関係",
+      "source_url": "https://www.chuko.co.jp/shinsho/2019/11/102568.html",
+      "source_title": "中国の行動原理 国内潮流が決める国際関係",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_1b1c4c5c69b4",
+      "into_work_id": "wrk_6f5893f31e27",
+      "from_title": "論理的思考とは何か (岩波新書)",
+      "into_title": "論理的思考とは何か",
+      "author": "渡邉雅子",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I033709265",
+      "source_title": "論理的思考とは何か",
+      "reason": "series_label_was_embedded_in_duplicate_work_title"
+    }
+  ]
+}

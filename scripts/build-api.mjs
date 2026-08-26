@@ -67,6 +67,7 @@ async function readJson(relativePath) {
 }
 
 const issueData = await readJson('data/issue-1-books.json');
+const migrationIssue1Benchmark = await readJson('data/benchmarks/migration-issue-1-cohort.json');
 const isbnEnrichments = await loadIsbnOverlay(root);
 const isbnEnrichmentState = await readJson('data/isbn-enrichment-state.json');
 const isbnEnrichmentReport = await readJson('data/isbn-enrichment-report.json');
@@ -80,6 +81,7 @@ const canonicalCollections = Object.fromEntries(
 
 const supplementalCollections = {
   issue_records: normalizeIssueRecords(issueData.records ?? []),
+  migration_issue_1_benchmark: [migrationIssue1Benchmark],
   isbn_enrichments: isbnEnrichments.records ?? [],
   isbn_enrichment_attempts: Object.entries(isbnEnrichmentState.attempts ?? {}).map(
     ([work_id, attempt]) => ({ work_id, ...attempt }),
@@ -153,6 +155,7 @@ const manifest = {
   generated_from: [
     'data/catalog.json',
     'data/issue-1-books.json',
+    'data/benchmarks/migration-issue-1-cohort.json',
     'data/isbn-enrichments.json',
     'data/isbn-primary-verifications/',
     'data/isbn-enrichment-state.json',

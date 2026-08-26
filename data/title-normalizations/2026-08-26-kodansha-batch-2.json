@@ -1,0 +1,21 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_8b601ab45088",
+      "from_title": "夫のちんぽが入らない(1) (ヤングマガジンコミックス)",
+      "title": "夫のちんぽが入らない",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000313321",
+      "source_title": "夫のちんぽが入らない（１）",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_5494594a59cd",
+      "from_title": "ピーチボーイリバーサイド(3) (月刊少年マガジンR)",
+      "title": "ピーチボーイリバーサイド",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000047991",
+      "source_title": "ピーチボーイリバーサイド（３）",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

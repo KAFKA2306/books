@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { loadCatalog } from './load-catalog.mjs';
 import { diagnoseMigration, parseMigrationInput, renderDiagnosisHtml } from '../src/migration-diagnosis.mjs';
+import { annotateMigrationReviewCost } from '../src/migration-review-cost.mjs';
 
 const inputPath = process.argv[2];
 const outputDir = process.argv[3] ?? 'artifacts/migration-diagnosis';
@@ -26,7 +27,7 @@ try {
   process.exit(2);
 }
 const catalog = await loadCatalog();
-const report = diagnoseMigration(rows, catalog);
+const report = annotateMigrationReviewCost(diagnoseMigration(rows, catalog));
 await fs.mkdir(outputDir, { recursive: true });
 await fs.writeFile(path.join(outputDir, 'report.json'), `${JSON.stringify(report, null, 2)}\n`, 'utf8');
 await fs.writeFile(path.join(outputDir, 'report.html'), renderDiagnosisHtml(report), 'utf8');

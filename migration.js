@@ -9,6 +9,8 @@ const metricsNode = document.querySelector('#diagnosisMetrics');
 const rowsNode = document.querySelector('#diagnosisRows');
 const downloadJson = document.querySelector('#downloadJson');
 const downloadHtml = document.querySelector('#downloadHtml');
+const caseStudyMetrics = document.querySelector('#caseStudyMetrics');
+const caseStudyNote = document.querySelector('#caseStudyNote');
 
 let currentReport = null;
 
@@ -79,6 +81,28 @@ async function fetchCatalog() {
   return response.json();
 }
 
+async function renderObservedCaseStudy() {
+  if (!caseStudyMetrics || !caseStudyNote) return;
+  try {
+    const response = await fetch('./data/benchmarks/migration-issue-1-cohort.json', { cache: 'no-store' });
+    if (!response.ok) throw new Error(`benchmark取得失敗: HTTP ${response.status}`);
+    const benchmark = await response.json();
+    const cohort = benchmark.cohort;
+    const outcome = benchmark.observed_outcome;
+    const metrics = benchmark.derived_metrics;
+    caseStudyMetrics.replaceChildren(
+      metric('入力', cohort.input_records),
+      metric('既存所蔵を停止', outcome.existing_holdings_stopped_by_precheck),
+      metric('追加', outcome.holdings_added),
+      metric('重複防止率', `${Math.round(metrics.existing_holding_stop_rate * 100)}%`),
+    );
+    caseStudyNote.textContent = 'Kindle蔵書60件の実処理結果です。人手レビュー時間は当時未計測のため、速度・人件費はこの実績から推定していません。';
+  } catch (error) {
+    caseStudyMetrics.replaceChildren();
+    caseStudyNote.textContent = `実績benchmarkを表示できませんでした: ${error.message}`;
+  }
+}
+
 diagnoseButton.addEventListener('click', async () => {
   if (fileInput.files.length !== 1) return;
   diagnoseButton.disabled = true;
@@ -137,3 +161,5 @@ downloadHtml.addEventListener('click', () => {
   if (!currentReport) return;
   download('kafka-books-migration-report.html', 'text/html;charset=utf-8', renderDiagnosisHtml(currentReport));
 });
+
+renderObservedCaseStudy();

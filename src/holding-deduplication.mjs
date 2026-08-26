@@ -22,6 +22,21 @@ function copyLegacyMetadata(target, legacy) {
   return preserved;
 }
 
+function metadataAlreadyPreservedAtWork(work, legacy) {
+  const fields = [];
+  for (const field of ['price_yen', 'progress', 'rating']) {
+    const legacyValue = legacy[field];
+    if (legacyValue === null || legacyValue === undefined) continue;
+    if (work?.[field] !== legacyValue) return null;
+    fields.push(field);
+  }
+  return fields;
+}
+
+function isAsinBacked(holding) {
+  return String(holding?.edition_id ?? '').startsWith('asin:');
+}
+
 export function consolidateLegacyKindleHoldings(catalog) {
   const works = (catalog.works ?? []).map((work) => ({
     ...work,
@@ -30,6 +45,7 @@ export function consolidateLegacyKindleHoldings(catalog) {
   }));
   let editions = (catalog.editions ?? []).map((edition) => ({ ...edition }));
   let holdings = (catalog.holdings ?? []).map((holding) => ({ ...holding }));
+  const workById = new Map(works.map((work) => [work.work_id, work]));
 
   const groups = new Map();
   for (const holding of holdings) {
@@ -45,34 +61,66 @@ export function consolidateLegacyKindleHoldings(catalog) {
   const audit = [];
 
   for (const rows of groups.values()) {
-    if (rows.length !== 2) continue;
     const legacyRows = rows.filter((row) => row.source === LEGACY_SOURCE);
     const xmlRows = rows.filter((row) => row.source === XML_SOURCE);
-    if (legacyRows.length !== 1 || xmlRows.length !== 1) continue;
+    if (legacyRows.length !== 1 || !xmlRows.length) continue;
 
     const legacy = legacyRows[0];
-    const xml = xmlRows[0];
-    if (!isSingleUnit(legacy) || !isSingleUnit(xml)) continue;
     if (!String(legacy.edition_id ?? '').startsWith('pending:')) continue;
-    if (!String(xml.edition_id ?? '').startsWith('asin:')) continue;
+    if (!xmlRows.every((row) => isSingleUnit(row) && isAsinBacked(row))) continue;
 
-    const preserved_fields = copyLegacyMetadata(xml, legacy);
+    if (rows.length === 2 && xmlRows.length === 1 && isSingleUnit(legacy)) {
+      const xml = xmlRows[0];
+      const preserved_fields = copyLegacyMetadata(xml, legacy);
+      removedHoldingIds.add(legacy.holding_id);
+      audit.push({
+        work_id: legacy.work_id,
+        acquisition_date: acquisitionDay(legacy.acquired_at),
+        removed_holding_id: legacy.holding_id,
+        removed_edition_id: legacy.edition_id,
+        retained_holding_id: xml.holding_id,
+        retained_edition_id: xml.edition_id,
+        retained_asin: xml.edition_id.slice('asin:'.length),
+        preserved_fields,
+        evidence: [
+          'same_work',
+          'same_acquisition_date',
+          'one_legacy_purchase_history_holding',
+          'one_asin_backed_amazon_xml_holding',
+          'unit_quantity_on_both_holdings',
+        ],
+      });
+      continue;
+    }
+
+    const xmlQuantity = xmlRows.reduce((sum, row) => sum + Number(row.quantity ?? 0), 0);
+    const legacyQuantity = Number(legacy.quantity ?? 0);
+    const xmlEditionIds = xmlRows.map((row) => row.edition_id);
+    if (xmlRows.length < 2 || legacyQuantity !== xmlQuantity) continue;
+    if (new Set(xmlEditionIds).size !== xmlEditionIds.length) continue;
+
+    const preserved_at_work_fields = metadataAlreadyPreservedAtWork(workById.get(legacy.work_id), legacy);
+    if (preserved_at_work_fields === null) continue;
+
     removedHoldingIds.add(legacy.holding_id);
     audit.push({
       work_id: legacy.work_id,
       acquisition_date: acquisitionDay(legacy.acquired_at),
       removed_holding_id: legacy.holding_id,
       removed_edition_id: legacy.edition_id,
-      retained_holding_id: xml.holding_id,
-      retained_edition_id: xml.edition_id,
-      retained_asin: xml.edition_id.slice('asin:'.length),
-      preserved_fields,
+      retained_holding_ids: xmlRows.map((row) => row.holding_id).sort(),
+      retained_edition_ids: [...xmlEditionIds].sort(),
+      retained_asins: xmlEditionIds.map((id) => id.slice('asin:'.length)).sort(),
+      preserved_fields: [],
+      preserved_at_work_fields,
       evidence: [
         'same_work',
         'same_acquisition_date',
         'one_legacy_purchase_history_holding',
-        'one_asin_backed_amazon_xml_holding',
-        'unit_quantity_on_both_holdings',
+        'multiple_distinct_asin_backed_amazon_xml_holdings',
+        'legacy_quantity_equals_xml_quantity',
+        'unit_quantity_on_each_xml_holding',
+        'legacy_metadata_already_preserved_at_work',
       ],
     });
   }

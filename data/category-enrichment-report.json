@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.category-enrichment-report.v1",
-  "generated_at": "2026-08-22T19:47:42.954Z",
+  "generated_at": "2026-08-26T13:42:26.127Z",
   "rule_version": "ndc-map-v1",
   "policy": {
     "source": "National Diet Library Search OpenSearch API",
@@ -19,12 +19,26 @@
     "request_timeout_ms": 60000
   },
   "summary": {
-    "attempted": 0,
+    "attempted": 1,
     "accepted": 0,
-    "ambiguous": 0,
+    "ambiguous": 1,
     "no_ndc": 0,
     "no_candidate": 0,
     "provider_error": 0
   },
-  "results": []
+  "results": [
+    {
+      "work_id": "wrk_533ca5f1263a",
+      "title": "脳科学は人格を変えられるか?",
+      "lookup_title": "脳科学は人格を変えられるか?",
+      "outcome": "ambiguous",
+      "category": null,
+      "ndc_scheme": null,
+      "ndc_code": null,
+      "source_isbn13": null,
+      "match_mode": null,
+      "matches": 2,
+      "provider_error": null
+    }
+  ]
 }

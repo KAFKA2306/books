@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichment-state.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-08-22T19:47:42.954Z",
+  "updated_at": "2026-08-26T13:42:26.127Z",
   "attempts": {
     "wrk_0025172962b9": {
       "attempted_at": "2026-08-17T07:52:53.708Z",
@@ -2978,10 +2978,10 @@
       "provider_error": null
     },
     "wrk_533ca5f1263a": {
-      "attempted_at": "2026-08-17T01:57:46.496Z",
+      "attempted_at": "2026-08-26T13:42:26.127Z",
       "outcome": "ambiguous",
-      "next_attempt_at": "2026-09-16T01:57:46.496Z",
-      "title_normalization_version": "bibliographic-suffix-v6",
+      "next_attempt_at": "2026-09-25T13:42:26.127Z",
+      "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
       "ndc_scheme": null,

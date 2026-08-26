@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_3cd4c2bc4bc2",
+      "from_title": "生命とは何か-物理的にみた生細胞 (岩波文庫)",
+      "title": "生命とは何か : 物理的にみた生細胞",
+      "author": "シュレーディンガー / 岡 小天 / 鎮目 恭夫",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000009396157",
+      "source_title": "生命とは何か : 物理的にみた生細胞",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

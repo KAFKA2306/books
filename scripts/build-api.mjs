@@ -5,6 +5,7 @@ import { loadCatalog, loadIsbnOverlay } from './load-catalog.mjs';
 import { normalizeCatalogSources, normalizeIssueRecords } from '../src/source-groups.mjs';
 import { normalizeBibliographicDisplayCatalog } from '../src/bibliographic-display-normalization.mjs';
 import { auditMigrationIdentityEvidence } from '../src/migration-identity-evidence-audit.mjs';
+import { auditHoldingDuplicates } from '../src/holding-duplicate-audit.mjs';
 
 const root = process.cwd();
 const outDir = path.join(root, 'api', 'v1');
@@ -12,6 +13,7 @@ const catalog = normalizeBibliographicDisplayCatalog(
   normalizeCatalogSources(await loadCatalog(root)),
 );
 const migrationIdentityEvidenceAudit = auditMigrationIdentityEvidence(catalog.works);
+const holdingDuplicateAudit = auditHoldingDuplicates(catalog.holdings);
 
 function stable(value) {
   if (Array.isArray(value)) return value.map(stable);
@@ -94,6 +96,12 @@ const supplementalCollections = {
     ...migrationIdentityEvidenceAudit.summary,
   }],
   migration_identity_evidence_groups: migrationIdentityEvidenceAudit.groups,
+  holding_duplicate_audit: [{
+    schema: holdingDuplicateAudit.schema,
+    standard_url: 'https://repository.ifla.org/bitstreams/7d23aa55-1f85-490f-b500-6170285585a6/download',
+    ...holdingDuplicateAudit.summary,
+  }],
+  holding_duplicate_candidates: holdingDuplicateAudit.candidates,
 };
 
 const collections = {

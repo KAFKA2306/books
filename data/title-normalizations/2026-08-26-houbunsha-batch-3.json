@@ -1,0 +1,23 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_96715f1b3899",
+      "from_title": "けいおん!college (まんがタイムKRコミックス)",
+      "title": "けいおん！ college",
+      "author": "かきふらい",
+      "source_url": "https://houbunsha.co.jp/patron/pdf/201807_ordersheet_mangatimeKR.pdf",
+      "source_title": "けいおん！ college",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_6dc03f6caf10",
+      "from_title": "恋は地獄車 1巻 (まんがタイムコミックス)",
+      "title": "恋は地獄車",
+      "author": "瀬戸口みづき",
+      "source_url": "https://houbunsha.co.jp/magazine/detail.php?p=116350",
+      "source_title": "恋は地獄車",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

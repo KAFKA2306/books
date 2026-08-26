@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { applyCategoryEnrichments } from '../src/category-enrichment.mjs';
+import { consolidateLegacyKindleHoldings } from '../src/holding-deduplication.mjs';
 import { applyIsbnEnrichments } from '../src/isbn-enrichment.mjs';
 import { deriveLibraryClassifications } from '../src/library-classification.mjs';
 import { mergeIssueCatalog } from '../src/merge-catalog.mjs';
@@ -135,7 +136,7 @@ export async function loadCatalog(root = process.cwd()) {
     const kindleData = kindleManifest.storage === 'compact-ndjson-array'
       ? await loadCompactKindleMetadata(root, kindleManifest)
       : await loadKindleMetadata(root);
-    merged = mergeKindleCatalog(merged, kindleData);
+    merged = consolidateLegacyKindleHoldings(mergeKindleCatalog(merged, kindleData));
   }
 
   merged = applyIsbnEnrichments(merged, await loadIsbnOverlay(root));

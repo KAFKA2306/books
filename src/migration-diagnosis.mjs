@@ -63,6 +63,7 @@ function reasonCodes(result) {
   const codes = [];
   const joined = result.errors.join('\n');
   if (joined.includes('ISBNの形式またはチェックディジットが不正')) codes.push('invalid_isbn');
+  if (joined.includes('価格は0以上の有限な数値')) codes.push('invalid_price');
   if (joined.includes('既に登録済み')) codes.push('existing_holding');
   if (joined.includes('同じ入力内でISBN') || joined.includes('同じ入力内で正規化書名')) codes.push('duplicate_in_batch');
   if (joined.includes('書名が空')) codes.push('insufficient_metadata');
@@ -75,34 +76,55 @@ function reasonCodes(result) {
   return codes;
 }
 
+function normalizePrice(value) {
+  if (value == null) return { value: null, error: null };
+  if (typeof value === 'string' && value.trim() === '') return { value: null, error: null };
+  const numeric = typeof value === 'number' ? value : Number(String(value).trim());
+  if (!Number.isFinite(numeric) || numeric < 0) {
+    return { value: null, error: '価格は0以上の有限な数値で指定してください。' };
+  }
+  return { value: numeric, error: null };
+}
+
 export function normalizeMigrationRows(rows) {
-  return rows.map((row) => ({
-    title: row.title ?? '',
-    isbn: row.isbn ?? row.isbn13 ?? row.isbn10 ?? '',
-    author: row.author || null,
-    work_type: row.work_type || null,
-    source: row.source || null,
-    status: row.status || null,
-    price: row.price === '' || row.price == null ? null : Number(row.price),
-    purchase_date: row.purchase_date || null,
-  }));
+  return rows.map((row) => {
+    const normalizedPrice = normalizePrice(row.price);
+    return {
+      title: row.title ?? '',
+      isbn: row.isbn ?? row.isbn13 ?? row.isbn10 ?? '',
+      author: row.author || null,
+      work_type: row.work_type || null,
+      source: row.source || null,
+      status: row.status || null,
+      price: normalizedPrice.value,
+      price_raw: row.price ?? null,
+      purchase_date: row.purchase_date || null,
+    };
+  });
 }
 
 export function diagnoseMigration(rows, catalog) {
   const candidates = normalizeMigrationRows(rows);
+  const priceErrors = rows.map((row) => normalizePrice(row.price).error);
   const precheck = precheckCandidates(candidates, catalog);
-  const results = precheck.results.map((result) => ({
-    index: result.index,
-    input: result.input,
-    normalized_title: result.normalized_title,
-    isbn13: result.isbn13,
-    action: result.action,
-    matched_work_id: result.matched_work_id,
-    matched_title: result.matched_title,
-    reason_codes: reasonCodes(result),
-    errors: result.errors,
-    warnings: result.warnings,
-  }));
+  const results = precheck.results.map((result) => {
+    const priceError = priceErrors[result.index];
+    const errors = priceError ? [...result.errors, priceError] : result.errors;
+    const action = errors.length ? 'blocked' : result.action;
+    const adjusted = { ...result, action, errors };
+    return {
+      index: result.index,
+      input: result.input,
+      normalized_title: result.normalized_title,
+      isbn13: result.isbn13,
+      action,
+      matched_work_id: result.matched_work_id,
+      matched_title: result.matched_title,
+      reason_codes: reasonCodes(adjusted),
+      errors,
+      warnings: result.warnings,
+    };
+  });
   const counts = {};
   for (const result of results) {
     for (const code of result.reason_codes) counts[code] = (counts[code] ?? 0) + 1;
@@ -111,7 +133,14 @@ export function diagnoseMigration(rows, catalog) {
     schema_version: 1,
     mode: 'dry-run',
     catalog_mutated: false,
-    summary: { ...precheck.summary, reason_counts: counts },
+    summary: {
+      ...precheck.summary,
+      allowed: results.filter((result) => !result.errors.length).length,
+      blocked: results.filter((result) => result.errors.length).length,
+      create_work: results.filter((result) => result.action === 'create_work').length,
+      add_edition: results.filter((result) => result.action === 'add_edition').length,
+      reason_counts: counts,
+    },
     results,
   };
 }

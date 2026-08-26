@@ -9,11 +9,12 @@ import { auditHoldingDuplicates } from '../src/holding-duplicate-audit.mjs';
 
 const root = process.cwd();
 const outDir = path.join(root, 'api', 'v1');
+const rawCatalog = await loadCatalog(root);
+const holdingDuplicateAudit = auditHoldingDuplicates(rawCatalog.holdings);
 const catalog = normalizeBibliographicDisplayCatalog(
-  normalizeCatalogSources(await loadCatalog(root)),
+  normalizeCatalogSources(rawCatalog),
 );
 const migrationIdentityEvidenceAudit = auditMigrationIdentityEvidence(catalog.works);
-const holdingDuplicateAudit = auditHoldingDuplicates(catalog.holdings);
 
 function stable(value) {
   if (Array.isArray(value)) return value.map(stable);

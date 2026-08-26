@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { consolidateLegacyKindleHoldings } from '../src/holding-deduplication.mjs';
 
-function baseCatalog(holdings) {
+function baseCatalog(holdings, workOverrides = {}) {
   return {
     stats: {
       input_count: holdings.reduce((sum, row) => sum + row.quantity, 0),
@@ -18,6 +18,10 @@ function baseCatalog(holdings) {
       item_count: holdings.reduce((sum, row) => sum + row.quantity, 0),
       sources: [...new Set(holdings.map((row) => row.source))],
       formats: ['Kindle'],
+      price_yen: 500,
+      progress: 0.5,
+      rating: 4,
+      ...workOverrides,
     }],
     editions: [
       { edition_id: 'pending:test', work_id: 'wrk_test', id_kind: 'pending_title_key', verification: 'unverified' },
@@ -72,13 +76,35 @@ test('single legacy + single ASIN XML holding consolidate while preserving user 
   assert.deepEqual(result.holding_deduplication_audit[0].preserved_fields, ['price_yen', 'progress', 'rating']);
 });
 
-test('multiple ASIN XML holdings on the same work/day stay fail-closed', () => {
+test('quantity-matched legacy aggregate consolidates into distinct ASIN holdings when metadata is preserved at work level', () => {
+  const result = consolidateLegacyKindleHoldings(baseCatalog([legacy(2), xml(), xml('B000000002')]));
+  assert.equal(result.holdings.length, 2);
+  assert.deepEqual(result.holdings.map((row) => row.holding_id).sort(), ['xml-B000000001', 'xml-B000000002']);
+  assert.equal(result.editions.some((row) => row.edition_id === 'pending:test'), false);
+  assert.equal(result.works[0].item_count, 2);
+  assert.equal(result.stats.input_count, 2);
+  assert.equal(result.stats.holding_count, 2);
+  assert.equal(result.holding_deduplication_audit.length, 1);
+  assert.deepEqual(result.holding_deduplication_audit[0].retained_asins, ['B000000001', 'B000000002']);
+  assert.deepEqual(result.holding_deduplication_audit[0].preserved_at_work_fields, ['price_yen', 'progress', 'rating']);
+});
+
+test('multiple ASIN XML holdings stay fail-closed when legacy quantity does not match', () => {
   const result = consolidateLegacyKindleHoldings(baseCatalog([legacy(), xml(), xml('B000000002')]));
   assert.equal(result.holdings.length, 3);
   assert.equal(result.holding_deduplication_audit.length, 0);
 });
 
-test('non-unit legacy quantity stays fail-closed', () => {
+test('quantity-matched aggregate stays fail-closed when legacy metadata is not preserved at work level', () => {
+  const result = consolidateLegacyKindleHoldings(baseCatalog(
+    [legacy(2), xml(), xml('B000000002')],
+    { price_yen: 999 },
+  ));
+  assert.equal(result.holdings.length, 3);
+  assert.equal(result.holding_deduplication_audit.length, 0);
+});
+
+test('non-unit legacy quantity stays fail-closed against one XML holding', () => {
   const result = consolidateLegacyKindleHoldings(baseCatalog([legacy(2), xml()]));
   assert.equal(result.holdings.length, 2);
   assert.equal(result.holding_deduplication_audit.length, 0);

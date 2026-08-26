@@ -1,0 +1,65 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_8cefc83eeb19",
+      "into_work_id": "wrk_bd3d6448b147",
+      "from_title": "カール・マルクス ──「資本主義」と闘った社会思想家 (ちくま新書)",
+      "into_title": "カール・マルクス",
+      "author": "佐々木隆治",
+      "source_url": "https://www.chikumashobo.co.jp/product/9784480068897/",
+      "source_title": "カール・マルクス",
+      "reason": "publisher_title_and_imprint_identify_same_work"
+    },
+    {
+      "from_work_id": "wrk_257665985879",
+      "into_work_id": "wrk_d00fd1626ea5",
+      "from_title": "この世界が消えたあとの 科学文明のつくりかた (河出文庫)",
+      "into_title": "この世界が消えたあとの科学文明のつくりかた",
+      "author": "ルイス・ダートネル;東郷えりか",
+      "source_url": "https://www.kawade.co.jp/np/isbn/9784309464800/",
+      "source_title": "この世界が消えたあとの　科学文明のつくりかた",
+      "reason": "publisher_confirms_bunko_as_edition_of_same_work"
+    },
+    {
+      "from_work_id": "wrk_574a5f923eb7",
+      "into_work_id": "wrk_cdcbb2899a08",
+      "from_title": "蹴りたい背中 (河出文庫)",
+      "into_title": "蹴りたい背中",
+      "author": "綿矢りさ",
+      "source_url": "https://www.kawade.co.jp/np/isbn/9784309408415/",
+      "source_title": "蹴りたい背中",
+      "reason": "publisher_confirms_bunko_as_edition_of_same_work"
+    },
+    {
+      "from_work_id": "wrk_76b4f7ec6479",
+      "into_work_id": "wrk_1664a411fc33",
+      "from_title": "女と男 なぜわかりあえないのか (文春新書)",
+      "into_title": "女と男 なぜわかりあえないのか",
+      "author": "橘玲",
+      "source_url": "https://books.bunshun.jp/ud/book/num/9784166612659",
+      "source_title": "女と男 なぜわかりあえないのか",
+      "reason": "publisher_title_matches_same_work_and_series_label_is_not_work_identity"
+    },
+    {
+      "from_work_id": "wrk_60c0a5934a99",
+      "into_work_id": "wrk_06892a84a002",
+      "from_title": "世界史をつくった海賊 (ちくま新書)",
+      "into_title": "世界史をつくった海賊",
+      "author": "竹田いさみ",
+      "source_url": "https://new.chikumashobo.co.jp/product/9784480065940/",
+      "source_title": "世界史をつくった海賊",
+      "reason": "publisher_title_matches_same_work_and_series_label_is_not_work_identity"
+    },
+    {
+      "from_work_id": "wrk_4e9d08ff6f2f",
+      "into_work_id": "wrk_533ca5f1263a",
+      "from_title": "脳科学は人格を変えられるか? (文春文庫)",
+      "into_title": "脳科学は人格を変えられるか?",
+      "author": "エレーヌ・フォックス",
+      "source_url": "https://books.bunshun.jp/ud/book/num/9784167908980",
+      "source_title": "脳科学は人格を変えられるか？",
+      "reason": "publisher_confirms_bunko_as_edition_of_same_work"
+    }
+  ]
+}

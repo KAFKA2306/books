@@ -1,0 +1,15 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_ad12e7f19089",
+      "into_work_id": "wrk_bcf2c9c298f5",
+      "from_title": "就職氷河期世代 データで読み解く所得・家族形成・格差 (中公新書)",
+      "into_title": "就職氷河期世代 データで読み解く所得・家族形成・格差",
+      "author": "近藤絢子",
+      "source_url": "https://www.chuko.co.jp/shinsho/2024/10/102825.html",
+      "source_title": "就職氷河期世代 データで読み解く所得・家族形成・格差",
+      "reason": "same_book_observed_as_legacy_title_and_asin_backed_kindle_record"
+    }
+  ]
+}

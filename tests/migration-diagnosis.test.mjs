@@ -36,6 +36,31 @@ test('parseMigrationInput rejects unknown formats', () => {
   assert.throws(() => parseMigrationInput('x', 'xml'), /Unsupported migration input format/);
 });
 
+test('diagnoseMigration preserves missing, valid, and invalid price semantics', () => {
+  const report = diagnoseMigration([
+    { title: '価格なし', price: '' },
+    { title: '価格ゼロ', price: '0' },
+    { title: '価格あり', price: '1200' },
+    { title: '価格不正', price: 'abc' },
+    { title: '価格負数', price: -1 },
+    { title: '価格無限', price: Infinity },
+  ], catalog);
+
+  assert.equal(report.results[0].input.price, null);
+  assert.equal(report.results[0].input.price_raw, '');
+  assert.equal(report.results[1].input.price, 0);
+  assert.equal(report.results[2].input.price, 1200);
+  for (const index of [3, 4, 5]) {
+    assert.equal(report.results[index].action, 'blocked');
+    assert.equal(report.results[index].input.price, null);
+    assert.ok(report.results[index].reason_codes.includes('invalid_price'));
+  }
+  assert.equal(report.results[3].input.price_raw, 'abc');
+  assert.equal(report.summary.reason_counts.invalid_price, 3);
+  assert.equal(report.summary.allowed, 3);
+  assert.equal(report.summary.blocked, 3);
+});
+
 test('diagnoseMigration keeps catalog read-only and emits machine-readable reason codes', () => {
   const before = JSON.stringify(catalog);
   const rows = [

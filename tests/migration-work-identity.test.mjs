@@ -50,7 +50,7 @@ test('migration normalization preserves optional identity evidence and null sema
     { title: '十角館の殺人', isbn: '9780306406157', author: '清原紘', work_type: 'comic' },
     { title: '新しい本', isbn: '' },
   ]), [
-    { title: '十角館の殺人', isbn: '9780306406157', author: '清原紘', work_type: 'comic', source: null, status: null, price: null, purchase_date: null },
-    { title: '新しい本', isbn: '', author: null, work_type: null, source: null, status: null, price: null, purchase_date: null },
+    { title: '十角館の殺人', isbn: '9780306406157', author: '清原紘', work_type: 'comic', source: null, status: null, price: null, price_raw: null, purchase_date: null },
+    { title: '新しい本', isbn: '', author: null, work_type: null, source: null, status: null, price: null, price_raw: null, purchase_date: null },
   ]);
 });

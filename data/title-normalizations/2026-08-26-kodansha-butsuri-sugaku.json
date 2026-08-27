@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_7299c697af57",
+      "from_title": "物理数学の直感的方法",
+      "title": "物理数学の直観的方法",
+      "author": "長沼伸一郎",
+      "source_url": "https://www.kodansha.co.jp/book/products/0000194699",
+      "source_title": "物理数学の直観的方法",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

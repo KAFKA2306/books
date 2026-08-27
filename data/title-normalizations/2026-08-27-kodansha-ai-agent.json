@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_b2e379a76087",
+      "from_title": "現場で活用するためのAIエージェント実践入門 (KS情報科学専門書)",
+      "title": "現場で活用するためのAIエージェント実践入門",
+      "author": "太田真人 / 宮脇峻平 / 西見公宏 / 後藤勇輝 / 阿田木勇八",
+      "source_url": "https://www.kodansha.co.jp/book/products/0000416433",
+      "source_title": "現場で活用するためのＡＩエージェント実践入門",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

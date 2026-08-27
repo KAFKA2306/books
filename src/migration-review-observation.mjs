@@ -7,6 +7,18 @@ function normalizeObservedSeconds(value, label) {
   return numeric;
 }
 
+export function buildMigrationReviewObservationTemplate(report) {
+  if (!Array.isArray(report?.results)) throw new Error('migration report results must be an array.');
+  return report.results
+    .filter((result) => result.handling === 'bibliographic_review')
+    .map((result) => ({
+      index: result.index,
+      reason_codes: Array.isArray(result.reason_codes) ? [...result.reason_codes] : [],
+      research_elapsed_seconds: null,
+      note: null,
+    }));
+}
+
 export function applyMigrationReviewObservations(report, observations = []) {
   if (!Array.isArray(observations)) throw new Error('review observations must be an array.');
 

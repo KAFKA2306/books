@@ -1,3 +1,5 @@
+https://kafka2306.github.io/books/
+
 # KAFKA BOOKS
 
 [![Validate and deploy Pages](https://github.com/KAFKA2306/books/actions/workflows/ci-pages.yml/badge.svg)](https://github.com/KAFKA2306/books/actions/workflows/ci-pages.yml)
@@ -10,187 +12,149 @@ KAFKA BOOKS は、個人の蔵書を **作品（Work）・版（Edition）・所
 - 公開UI: https://kafka2306.github.io/books/
 - 公開API: https://kafka2306.github.io/books/api/v1/collections.json
 
-## Vision
+## できること
 
-蔵書管理を「タイトル一覧」から、**自分が何を、どの版で、どの経路から、本当に所有しているかを説明できる記録**へ変えます。
+- 所蔵本を作品・版・所蔵単位で検索・閲覧
+- ISBN / ASIN / NDL書誌情報による版の識別
+- Kindleと紙書籍を同一Workへ統合
+- 読書状態、取得元、取得日、価格を保持
+- 国立国会図書館分類（NDC）に基づくカテゴリ付与
+- migration診断で既存所蔵、重複、曖昧なWork identityを事前検出
+- JSON/CSV APIとして再利用可能な書誌データを配布
 
-利用者が知りたいのは単なる冊数ではありません。
+## データモデル
 
-- この作品は持っているか
-- Kindle Sample を購入済みと数えていないか
-- 同じ作品の紙版・Kindle版・改訂版をどう区別したか
-- 後からISBNやASINが分かったとき、既存記録を壊さず更新できるか
+```text
+Work
+  ├─ Edition
+  │    └─ Holding
+  └─ Classification
 
-KAFKA BOOKS は、これらを一つの `title` フィールドへ押し込めず、意味の違いをデータモデルとして残します。
+Holding
+  └─ Acquisition
+```
 
-## Design philosophy
+- **Work**: 作品としての同一性
+- **Edition**: ISBN/ASIN、出版社、刊行年、媒体など特定版
+- **Holding**: 実際に所有している1件
+- **Acquisition**: 取得元・取得日・価格等
 
-- **作品と版と所有を混ぜない。** Work / Edition / Holding / Acquisition を別責務にする。
-- **所有を推測しない。** Kindle `Purchase` だけをHoldingへ昇格し、Sample / Prime / Dictionary / unknownは取得履歴として残す。
-- **書き込む前に診断する。** ISBN・重複・既存Workとの関係をprecheckし、曖昧な行を自動確定しない。
-- **正準データは人間にも読める形で置く。** JSON / NDJSONを優先し、raw Kindle XMLやdebug sourceを公開repoへ保存しない。
-- **UIとAPIで別の真実を作らない。** `catalog.json` とmanifestから公開artifactを生成し、件数・byte数・SHA-256を検証する。
-- **分からないものを消さない。** 自動照合できないrecordは温存し、後から根拠を追加できる状態にする。
-
-## Why / 差別化
-
-一般的な読書管理では、タイトル・ISBN・購入状態を一つの「本」レコードとして扱いがちです。しかし実際には、同じ作品に複数版があり、KindleではSampleとPurchaseが同じ識別子に共存し、後から正規ISBNやASINが分かることもあります。
-
-KAFKA BOOKS の差別化はschemaの多さではなく、**「なぜこの本を所有と数えたのか」「なぜ同じ作品として統合したのか」を元データと監査結果まで遡って説明できること**です。
-
-## 現在のデータ
-
-`npm run check` と公開APIで検証する主な正準集合:
-
-- Work: 作品単位
-- Edition: ISBN / ASIN 等で識別する版・形式
-- Holding: 実際の所蔵
-- Acquisition: Purchase / Sample / Prime 等の取得イベント
-- Kindle records / items / match audit
-- ISBN enrichment / attempts / results
-
-現行の件数・価格集計は公開APIと `api/v1/manifest.json` を正準確認先とします。READMEの固定数値より、生成artifactの現在値を優先します。
+WorkとEditionを分離することで、同じ作品の紙・Kindle・新版・旧版を誤って別作品または同一版として扱うことを避けます。
 
 ## 正準データ
 
-入力、書誌・分類overlay、merge、provenanceの正準pathと適用順序は [docs/ingestion-rules.md](docs/ingestion-rules.md) に集約します。READMEでは同じpath一覧を重複管理しません。
+主要データは `data/` 以下で管理します。
 
-`catalog.json` と `issue-1-books.json` は読み取り可能なJSONを入力とし、旧 `base64+gzip` 分割データへのfallbackは持ちません。公開側は `api/v1/manifest.json` と各collectionのSHA-256から生成結果を監査できます。
+- `data/catalog.json`: 基本catalog
+- `data/issue-1-books.json`: Kindle移行で確認した追加書誌
+- `data/kindle/`: Kindle取得データ
+- `data/isbn-enrichments.json`: 自動ISBN補完結果
+- `data/isbn-primary-verifications/`: 一次情報で確認したISBN
+- `data/title-normalizations/`: 根拠付きタイトル正規化
+- `data/work-merges/`: 同一Work統合
+- `data/work-identities/`: Work type・翻案関係等
+- `data/category-enrichments.json`: NDC由来カテゴリ
+- `data/category-primary-verifications/`: 一次情報で確認した分類
 
-## Kindle XML → 所蔵までの境界
-
-Kindle for PC の `KindleSyncMetadataCache.xml` を、Kindle由来情報の機械的な一次入力として扱います。
-
-```text
-Kindle XML
-  → normalize
-  → acquisition event
-  → existing Work / Edition と照合
-  → PurchaseだけHoldingへ昇格
-  → manifest / audit
-```
-
-Windows既定パス:
-
-```text
-%LOCALAPPDATA%\Amazon\Kindle\Cache\KindleSyncMetadataCache.xml
-```
-
-同期:
-
-```powershell
-npm run kindle:sync
-```
-
-raw XMLはGitHubへ保存しません。入力hash、必要な書誌情報、取得意味だけを正規化して残します。
-
-### Kindleの意味論
-
-| origin | Holdingを作るか | 扱い |
-|---|---:|---|
-| `purchase` | Yes | 所有 |
-| `sample` | No | 取得履歴のみ |
-| `prime` | No | 取得履歴のみ |
-| `kindle_dictionary` | No | 取得履歴のみ |
-| `unknown` | No | 取得履歴のみ |
-
-Sample→Purchaseは両イベントを残し、HoldingはPurchaseに基づく1件だけです。
-
-## Precheck — 書き込む前に意味を決める
-
-```bash
-npm run catalog:precheck -- data/import.template.json
-```
-
-主な判定:
-
-1. ISBN-10 → ISBN-13変換
-2. ISBNチェックディジット検証
-3. 既存ISBN完全一致を停止
-4. 同一バッチISBN重複を停止
-5. ISBNなしの正規化書名一致を停止
-6. 新ISBN + 既存作品名は既存WorkへのEdition追加候補
-7. 類似度86%以上は警告
-
-「CSVを読めた」ことと「安全に登録できる」ことを同一視しません。
-
-## 公開API
-
-Base URL:
-
-```text
-https://kafka2306.github.io/books/api/v1/
-```
-
-正準入口:
-
-```text
-https://kafka2306.github.io/books/api/v1/collections.json
-```
-
-各collectionはJSON/CSVを配信し、`api/v1/manifest.json` で生成元、件数、byte数、SHA-256を監査できます。
-
-詳細: [docs/api.md](docs/api.md)
-
-## 正規化ポリシー
-
-表示名では「意味のある数字」を消さず、巻・版・号などの構造だけを分離します。
-
-除去対象例:
-- `上巻` / `下巻`
-- `第2巻` / `2巻`
-- `第2版` / `新版` / `新装改訂版`
-- 雑誌年月号
-
-保持例:
-- `1984年`
-- `1Q84`
-- `22世紀の民主主義`
-- `13歳からの地政学`
-
-## ISBN定期拡充
-
-`.github/workflows/isbn-enrichment.yml` で候補を取得し、チェックディジット・書名一致・複数provider合意を通ったものだけ採用します。
-
-- 合意候補が複数なら `ambiguous`
-- Kindle / 電子版へ紙版ISBNを推測接続しない
-- `npm run check` 成功後だけmainへ反映
-
-詳細: [docs/isbn-enrichment.md](docs/isbn-enrichment.md)
+生成APIや監査結果をデータauthorityとして逆輸入しません。
 
 ## 検証
-
-Node.js 22以上。追加依存なし。
 
 ```bash
 npm run check
 ```
 
-CIでは少なくとも次を検証します。
+主な検証:
 
-- Work / Edition / Holding ID一意性
-- ISBN / ASINの妥当性と重複
-- orphan reference
-- PurchaseだけがKindle Holdingを作ること
-- Sample / PrimeがHoldingへ混入しないこと
-- manifest件数・byte数・SHA-256
-- API collection parity
-- raw Kindle XML / debug sourceがcommitされていないこと
+- catalog schema / identity integrity
+- Work / Edition / Holding参照整合性
+- title-key collision
+- category / NDC consistency
+- ISBN enrichment / primary verification
+- migration diagnosis
+- title anomaly / batch review
+- API distribution
 
-## Repository map
+## 書誌調査
 
-```text
-data/        canonical catalog / Kindle / enrichment data
-api/v1/      generated public API
-scripts/     import / normalize / validate / build
-src/         canonical domain / normalization logic
-docs/        API / import / operating contracts
-tests/       deterministic contracts
-index.html   static bookshelf UI entry point
+書誌情報は、出版社公式、国立国会図書館サーチ、JPRO等の一次・公的情報を優先します。
+
+タイトルやISBNを推測で確定せず、証拠が不足する場合は未確認のまま保持します。
+
+### タイトル異常候補
+
+```bash
+npm run title:audit
+npm run title:review-batch
 ```
 
-## Done
+`title:audit` は全Workから販売注記・巻号・レーベル等の候補を列挙します。`title:review-batch` は同一作品候補をまとめ、一次情報調査の単位を減らします。自動修正は行いません。
 
-このrepositoryの完成条件は「本をたくさん登録する」ことではありません。
+### ISBN例外
 
-**新しい記録が増えても、何を作品・版・所有・取得と判断したかを後から説明できること**を維持できている状態をDoneとします。
+```bash
+npm run isbn:exception-audit
+```
+
+過去のISBN補完で解決できなかった候補について、現在のprimary verificationとの差分から未解決queueを再計算します。ISBNを持たない可能性や版・巻の不足情報は推測で埋めません。
+
+## 蔵書移行診断
+
+ブラウザ版:
+
+https://kafka2306.github.io/books/migration.html
+
+CLI:
+
+```bash
+npm run migration:diagnose -- path/to/input.csv
+```
+
+入力は既存catalogを変更しないdry-runです。ISBN、Work identity、重複、価格などを検証し、機械可読なreason codeを返します。
+
+書誌レビュー対象の実測時間を記録する場合:
+
+```bash
+npm run migration:measure-review -- report.json observations.json
+```
+
+未計測時間は補完せず `null` のまま扱います。
+
+## API
+
+公開API:
+
+https://kafka2306.github.io/books/api/v1/collections.json
+
+API build:
+
+```bash
+npm run build:api
+```
+
+配布artifactはcatalogから生成し、manifestとSHA-256で内容を検証します。raw source/debug dataはPages artifactへ含めません。
+
+## MCP
+
+ローカルMCP server:
+
+```bash
+python scripts/books_mcp_server.py
+```
+
+MCPは公開API/read modelを読むための薄いinterfaceです。書誌data authorityはrepository側に残します。
+
+## 開発
+
+Node.js標準機能を中心に使用します。
+
+```bash
+npm test
+npm run check
+```
+
+GitHub ActionsでPRのexact headを検証し、main merge後にGitHub Pagesへdeployします。
+
+## データ利用
+
+公開APIは、検索・照合・個人蔵書分析等の再利用を想定しています。各書誌recordのsource/provenanceを保持し、外部利用時も由来を追跡できるようにします。

@@ -1,0 +1,25 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_85d20d4ad719",
+      "into_work_id": "wrk_1854c3d41a48",
+      "from_title": "実力も運のうち 能力主義は正義か? (ハヤカワ文庫NF)",
+      "into_title": "実力も運のうち 能力主義は正義か?",
+      "author": "マイケル・サンデル",
+      "source_url": "https://www.hayakawa-online.co.jp/shop/g/g0000614372/",
+      "source_title": "実力も運のうち　能力主義は正義か？",
+      "reason": "早川書房公式書誌と同一取得日のKindle記録から同一Workと確認"
+    },
+    {
+      "from_work_id": "wrk_4d47b3f9cb03",
+      "into_work_id": "wrk_b04ad9e2242e",
+      "from_title": "人間たちの話 (ハヤカワ文庫JA)",
+      "into_title": "人間たちの話",
+      "author": "柞刈湯葉",
+      "source_url": "https://www.hayakawa-online.co.jp/shop/g/g0000612898/",
+      "source_title": "人間たちの話",
+      "reason": "早川書房公式書誌と同一取得日のKindle記録から同一Workと確認"
+    }
+  ]
+}

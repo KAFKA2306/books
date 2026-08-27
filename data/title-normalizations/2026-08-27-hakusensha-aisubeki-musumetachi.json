@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_4be151d6635d",
+      "from_title": "愛すべき娘たち (ジェッツコミックス)",
+      "title": "愛すべき娘たち",
+      "author": "よしながふみ",
+      "source_url": "https://www.hakusensha.co.jp/comicslist/40697/",
+      "source_title": "愛すべき娘たち",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

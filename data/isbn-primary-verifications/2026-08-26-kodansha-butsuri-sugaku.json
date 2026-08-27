@@ -1,0 +1,28 @@
+{
+  "schema": "kafka.books.isbn-enrichments.v1",
+  "records": [
+    {
+      "work_id": "wrk_7299c697af57",
+      "replaces_edition_id": "pending:7299c697af57",
+      "isbn13": "9784062577380",
+      "title": "物理数学の直観的方法",
+      "authors": [
+        "長沼伸一郎"
+      ],
+      "publisher": "講談社",
+      "published_year": 2011,
+      "language": "ja",
+      "sources": [
+        {
+          "provider": "kodansha",
+          "url": "https://www.kodansha.co.jp/book/products/0000194699"
+        },
+        {
+          "provider": "jpro_books_or_jp",
+          "url": "https://www.books.or.jp/book-details/9784062577380"
+        }
+      ],
+      "verified_at": "2026-08-26T09:40:00Z"
+    }
+  ]
+}

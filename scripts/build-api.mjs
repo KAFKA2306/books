@@ -105,6 +105,7 @@ const supplementalCollections = {
     ...holdingDuplicateAudit.summary,
   }],
   holding_duplicate_candidates: holdingDuplicateAudit.candidates,
+  holding_duplicate_conflicts: holdingDuplicateAudit.conflicts,
 };
 
 const collections = {

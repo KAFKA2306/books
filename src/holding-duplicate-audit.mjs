@@ -1,4 +1,4 @@
-export const HOLDING_DUPLICATE_AUDIT_SCHEMA = 'kafka.books.holding-duplicate-audit.v1';
+export const HOLDING_DUPLICATE_AUDIT_SCHEMA = 'kafka.books.holding-duplicate-audit.v2';
 
 function acquisitionDay(value) {
   if (!value) return null;
@@ -37,6 +37,7 @@ export function auditHoldingDuplicates(holdings = []) {
   }
 
   const candidates = [];
+  const conflicts = [];
   for (const rows of groups.values()) {
     const xmlRows = rows.filter(isAmazonXmlHolding);
     const legacyRows = rows.filter(isLegacyKindleHolding);
@@ -50,8 +51,7 @@ export function auditHoldingDuplicates(holdings = []) {
     const amazonXmlQuantity = representedQuantity(xmlRows);
     const legacyKindleQuantity = representedQuantity(legacyRows);
     const quantityReconciles = amazonXmlQuantity === legacyKindleQuantity;
-
-    candidates.push({
+    const row = {
       work_id: rows[0].work_id,
       acquired_at: acquiredAt,
       holding_ids: holdingIds,
@@ -65,27 +65,37 @@ export function auditHoldingDuplicates(holdings = []) {
       legacy_kindle_quantity: legacyKindleQuantity,
       quantity_reconciles: quantityReconciles,
       evidence_status: quantityReconciles ? 'quantity_reconciled' : 'quantity_mismatch',
-      asin_backed_xml: xmlRows.every((row) => String(row.edition_id ?? '').startsWith('asin:')),
+      asin_backed_xml: xmlRows.every((holding) => String(holding.edition_id ?? '').startsWith('asin:')),
       reasons: [
         'same_work',
         'same_acquisition_date',
         'cross_source_kindle_holdings',
         quantityReconciles ? 'represented_quantity_matches' : 'represented_quantity_mismatch',
       ],
-    });
+    };
+
+    if (quantityReconciles) candidates.push(row);
+    else conflicts.push(row);
   }
 
-  candidates.sort((a, b) => a.work_id.localeCompare(b.work_id) || a.acquired_at.localeCompare(b.acquired_at));
+  const sortRows = (rows) => rows.sort((a, b) => a.work_id.localeCompare(b.work_id) || a.acquired_at.localeCompare(b.acquired_at));
+  sortRows(candidates);
+  sortRows(conflicts);
+
   return {
     schema: HOLDING_DUPLICATE_AUDIT_SCHEMA,
     summary: {
       candidate_group_count: candidates.length,
       candidate_holding_count: candidates.reduce((sum, row) => sum + row.holding_count, 0),
       candidate_quantity: candidates.reduce((sum, row) => sum + row.quantity, 0),
+      conflict_group_count: conflicts.length,
+      conflict_holding_count: conflicts.reduce((sum, row) => sum + row.holding_count, 0),
+      conflict_quantity: conflicts.reduce((sum, row) => sum + row.quantity, 0),
       asin_backed_group_count: candidates.filter((row) => row.asin_backed_xml).length,
-      quantity_reconciled_group_count: candidates.filter((row) => row.quantity_reconciles).length,
-      quantity_mismatch_group_count: candidates.filter((row) => !row.quantity_reconciles).length,
+      quantity_reconciled_group_count: candidates.length,
+      quantity_mismatch_group_count: conflicts.length,
     },
     candidates,
+    conflicts,
   };
 }

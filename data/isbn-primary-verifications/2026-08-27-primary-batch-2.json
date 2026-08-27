@@ -1,0 +1,47 @@
+{
+  "schema": "kafka.books.isbn-enrichments.v1",
+  "records": [
+    {
+      "work_id": "wrk_a9fd6ed9c5e8",
+      "replaces_edition_id": "pending:a9fd6ed9c5e8",
+      "isbn13": "9784062578448",
+      "title": "死なないやつら",
+      "authors": ["長沼毅"],
+      "publisher": "講談社",
+      "published_year": 2013,
+      "language": "ja",
+      "sources": [
+        {
+          "provider": "kodansha",
+          "url": "https://www.kodansha.co.jp/book/products/0000194805"
+        },
+        {
+          "provider": "hanmoto",
+          "url": "https://www.hanmoto.com/bd/isbn/9784062578448"
+        }
+      ],
+      "verified_at": "2026-08-27T09:00:00Z"
+    },
+    {
+      "work_id": "wrk_f6fd606e9ec0",
+      "replaces_edition_id": "pending:f6fd606e9ec0",
+      "isbn13": "9784150102241",
+      "title": "地球の長い午後",
+      "authors": ["ブライアン・Ｗ・オールディス", "伊藤典夫"],
+      "publisher": "早川書房",
+      "published_year": 1977,
+      "language": "ja",
+      "sources": [
+        {
+          "provider": "hayakawa",
+          "url": "https://www.hayakawa-online.co.jp/shop/g/g0000010224/"
+        },
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/search?cs=bib&from=0&q-author=%2200431179%22&size=20"
+        }
+      ],
+      "verified_at": "2026-08-27T09:00:00Z"
+    }
+  ]
+}

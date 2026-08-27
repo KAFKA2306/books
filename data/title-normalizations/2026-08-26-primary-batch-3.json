@@ -1,0 +1,32 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_ca5f87236bdc",
+      "from_title": "昔は良かった病",
+      "title": "「昔はよかった」病",
+      "author": "パオロ・マッツァリーノ",
+      "source_url": "https://www.shinchosha.co.jp/book/610626/",
+      "source_title": "「昔はよかった」病",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_ede9c0073ff6",
+      "from_title": "新しい薬をどう作るか",
+      "title": "新しい薬をどう創るか",
+      "author": "京都大学大学院薬学研究科",
+      "source_url": "https://www.kodansha.co.jp/book/products/0000194502",
+      "source_title": "新しい薬をどう創るか",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_f7706832fa4c",
+      "from_title": "美味しいを科学してレシピにしました",
+      "title": "「おいしい」を科学して、レシピにしました。",
+      "author": "サリー",
+      "source_url": "https://www.sunmark.co.jp/detail.php?csid=3286-4",
+      "source_title": "「おいしい」を科学して、レシピにしました。",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

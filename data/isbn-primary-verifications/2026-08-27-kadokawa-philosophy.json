@@ -1,0 +1,26 @@
+{
+  "schema": "kafka.books.isbn-enrichments.v1",
+  "records": [
+    {
+      "work_id": "wrk_f0045e033ac3",
+      "replaces_edition_id": "pending:f0045e033ac3",
+      "isbn13": "9784806120094",
+      "title": "『ソクラテスの弁明』から、サルトル『存在と無』まで１７冊がよくわかる！ 一冊で哲学の名著を読む",
+      "authors": ["荒木清"],
+      "publisher": "中経出版",
+      "published_year": 2004,
+      "language": "ja",
+      "sources": [
+        {
+          "provider": "kadokawa",
+          "url": "https://www.kadokawa.co.jp/product/201216006649"
+        },
+        {
+          "provider": "cinii",
+          "url": "https://cir.nii.ac.jp/crid/1971430859864784048"
+        }
+      ],
+      "verified_at": "2026-08-27T10:00:00Z"
+    }
+  ]
+}

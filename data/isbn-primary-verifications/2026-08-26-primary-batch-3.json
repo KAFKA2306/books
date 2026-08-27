@@ -1,0 +1,74 @@
+{
+  "schema": "kafka.books.isbn-enrichments.v1",
+  "records": [
+    {
+      "work_id": "wrk_ca5f87236bdc",
+      "replaces_edition_id": "pending:ca5f87236bdc",
+      "isbn13": "9784106106262",
+      "title": "「昔はよかった」病",
+      "authors": [
+        "パオロ・マッツァリーノ"
+      ],
+      "publisher": "新潮社",
+      "published_year": 2015,
+      "language": "ja",
+      "sources": [
+        {
+          "provider": "shinchosha",
+          "url": "https://www.shinchosha.co.jp/book/610626/"
+        },
+        {
+          "provider": "shinchosha_ebook",
+          "url": "https://ebook.shinchosha.co.jp/book/E024271/"
+        }
+      ],
+      "verified_at": "2026-08-26T09:35:00Z"
+    },
+    {
+      "work_id": "wrk_ede9c0073ff6",
+      "replaces_edition_id": "pending:ede9c0073ff6",
+      "isbn13": "9784062575416",
+      "title": "新しい薬をどう創るか",
+      "authors": [
+        "京都大学大学院薬学研究科"
+      ],
+      "publisher": "講談社",
+      "published_year": 2007,
+      "language": "ja",
+      "sources": [
+        {
+          "provider": "kodansha",
+          "url": "https://www.kodansha.co.jp/book/products/0000194502"
+        },
+        {
+          "provider": "ndl",
+          "url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000008532390"
+        }
+      ],
+      "verified_at": "2026-08-26T09:35:00Z"
+    },
+    {
+      "work_id": "wrk_f7706832fa4c",
+      "replaces_edition_id": "pending:f7706832fa4c",
+      "isbn13": "9784763132864",
+      "title": "「おいしい」を科学して、レシピにしました。",
+      "authors": [
+        "サリー"
+      ],
+      "publisher": "サンマーク出版",
+      "published_year": 2013,
+      "language": "ja",
+      "sources": [
+        {
+          "provider": "sunmark",
+          "url": "https://www.sunmark.co.jp/detail.php?csid=3286-4"
+        },
+        {
+          "provider": "kinokuniya",
+          "url": "https://www.kinokuniya.co.jp/f/dsg-01-9784763132864"
+        }
+      ],
+      "verified_at": "2026-08-26T09:35:00Z"
+    }
+  ]
+}

@@ -15,6 +15,18 @@
       ]
     },
     {
+      "work_id": "wrk_9aedbcaa2a50",
+      "title": "合格実例集セオリーエントリーシート編",
+      "current_metadata_sufficient_for_isbn_resolution": false,
+      "required_metadata": ["publication_year_or_edition_number"],
+      "reason": "PHP Research Institute publishes annual editions of the Entry Sheet volume with different ISBNs. The current record omits the year/edition, author, publisher, and acquisition date, so no single ISBN can be assigned safely.",
+      "sources": [
+        "https://www.php.co.jp/books/related_book_list.php?author=%E3%82%AD%E3%83%A3%E3%83%AA%E3%82%A2%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88",
+        "https://www.php.co.jp/books/detail.php?isbn=978-4-569-84375-9",
+        "https://www.php.co.jp/books/detail.php?isbn=978-4-569-84776-4"
+      ]
+    },
+    {
       "work_id": "wrk_9c3a2c7c3187",
       "title": "入門初級ドイツ語文法",
       "current_metadata_sufficient_for_isbn_resolution": false,
@@ -23,6 +35,16 @@
       "sources": [
         "https://www.dogakusha.co.jp/dt_kyokasho2bunpou.htm",
         "https://www.coelang.tufs.ac.jp/modules//de/gmod/"
+      ]
+    },
+    {
+      "work_id": "wrk_a655cacf97a3",
+      "title": "らくがき四コマ",
+      "current_metadata_sufficient_for_isbn_resolution": false,
+      "required_metadata": ["author_or_creator", "publisher_or_source", "publication_year_or_original_record"],
+      "reason": "The current repository record contains only the generic title, with no author, publisher, publication year, format, or acquisition date. That identity evidence is insufficient to distinguish an ISBN-bearing publication from an informal or unpublished work without guessing.",
+      "sources": [
+        "https://github.com/KAFKA2306/books/blob/main/data/catalog.json"
       ]
     },
     {
@@ -48,6 +70,16 @@
       ]
     },
     {
+      "work_id": "wrk_cb55c3298df8",
+      "title": "はっぴやー",
+      "current_metadata_sufficient_for_isbn_resolution": false,
+      "required_metadata": ["author_or_creator", "publisher_or_source", "publication_year_or_original_record"],
+      "reason": "The current repository record contains only the title, with no author, publisher, publication year, format, or acquisition date. No unique bibliographic identity can be established from the stored evidence, so assigning an ISBN would be speculative.",
+      "sources": [
+        "https://github.com/KAFKA2306/books/blob/main/data/catalog.json"
+      ]
+    },
+    {
       "work_id": "wrk_d31f81a57683",
       "title": "物語シリーズ,偽猫黒猫しろ恋傷",
       "current_metadata_sufficient_for_isbn_resolution": false,
@@ -55,6 +87,16 @@
       "reason": "Kodansha treats the Monogatari titles as separate books (for example Nisemonogatari, Nekomonogatari, Koimonogatari and Kizumonogatari); the current composite memo cannot identify one ISBN-bearing edition.",
       "sources": [
         "https://www.kodansha.co.jp/book/products/0000418767"
+      ]
+    },
+    {
+      "work_id": "wrk_d8f1ecc0746e",
+      "title": "美味しい一人ごはん",
+      "current_metadata_sufficient_for_isbn_resolution": false,
+      "required_metadata": ["author_or_creator", "publisher_or_source", "publication_year_or_original_record"],
+      "reason": "The current repository record contains only a generic title, with no author, publisher, publication year, format, or acquisition date. The stored evidence cannot uniquely identify an ISBN-bearing publication without recovering the original source detail.",
+      "sources": [
+        "https://github.com/KAFKA2306/books/blob/main/data/catalog.json"
       ]
     },
     {

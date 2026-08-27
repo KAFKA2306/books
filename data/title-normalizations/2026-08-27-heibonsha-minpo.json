@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_ef510c5e6a17",
+      "from_title": "ゼロから分かる民法",
+      "title": "ゼロからわかる民法",
+      "author": "川田昇",
+      "source_url": "https://ci.nii.ac.jp/author/DA10580111",
+      "source_title": "ゼロからわかる民法",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

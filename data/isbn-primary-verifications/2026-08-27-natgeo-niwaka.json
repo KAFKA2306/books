@@ -1,0 +1,29 @@
+{
+  "schema": "kafka.books.isbn-enrichments.v1",
+  "records": [
+    {
+      "work_id": "wrk_a763baec332a",
+      "replaces_edition_id": "pending:a763baec332a",
+      "isbn13": "9784863134409",
+      "title": "ナショナル ジオグラフィック にわかには信じがたい本当にあったこと",
+      "authors": [
+        "デビッド・ブラウン",
+        "片山美佳子"
+      ],
+      "publisher": "日経ナショナル ジオグラフィック社",
+      "published_year": 2019,
+      "language": "ja",
+      "sources": [
+        {
+          "provider": "nikkei_national_geographic",
+          "url": "https://www.atpress.ne.jp/news/180755"
+        },
+        {
+          "provider": "rakuten_books",
+          "url": "https://books.rakuten.co.jp/rb/15831180/"
+        }
+      ],
+      "verified_at": "2026-08-27T06:39:50Z"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_a9fd6ed9c5e8",
+      "from_title": "死なない奴ら",
+      "title": "死なないやつら",
+      "author": "長沼毅",
+      "source_url": "https://www.kodansha.co.jp/book/products/0000194805",
+      "source_title": "死なないやつら",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

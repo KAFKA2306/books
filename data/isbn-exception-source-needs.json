@@ -1,0 +1,71 @@
+{
+  "schema": "kafka.books.isbn-exception-source-needs.v1",
+  "reviewed_at": "2026-08-27",
+  "records": [
+    {
+      "work_id": "wrk_97f99ad2dc35",
+      "title": "帰って来たヒトラー",
+      "current_metadata_sufficient_for_isbn_resolution": false,
+      "required_metadata": ["volume", "format_or_edition"],
+      "reason": "The publisher has separate upper/lower volumes and separate hardcover/paperback ISBNs; the current record has neither volume nor edition information.",
+      "sources": [
+        "https://www.kawade.co.jp/sp/isbn/9784309206400/",
+        "https://www.kawade.co.jp/sp/isbn/9784309464220/",
+        "https://www.kawade.co.jp/np/isbn/9784309464237/"
+      ]
+    },
+    {
+      "work_id": "wrk_9c3a2c7c3187",
+      "title": "入門初級ドイツ語文法",
+      "current_metadata_sufficient_for_isbn_resolution": false,
+      "required_metadata": ["edition_or_year"],
+      "reason": "The title exists as an earlier 1997 edition and a 2002 revised edition; the current record does not identify which edition was held.",
+      "sources": [
+        "https://www.dogakusha.co.jp/dt_kyokasho2bunpou.htm",
+        "https://www.coelang.tufs.ac.jp/modules//de/gmod/"
+      ]
+    },
+    {
+      "work_id": "wrk_b34b35bff923",
+      "title": "トーイック公式問題集",
+      "current_metadata_sufficient_for_isbn_resolution": false,
+      "required_metadata": ["series_number_or_full_title"],
+      "reason": "IIBC publishes a numbered Official TOEIC Listening & Reading problem-book series with distinct ISBNs; the current generic title does not identify a volume.",
+      "sources": [
+        "https://www.iibc-global.org/toeic/support/prep/lr_ud_01.html",
+        "https://www.iibc-global.org/iibc/press/2025/p290.html"
+      ]
+    },
+    {
+      "work_id": "wrk_c329a384ff37",
+      "title": "マンガでわかる心療内科",
+      "current_metadata_sufficient_for_isbn_resolution": false,
+      "required_metadata": ["volume_or_subseries"],
+      "reason": "The publisher exposes multiple numbered volumes and subseries under this title family; the current record has no volume or subseries detail.",
+      "sources": [
+        "https://www.shonengahosha.co.jp/tachiyomi/ScrollView_pt0005ddf7e591e309/",
+        "https://www.shonengahosha.co.jp/tachiyomi/ScrollView_pt0005f573ed49d967/"
+      ]
+    },
+    {
+      "work_id": "wrk_d31f81a57683",
+      "title": "物語シリーズ,偽猫黒猫しろ恋傷",
+      "current_metadata_sufficient_for_isbn_resolution": false,
+      "required_metadata": ["exact_book_title"],
+      "reason": "Kodansha treats the Monogatari titles as separate books (for example Nisemonogatari, Nekomonogatari, Koimonogatari and Kizumonogatari); the current composite memo cannot identify one ISBN-bearing edition.",
+      "sources": [
+        "https://www.kodansha.co.jp/book/products/0000418767"
+      ]
+    },
+    {
+      "work_id": "wrk_f1e66e24f412",
+      "title": "ドミニオンマニアックスZERO",
+      "current_metadata_sufficient_for_isbn_resolution": false,
+      "required_metadata": ["original_colophon_or_publisher_identifier"],
+      "reason": "The originating group describes this as an event-distributed 236-page A5 doujin publication and does not expose an ISBN on the primary product page; the original colophon or equivalent publisher record is needed before concluding that an ISBN exists or does not exist.",
+      "sources": [
+        "https://dominion-thu.tumblr.com/maniax-zero"
+      ]
+    }
+  ]
+}

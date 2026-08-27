@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_c7a8228ed5fb",
+      "from_title": "届出一つでお金がもらえる",
+      "title": "届け出ひとつで「お金」がもらえる方法",
+      "author": "大竹のり子",
+      "source_url": "https://store.tkj.jp/shopdetail/000000004743/",
+      "source_title": "届け出ひとつで「お金」がもらえる方法",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

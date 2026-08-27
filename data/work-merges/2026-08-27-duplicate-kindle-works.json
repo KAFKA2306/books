@@ -1,0 +1,25 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_e8c05d16f43d",
+      "into_work_id": "wrk_645d219b47e1",
+      "from_title": "大学4年間の経済学が10時間でざっと学べる (角川文庫)",
+      "into_title": "大学4年間の経済学が10時間でざっと学べる",
+      "author": "井堀利宏",
+      "source_url": "https://www.kadokawa.co.jp/product/321808000294/",
+      "source_title": "大学4年間の経済学が10時間でざっと学べる",
+      "reason": "出版社公式書誌と同一取得日のKindle記録から同一Workと確認"
+    },
+    {
+      "from_work_id": "wrk_5cd2711f01a6",
+      "into_work_id": "wrk_fdd70f610101",
+      "from_title": "新訳 原因と結果の法則 (角川文庫)",
+      "into_title": "新訳 原因と結果の法則",
+      "author": "ジェームズ・アレン/山川紘矢/山川亜希子",
+      "source_url": "https://www.kadokawa.co.jp/product/321402000207/",
+      "source_title": "新訳 原因と結果の法則",
+      "reason": "出版社公式書誌と同一取得日のKindle記録から同一Workと確認"
+    }
+  ]
+}

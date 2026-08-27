@@ -17,6 +17,7 @@ test('buildTitleReviewBatch groups same base title and author for one review', (
 
   assert.equal(batch.schema, 'kafka.books.title-review-batch.v1');
   assert.equal(batch.candidate_count, 3);
+  assert.equal(batch.excluded_candidate_count, 0);
   assert.equal(batch.group_count, 2);
   assert.equal(batch.multi_work_group_count, 1);
   assert.equal(batch.groups[0].base_title, '作品');
@@ -32,4 +33,17 @@ test('batch generation is advisory and preserves original candidate titles', () 
   ]);
   assert.equal(batch.groups[0].members[0].title, original);
   assert.equal(batch.groups[0].base_title, '作品');
+});
+
+test('buildTitleReviewBatch excludes work ids already covered by normalization evidence', () => {
+  const batch = buildTitleReviewBatch([
+    { work_id: 'wrk_existing', title: '既存作品(1) (コミックス)', author: '著者A', reasons: ['volume_metadata'] },
+    { work_id: 'wrk_new', title: '新規作品(1) (コミックス)', author: '著者B', reasons: ['volume_metadata'] },
+  ], {
+    excludedWorkIds: new Set(['wrk_existing']),
+  });
+
+  assert.equal(batch.candidate_count, 1);
+  assert.equal(batch.excluded_candidate_count, 1);
+  assert.deepEqual(batch.groups.flatMap((group) => group.members.map((member) => member.work_id)), ['wrk_new']);
 });

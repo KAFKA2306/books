@@ -2,16 +2,6 @@
   "schema": "kafka.books.work-merges.v1",
   "records": [
     {
-      "from_work_id": "wrk_32c4175f6d41",
-      "into_work_id": "wrk_5a7f7e1a3967",
-      "from_title": "原油暴落の謎を解く (文春新書)",
-      "into_title": "原油暴落の謎を解く",
-      "author": "岩瀬昇",
-      "source_url": "https://books.bunshun.jp/ud/book/num/9784166610808",
-      "source_title": "原油暴落の謎を解く",
-      "reason": "出版社公式書誌と同一取得日のKindle記録から同一Workと確認"
-    },
-    {
       "from_work_id": "wrk_e8c05d16f43d",
       "into_work_id": "wrk_645d219b47e1",
       "from_title": "大学4年間の経済学が10時間でざっと学べる (角川文庫)",

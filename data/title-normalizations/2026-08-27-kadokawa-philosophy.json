@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_f0045e033ac3",
+      "from_title": "一冊で哲学の名著を読む 『ソクラテスの弁明』",
+      "title": "一冊で哲学の名著を読む : 『ソクラテスの弁明』から、サルトル『存在と無』まで17冊がよくわかる!",
+      "author": "荒木清",
+      "source_url": "https://www.kadokawa.co.jp/product/201216006649",
+      "source_title": "『ソクラテスの弁明』から、サルトル『存在と無』まで１７冊がよくわかる！ 一冊で哲学の名著を読む",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

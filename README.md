@@ -1,3 +1,5 @@
+https://kafka2306.github.io/books/
+
 # KAFKA BOOKS
 
 [![Validate and deploy Pages](https://github.com/KAFKA2306/books/actions/workflows/ci-pages.yml/badge.svg)](https://github.com/KAFKA2306/books/actions/workflows/ci-pages.yml)

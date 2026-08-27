@@ -27,9 +27,17 @@ export function deriveReviewBaseTitle(value) {
   return title;
 }
 
-export function buildTitleReviewBatch(rows) {
+export function buildTitleReviewBatch(rows, { excludedWorkIds = new Set() } = {}) {
+  const excluded = excludedWorkIds instanceof Set ? excludedWorkIds : new Set(excludedWorkIds ?? []);
   const groups = new Map();
+  let excludedCandidateCount = 0;
+
   for (const row of rows ?? []) {
+    if (excluded.has(row.work_id)) {
+      excludedCandidateCount += 1;
+      continue;
+    }
+
     const baseTitle = deriveReviewBaseTitle(row.title);
     const titleKey = compact(baseTitle);
     const authorKey = compact(row.author);
@@ -64,6 +72,7 @@ export function buildTitleReviewBatch(rows) {
   return {
     schema: 'kafka.books.title-review-batch.v1',
     candidate_count: reviewGroups.reduce((sum, group) => sum + group.member_count, 0),
+    excluded_candidate_count: excludedCandidateCount,
     group_count: reviewGroups.length,
     multi_work_group_count: reviewGroups.filter((group) => group.member_count > 1).length,
     groups: reviewGroups,

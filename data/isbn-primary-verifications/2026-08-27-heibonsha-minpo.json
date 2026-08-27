@@ -1,0 +1,26 @@
+{
+  "schema": "kafka.books.isbn-enrichments.v1",
+  "records": [
+    {
+      "work_id": "wrk_ef510c5e6a17",
+      "replaces_edition_id": "pending:ef510c5e6a17",
+      "isbn13": "9784582853766",
+      "title": "ゼロからわかる民法",
+      "authors": ["川田昇"],
+      "publisher": "平凡社",
+      "published_year": 2007,
+      "language": "ja",
+      "sources": [
+        {
+          "provider": "cinii",
+          "url": "https://ci.nii.ac.jp/author/DA10580111"
+        },
+        {
+          "provider": "kinokuniya",
+          "url": "https://www.kinokuniya.co.jp/f/dsg-01-9784582853766"
+        }
+      ],
+      "verified_at": "2026-08-27T11:00:00Z"
+    }
+  ]
+}

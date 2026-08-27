@@ -1,6 +1,9 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { applyMigrationReviewObservations } from '../src/migration-review-observation.mjs';
+import {
+  applyMigrationReviewObservations,
+  buildMigrationReviewObservationTemplate,
+} from '../src/migration-review-observation.mjs';
 
 const report = {
   summary: { handling_counts: { automatic: 1, input_correction: 0, bibliographic_review: 2 } },
@@ -10,6 +13,27 @@ const report = {
     { index: 2, handling: 'bibliographic_review', reason_codes: ['ambiguous_work_identity'] },
   ],
 };
+
+test('review observation template includes only bibliographic review rows', () => {
+  assert.deepEqual(buildMigrationReviewObservationTemplate(report), [
+    {
+      index: 1,
+      reason_codes: ['review_similar_title'],
+      research_elapsed_seconds: null,
+      note: null,
+    },
+    {
+      index: 2,
+      reason_codes: ['ambiguous_work_identity'],
+      research_elapsed_seconds: null,
+      note: null,
+    },
+  ]);
+});
+
+test('review observation template fails closed without report results', () => {
+  assert.throws(() => buildMigrationReviewObservationTemplate({}), /results must be an array/);
+});
 
 test('review observations preserve missing measurements and report coverage', () => {
   const measured = applyMigrationReviewObservations(report, [

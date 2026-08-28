@@ -37,7 +37,7 @@ test('preserves publisher-defined microcontent serial titles', () => {
   );
 });
 
-test('detects format and creator-role suffix metadata', () => {
+test('detects explicit creator-role suffixes without flagging semantic 編 titles', () => {
   assert.deepEqual(
     detectTitleAnomalies({ title: '作品名 Kindle版', author: null }),
     ['format_marker'],
@@ -45,6 +45,18 @@ test('detects format and creator-role suffix metadata', () => {
   assert.deepEqual(
     detectTitleAnomalies({ title: '作品名 著', author: null }),
     ['creator_role_suffix'],
+  );
+  assert.deepEqual(
+    detectTitleAnomalies({ title: 'カードキャプターさくら クリアカード編', author: 'ＣＬＡＭＰ' }),
+    [],
+  );
+  assert.deepEqual(
+    detectTitleAnomalies({ title: '経済数学の直観的方法 マクロ経済学編', author: '長沼伸一郎' }),
+    [],
+  );
+  assert.deepEqual(
+    detectTitleAnomalies({ title: '一度読んだら絶対に忘れない世界史の教科書 経済編', author: '山﨑圭一' }),
+    [],
   );
 });
 

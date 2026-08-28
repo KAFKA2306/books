@@ -26,6 +26,13 @@ test('distinguishes semantic bracketed title text from retail annotations', () =
   );
 });
 
+test('preserves publisher-defined edition titles', () => {
+  assert.deepEqual(
+    detectTitleAnomalies({ title: '五等分の花嫁 フルカラー版', author: '春場 ねぎ' }),
+    [],
+  );
+});
+
 test('preserves publisher-defined microcontent serial titles', () => {
   assert.deepEqual(
     detectTitleAnomalies({ title: 'ひかえめに言っても、これは愛 プチデザ(1)', author: '藤もも' }),

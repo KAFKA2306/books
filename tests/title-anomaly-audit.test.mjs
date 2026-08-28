@@ -31,6 +31,18 @@ test('preserves publisher-defined edition titles', () => {
     detectTitleAnomalies({ title: '五等分の花嫁 フルカラー版', author: '春場 ねぎ' }),
     [],
   );
+  assert.deepEqual(
+    detectTitleAnomalies({ title: 'メタモルフォーゼの縁側【分冊版】', author: '鶴谷 香央理' }),
+    [],
+  );
+  assert.deepEqual(
+    detectTitleAnomalies({ title: '本居宣長（上下）合本版', author: '小林 秀雄' }),
+    [],
+  );
+  assert.deepEqual(
+    detectTitleAnomalies({ title: '完訳7つの習慣 特装版', author: 'スティーブン・R・コヴィー' }),
+    [],
+  );
 });
 
 test('preserves publisher-defined microcontent serial titles', () => {

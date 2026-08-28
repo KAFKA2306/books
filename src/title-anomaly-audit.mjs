@@ -3,7 +3,7 @@ const VOLUME_METADATA = /(?:\(|（)\s*\d{1,3}\s*(?:\)|）)|(?:^|\s)第?\d{1,3}\s
 const SEMANTIC_SERIAL_UNIT = /(?:^|\s)プチデザ\s*(?:\(|（)\s*\d{1,3}\s*(?:\)|）)/u;
 const FORMAT_MARKER = /(?:Kindle版|電子書籍版|単行本版|文庫版|コミック版)/iu;
 const IMPRINT_SUFFIX = /(?:コミックス|コミック|文庫|新書|DIGITAL)(?:\)|）|】)?\s*$/iu;
-const ROLE_SUFFIX = /(?:著|訳|監修|編著|編|原著|原作)\s*$/u;
+const ROLE_SUFFIX = /(?:^|\s)(?:著|訳|監修|編著|編|原著|原作)\s*$/u;
 
 function compact(value) {
   return String(value ?? '')

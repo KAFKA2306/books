@@ -1,0 +1,23 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_e052df6a667f",
+      "from_title": "現代の金融入門 [新版] (ちくま新書)",
+      "title": "現代の金融入門［新版］",
+      "author": "池尾和人",
+      "source_url": "https://chikumashobo.co.jp/product/9784480065292/",
+      "source_title": "現代の金融入門［新版］",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_c2ce4b1f7ca6",
+      "from_title": "世界秩序が変わるとき 新自由主義からのゲームチェンジ (文春新書)",
+      "title": "世界秩序が変わるとき 新自由主義からのゲームチェンジ",
+      "author": "齋藤ジン",
+      "source_url": "https://books.bunshun.jp/ud/book/num/9784166614783",
+      "source_title": "世界秩序が変わるとき 新自由主義からのゲームチェンジ",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

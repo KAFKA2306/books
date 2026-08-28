@@ -52,6 +52,14 @@ test('preserves publisher-defined edition titles', () => {
     detectTitleAnomalies({ title: '骨粗鬆症の予防と治療ガイドライン 2025年版 ダイジェスト版', author: '骨粗鬆症の予防と治療ガイドライン作成委員会' }),
     [],
   );
+  assert.deepEqual(
+    detectTitleAnomalies({ title: '文庫版　近畿地方のある場所について', author: '背筋' }),
+    [],
+  );
+  assert.deepEqual(
+    detectTitleAnomalies({ title: '離婚リセット　妻から別れを切り出された夫〖電子単行本版〗', author: '丸田 マノ' }),
+    [],
+  );
   assert.ok(
     !detectTitleAnomalies({ title: 'きのう何食べた？（８）限定版', author: 'よしなが ふみ' }).includes(
       'commercial_annotation',

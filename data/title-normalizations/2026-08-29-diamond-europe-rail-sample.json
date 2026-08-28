@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_9b70db199f64",
+      "from_title": "ヨーロッパ鉄道の旅 はじめてでもよく分かる【見本】 (地球の歩き方GEM STONE)",
+      "title": "ヨーロッパ鉄道の旅 はじめてでもよく分かる",
+      "author": "橋爪 智之 / 戸部 勲 / 鹿野 博規",
+      "source_url": "https://www.diamond.co.jp/arukikata/9784478824528.html",
+      "source_title": "ヨーロッパ鉄道の旅　はじめてでもよく分かる",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_5f65b52b187c",
+      "from_title": "十角館の殺人 「館」シリーズ (講談社文庫)",
+      "title": "十角館の殺人",
+      "author": "綾辻行人",
+      "source_url": "https://www.kodansha.co.jp/book/products/0000161153",
+      "source_title": "十角館の殺人",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

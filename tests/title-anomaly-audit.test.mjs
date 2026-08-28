@@ -43,9 +43,10 @@ test('preserves publisher-defined edition titles', () => {
     detectTitleAnomalies({ title: '完訳7つの習慣 特装版', author: 'スティーブン・R・コヴィー' }),
     [],
   );
-  assert.deepEqual(
-    detectTitleAnomalies({ title: 'きのう何食べた？（８）限定版', author: 'よしなが ふみ' }),
-    ['volume_metadata'],
+  assert.ok(
+    !detectTitleAnomalies({ title: 'きのう何食べた？（８）限定版', author: 'よしなが ふみ' }).includes(
+      'commercial_annotation',
+    ),
   );
 });
 

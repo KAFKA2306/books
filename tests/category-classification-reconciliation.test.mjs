@@ -17,6 +17,7 @@ test('reconciles a stale category when retained NDC evidence maps uniquely', () 
   assert.equal(reconciled.works[0].category, '哲学・思想');
   assert.equal(reconciled.stats.classification_category_reconciled_count, 1);
   assert.equal(reconciled.stats.classification_category_conflict_count, 0);
+  assert.equal(reconciled.stats.classification_category_edition_variation_count, 0);
 });
 
 test('clears a confident category when retained classifications disagree', () => {
@@ -35,4 +36,24 @@ test('clears a confident category when retained classifications disagree', () =>
   assert.equal(reconciled.works[0].category, '未分類');
   assert.equal(reconciled.stats.classification_category_reconciled_count, 1);
   assert.equal(reconciled.stats.classification_category_conflict_count, 1);
+  assert.equal(reconciled.stats.classification_category_edition_variation_count, 0);
+});
+
+test('preserves a supported work category when distinct ISBN editions have different NDC classifications', () => {
+  const catalog = {
+    works: [
+      { work_id: 'wrk_1', title: '脳科学は人格を変えられるか?', category: '心理・行動' },
+    ],
+    classifications: [
+      { work_id: 'wrk_1', scheme_id: 'ndc9', code: '141.93', source_isbn13: '9784163901008' },
+      { work_id: 'wrk_1', scheme_id: 'ndc10', code: '491.371', source_isbn13: '9784167908980' },
+    ],
+    stats: {},
+  };
+
+  const reconciled = reconcileCategoriesFromClassifications(catalog);
+  assert.equal(reconciled.works[0].category, '心理・行動');
+  assert.equal(reconciled.stats.classification_category_reconciled_count, 0);
+  assert.equal(reconciled.stats.classification_category_conflict_count, 0);
+  assert.equal(reconciled.stats.classification_category_edition_variation_count, 1);
 });

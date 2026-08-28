@@ -1,0 +1,39 @@
+{
+  "schema": "kafka.books.category-enrichments.v1",
+  "rule_version": "ndc-map-v1",
+  "updated_at": "2026-08-28T13:40:00.000Z",
+  "records": [
+    {
+      "work_id": "wrk_4e9d08ff6f2f",
+      "category": "医学・健康",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "491.371",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I028373340",
+      "match_mode": "primary_bibliographic_record",
+      "title_similarity": null,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784167908980",
+      "verified_at": "2026-08-28T13:40:00.000Z",
+      "source_title": "脳科学は人格を変えられるか?",
+      "source_series": "文春文庫 ; S21-1",
+      "source_bibliographic_id": "028373340",
+      "source_note": "文春文庫版。国立国会図書館書誌でISBNとNDC 491.371を確認。単行本版とは別ISBNのEditionとして保持する"
+    },
+    {
+      "work_id": "wrk_533ca5f1263a",
+      "category": "心理・行動",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "141.93",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I025578410",
+      "match_mode": "primary_bibliographic_record",
+      "title_similarity": null,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784163901008",
+      "verified_at": "2026-08-28T13:40:00.000Z",
+      "source_title": "脳科学は人格を変えられるか?",
+      "source_series": null,
+      "source_bibliographic_id": "025578410",
+      "source_note": "2014年単行本版。国立国会図書館書誌でISBNとNDC 141.93を確認。文庫版とは別ISBNのEditionとして保持する"
+    }
+  ]
+}

@@ -73,7 +73,6 @@ const isbnEnrichmentState = await readJson('data/isbn-enrichment-state.json');
 const isbnEnrichmentReport = await readJson('data/isbn-enrichment-report.json');
 const categoryEnrichments = await readJson('data/category-enrichments.json');
 const categoryEnrichmentState = await readJson('data/category-enrichment-state.json');
-const categoryEnrichmentReport = await readJson('data/category-enrichment-report.json');
 
 const canonicalCollections = Object.fromEntries(
   Object.entries(catalog).filter(([, value]) => Array.isArray(value)),
@@ -91,7 +90,6 @@ const supplementalCollections = {
   category_enrichment_attempts: Object.entries(categoryEnrichmentState.attempts ?? {}).map(
     ([work_id, attempt]) => ({ work_id, ...attempt }),
   ),
-  category_enrichment_results: categoryEnrichmentReport.results ?? [],
   migration_identity_evidence_audit: [{
     schema: migrationIdentityEvidenceAudit.schema,
     identity_model: migrationIdentityEvidenceAudit.identity_model,
@@ -163,7 +161,6 @@ const manifest = {
     'data/isbn-enrichment-report.json',
     'data/category-enrichments.json',
     'data/category-enrichment-state.json',
-    'data/category-enrichment-report.json',
     'data/work-identities/',
   ],
   license: 'Repository license and source-specific terms apply',

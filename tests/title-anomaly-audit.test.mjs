@@ -4,7 +4,7 @@ import { auditTitleAnomalies, detectTitleAnomalies } from '../src/title-anomaly-
 
 test('detects commercial annotations, volume metadata, and imprint suffixes', () => {
   const reasons = detectTitleAnomalies({
-    title: '作品名 モノクロ版【期間限定無料】 1 (ジャンプコミックスDIGITAL)',
+    title: '作品名【期間限定無料】 1 (ジャンプコミックスDIGITAL)',
     author: null,
   });
   assert.ok(reasons.includes('commercial_annotation'));
@@ -58,6 +58,10 @@ test('preserves publisher-defined edition titles', () => {
   );
   assert.deepEqual(
     detectTitleAnomalies({ title: '離婚リセット　妻から別れを切り出された夫〖電子単行本版〗', author: '丸田 マノ' }),
+    [],
+  );
+  assert.deepEqual(
+    detectTitleAnomalies({ title: '僕が僕であるためのパラダイムシフト〖タテスク〗（モノクロ版）', author: 'EMI' }),
     [],
   );
   assert.ok(

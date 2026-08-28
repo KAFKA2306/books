@@ -1,0 +1,23 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_8b78d79073a9",
+      "from_title": "ハンツー×トラッシュ とってもエッチな読み切り集 (ヤングマガジンコミックス)",
+      "title": "ハンツー×トラッシュ とってもエッチな読み切り集",
+      "author": "こばやしひよこ",
+      "source_url": "https://www.kodansha.co.jp/comic/products/0000329331",
+      "source_title": "ハンツー×トラッシュ　とってもエッチな読み切り集",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_293159ecf635",
+      "from_title": "珈琲いかがでしょう 1巻 (マッグガーデンコミックスEDENシリーズ)",
+      "title": "珈琲いかがでしょう",
+      "author": "コナリミサト",
+      "source_url": "https://www.mag-garden.co.jp/comics/6767/",
+      "source_title": "珈琲いかがでしょう 1",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

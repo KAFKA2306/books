@@ -12,6 +12,11 @@ test('detects commercial annotations, volume metadata, and imprint suffixes', ()
   assert.ok(reasons.includes('imprint_or_series_suffix'));
 });
 
+test('detects full-width volume digits used in publisher bibliographic titles', () => {
+  const reasons = detectTitleAnomalies({ title: 'ＧＴＯ（８）', author: '藤沢 とおる' });
+  assert.ok(reasons.includes('volume_metadata'));
+});
+
 test('distinguishes semantic bracketed title text from retail annotations', () => {
   assert.deepEqual(
     detectTitleAnomalies({ title: 'バーナード嬢曰く。【友情篇】', author: '施川 ユウキ' }),

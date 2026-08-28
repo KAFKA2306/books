@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_67a6ee2b9bcd",
+      "from_title": "【期間限定 無料版】異世界少女も楽じゃない!!",
+      "title": "異世界少女も楽じゃない!!",
+      "author": "Perico / 景山愁",
+      "source_url": "https://booth.pm/ja/items/5986322",
+      "source_title": "作者公式ショップで収録作品名を『異世界少女も楽じゃない!!』と記載",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

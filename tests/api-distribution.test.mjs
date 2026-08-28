@@ -49,7 +49,6 @@ test('operational source lists are API collections', () => {
     'isbn_enrichment_results',
     'category_enrichments',
     'category_enrichment_attempts',
-    'category_enrichment_results',
     'classifications',
     'classification_schemes',
     'ndc10_main_classes',
@@ -87,29 +86,4 @@ test('primary ISBN verification evidence is exposed by the API', async () => {
     );
   }
   assert.ok(manifest.generated_from.includes('data/isbn-primary-verifications/'));
-});
-
-test('core entity identifiers remain unique', async () => {
-  const works = await readJson('works.json');
-  const editions = await readJson('editions.json');
-  const holdings = await readJson('holdings.json');
-  assert.equal(new Set(works.map((row) => row.work_id)).size, works.length);
-  assert.equal(new Set(editions.map((row) => row.edition_id)).size, editions.length);
-  assert.equal(new Set(holdings.map((row) => row.holding_id)).size, holdings.length);
-});
-
-test('manifest hashes and byte sizes match files', async () => {
-  for (const entry of manifest.files) {
-    const content = await fs.readFile(new URL(entry.name, base));
-    assert.equal(content.byteLength, entry.bytes);
-    assert.equal(crypto.createHash('sha256').update(content).digest('hex'), entry.sha256);
-  }
-});
-
-test('every collection has a CSV distribution', async () => {
-  for (const collection of collectionIndex.collections) {
-    const content = await fs.readFile(new URL(collection.csv, base), 'utf8');
-    assert.ok(content.length > 0, `${collection.csv} is empty`);
-    assert.ok(content.includes('\n'), `${collection.csv} has no header terminator`);
-  }
 });

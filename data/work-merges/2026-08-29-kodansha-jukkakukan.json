@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_5f65b52b187c",
+      "into_work_id": "wrk_ef4d2b3827f5",
+      "from_title": "十角館の殺人 「館」シリーズ (講談社文庫)",
+      "into_title": "十角館の殺人",
+      "author": "綾辻行人",
+      "source_url": "https://www.kodansha.co.jp/book/products/0000204571",
+      "source_title": "十角館の殺人　＜新装改訂版＞"
+    }
+  ]
+}

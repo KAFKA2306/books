@@ -1,0 +1,25 @@
+{
+  "schema": "kafka.books.work-merges.v1",
+  "records": [
+    {
+      "from_work_id": "wrk_1f70a0500332",
+      "into_work_id": "wrk_94cb4f6bc66e",
+      "from_title": "株の原則 (光文社知恵の森文庫)",
+      "into_title": "株の原則",
+      "author": "邱永漢",
+      "source_url": "https://ebookstore.sony.jp/title/00107912/",
+      "source_title": "株の原則",
+      "reason": "光文社刊の同一作品であり、旧Kindle購入履歴とASIN付きKindle記録の取得日が一致するため同一Workと確認"
+    },
+    {
+      "from_work_id": "wrk_a469cb9a6a4a",
+      "into_work_id": "wrk_df5fa3387c96",
+      "from_title": "ルポ 人は科学が苦手~アメリカ「科学不信」の現場から~ (光文社新書)",
+      "into_title": "ルポ 人は科学が苦手",
+      "author": "三井誠",
+      "source_url": "https://shinsho.kobunsha.com/n/nbac457152f65",
+      "source_title": "ルポ 人は科学が苦手",
+      "reason": "光文社公式情報と国立国会図書館書誌で同一作品と確認でき、旧Kindle購入履歴とASIN付きKindle記録の取得日が一致するため同一Workと確認"
+    }
+  ]
+}

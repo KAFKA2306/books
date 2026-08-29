@@ -23,7 +23,7 @@ Do not depend on prior chat, previous agent memory, or old status reports.
 - Keep source records and audit evidence sufficient to explain every changed Work or Edition.
 - Keep private Kindle XML and credentials out of the repository; preserve manifest hashes and counts for derived Kindle data.
 - Prefer DELETE > MERGE > REPLACE > ADD. Reuse or simplify existing code before adding another implementation, dependency, config, workflow, script, or document.
-- Keep changes reviewable in Git. Do not rewrite historical evidence to make a current decision appear older.
+- Keep changes reviewable in Git and keep rollback a normal revert. Do not rewrite historical evidence to make a current decision appear older.
 
 ## Completion
 

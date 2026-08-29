@@ -15,6 +15,19 @@ Do not depend on prior chat, previous agent memory, or old status reports.
 
 `agent:state` is an index derived from canonical data. It is not a second source of truth and must not be persisted as a manually maintained status file.
 
+## Keep decision quality with a small context window
+
+Use only this working set unless the selected task requires more: this file, current open PR/Issue, `agent:state`, one detailed audit, the files/tests being changed, and the primary sources for the exact claim.
+
+- Finish a valid open PR before opening a competing workline.
+- Otherwise prefer current real-data work that can end in a verified reusable result. Do not spend a run on records that the existing audit already says require missing source detail unless that source detail is available.
+- Prefer verified data corrections and completed evidence over documentation or infrastructure churn.
+- Use the strongest primary source needed for the exact change and stop when the evidence is sufficient; do not collect redundant sources just to increase citation count.
+- Batch only independent, low-ambiguity records that share the same research surface. Keep ambiguous records separate.
+- Treat title text as metadata, not identity. Work merges/splits, Edition reassignment, adaptation links, and same-title resolution require explicit identity evidence and focused regression tests.
+- Never reduce an audit count by discarding Edition differences, identifiers, provenance, units, dates, or null semantics.
+- If evidence is insufficient, leave the record unchanged and report it as UNVERIFIED instead of guessing.
+
 ## Change rules
 
 - Preserve the Work / Edition / Holding / Acquisition model and existing identifiers.

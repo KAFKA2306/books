@@ -5,6 +5,7 @@ import test from 'node:test';
 const agents = await readFile(new URL('../AGENTS.md', import.meta.url), 'utf8');
 const ingestion = await readFile(new URL('../docs/ingestion-rules.md', import.meta.url), 'utf8');
 const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+const agentState = await readFile(new URL('../scripts/agent-state.mjs', import.meta.url), 'utf8');
 
 test('AGENTS preserves required repository guidance without custom process terminology', () => {
   for (const required of [
@@ -13,6 +14,13 @@ test('AGENTS preserves required repository guidance without custom process termi
     'provenance',
     'npm run check',
     'rollback',
+    'npm run agent:state',
+    'primary source',
+    'low-ambiguity',
+    'explicit identity evidence',
+    'UNVERIFIED',
+    'exact-head CI',
+    'DELETE > MERGE > REPLACE > ADD',
   ]) {
     assert.ok(agents.includes(required), `missing repository guidance: ${required}`);
   }
@@ -28,6 +36,20 @@ test('AGENTS preserves required repository guidance without custom process termi
   ]) {
     assert.ok(!agents.includes(obsolete), `obsolete custom process terminology remains: ${obsolete}`);
     assert.ok(!ingestion.includes(obsolete), `obsolete custom process terminology remains: ${obsolete}`);
+  }
+});
+
+test('agent state stays compact and delegates detail to existing audits', () => {
+  assert.match(agentState, /titleRows\.slice\(0, 3\)/u);
+  for (const command of [
+    'npm run title:audit',
+    'npm run title:review-batch:json',
+    'npm run isbn:exception-audit:json',
+    'npm run holding:duplicate-audit:json',
+    'npm run migration:identity-audit:json',
+    'npm run category:consistency-audit:json',
+  ]) {
+    assert.ok(agentState.includes(command), `missing agent-state drill-down: ${command}`);
   }
 });
 

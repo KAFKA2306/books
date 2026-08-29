@@ -1,0 +1,23 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_a83ba605fe76",
+      "from_title": "いい夫婦の話(1)",
+      "title": "いい夫婦の話",
+      "author": "斎創",
+      "source_url": "https://books.apple.com/jp/book/%E3%81%84%E3%81%84%E5%A4%AB%E5%A9%A6%E3%81%AE%E8%A9%B1-3/id6445477938",
+      "source_title": "Apple Booksの発行者提供情報がシリーズ名を『いい夫婦の話』とし、個別商品を『いい夫婦の話(3)』として掲載。発行者はナンバーナイン",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_eb81a2b1b169",
+      "from_title": "黙っていればただの美人(1)",
+      "title": "黙っていればただの美人",
+      "author": "加川壱互",
+      "source_url": "https://books.apple.com/jp/book/%E9%BB%99%E3%81%A3%E3%81%A6%E3%81%84%E3%82%8C%E3%81%B0%E3%81%9F%E3%81%A0%E3%81%AE%E7%BE%8E%E4%BA%BA-1/id1502728785",
+      "source_title": "Apple Booksの発行者提供情報がシリーズ名を『黙っていればただの美人』とし、個別商品を『黙っていればただの美人(1)』として掲載。発行者はナンバーナイン",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

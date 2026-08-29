@@ -1,5 +1,6 @@
 {
   "parts": [
-    "app-main.txt"
+    "app-main.txt",
+    "app-detail-url.txt"
   ]
 }

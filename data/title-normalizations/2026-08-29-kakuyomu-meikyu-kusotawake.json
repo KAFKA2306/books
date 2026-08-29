@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_ca6d76f9cdb6",
+      "from_title": "迷宮クソたわけ2 せいほうけいコミックス",
+      "title": "迷宮クソたわけ",
+      "author": "せいほうけい/イワトオ",
+      "source_url": "https://kakuyomu.jp/works/1177354054885436251/episodes/16818622177105776409",
+      "source_title": "原作者イワトオが、せいほうけい版を『せいほうけい先生版（せいほうけいコミックス）』と区別しつつ、コミカライズ作品を『迷宮クソたわけ』として案内",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

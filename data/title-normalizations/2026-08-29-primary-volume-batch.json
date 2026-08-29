@@ -1,0 +1,23 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_4db949501790",
+      "from_title": "ニンジャスレイヤー(14) ~ネオサイタマ・イン・フレイム(ニ)~ (角川コミックス・エース)",
+      "title": "ニンジャスレイヤー",
+      "author": "余湖 裕輝 / 本兌有・杉ライカ",
+      "source_url": "https://store.kadokawa.co.jp/shop/series/series00106701?sort=sp",
+      "source_title": "KADOKAWA公式オンラインショップがシリーズ名を『ニンジャスレイヤー』とし、第14巻『～ネオサイタマ・イン・フレイム（ニ）～』を同じシリーズの個別商品として掲載",
+      "review_method": "manual_bibliographic_review"
+    },
+    {
+      "work_id": "wrk_af3ca3e822b1",
+      "from_title": "ドS社長と交際0日婚 ~契約にセックスは含まれます!?~ 1 【電子限定特典付き】 (YLC)",
+      "title": "ドS社長と交際0日婚 ~契約にセックスは含まれます!?~",
+      "author": "みつか",
+      "source_url": "https://ohzora.jp/wp-content/uploads/2025/12/%E4%B8%80%E8%A6%A7%E6%B3%A8%E6%96%87%E6%9B%B8_202601.pdf",
+      "source_title": "宙出版公式コミックス注文書が『ドS社長と交際0日婚』シリーズとして1～7巻を列挙し、巻番号を各巻の商品情報として管理",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

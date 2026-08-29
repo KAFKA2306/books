@@ -3,18 +3,28 @@ import { normalizeSourceGroup } from './src/source-groups.mjs';
 import { createDisplayCatalog, includeLowPriceFromSearch } from './src/display-visibility.mjs';
 
 const INCLUDE_LOW_PRICE_PARAM = 'include_low_price';
+const WORK_DETAIL_PARAM = 'work';
 
 function includeLowPriceEnabled() {
   return includeLowPriceFromSearch(window.location.search);
 }
 
 function installVisibilityHistoryGuard() {
-  if (!includeLowPriceEnabled()) return;
+  const initialUrl = new URL(window.location.href);
+  const preservedParams = new Map();
+  if (includeLowPriceEnabled()) preservedParams.set(INCLUDE_LOW_PRICE_PARAM, '1');
+  if (initialUrl.searchParams.has(WORK_DETAIL_PARAM)) {
+    preservedParams.set(WORK_DETAIL_PARAM, initialUrl.searchParams.get(WORK_DETAIL_PARAM));
+  }
+  if (preservedParams.size === 0) return;
+
   const originalReplaceState = history.replaceState.bind(history);
   history.replaceState = (state, unused, url) => {
     if (url == null) return originalReplaceState(state, unused, url);
     const next = new URL(String(url), window.location.href);
-    next.searchParams.set(INCLUDE_LOW_PRICE_PARAM, '1');
+    for (const [key, value] of preservedParams) {
+      if (value != null && !next.searchParams.has(key)) next.searchParams.set(key, value);
+    }
     return originalReplaceState(state, unused, `${next.pathname}${next.search}${next.hash}`);
   };
 }

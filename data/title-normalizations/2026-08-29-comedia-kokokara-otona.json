@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_103ce5ed6887",
+      "from_title": "ここからはオトナの時間です。(1) (コイパレ)",
+      "title": "ここからはオトナの時間です。",
+      "author": "つきのおまめ",
+      "source_url": "https://prtimes.jp/main/html/rd/p/000000002.000082449.html",
+      "source_title": "株式会社コミディアの公式発表で作品名を『ここからはオトナの時間です。』とし、第1巻と電子分冊版を作品名とは別に記載",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

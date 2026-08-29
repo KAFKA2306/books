@@ -43,7 +43,7 @@ const state = {
       [...titleReasonCounts.entries()]
         .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])),
     ),
-    next: titleRows.slice(0, 8).map((row) => ({
+    next: titleRows.slice(0, 3).map((row) => ({
       work_id: row.work_id,
       title: row.title,
       author: row.author ?? null,

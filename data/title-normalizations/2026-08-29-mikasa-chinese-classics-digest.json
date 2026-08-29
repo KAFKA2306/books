@@ -1,0 +1,14 @@
+{
+  "schema": "kafka.books.title-normalizations.v1",
+  "records": [
+    {
+      "work_id": "wrk_3f1da1bbe91a",
+      "from_title": "中国古典と言えば「この3冊」『論語』『孫子』『老子』超訳シリーズ【ダイジェスト版】 (知的生きかた文庫)",
+      "title": "中国古典と言えば「この3冊」『論語』『孫子』『老子』超訳シリーズ【ダイジェスト版】",
+      "author": "田口 佳史",
+      "source_url": "https://www.dreamnews.jp/press/0000174022",
+      "source_title": "三笠書房の公式発表でダイジェスト版を独立した電子書籍として示し、知的生きかた文庫をレーベル情報として記載",
+      "review_method": "manual_bibliographic_review"
+    }
+  ]
+}

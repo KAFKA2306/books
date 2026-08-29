@@ -4,6 +4,7 @@ import { createDisplayCatalog, includeLowPriceFromSearch } from './src/display-v
 
 const INCLUDE_LOW_PRICE_PARAM = 'include_low_price';
 const WORK_DETAIL_PARAM = 'work';
+let joinedModuleLoaded = false;
 
 function includeLowPriceEnabled() {
   return includeLowPriceFromSearch(window.location.search);
@@ -22,8 +23,10 @@ function installVisibilityHistoryGuard() {
   history.replaceState = (state, unused, url) => {
     if (url == null) return originalReplaceState(state, unused, url);
     const next = new URL(String(url), window.location.href);
+    const detailOpen = document.querySelector('#detailDialog')?.open === true;
     for (const [key, value] of preservedParams) {
-      if (value != null && !next.searchParams.has(key)) next.searchParams.set(key, value);
+      const shouldPreserve = key !== WORK_DETAIL_PARAM || !joinedModuleLoaded || detailOpen;
+      if (shouldPreserve && value != null && !next.searchParams.has(key)) next.searchParams.set(key, value);
     }
     return originalReplaceState(state, unused, `${next.pathname}${next.search}${next.hash}`);
   };
@@ -110,6 +113,7 @@ try {
     manifestUrl: new URL('./src/app.parts.json', import.meta.url),
     appModuleUrl: import.meta.url,
   });
+  joinedModuleLoaded = true;
 } catch (error) {
   console.error(error);
   renderStartupError(error);

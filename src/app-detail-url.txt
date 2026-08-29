@@ -1,0 +1,31 @@
+let activeWorkId = new URLSearchParams(location.search).get('work');
+
+function syncDetailUrl() {
+  const url = new URL(location.href);
+  if (activeWorkId) url.searchParams.set('work', activeWorkId);
+  else url.searchParams.delete('work');
+  history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
+}
+
+const showDetailWithoutUrl = showDetail;
+showDetail = function showDetailWithUrl(work) {
+  activeWorkId = work.work_id;
+  showDetailWithoutUrl(work);
+  syncDetailUrl();
+};
+
+const detailDialog = $('#detailDialog');
+detailDialog.addEventListener('close', () => {
+  activeWorkId = null;
+  syncDetailUrl();
+});
+
+if (activeWorkId) {
+  const requestedWork = state.catalog.works.find((work) => work.work_id === activeWorkId);
+  if (requestedWork) {
+    showDetail(requestedWork);
+  } else {
+    $('#detailContent').innerHTML = `<div class="empty-state"><strong>指定された作品を確認できません</strong><p>Work ID ${escapeHtml(activeWorkId)} は現在の正準データに存在しません。</p></div>`;
+    detailDialog.showModal();
+  }
+}

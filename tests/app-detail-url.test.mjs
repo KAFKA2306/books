@@ -14,10 +14,15 @@ test('Work詳細URLは既存のUIモジュールに追加される', () => {
   assert.deepEqual(manifest.parts, ['app-main.txt', 'app-detail-url.txt']);
 });
 
-test('Work詳細URLは検索条件と共存し、存在しないWorkを黙って無視しない', () => {
+test('Work詳細URLは検索条件と共存し、閉じた後はURLから除去できる', () => {
   assert.match(appBootstrap, /WORK_DETAIL_PARAM = 'work'/u);
   assert.match(appBootstrap, /preservedParams\.set\(WORK_DETAIL_PARAM/u);
+  assert.match(appBootstrap, /let joinedModuleLoaded = false/u);
+  assert.match(appBootstrap, /detailOpen = document\.querySelector\('#detailDialog'\)\?\.open === true/u);
+  assert.match(appBootstrap, /key !== WORK_DETAIL_PARAM \|\| !joinedModuleLoaded \|\| detailOpen/u);
+  assert.match(appBootstrap, /joinedModuleLoaded = true/u);
   assert.match(detailUrlSource, /url\.searchParams\.set\('work', activeWorkId\)/u);
+  assert.match(detailUrlSource, /url\.searchParams\.delete\('work'\)/u);
   assert.match(detailUrlSource, /state\.catalog\.works\.find/u);
   assert.match(detailUrlSource, /現在の正準データに存在しません/u);
   assert.match(detailUrlSource, /detailDialog\.addEventListener\('close'/u);

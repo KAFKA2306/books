@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-09-01T16:44:01.308Z",
+  "updated_at": "2026-09-01T21:07:12.143Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -3710,6 +3710,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-15T18:50:47.867Z"
+    },
+    {
+      "work_id": "wrk_9b70db199f64",
+      "category": "地理・旅行",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "293.093",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I030385957",
+      "match_mode": "title_containment",
+      "title_similarity": 0.5925925925925926,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-09-01T21:07:12.143Z"
     },
     {
       "work_id": "wrk_9b85b0bb8722",

@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-09-02T04:43:00.354Z",
+  "updated_at": "2026-09-02T11:27:09.151Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -4012,6 +4012,18 @@
       "verified_at": "2026-08-16T07:03:11.591Z"
     },
     {
+      "work_id": "wrk_a763baec332a",
+      "category": "科学一般",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "400",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029569430",
+      "match_mode": "isbn",
+      "title_similarity": 0.723404255319149,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784863134409",
+      "verified_at": "2026-09-02T11:27:09.151Z"
+    },
+    {
       "work_id": "wrk_a85f06f18e28",
       "category": "教育",
       "ndc_scheme": "NDC9",
@@ -4094,6 +4106,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-19T06:14:19.380Z"
+    },
+    {
+      "work_id": "wrk_a9fd6ed9c5e8",
+      "category": "生物学",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "460",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I025072490",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784062578448",
+      "verified_at": "2026-09-02T11:27:09.151Z"
     },
     {
       "work_id": "wrk_aaa67261c1dd",
@@ -4202,6 +4226,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-19T07:09:15.534Z"
+    },
+    {
+      "work_id": "wrk_af6a9618d5cf",
+      "category": "数学",
+      "ndc_scheme": "NDC8",
+      "ndc_code": "411.3",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000001882002",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784764910010",
+      "verified_at": "2026-09-02T11:27:09.151Z"
     },
     {
       "work_id": "wrk_b0d40314a1ca",

@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichment-state.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-09-02T16:39:59.941Z",
+  "updated_at": "2026-09-02T21:07:20.251Z",
   "attempts": {
     "wrk_0025172962b9": {
       "attempted_at": "2026-08-17T07:52:53.708Z",
@@ -6768,9 +6768,9 @@
       "provider_error": null
     },
     "wrk_bd82a61ea71a": {
-      "attempted_at": "2026-08-19T18:56:27.039Z",
+      "attempted_at": "2026-09-02T21:07:20.251Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-02T18:56:27.039Z",
+      "next_attempt_at": "2026-09-16T21:07:20.251Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -6852,9 +6852,9 @@
       "provider_error": null
     },
     "wrk_c10898296617": {
-      "attempted_at": "2026-08-19T18:56:27.039Z",
+      "attempted_at": "2026-09-02T21:07:20.251Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-02T18:56:27.039Z",
+      "next_attempt_at": "2026-09-16T21:07:20.251Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -6876,9 +6876,9 @@
       "provider_error": null
     },
     "wrk_c329a384ff37": {
-      "attempted_at": "2026-08-19T18:56:27.039Z",
+      "attempted_at": "2026-09-02T21:07:20.251Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-02T18:56:27.039Z",
+      "next_attempt_at": "2026-09-16T21:07:20.251Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -6888,9 +6888,9 @@
       "provider_error": null
     },
     "wrk_c37d93bcf7ba": {
-      "attempted_at": "2026-08-19T18:56:27.039Z",
+      "attempted_at": "2026-09-02T21:07:20.251Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-02T18:56:27.039Z",
+      "next_attempt_at": "2026-09-16T21:07:20.251Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -6912,9 +6912,9 @@
       "provider_error": null
     },
     "wrk_c6218d37f8f8": {
-      "attempted_at": "2026-08-19T18:56:27.039Z",
+      "attempted_at": "2026-09-02T21:07:20.251Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-02T18:56:27.039Z",
+      "next_attempt_at": "2026-09-16T21:07:20.251Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -6924,9 +6924,9 @@
       "provider_error": null
     },
     "wrk_c62652bdb8e7": {
-      "attempted_at": "2026-08-19T18:56:27.039Z",
+      "attempted_at": "2026-09-02T21:07:20.251Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-02T18:56:27.039Z",
+      "next_attempt_at": "2026-09-16T21:07:20.251Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -6936,9 +6936,9 @@
       "provider_error": null
     },
     "wrk_c6fdaf65f4dd": {
-      "attempted_at": "2026-08-19T18:56:27.039Z",
+      "attempted_at": "2026-09-02T21:07:20.251Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-02T18:56:27.039Z",
+      "next_attempt_at": "2026-09-16T21:07:20.251Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -6960,15 +6960,15 @@
       "provider_error": null
     },
     "wrk_c7a8228ed5fb": {
-      "attempted_at": "2026-08-19T18:56:27.039Z",
-      "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-02T18:56:27.039Z",
+      "attempted_at": "2026-09-02T21:07:20.251Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-30T21:07:20.251Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
-      "category": null,
-      "ndc_scheme": null,
-      "ndc_code": null,
-      "source_isbn13": null,
+      "category": "財政",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "343.7",
+      "source_isbn13": "9784800235534",
       "provider_error": null
     },
     "wrk_c80cfcbe79e5": {
@@ -7032,33 +7032,33 @@
       "provider_error": null
     },
     "wrk_ca5f87236bdc": {
-      "attempted_at": "2026-08-19T18:56:27.039Z",
-      "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-02T18:56:27.039Z",
+      "attempted_at": "2026-09-02T21:07:20.251Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-30T21:07:20.251Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
-      "category": null,
-      "ndc_scheme": null,
-      "ndc_code": null,
-      "source_isbn13": null,
+      "category": "社会科学",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "302.1",
+      "source_isbn13": "9784106106262",
       "provider_error": null
     },
     "wrk_ca6d76f9cdb6": {
-      "attempted_at": "2026-08-19T18:56:27.039Z",
-      "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-02T18:56:27.039Z",
+      "attempted_at": "2026-09-02T21:07:20.251Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-08-30T21:07:20.251Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
-      "category": null,
-      "ndc_scheme": null,
-      "ndc_code": null,
+      "category": "文学・小説",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "913.6",
       "source_isbn13": null,
       "provider_error": null
     },
     "wrk_ca712aafec58": {
-      "attempted_at": "2026-08-19T18:56:27.039Z",
+      "attempted_at": "2026-09-02T21:07:20.251Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-02T18:56:27.039Z",
+      "next_attempt_at": "2026-09-16T21:07:20.251Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,

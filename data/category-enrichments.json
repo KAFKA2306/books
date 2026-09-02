@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-09-02T16:39:59.941Z",
+  "updated_at": "2026-09-02T21:07:20.251Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -4504,6 +4504,18 @@
       "verified_at": "2026-08-19T18:56:27.039Z"
     },
     {
+      "work_id": "wrk_c7a8228ed5fb",
+      "category": "財政",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "343.7",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I025948770",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784800235534",
+      "verified_at": "2026-09-02T21:07:20.251Z"
+    },
+    {
       "work_id": "wrk_c80cfcbe79e5",
       "category": "投資・金融",
       "ndc_scheme": "NDC9",
@@ -4550,6 +4562,30 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-19T18:56:27.039Z"
+    },
+    {
+      "work_id": "wrk_ca5f87236bdc",
+      "category": "社会科学",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "302.1",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I026566507",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784106106262",
+      "verified_at": "2026-09-02T21:07:20.251Z"
+    },
+    {
+      "work_id": "wrk_ca6d76f9cdb6",
+      "category": "文学・小説",
+      "ndc_scheme": "NDC10",
+      "ndc_code": "913.6",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I029452649",
+      "match_mode": "title",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": null,
+      "verified_at": "2026-09-02T21:07:20.251Z"
     },
     {
       "work_id": "wrk_cd4ab42d3105",

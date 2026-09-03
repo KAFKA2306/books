@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-09-03T04:39:19.813Z",
+  "updated_at": "2026-09-03T11:23:20.088Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -2762,6 +2762,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-10T02:37:41.838Z"
+    },
+    {
+      "work_id": "wrk_7299c697af57",
+      "category": "物理",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "421.5",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000011276983",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784062577380",
+      "verified_at": "2026-09-03T11:23:20.088Z"
     },
     {
       "work_id": "wrk_733477650555",

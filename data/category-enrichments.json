@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-09-03T16:31:03.599Z",
+  "updated_at": "2026-09-03T21:06:52.065Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -5080,6 +5080,18 @@
       "verified_at": "2026-08-20T19:04:15.088Z"
     },
     {
+      "work_id": "wrk_ede9c0073ff6",
+      "category": "医学・健康",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "499.3",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000008532390",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784062575416",
+      "verified_at": "2026-09-03T21:06:52.065Z"
+    },
+    {
       "work_id": "wrk_ee2fac82a018",
       "category": "投資・金融",
       "ndc_scheme": "NDC9",
@@ -5090,6 +5102,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-20T19:04:15.088Z"
+    },
+    {
+      "work_id": "wrk_ef510c5e6a17",
+      "category": "法律",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "324",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I000008553730",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784582853766",
+      "verified_at": "2026-09-03T21:06:52.065Z"
     },
     {
       "work_id": "wrk_efa37cdf10d6",

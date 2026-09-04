@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichment-state.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-09-04T04:41:29.306Z",
+  "updated_at": "2026-09-04T11:26:37.748Z",
   "attempts": {
     "wrk_0025172962b9": {
       "attempted_at": "2026-08-17T07:52:53.708Z",
@@ -3357,9 +3357,9 @@
       "provider_error": null
     },
     "wrk_5e030d7c0cb9": {
-      "attempted_at": "2026-08-21T07:11:05.037Z",
+      "attempted_at": "2026-09-04T11:26:37.748Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-04T07:11:05.037Z",
+      "next_attempt_at": "2026-09-18T11:26:37.748Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -3855,9 +3855,9 @@
       "provider_error": null
     },
     "wrk_6c3f9c37a3bb": {
-      "attempted_at": "2026-08-21T07:11:05.037Z",
+      "attempted_at": "2026-09-04T11:26:37.748Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-04T07:11:05.037Z",
+      "next_attempt_at": "2026-09-18T11:26:37.748Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -6109,9 +6109,9 @@
       "provider_error": null
     },
     "wrk_a7b016b2ac29": {
-      "attempted_at": "2026-08-21T07:11:05.037Z",
+      "attempted_at": "2026-09-04T11:26:37.748Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-04T07:11:05.037Z",
+      "next_attempt_at": "2026-09-18T11:26:37.748Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -8376,9 +8376,9 @@
       "provider_error": null
     },
     "wrk_f73548468f88": {
-      "attempted_at": "2026-08-21T07:11:05.037Z",
+      "attempted_at": "2026-09-04T11:26:37.748Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-04T07:11:05.037Z",
+      "next_attempt_at": "2026-09-18T11:26:37.748Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -8436,9 +8436,9 @@
       "provider_error": null
     },
     "wrk_f7f2ab37b004": {
-      "attempted_at": "2026-08-21T07:11:05.037Z",
+      "attempted_at": "2026-09-04T11:26:37.748Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-04T07:11:05.037Z",
+      "next_attempt_at": "2026-09-18T11:26:37.748Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -8460,9 +8460,9 @@
       "provider_error": null
     },
     "wrk_f8681b0151fc": {
-      "attempted_at": "2026-08-21T07:11:05.037Z",
+      "attempted_at": "2026-09-04T11:26:37.748Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-04T07:11:05.037Z",
+      "next_attempt_at": "2026-09-18T11:26:37.748Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -8496,9 +8496,9 @@
       "provider_error": null
     },
     "wrk_f8cb2b462806": {
-      "attempted_at": "2026-08-21T07:11:05.037Z",
+      "attempted_at": "2026-09-04T11:26:37.748Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-04T07:11:05.037Z",
+      "next_attempt_at": "2026-09-18T11:26:37.748Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -8508,9 +8508,9 @@
       "provider_error": null
     },
     "wrk_f92b005cc9db": {
-      "attempted_at": "2026-08-21T07:11:05.037Z",
+      "attempted_at": "2026-09-04T11:26:37.748Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-04T07:11:05.037Z",
+      "next_attempt_at": "2026-09-18T11:26:37.748Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -8532,9 +8532,9 @@
       "provider_error": null
     },
     "wrk_f9bdc7897ad8": {
-      "attempted_at": "2026-08-21T10:41:24.348Z",
+      "attempted_at": "2026-09-04T11:26:37.748Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-04T10:41:24.348Z",
+      "next_attempt_at": "2026-09-18T11:26:37.748Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -8616,9 +8616,9 @@
       "provider_error": null
     },
     "wrk_fc2bd965ea2e": {
-      "attempted_at": "2026-08-21T10:41:24.348Z",
+      "attempted_at": "2026-09-04T11:26:37.748Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-04T10:41:24.348Z",
+      "next_attempt_at": "2026-09-18T11:26:37.748Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -8748,9 +8748,9 @@
       "provider_error": null
     },
     "wrk_fdc96ebb74c1": {
-      "attempted_at": "2026-08-21T10:41:24.348Z",
+      "attempted_at": "2026-09-04T11:26:37.748Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-04T10:41:24.348Z",
+      "next_attempt_at": "2026-09-18T11:26:37.748Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -8784,14 +8784,14 @@
       "provider_error": null
     },
     "wrk_fe8ae231cb6e": {
-      "attempted_at": "2026-08-21T10:41:24.348Z",
-      "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-04T10:41:24.348Z",
+      "attempted_at": "2026-09-04T11:26:37.748Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-09-01T11:26:37.748Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
-      "category": null,
-      "ndc_scheme": null,
-      "ndc_code": null,
+      "category": "ゲーム・娯楽",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "796",
       "source_isbn13": null,
       "provider_error": null
     },

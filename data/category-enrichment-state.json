@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichment-state.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-09-03T21:06:52.065Z",
+  "updated_at": "2026-09-04T04:41:29.306Z",
   "attempts": {
     "wrk_0025172962b9": {
       "attempted_at": "2026-08-17T07:52:53.708Z",
@@ -7068,9 +7068,9 @@
       "provider_error": null
     },
     "wrk_cb55c3298df8": {
-      "attempted_at": "2026-08-21T02:00:36.805Z",
+      "attempted_at": "2026-09-04T04:41:29.306Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-04T02:00:36.805Z",
+      "next_attempt_at": "2026-09-18T04:41:29.306Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -8124,9 +8124,9 @@
       "provider_error": null
     },
     "wrk_f0600fbfa8c9": {
-      "attempted_at": "2026-08-21T02:00:36.805Z",
+      "attempted_at": "2026-09-04T04:41:29.306Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-04T02:00:36.805Z",
+      "next_attempt_at": "2026-09-18T04:41:29.306Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -8148,9 +8148,9 @@
       "provider_error": null
     },
     "wrk_f0fcc39ecd7b": {
-      "attempted_at": "2026-08-21T02:00:36.805Z",
+      "attempted_at": "2026-09-04T04:41:29.306Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-04T02:00:36.805Z",
+      "next_attempt_at": "2026-09-18T04:41:29.306Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -8160,9 +8160,9 @@
       "provider_error": null
     },
     "wrk_f1372838fc1e": {
-      "attempted_at": "2026-08-21T02:00:36.805Z",
+      "attempted_at": "2026-09-04T04:41:29.306Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-04T02:00:36.805Z",
+      "next_attempt_at": "2026-09-18T04:41:29.306Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -8220,9 +8220,9 @@
       "provider_error": null
     },
     "wrk_f217a256db6a": {
-      "attempted_at": "2026-08-21T02:00:36.805Z",
+      "attempted_at": "2026-09-04T04:41:29.306Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-04T02:00:36.805Z",
+      "next_attempt_at": "2026-09-18T04:41:29.306Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -8232,9 +8232,9 @@
       "provider_error": null
     },
     "wrk_f2453d9d6768": {
-      "attempted_at": "2026-08-21T02:00:36.805Z",
-      "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-04T02:00:36.805Z",
+      "attempted_at": "2026-09-04T04:41:29.306Z",
+      "outcome": "ambiguous",
+      "next_attempt_at": "2026-10-04T04:41:29.306Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -8280,9 +8280,9 @@
       "provider_error": null
     },
     "wrk_f4d66d0aff73": {
-      "attempted_at": "2026-08-21T02:00:36.805Z",
+      "attempted_at": "2026-09-04T04:41:29.306Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-04T02:00:36.805Z",
+      "next_attempt_at": "2026-09-18T04:41:29.306Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -8292,15 +8292,15 @@
       "provider_error": null
     },
     "wrk_f541f6d7f63f": {
-      "attempted_at": "2026-08-21T02:00:36.805Z",
-      "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-04T02:00:36.805Z",
+      "attempted_at": "2026-09-04T04:41:29.306Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-09-01T04:41:29.306Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
-      "category": null,
-      "ndc_scheme": null,
-      "ndc_code": null,
-      "source_isbn13": null,
+      "category": "ゲーム・娯楽",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "795",
+      "source_isbn13": "9784262104799",
       "provider_error": null
     },
     "wrk_f54867003323": {

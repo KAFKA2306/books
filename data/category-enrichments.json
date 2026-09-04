@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-09-03T21:06:52.065Z",
+  "updated_at": "2026-09-04T04:41:29.306Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -5246,6 +5246,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": "9784431710592",
       "verified_at": "2026-08-21T02:00:36.805Z"
+    },
+    {
+      "work_id": "wrk_f541f6d7f63f",
+      "category": "ゲーム・娯楽",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "795",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I026619303",
+      "match_mode": "isbn",
+      "title_similarity": 0.32,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784262104799",
+      "verified_at": "2026-09-04T04:41:29.306Z"
     },
     {
       "work_id": "wrk_f54867003323",

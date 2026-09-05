@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichment-state.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-09-05T10:42:41.109Z",
+  "updated_at": "2026-09-05T15:19:23.304Z",
   "attempts": {
     "wrk_0025172962b9": {
       "attempted_at": "2026-08-17T07:52:53.708Z",
@@ -3515,9 +3515,9 @@
       "provider_error": null
     },
     "wrk_61bbc01a016e": {
-      "attempted_at": "2026-08-22T13:04:09.214Z",
+      "attempted_at": "2026-09-05T15:19:23.304Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-05T13:04:09.214Z",
+      "next_attempt_at": "2026-09-19T15:19:23.304Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -8328,9 +8328,9 @@
       "provider_error": null
     },
     "wrk_f648d6712cf8": {
-      "attempted_at": "2026-08-22T13:04:09.214Z",
+      "attempted_at": "2026-09-05T15:19:23.304Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-05T13:04:09.214Z",
+      "next_attempt_at": "2026-09-19T15:19:23.304Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -8400,21 +8400,21 @@
       "provider_error": null
     },
     "wrk_f7706832fa4c": {
-      "attempted_at": "2026-08-22T13:04:09.214Z",
-      "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-05T13:04:09.214Z",
+      "attempted_at": "2026-09-05T15:19:23.304Z",
+      "outcome": "accepted",
+      "next_attempt_at": "2036-09-02T15:19:23.304Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
-      "category": null,
-      "ndc_scheme": null,
-      "ndc_code": null,
-      "source_isbn13": null,
+      "category": "生活・家政",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "596",
+      "source_isbn13": "9784763132864",
       "provider_error": null
     },
     "wrk_f7ae23ab566c": {
-      "attempted_at": "2026-08-22T13:04:09.214Z",
+      "attempted_at": "2026-09-05T15:19:23.304Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-05T13:04:09.214Z",
+      "next_attempt_at": "2026-09-19T15:19:23.304Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -8484,9 +8484,9 @@
       "provider_error": null
     },
     "wrk_f8c94ffc1d59": {
-      "attempted_at": "2026-08-22T13:04:09.214Z",
+      "attempted_at": "2026-09-05T15:19:23.304Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-05T13:04:09.214Z",
+      "next_attempt_at": "2026-09-19T15:19:23.304Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,

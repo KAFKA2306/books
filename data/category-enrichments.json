@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-09-05T10:42:41.109Z",
+  "updated_at": "2026-09-05T15:19:23.304Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",
@@ -5318,6 +5318,18 @@
       "rule_version": "ndc-map-v1",
       "source_isbn13": null,
       "verified_at": "2026-08-21T07:11:05.037Z"
+    },
+    {
+      "work_id": "wrk_f7706832fa4c",
+      "category": "生活・家政",
+      "ndc_scheme": "NDC9",
+      "ndc_code": "596",
+      "source_url": "https://ndlsearch.ndl.go.jp/books/R100000002-I024422453",
+      "match_mode": "isbn",
+      "title_similarity": 1,
+      "rule_version": "ndc-map-v1",
+      "source_isbn13": "9784763132864",
+      "verified_at": "2026-09-05T15:19:23.304Z"
     },
     {
       "work_id": "wrk_f7ba3300f41a",

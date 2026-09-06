@@ -20,6 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - uses: actions/setup-node@v6
         with:
           node-version: 22
@@ -53,7 +55,7 @@ jobs:
           python3 -m http.server 4173 >/tmp/books-pages.log 2>&1 &
           server_pid=$!
           trap 'kill "$server_pid"' EXIT
-          npx playwright test tests/pages-production.e2e.mjs --reporter=line
+          npx playwright test tests/pages-production.spec.mjs --reporter=line
       - name: Upload API audit artifact
         uses: actions/upload-artifact@v7
         with:
@@ -75,6 +77,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+        with:
+          ref: ${{ github.sha }}
       - uses: actions/setup-node@v6
         with:
           node-version: 22
@@ -116,4 +120,4 @@ jobs:
         name: Verify deployed Pages in Chromium
         env:
           PAGES_BASE_URL: ${{ steps.deployment.outputs.page_url }}
-        run: npx playwright test tests/pages-production.e2e.mjs --reporter=line
+        run: npx playwright test tests/pages-production.spec.mjs --reporter=line

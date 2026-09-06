@@ -42,6 +42,18 @@ jobs:
             if (!Array.isArray(rows) || rows.length !== manifest.record_counts[collection.name]) process.exit(1);
           }
           NODE
+      - name: Install browser E2E runtime
+        run: |
+          npm install --no-save --package-lock=false @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Run Pages E2E against exact PR head
+        env:
+          PAGES_BASE_URL: http://127.0.0.1:4173/
+        run: |
+          python3 -m http.server 4173 >/tmp/books-pages.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid"' EXIT
+          npx playwright test tests/pages-production.e2e.mjs --reporter=line
       - name: Upload API audit artifact
         uses: actions/upload-artifact@v7
         with:
@@ -95,3 +107,13 @@ jobs:
         name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - if: steps.pages.outputs.enabled == 'true'
+        name: Install production browser E2E runtime
+        run: |
+          npm install --no-save --package-lock=false @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+      - if: steps.pages.outputs.enabled == 'true'
+        name: Verify deployed Pages in Chromium
+        env:
+          PAGES_BASE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: npx playwright test tests/pages-production.e2e.mjs --reporter=line

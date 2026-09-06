@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-state.v1",
-  "updated_at": "2026-09-06T07:08:39.684Z",
+  "updated_at": "2026-09-06T17:21:31.619Z",
   "total_attempts": 224,
   "attempts": {
     "wrk_0025172962b9": {
@@ -253,16 +253,11 @@
       "provider_errors": []
     },
     "wrk_1ca0af507432": {
-      "attempted_at": "2026-08-07T15:37:42.258Z",
+      "attempted_at": "2026-09-06T17:21:31.619Z",
       "outcome": "no_consensus",
-      "next_attempt_at": "2026-09-06T15:37:42.258Z",
+      "next_attempt_at": "2026-10-06T17:21:31.619Z",
       "candidate_count": 0,
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
+      "provider_errors": []
     },
     "wrk_1ca55d657738": {
       "attempted_at": "2026-08-24T15:23:09.544Z",
@@ -303,28 +298,18 @@
       "provider_errors": []
     },
     "wrk_1f797f0d6f9f": {
-      "attempted_at": "2026-08-07T15:37:42.258Z",
+      "attempted_at": "2026-09-06T17:21:31.619Z",
       "outcome": "no_consensus",
-      "next_attempt_at": "2026-09-06T15:37:42.258Z",
+      "next_attempt_at": "2026-10-06T17:21:31.619Z",
       "candidate_count": 0,
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
+      "provider_errors": []
     },
     "wrk_20b39a08c2bd": {
-      "attempted_at": "2026-08-07T15:37:42.258Z",
+      "attempted_at": "2026-09-06T17:21:31.619Z",
       "outcome": "no_consensus",
-      "next_attempt_at": "2026-09-06T15:37:42.258Z",
+      "next_attempt_at": "2026-10-06T17:21:31.619Z",
       "candidate_count": 0,
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
+      "provider_errors": []
     },
     "wrk_22300ebb3fbc": {
       "attempted_at": "2026-08-07T15:37:42.258Z",
@@ -358,16 +343,11 @@
       ]
     },
     "wrk_248c55a16ac5": {
-      "attempted_at": "2026-08-07T15:37:42.258Z",
+      "attempted_at": "2026-09-06T17:21:31.619Z",
       "outcome": "no_consensus",
-      "next_attempt_at": "2026-09-06T15:37:42.258Z",
+      "next_attempt_at": "2026-10-06T17:21:31.619Z",
       "candidate_count": 0,
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
+      "provider_errors": []
     },
     "wrk_25b63cbadfa5": {
       "attempted_at": "2026-08-07T15:37:42.258Z",
@@ -382,52 +362,32 @@
       ]
     },
     "wrk_263180aeb8e4": {
-      "attempted_at": "2026-08-07T15:37:42.258Z",
+      "attempted_at": "2026-09-06T17:21:31.619Z",
       "outcome": "no_consensus",
-      "next_attempt_at": "2026-09-06T15:37:42.258Z",
+      "next_attempt_at": "2026-10-06T17:21:31.619Z",
       "candidate_count": 0,
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
+      "provider_errors": []
     },
     "wrk_2871c7f36716": {
-      "attempted_at": "2026-08-07T15:37:42.258Z",
+      "attempted_at": "2026-09-06T17:21:31.619Z",
       "outcome": "no_consensus",
-      "next_attempt_at": "2026-09-06T15:37:42.258Z",
+      "next_attempt_at": "2026-10-06T17:21:31.619Z",
       "candidate_count": 0,
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
+      "provider_errors": []
     },
     "wrk_2d4f9a75b3b8": {
-      "attempted_at": "2026-08-07T15:37:42.258Z",
+      "attempted_at": "2026-09-06T17:21:31.619Z",
       "outcome": "no_consensus",
-      "next_attempt_at": "2026-09-06T15:37:42.258Z",
+      "next_attempt_at": "2026-10-06T17:21:31.619Z",
       "candidate_count": 0,
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
+      "provider_errors": []
     },
     "wrk_2daa7d156ef4": {
-      "attempted_at": "2026-08-07T15:37:42.258Z",
+      "attempted_at": "2026-09-06T17:21:31.619Z",
       "outcome": "no_consensus",
-      "next_attempt_at": "2026-09-06T15:37:42.258Z",
+      "next_attempt_at": "2026-10-06T17:21:31.619Z",
       "candidate_count": 0,
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
+      "provider_errors": []
     },
     "wrk_302aed946c28": {
       "attempted_at": "2026-08-07T15:37:42.258Z",
@@ -449,28 +409,18 @@
       "provider_errors": []
     },
     "wrk_33bd7bfd21cf": {
-      "attempted_at": "2026-08-07T15:37:42.258Z",
+      "attempted_at": "2026-09-06T17:21:31.619Z",
       "outcome": "no_consensus",
-      "next_attempt_at": "2026-09-06T15:37:42.258Z",
+      "next_attempt_at": "2026-10-06T17:21:31.619Z",
       "candidate_count": 0,
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
+      "provider_errors": []
     },
     "wrk_34f164275419": {
-      "attempted_at": "2026-08-07T15:37:42.258Z",
+      "attempted_at": "2026-09-06T17:21:31.619Z",
       "outcome": "no_consensus",
-      "next_attempt_at": "2026-09-06T15:37:42.258Z",
+      "next_attempt_at": "2026-10-06T17:21:31.619Z",
       "candidate_count": 0,
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
+      "provider_errors": []
     },
     "wrk_3564709c22d4": {
       "attempted_at": "2026-08-14T15:34:30.424Z",

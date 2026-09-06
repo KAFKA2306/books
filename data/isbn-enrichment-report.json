@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-report.v1",
-  "generated_at": "2026-08-25T15:28:21.129Z",
+  "generated_at": "2026-09-06T07:08:39.684Z",
   "policy": {
     "batch_limit": 25,
     "concurrency": 1,
@@ -12,24 +12,24 @@
     "google_books_enabled": false
   },
   "summary": {
-    "attempted": 20,
+    "attempted": 9,
     "enriched": 0,
     "ambiguous": 0,
-    "no_consensus": 1,
-    "no_candidate": 19,
+    "no_consensus": 9,
+    "no_candidate": 0,
     "provider_error": 0
   },
   "provider_summary": {
     "ndl": {
       "enabled": true,
-      "candidate_count": 1,
-      "works_with_candidates": 1,
+      "candidate_count": 41,
+      "works_with_candidates": 9,
       "error_count": 0
     },
     "openbd": {
       "enabled": true,
-      "candidate_count": 1,
-      "works_with_candidates": 1,
+      "candidate_count": 31,
+      "works_with_candidates": 9,
       "error_count": 0
     },
     "google_books": {
@@ -41,53 +41,8 @@
   },
   "results": [
     {
-      "work_id": "wrk_7299c697af57",
-      "title": "物理数学の直感的方法",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_97f99ad2dc35",
-      "title": "帰って来たヒトラー",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_9aedbcaa2a50",
-      "title": "合格実例集セオリーエントリーシート編",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_9c3a2c7c3187",
-      "title": "入門初級ドイツ語文法",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_a655cacf97a3",
-      "title": "らくがき四コマ",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_a763baec332a",
-      "title": "ナショナル ジオグラフィック にわかには信じがたい本当にあったこと",
+      "work_id": "wrk_0025172962b9",
+      "title": "ハイレベル面接術",
       "outcome": "no_consensus",
       "accepted_isbn13": null,
       "candidates": [],
@@ -98,129 +53,99 @@
       "provider_errors": []
     },
     {
-      "work_id": "wrk_a9fd6ed9c5e8",
-      "title": "死なない奴ら",
-      "outcome": "no_candidate",
+      "work_id": "wrk_03ceb0cb730f",
+      "title": "例題とExcel演習で学ぶ多変量解析 因子分析・コレスポン",
+      "outcome": "no_consensus",
       "accepted_isbn13": null,
       "candidates": [],
-      "provider_candidate_counts": {},
+      "provider_candidate_counts": {
+        "ndl": 1,
+        "openbd": 1
+      },
       "provider_errors": []
     },
     {
-      "work_id": "wrk_b34b35bff923",
-      "title": "トーイック公式問題集",
-      "outcome": "no_candidate",
+      "work_id": "wrk_067694b72ff5",
+      "title": "植物知識",
+      "outcome": "no_consensus",
       "accepted_isbn13": null,
       "candidates": [],
-      "provider_candidate_counts": {},
+      "provider_candidate_counts": {
+        "ndl": 2,
+        "openbd": 2
+      },
       "provider_errors": []
     },
     {
-      "work_id": "wrk_c329a384ff37",
-      "title": "マンガでわかる心療内科",
-      "outcome": "no_candidate",
+      "work_id": "wrk_0acbf4571cf0",
+      "title": "命に国境はない 紛争地イラクで考える戦争",
+      "outcome": "no_consensus",
       "accepted_isbn13": null,
       "candidates": [],
-      "provider_candidate_counts": {},
+      "provider_candidate_counts": {
+        "ndl": 1,
+        "openbd": 1
+      },
       "provider_errors": []
     },
     {
-      "work_id": "wrk_c7a8228ed5fb",
-      "title": "届出一つでお金がもらえる",
-      "outcome": "no_candidate",
+      "work_id": "wrk_0d301922403e",
+      "title": "TOEIC 金のフレーズ",
+      "outcome": "no_consensus",
       "accepted_isbn13": null,
       "candidates": [],
-      "provider_candidate_counts": {},
+      "provider_candidate_counts": {
+        "ndl": 3,
+        "openbd": 3
+      },
       "provider_errors": []
     },
     {
-      "work_id": "wrk_ca5f87236bdc",
-      "title": "昔は良かった病",
-      "outcome": "no_candidate",
+      "work_id": "wrk_0f4b29b00464",
+      "title": "ワーク・シフト 孤独と貧困から自由になる働き方の未来図",
+      "outcome": "no_consensus",
       "accepted_isbn13": null,
       "candidates": [],
-      "provider_candidate_counts": {},
+      "provider_candidate_counts": {
+        "ndl": 1,
+        "openbd": 1
+      },
       "provider_errors": []
     },
     {
-      "work_id": "wrk_cb55c3298df8",
-      "title": "はっぴやー",
-      "outcome": "no_candidate",
+      "work_id": "wrk_0fb53b63a6a7",
+      "title": "図解でわかる多変量解析 データの山から本",
+      "outcome": "no_consensus",
       "accepted_isbn13": null,
       "candidates": [],
-      "provider_candidate_counts": {},
+      "provider_candidate_counts": {
+        "ndl": 1,
+        "openbd": 1
+      },
       "provider_errors": []
     },
     {
-      "work_id": "wrk_d31f81a57683",
-      "title": "物語シリーズ,偽猫黒猫しろ恋傷",
-      "outcome": "no_candidate",
+      "work_id": "wrk_117eec18ff40",
+      "title": "一問一答面接攻略",
+      "outcome": "no_consensus",
       "accepted_isbn13": null,
       "candidates": [],
-      "provider_candidate_counts": {},
+      "provider_candidate_counts": {
+        "ndl": 19,
+        "openbd": 12
+      },
       "provider_errors": []
     },
     {
-      "work_id": "wrk_d8f1ecc0746e",
-      "title": "美味しい一人ごはん",
-      "outcome": "no_candidate",
+      "work_id": "wrk_14e018611a77",
+      "title": "ニュートン",
+      "outcome": "no_consensus",
       "accepted_isbn13": null,
       "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_ede9c0073ff6",
-      "title": "新しい薬をどう作るか",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_ef510c5e6a17",
-      "title": "ゼロから分かる民法",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_f0045e033ac3",
-      "title": "一冊で哲学の名著を読む 『ソクラテスの弁明』",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_f1e66e24f412",
-      "title": "ドミニオンマニアックスZERO",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_f6fd606e9ec0",
-      "title": "地球の長い午後",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_f7706832fa4c",
-      "title": "美味しいを科学してレシピにしました",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
+      "provider_candidate_counts": {
+        "ndl": 12,
+        "openbd": 9
+      },
       "provider_errors": []
     }
   ]

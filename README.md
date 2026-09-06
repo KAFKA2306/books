@@ -9,7 +9,6 @@ https://kafka2306.github.io/books/
 
 KAFKA BOOKS は、個人の蔵書を **作品（Work）・版（Edition）・所蔵（Holding）・取得履歴（Acquisition）** に分け、曖昧な読書記録を「後から確認できる本棚」へ変える静的ライブラリDBです。
 
-- 公開UI: https://kafka2306.github.io/books/
 - 公開API: https://kafka2306.github.io/books/api/v1/collections.json
 
 ## Vision

@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-report.v1",
-  "generated_at": "2026-09-07T07:20:35.229Z",
+  "generated_at": "2026-09-07T18:52:28.430Z",
   "policy": {
     "batch_limit": 25,
     "concurrency": 1,
@@ -12,24 +12,24 @@
     "google_books_enabled": false
   },
   "summary": {
-    "attempted": 6,
+    "attempted": 12,
     "enriched": 0,
     "ambiguous": 0,
-    "no_consensus": 2,
+    "no_consensus": 12,
     "no_candidate": 0,
-    "provider_error": 4
+    "provider_error": 0
   },
   "provider_summary": {
     "ndl": {
       "enabled": true,
-      "candidate_count": 15,
-      "works_with_candidates": 2,
-      "error_count": 4
+      "candidate_count": 61,
+      "works_with_candidates": 12,
+      "error_count": 0
     },
     "openbd": {
       "enabled": true,
-      "candidate_count": 15,
-      "works_with_candidates": 2,
+      "candidate_count": 44,
+      "works_with_candidates": 8,
       "error_count": 0
     },
     "google_books": {
@@ -41,34 +41,8 @@
   },
   "results": [
     {
-      "work_id": "wrk_0649ceebf61b",
-      "title": "スティーブ・ジョブズ",
-      "outcome": "provider_error",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": [
-        {
-          "provider": "ndl",
-          "message": "ndl request failed: This operation was aborted"
-        }
-      ]
-    },
-    {
-      "work_id": "wrk_3a5c051662b5",
-      "title": "寄生獣",
-      "outcome": "no_consensus",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {
-        "ndl": 14,
-        "openbd": 14
-      },
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_43588768077d",
-      "title": "彼女は一人で歩くのか?",
+      "work_id": "wrk_50fc00660a77",
+      "title": "カラー図解Raspberry Piではじめる機械学習",
       "outcome": "no_consensus",
       "accepted_isbn13": null,
       "candidates": [],
@@ -79,46 +53,132 @@
       "provider_errors": []
     },
     {
-      "work_id": "wrk_48a948c94388",
-      "title": "はやぶさの超技術",
-      "outcome": "provider_error",
+      "work_id": "wrk_54fc35dd55dc",
+      "title": "シュトラーセ・ノイ",
+      "outcome": "no_consensus",
       "accepted_isbn13": null,
       "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": [
-        {
-          "provider": "ndl",
-          "message": "ndl request failed: This operation was aborted"
-        }
-      ]
+      "provider_candidate_counts": {
+        "ndl": 4
+      },
+      "provider_errors": []
     },
     {
-      "work_id": "wrk_48d43b1c82f6",
-      "title": "ソフィーの世界",
-      "outcome": "provider_error",
+      "work_id": "wrk_55b681a9fd07",
+      "title": "1Q84",
+      "outcome": "no_consensus",
       "accepted_isbn13": null,
       "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": [
-        {
-          "provider": "ndl",
-          "message": "ndl request failed: This operation was aborted"
-        }
-      ]
+      "provider_candidate_counts": {
+        "ndl": 16,
+        "openbd": 13
+      },
+      "provider_errors": []
     },
     {
-      "work_id": "wrk_4f4f4358556e",
-      "title": "心臓の力",
-      "outcome": "provider_error",
+      "work_id": "wrk_574b7e8b3a24",
+      "title": "勝てるエントリーシート負けない面接テクニック",
+      "outcome": "no_consensus",
       "accepted_isbn13": null,
       "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": [
-        {
-          "provider": "ndl",
-          "message": "ndl request failed: This operation was aborted"
-        }
-      ]
+      "provider_candidate_counts": {
+        "ndl": 4,
+        "openbd": 3
+      },
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_5a29c44ef797",
+      "title": "カナダの謎 なぜ『赤毛のアン』はロブスタ",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {
+        "ndl": 1
+      },
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_5a9c4082bee2",
+      "title": "宇宙就職案内",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {
+        "ndl": 1
+      },
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_6649d9d62517",
+      "title": "豊崎愛生",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {
+        "ndl": 2,
+        "openbd": 1
+      },
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_677c8af92954",
+      "title": "さよなら絶望先生",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {
+        "ndl": 13,
+        "openbd": 12
+      },
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_6b66d4cd28f8",
+      "title": "みなみけ",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {
+        "ndl": 2
+      },
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_6bc67fc47f1e",
+      "title": "イングルサイドのアン",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {
+        "ndl": 5,
+        "openbd": 5
+      },
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_6df86f08996f",
+      "title": "「おいしさ」の科学 素材の秘密・味わいを",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {
+        "ndl": 1,
+        "openbd": 1
+      },
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_7029a9a3f090",
+      "title": "教育の原理",
+      "outcome": "no_consensus",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {
+        "ndl": 11,
+        "openbd": 8
+      },
+      "provider_errors": []
     }
   ]
 }

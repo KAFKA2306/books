@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-report.v1",
-  "generated_at": "2026-09-06T17:21:31.619Z",
+  "generated_at": "2026-09-07T07:20:35.229Z",
   "policy": {
     "batch_limit": 25,
     "concurrency": 1,
@@ -12,24 +12,24 @@
     "google_books_enabled": false
   },
   "summary": {
-    "attempted": 10,
+    "attempted": 6,
     "enriched": 0,
     "ambiguous": 0,
-    "no_consensus": 10,
+    "no_consensus": 2,
     "no_candidate": 0,
-    "provider_error": 0
+    "provider_error": 4
   },
   "provider_summary": {
     "ndl": {
       "enabled": true,
-      "candidate_count": 36,
-      "works_with_candidates": 10,
-      "error_count": 0
+      "candidate_count": 15,
+      "works_with_candidates": 2,
+      "error_count": 4
     },
     "openbd": {
       "enabled": true,
-      "candidate_count": 23,
-      "works_with_candidates": 7,
+      "candidate_count": 15,
+      "works_with_candidates": 2,
       "error_count": 0
     },
     "google_books": {
@@ -41,121 +41,84 @@
   },
   "results": [
     {
-      "work_id": "wrk_1ca0af507432",
-      "title": "LNG 50年の軌跡とその未来",
+      "work_id": "wrk_0649ceebf61b",
+      "title": "スティーブ・ジョブズ",
+      "outcome": "provider_error",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": [
+        {
+          "provider": "ndl",
+          "message": "ndl request failed: This operation was aborted"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_3a5c051662b5",
+      "title": "寄生獣",
       "outcome": "no_consensus",
       "accepted_isbn13": null,
       "candidates": [],
       "provider_candidate_counts": {
-        "ndl": 1
+        "ndl": 14,
+        "openbd": 14
       },
       "provider_errors": []
     },
     {
-      "work_id": "wrk_1f797f0d6f9f",
-      "title": "大学生物学の教科書",
+      "work_id": "wrk_43588768077d",
+      "title": "彼女は一人で歩くのか?",
       "outcome": "no_consensus",
       "accepted_isbn13": null,
       "candidates": [],
       "provider_candidate_counts": {
-        "ndl": 8,
-        "openbd": 8
-      },
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_20b39a08c2bd",
-      "title": "持たない幸福論",
-      "outcome": "no_consensus",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {
-        "ndl": 2,
-        "openbd": 2
-      },
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_248c55a16ac5",
-      "title": "ブルー・オーシャン戦略 競争のない世界を",
-      "outcome": "no_consensus",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {
-        "ndl": 3,
-        "openbd": 3
-      },
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_263180aeb8e4",
-      "title": "坂本ですが?",
-      "outcome": "no_consensus",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {
-        "ndl": 4,
-        "openbd": 4
-      },
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_2871c7f36716",
-      "title": "アンチ整理術",
-      "outcome": "no_consensus",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {
-        "ndl": 2,
-        "openbd": 2
-      },
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_2d4f9a75b3b8",
-      "title": "消えた巨大生物 スーパービジュアル再現",
-      "outcome": "no_consensus",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {
-        "ndl": 1
-      },
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_2daa7d156ef4",
-      "title": "基礎からわかる電磁気学",
-      "outcome": "no_consensus",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {
-        "ndl": 2
-      },
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_33bd7bfd21cf",
-      "title": "有望株の選び方",
-      "outcome": "no_consensus",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {
-        "ndl": 4,
+        "ndl": 1,
         "openbd": 1
       },
       "provider_errors": []
     },
     {
-      "work_id": "wrk_34f164275419",
-      "title": "羽生の法則",
-      "outcome": "no_consensus",
+      "work_id": "wrk_48a948c94388",
+      "title": "はやぶさの超技術",
+      "outcome": "provider_error",
       "accepted_isbn13": null,
       "candidates": [],
-      "provider_candidate_counts": {
-        "ndl": 9,
-        "openbd": 3
-      },
-      "provider_errors": []
+      "provider_candidate_counts": {},
+      "provider_errors": [
+        {
+          "provider": "ndl",
+          "message": "ndl request failed: This operation was aborted"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_48d43b1c82f6",
+      "title": "ソフィーの世界",
+      "outcome": "provider_error",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": [
+        {
+          "provider": "ndl",
+          "message": "ndl request failed: This operation was aborted"
+        }
+      ]
+    },
+    {
+      "work_id": "wrk_4f4f4358556e",
+      "title": "心臓の力",
+      "outcome": "provider_error",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": [
+        {
+          "provider": "ndl",
+          "message": "ndl request failed: This operation was aborted"
+        }
+      ]
     }
   ]
 }

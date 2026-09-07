@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-state.v1",
-  "updated_at": "2026-09-06T17:21:31.619Z",
+  "updated_at": "2026-09-07T07:20:35.229Z",
   "total_attempts": 224,
   "attempts": {
     "wrk_0025172962b9": {
@@ -68,14 +68,14 @@
       ]
     },
     "wrk_0649ceebf61b": {
-      "attempted_at": "2026-08-08T03:44:16.427Z",
-      "outcome": "no_consensus",
-      "next_attempt_at": "2026-09-07T03:44:16.427Z",
+      "attempted_at": "2026-09-07T07:20:35.229Z",
+      "outcome": "provider_error",
+      "next_attempt_at": "2026-09-08T07:20:35.229Z",
       "candidate_count": 0,
       "provider_errors": [
         {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
+          "provider": "ndl",
+          "message": "ndl request failed: This operation was aborted"
         }
       ]
     },
@@ -495,16 +495,11 @@
       ]
     },
     "wrk_3a5c051662b5": {
-      "attempted_at": "2026-08-08T03:44:16.427Z",
+      "attempted_at": "2026-09-07T07:20:35.229Z",
       "outcome": "no_consensus",
-      "next_attempt_at": "2026-09-07T03:44:16.427Z",
+      "next_attempt_at": "2026-10-07T07:20:35.229Z",
       "candidate_count": 0,
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
+      "provider_errors": []
     },
     "wrk_3a6c65cc6275": {
       "attempted_at": "2026-08-08T03:44:16.427Z",
@@ -574,16 +569,11 @@
       ]
     },
     "wrk_43588768077d": {
-      "attempted_at": "2026-08-08T03:44:16.427Z",
+      "attempted_at": "2026-09-07T07:20:35.229Z",
       "outcome": "no_consensus",
-      "next_attempt_at": "2026-09-07T03:44:16.427Z",
+      "next_attempt_at": "2026-10-07T07:20:35.229Z",
       "candidate_count": 0,
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
+      "provider_errors": []
     },
     "wrk_44a3f6b0d47d": {
       "attempted_at": "2026-08-08T03:44:16.427Z",
@@ -598,26 +588,26 @@
       ]
     },
     "wrk_48a948c94388": {
-      "attempted_at": "2026-08-08T03:44:16.427Z",
-      "outcome": "no_consensus",
-      "next_attempt_at": "2026-09-07T03:44:16.427Z",
+      "attempted_at": "2026-09-07T07:20:35.229Z",
+      "outcome": "provider_error",
+      "next_attempt_at": "2026-09-08T07:20:35.229Z",
       "candidate_count": 0,
       "provider_errors": [
         {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
+          "provider": "ndl",
+          "message": "ndl request failed: This operation was aborted"
         }
       ]
     },
     "wrk_48d43b1c82f6": {
-      "attempted_at": "2026-08-08T03:44:16.427Z",
-      "outcome": "no_consensus",
-      "next_attempt_at": "2026-09-07T03:44:16.427Z",
+      "attempted_at": "2026-09-07T07:20:35.229Z",
+      "outcome": "provider_error",
+      "next_attempt_at": "2026-09-08T07:20:35.229Z",
       "candidate_count": 0,
       "provider_errors": [
         {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
+          "provider": "ndl",
+          "message": "ndl request failed: This operation was aborted"
         }
       ]
     },
@@ -641,14 +631,14 @@
       "provider_errors": []
     },
     "wrk_4f4f4358556e": {
-      "attempted_at": "2026-08-08T03:44:16.427Z",
-      "outcome": "no_consensus",
-      "next_attempt_at": "2026-09-07T03:44:16.427Z",
+      "attempted_at": "2026-09-07T07:20:35.229Z",
+      "outcome": "provider_error",
+      "next_attempt_at": "2026-09-08T07:20:35.229Z",
       "candidate_count": 0,
       "provider_errors": [
         {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
+          "provider": "ndl",
+          "message": "ndl request failed: This operation was aborted"
         }
       ]
     },

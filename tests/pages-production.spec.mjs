@@ -20,6 +20,20 @@ async function waitForCatalog(page) {
   await expect(page.locator('.book-card').first()).toBeVisible();
 }
 
+test('primary first action enters the catalog', async ({ page }) => {
+  await page.goto('./', { waitUntil: 'networkidle' });
+  await waitForCatalog(page);
+
+  const primary = page.locator('.hero .button-primary');
+  await expect(primary).toHaveText('本棚を探す');
+  await expect(primary).toHaveAttribute('href', '#catalog');
+  await expect(page.locator('.hero a[href="./migration.html"]')).toHaveText('蔵書CSVを診断する');
+
+  await primary.click();
+  await expect(page).toHaveURL(/#catalog$/);
+  await expect(page.locator('#catalog')).toBeVisible();
+});
+
 test('keyboard journey exposes focus and Work / Edition / Holding / Acquisition', async ({ page }) => {
   const failures = sameOriginFailureCollector(page);
   await page.goto('./', { waitUntil: 'networkidle' });

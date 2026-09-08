@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-report.v1",
-  "generated_at": "2026-09-08T14:16:39.753Z",
+  "generated_at": "2026-09-08T15:15:48.476Z",
   "policy": {
     "batch_limit": 25,
     "concurrency": 1,
@@ -9,21 +9,21 @@
     "ambiguous_candidates_are_rejected": true,
     "provider_request_attempts": 2,
     "provider_request_timeout_ms": 15000,
-    "ndl_query_strategy": "sru-title-batch-v1",
+    "ndl_query_strategy": "sru-title-batch-v2",
     "ndl_batch_size": 5,
     "google_books_enabled": false
   },
   "logical_requests": {
-    "ndl": 2,
+    "ndl": 5,
     "openbd": 0,
     "google_books": 0
   },
   "summary": {
-    "attempted": 9,
+    "attempted": 25,
     "enriched": 0,
     "ambiguous": 0,
     "no_consensus": 0,
-    "no_candidate": 9,
+    "no_candidate": 25,
     "provider_error": 0
   },
   "provider_summary": {
@@ -48,8 +48,98 @@
   },
   "results": [
     {
+      "work_id": "wrk_01e497859afb",
+      "title": "栄養学と食の基本辞典",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_02516067d844",
+      "title": "切り取れ、あの祈る手を",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
       "work_id": "wrk_0649ceebf61b",
       "title": "スティーブ・ジョブズ",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_0ac8d6f215f7",
+      "title": "東京きたんしゅう",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_15edeb5db3c8",
+      "title": "未来へ広がるサイエンス2",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_18d2ce5a28b3",
+      "title": "東レ改訂版井上",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_19005b022805",
+      "title": "地球外生命9つの論点",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_1ca55d657738",
+      "title": "秘書検定二級",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_1f6f102b49c4",
+      "title": "その子、発達障害ではありません IN-C",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_234b6fa5c521",
+      "title": "世界ナンバーワンのコンサルティングファームのルール",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_334ebe0b573f",
+      "title": "大学への数学ショートプログラム",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],
@@ -84,6 +174,15 @@
       "provider_errors": []
     },
     {
+      "work_id": "wrk_3f47490f4e95",
+      "title": "目の見えない人は世界をどう見ているか",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
       "work_id": "wrk_48a948c94388",
       "title": "はやぶさの超技術",
       "outcome": "no_candidate",
@@ -111,6 +210,15 @@
       "provider_errors": []
     },
     {
+      "work_id": "wrk_4c4a6d0d72c5",
+      "title": "予想通りに不合理",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
       "work_id": "wrk_4f4f4358556e",
       "title": "心臓の力",
       "outcome": "no_candidate",
@@ -120,8 +228,44 @@
       "provider_errors": []
     },
     {
-      "work_id": "wrk_70ec7a7d8e78",
-      "title": "新六法",
+      "work_id": "wrk_508c7feac779",
+      "title": "楽しい植物学",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_52cebd73d190",
+      "title": "分子から見た生物進化",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_561e61449855",
+      "title": "単純な脳複雑なわたし",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_5cc72c337f62",
+      "title": "そんな未来は嘘である",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_5d88863760e5",
+      "title": "無機化学概論小倉",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],

@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-state.v1",
-  "updated_at": "2026-09-08T14:16:39.753Z",
+  "updated_at": "2026-09-08T15:15:48.476Z",
   "total_attempts": 224,
   "attempts": {
     "wrk_0025172962b9": {
@@ -35,18 +35,20 @@
       ]
     },
     "wrk_01e497859afb": {
-      "attempted_at": "2026-08-24T15:23:09.544Z",
+      "attempted_at": "2026-09-08T15:15:48.476Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-23T15:23:09.544Z",
+      "next_attempt_at": "2026-10-08T15:15:48.476Z",
       "candidate_count": 0,
-      "provider_errors": []
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v2"
     },
     "wrk_02516067d844": {
-      "attempted_at": "2026-08-24T15:23:09.544Z",
+      "attempted_at": "2026-09-08T15:15:48.476Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-23T15:23:09.544Z",
+      "next_attempt_at": "2026-10-08T15:15:48.476Z",
       "candidate_count": 0,
-      "provider_errors": []
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v2"
     },
     "wrk_03ceb0cb730f": {
       "attempted_at": "2026-09-06T07:08:39.684Z",
@@ -68,12 +70,12 @@
       ]
     },
     "wrk_0649ceebf61b": {
-      "attempted_at": "2026-09-08T14:16:39.753Z",
+      "attempted_at": "2026-09-08T15:15:48.476Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-10-08T14:16:39.753Z",
+      "next_attempt_at": "2026-10-08T15:15:48.476Z",
       "candidate_count": 0,
       "provider_errors": [],
-      "provider_strategy": "sru-title-batch-v1"
+      "provider_strategy": "sru-title-batch-v2"
     },
     "wrk_067694b72ff5": {
       "attempted_at": "2026-09-06T07:08:39.684Z",
@@ -83,11 +85,12 @@
       "provider_errors": []
     },
     "wrk_0ac8d6f215f7": {
-      "attempted_at": "2026-08-24T15:23:09.544Z",
+      "attempted_at": "2026-09-08T15:15:48.476Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-23T15:23:09.544Z",
+      "next_attempt_at": "2026-10-08T15:15:48.476Z",
       "candidate_count": 0,
-      "provider_errors": []
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v2"
     },
     "wrk_0acbf4571cf0": {
       "attempted_at": "2026-09-06T07:08:39.684Z",
@@ -228,25 +231,28 @@
       ]
     },
     "wrk_15edeb5db3c8": {
-      "attempted_at": "2026-08-24T15:23:09.544Z",
+      "attempted_at": "2026-09-08T15:15:48.476Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-23T15:23:09.544Z",
+      "next_attempt_at": "2026-10-08T15:15:48.476Z",
       "candidate_count": 0,
-      "provider_errors": []
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v2"
     },
     "wrk_18d2ce5a28b3": {
-      "attempted_at": "2026-08-24T15:23:09.544Z",
+      "attempted_at": "2026-09-08T15:15:48.476Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-23T15:23:09.544Z",
+      "next_attempt_at": "2026-10-08T15:15:48.476Z",
       "candidate_count": 0,
-      "provider_errors": []
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v2"
     },
     "wrk_19005b022805": {
-      "attempted_at": "2026-08-24T15:23:09.544Z",
+      "attempted_at": "2026-09-08T15:15:48.476Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-23T15:23:09.544Z",
+      "next_attempt_at": "2026-10-08T15:15:48.476Z",
       "candidate_count": 0,
-      "provider_errors": []
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v2"
     },
     "wrk_1ca0af507432": {
       "attempted_at": "2026-09-06T17:21:31.619Z",
@@ -256,11 +262,12 @@
       "provider_errors": []
     },
     "wrk_1ca55d657738": {
-      "attempted_at": "2026-08-24T15:23:09.544Z",
+      "attempted_at": "2026-09-08T15:15:48.476Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-23T15:23:09.544Z",
+      "next_attempt_at": "2026-10-08T15:15:48.476Z",
       "candidate_count": 0,
-      "provider_errors": []
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v2"
     },
     "wrk_1dbbe0d33491": {
       "attempted_at": "2026-08-07T15:37:42.258Z",
@@ -287,11 +294,12 @@
       ]
     },
     "wrk_1f6f102b49c4": {
-      "attempted_at": "2026-08-24T15:23:09.544Z",
+      "attempted_at": "2026-09-08T15:15:48.476Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-23T15:23:09.544Z",
+      "next_attempt_at": "2026-10-08T15:15:48.476Z",
       "candidate_count": 0,
-      "provider_errors": []
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v2"
     },
     "wrk_1f797f0d6f9f": {
       "attempted_at": "2026-09-06T17:21:31.619Z",
@@ -320,11 +328,12 @@
       ]
     },
     "wrk_234b6fa5c521": {
-      "attempted_at": "2026-08-24T15:23:09.544Z",
+      "attempted_at": "2026-09-08T15:15:48.476Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-23T15:23:09.544Z",
+      "next_attempt_at": "2026-10-08T15:15:48.476Z",
       "candidate_count": 0,
-      "provider_errors": []
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v2"
     },
     "wrk_2471ab860005": {
       "attempted_at": "2026-08-07T15:37:42.258Z",
@@ -398,11 +407,12 @@
       ]
     },
     "wrk_334ebe0b573f": {
-      "attempted_at": "2026-08-24T15:23:09.544Z",
+      "attempted_at": "2026-09-08T15:15:48.476Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-23T15:23:09.544Z",
+      "next_attempt_at": "2026-10-08T15:15:48.476Z",
       "candidate_count": 0,
-      "provider_errors": []
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v2"
     },
     "wrk_33bd7bfd21cf": {
       "attempted_at": "2026-09-06T17:21:31.619Z",
@@ -443,12 +453,12 @@
       ]
     },
     "wrk_368805ff1c88": {
-      "attempted_at": "2026-09-08T14:16:39.753Z",
+      "attempted_at": "2026-09-08T15:15:48.476Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-10-08T14:16:39.753Z",
+      "next_attempt_at": "2026-10-08T15:15:48.476Z",
       "candidate_count": 0,
       "provider_errors": [],
-      "provider_strategy": "sru-title-batch-v1"
+      "provider_strategy": "sru-title-batch-v2"
     },
     "wrk_3745a66c9c10": {
       "attempted_at": "2026-08-08T03:44:16.427Z",
@@ -475,12 +485,12 @@
       ]
     },
     "wrk_39ec01834f19": {
-      "attempted_at": "2026-09-08T14:16:39.753Z",
+      "attempted_at": "2026-09-08T15:15:48.476Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-10-08T14:16:39.753Z",
+      "next_attempt_at": "2026-10-08T15:15:48.476Z",
       "candidate_count": 0,
       "provider_errors": [],
-      "provider_strategy": "sru-title-batch-v1"
+      "provider_strategy": "sru-title-batch-v2"
     },
     "wrk_3a5c051662b5": {
       "attempted_at": "2026-09-07T07:20:35.229Z",
@@ -514,19 +524,20 @@
       ]
     },
     "wrk_3dfc456e3797": {
-      "attempted_at": "2026-09-08T14:16:39.753Z",
+      "attempted_at": "2026-09-08T15:15:48.476Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-10-08T14:16:39.753Z",
+      "next_attempt_at": "2026-10-08T15:15:48.476Z",
       "candidate_count": 0,
       "provider_errors": [],
-      "provider_strategy": "sru-title-batch-v1"
+      "provider_strategy": "sru-title-batch-v2"
     },
     "wrk_3f47490f4e95": {
-      "attempted_at": "2026-08-24T15:23:09.544Z",
+      "attempted_at": "2026-09-08T15:15:48.476Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-23T15:23:09.544Z",
+      "next_attempt_at": "2026-10-08T15:15:48.476Z",
       "candidate_count": 0,
-      "provider_errors": []
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v2"
     },
     "wrk_40fbccec76cb": {
       "attempted_at": "2026-08-08T03:44:16.427Z",
@@ -572,43 +583,44 @@
       ]
     },
     "wrk_48a948c94388": {
-      "attempted_at": "2026-09-08T14:16:39.753Z",
+      "attempted_at": "2026-09-08T15:15:48.476Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-10-08T14:16:39.753Z",
+      "next_attempt_at": "2026-10-08T15:15:48.476Z",
       "candidate_count": 0,
       "provider_errors": [],
-      "provider_strategy": "sru-title-batch-v1"
+      "provider_strategy": "sru-title-batch-v2"
     },
     "wrk_48d43b1c82f6": {
-      "attempted_at": "2026-09-08T14:16:39.753Z",
+      "attempted_at": "2026-09-08T15:15:48.476Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-10-08T14:16:39.753Z",
+      "next_attempt_at": "2026-10-08T15:15:48.476Z",
       "candidate_count": 0,
       "provider_errors": [],
-      "provider_strategy": "sru-title-batch-v1"
+      "provider_strategy": "sru-title-batch-v2"
     },
     "wrk_49533146732d": {
-      "attempted_at": "2026-09-08T14:16:39.753Z",
+      "attempted_at": "2026-09-08T15:15:48.476Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-10-08T14:16:39.753Z",
+      "next_attempt_at": "2026-10-08T15:15:48.476Z",
       "candidate_count": 0,
       "provider_errors": [],
-      "provider_strategy": "sru-title-batch-v1"
+      "provider_strategy": "sru-title-batch-v2"
     },
     "wrk_4c4a6d0d72c5": {
-      "attempted_at": "2026-08-24T15:23:09.544Z",
+      "attempted_at": "2026-09-08T15:15:48.476Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-23T15:23:09.544Z",
-      "candidate_count": 0,
-      "provider_errors": []
-    },
-    "wrk_4f4f4358556e": {
-      "attempted_at": "2026-09-08T14:16:39.753Z",
-      "outcome": "no_candidate",
-      "next_attempt_at": "2026-10-08T14:16:39.753Z",
+      "next_attempt_at": "2026-10-08T15:15:48.476Z",
       "candidate_count": 0,
       "provider_errors": [],
-      "provider_strategy": "sru-title-batch-v1"
+      "provider_strategy": "sru-title-batch-v2"
+    },
+    "wrk_4f4f4358556e": {
+      "attempted_at": "2026-09-08T15:15:48.476Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-10-08T15:15:48.476Z",
+      "candidate_count": 0,
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v2"
     },
     "wrk_50477fff5113": {
       "attempted_at": "2026-08-09T03:53:20.078Z",
@@ -623,11 +635,12 @@
       ]
     },
     "wrk_508c7feac779": {
-      "attempted_at": "2026-08-24T15:23:09.544Z",
+      "attempted_at": "2026-09-08T15:15:48.476Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-23T15:23:09.544Z",
+      "next_attempt_at": "2026-10-08T15:15:48.476Z",
       "candidate_count": 0,
-      "provider_errors": []
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v2"
     },
     "wrk_50fc00660a77": {
       "attempted_at": "2026-09-07T18:52:28.430Z",
@@ -637,11 +650,12 @@
       "provider_errors": []
     },
     "wrk_52cebd73d190": {
-      "attempted_at": "2026-08-24T15:23:09.544Z",
+      "attempted_at": "2026-09-08T15:15:48.476Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-23T15:23:09.544Z",
+      "next_attempt_at": "2026-10-08T15:15:48.476Z",
       "candidate_count": 0,
-      "provider_errors": []
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v2"
     },
     "wrk_54fc35dd55dc": {
       "attempted_at": "2026-09-07T18:52:28.430Z",
@@ -658,11 +672,12 @@
       "provider_errors": []
     },
     "wrk_561e61449855": {
-      "attempted_at": "2026-08-24T15:23:09.544Z",
+      "attempted_at": "2026-09-08T15:15:48.476Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-23T15:23:09.544Z",
+      "next_attempt_at": "2026-10-08T15:15:48.476Z",
       "candidate_count": 0,
-      "provider_errors": []
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v2"
     },
     "wrk_56904e57fd9e": {
       "attempted_at": "2026-08-08T15:06:19.349Z",
@@ -710,18 +725,20 @@
       "provider_errors": []
     },
     "wrk_5cc72c337f62": {
-      "attempted_at": "2026-08-24T15:23:09.544Z",
+      "attempted_at": "2026-09-08T15:15:48.476Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-23T15:23:09.544Z",
+      "next_attempt_at": "2026-10-08T15:15:48.476Z",
       "candidate_count": 0,
-      "provider_errors": []
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v2"
     },
     "wrk_5d88863760e5": {
-      "attempted_at": "2026-08-24T15:23:09.544Z",
+      "attempted_at": "2026-09-08T15:15:48.476Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-09-23T15:23:09.544Z",
+      "next_attempt_at": "2026-10-08T15:15:48.476Z",
       "candidate_count": 0,
-      "provider_errors": []
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v2"
     },
     "wrk_5f51b8010c44": {
       "attempted_at": "2026-08-24T15:23:09.544Z",

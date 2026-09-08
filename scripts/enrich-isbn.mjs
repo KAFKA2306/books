@@ -23,7 +23,7 @@ const providerRequestAttempts = 2;
 const providerRequestTimeoutMs = 15_000;
 const ndlBatchSize = 5;
 const openBdBatchSize = 50;
-const ndlStrategyVersion = 'sru-title-batch-v2';
+const ndlStrategyVersion = 'sru-title-batch-v1';
 const titleSimilarityThreshold = 0.95;
 const googleBooksApiKey = process.env.GOOGLE_BOOKS_API_KEY?.trim() || null;
 
@@ -38,7 +38,7 @@ const state = await readJson(statePath, {
   updated_at: null,
   attempts: {},
 });
-const eligibilityState = withCandidatesDueAfterStrategyChange(state);
+const eligibilityState = withProviderErrorsDueAfterStrategyChange(state);
 const selected = eligibleWorks(catalog, eligibilityState, now).slice(0, args.limit);
 
 if (!selected.length) {
@@ -59,7 +59,7 @@ for (const batch of chunks(selected, ndlBatchSize)) {
         work.work_id,
         batchCandidates.filter((candidate) => (
           candidate?.title
-          && isNdlCandidateTitleMatch(work.title, candidate.title)
+          && diceSimilarity(work.title, candidate.title) >= titleSimilarityThreshold
         )),
       );
     }
@@ -211,12 +211,12 @@ if (!args.dryRun) {
 }
 console.log(JSON.stringify(report.summary));
 
-function withCandidatesDueAfterStrategyChange(currentState) {
+function withProviderErrorsDueAfterStrategyChange(currentState) {
   return {
     ...currentState,
     attempts: Object.fromEntries(Object.entries(currentState.attempts ?? {}).map(([workId, attempt]) => {
       if (
-        ['provider_error', 'no_candidate'].includes(attempt?.outcome)
+        attempt?.outcome === 'provider_error'
         && attempt?.provider_strategy !== ndlStrategyVersion
       ) {
         return [workId, { ...attempt, next_attempt_at: null }];
@@ -224,19 +224,6 @@ function withCandidatesDueAfterStrategyChange(currentState) {
       return [workId, attempt];
     })),
   };
-}
-
-function isNdlCandidateTitleMatch(workTitle, candidateTitle) {
-  const work = normalizeCandidateTitle(workTitle);
-  const candidate = normalizeCandidateTitle(candidateTitle);
-  return Boolean(work && candidate && (candidate.includes(work) || work.includes(candidate)));
-}
-
-function normalizeCandidateTitle(value) {
-  return String(value ?? '')
-    .normalize('NFKC')
-    .toLowerCase()
-    .replace(/[\s\u3000:：\-―—・「」『』（）()]/g, '');
 }
 
 function chunks(values, size) {

@@ -6,6 +6,7 @@ import {
   eligibleWorks,
   parseGoogleBooks,
   parseNdlOpenSearch,
+  parseNdlSru,
   parseOpenBd,
   retryAfter,
 } from '../src/isbn-enrichment.mjs';
@@ -13,6 +14,10 @@ import {
 test('provider parsers normalize ISBN-10 and ISBN-13', () => {
   const ndl = parseNdlOpenSearch(`<?xml version="1.0"?><rss><channel><item><title>赤毛のアン</title><dc:creator>L.M.モンゴメリ</dc:creator><dc:publisher>新潮社</dc:publisher><dc:date>2008</dc:date><dc:identifier xsi:type="dcndl:ISBN">9784102113417</dc:identifier><link>https://ndl.example/book</link></item></channel></rss>`);
   assert.equal(ndl[0].isbn13, '9784102113417');
+
+  const sru = parseNdlSru(`<?xml version="1.0"?><srw:searchRetrieveResponse xmlns:srw="http://www.loc.gov/zing/srw/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><srw:records><srw:record><srw:recordData><rdf:RDF><dcndl:BibResource rdf:about="https://ndl.example/sru-book"><dc:title>赤毛のアン</dc:title><dc:creator>L.M.モンゴメリ</dc:creator><dc:publisher>新潮社</dc:publisher><dc:date>2008</dc:date><dc:identifier xsi:type="dcndl:ISBN">9784102113417</dc:identifier></dcndl:BibResource></rdf:RDF></srw:recordData></srw:record></srw:records></srw:searchRetrieveResponse>`);
+  assert.equal(sru[0].isbn13, '9784102113417');
+  assert.equal(sru[0].source_url, 'https://ndl.example/sru-book');
 
   const google = parseGoogleBooks({
     items: [{

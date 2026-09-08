@@ -1,12 +1,13 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { diceSimilarity } from '../src/catalog.mjs';
 import { loadCatalog } from './load-catalog.mjs';
 import { retryAfterMilliseconds } from '../src/http-retry.mjs';
 import {
   consolidateCandidates,
   eligibleWorks,
   parseGoogleBooks,
-  parseNdlOpenSearch,
+  parseNdlSru,
   parseOpenBd,
   retryAfter,
 } from '../src/isbn-enrichment.mjs';
@@ -20,6 +21,10 @@ const now = new Date();
 const nowIso = now.toISOString();
 const providerRequestAttempts = 2;
 const providerRequestTimeoutMs = 15_000;
+const ndlBatchSize = 5;
+const openBdBatchSize = 50;
+const ndlStrategyVersion = 'sru-title-batch-v1';
+const titleSimilarityThreshold = 0.95;
 const googleBooksApiKey = process.env.GOOGLE_BOOKS_API_KEY?.trim() || null;
 
 const catalog = await loadCatalog(root);
@@ -33,42 +38,81 @@ const state = await readJson(statePath, {
   updated_at: null,
   attempts: {},
 });
-const selected = eligibleWorks(catalog, state, now).slice(0, args.limit);
+const eligibilityState = withProviderErrorsDueAfterStrategyChange(state);
+const selected = eligibleWorks(catalog, eligibilityState, now).slice(0, args.limit);
 
 if (!selected.length) {
   console.log(JSON.stringify({ attempted: 0, enriched: 0, reason: 'no_due_works' }));
   process.exit(0);
 }
 
+const ndlCandidatesByWork = new Map(selected.map(({ work }) => [work.work_id, []]));
+const ndlErrorByWork = new Map();
+let ndlLogicalRequests = 0;
+
+for (const batch of chunks(selected, ndlBatchSize)) {
+  ndlLogicalRequests += 1;
+  try {
+    const batchCandidates = await searchNdlBatch(batch.map(({ work }) => work.title));
+    for (const { work } of batch) {
+      ndlCandidatesByWork.set(
+        work.work_id,
+        batchCandidates.filter((candidate) => (
+          candidate?.title
+          && diceSimilarity(work.title, candidate.title) >= titleSimilarityThreshold
+        )),
+      );
+    }
+  } catch (error) {
+    const message = errorMessage(error);
+    for (const { work } of batch) ndlErrorByWork.set(work.work_id, message);
+  }
+}
+
+const ndlIsbns = [...new Set(
+  [...ndlCandidatesByWork.values()].flat().map((candidate) => candidate.isbn13).filter(Boolean),
+)];
+const openBdCandidatesByIsbn = new Map();
+const openBdErrorByIsbn = new Map();
+let openBdLogicalRequests = 0;
+
+for (const isbnBatch of chunks(ndlIsbns, openBdBatchSize)) {
+  openBdLogicalRequests += 1;
+  try {
+    for (const candidate of await lookupOpenBd(isbnBatch)) {
+      const current = openBdCandidatesByIsbn.get(candidate.isbn13) ?? [];
+      current.push(candidate);
+      openBdCandidatesByIsbn.set(candidate.isbn13, current);
+    }
+  } catch (error) {
+    const message = errorMessage(error);
+    for (const isbn13 of isbnBatch) openBdErrorByIsbn.set(isbn13, message);
+  }
+}
+
 const processed = await mapWithConcurrency(selected, args.concurrency, async ({ work, pending_edition: pendingEdition }) => {
   const providerErrors = [];
-  const candidates = [];
-  const initialLookups = [
-    { provider: 'ndl', request: searchNdl(work.title) },
-  ];
+  const ndlCandidates = ndlCandidatesByWork.get(work.work_id) ?? [];
+  const candidates = [...ndlCandidates];
+  const ndlError = ndlErrorByWork.get(work.work_id);
+  if (ndlError) providerErrors.push({ provider: 'ndl', message: ndlError });
+
   if (googleBooksApiKey) {
-    initialLookups.push({
-      provider: 'google_books',
-      request: searchGoogleBooks(work.title, googleBooksApiKey),
-    });
-  }
-  const lookupResults = await Promise.allSettled(initialLookups.map(({ request }) => request));
-
-  for (const [index, lookup] of lookupResults.entries()) {
-    const provider = initialLookups[index].provider;
-    if (lookup.status === 'fulfilled') candidates.push(...lookup.value);
-    else providerErrors.push({ provider, message: errorMessage(lookup.reason) });
-  }
-
-  const candidateIsbns = [...new Set(candidates.map((candidate) => candidate.isbn13))]
-    .slice(0, 20);
-  if (candidateIsbns.length) {
     try {
-      candidates.push(...await lookupOpenBd(candidateIsbns));
+      candidates.push(...await searchGoogleBooks(work.title, googleBooksApiKey));
     } catch (error) {
-      providerErrors.push({ provider: 'openbd', message: errorMessage(error) });
+      providerErrors.push({ provider: 'google_books', message: errorMessage(error) });
     }
   }
+
+  const relevantIsbns = [...new Set(ndlCandidates.map((candidate) => candidate.isbn13).filter(Boolean))];
+  const openBdErrors = new Set();
+  for (const isbn13 of relevantIsbns) {
+    candidates.push(...(openBdCandidatesByIsbn.get(isbn13) ?? []));
+    const openBdError = openBdErrorByIsbn.get(isbn13);
+    if (openBdError) openBdErrors.add(openBdError);
+  }
+  for (const message of openBdErrors) providerErrors.push({ provider: 'openbd', message });
 
   const providerCandidateCounts = countCandidatesByProvider(candidates);
   const decision = consolidateCandidates(work, candidates);
@@ -107,6 +151,7 @@ const processed = await mapWithConcurrency(selected, args.concurrency, async ({ 
       next_attempt_at: retryAfter(outcome, now),
       candidate_count: decision.candidates.length,
       provider_errors: providerErrors,
+      provider_strategy: ndlStrategyVersion,
     },
   };
 });
@@ -131,11 +176,18 @@ const report = {
     batch_limit: args.limit,
     concurrency: args.concurrency,
     minimum_distinct_providers: 2,
-    title_similarity_threshold: 0.95,
+    title_similarity_threshold: titleSimilarityThreshold,
     ambiguous_candidates_are_rejected: true,
     provider_request_attempts: providerRequestAttempts,
     provider_request_timeout_ms: providerRequestTimeoutMs,
+    ndl_query_strategy: ndlStrategyVersion,
+    ndl_batch_size: ndlBatchSize,
     google_books_enabled: Boolean(googleBooksApiKey),
+  },
+  logical_requests: {
+    ndl: ndlLogicalRequests,
+    openbd: openBdLogicalRequests,
+    google_books: googleBooksApiKey ? selected.length : 0,
   },
   summary: {
     attempted: results.length,
@@ -158,6 +210,29 @@ if (!args.dryRun) {
   await Promise.all(writes);
 }
 console.log(JSON.stringify(report.summary));
+
+function withProviderErrorsDueAfterStrategyChange(currentState) {
+  return {
+    ...currentState,
+    attempts: Object.fromEntries(Object.entries(currentState.attempts ?? {}).map(([workId, attempt]) => {
+      if (
+        attempt?.outcome === 'provider_error'
+        && attempt?.provider_strategy !== ndlStrategyVersion
+      ) {
+        return [workId, { ...attempt, next_attempt_at: null }];
+      }
+      return [workId, attempt];
+    })),
+  };
+}
+
+function chunks(values, size) {
+  const result = [];
+  for (let index = 0; index < values.length; index += size) {
+    result.push(values.slice(index, index + size));
+  }
+  return result;
+}
 
 function parseArgs(values) {
   let limit = 25;
@@ -248,14 +323,24 @@ async function writeJson(filePath, value) {
   await fs.writeFile(filePath, `${JSON.stringify(value, null, 2)}\n`);
 }
 
-async function searchNdl(title) {
-  const url = new URL('https://ndlsearch.ndl.go.jp/api/opensearch');
+async function searchNdlBatch(titles) {
+  const query = `dpid="iss-ndl-opac-national" AND (${titles
+    .map((title) => `title="${escapeCqlValue(title)}"`)
+    .join(' OR ')})`;
+  const url = new URL('https://ndlsearch.ndl.go.jp/api/sru');
   url.search = new URLSearchParams({
-    cnt: '20',
-    title,
-    dpid: 'iss-ndl-opac-national',
+    operation: 'searchRetrieve',
+    recordSchema: 'dcndl',
+    recordPacking: 'xml',
+    onlyBib: 'true',
+    maximumRecords: String(Math.min(100, Math.max(20, titles.length * 20))),
+    query,
   });
-  return parseNdlOpenSearch(await fetchText(url, 'ndl'));
+  return parseNdlSru(await fetchText(url, 'ndl'));
+}
+
+function escapeCqlValue(value) {
+  return String(value).replaceAll('\\', '\\\\').replaceAll('"', '\\"');
 }
 
 async function searchGoogleBooks(title, apiKey) {
@@ -288,7 +373,7 @@ async function fetchText(url, provider) {
     try {
       const response = await fetch(url, {
         headers: {
-          'User-Agent': 'KAFKA2306-books-isbn-enrichment/1.1 (+https://github.com/KAFKA2306/books)',
+          'User-Agent': 'KAFKA2306-books-isbn-enrichment/1.2 (+https://github.com/KAFKA2306/books)',
         },
         signal: controller.signal,
       });

@@ -45,36 +45,46 @@ function identifiersFromText(text) {
   return unique(matches.map(canonicalIsbn13));
 }
 
+function parseNdlRecord(fragment) {
+  const typedIdentifiers = [...String(fragment).matchAll(
+    /<(?:(?:[\w.-]+):)?identifier\b[^>]*(?:ISBN|isbn)[^>]*>([\s\S]*?)<\/(?:(?:[\w.-]+):)?identifier>/gi,
+  )].flatMap((match) => identifiersFromText(stripMarkup(match[1])));
+  const explicitIdentifiers = allTags(fragment, 'ISBN').flatMap(identifiersFromText);
+  const isbns = unique([...typedIdentifiers, ...explicitIdentifiers]);
+  if (!isbns.length) return [];
+
+  const title = firstTag(fragment, 'title');
+  const creators = unique([...allTags(fragment, 'creator'), ...allTags(fragment, 'author')]);
+  const publisher = firstTag(fragment, 'publisher');
+  const date = firstTag(fragment, 'date');
+  const link = firstTag(fragment, 'link');
+  const about = String(fragment).match(/\brdf:about=["']([^"']+)["']/i)?.[1] ?? null;
+  const sourceUrl = link ?? (about ? decodeEntities(about) : null);
+
+  return isbns.map((isbn13) => ({
+    provider: 'ndl',
+    isbn13,
+    title,
+    authors: creators,
+    publisher,
+    published_year: yearFrom(date),
+    format: null,
+    language: 'ja',
+    source_url: sourceUrl,
+  }));
+}
+
 export function parseNdlOpenSearch(xml) {
   const items = [...String(xml).matchAll(/<item\b[^>]*>([\s\S]*?)<\/item>/gi)]
     .map((match) => match[1]);
+  return items.flatMap(parseNdlRecord);
+}
 
-  return items.flatMap((item) => {
-    const typedIdentifiers = [...item.matchAll(
-      /<(?:(?:[\w.-]+):)?identifier\b[^>]*(?:ISBN|isbn)[^>]*>([\s\S]*?)<\/(?:(?:[\w.-]+):)?identifier>/gi,
-    )].flatMap((match) => identifiersFromText(stripMarkup(match[1])));
-    const explicitIdentifiers = allTags(item, 'ISBN').flatMap(identifiersFromText);
-    const isbns = unique([...typedIdentifiers, ...explicitIdentifiers]);
-    if (!isbns.length) return [];
-
-    const title = firstTag(item, 'title');
-    const creators = unique([...allTags(item, 'creator'), ...allTags(item, 'author')]);
-    const publisher = firstTag(item, 'publisher');
-    const date = firstTag(item, 'date');
-    const link = firstTag(item, 'link');
-
-    return isbns.map((isbn13) => ({
-      provider: 'ndl',
-      isbn13,
-      title,
-      authors: creators,
-      publisher,
-      published_year: yearFrom(date),
-      format: null,
-      language: 'ja',
-      source_url: link,
-    }));
-  });
+export function parseNdlSru(xml) {
+  const records = [...String(xml).matchAll(
+    /<(?:(?:[\w.-]+):)?record\b[^>]*>([\s\S]*?)<\/(?:(?:[\w.-]+):)?record>/gi,
+  )].map((match) => match[1]);
+  return records.flatMap(parseNdlRecord);
 }
 
 export function parseGoogleBooks(payload) {

@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-report.v1",
-  "generated_at": "2026-09-09T07:23:46.460Z",
+  "generated_at": "2026-09-09T18:00:49.260Z",
   "policy": {
     "batch_limit": 25,
     "concurrency": 1,
@@ -14,16 +14,16 @@
     "google_books_enabled": false
   },
   "logical_requests": {
-    "ndl": 1,
+    "ndl": 2,
     "openbd": 0,
     "google_books": 0
   },
   "summary": {
-    "attempted": 3,
+    "attempted": 6,
     "enriched": 0,
     "ambiguous": 0,
     "no_consensus": 0,
-    "no_candidate": 3,
+    "no_candidate": 6,
     "provider_error": 0
   },
   "provider_summary": {
@@ -48,8 +48,8 @@
   },
   "results": [
     {
-      "work_id": "wrk_839bba547984",
-      "title": "けいおん!",
+      "work_id": "wrk_96cc43955eb3",
+      "title": "多変量解析がわかる 多変量解析の入門書と",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],
@@ -57,8 +57,8 @@
       "provider_errors": []
     },
     {
-      "work_id": "wrk_89c0fdd0b142",
-      "title": "微積分学",
+      "work_id": "wrk_97c866043e2f",
+      "title": "復活の日",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],
@@ -66,8 +66,35 @@
       "provider_errors": []
     },
     {
-      "work_id": "wrk_8bffb6eaea94",
-      "title": "トリフィド時代",
+      "work_id": "wrk_9a21b1ae2af3",
+      "title": "エコロジー経済学",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_9dd0d4eec39e",
+      "title": "デスノート",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_a02c61bec5db",
+      "title": "食事でよくなる!子供の発達障害 たんぱく",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_a185d905c2f5",
+      "title": "解読ウェーバー プロテスタンティズムの倫理",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],

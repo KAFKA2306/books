@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-report.v1",
-  "generated_at": "2026-09-08T15:19:22.724Z",
+  "generated_at": "2026-09-09T07:23:46.460Z",
   "policy": {
     "batch_limit": 25,
     "concurrency": 1,
@@ -14,16 +14,16 @@
     "google_books_enabled": false
   },
   "logical_requests": {
-    "ndl": 2,
+    "ndl": 1,
     "openbd": 0,
     "google_books": 0
   },
   "summary": {
-    "attempted": 8,
+    "attempted": 3,
     "enriched": 0,
     "ambiguous": 0,
     "no_consensus": 0,
-    "no_candidate": 8,
+    "no_candidate": 3,
     "provider_error": 0
   },
   "provider_summary": {
@@ -48,8 +48,8 @@
   },
   "results": [
     {
-      "work_id": "wrk_7967ce140bfd",
-      "title": "風は青海を渡るのか?",
+      "work_id": "wrk_839bba547984",
+      "title": "けいおん!",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],
@@ -57,8 +57,8 @@
       "provider_errors": []
     },
     {
-      "work_id": "wrk_79a111fcbc6a",
-      "title": "妖狐×僕SS",
+      "work_id": "wrk_89c0fdd0b142",
+      "title": "微積分学",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],
@@ -66,53 +66,8 @@
       "provider_errors": []
     },
     {
-      "work_id": "wrk_79ac7ba1d011",
-      "title": "「あなた」という商品を高く売る方法 キャリア戦略をマーケティングから考える",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_7c8a655cde27",
-      "title": "お金2.0",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_7e8884490097",
-      "title": "ゼロから見直すエネルギー",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_7e9aee67d35d",
-      "title": "渚にて",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_8071b3f07069",
-      "title": "亜人",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_83664c0c6479",
-      "title": "ソクラテスの弁明 (マンガで読む名作)",
+      "work_id": "wrk_8bffb6eaea94",
+      "title": "トリフィド時代",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],

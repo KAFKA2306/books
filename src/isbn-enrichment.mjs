@@ -39,6 +39,8 @@ const yearFrom = (value) => {
 };
 
 const unique = (values) => [...new Set(values.filter(Boolean))];
+const DAY_MS = 86_400_000;
+const NO_CANDIDATE_RETRY_DAYS = 365;
 
 function identifiersFromText(text) {
   const matches = String(text).match(/(?:97[89][\s-]?)?(?:\d[\s-]?){8,11}[\dX]/gi) ?? [];
@@ -203,6 +205,23 @@ const serializeCandidate = (candidate) => ({
   best_similarity: candidate.best_similarity,
 });
 
+function nextAttemptAt(attempt) {
+  if (!attempt) return null;
+  if (attempt.outcome === 'no_candidate' && attempt.attempted_at) {
+    const attemptedAt = new Date(attempt.attempted_at);
+    if (!Number.isNaN(attemptedAt.getTime())) {
+      const noCandidateRetry = new Date(
+        attemptedAt.getTime() + NO_CANDIDATE_RETRY_DAYS * DAY_MS,
+      );
+      const stored = attempt.next_attempt_at ? new Date(attempt.next_attempt_at) : null;
+      if (!stored || Number.isNaN(stored.getTime()) || stored < noCandidateRetry) {
+        return noCandidateRetry;
+      }
+    }
+  }
+  return attempt.next_attempt_at ? new Date(attempt.next_attempt_at) : null;
+}
+
 export function eligibleWorks(catalog, state, now = new Date()) {
   const attempts = state?.attempts ?? {};
   const editionsByWork = new Map();
@@ -235,8 +254,8 @@ export function eligibleWorks(catalog, state, now = new Date()) {
     const holdings = holdingsByEdition.get(pending[0].edition_id) ?? [];
     if (holdings.some((holding) => /kindle|電子/i.test(holding.format ?? ''))) return [];
 
-    const nextAttempt = attempts[work.work_id]?.next_attempt_at;
-    if (nextAttempt && new Date(nextAttempt) > now) return [];
+    const nextAttempt = nextAttemptAt(attempts[work.work_id]);
+    if (nextAttempt && nextAttempt > now) return [];
     return [{ work, pending_edition: pending[0] }];
   }).sort((left, right) => left.work.work_id.localeCompare(right.work.work_id));
 }
@@ -348,8 +367,8 @@ export function retryAfter(outcome, now = new Date()) {
     accepted: 3650,
     ambiguous: 90,
     no_consensus: 30,
-    no_candidate: 30,
+    no_candidate: NO_CANDIDATE_RETRY_DAYS,
     provider_error: 1,
   }[outcome] ?? 7;
-  return new Date(now.getTime() + days * 86_400_000).toISOString();
+  return new Date(now.getTime() + days * DAY_MS).toISOString();
 }

@@ -90,6 +90,34 @@ test('eligibility excludes verified and electronic editions', () => {
   assert.deepEqual(eligible.map((entry) => entry.work.work_id), ['a']);
 });
 
+test('existing no-candidate results use the longer negative-result backoff', () => {
+  const catalog = {
+    works: [{ work_id: 'a', title: 'A' }],
+    editions: [
+      { edition_id: 'pending:a', work_id: 'a', isbn13: null, verification: 'unverified' },
+    ],
+    holdings: [{ edition_id: 'pending:a', format: '紙' }],
+  };
+  const state = {
+    attempts: {
+      a: {
+        attempted_at: '2026-09-09T18:00:49.260Z',
+        outcome: 'no_candidate',
+        next_attempt_at: '2026-10-09T18:00:49.260Z',
+      },
+    },
+  };
+
+  assert.equal(
+    eligibleWorks(catalog, state, new Date('2026-10-10T00:00:00Z')).length,
+    0,
+  );
+  assert.equal(
+    eligibleWorks(catalog, state, new Date('2027-09-10T00:00:00Z')).length,
+    1,
+  );
+});
+
 test('overlay replaces one pending edition and holding references', () => {
   const catalog = {
     stats: { edition_count: 1, holding_count: 1, isbn_verified_count: 0 },
@@ -133,5 +161,9 @@ test('retry windows are deterministic', () => {
   assert.equal(
     retryAfter('provider_error', new Date('2026-08-07T00:00:00Z')),
     '2026-08-08T00:00:00.000Z',
+  );
+  assert.equal(
+    retryAfter('no_candidate', new Date('2026-08-07T00:00:00Z')),
+    '2027-08-07T00:00:00.000Z',
   );
 });

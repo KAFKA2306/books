@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-report.v1",
-  "generated_at": "2026-09-10T07:19:32.756Z",
+  "generated_at": "2026-09-11T07:18:11.580Z",
   "policy": {
     "batch_limit": 25,
     "concurrency": 1,
@@ -14,16 +14,16 @@
     "google_books_enabled": false
   },
   "logical_requests": {
-    "ndl": 3,
+    "ndl": 1,
     "openbd": 0,
     "google_books": 0
   },
   "summary": {
-    "attempted": 13,
+    "attempted": 4,
     "enriched": 0,
     "ambiguous": 0,
     "no_consensus": 0,
-    "no_candidate": 13,
+    "no_candidate": 4,
     "provider_error": 0
   },
   "provider_summary": {
@@ -48,8 +48,8 @@
   },
   "results": [
     {
-      "work_id": "wrk_a5e6f1b281e4",
-      "title": "画期的囲碁上達法 五路盤問題集",
+      "work_id": "wrk_8c37175648d9",
+      "title": "不合理だからすべてがうまくいく",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],
@@ -57,8 +57,8 @@
       "provider_errors": []
     },
     {
-      "work_id": "wrk_a6c95a8755a2",
-      "title": "カフカ短編集",
+      "work_id": "wrk_be42faadf0e1",
+      "title": "売れるしくみをつくるマーケットリサーチ大全 元「マクロミル」リサーチディレクターによるあらゆる業種",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],
@@ -66,8 +66,8 @@
       "provider_errors": []
     },
     {
-      "work_id": "wrk_a75ca79fa75a",
-      "title": "原因と結果の経済学",
+      "work_id": "wrk_c37d93bcf7ba",
+      "title": "TOEIC 究極の模試",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],
@@ -75,89 +75,8 @@
       "provider_errors": []
     },
     {
-      "work_id": "wrk_a7b016b2ac29",
-      "title": "変身",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_a85f06f18e28",
-      "title": "介護等体験ハンドブック",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_a8f8d4f4a315",
-      "title": "新しい高校地学の教科書",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_acbb9793d1da",
-      "title": "ベーシックインカムへの道",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_afc4ff7938be",
-      "title": "霊を知る",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_b163f9a7c865",
-      "title": "プロテスタンティズムの倫理と資本主義の精神",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_b16afc1f5578",
-      "title": "売れるロジックの見つけ方 マーケッターと",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_b5b7df23369b",
-      "title": "理科系の作文技術",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_b7eb41282d07",
-      "title": "海と陸をつなぐ進化論 気候変動と微生物が",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_bc5026410a7e",
-      "title": "分離プロセス工学",
+      "work_id": "wrk_c9d03c3173fa",
+      "title": "クリスチャン分析化学",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],

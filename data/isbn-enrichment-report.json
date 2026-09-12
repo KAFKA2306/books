@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-report.v1",
-  "generated_at": "2026-09-12T07:10:21.962Z",
+  "generated_at": "2026-09-12T17:26:50.487Z",
   "policy": {
     "batch_limit": 25,
     "concurrency": 1,
@@ -19,11 +19,11 @@
     "google_books": 0
   },
   "summary": {
-    "attempted": 1,
+    "attempted": 3,
     "enriched": 0,
     "ambiguous": 0,
     "no_consensus": 0,
-    "no_candidate": 1,
+    "no_candidate": 3,
     "provider_error": 0
   },
   "provider_summary": {
@@ -48,8 +48,26 @@
   },
   "results": [
     {
-      "work_id": "wrk_4248f138a80d",
-      "title": "せっかち伯爵と時間どろぼう",
+      "work_id": "wrk_f045838eaea5",
+      "title": "ねじまき鳥クロニクル",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_f0fcc39ecd7b",
+      "title": "日経サイエンス",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_f1372838fc1e",
+      "title": "もやしもん",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],

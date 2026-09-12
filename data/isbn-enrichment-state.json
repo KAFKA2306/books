@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-state.v1",
-  "updated_at": "2026-09-12T07:10:21.962Z",
+  "updated_at": "2026-09-12T17:26:50.487Z",
   "total_attempts": 224,
   "attempts": {
     "wrk_0025172962b9": {
@@ -1839,40 +1839,28 @@
       "provider_errors": []
     },
     "wrk_f045838eaea5": {
-      "attempted_at": "2026-08-13T15:40:17.299Z",
-      "outcome": "no_consensus",
-      "next_attempt_at": "2026-09-12T15:40:17.299Z",
+      "attempted_at": "2026-09-12T17:26:50.487Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2027-09-12T17:26:50.487Z",
       "candidate_count": 0,
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v1"
     },
     "wrk_f0fcc39ecd7b": {
-      "attempted_at": "2026-08-13T15:40:17.299Z",
-      "outcome": "no_consensus",
-      "next_attempt_at": "2026-09-12T15:40:17.299Z",
+      "attempted_at": "2026-09-12T17:26:50.487Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2027-09-12T17:26:50.487Z",
       "candidate_count": 0,
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v1"
     },
     "wrk_f1372838fc1e": {
-      "attempted_at": "2026-08-13T15:40:17.299Z",
-      "outcome": "no_consensus",
-      "next_attempt_at": "2026-09-12T15:40:17.299Z",
+      "attempted_at": "2026-09-12T17:26:50.487Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2027-09-12T17:26:50.487Z",
       "candidate_count": 0,
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v1"
     },
     "wrk_f1b0f093509f": {
       "attempted_at": "2026-08-13T15:40:17.299Z",

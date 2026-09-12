@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-report.v1",
-  "generated_at": "2026-09-11T17:55:54.653Z",
+  "generated_at": "2026-09-12T07:10:21.962Z",
   "policy": {
     "batch_limit": 25,
     "concurrency": 1,
@@ -14,16 +14,16 @@
     "google_books_enabled": false
   },
   "logical_requests": {
-    "ndl": 3,
+    "ndl": 1,
     "openbd": 0,
     "google_books": 0
   },
   "summary": {
-    "attempted": 12,
+    "attempted": 1,
     "enriched": 0,
     "ambiguous": 0,
     "no_consensus": 0,
-    "no_candidate": 12,
+    "no_candidate": 1,
     "provider_error": 0
   },
   "provider_summary": {
@@ -48,107 +48,8 @@
   },
   "results": [
     {
-      "work_id": "wrk_c9eee2e7dbbb",
-      "title": "善意で貧困はなくせるのか? 貧乏人の行動",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_ca712aafec58",
-      "title": "Animal Farm",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_ce3b9a97d380",
-      "title": "デザインド・リアリティ",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_cff81dacceaf",
-      "title": "猫のゆりかご",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_d87d3b804576",
-      "title": "日経エレクトロニクス",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_d9a82fef9c01",
-      "title": "福祉政治",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_dd2db3769980",
-      "title": "チャイニーズ・ドリーム",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_e0f57b1b57a2",
-      "title": "植物たちの戦争 病原体との5億年サバイバ",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_e124882e3454",
-      "title": "ブロックチェーン革命",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_e93dcd3ea806",
-      "title": "真空のカラクリ",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_ea0caef99971",
-      "title": "となりの関くん",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_ee2fac82a018",
-      "title": "お金持ちになれる黄金の羽根の拾い方 知的人生設計のすすめ 2015",
+      "work_id": "wrk_4248f138a80d",
+      "title": "せっかち伯爵と時間どろぼう",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],

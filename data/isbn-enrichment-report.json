@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-report.v1",
-  "generated_at": "2026-09-12T17:26:50.487Z",
+  "generated_at": "2026-09-13T07:28:56.322Z",
   "policy": {
     "batch_limit": 25,
     "concurrency": 1,
@@ -14,16 +14,16 @@
     "google_books_enabled": false
   },
   "logical_requests": {
-    "ndl": 1,
+    "ndl": 3,
     "openbd": 0,
     "google_books": 0
   },
   "summary": {
-    "attempted": 3,
+    "attempted": 11,
     "enriched": 0,
     "ambiguous": 0,
     "no_consensus": 0,
-    "no_candidate": 3,
+    "no_candidate": 11,
     "provider_error": 0
   },
   "provider_summary": {
@@ -48,8 +48,8 @@
   },
   "results": [
     {
-      "work_id": "wrk_f045838eaea5",
-      "title": "ねじまき鳥クロニクル",
+      "work_id": "wrk_f31fa4eb028d",
+      "title": "コンピュータ将棋の進歩 6 (プロ棋士に並ぶ)",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],
@@ -57,8 +57,8 @@
       "provider_errors": []
     },
     {
-      "work_id": "wrk_f0fcc39ecd7b",
-      "title": "日経サイエンス",
+      "work_id": "wrk_f54867003323",
+      "title": "魔法の色を知っているか?",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],
@@ -66,8 +66,80 @@
       "provider_errors": []
     },
     {
-      "work_id": "wrk_f1372838fc1e",
-      "title": "もやしもん",
+      "work_id": "wrk_f648d6712cf8",
+      "title": "日常",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_f73548468f88",
+      "title": "材料力学",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_f7ba3300f41a",
+      "title": "なんで、その価格で売れちゃうの? 行動経",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_f892fc99d026",
+      "title": "ドミニオンマニアックスSPECIAL",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_fcb7c8d70ec9",
+      "title": "石田流の極意",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_fd22500399c6",
+      "title": "カラスの親指",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_fd43cd35949a",
+      "title": "旭化成の研究",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_fd8a787a3b82",
+      "title": "エンデの遺言",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_feee65b17e4c",
+      "title": "強い力と弱い力",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],

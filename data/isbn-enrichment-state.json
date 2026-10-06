@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-state.v1",
-  "updated_at": "2026-10-06T09:00:25.013Z",
+  "updated_at": "2026-10-06T19:51:08.760Z",
   "total_attempts": 224,
   "attempts": {
     "wrk_0025172962b9": {
@@ -264,11 +264,12 @@
       "provider_strategy": "sru-title-batch-v2"
     },
     "wrk_1ca0af507432": {
-      "attempted_at": "2026-09-06T17:21:31.619Z",
-      "outcome": "no_consensus",
-      "next_attempt_at": "2026-10-06T17:21:31.619Z",
+      "attempted_at": "2026-10-06T19:51:08.760Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2027-10-06T19:51:08.760Z",
       "candidate_count": 0,
-      "provider_errors": []
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v1"
     },
     "wrk_1ca55d657738": {
       "attempted_at": "2026-09-08T15:15:48.476Z",
@@ -311,18 +312,20 @@
       "provider_strategy": "sru-title-batch-v2"
     },
     "wrk_1f797f0d6f9f": {
-      "attempted_at": "2026-09-06T17:21:31.619Z",
-      "outcome": "no_consensus",
-      "next_attempt_at": "2026-10-06T17:21:31.619Z",
+      "attempted_at": "2026-10-06T19:51:08.760Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2027-10-06T19:51:08.760Z",
       "candidate_count": 0,
-      "provider_errors": []
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v1"
     },
     "wrk_20b39a08c2bd": {
-      "attempted_at": "2026-09-06T17:21:31.619Z",
-      "outcome": "no_consensus",
-      "next_attempt_at": "2026-10-06T17:21:31.619Z",
+      "attempted_at": "2026-10-06T19:51:08.760Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2027-10-06T19:51:08.760Z",
       "candidate_count": 0,
-      "provider_errors": []
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v1"
     },
     "wrk_22300ebb3fbc": {
       "attempted_at": "2026-08-07T15:37:42.258Z",
@@ -357,11 +360,12 @@
       ]
     },
     "wrk_248c55a16ac5": {
-      "attempted_at": "2026-09-06T17:21:31.619Z",
-      "outcome": "no_consensus",
-      "next_attempt_at": "2026-10-06T17:21:31.619Z",
+      "attempted_at": "2026-10-06T19:51:08.760Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2027-10-06T19:51:08.760Z",
       "candidate_count": 0,
-      "provider_errors": []
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v1"
     },
     "wrk_25b63cbadfa5": {
       "attempted_at": "2026-08-07T15:37:42.258Z",
@@ -376,32 +380,36 @@
       ]
     },
     "wrk_263180aeb8e4": {
-      "attempted_at": "2026-09-06T17:21:31.619Z",
-      "outcome": "no_consensus",
-      "next_attempt_at": "2026-10-06T17:21:31.619Z",
+      "attempted_at": "2026-10-06T19:51:08.760Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2027-10-06T19:51:08.760Z",
       "candidate_count": 0,
-      "provider_errors": []
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v1"
     },
     "wrk_2871c7f36716": {
-      "attempted_at": "2026-09-06T17:21:31.619Z",
-      "outcome": "no_consensus",
-      "next_attempt_at": "2026-10-06T17:21:31.619Z",
+      "attempted_at": "2026-10-06T19:51:08.760Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2027-10-06T19:51:08.760Z",
       "candidate_count": 0,
-      "provider_errors": []
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v1"
     },
     "wrk_2d4f9a75b3b8": {
-      "attempted_at": "2026-09-06T17:21:31.619Z",
-      "outcome": "no_consensus",
-      "next_attempt_at": "2026-10-06T17:21:31.619Z",
+      "attempted_at": "2026-10-06T19:51:08.760Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2027-10-06T19:51:08.760Z",
       "candidate_count": 0,
-      "provider_errors": []
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v1"
     },
     "wrk_2daa7d156ef4": {
-      "attempted_at": "2026-09-06T17:21:31.619Z",
-      "outcome": "no_consensus",
-      "next_attempt_at": "2026-10-06T17:21:31.619Z",
+      "attempted_at": "2026-10-06T19:51:08.760Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2027-10-06T19:51:08.760Z",
       "candidate_count": 0,
-      "provider_errors": []
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v1"
     },
     "wrk_302aed946c28": {
       "attempted_at": "2026-08-07T15:37:42.258Z",
@@ -424,18 +432,20 @@
       "provider_strategy": "sru-title-batch-v2"
     },
     "wrk_33bd7bfd21cf": {
-      "attempted_at": "2026-09-06T17:21:31.619Z",
-      "outcome": "no_consensus",
-      "next_attempt_at": "2026-10-06T17:21:31.619Z",
+      "attempted_at": "2026-10-06T19:51:08.760Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2027-10-06T19:51:08.760Z",
       "candidate_count": 0,
-      "provider_errors": []
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v1"
     },
     "wrk_34f164275419": {
-      "attempted_at": "2026-09-06T17:21:31.619Z",
-      "outcome": "no_consensus",
-      "next_attempt_at": "2026-10-06T17:21:31.619Z",
+      "attempted_at": "2026-10-06T19:51:08.760Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2027-10-06T19:51:08.760Z",
       "candidate_count": 0,
-      "provider_errors": []
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v1"
     },
     "wrk_3564709c22d4": {
       "attempted_at": "2026-08-14T15:34:30.424Z",

@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-report.v1",
-  "generated_at": "2026-10-06T09:00:25.013Z",
+  "generated_at": "2026-10-06T19:51:08.760Z",
   "policy": {
     "batch_limit": 25,
     "concurrency": 1,
@@ -19,11 +19,11 @@
     "google_books": 0
   },
   "summary": {
-    "attempted": 9,
+    "attempted": 10,
     "enriched": 0,
     "ambiguous": 0,
     "no_consensus": 0,
-    "no_candidate": 9,
+    "no_candidate": 10,
     "provider_error": 0
   },
   "provider_summary": {
@@ -48,8 +48,8 @@
   },
   "results": [
     {
-      "work_id": "wrk_0025172962b9",
-      "title": "ハイレベル面接術",
+      "work_id": "wrk_1ca0af507432",
+      "title": "LNG 50年の軌跡とその未来",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],
@@ -57,8 +57,8 @@
       "provider_errors": []
     },
     {
-      "work_id": "wrk_03ceb0cb730f",
-      "title": "例題とExcel演習で学ぶ多変量解析 因子分析・コレスポン",
+      "work_id": "wrk_1f797f0d6f9f",
+      "title": "大学生物学の教科書",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],
@@ -66,8 +66,8 @@
       "provider_errors": []
     },
     {
-      "work_id": "wrk_067694b72ff5",
-      "title": "植物知識",
+      "work_id": "wrk_20b39a08c2bd",
+      "title": "持たない幸福論",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],
@@ -75,8 +75,8 @@
       "provider_errors": []
     },
     {
-      "work_id": "wrk_0acbf4571cf0",
-      "title": "命に国境はない 紛争地イラクで考える戦争",
+      "work_id": "wrk_248c55a16ac5",
+      "title": "ブルー・オーシャン戦略 競争のない世界を",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],
@@ -84,8 +84,8 @@
       "provider_errors": []
     },
     {
-      "work_id": "wrk_0d301922403e",
-      "title": "TOEIC 金のフレーズ",
+      "work_id": "wrk_263180aeb8e4",
+      "title": "坂本ですが?",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],
@@ -93,8 +93,8 @@
       "provider_errors": []
     },
     {
-      "work_id": "wrk_0f4b29b00464",
-      "title": "ワーク・シフト 孤独と貧困から自由になる働き方の未来図",
+      "work_id": "wrk_2871c7f36716",
+      "title": "アンチ整理術",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],
@@ -102,8 +102,8 @@
       "provider_errors": []
     },
     {
-      "work_id": "wrk_0fb53b63a6a7",
-      "title": "図解でわかる多変量解析 データの山から本",
+      "work_id": "wrk_2d4f9a75b3b8",
+      "title": "消えた巨大生物 スーパービジュアル再現",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],
@@ -111,8 +111,8 @@
       "provider_errors": []
     },
     {
-      "work_id": "wrk_117eec18ff40",
-      "title": "一問一答面接攻略",
+      "work_id": "wrk_2daa7d156ef4",
+      "title": "基礎からわかる電磁気学",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],
@@ -120,8 +120,17 @@
       "provider_errors": []
     },
     {
-      "work_id": "wrk_14e018611a77",
-      "title": "ニュートン",
+      "work_id": "wrk_33bd7bfd21cf",
+      "title": "有望株の選び方",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_34f164275419",
+      "title": "羽生の法則",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],

@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-report.v1",
-  "generated_at": "2026-09-21T07:58:57.226Z",
+  "generated_at": "2026-10-06T09:00:25.013Z",
   "policy": {
     "batch_limit": 25,
     "concurrency": 1,
@@ -14,16 +14,16 @@
     "google_books_enabled": false
   },
   "logical_requests": {
-    "ndl": 1,
+    "ndl": 2,
     "openbd": 0,
     "google_books": 0
   },
   "summary": {
-    "attempted": 2,
+    "attempted": 9,
     "enriched": 0,
     "ambiguous": 0,
     "no_consensus": 0,
-    "no_candidate": 2,
+    "no_candidate": 9,
     "provider_error": 0
   },
   "provider_summary": {
@@ -48,8 +48,8 @@
   },
   "results": [
     {
-      "work_id": "wrk_fd64415da0cd",
-      "title": "銃・病原菌・鉄",
+      "work_id": "wrk_0025172962b9",
+      "title": "ハイレベル面接術",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],
@@ -57,8 +57,71 @@
       "provider_errors": []
     },
     {
-      "work_id": "wrk_fe8ae231cb6e",
-      "title": "自然流中原誠の振飛車破り",
+      "work_id": "wrk_03ceb0cb730f",
+      "title": "例題とExcel演習で学ぶ多変量解析 因子分析・コレスポン",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_067694b72ff5",
+      "title": "植物知識",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_0acbf4571cf0",
+      "title": "命に国境はない 紛争地イラクで考える戦争",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_0d301922403e",
+      "title": "TOEIC 金のフレーズ",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_0f4b29b00464",
+      "title": "ワーク・シフト 孤独と貧困から自由になる働き方の未来図",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_0fb53b63a6a7",
+      "title": "図解でわかる多変量解析 データの山から本",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_117eec18ff40",
+      "title": "一問一答面接攻略",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_14e018611a77",
+      "title": "ニュートン",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],

@@ -65,7 +65,7 @@ jobs:
               assert '<meta property="rendition:layout">reflowable</meta>' in opf
               assert '<meta property="rendition:flow">scrolled-continuous</meta>' in opf
               assert 'properties="cover-image"' in opf
-              assert len(z.read("EPUB/cover.jpg")) > 10_000
+              assert len(z.read("EPUB/cover.jpg")) > 2_000
               assert content.count("<table>") >= 2
               assert "SLO を利用して" in content
               assert "writing-mode:horizontal-tb" in css

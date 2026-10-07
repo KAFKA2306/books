@@ -2,10 +2,19 @@ name: Build The Art of SLOs Japanese EPUB
 
 on:
   workflow_dispatch:
-  push:
+  pull_request:
     paths:
       - "scripts/build_art_of_slos_epub.py"
       - "ebooks/the-art-of-slos-ja/README.md"
+      - "ebooks/the-art-of-slos-ja/cover.jpg"
+      - ".github/workflows/build-art-of-slos-ja.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "scripts/build_art_of_slos_epub.py"
+      - "ebooks/the-art-of-slos-ja/README.md"
+      - "ebooks/the-art-of-slos-ja/cover.jpg"
       - ".github/workflows/build-art-of-slos-ja.yml"
 
 permissions:
@@ -21,32 +30,68 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Parser self-test
+        run: python scripts/build_art_of_slos_epub.py --self-test
+
       - name: Build EPUB
         run: python scripts/build_art_of_slos_epub.py
 
-      - name: Validate EPUB container
+      - name: Validate EPUB structure and content
         run: |
           python - <<'PY'
+          import re
           import zipfile
           from pathlib import Path
+          from xml.etree import ElementTree as ET
 
           path = Path("dist/the-art-of-slos-ja.epub")
-          assert path.exists() and path.stat().st_size > 1000
+          assert path.exists() and path.stat().st_size > 50_000
+
           with zipfile.ZipFile(path) as z:
-              assert z.namelist()[0] == "mimetype"
+              names = z.namelist()
+              assert names[0] == "mimetype"
+              assert z.getinfo("mimetype").compress_type == zipfile.ZIP_STORED
               assert z.read("mimetype") == b"application/epub+zip"
-              for required in (
+
+              required = (
                   "META-INF/container.xml",
                   "EPUB/content.opf",
                   "EPUB/nav.xhtml",
+                  "EPUB/cover.xhtml",
+                  "EPUB/cover.jpg",
                   "EPUB/content.xhtml",
                   "EPUB/license.xhtml",
-              ):
-                  assert required in z.namelist(), required
+                  "EPUB/styles.css",
+              )
+              for name in required:
+                  assert name in names, name
+
+              for name in ("META-INF/container.xml", "EPUB/content.opf", "EPUB/nav.xhtml", "EPUB/cover.xhtml", "EPUB/content.xhtml", "EPUB/license.xhtml"):
+                  ET.fromstring(z.read(name))
+
+              opf = z.read("EPUB/content.opf").decode("utf-8")
+              assert '<meta property="rendition:layout">reflowable</meta>' in opf
+              assert '<meta property="rendition:flow">scrolled-continuous</meta>' in opf
+              assert 'properties="cover-image"' in opf
+              assert '<meta name="cover" content="cover-image"/>' in opf
+
+              cover = z.read("EPUB/cover.xhtml").decode("utf-8")
+              assert 'src="cover.jpg"' in cover
+
+              content = z.read("EPUB/content.xhtml").decode("utf-8")
+              assert "________________" not in content
+              assert "原文: https://" not in content
+              assert not re.search(r"ダウンタイム早見表\s+3", content)
+              assert "https://cre.page.link/art-of-slos-handbook</a>" not in content
+              assert content.count("<table") >= 2
+              assert '<div class="formula"' in content
+              assert "99.999%" in content
+
           print(path, path.stat().st_size)
           PY
 
       - name: Publish GitHub release asset
+        if: github.ref == 'refs/heads/main'
         env:
           GH_TOKEN: ${{ github.token }}
           TAG: the-art-of-slos-ja

@@ -1,0 +1,61 @@
+name: Build The Art of SLOs Japanese EPUB
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/build_art_of_slos_epub.py"
+      - "ebooks/the-art-of-slos-ja/README.md"
+      - ".github/workflows/build-art-of-slos-ja.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  build-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build EPUB
+        run: python scripts/build_art_of_slos_epub.py
+
+      - name: Validate EPUB container
+        run: |
+          python - <<'PY'
+          import zipfile
+          from pathlib import Path
+
+          path = Path("dist/the-art-of-slos-ja.epub")
+          assert path.exists() and path.stat().st_size > 1000
+          with zipfile.ZipFile(path) as z:
+              assert z.namelist()[0] == "mimetype"
+              assert z.read("mimetype") == b"application/epub+zip"
+              for required in (
+                  "META-INF/container.xml",
+                  "EPUB/content.opf",
+                  "EPUB/nav.xhtml",
+                  "EPUB/content.xhtml",
+                  "EPUB/license.xhtml",
+              ):
+                  assert required in z.namelist(), required
+          print(path, path.stat().st_size)
+          PY
+
+      - name: Publish GitHub release asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: the-art-of-slos-ja
+        run: |
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" dist/the-art-of-slos-ja.epub --clobber
+          else
+            gh release create "$TAG" dist/the-art-of-slos-ja.epub \
+              --target "$GITHUB_SHA" \
+              --title "The Art of SLOs 日本語版 EPUB" \
+              --notes "Google公開の日本語版 The Art of SLOs をKindle向けリフロー型EPUBへ再構成した非公式版。原資料は CC BY 4.0。"
+          fi

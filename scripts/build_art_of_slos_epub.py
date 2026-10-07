@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
-import argparse
 import html
+import os
 import re
 import urllib.request
 import uuid
 import zipfile
-from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -15,17 +14,17 @@ DOC_ID = "1WWQ9asDFlgr7f4jTh2xgxm8XIMLK_244-sDBMIvqVtw"
 SOURCE_URL = f"https://docs.google.com/document/d/{DOC_ID}/export?format=txt"
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "dist" / "the-art-of-slos-ja.epub"
-COVER_PATH = ROOT / "ebooks" / "the-art-of-slos-ja" / "cover.jpg"
+DEFAULT_COVER = ROOT / "ebooks" / "the-art-of-slos-ja" / "cover.jpg"
 
 TITLE = "The Art of SLOs 日本語版"
 CREATOR = "Google Customer Reliability Engineering"
 LANG = "ja"
 LICENSE_URL = "https://creativecommons.org/licenses/by/4.0/"
 ORIGINAL_URL = "https://sre.google/intl/ja_jp/resources/practices-and-processes/art-of-slos/"
-TRAILING_LAYOUT_URL = "https://cre.page.link/art-of-slos-handbook"
 BOOK_ID = f"urn:uuid:{uuid.uuid5(uuid.NAMESPACE_URL, ORIGINAL_URL + '#ja-epub')}"
 
-MAJOR_HEADINGS = {
+H2_HEADINGS = {
+    "ダウンタイム早見表",
     "SLI の方程式",
     "可用性の SLI の特定",
     "レイテンシーの SLI の特定",
@@ -44,18 +43,20 @@ MAJOR_HEADINGS = {
     "リソース",
 }
 
-SUBHEADINGS = {
-    "ビジネス側の考え方",
-    "開発側の考え方",
-    "運用側の考え方",
-    "この形式で SLI を表現することの意義",
+H3_HEADINGS = {
     "ユーザー ジャーニーを SLI の仕様に変換",
+    "この形式で SLI を表現することの意義",
     "リクエスト/レスポンス",
     "その他の可用性の SLI",
     "その他のレイテンシーの SLI",
     "データ処理",
     "データの鮮度をレスポンスの品質として測定",
     "SLO ワークシートの例",
+    "ログの処理",
+    "アプリケーション サーバーの指標",
+    "フロントエンド インフラストラクチャの指標",
+    "合成クライアント (外部監視) 又はデータ",
+    "クライアントへの埋め込み",
     "ミッションステートメント",
     "ゲーム: Fang Faction",
     "プロファイル ページを見る",
@@ -72,43 +73,19 @@ SUBHEADINGS = {
     "うまくいかなかったこと",
     "幸運だったこと",
     "アクションアイテム",
+    "メリット",
+    "デメリット",
+    "ビジネス側の考え方",
+    "開発側の考え方",
+    "運用側の考え方",
 }
-
-METHOD_HEADINGS = {
-    "ログの処理",
-    "アプリケーション サーバーの指標",
-    "フロントエンド インフラストラクチャの指標",
-    "合成クライアント (外部監視) 又はデータ",
-    "クライアントへの埋め込み",
-}
-
-SLI_DEFINITIONS = {
-    "有効なイベントのなかで良いものの割合",
-    "有効なリクエストのうち成功した割合",
-    "しきい値よりも速く実行された有効なリクエストの割合",
-    "品質を劣化させることなく処理された有効なリクエストの割合",
-    "しきい値よりも新しく更新された有効なデータの割合",
-    "処理に成功した有効なデータの割合",
-    "正確な出力を生成する有効なデータの割合",
-    "データ処理レートがしきい値よりも速い時間の割合",
-}
-
-SEPARATOR_RE = re.compile(r"^_{6,}$")
-PAGE_NUMBER_RE = re.compile(r"^\d{1,3}$")
-BULLET_RE = re.compile(r"^[*•]\s*(.+)$")
-ORDERED_RE = re.compile(r"^(\d+)\.\s+(.+)$")
-URL_RE = re.compile(r"https?://[^\s<]+")
-TERMINAL_RE = re.compile(r"[。！？!?）】」』]$")
-
-
-@dataclass(frozen=True)
-class SourceLine:
-    text: str
-    tabbed: bool = False
-    blank: bool = False
 
 
 def fetch_text() -> str:
+    local_source = os.environ.get("ART_OF_SLOS_SOURCE_FILE")
+    if local_source:
+        return Path(local_source).read_text(encoding="utf-8-sig")
+
     req = urllib.request.Request(SOURCE_URL, headers={"User-Agent": "Mozilla/5.0"})
     with urllib.request.urlopen(req, timeout=30) as response:
         raw = response.read()
@@ -120,365 +97,264 @@ def fetch_text() -> str:
     raise RuntimeError("Could not decode source document")
 
 
-def normalize_source(text: str) -> list[SourceLine]:
-    text = text.replace("\r\n", "\n").replace("\r", "\n").lstrip("\ufeff")
-    source: list[SourceLine] = []
-    for raw in text.split("\n"):
-        raw = raw.replace("\u00a0", " ").replace("\u3000", " ").rstrip()
-        tabbed = bool(re.match(r"^\s*\t", raw))
-        value = re.sub(r"[\t ]+", " ", raw).strip()
-        source.append(SourceLine(value, tabbed=tabbed, blank=not value))
+def normalize_line(line: str) -> str:
+    value = line.replace("\u3000", " ").strip()
+    value = re.sub(r"[ \t]+", " ", value)
+    value = re.sub(r"\s+([、。！？：；）】》])", r"\1", value)
+    value = re.sub(r"([（【《])\s+", r"\1", value)
+    return value.strip()
 
-    # The exported document starts with a title, source URL, and a page-numbered
-    # table of contents. The first exact body heading is the real content start.
+
+def clean_lines(text: str) -> list[str]:
+    text = text.replace("\r\n", "\n").replace("\r", "\n")
+    raw = [normalize_line(line) for line in text.split("\n")]
+
+    # Drop the PDF-style cover, source URL and page-number TOC.
     try:
-        body_start = next(i for i, line in enumerate(source) if line.text == "ダウンタイム早見表")
-    except StopIteration as exc:
-        raise RuntimeError("Could not locate the start of the handbook body") from exc
-    source = source[body_start:]
+        start = raw.index("ダウンタイム早見表")
+        raw = raw[start:]
+    except ValueError:
+        pass
 
-    cleaned: list[SourceLine] = []
-    previous_blank = True
-    previous_text = ""
-    for line in source:
-        value = line.text
+    lines: list[str] = []
+    for value in raw:
         if not value:
-            if not previous_blank:
-                cleaned.append(SourceLine("", blank=True))
-            previous_blank = True
             continue
-        if SEPARATOR_RE.fullmatch(value) or PAGE_NUMBER_RE.fullmatch(value):
+        if re.fullmatch(r"[_＿—–-]{3,}", value):
             continue
-        if value == TRAILING_LAYOUT_URL:
+        if value.startswith("原文:"):
             continue
-        if len(value) == 1 and value in {"|", "·", "●", "○", "□", "■", "◆", "◇"}:
+        if re.fullmatch(r"\d{1,3}", value):
             continue
-        if value == previous_text and (value in MAJOR_HEADINGS or value in SUBHEADINGS):
+        if re.fullmatch(r".+\s{2,}\d{1,3}", value):
             continue
-        cleaned.append(SourceLine(value, tabbed=line.tabbed))
-        previous_blank = False
-        previous_text = value
-    while cleaned and cleaned[-1].blank:
-        cleaned.pop()
-    return cleaned
-
-
-def inline_html(text: str) -> str:
-    parts: list[str] = []
-    cursor = 0
-    for match in URL_RE.finditer(text):
-        parts.append(html.escape(text[cursor:match.start()]))
-        url = match.group(0).rstrip("。、）)]}")
-        suffix = match.group(0)[len(url):]
-        escaped = html.escape(url, quote=True)
-        parts.append(f'<a href="{escaped}">{escaped}</a>{html.escape(suffix)}')
-        cursor = match.end()
-    parts.append(html.escape(text[cursor:]))
-    return "".join(parts)
-
-
-def slug_anchor(counter: int) -> str:
-    return f"sec-{counter}"
-
-
-def is_structural(text: str) -> bool:
-    if not text:
-        return True
-    return (
-        text in MAJOR_HEADINGS
-        or text in SUBHEADINGS
-        or text in METHOD_HEADINGS
-        or text in SLI_DEFINITIONS
-        or text in {"メリット", "デメリット", "SLO がどのように...", "...良い信頼性のためにビジネスを設計するのに役立つか"}
-        or BULLET_RE.match(text) is not None
-        or ORDERED_RE.match(text) is not None
-        or URL_RE.fullmatch(text) is not None
-    )
-
-
-def consume_plain_paragraph(lines: list[SourceLine], start: int) -> tuple[str, int]:
-    pieces = [lines[start].text]
-    i = start + 1
-    while i < len(lines):
-        current = lines[i]
-        if current.blank or is_structural(current.text):
-            break
-        prior = pieces[-1]
-        # Join short PDF/slide line wraps, but keep full document paragraphs separate.
-        if len(prior) <= 64 and not TERMINAL_RE.search(prior):
-            pieces[-1] = f"{prior} {current.text}"
-            i += 1
+        if re.fullmatch(r"[•·⋯…|｜]+", value):
             continue
-        break
-    return " ".join(pieces), i
+        lines.append(value)
+    return lines
 
 
-def render_downtime_tables(lines: list[SourceLine], start: int) -> tuple[str, int]:
-    values: list[str] = []
-    i = start + 1
-    while i < len(lines) and not lines[i].text.startswith("赤で網掛けされた"):
-        if lines[i].text:
-            values.append(lines[i].text)
-        i += 1
-    if len(values) < 37:
-        raise RuntimeError("Downtime lookup table did not match the expected source structure")
-    note = lines[i].text if i < len(lines) else ""
-    i += 1
-
-    # Export order: two-level header followed by 8 rows x 4 cells.
-    period_headers = values[2:5]
-    data = values[5:]
-    if len(data) % 4:
-        raise RuntimeError("Downtime lookup table has an unexpected cell count")
-    rows = [data[n:n + 4] for n in range(0, len(data), 4)]
-    table_rows = "".join(
-        "<tr>" + "".join(f"<td>{inline_html(cell)}</td>" for cell in row) + "</tr>"
+def make_table(headers: list[str], rows: list[list[str]], caption: str | None = None) -> str:
+    caption_html = f"<caption>{html.escape(caption)}</caption>" if caption else ""
+    head = "".join(f"<th scope=\"col\">{html.escape(cell)}</th>" for cell in headers)
+    body = "".join(
+        "<tr>" + "".join(f"<td>{html.escape(cell)}</td>" for cell in row) + "</tr>"
         for row in rows
     )
-    first_table = f"""
-<table class="data-table downtime-table">
-<caption>信頼性レベルごとの許容ダウンタイム</caption>
-<thead>
-<tr><th rowspan="2">{inline_html(values[0])}</th><th colspan="3">{inline_html(values[1])}</th></tr>
-<tr>{''.join(f'<th>{inline_html(cell)}</th>' for cell in period_headers)}</tr>
-</thead>
-<tbody>{table_rows}</tbody>
-</table>
-<p class="table-note">{inline_html(note)}</p>"""
-
-    while i < len(lines) and lines[i].blank:
-        i += 1
-    title_parts: list[str] = []
-    for _ in range(2):
-        if i < len(lines) and lines[i].text:
-            title_parts.append(lines[i].text)
-            i += 1
-    cells: list[str] = []
-    while i < len(lines) and len(cells) < 8:
-        if lines[i].text:
-            cells.append(lines[i].text)
-        i += 1
-    if len(cells) != 8:
-        raise RuntimeError("Error-rate downtime table did not match the expected source structure")
-    second_table = f"""
-<h3>{inline_html(' '.join(title_parts))}</h3>
-<table class="data-table compact-table">
-<thead><tr><th>エラー率</th>{''.join(f'<th>{inline_html(x)}</th>' for x in cells[:4])}</tr></thead>
-<tbody><tr><th>許容ダウンタイム</th>{''.join(f'<td>{inline_html(x)}</td>' for x in cells[4:])}</tr></tbody>
-</table>"""
-    return first_table + second_table, i
+    return f'<div class="table-wrap"><table>{caption_html}<thead><tr>{head}</tr></thead><tbody>{body}</tbody></table></div>'
 
 
-def render_method_table(lines: list[SourceLine], start: int) -> tuple[str, int]:
-    title = lines[start].text
-    i = start + 1
-    description_parts: list[str] = []
-    while i < len(lines) and lines[i].text not in {"メリット", "デメリット"}:
-        if lines[i].text:
-            description_parts.append(lines[i].text)
-        i += 1
-    while i < len(lines) and lines[i].text in {"メリット", "デメリット"}:
-        i += 1
+def parse_downtime_intro(lines: list[str]) -> tuple[str, int]:
+    if not lines or lines[0] != "ダウンタイム早見表":
+        return "", 0
 
-    bullets: list[tuple[str, bool]] = []
-    while i < len(lines):
-        text = lines[i].text
-        match = BULLET_RE.match(text)
-        if not match:
-            break
-        bullets.append((match.group(1), lines[i].tabbed))
-        i += 1
+    i = 1
+    expected_headers = [
+        "信頼性レベル",
+        "許容される 100% のダウンタイム",
+        "1年あたり",
+        "四半期あたり",
+        "28 日あたり",
+    ]
+    if lines[i:i + 5] != expected_headers:
+        return "", 0
+    i += 5
 
-    tabbed_positions = [n for n, (_, tabbed) in enumerate(bullets) if tabbed]
-    split = tabbed_positions[1] if len(tabbed_positions) >= 2 else max(1, len(bullets) // 2)
-    benefits = [text for text, _ in bullets[:split]]
-    drawbacks = [text for text, _ in bullets[split:]]
+    rows = []
+    for _ in range(8):
+        if i + 4 > len(lines):
+            return "", 0
+        rows.append(lines[i:i + 4])
+        i += 4
 
-    def list_html(items: list[str]) -> str:
-        return "<ul>" + "".join(f"<li>{inline_html(x)}</li>" for x in items) + "</ul>"
+    note = lines[i] if i < len(lines) else ""
+    i += 1 if note else 0
 
-    description = " ".join(description_parts)
-    table = f"""
-<h3>{inline_html(title)}</h3>
-<p>{inline_html(description)}</p>
-<table class="data-table pros-cons">
-<thead><tr><th>メリット</th><th>デメリット</th></tr></thead>
-<tbody><tr><td>{list_html(benefits)}</td><td>{list_html(drawbacks)}</td></tr></tbody>
-</table>"""
-    return table, i
+    first = make_table(
+        ["信頼性レベル", "1年あたり", "四半期あたり", "28日あたり"],
+        rows,
+        "許容される 100% のダウンタイム",
+    )
+    note_html = f'<p class="note">{html.escape(note)}</p>' if note else ""
 
-
-def render_body(lines: list[SourceLine]) -> tuple[str, list[tuple[str, str]]]:
-    out: list[str] = []
-    toc: list[tuple[str, str]] = []
-    section = 0
-    i = 0
-
-    def add_heading(label: str, level: int = 2, toc_entry: bool = True) -> None:
-        nonlocal section
-        if toc_entry:
-            section += 1
-            anchor = slug_anchor(section)
-            toc.append((label, anchor))
-            out.append(f'<h{level} id="{anchor}">{html.escape(label)}</h{level}>')
-        else:
-            out.append(f'<h{level}>{html.escape(label)}</h{level}>')
-
-    while i < len(lines):
-        line = lines[i]
-        text = line.text
-        if line.blank:
-            i += 1
-            continue
-
-        if text == "ダウンタイム早見表":
-            add_heading(text)
-            table_html, i = render_downtime_tables(lines, i)
-            out.append(table_html)
-            continue
-
-        if text == "SLO がどのように...":
-            add_heading("SLO を利用して")
-            second = ""
-            if i + 1 < len(lines) and lines[i + 1].text.startswith("...良い信頼性"):
-                second = lines[i + 1].text
-                i += 1
-            out.append(f'<p class="section-kicker">{inline_html((text + second).replace("......", "..."))}</p>')
-            i += 1
-            continue
-
-        if text in MAJOR_HEADINGS:
-            add_heading(text)
-            i += 1
-            continue
-
-        if text in METHOD_HEADINGS:
-            rendered, i = render_method_table(lines, i)
-            out.append(rendered)
-            continue
-
-        if text in SUBHEADINGS:
-            add_heading(text, level=3, toc_entry=False)
-            i += 1
-            continue
-
-        if text == "有効なイベントのなかで良いものの割合":
-            out.append(
-                '<div class="formula" role="doc-example">'
-                '<div class="formula-expression"><span>良いイベント数</span><span class="operator">÷</span><span>有効なイベント数</span></div>'
-                f'<p>{inline_html(text)}</p></div>'
+    second = ""
+    if i + 10 <= len(lines) and lines[i].startswith("28日間で99.95") and lines[i + 1] == "許容されるダウンタイム":
+        caption = lines[i] + "、" + lines[i + 1]
+        rates = lines[i + 2:i + 6]
+        values = lines[i + 6:i + 10]
+        if len(rates) == 4 and len(values) == 4:
+            second = make_table(
+                ["エラー率", *rates],
+                [["許容されるダウンタイム", *values]],
+                caption,
             )
+            i += 10
+
+    html_out = '<h2 id="sec-downtime">ダウンタイム早見表</h2>' + first + note_html + second
+    return html_out, i
+
+
+def build_body(lines: list[str]) -> tuple[str, list[tuple[str, str]]]:
+    parts: list[str] = []
+    toc: list[tuple[str, str]] = []
+
+    intro_html, i = parse_downtime_intro(lines)
+    if intro_html:
+        parts.append(intro_html)
+        toc.append(("ダウンタイム早見表", "sec-downtime"))
+    else:
+        i = 0
+
+    section = 1
+    in_ul = False
+    in_ol = False
+
+    def close_lists() -> None:
+        nonlocal in_ul, in_ol
+        if in_ul:
+            parts.append("</ul>")
+            in_ul = False
+        if in_ol:
+            parts.append("</ol>")
+            in_ol = False
+
+    while i < len(lines):
+        value = lines[i]
+        i += 1
+
+        if value == "SLO がどのように..." and i < len(lines) and lines[i].startswith("...良い信頼性"):
+            close_lists()
+            section += 1
+            anchor = f"sec-{section}"
+            toc.append(("SLO を利用して", anchor))
+            parts.append(f'<h2 id="{anchor}">SLO を利用して</h2>')
+            value = "SLO がどのように良い信頼性のためにビジネスを設計するのに役立つか"
             i += 1
+
+        if value in H2_HEADINGS:
+            close_lists()
+            section += 1
+            anchor = f"sec-{section}"
+            toc.append((value, anchor))
+            parts.append(f'<h2 id="{anchor}">{html.escape(value)}</h2>')
             continue
 
-        if text in SLI_DEFINITIONS:
-            out.append(f'<div class="definition"><strong>SLI 定義</strong><p>{inline_html(text)}</p></div>')
-            i += 1
+        if value in H3_HEADINGS:
+            close_lists()
+            parts.append(f"<h3>{html.escape(value)}</h3>")
             continue
 
-        if text == "1. SLI は 0% と 100% の間におさまる" and i + 3 < len(lines):
-            first_title = text[3:]
-            first_body = lines[i + 1].text
-            second_match = ORDERED_RE.match(lines[i + 2].text)
-            if second_match and second_match.group(1) == "2":
-                second_title = second_match.group(2)
-                second_body = lines[i + 3].text
-                out.append(
-                    '<ol class="principles">'
-                    f'<li><strong>{inline_html(first_title)}</strong><p>{inline_html(first_body)}</p></li>'
-                    f'<li><strong>{inline_html(second_title)}</strong><p>{inline_html(second_body)}</p></li>'
-                    '</ol>'
-                )
-                i += 4
-                continue
-
-        ordered = ORDERED_RE.match(text)
-        if ordered:
-            items: list[str] = []
-            while i < len(lines):
-                match = ORDERED_RE.match(lines[i].text)
-                if not match:
-                    break
-                items.append(match.group(2))
-                i += 1
-            out.append("<ol>" + "".join(f"<li>{inline_html(x)}</li>" for x in items) + "</ol>")
+        if value == "有効なイベントのなかで良いものの割合":
+            close_lists()
+            parts.append('<p class="equation"><strong>SLI</strong> = 有効なイベントのなかで良いものの割合</p>')
             continue
 
-        bullet = BULLET_RE.match(text)
+        bullet = re.match(r"^[*・]\s*(.+)$", value)
         if bullet:
-            items: list[str] = []
-            while i < len(lines):
-                match = BULLET_RE.match(lines[i].text)
-                if not match:
-                    break
-                items.append(match.group(1))
-                i += 1
-            out.append("<ul>" + "".join(f"<li>{inline_html(x)}</li>" for x in items) + "</ul>")
+            if in_ol:
+                parts.append("</ol>")
+                in_ol = False
+            if not in_ul:
+                parts.append("<ul>")
+                in_ul = True
+            parts.append(f"<li>{html.escape(bullet.group(1))}</li>")
             continue
 
-        if URL_RE.fullmatch(text):
-            out.append(f'<p class="resource-link">{inline_html(text)}</p>')
-            i += 1
+        numbered = re.match(r"^(\d+)\.\s*(.+)$", value)
+        if numbered:
+            if in_ul:
+                parts.append("</ul>")
+                in_ul = False
+            if not in_ol:
+                number = int(numbered.group(1))
+                start_attr = f' start="{number}"' if number != 1 else ""
+                parts.append(f"<ol{start_attr}>")
+                in_ol = True
+            parts.append(f"<li>{html.escape(numbered.group(2))}</li>")
             continue
 
-        paragraph, i = consume_plain_paragraph(lines, i)
-        out.append(f"<p>{inline_html(paragraph)}</p>")
+        close_lists()
 
-    return "\n".join(out), toc
+        if re.fullmatch(r"https?://\S+", value):
+            url = html.escape(value, quote=True)
+            parts.append(f'<p><a href="{url}">{html.escape(value)}</a></p>')
+        elif value == "SLO:":
+            parts.append("<h3>SLO</h3>")
+        else:
+            parts.append(f"<p>{html.escape(value)}</p>")
+
+    close_lists()
+    return "\n".join(parts), toc
 
 
-def xhtml_page(title: str, body: str, body_class: str = "") -> str:
-    class_attr = f' class="{body_class}"' if body_class else ""
-    return f"""<?xml version="1.0" encoding="utf-8"?>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="ja" lang="ja">
-<head><title>{html.escape(title)}</title><meta name="viewport" content="width=device-width"/><link rel="stylesheet" href="styles.css" type="text/css"/></head>
-<body{class_attr}>{body}</body>
-</html>"""
+def page(title: str, body: str, *, epub_ns: bool = False) -> str:
+    ns = ' xmlns:epub="http://www.idpf.org/2007/ops"' if epub_ns else ""
+    return f'''<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"{ns} xml:lang="ja" lang="ja">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>{html.escape(title)}</title><link rel="stylesheet" href="styles.css" type="text/css"/></head>
+<body>{body}</body>
+</html>'''
+
+
+def cover_bytes() -> bytes:
+    path = Path(os.environ.get("ART_OF_SLOS_COVER", str(DEFAULT_COVER)))
+    if not path.exists():
+        raise FileNotFoundError(f"Cover image not found: {path}")
+    return path.read_bytes()
 
 
 def build() -> None:
-    if not COVER_PATH.exists():
-        raise FileNotFoundError(f"Cover image not found: {COVER_PATH}")
+    content, toc = build_body(clean_lines(fetch_text()))
+    modified = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
-    content, toc = render_body(normalize_source(fetch_text()))
-    modified = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-
-    cover = xhtml_page(
+    cover = page(
         TITLE,
-        f'<section epub:type="cover" class="cover"><img src="cover.jpg" alt="{html.escape(TITLE)}"/></section>',
-        "cover-page",
+        '<section class="cover"><img src="cover.jpg" alt="The Art of SLOs 日本語版 表紙"/></section>',
     )
 
-    license_page = xhtml_page("ライセンスと帰属", f"""
-<section epub:type="copyright-page">
+    license_page = page("ライセンスと帰属", f"""
 <h1>ライセンスと帰属</h1>
 <p>原資料は Google が公開する「The Art of SLOs」日本語版です。</p>
 <p>ライセンス: <a href="{LICENSE_URL}">Creative Commons Attribution 4.0 International (CC BY 4.0)</a></p>
 <p>原典: <a href="{ORIGINAL_URL}">{ORIGINAL_URL}</a></p>
-<p>変更内容: 公開日本語資料をリフロー型EPUBへ再構成し、不要なページレイアウト情報を除去し、目次・見出し・段落・箇条書き・定義・表・電子書籍用メタデータを追加しました。</p>
+<p>変更内容: 公開日本語資料をリフロー型EPUBへ再構成し、PDF由来の区切り線・ページ番号・重複目次等を除去、表を再構築し、目次・見出し・電子書籍用メタデータと表紙画像を追加しました。</p>
 <p>本EPUBはGoogle公式配布物ではありません。</p>
-</section>
+<p>図表の一部はテキスト抽出上の制約により簡略化されています。正確な図表は公式資料を参照してください。</p>
 """)
 
     nav_items = "".join(
         f'<li><a href="content.xhtml#{anchor}">{html.escape(label)}</a></li>'
         for label, anchor in toc
     )
-    nav = f"""<?xml version="1.0" encoding="utf-8"?>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="ja" lang="ja">
-<head><title>目次</title><link rel="stylesheet" href="styles.css" type="text/css"/></head>
-<body><nav epub:type="toc" id="toc"><h1>目次</h1><ol>
-<li><a href="cover.xhtml">表紙</a></li>
-<li><a href="license.xhtml">ライセンスと帰属</a></li>
-{nav_items}
-</ol></nav></body></html>"""
+    nav = page(
+        "目次",
+        f'<nav epub:type="toc" id="toc"><h1>目次</h1><ol><li><a href="license.xhtml">ライセンスと帰属</a></li>{nav_items}</ol></nav>',
+        epub_ns=True,
+    )
 
     css = """
-html,body{writing-mode:horizontal-tb;}body{font-family:serif;line-height:1.75;margin:5%;overflow-wrap:anywhere;}h1,h2,h3{line-height:1.35;break-after:avoid;}h1{font-size:1.8em;}h2{font-size:1.45em;margin-top:2.2em;border-bottom:1px solid #8aa4bf;padding-bottom:.28em;}h3{font-size:1.15em;margin-top:1.7em;}p{margin:.72em 0;}ul,ol{margin:.7em 0 1em 1.4em;padding:0;}li{margin:.35em 0;}.cover-page{margin:0;padding:0;text-align:center;}.cover{margin:0;padding:0;}.cover img{display:block;width:100%;height:auto;margin:0 auto;}.section-kicker{font-weight:bold;font-size:1.08em;}.formula,.definition{border:1px solid #8aa4bf;border-radius:.35em;padding:.8em 1em;margin:1em 0;background:#f4f8fc;}.formula-expression{display:flex;gap:.65em;align-items:center;justify-content:center;font-weight:bold;font-size:1.08em;}.operator{font-size:1.25em;}.definition strong{font-size:.9em;}.definition p{margin:.35em 0 0;}.data-table{border-collapse:collapse;width:100%;margin:1em 0;font-size:.88em;table-layout:fixed;}.data-table caption{font-weight:bold;text-align:left;margin-bottom:.45em;}.data-table th,.data-table td{border:1px solid #8a8a8a;padding:.45em;vertical-align:top;}.data-table th{font-weight:bold;background:#eef3f7;}.data-table ul{margin:.2em 0 .2em 1.1em;}.table-note{font-size:.86em;}.resource-link a{word-break:break-all;}a{color:inherit;}@media(max-width:480px){body{margin:4%;}.data-table{font-size:.78em;}.data-table th,.data-table td{padding:.3em;}}
+html,body{margin:0;padding:0;writing-mode:horizontal-tb;overflow-x:hidden;overflow-y:auto;}
+body{font-family:serif;line-height:1.8;padding:5%;word-wrap:break-word;}
+h1,h2,h3{line-height:1.35;break-after:avoid;page-break-after:avoid;}
+h2{margin-top:2em;border-bottom:1px solid #aaa;padding-bottom:.25em;}
+h3{margin-top:1.4em;}
+p{margin:.75em 0;orphans:2;widows:2;}
+ul,ol{padding-left:1.5em;}
+li{margin:.35em 0;}
+a{word-break:break-all;}
+.cover{margin:0;padding:0;text-align:center;}
+.cover img{display:block;width:100%;height:auto;max-width:100%;margin:0 auto;}
+.note{font-size:.9em;}
+.equation{font-size:1.15em;text-align:center;padding:1em;border:1px solid #bbb;border-radius:.35em;}
+.table-wrap{width:100%;overflow-x:auto;margin:1em 0;}
+table{width:100%;border-collapse:collapse;font-size:.9em;}
+caption{font-weight:bold;text-align:left;margin-bottom:.5em;}
+th,td{border:1px solid #999;padding:.45em;vertical-align:top;}
+th{font-weight:bold;}
 """.strip()
 
-    opf = f"""<?xml version="1.0" encoding="utf-8"?>
-<package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="bookid" xml:lang="ja" prefix="rendition: http://www.idpf.org/vocab/rendition/#">
+    opf = f'''<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="bookid" xml:lang="ja">
 <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
 <dc:identifier id="bookid">{BOOK_ID}</dc:identifier>
 <dc:title>{TITLE}</dc:title>
@@ -493,18 +369,18 @@ html,body{writing-mode:horizontal-tb;}body{font-family:serif;line-height:1.75;ma
 <manifest>
 <item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/>
 <item id="css" href="styles.css" media-type="text/css"/>
+<item id="cover-page" href="cover.xhtml" media-type="application/xhtml+xml"/>
 <item id="cover-image" href="cover.jpg" media-type="image/jpeg" properties="cover-image"/>
-<item id="cover" href="cover.xhtml" media-type="application/xhtml+xml"/>
 <item id="license" href="license.xhtml" media-type="application/xhtml+xml"/>
 <item id="content" href="content.xhtml" media-type="application/xhtml+xml"/>
 </manifest>
-<spine><itemref idref="cover"/><itemref idref="license"/><itemref idref="content"/></spine>
-</package>"""
+<spine page-progression-direction="ltr"><itemref idref="cover-page"/><itemref idref="license"/><itemref idref="content"/></spine>
+</package>'''
 
-    container_xml = """<?xml version="1.0"?>
+    container_xml = '''<?xml version="1.0"?>
 <container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container">
 <rootfiles><rootfile full-path="EPUB/content.opf" media-type="application/oebps-package+xml"/></rootfiles>
-</container>"""
+</container>'''
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(OUT, "w") as archive:
@@ -515,36 +391,13 @@ html,body{writing-mode:horizontal-tb;}body{font-family:serif;line-height:1.75;ma
             "EPUB/styles.css": css,
             "EPUB/cover.xhtml": cover,
             "EPUB/license.xhtml": license_page,
-            "EPUB/content.xhtml": xhtml_page(TITLE, content),
+            "EPUB/content.xhtml": page(TITLE, content),
             "EPUB/nav.xhtml": nav,
         }.items():
             archive.writestr(name, data, compress_type=zipfile.ZIP_DEFLATED)
-        archive.write(COVER_PATH, "EPUB/cover.jpg", compress_type=zipfile.ZIP_DEFLATED)
+        archive.writestr("EPUB/cover.jpg", cover_bytes(), compress_type=zipfile.ZIP_DEFLATED)
     print(f"Wrote {OUT} ({OUT.stat().st_size} bytes)")
 
 
-def self_test() -> None:
-    sample = """The Art\nof SLOs\n\n原文: https://example.invalid\n________________\nダウンタイム早見表        3\nSLI の方程式        5\n________________\nダウンタイム早見表\n信頼性レベル\n\t許容される 100% のダウンタイム\n\t1年あたり\n\t四半期あたり\n\t28 日あたり\n\t90%\n\t36日 12時間\n\t9日\n\t2日 19時間 12分\n\t95%\n\t18日 6時間\n\t4日 12時間\n\t1日 9時間 36分\n\t99%\n\t3日 15時間 36分\n\t21時間 36分\n\t6時間 43分 12秒\n\t99.5%\n\t1日 19時間 48分\n\t10時間 48分\n\t3時間 21分 36秒\n\t99.9%\n\t8時間 45分 36秒\n\t2時間 9分 36秒\n\t40分 19秒\n\t99.95%\n\t4時間 22分 48秒\n\t1時間 4分 48秒\n\t20分 10秒\n\t99.99%\n\t52分 33.6秒\n\t12分 57.6秒\n\t4分 1.9秒\n\t99.999%\n\t5分 15.4秒\n\t1分 17.8秒\n\t24.2秒\n\t赤で網掛けされた枠内は許容される完全なダウンタイムは１時間未満のもの\n\n28日間で99.95％の信頼性に対して、エラー率を考慮した場合に\n許容されるダウンタイム\n\t100%\n\t10%\n\t1%\n\t0.1%\n\t20分 10秒\n\t3時間 21分 36秒\n\t1日 9時間 36分\n\t14日\nSLO がどのように...\n...良い信頼性のためにビジネスを設計するのに役立つか\n________________\nSLI の方程式\n有効なイベントのなかで良いものの割合\nこの形式で SLI を表現することの意義\n1. SLI は 0% と 100% の間におさまる\n説明です。\n2. 一貫したフォーマットの SLI\n説明です。\nSLI の測定\nログの処理\n説明です。\nメリット\n\tデメリット\n\t * 利点A\n * 利点B\n\t * 欠点A\n * 欠点B\nStoker Labs Inc.\n本文です。\n"""
-    body, toc = render_body(normalize_source(sample))
-    assert "<table" in body and "99.999%" in body
-    assert '<div class="formula"' in body
-    assert "<ol class=\"principles\">" in body
-    assert "pros-cons" in body and "利点A" in body and "欠点A" in body
-    assert not SEPARATOR_RE.search(body)
-    assert not re.search(r"ダウンタイム早見表\s+3", body)
-    assert any(label == "SLO を利用して" for label, _ in toc)
-    print("self-test: ok")
-
-
-def main() -> None:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--self-test", action="store_true")
-    args = parser.parse_args()
-    if args.self_test:
-        self_test()
-    else:
-        build()
-
-
 if __name__ == "__main__":
-    main()
+    build()

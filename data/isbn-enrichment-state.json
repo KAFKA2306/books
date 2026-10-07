@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-state.v1",
-  "updated_at": "2026-10-06T19:51:08.760Z",
+  "updated_at": "2026-10-07T08:41:34.887Z",
   "total_attempts": 224,
   "attempts": {
     "wrk_0025172962b9": {
@@ -512,11 +512,12 @@
       "provider_strategy": "sru-title-batch-v2"
     },
     "wrk_3a5c051662b5": {
-      "attempted_at": "2026-09-07T07:20:35.229Z",
-      "outcome": "no_consensus",
-      "next_attempt_at": "2026-10-07T07:20:35.229Z",
+      "attempted_at": "2026-10-07T08:41:34.887Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2027-10-07T08:41:34.887Z",
       "candidate_count": 0,
-      "provider_errors": []
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v1"
     },
     "wrk_3a6c65cc6275": {
       "attempted_at": "2026-08-08T03:44:16.427Z",
@@ -579,11 +580,12 @@
       "provider_strategy": "sru-title-batch-v1"
     },
     "wrk_43588768077d": {
-      "attempted_at": "2026-09-07T07:20:35.229Z",
-      "outcome": "no_consensus",
-      "next_attempt_at": "2026-10-07T07:20:35.229Z",
+      "attempted_at": "2026-10-07T08:41:34.887Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2027-10-07T08:41:34.887Z",
       "candidate_count": 0,
-      "provider_errors": []
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v1"
     },
     "wrk_44a3f6b0d47d": {
       "attempted_at": "2026-08-08T03:44:16.427Z",

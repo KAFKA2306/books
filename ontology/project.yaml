@@ -1,0 +1,85 @@
+project:
+  id: "kafka:books"
+  name: "KAFKA Books Collection"
+  repository: "https://github.com/KAFKA2306/books"
+  version: "0.1.0"
+  updated: "2026-10-08"
+  core_ontology: "https://raw.githubusercontent.com/KAFKA2306/know/main/ontology/causal-evidence-core.yaml"
+  schema: "https://raw.githubusercontent.com/KAFKA2306/know/main/ontology/project.schema.json"
+
+purpose:
+  problem: "Distinguish literary works, editions, acquisition events and genuine holdings with auditable proof."
+  intended_decisions: ["accept_holding","request_reconciliation","publish_collection"]
+  success_conditions:
+    - "Sample and Prime never create a Holding."
+    - "Versioned catalog remains reproducible."
+    - "Unknown acquisitions remain inspectable."
+  falsification_conditions:
+    - "Sample is counted as purchased."
+    - "Unmatched works are silently merged."
+
+scope:
+  included: ["work","edition","acquisition","holding","source identifier","content hash"]
+  excluded: ["raw private Kindle XML in public repository","sample as owned","unsupported rights claim"]
+  temporal: "Source event time, effective time, snapshot retrieval and decision time remain distinguishable."
+  abstraction_level: "Domain-specific evidence, guarded decisions and source authority."
+
+competency_questions:
+  - "Is this item genuinely owned or only sampled?"
+  - "Which edition and ISBN/ASIN identify the holding?"
+  - "What evidence justified merging two catalog records?"
+
+domain_mapping:
+  System: "EvidenceBackedBookOwnership"
+  State: ["ownership verification state","edition identity state","publication state"]
+  Action: ["precheck acquisition","reconcile edition","accept holding","publish manifest"]
+  Process: ["Kindle import","canonicalization","identity audit","static API generation"]
+  Observation: ["Kindle purchase","sample","ISBN or ASIN","manifest hash"]
+  Model: ["identity reconciliation","collection manifest builder"]
+  Requirement: ["ownership evidence","edition distinction","artifact hash match","source privacy"]
+  Claim: ["edition owned","work linked to edition","collection count verified"]
+  Evidence: ["local Kindle acquisition observation","publisher or ISBN data","collection source manifest"]
+  Decision: ["accept_holding","request_reconciliation","publish_collection"]
+
+claims_and_evidence:
+  assertion_types: ["ObservedFact","ReportedFact","CalculatedValue","ModelEstimate","RequirementAssertion","DecisionAssertion"]
+  required_evidence:
+    MaterialClaim: ["source identity","event or effective date","entity identity","status"]
+    Decision: ["explicit rule","supporting evidence","decision time"]
+  unknown_policy: "Missing, stale or scope-mismatched evidence blocks promotion to verified state."
+
+decision_rules:
+  - id: "publish_verified_collection"
+    when: "Edition identity and purchase evidence establish holding, with no unresolved conflicts"
+    result: "accept_holding"
+  - id: "missing-evidence"
+    when: "Required supporting evidence cannot be verified."
+    result: "REVIEW_REQUIRED"
+
+provenance:
+  sources: ["local Kindle acquisition observation","publisher or ISBN data","collection source manifest"]
+  generated_artifacts: ["catalog.json","docs/ingestion-rules.md","api/v1/manifest.json"]
+  agents: ["existing repository scripts","GitHub Actions","human reviewer"]
+  lineage: "Source observation -> versioned canonical entity -> validation -> decision -> published result."
+
+validation:
+  structural: "Canonical record identity, source metadata and artifact signatures must validate."
+  semantic: "Observed facts, derived views, forecasts, authorizations and assertions remain separate."
+  evidence: "Evidence dates, versions, scopes and sources must support each material decision."
+  publication: "Published status follows canonical artifact evidence and does not imply unavailable production behavior."
+
+operational_model:
+  implementation_status: "mapping to existing source workflows; execution requires independent evidence"
+  canonical_sources: ["catalog.json","docs/ingestion-rules.md","api/v1/manifest.json"]
+  objects: ["Work","Edition","Holding","Acquisition","SourceEvidence"]
+  links:
+    - ["Edition","EDITION_OF","Work"]
+    - ["Holding","IS_INSTANCE_OF","Edition"]
+    - ["Acquisition","SUPPORTS","Holding"]
+    - ["SourceEvidence","VERIFIES","Acquisition"]
+  actions:
+    - id: "publish_verified_collection"
+      preconditions: "Edition identity and purchase evidence establish holding, with no unresolved conflicts"
+      recorded_effect: "Public library includes verified owned editions and audit counts"
+      rollback_or_recovery: "Ambiguous ownership stays in reconciliation queue, not canonical Holding"
+  outcome_metrics: ["purchase_to_holding_precision","unknown_acquisition_count","manifest_integrity"]

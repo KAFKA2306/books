@@ -195,3 +195,7 @@ index.html   static bookshelf UI entry point
 このrepositoryの完成条件は「本をたくさん登録する」ことではありません。
 
 **新しい記録が増えても、何を作品・版・所有・取得と判断したかを後から説明できること**を維持できている状態をDoneとします。
+
+## Operational ontology
+
+[Project ontology](ontology/project.yaml) defines domain objects, evidence-bearing relations, guarded actions and outcome metrics under the [shared Causal–Evidence Core](https://github.com/KAFKA2306/know/blob/main/ontology/causal-evidence-core.yaml). This contract does not add real-world execution capability or replace this repository's canonical source.

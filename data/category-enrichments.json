@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichments.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-10-18T11:19:16.239Z",
+  "updated_at": "2026-10-18T20:52:19.196Z",
   "records": [
     {
       "work_id": "wrk_0040f74352d9",

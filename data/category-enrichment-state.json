@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichment-state.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-10-19T04:51:13.334Z",
+  "updated_at": "2026-10-19T22:26:48.178Z",
   "attempts": {
     "wrk_0025172962b9": {
       "attempted_at": "2026-10-16T16:45:14.382Z",
@@ -7608,9 +7608,9 @@
       "provider_error": null
     },
     "wrk_e1c21b55c1dd": {
-      "attempted_at": "2026-09-19T15:56:23.366Z",
+      "attempted_at": "2026-10-19T22:26:48.178Z",
       "outcome": "ambiguous",
-      "next_attempt_at": "2026-10-19T15:56:23.366Z",
+      "next_attempt_at": "2026-11-18T22:26:48.178Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -7788,9 +7788,9 @@
       "provider_error": null
     },
     "wrk_e7366be9be53": {
-      "attempted_at": "2026-09-19T20:48:06.609Z",
+      "attempted_at": "2026-10-19T22:26:48.178Z",
       "outcome": "ambiguous",
-      "next_attempt_at": "2026-10-19T20:48:06.609Z",
+      "next_attempt_at": "2026-11-18T22:26:48.178Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -7968,9 +7968,9 @@
       "provider_error": null
     },
     "wrk_ed45010ad991": {
-      "attempted_at": "2026-09-19T20:48:06.609Z",
+      "attempted_at": "2026-10-19T22:26:48.178Z",
       "outcome": "no_ndc",
-      "next_attempt_at": "2026-10-19T20:48:06.609Z",
+      "next_attempt_at": "2026-11-18T22:26:48.178Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,

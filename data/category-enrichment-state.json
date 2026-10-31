@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichment-state.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-10-31T05:54:21.891Z",
+  "updated_at": "2026-10-31T12:44:36.646Z",
   "attempts": {
     "wrk_0025172962b9": {
       "attempted_at": "2026-10-16T16:45:14.382Z",
@@ -2170,9 +2170,9 @@
       "provider_error": null
     },
     "wrk_3cd4c2bc4bc2": {
-      "attempted_at": "2026-10-01T06:06:25.784Z",
+      "attempted_at": "2026-10-31T12:44:36.646Z",
       "outcome": "ambiguous",
-      "next_attempt_at": "2026-10-31T06:06:25.784Z",
+      "next_attempt_at": "2026-11-30T12:44:36.646Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -7848,16 +7848,16 @@
       "provider_error": null
     },
     "wrk_e93dcd3ea806": {
-      "attempted_at": "2026-10-30T05:58:35.474Z",
-      "outcome": "provider_error",
-      "next_attempt_at": "2026-10-31T05:58:35.474Z",
+      "attempted_at": "2026-10-31T12:44:36.646Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2026-11-14T12:44:36.646Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
       "source_isbn13": null,
-      "provider_error": "ndl request failed: ndl returned HTTP 429"
+      "provider_error": null
     },
     "wrk_e9adfe682e27": {
       "attempted_at": "2026-08-20T19:04:15.088Z",

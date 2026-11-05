@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-report.v1",
-  "generated_at": "2026-11-05T09:31:05.040Z",
+  "generated_at": "2026-11-05T21:14:33.603Z",
   "policy": {
     "batch_limit": 25,
     "concurrency": 1,
@@ -48,8 +48,8 @@
   },
   "results": [
     {
-      "work_id": "wrk_0c3102e584de",
-      "title": "アンの青春",
+      "work_id": "wrk_1dbbe0d33491",
+      "title": "アンの友達",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],
@@ -57,8 +57,8 @@
       "provider_errors": []
     },
     {
-      "work_id": "wrk_0e4bc626c84a",
-      "title": "ココロコネクト アスランダム",
+      "work_id": "wrk_1f1498e352d5",
+      "title": "アド・バード",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],
@@ -66,8 +66,8 @@
       "provider_errors": []
     },
     {
-      "work_id": "wrk_0e7872401aef",
-      "title": "海辺のカフカ",
+      "work_id": "wrk_22300ebb3fbc",
+      "title": "アンをめぐる人々",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],
@@ -75,8 +75,8 @@
       "provider_errors": []
     },
     {
-      "work_id": "wrk_14f8dcdf0210",
-      "title": "鳥類学者だからって鳥が好きだと思うなよ",
+      "work_id": "wrk_302aed946c28",
+      "title": "猫でもわかるC++プログラミング",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],

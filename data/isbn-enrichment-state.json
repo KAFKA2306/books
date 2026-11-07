@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-state.v1",
-  "updated_at": "2026-11-06T20:36:43.665Z",
+  "updated_at": "2026-11-07T08:48:42.318Z",
   "total_attempts": 224,
   "attempts": {
     "wrk_0025172962b9": {
@@ -496,16 +496,12 @@
       "provider_strategy": "sru-title-batch-v1"
     },
     "wrk_3cd368773f29": {
-      "attempted_at": "2026-08-09T03:53:20.078Z",
-      "outcome": "ambiguous",
-      "next_attempt_at": "2026-11-07T03:53:20.078Z",
-      "candidate_count": 3,
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
+      "attempted_at": "2026-11-07T08:48:42.318Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2027-11-07T08:48:42.318Z",
+      "candidate_count": 0,
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v1"
     },
     "wrk_3dfc456e3797": {
       "attempted_at": "2026-09-08T15:15:48.476Z",
@@ -851,16 +847,12 @@
       "provider_strategy": "sru-title-batch-v1"
     },
     "wrk_70f891afbad8": {
-      "attempted_at": "2026-08-09T03:53:20.078Z",
-      "outcome": "ambiguous",
-      "next_attempt_at": "2026-11-07T03:53:20.078Z",
-      "candidate_count": 2,
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
+      "attempted_at": "2026-11-07T08:48:42.318Z",
+      "outcome": "no_candidate",
+      "next_attempt_at": "2027-11-07T08:48:42.318Z",
+      "candidate_count": 0,
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v1"
     },
     "wrk_7299c697af57": {
       "attempted_at": "2026-08-25T15:28:21.129Z",

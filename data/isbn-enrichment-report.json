@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-report.v1",
-  "generated_at": "2026-11-06T20:36:43.665Z",
+  "generated_at": "2026-11-07T08:48:42.318Z",
   "policy": {
     "batch_limit": 25,
     "concurrency": 1,
@@ -19,11 +19,11 @@
     "google_books": 0
   },
   "summary": {
-    "attempted": 3,
+    "attempted": 2,
     "enriched": 0,
     "ambiguous": 0,
     "no_consensus": 0,
-    "no_candidate": 3,
+    "no_candidate": 2,
     "provider_error": 0
   },
   "provider_summary": {
@@ -48,8 +48,8 @@
   },
   "results": [
     {
-      "work_id": "wrk_56904e57fd9e",
-      "title": "働かないアリに意義がある",
+      "work_id": "wrk_3cd368773f29",
+      "title": "そして、バトンは渡された",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],
@@ -57,17 +57,8 @@
       "provider_errors": []
     },
     {
-      "work_id": "wrk_5fc2d0ed74ef",
-      "title": "アンの愛情",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_6e6b1be2e06d",
-      "title": "虐殺器官",
+      "work_id": "wrk_70f891afbad8",
+      "title": "自壊する帝国",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],

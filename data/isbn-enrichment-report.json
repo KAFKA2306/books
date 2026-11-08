@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-report.v1",
-  "generated_at": "2026-11-08T09:00:57.965Z",
+  "generated_at": "2026-11-08T19:10:25.293Z",
   "policy": {
     "batch_limit": 25,
     "concurrency": 1,
@@ -15,28 +15,28 @@
   },
   "logical_requests": {
     "ndl": 1,
-    "openbd": 1,
+    "openbd": 0,
     "google_books": 0
   },
   "summary": {
-    "attempted": 1,
+    "attempted": 3,
     "enriched": 0,
-    "ambiguous": 1,
+    "ambiguous": 0,
     "no_consensus": 0,
-    "no_candidate": 0,
+    "no_candidate": 3,
     "provider_error": 0
   },
   "provider_summary": {
     "ndl": {
       "enabled": true,
-      "candidate_count": 3,
-      "works_with_candidates": 1,
+      "candidate_count": 0,
+      "works_with_candidates": 0,
       "error_count": 0
     },
     "openbd": {
       "enabled": true,
-      "candidate_count": 3,
-      "works_with_candidates": 1,
+      "candidate_count": 0,
+      "works_with_candidates": 0,
       "error_count": 0
     },
     "google_books": {
@@ -48,40 +48,30 @@
   },
   "results": [
     {
-      "work_id": "wrk_8ea62cb084a9",
-      "title": "中国行きのスロウボート",
-      "outcome": "ambiguous",
+      "work_id": "wrk_9f9d4d7d1fc7",
+      "title": "マクマリー有機化学",
+      "outcome": "no_candidate",
       "accepted_isbn13": null,
-      "candidates": [
-        {
-          "isbn13": "9784120057472",
-          "providers": [
-            "ndl",
-            "openbd"
-          ],
-          "best_similarity": 1
-        },
-        {
-          "isbn13": "9784122012882",
-          "providers": [
-            "ndl",
-            "openbd"
-          ],
-          "best_similarity": 1
-        },
-        {
-          "isbn13": "9784122028401",
-          "providers": [
-            "ndl",
-            "openbd"
-          ],
-          "best_similarity": 1
-        }
-      ],
-      "provider_candidate_counts": {
-        "ndl": 3,
-        "openbd": 3
-      },
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_a289e812751e",
+      "title": "世界から猫が消えたなら",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_a40fc62350a8",
+      "title": "入門多変量解析の実際",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
       "provider_errors": []
     }
   ]

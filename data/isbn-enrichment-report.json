@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-report.v1",
-  "generated_at": "2026-11-07T19:03:41.219Z",
+  "generated_at": "2026-11-08T09:00:57.965Z",
   "policy": {
     "batch_limit": 25,
     "concurrency": 1,
@@ -29,13 +29,13 @@
   "provider_summary": {
     "ndl": {
       "enabled": true,
-      "candidate_count": 2,
+      "candidate_count": 3,
       "works_with_candidates": 1,
       "error_count": 0
     },
     "openbd": {
       "enabled": true,
-      "candidate_count": 2,
+      "candidate_count": 3,
       "works_with_candidates": 1,
       "error_count": 0
     },
@@ -48,13 +48,13 @@
   },
   "results": [
     {
-      "work_id": "wrk_7f9d8757da57",
-      "title": "掟上今日子の退職願",
+      "work_id": "wrk_8ea62cb084a9",
+      "title": "中国行きのスロウボート",
       "outcome": "ambiguous",
       "accepted_isbn13": null,
       "candidates": [
         {
-          "isbn13": "9784062199063",
+          "isbn13": "9784120057472",
           "providers": [
             "ndl",
             "openbd"
@@ -62,7 +62,15 @@
           "best_similarity": 1
         },
         {
-          "isbn13": "9784065197370",
+          "isbn13": "9784122012882",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        },
+        {
+          "isbn13": "9784122028401",
           "providers": [
             "ndl",
             "openbd"
@@ -71,8 +79,8 @@
         }
       ],
       "provider_candidate_counts": {
-        "ndl": 2,
-        "openbd": 2
+        "ndl": 3,
+        "openbd": 3
       },
       "provider_errors": []
     }

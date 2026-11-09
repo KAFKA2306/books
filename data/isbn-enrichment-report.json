@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-report.v1",
-  "generated_at": "2026-11-08T19:10:25.293Z",
+  "generated_at": "2026-11-09T09:49:42.599Z",
   "policy": {
     "batch_limit": 25,
     "concurrency": 1,
@@ -15,28 +15,28 @@
   },
   "logical_requests": {
     "ndl": 1,
-    "openbd": 0,
+    "openbd": 1,
     "google_books": 0
   },
   "summary": {
-    "attempted": 3,
+    "attempted": 1,
     "enriched": 0,
-    "ambiguous": 0,
+    "ambiguous": 1,
     "no_consensus": 0,
-    "no_candidate": 3,
+    "no_candidate": 0,
     "provider_error": 0
   },
   "provider_summary": {
     "ndl": {
       "enabled": true,
-      "candidate_count": 0,
-      "works_with_candidates": 0,
+      "candidate_count": 3,
+      "works_with_candidates": 1,
       "error_count": 0
     },
     "openbd": {
       "enabled": true,
-      "candidate_count": 0,
-      "works_with_candidates": 0,
+      "candidate_count": 2,
+      "works_with_candidates": 1,
       "error_count": 0
     },
     "google_books": {
@@ -48,30 +48,32 @@
   },
   "results": [
     {
-      "work_id": "wrk_9f9d4d7d1fc7",
-      "title": "マクマリー有機化学",
-      "outcome": "no_candidate",
+      "work_id": "wrk_a8ed67780697",
+      "title": "ある男",
+      "outcome": "ambiguous",
       "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_a289e812751e",
-      "title": "世界から猫が消えたなら",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_a40fc62350a8",
-      "title": "入門多変量解析の実際",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
+      "candidates": [
+        {
+          "isbn13": "9784022647931",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        },
+        {
+          "isbn13": "9784163816401",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        }
+      ],
+      "provider_candidate_counts": {
+        "ndl": 3,
+        "openbd": 2
+      },
       "provider_errors": []
     }
   ]

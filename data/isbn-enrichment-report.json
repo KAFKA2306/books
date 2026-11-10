@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-report.v1",
-  "generated_at": "2026-11-09T09:49:42.599Z",
+  "generated_at": "2026-11-10T21:01:33.845Z",
   "policy": {
     "batch_limit": 25,
     "concurrency": 1,
@@ -15,28 +15,28 @@
   },
   "logical_requests": {
     "ndl": 1,
-    "openbd": 1,
+    "openbd": 0,
     "google_books": 0
   },
   "summary": {
-    "attempted": 1,
+    "attempted": 5,
     "enriched": 0,
-    "ambiguous": 1,
+    "ambiguous": 0,
     "no_consensus": 0,
-    "no_candidate": 0,
+    "no_candidate": 5,
     "provider_error": 0
   },
   "provider_summary": {
     "ndl": {
       "enabled": true,
-      "candidate_count": 3,
-      "works_with_candidates": 1,
+      "candidate_count": 0,
+      "works_with_candidates": 0,
       "error_count": 0
     },
     "openbd": {
       "enabled": true,
-      "candidate_count": 2,
-      "works_with_candidates": 1,
+      "candidate_count": 0,
+      "works_with_candidates": 0,
       "error_count": 0
     },
     "google_books": {
@@ -48,32 +48,48 @@
   },
   "results": [
     {
-      "work_id": "wrk_a8ed67780697",
-      "title": "ある男",
-      "outcome": "ambiguous",
+      "work_id": "wrk_d745bfa9091b",
+      "title": "国境の南太陽の西",
+      "outcome": "no_candidate",
       "accepted_isbn13": null,
-      "candidates": [
-        {
-          "isbn13": "9784022647931",
-          "providers": [
-            "ndl",
-            "openbd"
-          ],
-          "best_similarity": 1
-        },
-        {
-          "isbn13": "9784163816401",
-          "providers": [
-            "ndl",
-            "openbd"
-          ],
-          "best_similarity": 1
-        }
-      ],
-      "provider_candidate_counts": {
-        "ndl": 3,
-        "openbd": 2
-      },
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_dcd5f3e4683b",
+      "title": "女のいない男たち",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_e1c21b55c1dd",
+      "title": "数学ガール",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_ea367de00771",
+      "title": "三匹のおっさん",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
+      "provider_errors": []
+    },
+    {
+      "work_id": "wrk_ebc566e980bf",
+      "title": "高校から大学への憲法",
+      "outcome": "no_candidate",
+      "accepted_isbn13": null,
+      "candidates": [],
+      "provider_candidate_counts": {},
       "provider_errors": []
     }
   ]

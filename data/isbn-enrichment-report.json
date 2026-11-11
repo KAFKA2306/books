@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-report.v1",
-  "generated_at": "2026-11-10T21:01:33.845Z",
+  "generated_at": "2026-11-11T21:33:53.675Z",
   "policy": {
     "batch_limit": 25,
     "concurrency": 1,
@@ -19,11 +19,11 @@
     "google_books": 0
   },
   "summary": {
-    "attempted": 5,
+    "attempted": 3,
     "enriched": 0,
     "ambiguous": 0,
     "no_consensus": 0,
-    "no_candidate": 5,
+    "no_candidate": 3,
     "provider_error": 0
   },
   "provider_summary": {
@@ -48,8 +48,8 @@
   },
   "results": [
     {
-      "work_id": "wrk_d745bfa9091b",
-      "title": "国境の南太陽の西",
+      "work_id": "wrk_bfa7e6c58770",
+      "title": "アトキンス物理化学",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],
@@ -57,8 +57,8 @@
       "provider_errors": []
     },
     {
-      "work_id": "wrk_dcd5f3e4683b",
-      "title": "女のいない男たち",
+      "work_id": "wrk_c8a14afdd26f",
+      "title": "JISにもとづく標準製図法",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],
@@ -66,26 +66,8 @@
       "provider_errors": []
     },
     {
-      "work_id": "wrk_e1c21b55c1dd",
-      "title": "数学ガール",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_ea367de00771",
-      "title": "三匹のおっさん",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_ebc566e980bf",
-      "title": "高校から大学への憲法",
+      "work_id": "wrk_f1b0f093509f",
+      "title": "アンの夢の家",
       "outcome": "no_candidate",
       "accepted_isbn13": null,
       "candidates": [],

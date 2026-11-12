@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-report.v1",
-  "generated_at": "2026-11-11T21:33:53.675Z",
+  "generated_at": "2026-11-12T09:52:02.072Z",
   "policy": {
     "batch_limit": 25,
     "concurrency": 1,
@@ -15,28 +15,28 @@
   },
   "logical_requests": {
     "ndl": 1,
-    "openbd": 0,
+    "openbd": 1,
     "google_books": 0
   },
   "summary": {
-    "attempted": 3,
+    "attempted": 1,
     "enriched": 0,
-    "ambiguous": 0,
+    "ambiguous": 1,
     "no_consensus": 0,
-    "no_candidate": 3,
+    "no_candidate": 0,
     "provider_error": 0
   },
   "provider_summary": {
     "ndl": {
       "enabled": true,
-      "candidate_count": 0,
-      "works_with_candidates": 0,
+      "candidate_count": 2,
+      "works_with_candidates": 1,
       "error_count": 0
     },
     "openbd": {
       "enabled": true,
-      "candidate_count": 0,
-      "works_with_candidates": 0,
+      "candidate_count": 2,
+      "works_with_candidates": 1,
       "error_count": 0
     },
     "google_books": {
@@ -48,30 +48,32 @@
   },
   "results": [
     {
-      "work_id": "wrk_bfa7e6c58770",
-      "title": "アトキンス物理化学",
-      "outcome": "no_candidate",
+      "work_id": "wrk_fc31947faf48",
+      "title": "アリス殺し",
+      "outcome": "ambiguous",
       "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_c8a14afdd26f",
-      "title": "JISにもとづく標準製図法",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
-      "provider_errors": []
-    },
-    {
-      "work_id": "wrk_f1b0f093509f",
-      "title": "アンの夢の家",
-      "outcome": "no_candidate",
-      "accepted_isbn13": null,
-      "candidates": [],
-      "provider_candidate_counts": {},
+      "candidates": [
+        {
+          "isbn13": "9784488025465",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        },
+        {
+          "isbn13": "9784488420147",
+          "providers": [
+            "ndl",
+            "openbd"
+          ],
+          "best_similarity": 1
+        }
+      ],
+      "provider_candidate_counts": {
+        "ndl": 2,
+        "openbd": 2
+      },
       "provider_errors": []
     }
   ]

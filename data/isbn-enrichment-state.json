@@ -1,6 +1,6 @@
 {
   "schema": "kafka.books.isbn-enrichment-state.v1",
-  "updated_at": "2026-11-11T21:33:53.675Z",
+  "updated_at": "2026-11-12T09:52:02.072Z",
   "total_attempts": 224,
   "attempts": {
     "wrk_0025172962b9": {
@@ -1889,16 +1889,12 @@
       "provider_strategy": "sru-title-batch-v1"
     },
     "wrk_fc31947faf48": {
-      "attempted_at": "2026-08-14T04:19:09.828Z",
+      "attempted_at": "2026-11-12T09:52:02.072Z",
       "outcome": "ambiguous",
-      "next_attempt_at": "2026-11-12T04:19:09.828Z",
+      "next_attempt_at": "2027-02-10T09:52:02.072Z",
       "candidate_count": 2,
-      "provider_errors": [
-        {
-          "provider": "google_books",
-          "message": "google_books request failed: google_books returned HTTP 429"
-        }
-      ]
+      "provider_errors": [],
+      "provider_strategy": "sru-title-batch-v1"
     },
     "wrk_fcb7c8d70ec9": {
       "attempted_at": "2026-09-13T07:28:56.322Z",

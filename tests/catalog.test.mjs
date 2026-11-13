@@ -91,6 +91,16 @@ test('duplicate ISBN in a batch is blocked', () => {
   assert.equal(result.results[1].action, 'blocked');
 });
 
+test('same normalized title with distinct valid ISBNs is blocked within one batch', () => {
+  const result = precheckCandidates([
+    { title: '未登録の作品 上', isbn13: '9780306406157' },
+    { title: '未登録の作品 下', isbn13: '9780306406164' },
+  ], { works: [], editions: [] });
+  assert.equal(result.results[0].action, 'create_work');
+  assert.equal(result.results[1].action, 'blocked');
+  assert.match(result.results[1].errors.join('\n'), /作品identityの確認/);
+});
+
 test('Issue #1 resolves all 60 records without duplicate holdings', () => {
   assert.equal(catalog.issue_records.length, 60);
   assert.equal(catalog.stats.issue_1_duplicate_skipped_count, 24);

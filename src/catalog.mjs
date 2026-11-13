@@ -36,7 +36,7 @@ export function precheckCandidates(candidates,catalog,{similarityThreshold=.86}=
   if(exactMatches.length&&identity.hasEvidence&&!resolvedMatches.length&&!matched){errors.push('指定された著者またはwork_typeが、同名の既存作品identityと一致しません。')}
   else if(resolvedMatches.length>1&&!matched){errors.push(`正規化書名が複数の既存作品と一致し、作品identityを一意に決定できません: ${resolvedMatches.map(work=>`${work.title}${work.work_type?` [${work.work_type}]`:''}${work.author?` / ${work.author}`:''} (${work.work_id})`).join(' / ')}`)}
   else if(resolvedMatches.length===1){const exact=resolvedMatches[0];if(!matched)matched=exact;if(!isbn13)errors.push('ISBN未指定かつ正規化書名が既存作品と一致します。');else if(!errors.length){action='add_edition';warnings.push('明示された作品identityに新しい版として追加します。')}}
-  if(key&&batchTitle.has(key)&&!isbn13)errors.push('同じ入力内で正規化書名が重複しています。');
+  if(key&&batchTitle.has(key))errors.push('同じ入力内で正規化書名が重複しています。ISBNが異なる場合も作品identityの確認が必要です。');
   if(!exactMatches.length&&key){const similar=catalog.works.map(work=>({work,score:diceSimilarity(normalized_title,work.title)})).filter(x=>x.score>=similarityThreshold).sort((a,b)=>b.score-a.score).slice(0,3);if(similar.length)warnings.push(`類似作品候補: ${similar.map(x=>`${x.work.title} (${Math.round(x.score*100)}%)`).join(' / ')}`)}
   if(isbn13)batchIsbn.add(isbn13);if(key)batchTitle.add(key);if(errors.length)action='blocked';results.push({index,input,normalized_title,title_key:key,isbn13,action,matched_work_id:matched?.work_id??null,matched_title:matched?.title??null,errors,warnings,ok:!errors.length})
  }

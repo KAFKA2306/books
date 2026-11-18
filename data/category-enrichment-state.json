@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichment-state.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-11-17T21:02:39.685Z",
+  "updated_at": "2026-11-18T07:40:20.326Z",
   "attempts": {
     "wrk_0025172962b9": {
       "attempted_at": "2026-11-15T18:56:36.196Z",
@@ -7140,16 +7140,16 @@
       "provider_error": null
     },
     "wrk_cff81dacceaf": {
-      "attempted_at": "2026-10-19T04:51:13.334Z",
-      "outcome": "ambiguous",
-      "next_attempt_at": "2026-11-18T04:51:13.334Z",
+      "attempted_at": "2026-11-18T07:40:20.326Z",
+      "outcome": "provider_error",
+      "next_attempt_at": "2026-11-19T07:40:20.326Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
       "ndc_scheme": null,
       "ndc_code": null,
       "source_isbn13": null,
-      "provider_error": null
+      "provider_error": "ndl request failed: ndl returned HTTP 429"
     },
     "wrk_d00fa031229d": {
       "attempted_at": "2026-11-13T19:50:37.967Z",
@@ -7236,9 +7236,9 @@
       "provider_error": null
     },
     "wrk_d6ba62d0c030": {
-      "attempted_at": "2026-10-19T04:51:13.334Z",
+      "attempted_at": "2026-11-18T07:40:20.326Z",
       "outcome": "ambiguous",
-      "next_attempt_at": "2026-11-18T04:51:13.334Z",
+      "next_attempt_at": "2026-12-18T07:40:20.326Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,

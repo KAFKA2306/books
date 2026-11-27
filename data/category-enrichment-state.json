@@ -1,7 +1,7 @@
 {
   "schema": "kafka.books.category-enrichment-state.v1",
   "rule_version": "ndc-map-v1",
-  "updated_at": "2026-11-27T08:45:43.471Z",
+  "updated_at": "2026-11-27T21:26:25.019Z",
   "attempts": {
     "wrk_0025172962b9": {
       "attempted_at": "2026-11-15T18:56:36.196Z",
@@ -1235,9 +1235,9 @@
       "provider_error": null
     },
     "wrk_1f6f102b49c4": {
-      "attempted_at": "2026-11-13T19:50:37.967Z",
+      "attempted_at": "2026-11-27T21:26:25.019Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-11-27T19:50:37.967Z",
+      "next_attempt_at": "2026-12-11T21:26:25.019Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -1532,9 +1532,9 @@
       "provider_error": null
     },
     "wrk_26ce8cb3c094": {
-      "attempted_at": "2026-11-13T19:50:37.967Z",
+      "attempted_at": "2026-11-27T21:26:25.019Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-11-27T19:50:37.967Z",
+      "next_attempt_at": "2026-12-11T21:26:25.019Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -1808,9 +1808,9 @@
       "provider_error": null
     },
     "wrk_30971b711d93": {
-      "attempted_at": "2026-11-13T19:50:37.967Z",
+      "attempted_at": "2026-11-27T21:26:25.019Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-11-27T19:50:37.967Z",
+      "next_attempt_at": "2026-12-11T21:26:25.019Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -2021,9 +2021,9 @@
       "provider_error": null
     },
     "wrk_37cc846abbfd": {
-      "attempted_at": "2026-11-13T19:50:37.967Z",
+      "attempted_at": "2026-11-27T21:26:25.019Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-11-27T19:50:37.967Z",
+      "next_attempt_at": "2026-12-11T21:26:25.019Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -2182,9 +2182,9 @@
       "provider_error": null
     },
     "wrk_3d3e8df911e4": {
-      "attempted_at": "2026-11-13T19:50:37.967Z",
+      "attempted_at": "2026-11-27T21:26:25.019Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-11-27T19:50:37.967Z",
+      "next_attempt_at": "2026-12-11T21:26:25.019Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -3996,9 +3996,9 @@
       "provider_error": null
     },
     "wrk_7029a9a3f090": {
-      "attempted_at": "2026-11-13T19:50:37.967Z",
+      "attempted_at": "2026-11-27T21:26:25.019Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-11-27T19:50:37.967Z",
+      "next_attempt_at": "2026-12-11T21:26:25.019Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -4249,9 +4249,9 @@
       "provider_error": null
     },
     "wrk_764e146e36e0": {
-      "attempted_at": "2026-11-13T19:50:37.967Z",
+      "attempted_at": "2026-11-27T21:26:25.019Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-11-27T19:50:37.967Z",
+      "next_attempt_at": "2026-12-11T21:26:25.019Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -4318,9 +4318,9 @@
       "provider_error": null
     },
     "wrk_772de4ed8d19": {
-      "attempted_at": "2026-11-13T19:50:37.967Z",
+      "attempted_at": "2026-11-27T21:26:25.019Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-11-27T19:50:37.967Z",
+      "next_attempt_at": "2026-12-11T21:26:25.019Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -6888,9 +6888,9 @@
       "provider_error": null
     },
     "wrk_c37d93bcf7ba": {
-      "attempted_at": "2026-11-13T06:54:59.135Z",
+      "attempted_at": "2026-11-27T21:26:25.019Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-11-27T06:54:59.135Z",
+      "next_attempt_at": "2026-12-11T21:26:25.019Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -6924,9 +6924,9 @@
       "provider_error": null
     },
     "wrk_c62652bdb8e7": {
-      "attempted_at": "2026-11-13T19:50:37.967Z",
+      "attempted_at": "2026-11-27T21:26:25.019Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-11-27T19:50:37.967Z",
+      "next_attempt_at": "2026-12-11T21:26:25.019Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -6936,9 +6936,9 @@
       "provider_error": null
     },
     "wrk_c6fdaf65f4dd": {
-      "attempted_at": "2026-11-13T19:50:37.967Z",
+      "attempted_at": "2026-11-27T21:26:25.019Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-11-27T19:50:37.967Z",
+      "next_attempt_at": "2026-12-11T21:26:25.019Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -7056,9 +7056,9 @@
       "provider_error": null
     },
     "wrk_ca712aafec58": {
-      "attempted_at": "2026-11-13T19:50:37.967Z",
+      "attempted_at": "2026-11-27T21:26:25.019Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-11-27T19:50:37.967Z",
+      "next_attempt_at": "2026-12-11T21:26:25.019Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -7068,9 +7068,9 @@
       "provider_error": null
     },
     "wrk_cb55c3298df8": {
-      "attempted_at": "2026-11-13T19:50:37.967Z",
+      "attempted_at": "2026-11-27T21:26:25.019Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-11-27T19:50:37.967Z",
+      "next_attempt_at": "2026-12-11T21:26:25.019Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -7152,9 +7152,9 @@
       "provider_error": null
     },
     "wrk_d00fa031229d": {
-      "attempted_at": "2026-11-13T19:50:37.967Z",
+      "attempted_at": "2026-11-27T21:26:25.019Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-11-27T19:50:37.967Z",
+      "next_attempt_at": "2026-12-11T21:26:25.019Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -7164,9 +7164,9 @@
       "provider_error": null
     },
     "wrk_d04600d413dd": {
-      "attempted_at": "2026-11-13T19:50:37.967Z",
+      "attempted_at": "2026-11-27T21:26:25.019Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-11-27T19:50:37.967Z",
+      "next_attempt_at": "2026-12-11T21:26:25.019Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -7188,9 +7188,9 @@
       "provider_error": null
     },
     "wrk_d31f81a57683": {
-      "attempted_at": "2026-11-13T19:50:37.967Z",
+      "attempted_at": "2026-11-27T21:26:25.019Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-11-27T19:50:37.967Z",
+      "next_attempt_at": "2026-12-11T21:26:25.019Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -7200,9 +7200,9 @@
       "provider_error": null
     },
     "wrk_d4b15d859cde": {
-      "attempted_at": "2026-11-13T19:50:37.967Z",
+      "attempted_at": "2026-11-27T21:26:25.019Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-11-27T19:50:37.967Z",
+      "next_attempt_at": "2026-12-11T21:26:25.019Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -7260,9 +7260,9 @@
       "provider_error": null
     },
     "wrk_d7655d4aa5d1": {
-      "attempted_at": "2026-11-13T19:50:37.967Z",
+      "attempted_at": "2026-11-27T21:26:25.019Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-11-27T19:50:37.967Z",
+      "next_attempt_at": "2026-12-11T21:26:25.019Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -7356,9 +7356,9 @@
       "provider_error": null
     },
     "wrk_d9a82fef9c01": {
-      "attempted_at": "2026-11-13T19:50:37.967Z",
+      "attempted_at": "2026-11-27T21:26:25.019Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-11-27T19:50:37.967Z",
+      "next_attempt_at": "2026-12-11T21:26:25.019Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -7380,9 +7380,9 @@
       "provider_error": null
     },
     "wrk_db98df904e07": {
-      "attempted_at": "2026-11-13T19:50:37.967Z",
+      "attempted_at": "2026-11-27T21:26:25.019Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-11-27T19:50:37.967Z",
+      "next_attempt_at": "2026-12-11T21:26:25.019Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -7476,9 +7476,9 @@
       "provider_error": null
     },
     "wrk_def0b921b160": {
-      "attempted_at": "2026-11-13T19:50:37.967Z",
+      "attempted_at": "2026-11-27T21:26:25.019Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-11-27T19:50:37.967Z",
+      "next_attempt_at": "2026-12-11T21:26:25.019Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -7536,9 +7536,9 @@
       "provider_error": null
     },
     "wrk_e0488e422f39": {
-      "attempted_at": "2026-11-13T19:50:37.967Z",
+      "attempted_at": "2026-11-27T21:26:25.019Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-11-27T19:50:37.967Z",
+      "next_attempt_at": "2026-12-11T21:26:25.019Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -7560,9 +7560,9 @@
       "provider_error": null
     },
     "wrk_e0f57b1b57a2": {
-      "attempted_at": "2026-11-13T19:50:37.967Z",
+      "attempted_at": "2026-11-27T21:26:25.019Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-11-27T19:50:37.967Z",
+      "next_attempt_at": "2026-12-11T21:26:25.019Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -7680,9 +7680,9 @@
       "provider_error": null
     },
     "wrk_e3999e090928": {
-      "attempted_at": "2026-11-13T19:50:37.967Z",
+      "attempted_at": "2026-11-27T21:26:25.019Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-11-27T19:50:37.967Z",
+      "next_attempt_at": "2026-12-11T21:26:25.019Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
@@ -7728,9 +7728,9 @@
       "provider_error": null
     },
     "wrk_e5c79602a2f8": {
-      "attempted_at": "2026-11-13T19:50:37.967Z",
+      "attempted_at": "2026-11-27T21:26:25.019Z",
       "outcome": "no_candidate",
-      "next_attempt_at": "2026-11-27T19:50:37.967Z",
+      "next_attempt_at": "2026-12-11T21:26:25.019Z",
       "title_normalization_version": "bibliographic-suffix-v10",
       "source_data_provider": "iss-ndl-opac",
       "category": null,
